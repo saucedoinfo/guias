@@ -1,0 +1,2607 @@
+
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Coleccion de Guias de Desarrollo y diseño.">
+      
+      
+        <link rel="canonical" href="https://saucedoinfo.github.io/guias/desarrollo/javascript/04-DOM/">
+      
+      
+        <meta name="author" content="Fernando S. Saucedo">
+      
+      <link rel="shortcut icon" href="../../../img/favicon-16x16.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.14">
+    
+    
+      
+        <title>DOM - Guias de Desarrollo y diseño</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d3202873.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ff0a5ce4.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#000000">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dom" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-header-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Guias de Desarrollo y diseño
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              DOM
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../html/01-introduccion_a_HTML5/" class="md-tabs__link">
+          Desarrollo
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" class="md-tabs__link">
+          Herramientas IT
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    Guias de Desarrollo y diseño
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Desarrollo
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Desarrollo" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Desarrollo
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Html
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Html" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        <span class="md-nav__icon md-icon"></span>
+        Html
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/01-introduccion_a_HTML5/" title="Introduccion a HTML" class="md-nav__link">
+      Introduccion a HTML
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/02-etiquetas_semanticas/" title="Etiquetas semánticas" class="md-nav__link">
+      Etiquetas semánticas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/03-etiquetas_multimedia/" title="Etiquetas multimedias" class="md-nav__link">
+      Etiquetas multimedias
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/04-etiquetas_de_cabecera/" title="Etiquetas de cabecera" class="md-nav__link">
+      Etiquetas de cabecera
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/05-etiquetas_de_formularios/" title="Etiquetas de formularios" class="md-nav__link">
+      Etiquetas de formularios
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/06-etiquetas_de_scripting/" title="Etiquetas de scripting" class="md-nav__link">
+      Etiquetas de scripting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Css
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Css" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        <span class="md-nav__icon md-icon"></span>
+        Css
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/01-introduccion_a_CSS/" title="Introducción a CSS" class="md-nav__link">
+      Introducción a CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/02-modelo_de_cajas/" title="Modelo de cajas" class="md-nav__link">
+      Modelo de cajas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/03-colores_y_fondos/" title="Colores y fondos" class="md-nav__link">
+      Colores y fondos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/04-selectores_CSS/" title="Selectores CSS" class="md-nav__link">
+      Selectores CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/05-Fuentes_y_tipografias/" title="Fuentes y tipografías" class="md-nav__link">
+      Fuentes y tipografías
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/06-representacion_de_datos/" title="Representación de datos" class="md-nav__link">
+      Representación de datos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/07_maquetacion_y_colocacion/" title="Maquetación y colocación" class="md-nav__link">
+      Maquetación y colocación
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/08-interacciones/" title="Interacciones" class="md-nav__link">
+      Interacciones
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/09-efectos/" title="Efectos" class="md-nav__link">
+      Efectos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/10-responsive_Web_Design/" title="Responsive Web Design" class="md-nav__link">
+      Responsive Web Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/11-animaciones_CSS/" title="Animaciones CSS" class="md-nav__link">
+      Animaciones CSS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3" checked>
+    
+    <label class="md-nav__link" for="nav-2-3">
+      JavaScript
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="JavaScript" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon"></span>
+        JavaScript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01-introducci%C3%B3n_a_javascript/" title="Introducción a Javascript" class="md-nav__link">
+      Introducción a Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02-fundamentos_de_javascript/" title="Fundamentos de Javascript" class="md-nav__link">
+      Fundamentos de Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-caracteristicas/" title="Características" class="md-nav__link">
+      Características
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        DOM
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="DOM" class="md-nav__link md-nav__link--active">
+      DOM
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-el-dom" class="md-nav__link">
+    ¿Qué es el DOM?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué es el DOM?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-el-dom_1" class="md-nav__link">
+    ¿Qué es el DOM?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-objeto-document" class="md-nav__link">
+    El objeto document
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-nativa-de-javascript" class="md-nav__link">
+    API nativa de Javascript
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#librerias-de-terceros" class="md-nav__link">
+    Librerías de terceros
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seleccionar-elementos-del-dom" class="md-nav__link">
+    Seleccionar elementos del DOM
+  </a>
+  
+    <nav class="md-nav" aria-label="Seleccionar elementos del DOM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metodos-tradicionales" class="md-nav__link">
+    Métodos tradicionales
+  </a>
+  
+    <nav class="md-nav" aria-label="Métodos tradicionales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getelementbyid" class="md-nav__link">
+    getElementById()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getelementsbyclassname" class="md-nav__link">
+    getElementsByClassName()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-moderno" class="md-nav__link">
+    Métodos moderno
+  </a>
+  
+    <nav class="md-nav" aria-label="Métodos moderno">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#queryselector" class="md-nav__link">
+    querySelector()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queryselectorall" class="md-nav__link">
+    querySelectorAll()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-elementos-en-el-dom" class="md-nav__link">
+    Crear elementos en el DOM
+  </a>
+  
+    <nav class="md-nav" aria-label="Crear elementos en el DOM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crear-elementos-html" class="md-nav__link">
+    Crear elementos HTML
+  </a>
+  
+    <nav class="md-nav" aria-label="Crear elementos HTML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#el-metodo-createelement" class="md-nav__link">
+    El método createElement()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-metodo-clonenode" class="md-nav__link">
+    El método cloneNode()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-propiedad-isconnected" class="md-nav__link">
+    La propiedad isConnected
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atributos-html-de-un-elemento" class="md-nav__link">
+    Atributos HTML de un elemento
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#insertar-elementos-en-el-dom" class="md-nav__link">
+    Insertar elementos en el DOM
+  </a>
+  
+    <nav class="md-nav" aria-label="Insertar elementos en el DOM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reemplazar-contenido" class="md-nav__link">
+    Reemplazar contenido
+  </a>
+  
+    <nav class="md-nav" aria-label="Reemplazar contenido">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-propiedad-textcontent" class="md-nav__link">
+    La propiedad textContent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-propiedad-innerhtml" class="md-nav__link">
+    La propiedad innerHTML
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insertar-elementos" class="md-nav__link">
+    Insertar elementos
+  </a>
+  
+    <nav class="md-nav" aria-label="Insertar elementos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#el-metodo-appendchild" class="md-nav__link">
+    El método appendChild()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#los-metodos-insertadjacent" class="md-nav__link">
+    Los métodos insertAdjacent*()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-metodo-insertbefore" class="md-nav__link">
+    El método insertBefore()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminar-elementos" class="md-nav__link">
+    Eliminar elementos
+  </a>
+  
+    <nav class="md-nav" aria-label="Eliminar elementos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#el-metodo-remove" class="md-nav__link">
+    El método remove()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-metodo-removechild" class="md-nav__link">
+    El método removeChild()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-metodo-replacechild" class="md-nav__link">
+    El método replaceChild()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manipular-clases-css-classlist" class="md-nav__link">
+    Manipular clases CSS (classList)
+  </a>
+  
+    <nav class="md-nav" aria-label="Manipular clases CSS (classList)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-propiedad-classname" class="md-nav__link">
+    La propiedad className
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-objeto-classlist" class="md-nav__link">
+    El objeto classList
+  </a>
+  
+    <nav class="md-nav" aria-label="El objeto classList">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anadir-y-eliminar-clases-css" class="md-nav__link">
+    Añadir y eliminar clases CSS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conmutar-o-alternar-clases-css" class="md-nav__link">
+    Conmutar o alternar clases CSS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otros-metodos-de-clases-css" class="md-nav__link">
+    Otros métodos de clases CSS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navegar-por-elementos-del-dom" class="md-nav__link">
+    Navegar por elementos del DOM
+  </a>
+  
+    <nav class="md-nav" aria-label="Navegar por elementos del DOM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#navegar-a-traves-de-elementos" class="md-nav__link">
+    Navegar a través de elementos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navegar-a-traves-de-nodos" class="md-nav__link">
+    Navegar a través de nodos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-asincronia/" title="Asincronía" class="md-nav__link">
+      Asincronía
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-peticiones_HTTP/" title="Peticiones HTTP" class="md-nav__link">
+      Peticiones HTTP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Herramientas IT
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Herramientas IT" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Herramientas IT
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Terminal
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Terminal" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon"></span>
+        Terminal
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" title="Introducción a la terminal" class="md-nav__link">
+      Introducción a la terminal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/02-operaciones_con_ficheros/" title="Operaciones con ficheros" class="md-nav__link">
+      Operaciones con ficheros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/03-administraci%C3%B3n_del_sistema/" title="Administración del sistema" class="md-nav__link">
+      Administración del sistema
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/markdown/" title="Markdown" class="md-nav__link">
+      Markdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/pip/" title="Pip" class="md-nav__link">
+      Pip
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/mkdocs/" title="Mkdocs" class="md-nav__link">
+      Mkdocs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../about/" title="Acerca de" class="md-nav__link">
+      Acerca de
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-el-dom" class="md-nav__link">
+    ¿Qué es el DOM?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué es el DOM?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-el-dom_1" class="md-nav__link">
+    ¿Qué es el DOM?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-objeto-document" class="md-nav__link">
+    El objeto document
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-nativa-de-javascript" class="md-nav__link">
+    API nativa de Javascript
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#librerias-de-terceros" class="md-nav__link">
+    Librerías de terceros
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seleccionar-elementos-del-dom" class="md-nav__link">
+    Seleccionar elementos del DOM
+  </a>
+  
+    <nav class="md-nav" aria-label="Seleccionar elementos del DOM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metodos-tradicionales" class="md-nav__link">
+    Métodos tradicionales
+  </a>
+  
+    <nav class="md-nav" aria-label="Métodos tradicionales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getelementbyid" class="md-nav__link">
+    getElementById()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getelementsbyclassname" class="md-nav__link">
+    getElementsByClassName()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-moderno" class="md-nav__link">
+    Métodos moderno
+  </a>
+  
+    <nav class="md-nav" aria-label="Métodos moderno">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#queryselector" class="md-nav__link">
+    querySelector()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queryselectorall" class="md-nav__link">
+    querySelectorAll()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-elementos-en-el-dom" class="md-nav__link">
+    Crear elementos en el DOM
+  </a>
+  
+    <nav class="md-nav" aria-label="Crear elementos en el DOM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crear-elementos-html" class="md-nav__link">
+    Crear elementos HTML
+  </a>
+  
+    <nav class="md-nav" aria-label="Crear elementos HTML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#el-metodo-createelement" class="md-nav__link">
+    El método createElement()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-metodo-clonenode" class="md-nav__link">
+    El método cloneNode()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-propiedad-isconnected" class="md-nav__link">
+    La propiedad isConnected
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atributos-html-de-un-elemento" class="md-nav__link">
+    Atributos HTML de un elemento
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#insertar-elementos-en-el-dom" class="md-nav__link">
+    Insertar elementos en el DOM
+  </a>
+  
+    <nav class="md-nav" aria-label="Insertar elementos en el DOM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reemplazar-contenido" class="md-nav__link">
+    Reemplazar contenido
+  </a>
+  
+    <nav class="md-nav" aria-label="Reemplazar contenido">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-propiedad-textcontent" class="md-nav__link">
+    La propiedad textContent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-propiedad-innerhtml" class="md-nav__link">
+    La propiedad innerHTML
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insertar-elementos" class="md-nav__link">
+    Insertar elementos
+  </a>
+  
+    <nav class="md-nav" aria-label="Insertar elementos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#el-metodo-appendchild" class="md-nav__link">
+    El método appendChild()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#los-metodos-insertadjacent" class="md-nav__link">
+    Los métodos insertAdjacent*()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-metodo-insertbefore" class="md-nav__link">
+    El método insertBefore()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminar-elementos" class="md-nav__link">
+    Eliminar elementos
+  </a>
+  
+    <nav class="md-nav" aria-label="Eliminar elementos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#el-metodo-remove" class="md-nav__link">
+    El método remove()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-metodo-removechild" class="md-nav__link">
+    El método removeChild()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-metodo-replacechild" class="md-nav__link">
+    El método replaceChild()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manipular-clases-css-classlist" class="md-nav__link">
+    Manipular clases CSS (classList)
+  </a>
+  
+    <nav class="md-nav" aria-label="Manipular clases CSS (classList)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-propiedad-classname" class="md-nav__link">
+    La propiedad className
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-objeto-classlist" class="md-nav__link">
+    El objeto classList
+  </a>
+  
+    <nav class="md-nav" aria-label="El objeto classList">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anadir-y-eliminar-clases-css" class="md-nav__link">
+    Añadir y eliminar clases CSS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conmutar-o-alternar-clases-css" class="md-nav__link">
+    Conmutar o alternar clases CSS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otros-metodos-de-clases-css" class="md-nav__link">
+    Otros métodos de clases CSS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navegar-por-elementos-del-dom" class="md-nav__link">
+    Navegar por elementos del DOM
+  </a>
+  
+    <nav class="md-nav" aria-label="Navegar por elementos del DOM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#navegar-a-traves-de-elementos" class="md-nav__link">
+    Navegar a través de elementos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navegar-a-traves-de-nodos" class="md-nav__link">
+    Navegar a través de nodos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/saucedoinfo/guias/edit/master/docs/desarrollo/javascript/04-DOM.md" title="Editar esta página" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="dom">DOM<a class="headerlink" href="#dom" title="Permanent link">&para;</a></h1>
+<h2 id="que-es-el-dom">¿Qué es el DOM?<a class="headerlink" href="#que-es-el-dom" title="Permanent link">&para;</a></h2>
+<p>Cuando comenzamos en el mundo del <strong>desarrollo web</strong>, normalmente comenzamos por aprender a escribir etiquetado o <strong>marcado HTML</strong> y además, añadir <strong>estilos CSS</strong> para darle color, forma y algo de interacción. Sin embargo, a medida que avanzamos, nos damos cuenta que en cierta forma podemos estar bastante limitados.</p>
+<p>Si únicamente utilizamos HTML/CSS, sólo podremos crear <strong>páginas «estáticas»</strong> (<em>sin demasiada personalización por parte del usuario</em>), pero si añadimos Javascript, podremos crear <strong>páginas «dinámicas»</strong>. Cuando hablamos de páginas dinámicas, nos referimos a que podemos dotar de la potencia y flexibilidad que nos da un lenguaje de programación para crear documentos y páginas mucho más ricas, que brinden una experiencia más completa y con el que se puedan automatizar un gran abanico de tareas y acciones.</p>
+<h3 id="que-es-el-dom_1">¿Qué es el DOM?<a class="headerlink" href="#que-es-el-dom_1" title="Permanent link">&para;</a></h3>
+<p>Las siglas <strong>DOM</strong> significan <strong>Document Object Model</strong>, o lo que es lo mismo, la estructura del documento HTML. Una página HTML está formada por múltiples etiquetas HTML, anidadas una dentro de otra, formando un árbol de etiquetas relacionadas entre sí, que se denomina <strong>árbol DOM</strong> (<em>o simplemente DOM</em>).</p>
+<p><img alt="DOM: Document Object Model" src="../img/dom.jpg" /></p>
+<p>En Javascript, cuando nos referimos al <strong>DOM</strong> nos referimos a esta estructura, que podemos modificar de forma dinámica desde Javascript, añadiendo nuevas etiquetas, modificando o eliminando otras, cambiando sus atributos HTML, añadiendo clases, cambiando el contenido de texto, etc...</p>
+<p>Al estar "amparado" por un <strong>lenguaje de programación</strong>, todas estas tareas se pueden automatizar, incluso indicando que se realicen cuando el usuario haga acciones determinadas, como por ejemplo: pulsar un botón, mover el ratón, hacer click en una parte del documento, escribir un texto, etc...</p>
+<h3 id="el-objeto-document">El objeto document<a class="headerlink" href="#el-objeto-document" title="Permanent link">&para;</a></h3>
+<p>En Javascript, la forma de acceder al DOM es a través de un objeto llamado <code>document</code>, que representa el árbol DOM de la página o pestaña del navegador donde nos encontramos. En su interior pueden existir varios tipos de elementos, pero principalmente serán o :</p>
+<ul>
+<li>no es más que la representación genérica de una etiqueta: <code>HTMLElement</code>.</li>
+<li>es una unidad más básica, la cuál puede ser o un <strong>nodo de texto</strong>.</li>
+</ul>
+<p>Todos los <strong>elementos HTML</strong>, dependiendo del elemento que sean, tendrán un tipo de dato específico. Algunos ejemplos:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Tipo de dato</th>
+<th align="left">Tipo específico</th>
+<th align="left">Etiqueta</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>HTMLElement</code></td>
+<td align="left"><code>HTMLDivElement</code></td>
+<td align="left"><code>&lt;div&gt;</code></td>
+<td align="left">Capa divisoria invisible (en bloque).</td>
+</tr>
+<tr>
+<td align="left"><code>HTMLElement</code></td>
+<td align="left"><code>HTMLSpanElement</code></td>
+<td align="left"><code>&lt;span&gt;</code></td>
+<td align="left">Capa divisoria invisible (en línea).</td>
+</tr>
+<tr>
+<td align="left"><code>HTMLElement</code></td>
+<td align="left"><code>HTMLImageElement</code></td>
+<td align="left"><code>&lt;img&gt;</code></td>
+<td align="left">Imagen.</td>
+</tr>
+<tr>
+<td align="left"><code>HTMLElement</code></td>
+<td align="left"><code>HTMLAudioElement</code></td>
+<td align="left"><code>&lt;audio&gt;</code></td>
+<td align="left">Contenedor de audio.</td>
+</tr>
+</tbody>
+</table>
+<p>Obviamente, existen muchos tipos de datos específicos, uno por cada etiqueta HTML.</p>
+<h3 id="api-nativa-de-javascript">API nativa de Javascript<a class="headerlink" href="#api-nativa-de-javascript" title="Permanent link">&para;</a></h3>
+<p>En los siguientes capítulos veremos que <strong>Javascript</strong> nos proporciona un conjunto de herramientas para trabajar de forma nativa con el DOM de la página, entre las que se encuentran:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Capítulo del DOM</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="/javascript/dom/seleccionar-elementos-dom/"><strong>🔍 Buscar etiquetas</strong></a></td>
+<td align="left">Familia de métodos entre los que se encuentran funciones como <code>.getElementById()</code>, <code>.querySelector()</code> o <code>.querySelectorAll()</code>, entre otras.</td>
+</tr>
+<tr>
+<td align="left"><a href="/javascript/dom/crear-elementos-dom/"><strong>🔮 Crear etiquetas</strong></a></td>
+<td align="left">Una serie de métodos y consejos para crear elementos en la página y trabajar con ellos de forma dinámica.</td>
+</tr>
+<tr>
+<td align="left"><a href="/javascript/dom/insertar-elementos-dom/"><strong>🔌 Insertar etiquetas</strong></a></td>
+<td align="left">Las mejores formas de añadir elementos al DOM, ya sea utilizando propiedades como <code>.innerHTML</code> o método como <code>.appendChild()</code>, <code>.insertAdjacentHTML()</code>, entre otros.</td>
+</tr>
+<tr>
+<td align="left"><a href="/javascript/dom/manipular-clases-css/"><strong>🎭 Gestión de clases CSS</strong></a></td>
+<td align="left">Consejos para la utilización de la API <code>.classList</code> de Javascript que nos permite manipular clases CSS desde JS, de modo que podamos añadir, modificar, eliminar clases de CSS de un elemento de una forma práctica y cómoda.</td>
+</tr>
+<tr>
+<td align="left"><a href="/javascript/dom/elementos-dom-relacionados/"><strong>🚢 Navegar entre elementos</strong></a></td>
+<td align="left">Utilización de una serie de métodos y propiedades que nos permiten «navegar» a través de la jerarquía del DOM, ciñéndonos a la estructura del documento y la posición de los elementos en la misma.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="librerias-de-terceros">Librerías de terceros<a class="headerlink" href="#librerias-de-terceros" title="Permanent link">&para;</a></h3>
+<p>En muchos casos, el rendimiento no es lo suficientemente importante como para justificar trabajar a bajo nivel, por lo que se prefiere utilizar algunas <strong>librerías de terceros</strong> que nos facilitan el trabajo a costa de reducir minimamente el rendimiento, pero permitiéndonos programar más rápidamente.</p>
+<p>Si es tu caso, puedes utilizar alguna de las siguientes librerías para abstraerte del DOM:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Librería</th>
+<th align="left">Descripción</th>
+<th align="left">GitHub</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="https://redom.js.org/">RE:DOM</a></td>
+<td align="left">Librería para crear interfaces de usuario, basada en DOM.</td>
+<td align="left"><a href="https://github.com/redom/redom">@redom/redom</a></td>
+</tr>
+<tr>
+<td align="left"><a href="http://adriancooney.ie/voyeur.js/">Voyeur.js</a></td>
+<td align="left">Pequeña librería para manipular el DOM</td>
+<td align="left"><a href="https://github.com/adriancooney/voyeur.js">@adriancooney/voyeur.js</a></td>
+</tr>
+<tr>
+<td align="left"><a href="https://nhanfu.github.io/htmljs/api/index.html">HtmlJs</a></td>
+<td align="left">Motor de renderización de HTML y data binding (MVVM)</td>
+<td align="left"><a href="https://github.com/nhanfu/htmljs">@nhanfu/htmljs</a></td>
+</tr>
+<tr>
+<td align="left"><a href="https://domtastic.js.org/">DOMtastic</a></td>
+<td align="left">Libraría moderna y modular para DOM/Events</td>
+<td align="left"><a href="https://github.com/webpro/DOMtastic">@webpro/DOMtastic</a></td>
+</tr>
+<tr>
+<td align="left"><a href="https://umbrellajs.com/">UmbrellaJS</a></td>
+<td align="left">Librería para manipular el DOM y eventos</td>
+<td align="left"><a href="https://github.com/franciscop/umbrella">@franciscop/umbrella</a></td>
+</tr>
+<tr>
+<td align="left">SuperDOM</td>
+<td align="left">Manipulando DOM como si estuvieras en 2018</td>
+<td align="left"><a href="https://github.com/szaranger/superdom">@szaranger/superdom</a></td>
+</tr>
+</tbody>
+</table>
+<p>Muchas veces, también se eligen frameworks de Javascript para trabajar, que en cierta forma también te abstraen de tener que gestionar el DOM a bajo nivel, y lo cambian por realizar otras tareas o estrategias relacionadas con el framework escogido.</p>
+<hr />
+<h2 id="seleccionar-elementos-del-dom">Seleccionar elementos del DOM<a class="headerlink" href="#seleccionar-elementos-del-dom" title="Permanent link">&para;</a></h2>
+<p>Si nos encontramos en nuestro código Javascript y queremos hacer modificaciones en un elemento de la página HTML, lo primero que debemos hacer es buscar dicho elemento. Para ello, se suele intentar identificar el elemento a través de alguno de sus atributos más utilizados, generalmente el <strong>id</strong> o la <strong>clase</strong>.</p>
+<h3 id="metodos-tradicionales">Métodos tradicionales<a class="headerlink" href="#metodos-tradicionales" title="Permanent link">&para;</a></h3>
+<p>Existen varios métodos, los más clásicos y tradicionales para realizar búsquedas de elementos en el documento. Observa que si lo que buscas es un elemento específico, lo mejor sería utilizar <code>getElementById()</code>, en caso contrario, si utilizamos uno de los 3 siguientes métodos, nos devolverá un donde tendremos que elegir el elemento en cuestión posteriormente:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Métodos de búsqueda</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>.getElementById(id)</code></td>
+<td align="left">Busca el elemento HTML con el id <code>id</code>. Si no, devuelve .</td>
+</tr>
+<tr>
+<td align="left"><code>.getElementsByClassName(class)</code></td>
+<td align="left">Busca elementos con la clase <code>class</code>. Si no, devuelve <code>[]</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.getElementsByName(name)</code></td>
+<td align="left">Busca elementos con atributo name <code>name</code>. Si no, devuelve <code>[]</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.getElementsByTagName(tag)</code></td>
+<td align="left">Busca elementos <code>tag</code>. Si no encuentra ninguno, devuelve <code>[]</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Estos son los <strong>4 métodos tradicionales</strong> de Javascript para manipular el DOM. Se denominan tradicionales porque son los que existen en Javascript desde versiones más antiguas. Dichos métodos te permiten buscar elementos en la página dependiendo de los atributos <code>id</code>, <code>class</code>, <code>name</code> o de la propia etiqueta, respectivamente.</p>
+<h4 id="getelementbyid">getElementById()<a class="headerlink" href="#getelementbyid" title="Permanent link">&para;</a></h4>
+<p>El primer método, <code>.getElementById(id)</code> busca un elemento HTML con el <strong>id</strong> especificado en <code>id</code> por parámetro. En principio, un documento HTML bien construído <strong>no debería</strong> tener más de un elemento con el mismo <code>id</code>, por lo tanto, este método devolverá siempre un solo elemento:</p>
+<pre><code>const page = document.getElementById("page");   // &lt;div id="page"&gt;&lt;/div&gt;
+</code></pre>
+<blockquote>
+<p>Recuerda que en el caso de no encontrar el elemento indicado, devolverá .</p>
+</blockquote>
+<h4 id="getelementsbyclassname">getElementsByClassName()<a class="headerlink" href="#getelementsbyclassname" title="Permanent link">&para;</a></h4>
+<p>Por otro lado, el método <code>.getElementsByClassName(class)</code> permite buscar los elementos con la <strong>clase</strong> especificada en <code>class</code>. Es importante darse cuenta del matiz de que el metodo tiene <code>getElements</code> en plural, y esto es porque al devolver <strong>clases</strong> (<em>al contrario que los id</em>) se pueden repetir, y por lo tanto, devolvernos varios elementos, no sólo uno.</p>
+<pre><code>const items = document.getElementsByClassName("item");  // [div, div, div]
+
+console.log(items[0]);      // Primer item encontrado: &lt;div class="item"&gt;&lt;/div&gt;
+console.log(items.length);  // 3
+</code></pre>
+<blockquote>
+<p>Estos métodos devuelven siempre un con todos los elementos encontrados que encajen con el criterio. En el caso de no encontrar ninguno, devolverán un vacío: <code>[]</code>.</p>
+</blockquote>
+<p>Exactamente igual funcionan los métodos <code>getElementsByName(name)</code> y <code>getElementsByTagName(tag)</code>, salvo que se encargan de buscar elementos HTML por su atributo <strong>name</strong> o por su propia <strong>etiqueta</strong> de elemento HTML, respectivamente:</p>
+<pre><code>// Obtiene todos los elementos con atributo name="nickname"
+const nicknames = document.getElementsByName("nickname");
+
+// Obtiene todos los elementos &lt;div&gt; de la página
+const divs = document.getElementsByTagName("div");
+</code></pre>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><strong>OJO</strong>: Aunque en esta documentación se hace referencia a , realmente los métodos de búsqueda generalmente devuelven un tipo de dato <code>HTMLCollection</code> o <code>NodeList</code>, que aunque actúan de forma muy similar a un , no son arrays, y por lo tanto pueden carecer de algunos métodos, como por ejemplo <code>.forEach()</code>.</p>
+</blockquote>
+</blockquote>
+<p>Recuerda que el primer método tiene <code>getElement</code> en singular y el resto <code>getElements</code> en plural. Ten en cuenta ese detalle para no olvidarte que uno devuelve un sólo elemento y el resto una lista de ellos.</p>
+</blockquote>
+<h3 id="metodos-moderno">Métodos moderno<a class="headerlink" href="#metodos-moderno" title="Permanent link">&para;</a></h3>
+<p>Aunque podemos utilizar los métodos tradicionales que acabamos de ver, actualmente tenemos a nuestra disposición dos nuevos métodos de búsqueda de elementos que son mucho más cómodos y prácticos si conocemos y dominamos los <a href="https://lenguajecss.com/css/selectores/selectores-basicos">selectores CSS</a>. Es el caso de los métodos <code>.querySelector()</code> y <code>.querySelectorAll()</code>:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Método de búsqueda</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>.querySelector(sel)</code></td>
+<td align="left">Busca el primer elemento que coincide con el selector CSS <code>sel</code>. Si no, .</td>
+</tr>
+<tr>
+<td align="left"><code>.querySelectorAll(sel)</code></td>
+<td align="left">Busca todos los elementos que coinciden con el selector CSS <code>sel</code>. Si no, <code>[]</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Con estos dos métodos podemos realizar todo lo que hacíamos con los <strong>métodos tradicionales</strong> mencionados anteriormente e incluso muchas más cosas (<em>en menos código</em>), ya que son muy flexibles y potentes gracias a los <strong>selectores CSS</strong>.</p>
+<h4 id="queryselector">querySelector()<a class="headerlink" href="#queryselector" title="Permanent link">&para;</a></h4>
+<p>El primero, <code>.querySelector(selector)</code> devuelve el primer elemento que encuentra que encaja con el selector CSS suministrado en <code>selector</code>. Al igual que su «equivalente» <code>.getElementById()</code>, devuelve un solo elemento y en caso de no coincidir con ninguno, devuelve :</p>
+<pre><code>const page = document.querySelector("#page");               // &lt;div id="page"&gt;&lt;/div&gt;
+const info = document.querySelector(".main .info");         // &lt;div class="info"&gt;&lt;/div&gt;
+</code></pre>
+<p>Lo interesante de este método, es que al permitir suministrarle un <a href="https://lenguajecss.com/css/selectores/selectores-basicos/">selector CSS básico</a> o incluso un <a href="https://lenguajecss.com/css/selectores/selectores-avanzados/">selector CSS avanzado</a>, se vuelve un sistema mucho más potente.</p>
+<p>El primer ejemplo es equivalente a utilizar un <code>.getElementById()</code>, sólo que en la versión de <code>.querySelector()</code> indicamos por parámetro un , y en el primero le pasamos un simple . Observa que estamos indicando un <code>#</code> porque se trata de un <strong>id</strong>.</p>
+<p>En el segundo ejemplo, estamos recuperando el primer elemento con clase <code>info</code> que se encuentre dentro de otro elemento con clase <code>main</code>. Eso podría realizarse con los métodos tradicionales, pero sería menos directo ya que tendríamos que realizar varias llamadas, con <code>.querySelector()</code> se hace directamente con sólo una.</p>
+<h4 id="queryselectorall">querySelectorAll()<a class="headerlink" href="#queryselectorall" title="Permanent link">&para;</a></h4>
+<p>Por otro lado, el método <code>.querySelectorAll()</code> realiza una búsqueda de elementos como lo hace el anterior, sólo que como podremos intuir por ese <code>All()</code>, devuelve un con todos los elementos que coinciden con el CSS:</p>
+<pre><code>// Obtiene todos los elementos con clase "info"
+const infos = document.querySelectorAll(".info");
+
+// Obtiene todos los elementos con atributo name="nickname"
+const nicknames = document.querySelectorAll('[name="nickname"]');
+
+// Obtiene todos los elementos &lt;div&gt; de la página HTML
+const divs = document.querySelectorAll("div");
+</code></pre>
+<p>En este caso, recuerda que <code>.querySelectorAll()</code> siempre nos devolverá un de elementos. Depende de los elementos que encuentre mediante el , nos devolverá un de <strong>0</strong> elementos o de <strong>1</strong>, <strong>2</strong> o más elementos.</p>
+<blockquote>
+<p>Al realizar una búsqueda de elementos y guardarlos en una variable, podemos realizar la búsqueda posteriormente sobre esa variable en lugar de hacerla sobre <code>document</code>. Esto permite realizar búsquedas acotadas por zonas, en lugar de realizarlo siempre sobre <code>document</code>, que buscará en todo el documento HTML.</p>
+</blockquote>
+<hr />
+<h2 id="crear-elementos-en-el-dom">Crear elementos en el DOM<a class="headerlink" href="#crear-elementos-en-el-dom" title="Permanent link">&para;</a></h2>
+<p>Sobre todo si te encuentras en fase de aprendizaje, lo normal suele ser crear código HTML desde un fichero HTML. Sin embargo, y sobre todo con el auge de las páginas <strong>SPA</strong> (<em>Single Page Application</em>*) y los frameworks Javascript, esto ha cambiado bastante y es bastante frecuente <strong>crear código HTML desde Javascript</strong> de forma dinámica.</p>
+<p>Esto tiene sus ventajas y sus desventajas. Un fichero <code>.html</code> siempre será más sencillo, más «estático» y más directo, ya que lo primero que analiza un navegador web es un fichero de marcado HTML. Por otro lado, un fichero <code>.js</code> es más complejo y menos directo, pero mucho más potente, «dinámico» y flexible, con menos limitaciones.</p>
+<p>En este artículo vamos a ver como podemos <strong>crear elementos HTML desde Javascript</strong> y aprovecharnos de la potencia de Javascript para hacer cosas que desde HTML, sin ayuda de Javascript, no podríamos realizar o costaría mucho más.</p>
+<h3 id="crear-elementos-html">Crear elementos HTML<a class="headerlink" href="#crear-elementos-html" title="Permanent link">&para;</a></h3>
+<p>Existen una serie de métodos para <strong>crear de forma eficiente</strong> diferentes elementos HTML o nodos, y que nos pueden convertir en una tarea muy sencilla el crear estructuras dinámicas, mediante bucles o estructuras definidas:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Métodos</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>.createElement(tag, options)</code></td>
+<td align="left">Crea y devuelve el elemento HTML definido por el <code>tag</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.createComment(text)</code></td>
+<td align="left">Crea y devuelve un nodo de comentarios HTML <code>&lt;!-- text --&gt;</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.createTextNode(text)</code></td>
+<td align="left">Crea y devuelve un nodo HTML con el texto <code>text</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.cloneNode(deep)</code></td>
+<td align="left">Clona el nodo HTML y devuelve una copia. <code>deep</code> es <strong>false</strong> por defecto.</td>
+</tr>
+<tr>
+<td align="left"><code>.isConnected</code></td>
+<td align="left">Indica si el nodo HTML está insertado en el documento HTML.</td>
+</tr>
+</tbody>
+</table>
+<p>Para empezar, nos centraremos principalmente en la primera, que es la que utilizamos para <strong>crear elementos HTML</strong> en el DOM.</p>
+<h4 id="el-metodo-createelement">El método createElement()<a class="headerlink" href="#el-metodo-createelement" title="Permanent link">&para;</a></h4>
+<p>Mediante el método <code>.createElement()</code> podemos crear un HTML <strong>en memoria</strong> (<em>¡no estará insertado aún en nuestro documento HTML!</em>). Con dicho elemento almacenado en una variable, podremos modificar sus características o contenido, para <strong>posteriormente</strong> insertarlo en una posición determinada del DOM o documento HTML.</p>
+<p>Vamos a centrarnos en el proceso de <strong>creación del elemento</strong>, y en el próximo capítulo veremos el apartado de insertarlo en el DOM. El funcionamiento de <code>.createElement()</code> es muy sencillo: se trata de pasarle el nombre de la etiqueta <code>tag</code> a utilizar.</p>
+<pre><code>const div = document.createElement("div");      // Creamos un &lt;div&gt;&lt;/div&gt;
+const span = document.createElement("span");    // Creamos un &lt;span&gt;&lt;/span&gt;
+const img = document.createElement("img");      // Creamos un &lt;img&gt;
+</code></pre>
+<p>De la misma forma, podemos crear comentarios HTML con <code>createComment()</code> o nodos de texto sin etiqueta HTML con <code>createTextNode()</code>, pasándole a ambos un con el texto en cuestión. En ambos, se devuelve un que podremos utilizar luego para insertar en el documento HTML:</p>
+<pre><code>const comment = document.createComment("Comentario"); // &lt;!--Comentario--&gt;
+const text = document.createTextNode("Hola");         // Nodo de texto: 'hola'
+</code></pre>
+<p>El método <code>createElement()</code> tiene un parámetro opcional denominado <code>options</code>. Si se indica, será un objeto con una propiedad <code>is</code> para definir un <strong>elemento personalizado</strong> en una modalidad menos utilizada. Se verá más adelante en el apartado de <strong>Web Components</strong>.</p>
+<blockquote>
+<blockquote>
+<p>Ten presente que en los ejemplos que hemos visto estamos creando los elementos en una constante, pero de momento <strong>no están añadiéndose al documento HTML</strong>, por lo que no aparecerían visualmente. Más adelante veremos como añadirlos.</p>
+</blockquote>
+</blockquote>
+<h4 id="el-metodo-clonenode">El método cloneNode()<a class="headerlink" href="#el-metodo-clonenode" title="Permanent link">&para;</a></h4>
+<p>Hay que tener mucho cuidado al crear y <strong>duplicar</strong> elementos HTML. Un error muy común es asignar un elemento que tenemos en otra variable, pensando que estamos creando una copia (<em>cuando no es así</em>):</p>
+<pre><code>const div = document.createElement("div");
+div.textContent = "Elemento 1";
+
+const div2 = div;   // NO se está haciendo una copia
+div2.textContent = "Elemento 2";
+
+div.textContent;  // 'Elemento 2'
+</code></pre>
+<p>Con esto, quizás pueda parecer que estamos duplicando un elemento para crearlo a imagen y semejanza del original. Sin embargo, lo que se hace es una <strong>referencia</strong> al elemento original, de modo que si se modifica el <code>div2</code>, también se modifica el elemento original. Para evitar esto, lo ideal es utilizar el método <code>cloneNode()</code>:</p>
+<pre><code>const div = document.createElement("div");
+div.textContent = "Elemento 1";
+
+const div2 = div.cloneNode();   // Ahora SÍ estamos clonando
+div2.textContent = "Elemento 2";
+
+div.textContent;  // 'Elemento 1'
+</code></pre>
+<p>El método <code>cloneNode(deep)</code> acepta un parámetro <code>deep</code> opcional, a <code>false</code> por defecto, para indicar el tipo de clonación que se realizará:</p>
+<ul>
+<li>Si es <code>true</code>, clonará también sus hijos, conocido como una <strong>clonación profunda</strong> (<em>Deep Clone</em>).</li>
+<li>Si es <code>false</code>, no clonará sus hijos, conocido como una <strong>clonación superficial</strong> (<em>Shallow Clone</em>).</li>
+</ul>
+<h4 id="la-propiedad-isconnected">La propiedad isConnected<a class="headerlink" href="#la-propiedad-isconnected" title="Permanent link">&para;</a></h4>
+<p>Por último, la propiedad <code>isConnected</code> nos indica si el nodo en cuestión está conectado al DOM, es decir, si está insertado en el documento HTML:</p>
+<ul>
+<li>Si es <code>true</code>, significa que el elemento está conectado al DOM.</li>
+<li>Si es <code>false</code>, significa que el elemento no está conectado al DOM.</li>
+</ul>
+<p>Hasta ahora, hemos creado elementos que no lo están (<em>permanecen sólo en memoria</em>). En el capítulo <a href="/javascript/dom/insertar-elementos-dom/">Insertar elementos en el DOM</a> veremos como insertarlos en el documento HTML para que aparezca visualmente en la página.</p>
+<h3 id="atributos-html-de-un-elemento">Atributos HTML de un elemento<a class="headerlink" href="#atributos-html-de-un-elemento" title="Permanent link">&para;</a></h3>
+<p>Hasta ahora, hemos visto como crear elementos HTML con Javascript, pero no hemos visto como modificar los atributos HTML de dichas etiquetas creadas. En general, una vez tenemos un elemento sobre el que vamos a crear algunos atributos, lo más sencillo es <strong>asignarle valores como propiedades</strong> de objetos:</p>
+<pre><code>const div = document.createElement("div"); // &lt;div&gt;&lt;/div&gt;
+div.id = "page";          // &lt;div id="page"&gt;&lt;/div&gt;
+div.className = "data";   // &lt;div id="page" class="data"&gt;&lt;/div&gt;
+div.style = "color: red"; // &lt;div id="page" class="data" style="color: red"&gt;&lt;/div&gt;
+</code></pre>
+<p>Sin embargo, en algunos casos esto se puede complicar (<em>como se ve en uno de los casos del ejemplo anterior</em>). Por ejemplo, la palabra <code>class</code> (<em>para crear clases</em>) o la palabra <code>for</code> (<em>para bucles</em>) son palabras reservadas de Javascript y no se podrían utilizar para crear atributos. Por ejemplo, si queremos establecer una clase, se debe utilizar la propiedad <code>className</code>.</p>
+<blockquote>
+<p>Es posible asignar a la propiedad <code>className</code> varias clases en un separadas por espacio. De esta forma se asignarán múltiples clases. Aún así, recomendamos utilizar la propiedad <code>classList</code> que explicaremos más adelante en el capítulo <a href="/javascript/dom/manipular-clases-css/">manipulación de clases CSS</a>.</p>
+</blockquote>
+<p>Aunque la forma anterior es la más rápida, tenemos algunos métodos para utilizar en un elemento HTML y añadir, modificar o eliminar sus atributos:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Métodos</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>hasAttributes()</code></td>
+<td align="left">Indica si el elemento tiene atributos HTML.</td>
+</tr>
+<tr>
+<td align="left"><code>hasAttribute(attr)</code></td>
+<td align="left">Indica si el elemento tiene el atributo HTML <code>attr</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>getAttributeNames()</code></td>
+<td align="left">Devuelve un con los atributos del elemento.</td>
+</tr>
+<tr>
+<td align="left"><code>getAttribute(attr)</code></td>
+<td align="left">Devuelve el valor del atributo <code>attr</code> del elemento o si no existe.</td>
+</tr>
+<tr>
+<td align="left"><code>removeAttribute(attr)</code></td>
+<td align="left">Elimina el atributo <code>attr</code> del elemento.</td>
+</tr>
+<tr>
+<td align="left"><code>setAttribute(attr, value)</code></td>
+<td align="left">Añade o cambia el atributo <code>attr</code> al valor <code>value</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>getAttributeNode(attr)</code></td>
+<td align="left">Idem a <code>getAttribute()</code> pero devuelve el atributo como <strong>nodo</strong>.</td>
+</tr>
+<tr>
+<td align="left"><code>removeAttributeNode(attr)</code></td>
+<td align="left">Idem a <code>removeAttribute()</code> pero devuelve el atributo como <strong>nodo</strong>.</td>
+</tr>
+<tr>
+<td align="left"><code>setAttributeNode(attr, value)</code></td>
+<td align="left">Idem a <code>setAttribute()</code> pero devuelve el atributo como <strong>nodo</strong>.</td>
+</tr>
+</tbody>
+</table>
+<p>Estos métodos son bastante autoexplicativos y fáciles de entender, aún así, vamos a ver unos ejemplos de uso donde podemos ver como funcionan:</p>
+<pre><code>// Obtenemos &lt;div id="page" class="info data dark" data-number="5"&gt;&lt;/div&gt;
+const div = document.querySelector("#page");
+
+div.hasAttribute("data-number");  // true (data-number existe)
+div.hasAttributes();              // true (tiene 3 atributos)
+
+div.getAttributeNames();          // ["id", "data-number", "class"]
+div.getAttribute("id");           // "page"
+
+div.removeAttribute("id");        // &lt;div class="info data dark" data-number="5"&gt;&lt;/div&gt;
+div.setAttribute("id", "page");   // (Vuelve a añadirlo)
+</code></pre>
+<p>Los tres últimos métodos mencionados: <code>getAttributeNode()</code>, <code>removeAttributeNode()</code> y <code>setAttributeNode()</code> son versiones idénticas a sus homónimos, sólo que devuelven el afectado, útil si queremos guardarlo en una variable y seguir trabajando con él.</p>
+<blockquote>
+<p>Recuerda que hasta ahora hemos visto como crear elementos y cambiar sus atributos, pero <strong>no los hemos insertado en el DOM</strong> o documento HTML, por lo que no los veremos visualmente en la página. En el siguiente capítulo abordaremos ese tema.</p>
+</blockquote>
+<hr />
+<h2 id="insertar-elementos-en-el-dom">Insertar elementos en el DOM<a class="headerlink" href="#insertar-elementos-en-el-dom" title="Permanent link">&para;</a></h2>
+<p>En el capítulo anterior hemos visto como <a href="/javascript/dom/crear-elementos-dom/">crear elementos en el DOM</a>, pero dichos elementos <strong>se creaban en memoria</strong> y los almacenábamos en una variable o constante. No se conectaban al DOM o documento HTML de forma automática, sino que debemos hacerlo manualmente, que es justo lo que veremos en este artículo: como insertar elementos en el DOM, así como eliminarlos.</p>
+<p>En este artículo vamos a centrarnos en tres categorías:</p>
+<ul>
+<li><strong>Reemplazar</strong> contenido de elementos en el DOM</li>
+<li><strong>Insertar</strong> elementos en el DOM</li>
+<li><strong>Eliminar</strong> elementos del DOM</li>
+</ul>
+<h3 id="reemplazar-contenido">Reemplazar contenido<a class="headerlink" href="#reemplazar-contenido" title="Permanent link">&para;</a></h3>
+<p>Comenzaremos por la familia de propiedades siguientes, que enmarcamos dentro de la categoría de <strong>reemplazar contenido</strong> de elementos HTML. Se trata de una vía rápida con la cuál podemos añadir (<em>o más bien, reemplazar</em>) el contenido de una etiqueta HTML.</p>
+<p>Las propiedades son las siguientes:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Propiedades</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>.nodeName</code></td>
+<td align="left">Devuelve el nombre del nodo (etiqueta si es un elemento HTML). Sólo lectura.</td>
+</tr>
+<tr>
+<td align="left"><code>.textContent</code></td>
+<td align="left">Devuelve el contenido de texto del elemento. Se puede asignar para modificar.</td>
+</tr>
+<tr>
+<td align="left"><code>.innerHTML</code></td>
+<td align="left">Devuelve el contenido HTML del elemento. Se puede usar asignar para modificar.</td>
+</tr>
+<tr>
+<td align="left"><code>.outerHTML</code></td>
+<td align="left">Idem a <code>.innerHTML</code> pero incluyendo el HTML del propio elemento HTML.</td>
+</tr>
+<tr>
+<td align="left"><code>.innerText</code></td>
+<td align="left">Versión no estándar de <code>.textContent</code> de Internet Explorer con diferencias. <strong>Evitar</strong>.</td>
+</tr>
+<tr>
+<td align="left"><code>.outerText</code></td>
+<td align="left">Versión no estándar de <code>.textContent</code>/<code>.outerHTML</code> de Internet Explorer. <strong>Evitar</strong>.</td>
+</tr>
+</tbody>
+</table>
+<p>La propiedad <code>nodeName</code> nos devuelve el nombre del todo, que en elementos HTML es interesante puesto que nos devuelve el nombre de la etiqueta <strong>en mayúsculas</strong>. Se trata de una propiedad de sólo lectura, por lo cuál no podemos modificarla, sólo acceder a ella.</p>
+<h4 id="la-propiedad-textcontent">La propiedad textContent<a class="headerlink" href="#la-propiedad-textcontent" title="Permanent link">&para;</a></h4>
+<p>La propiedad <code>.textContent</code> nos devuelve el <strong>contenido de texto</strong> de un elemento HTML. Es útil para obtener (<em>o modificar</em>) <strong>sólo el texto</strong> dentro de un elemento, obviando el etiquetado HTML:</p>
+<pre><code>const div = document.querySelector("div");  // &lt;div&gt;&lt;/div&gt;
+
+div.textContent = "Hola a todos"; // &lt;div&gt;Hola a todos&lt;/div&gt;
+div.textContent;  // "Hola a todos"
+</code></pre>
+<p>Observa que también podemos utilizarlo para <strong>reemplazar el contenido de texto</strong>, asignándolo como si fuera una variable o constante. En el caso de que el elemento tenga anidadas varias etiquetas HTML una dentro de otra, la propiedad <code>.textContent</code> se quedará sólo con el contenido textual completo, como se puede ver en el siguiente ejemplo:</p>
+<pre><code>// Obtenemos &lt;div class="info"&gt;Hola &lt;strong&gt;amigos&lt;/strong&gt;&lt;/div&gt;
+const div = document.querySelector(".info");
+
+div.textContent;  // "Hola amigos"
+</code></pre>
+<h4 id="la-propiedad-innerhtml">La propiedad innerHTML<a class="headerlink" href="#la-propiedad-innerhtml" title="Permanent link">&para;</a></h4>
+<p>Por otro lado, la propiedad <code>.innerHTML</code> nos permite hacer lo mismo, pero interpretando el código HTML indicado y renderizando sus elementos:</p>
+<pre><code>const div = document.querySelector(".info"); // &lt;div class="info"&gt;&lt;/div&gt;
+
+div.innerHTML = "&lt;strong&gt;Importante&lt;/strong&gt;"; // Interpreta el HTML
+div.innerHTML;  // "&lt;strong&gt;Importante&lt;/strong&gt;"
+div.textContent;  // "Importante"
+
+div.textContent = "&lt;strong&gt;Importante&lt;/strong&gt;";  // No interpreta el HTML
+</code></pre>
+<p>Observa que la diferencia principal entre <code>.innerHTML</code> y <code>.textContent</code> es que el primero renderiza e interpreta el marcado HTML, mientras que el segundo lo inserta como contenido de texto literalmente.</p>
+<blockquote>
+<p>Ten en cuenta que la propiedad <code>.innerHTML</code> comprueba y parsea el marcado HTML escrito (<em>corrigiendo si hay errores</em>) antes de realizar la asignación. Por ejemplo, si en el ejemplo anterior nos olvidamos de escribir el cierre <code>&lt;/strong&gt;</code> de la etiqueta, <code>.innerHTML</code> automáticamente lo cerrará. Esto puede provocar algunas incongruencias si el código es incorrecto o una disminución de rendimiento en textos muy grandes que hay que preprocesar.</p>
+</blockquote>
+<p>Por otro lado, la propiedad <code>.outerHTML</code> es muy similar a <code>.innerHTML</code>. Mientras que esta última devuelve el código HTML del interior de un elemento HTML, <code>.outerHTML</code> devuelve también el código HTML del propio elemento en cuestión. Esto puede ser muy útil para reemplazar un elemento HTML combinándolo con <code>.innerHTML</code>:</p>
+<pre><code>const data = document.querySelector(".data");
+data.innerHTML = "&lt;h1&gt;Tema 1&lt;/h1&gt;";
+
+data.textContent;   // "Tema 1"
+data.innerHTML;     // "&lt;h1&gt;Tema 1&lt;/h1&gt;"
+data.outerHTML;     // "&lt;div class="data"&gt;&lt;h1&gt;Tema 1&lt;/h1&gt;&lt;/div&gt;"
+</code></pre>
+<p>En este ejemplo se pueden observar las diferencias entre las propiedades <code>.textContent</code> (<em>contenido de texto</em>), <code>.innerHTML</code> (<em>contenido HTML</em>) y <code>.outerHTML</code> (<em>contenido y contenedor HTML</em>).</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Las propiedades <code>.innerText</code> y <code>.outerText</code> son propiedades <strong>no estándar</strong> de Internet Explorer. Se recomienda sólo utilizarlas con motivos de fallbacks o para dar soporte a versiones antiguas de Internet Explorer. En su lugar debería utilizarse <code>.textContent</code>.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="insertar-elementos">Insertar elementos<a class="headerlink" href="#insertar-elementos" title="Permanent link">&para;</a></h3>
+<p>A pesar de que los métodos anteriores son suficientes para crear elementos y estructuras HTML complejas, sólo son aconsejables para pequeños fragmentos de código o texto, ya que en estructuras muy complejas (<em>con muchos elementos HTML</em>) la <strong>legibilidad del código</strong> sería menor y además, el rendimiento podría resentirse.</p>
+<p>Hemos aprendido a <a href="/javascript/dom/crear-elementos-dom/">crear elementos HTML y sus atributos</a>, pero aún no hemos visto como añadirlos al documento HTML actual (<em>conectarlos al DOM</em>), operación que se puede realizar de diferentes formas mediante los siguientes métodos disponibles:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Métodos</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>.appendChild(node)</code></td>
+<td align="left">Añade como hijo el nodo <code>node</code>. Devuelve el nodo insertado.</td>
+</tr>
+<tr>
+<td align="left"><code>.insertAdjacentElement(pos, elem)</code></td>
+<td align="left">Inserta el elemento <code>elem</code> en la posición <code>pos</code>. Si falla, .</td>
+</tr>
+<tr>
+<td align="left"><code>.insertAdjacentHTML(pos, str)</code></td>
+<td align="left">Inserta el código HTML <code>str</code> en la posición <code>pos</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.insertAdjacentText(pos, text)</code></td>
+<td align="left">Inserta el texto <code>text</code> en la posición <code>pos</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.insertBefore(new, node)</code></td>
+<td align="left">Inserta el nodo <code>new</code> antes de <code>node</code> y como hijo del nodo actual.</td>
+</tr>
+</tbody>
+</table>
+<p>De ellos, probablemente el más extendido es <code>.appendChild()</code>, no obstante, la familia de métodos <code>.insertAdjacent*()</code> también tiene buen soporte en navegadores y puede usarse de forma segura en la actualidad.</p>
+<h4 id="el-metodo-appendchild">El método appendChild()<a class="headerlink" href="#el-metodo-appendchild" title="Permanent link">&para;</a></h4>
+<p>Uno de los métodos más comunes para añadir un elemento HTML creado con Javascript es <code>appendChild()</code>. Como su propio nombre indica, este método realiza un <strong>«append»</strong>, es decir, inserta el elemento como un hijo al final de todos los elementos hijos que existan.</p>
+<p>Es importante tener clara esta particularidad, porque aunque es lo más común, no siempre querremos insertar el elemento en esa posición:</p>
+<pre><code>const img = document.createElement("img");
+img.src = "https://lenguajejs.com/assets/logo.svg";
+img.alt = "Logo Javascript";
+
+document.body.appendChild(img);
+</code></pre>
+<p>En este ejemplo podemos ver como creamos un elemento <code>&lt;img&gt;</code> que aún no está conectado al DOM. Posteriormente, añadimos los atributos <code>src</code> y <code>alt</code>, obligatorios en una etiqueta de imagen. Por último, conectamos al DOM el elemento, utilizando el método <code>.appendChild()</code> sobre <code>document.body</code> que no es más que una referencia a la etiqueta <code>&lt;body&gt;</code> del documento HTML.</p>
+<p>Veamos otro ejemplo:</p>
+<pre><code>const div = document.createElement("div");
+div.textContent = "Esto es un div insertado con JS.";
+
+const app = document.createElement("div"); // &lt;div&gt;&lt;/div&gt;
+app.id = "app"; // &lt;div id="app"&gt;&lt;/div&gt;
+app.appendChild(div); // &lt;div id="app"&gt;&lt;div&gt;Esto es un div insertado con JS&lt;/div&gt;&lt;/div&gt;
+</code></pre>
+<p>En este ejemplo, estamos creando dos elementos, e insertando uno dentro de otro. Sin embargo, a diferencia del anterior, el elemento <code>app</code> no está conectado aún al DOM, sino que lo tenemos aislado en esa variable, sin insertar en el documento. Esto ocurre porque <code>app</code> lo acabamos de crear, y en el ejemplo anterior usabamos <code>document.body</code> que es una referencia a un elemento que ya existe en el documento.</p>
+<h4 id="los-metodos-insertadjacent">Los métodos insertAdjacent*()<a class="headerlink" href="#los-metodos-insertadjacent" title="Permanent link">&para;</a></h4>
+<p>Los métodos de la familia <code>insertAdjacent</code> son bastante más versátiles que <code>.appendChild()</code>, ya que permiten muchas más posibilidades. Tenemos tres versiones diferentes:</p>
+<ul>
+<li><code>.insertAdjacentElement()</code> donde insertamos un objeto</li>
+<li><code>.insertAdjacentHTML()</code> donde insertamos <strong>código HTML</strong> directamente (<em>similar a innerHTML</em>)</li>
+<li><code>.insertAdjacentText()</code> donde no insertamos elementos HTML, sino un con texto</li>
+</ul>
+<p>En las tres versiones, debemos indicar por parámetro un <code>pos</code> como primer parámetro para indicar en que posición vamos a insertar el contenido. Hay 4 opciones posibles:</p>
+<ul>
+<li><code>beforebegin</code>: El elemento se inserta <strong>antes</strong> de la etiqueta HTML de apertura.</li>
+<li><code>afterbegin</code>: El elemento se inserta <strong>dentro</strong> de la etiqueta HTML, <strong>antes de su primer hijo</strong>.</li>
+<li><code>beforeend</code>: El elemento se inserta <strong>dentro</strong> de la etiqueta HTML, <strong>después de su último hijo</strong>. Es el equivalente a usar el método <code>.appendChild()</code>.</li>
+<li><code>afterend</code>: El elemento se inserta <strong>después</strong> de la etiqueta HTML de cierre.</li>
+</ul>
+<p>Veamos algunos ejemplo aplicando cada uno de ellos con el método <code>.insertAdjacentElement()</code>:</p>
+<pre><code>const div = document.createElement("div");  // &lt;div&gt;&lt;/div&gt;
+div.textContent = "Ejemplo";                // &lt;div&gt;Ejemplo&lt;/div&gt;
+
+const app = document.querySelector("#app"); // &lt;div id="app"&gt;App&lt;/div&gt;
+
+app.insertAdjacentElement("beforebegin", div);
+// Opción 1: &lt;div&gt;Ejemplo&lt;/div&gt; &lt;div id="app"&gt;App&lt;/div&gt;
+
+app.insertAdjacentElement("afterbegin", div);
+// Opción 2: &lt;div id="app"&gt; &lt;div&gt;Ejemplo&lt;/div&gt; App&lt;/div&gt;
+
+app.insertAdjacentElement("beforeend", div);
+// Opción 3: &lt;div id="app"&gt;App &lt;div&gt;Ejemplo&lt;/div&gt; &lt;/div&gt;
+
+app.insertAdjacentElement("afterend", div);
+// Opción 4: &lt;div id="app"&gt;App&lt;/div&gt; &lt;div&gt;Ejemplo&lt;/div&gt;
+</code></pre>
+<p>Ten en cuenta que en el ejemplo muestro <strong>varias opciones alternativas</strong>, no lo que ocurriría tras ejecutar las cuatro opciones una detrás de otra.</p>
+<p>Por otro lado, notar que tenemos <strong>tres versiones</strong> en esta familia de métodos, una que actua sobre elementos HTML (<em>la que hemos visto</em>), pero otras dos que actuan sobre código HTML y sobre nodos de texto. Veamos un ejemplo de cada una:</p>
+<pre><code>app.insertAdjacentElement("beforebegin", div);
+// Opción 1: &lt;div&gt;Ejemplo&lt;/div&gt; &lt;div id="app"&gt;App&lt;/div&gt;
+
+app.insertAdjacentHTML("beforebegin", '&lt;p&gt;Hola&lt;/p&gt;');
+// Opción 2: &lt;p&gt;Hola&lt;/p&gt; &lt;div id="app"&gt;App&lt;/div&gt;
+
+app.insertAdjacentText("beforebegin", "Hola a todos");
+// Opción 3: Hola a todos &lt;div id="app"&gt;App&lt;/div&gt;
+</code></pre>
+<h4 id="el-metodo-insertbefore">El método insertBefore()<a class="headerlink" href="#el-metodo-insertbefore" title="Permanent link">&para;</a></h4>
+<p>Por último, el método <code>insertBefore(newnode, node)</code> es un método más específico y menos utilizado en el que se puede especificar exactamente el lugar a insertar un nodo. El parámetro <code>newnode</code> es el nodo a insertar, mientras que <code>node</code> puede ser:</p>
+<ul>
+<li>; insertando <code>newnode</code> después del último nodo hijo. Equivalente a <code>.appendChild()</code>.</li>
+<li>o ; insertando <code>newnode</code> antes de dicho <code>node</code> de referencia.</li>
+</ul>
+<h3 id="eliminar-elementos">Eliminar elementos<a class="headerlink" href="#eliminar-elementos" title="Permanent link">&para;</a></h3>
+<p>Al igual que podemos insertar o reemplazar elementos, también podemos eliminarlos. Ten en cuenta que al «eliminar» un nodo o elemento HTML, lo que hacemos realmente no es borrarlo, sino <strong>desconectarlo del DOM o documento HTML</strong>, de modo que no están conectados, pero siguen existiendo.</p>
+<h4 id="el-metodo-remove">El método remove()<a class="headerlink" href="#el-metodo-remove" title="Permanent link">&para;</a></h4>
+<p>Probablemente, la forma más sencilla de eliminar nodos o elementos HTML es utilizando el método <code>.remove()</code> sobre el nodo o etiqueta a eliminar:</p>
+<pre><code>const div = document.querySelector(".deleteme");
+
+div.isConnected;    // true
+div.remove();
+div.isConnected;    // false
+</code></pre>
+<p>En este caso, lo que hemos hecho es buscar el elemento HTML <code>&lt;div class="deleteme"&gt;</code> en el documento HTML y desconectarlo de su elemento padre, de forma que dicho elemento pasa a no pertenecer al documento HTML.</p>
+<p>Sin embargo, existen algunos métodos más para eliminar o reemplazar elementos:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Métodos</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>.remove()</code></td>
+<td align="left">Elimina el propio nodo de su elemento padre.</td>
+</tr>
+<tr>
+<td align="left"><code>.removeChild(node)</code></td>
+<td align="left">Elimina y devuelve el nodo hijo <code>node</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.replaceChild(new, old)</code></td>
+<td align="left">Reemplaza el nodo hijo <code>old</code> por <code>new</code>. Devuelve <code>old</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>El método <code>.remove()</code> se encarga de desconectarse del DOM a sí mismo, mientras que el segundo método, <code>.removeChild()</code>, desconecta el nodo o elemento HTML proporcionado. Por último, con el método <code>.replaceChild()</code> se nos permite cambiar un nodo por otro.</p>
+<h4 id="el-metodo-removechild">El método removeChild()<a class="headerlink" href="#el-metodo-removechild" title="Permanent link">&para;</a></h4>
+<p>En algunos casos, nos puede interesar eliminar un nodo hijo de un elemento. Para esas situaciones, podemos utilizar el método <code>.removeChild(node)</code> donde <code>node</code> es el nodo hijo que queremos eliminar:</p>
+<pre><code>const div = document.querySelector(".item:nth-child(2)");   // &lt;div class="item"&gt;2&lt;/div&gt;
+
+document.body.removeChild(div); // Desconecta el segundo .item
+</code></pre>
+<h4 id="el-metodo-replacechild">El método replaceChild()<a class="headerlink" href="#el-metodo-replacechild" title="Permanent link">&para;</a></h4>
+<p>De la misma forma, el método <code>replaceChild(new, old)</code> nos permite cambiar un nodo hijo <code>old</code> por un nuevo nodo hijo <code>new</code>. En ambos casos, el método nos devuelve el nodo reemplazado:</p>
+<pre><code>const div = document.querySelector(".item:nth-child(2)");
+
+const newnode = document.createElement("div");
+newnode.textContent = "DOS";
+
+document.body.replaceChild(newnode, div);
+</code></pre>
+<hr />
+<h2 id="manipular-clases-css-classlist">Manipular clases CSS (classList)<a class="headerlink" href="#manipular-clases-css-classlist" title="Permanent link">&para;</a></h2>
+<p>En CSS es muy común utilizar múltiples <strong>clases CSS</strong> para asignar estilos relacionados dependiendo de lo que queramos. Para ello, basta hacer cosas como la que veremos a continuación:</p>
+<pre><code>&lt;div class="element shine dark-theme"&gt;&lt;/div&gt;
+</code></pre>
+<ul>
+<li>La clase <code>element</code> sería la clase general que representa el elemento, y que tiene estilos fijos.</li>
+<li>La clase <code>shine</code> podría tener una <a href="https://lenguajecss.com/css/animaciones/animaciones/">animación CSS</a> para aplicar un efecto de brillo.</li>
+<li>La clase <code>dark-theme</code> podría tener los estilos de un elemento en un tema oscuro.</li>
+</ul>
+<p>Todo esto se utiliza sin problema de forma estática, pero cuando comenzamos a programar en Javascript, buscamos una forma <strong>dinámica</strong>, práctica y cómoda de hacerlo desde Javascript, y es de lo que tratará este artículo.</p>
+<h3 id="la-propiedad-classname">La propiedad className<a class="headerlink" href="#la-propiedad-classname" title="Permanent link">&para;</a></h3>
+<p>Javascript tiene a nuestra disposición una propiedad <code>.className</code> en todos los elementos HTML. Dicha propiedad contiene el valor del atributo HTML <code>class</code>, y puede tanto leerse como reemplazarse:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Propiedad</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>.className</code></td>
+<td align="left">Acceso directo al valor del atributo HTML <code>class</code>. También se puede asignar.</td>
+</tr>
+<tr>
+<td align="left"><code>.classList</code></td>
+<td align="left">Objeto especial para manejar clases CSS. Contiene métodos y propiedades de ayuda.</td>
+</tr>
+</tbody>
+</table>
+<p>La propiedad <code>.className</code> viene a ser la modalidad directa y rápida de utilizar el getter <code>.getAttribute("class")</code> y el setter <code>.setAttribute("class", v)</code>. Veamos un ejemplo utilizando estas propiedades y métodos y su equivalencia:</p>
+<pre><code>const div = document.querySelector(".element");
+
+// Obtener clases CSS
+div.className;              // "element shine dark-theme"
+div.getAttribute("class");  // "element shine dark-theme"
+
+// Modificar clases CSS
+div.className = "elemento brillo tema-oscuro";
+div.setAttribute("class", "elemento brillo tema-oscuro");
+</code></pre>
+<p>Trabajar con <code>.className</code> tiene una limitación cuando trabajamos con <strong>múltiples clases CSS</strong>, y es que puedes querer realizar una manipulación sólo en una clase CSS concreta, dejando las demás intactas. En ese caso, modificar clases CSS mediante una asignación <code>.className</code> se vuelve poco práctico. Probablemente, la forma más interesante de manipular clases desde Javascript es mediante el objeto <code>.classList</code>.</p>
+<h3 id="el-objeto-classlist">El objeto classList<a class="headerlink" href="#el-objeto-classlist" title="Permanent link">&para;</a></h3>
+<p>Para trabajar más cómodamente, existe un sistema muy interesante para trabajar con clases: el objeto <code>classList</code>. Se trata de un objeto especial (<em>lista de clases</em>) que contiene una serie de ayudantes que permiten trabajar con las clases de forma más intuitiva y lógica.</p>
+<p>Si accedemos a <code>.classList</code>, nos devolverá un (<em>lista</em>) de clases CSS de dicho elemento. Pero además, incorpora una serie de métodos ayudantes que nos harán muy sencillo trabajar con clases CSS:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Método</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>.classList</code></td>
+<td align="left">Devuelve la lista de clases del elemento HTML.</td>
+</tr>
+<tr>
+<td align="left"><code>.classList.item(n)</code></td>
+<td align="left">Devuelve la clase número <code>n</code> del elemento HTML.</td>
+</tr>
+<tr>
+<td align="left"><code>.classList.add(c1, c2, ...)</code></td>
+<td align="left">Añade las clases <code>c1</code>, <code>c2</code>... al elemento HTML.</td>
+</tr>
+<tr>
+<td align="left"><code>.classList.remove(c1, c2, ...)</code></td>
+<td align="left">Elimina las clases <code>c1</code>, <code>c2</code>... del elemento HTML.</td>
+</tr>
+<tr>
+<td align="left"><code>.classList.contains(clase)</code></td>
+<td align="left">Indica si la <code>clase</code> existe en el elemento HTML.</td>
+</tr>
+<tr>
+<td align="left"><code>.classList.toggle(clase)</code></td>
+<td align="left">Si la <code>clase</code> no existe, la añade. Si no, la elimina.</td>
+</tr>
+<tr>
+<td align="left"><code>.classList.toggle(clase, expr)</code></td>
+<td align="left">Si <code>expr</code> es <code>true</code>, añade <code>clase</code>. Si no, la elimina.</td>
+</tr>
+<tr>
+<td align="left"><code>.classList.replace(old, new)</code></td>
+<td align="left">Reemplaza la clase <code>old</code> por la clase <code>new</code>.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><strong>OJO</strong>: Recuerda que el objeto <code>.classList</code> aunque parece que devuelve un no es un array, sino un elemento que actúa como un array, por lo que puede carecer de algunos métodos o propiedades concretos. Si quieres convertirlo a un array real, utiliza <code>Array.from()</code>.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Veamos un ejemplo de uso de cada método de ayuda. Supongamos que tenemos el siguiente elemento HTML en nuestro documento. Vamos a acceder a el y a utilizar el objeto <code>.classList</code> con dicho elemento:</p>
+<pre><code>&lt;div id="page" class="info data dark" data-number="5"&gt;&lt;/div&gt;
+</code></pre>
+<p>Observa que dicho elemento HTML tiene:</p>
+<ul>
+<li>Un atributo <code>id</code></li>
+<li>Tres clases CSS: <code>info</code>, <code>data</code> y <code>dark</code></li>
+<li>Un metadato HTML <code>data-number</code></li>
+</ul>
+<h4 id="anadir-y-eliminar-clases-css">Añadir y eliminar clases CSS<a class="headerlink" href="#anadir-y-eliminar-clases-css" title="Permanent link">&para;</a></h4>
+<p>Los métodos <code>classList.add()</code> y <code>classList.remove()</code> permiten indicar una o múltiples clases CSS a añadir o eliminar. Observa el siguiente código donde se ilustra un ejemplo:</p>
+<pre><code>const div = document.querySelector("#page");
+
+div.classList; // ["info", "data", "dark"]
+
+div.classList.add("uno", "dos"); // No devuelve nada.
+div.classList; // ["info", "data", "dark", "uno", "dos"]
+
+div.classList.remove("uno", "dos"); // No devuelve nada.
+div.classList; // ["info", "data", "dark"]
+</code></pre>
+<p>En el caso de que se añada una clase CSS que ya existía previamente, o que se elimine una clase CSS que no existía, simplemente no ocurrirá nada.</p>
+<h3 id="conmutar-o-alternar-clases-css">Conmutar o alternar clases CSS<a class="headerlink" href="#conmutar-o-alternar-clases-css" title="Permanent link">&para;</a></h3>
+<p>Un ayudante muy interesante es el del método <code>classList.toggle()</code>, que lo que hace es <strong>añadir o eliminar la clase CSS</strong> dependiendo de si ya existía previamente. Es decir, añade la clase si no existía previamente o elimina la clase si existía previamente:</p>
+<pre><code>const div = document.querySelector("#page");
+
+div.classList; // ["info", "data", "dark"]
+
+div.classList.toggle("info"); // Como "info" existe, lo elimina. Devuelve "false"
+div.classList; // ["data", "dark"]
+
+div.classList.toggle("info"); // Como "info" no existe, lo añade. Devuelve "true"
+div.classList; // ["info", "data", "dark"]
+</code></pre>
+<p>Observa que <code>.toggle()</code> devuelve un que será <code>true</code> o <code>false</code> dependiendo de si, tras la operación, la clase sigue existiendo o no. Ten en cuenta que en <code>.toggle()</code>, al contrario que <code>.add()</code> o <code>.remove()</code>, sólo se puede indicar una clase CSS por parámetro.</p>
+<h3 id="otros-metodos-de-clases-css">Otros métodos de clases CSS<a class="headerlink" href="#otros-metodos-de-clases-css" title="Permanent link">&para;</a></h3>
+<p>Por otro lado, tenemos otros métodos menos utilizados, pero también muy interesantes:</p>
+<ul>
+<li>El método <code>.classList.item(n)</code> nos devuelve la clase CSS ubicada en la posición <code>n</code>.</li>
+<li>El método <code>.classList.contains(name)</code> nos devuelve si la clase CSS <code>name</code> existe o no.</li>
+<li>El método <code>.classList.replace(old, current)</code> cambia la clase <code>old</code> por la clase <code>current</code>.</li>
+</ul>
+<p>Veamos un ejemplo:</p>
+<pre><code>const div = document.querySelector("#page");
+
+div.classList; // ["info", "data", "dark"]
+
+div.classList.item(1); // 'data'
+div.classList.contains("info"); // Devuelve `true` (existe la clase)
+div.classList.replace("dark", "light"); // Devuelve `true` (se hizo el cambio)
+</code></pre>
+<p>Con todos estos métodos de ayuda, nos resultará mucho más sencillo manipular clases CSS desde Javascript en nuestro código.</p>
+<hr />
+<h2 id="navegar-por-elementos-del-dom">Navegar por elementos del DOM<a class="headerlink" href="#navegar-por-elementos-del-dom" title="Permanent link">&para;</a></h2>
+<p>En algunas ocasiones en las que conocemos y controlamos perfectamente la estructura del código HTML de la página, nos puede resultar más cómodo tener a nuestra disposición una serie de propiedades para <strong>navegar por la jerarquía</strong> de elementos HTML relacionados.</p>
+<h3 id="navegar-a-traves-de-elementos">Navegar a través de elementos<a class="headerlink" href="#navegar-a-traves-de-elementos" title="Permanent link">&para;</a></h3>
+<p>Las propiedades que veremos a continuación devuelven información de otros elementos relacionados con el elemento en cuestión.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Propiedades de elementos HTML</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>children</code></td>
+<td align="left">Devuelve una lista de elementos HTML hijos.</td>
+</tr>
+<tr>
+<td align="left"><code>parentElement</code></td>
+<td align="left">Devuelve el padre del elemento o si no tiene.</td>
+</tr>
+<tr>
+<td align="left"><code>firstElementChild</code></td>
+<td align="left">Devuelve el primer elemento hijo.</td>
+</tr>
+<tr>
+<td align="left"><code>lastElementChild</code></td>
+<td align="left">Devuelve el último elemento hijo.</td>
+</tr>
+<tr>
+<td align="left"><code>previousElementSibling</code></td>
+<td align="left">Devuelve el elemento hermano anterior o si no tiene.</td>
+</tr>
+<tr>
+<td align="left"><code>nextElementSibling</code></td>
+<td align="left">Devuelve el elemento hermano siguiente o si no tiene.</td>
+</tr>
+</tbody>
+</table>
+<p>En primer lugar, tenemos la propiedad <code>children</code> que nos ofrece un con una lista de elementos HTML hijos. Podríamos acceder a cualquier hijo utilizando los corchetes de array y seguir utilizando otras propiedades en el hijo seleccionado.</p>
+<ul>
+<li>La propiedad <code>firstElementChild</code> sería un acceso rápido a <code>children[0]</code></li>
+<li>La propiedad <code>lastElementChild</code> sería un acceso rápido al último elemento hijo.</li>
+</ul>
+<p>Por último, tenemos las propiedades <code>previousElementSibling</code> y <code>nextElementSibling</code> que nos devuelven los elementos hermanos anteriores o posteriores, respectivamente. La propiedad <code>parentElement</code> nos devolvería el padre del elemento en cuestión. En el caso de no existir alguno de estos elementos, nos devolvería .</p>
+<p>Consideremos el siguiente documento HTML:</p>
+<pre><code>&lt;html&gt;
+  &lt;body&gt;
+    &lt;div id="app"&gt;
+      &lt;div class="header"&gt;
+        &lt;h1&gt;Titular&lt;/h1&gt;
+      &lt;/div&gt;
+      &lt;p&gt;Párrafo de descripción&lt;/p&gt;
+      &lt;a href="/"&gt;Enlace&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>Si trabajamos bajo este documento HTML, y utilizamos el siguiente código Javascript, podremos «navegar» por la jerarquía de elementos, <strong>moviéndonos entre elementos</strong> padre, hijo o hermanos:</p>
+<pre><code>document.body.children.length;  // 1
+document.body.children;         // &lt;div id="app"&gt;
+document.body.parentElement;    // &lt;html&gt;
+
+const app = document.querySelector("#app");
+
+app.children;                   // [div.header, p, a]
+app.firstElementChild;          // &lt;div class="header"&gt;
+app.lastElementChild;           // &lt;a href="/"&gt;
+
+const a = app.querySelector("a");
+
+a.previousElementSibling;       // &lt;p&gt;
+a.nextElementSibling;           // null
+</code></pre>
+<p>Estas son las propiedades más habituales para navegar entre elementos HTML, sin embargo, tenemos otra modalidad un poco más detallada.</p>
+<h3 id="navegar-a-traves-de-nodos">Navegar a través de nodos<a class="headerlink" href="#navegar-a-traves-de-nodos" title="Permanent link">&para;</a></h3>
+<p>La primera tabla que hemos visto nos muestra una serie de propiedades cuando trabajamos con . Sin embargo, si queremos hilar más fino y trabajar a nivel de , podemos utilizar las siguientes propiedades, que son equivalentes a las anteriores:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Propiedades de nodos HTML</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>childNodes</code></td>
+<td align="left">Devuelve una lista de nodos hijos. Incluye nodos de texto y comentarios.</td>
+</tr>
+<tr>
+<td align="left"><code>parentNode</code></td>
+<td align="left">Devuelve el nodo padre del nodo o si no tiene.</td>
+</tr>
+<tr>
+<td align="left"><code>firstChild</code></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Devuelve el primer nodo hijo.</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>lastChild</code></td>
+<td align="left">Devuelve el último nodo hijo.</td>
+</tr>
+<tr>
+<td align="left"><code>previousSibling</code></td>
+<td align="left">Devuelve el nodo hermano anterior o si no tiene.</td>
+</tr>
+<tr>
+<td align="left"><code>nextSibling</code></td>
+<td align="left">Devuelve el nodo hermano siguiente o si no tiene.</td>
+</tr>
+</tbody>
+</table>
+<p>Estas propiedades suelen ser más interesantes cuando queremos trabajar sobre nodos de texto, ya que incluso los espacios en blanco entre elementos HTML influyen. Volvamos a trabajar sobre el documento HTML anterior, pero ahora utilizando este grupo de propiedades basadas en :</p>
+<pre><code>document.body.childNodes.length;  // 3
+document.body.childNodes;         // [text, div#app, text]
+document.body.parentNode;         // &lt;html&gt;
+
+const app = document.querySelector("#app");
+
+app.childNodes;                   // [text, div.header, text, p, text, a, text]
+app.firstChild.textContent;       // "                             "
+app.lastChild.textContent;        // "                             "
+
+const a = app.querySelector("a");
+
+a.previousSibling;                // #text
+a.nextSibling;                    // #text
+</code></pre>
+<p>Con todo esto, ya tenemos suficientes herramientas para trabajar a bajo nivel con las etiquetas y nodos HTML de un documento HTML desde Javascript.</p>
+<hr />
+<p><strong>Fuente:</strong> <a href="https://lenguajejs.com/">Lenguaje Javascript</a> por <a href="https://manzdev.github.io/">Manz</a></p>
+<h2 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../03-caracteristicas/" title="Características" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Características
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../05-asincronia/" title="Asincronía" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Asincronía
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/saucedoinfo" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/saucedoinfo" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.instagram.com/saucedo.info/" target="_blank" rel="noopener" title="www.instagram.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.instant', 'navigation.expand', 'tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

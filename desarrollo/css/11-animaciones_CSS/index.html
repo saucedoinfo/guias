@@ -1,0 +1,1807 @@
+
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Coleccion de Guias de Desarrollo y diseño.">
+      
+      
+        <link rel="canonical" href="https://saucedoinfo.github.io/guias/desarrollo/css/11-animaciones_CSS/">
+      
+      
+        <meta name="author" content="Fernando S. Saucedo">
+      
+      <link rel="shortcut icon" href="../../../img/favicon-16x16.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.14">
+    
+    
+      
+        <title>Animaciones CSS - Guias de Desarrollo y diseño</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d3202873.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ff0a5ce4.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#000000">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#animaciones-css" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-header-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Guias de Desarrollo y diseño
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Animaciones CSS
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../html/01-introduccion_a_HTML5/" class="md-tabs__link">
+          Desarrollo
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" class="md-tabs__link">
+          Herramientas IT
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    Guias de Desarrollo y diseño
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Desarrollo
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Desarrollo" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Desarrollo
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Html
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Html" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        <span class="md-nav__icon md-icon"></span>
+        Html
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/01-introduccion_a_HTML5/" title="Introduccion a HTML" class="md-nav__link">
+      Introduccion a HTML
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/02-etiquetas_semanticas/" title="Etiquetas semánticas" class="md-nav__link">
+      Etiquetas semánticas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/03-etiquetas_multimedia/" title="Etiquetas multimedias" class="md-nav__link">
+      Etiquetas multimedias
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/04-etiquetas_de_cabecera/" title="Etiquetas de cabecera" class="md-nav__link">
+      Etiquetas de cabecera
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/05-etiquetas_de_formularios/" title="Etiquetas de formularios" class="md-nav__link">
+      Etiquetas de formularios
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/06-etiquetas_de_scripting/" title="Etiquetas de scripting" class="md-nav__link">
+      Etiquetas de scripting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" checked>
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Css
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Css" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        <span class="md-nav__icon md-icon"></span>
+        Css
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01-introduccion_a_CSS/" title="Introducción a CSS" class="md-nav__link">
+      Introducción a CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02-modelo_de_cajas/" title="Modelo de cajas" class="md-nav__link">
+      Modelo de cajas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-colores_y_fondos/" title="Colores y fondos" class="md-nav__link">
+      Colores y fondos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-selectores_CSS/" title="Selectores CSS" class="md-nav__link">
+      Selectores CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-Fuentes_y_tipografias/" title="Fuentes y tipografías" class="md-nav__link">
+      Fuentes y tipografías
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-representacion_de_datos/" title="Representación de datos" class="md-nav__link">
+      Representación de datos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../07_maquetacion_y_colocacion/" title="Maquetación y colocación" class="md-nav__link">
+      Maquetación y colocación
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../08-interacciones/" title="Interacciones" class="md-nav__link">
+      Interacciones
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../09-efectos/" title="Efectos" class="md-nav__link">
+      Efectos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../10-responsive_Web_Design/" title="Responsive Web Design" class="md-nav__link">
+      Responsive Web Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Animaciones CSS
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Animaciones CSS" class="md-nav__link md-nav__link--active">
+      Animaciones CSS
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#transiciones-css" class="md-nav__link">
+    Transiciones CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Transiciones CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcion-de-tiempo" class="md-nav__link">
+    Función de tiempo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cubic-bezier" class="md-nav__link">
+    Cubic-Bezier()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atajo-transiciones" class="md-nav__link">
+    Atajo: Transiciones
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#div-transition-property-duration-timing-function-delay-transition-all-02s-ease-in" class="md-nav__link">
+    div {
+      /* transition: &lt;property&gt; &lt;duration&gt; &lt;timing-function&gt; &lt;delay&gt; */
+      transition: all 0.2s ease-in;
+    }
+
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#animaciones-css_1" class="md-nav__link">
+    Animaciones CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Animaciones CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#propiedades-de-animacion-css" class="md-nav__link">
+    Propiedades de animación CSS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atajo-animaciones" class="md-nav__link">
+    Atajo: Animaciones
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fotogramas-keyframes" class="md-nav__link">
+    Fotogramas (keyframes)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encadenar-animaciones" class="md-nav__link">
+    Encadenar animaciones
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformaciones-css" class="md-nav__link">
+    Transformaciones CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformaciones CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funciones-2d" class="md-nav__link">
+    Funciones 2D
+  </a>
+  
+    <nav class="md-nav" aria-label="Funciones 2D">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#translaciones" class="md-nav__link">
+    Translaciones
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#escalado" class="md-nav__link">
+    Escalado
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotaciones" class="md-nav__link">
+    Rotaciones
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deformaciones" class="md-nav__link">
+    Deformaciones
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funciones-3d" class="md-nav__link">
+    Funciones 3D
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformaciones-multiples" class="md-nav__link">
+    Transformaciones múltiples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      JavaScript
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="JavaScript" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon"></span>
+        JavaScript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/01-introducci%C3%B3n_a_javascript/" title="Introducción a Javascript" class="md-nav__link">
+      Introducción a Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/02-fundamentos_de_javascript/" title="Fundamentos de Javascript" class="md-nav__link">
+      Fundamentos de Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/03-caracteristicas/" title="Características" class="md-nav__link">
+      Características
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/04-DOM/" title="DOM" class="md-nav__link">
+      DOM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/05-asincronia/" title="Asincronía" class="md-nav__link">
+      Asincronía
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/06-peticiones_HTTP/" title="Peticiones HTTP" class="md-nav__link">
+      Peticiones HTTP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Herramientas IT
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Herramientas IT" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Herramientas IT
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Terminal
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Terminal" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon"></span>
+        Terminal
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" title="Introducción a la terminal" class="md-nav__link">
+      Introducción a la terminal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/02-operaciones_con_ficheros/" title="Operaciones con ficheros" class="md-nav__link">
+      Operaciones con ficheros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/03-administraci%C3%B3n_del_sistema/" title="Administración del sistema" class="md-nav__link">
+      Administración del sistema
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/markdown/" title="Markdown" class="md-nav__link">
+      Markdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/pip/" title="Pip" class="md-nav__link">
+      Pip
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/mkdocs/" title="Mkdocs" class="md-nav__link">
+      Mkdocs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../about/" title="Acerca de" class="md-nav__link">
+      Acerca de
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#transiciones-css" class="md-nav__link">
+    Transiciones CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Transiciones CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcion-de-tiempo" class="md-nav__link">
+    Función de tiempo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cubic-bezier" class="md-nav__link">
+    Cubic-Bezier()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atajo-transiciones" class="md-nav__link">
+    Atajo: Transiciones
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#div-transition-property-duration-timing-function-delay-transition-all-02s-ease-in" class="md-nav__link">
+    div {
+      /* transition: &lt;property&gt; &lt;duration&gt; &lt;timing-function&gt; &lt;delay&gt; */
+      transition: all 0.2s ease-in;
+    }
+
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#animaciones-css_1" class="md-nav__link">
+    Animaciones CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Animaciones CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#propiedades-de-animacion-css" class="md-nav__link">
+    Propiedades de animación CSS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atajo-animaciones" class="md-nav__link">
+    Atajo: Animaciones
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fotogramas-keyframes" class="md-nav__link">
+    Fotogramas (keyframes)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encadenar-animaciones" class="md-nav__link">
+    Encadenar animaciones
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformaciones-css" class="md-nav__link">
+    Transformaciones CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformaciones CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funciones-2d" class="md-nav__link">
+    Funciones 2D
+  </a>
+  
+    <nav class="md-nav" aria-label="Funciones 2D">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#translaciones" class="md-nav__link">
+    Translaciones
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#escalado" class="md-nav__link">
+    Escalado
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotaciones" class="md-nav__link">
+    Rotaciones
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deformaciones" class="md-nav__link">
+    Deformaciones
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funciones-3d" class="md-nav__link">
+    Funciones 3D
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformaciones-multiples" class="md-nav__link">
+    Transformaciones múltiples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/saucedoinfo/guias/edit/master/docs/desarrollo/css/11-animaciones_CSS.md" title="Editar esta página" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="animaciones-css">Animaciones CSS<a class="headerlink" href="#animaciones-css" title="Permanent link">&para;</a></h1>
+<h2 id="transiciones-css">Transiciones CSS<a class="headerlink" href="#transiciones-css" title="Permanent link">&para;</a></h2>
+<p>En CSS aparecen uno de los aspectos más interesantes de la web interactiva: <strong>las transiciones</strong>. En versiones anteriores de CSS sólo se podían utilizar ciertas funcionalidades interactivas con pseudoclases como <code>:hover</code> o <code>:focus</code>. Sin embargo, dichas transiciones ocurrían de golpe, pasando de un estado inicial a otro final. Mediante las transiciones, tenemos a nuestra disposición una gran flexibilidad que nos permitirá dotar de atractivos y elegantes efectos de transición que multiplicarán por mil las posibilidades de nuestros diseños.</p>
+<p>Las <strong>transiciones</strong> se basan en un principio muy básico, conseguir un efecto suavizado entre un estado inicial y un estado final. Las propiedades relacionadas que existen son las siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedades</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>transition-property</code></td>
+<td><strong>all</strong></td>
+</tr>
+<tr>
+<td><code>transition-duration</code></td>
+<td><strong>0</strong></td>
+</tr>
+<tr>
+<td><code>transition-timing-function</code></td>
+<td><strong>ease</strong></td>
+</tr>
+<tr>
+<td><code>transition-delay</code></td>
+<td><strong>0</strong></td>
+</tr>
+</tbody>
+</table>
+<p>En primer lugar, la propiedad <code>transition-property</code> se utiliza para especificar la <strong>propiedad a la que que afectará la transición</strong>. Podemos especificar la propiedad concreta (<em><code>width</code> o <code>color</code>, por ejemplo</em>) o simplemente especificar <code>all</code> para que se aplique a todos los elementos con los que se encuentre. Por otro lado, <code>none</code> hace que no se aplique ninguna transición.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><strong>Nota</strong>: Debes saber que no todos los elementos permiten animación debido a su complejidad. Por ejemplo, los <code>background-image</code> de gradientes no son animables actualmente.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Con la propiedad <code>transition-duration</code> especificaremos la <strong>duración de la transición</strong>, desde el inicio de la transición, hasta su finalización. Se recomienda siempre comenzar con valores cortos, para que las transiciones sean rápidas y elegantes.</p>
+<p>Si establecemos una duración demasiado grande, el navegador realizará la transición con detención intermitentes, lo que hará que la transición vaya a golpes. Además, transiciones muy largas pueden resultar molestas a muchos usuarios.</p>
+<h3 id="funcion-de-tiempo"><a href="https://lenguajecss.com/css/animaciones/transiciones/#función-de-tiempo">Función de tiempo</a><a class="headerlink" href="#funcion-de-tiempo" title="Permanent link">&para;</a></h3>
+<p>La propiedad <code>transition-timing-function</code> permite indicar el <strong>ritmo de la transición</strong> que queremos conseguir. Cuando estamos aprendiendo CSS, recomiendo utilizar <code>linear</code>, que realiza una transición a un ritmo constante. Sin embargo, podemos utilizar otros valores para conseguir que el ritmo sea diferente al inicio y/o al final de la transición.</p>
+<p>Los valores que puede tomar la propiedad son los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Inicio</th>
+<th>Transcurso</th>
+<th>Final</th>
+<th>Equivalente en cubic-beizer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ease</strong></td>
+<td>Lento</td>
+<td>Rápido</td>
+<td>Lento</td>
+<td>(0.25, 0.1, 0.25, 1)</td>
+</tr>
+<tr>
+<td>linear</td>
+<td>Normal</td>
+<td>Normal</td>
+<td>Normal</td>
+<td>(0, 0, 1, 1)</td>
+</tr>
+<tr>
+<td>ease-in</td>
+<td>Lento</td>
+<td>Normal</td>
+<td>Normal</td>
+<td>(0.42, 0, 1, 1)</td>
+</tr>
+<tr>
+<td>ease-out</td>
+<td>Normal</td>
+<td>Normal</td>
+<td>Lento</td>
+<td>(0, 0, 0.58, 1)</td>
+</tr>
+<tr>
+<td>ease-in-out</td>
+<td>Lento</td>
+<td>Normal</td>
+<td>Lento</td>
+<td>(0.42, 0, 0.58, 1)</td>
+</tr>
+<tr>
+<td>cubic-bezier(<em>A</em>, <em>B</em>, <em>C</em>, <em>D</em>)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>Transición personalizada</td>
+</tr>
+</tbody>
+</table>
+<p>Una función de tiempo <strong>linear</strong> siempre es constante, mientras que <strong>ease</strong> comienza suavemente, continua de forma más rápida y termina suavemente de nuevo. <strong>Ease-in</strong> y <strong>ease-out</strong> son variaciones que van más lento al principio o al final, y <strong>ease-in-out</strong> una mezcla de las dos.</p>
+<h3 id="cubic-bezier"><a href="https://lenguajecss.com/css/animaciones/transiciones/#cubic-bezier">Cubic-Bezier()</a><a class="headerlink" href="#cubic-bezier" title="Permanent link">&para;</a></h3>
+<p>La función de tiempo <strong>cubic-bezier()</strong> es una función personalizada, donde podemos darle unos valores concretos depediendo de la velocidad que queramos que tenga la transición. En la última columna de la tabla anterior podemos ver los valores equivalentes a cada una de las palabras clave mencionadas. En principio, el formato de la función es <strong>cubic-bezier(<code>A</code>, <code>B</code>, <code>C</code>, <code>D</code>)</strong>, donde:</p>
+<table>
+<thead>
+<tr>
+<th>Parámetro</th>
+<th>Valor</th>
+<th>Descripción</th>
+<th>Pertenece a</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>A</code></td>
+<td>X<sub>1</sub></td>
+<td>Eje X del primer punto que orienta la curva bezier.</td>
+<td>P<sub>1</sub></td>
+</tr>
+<tr>
+<td><code>B</code></td>
+<td>Y<sub>1</sub></td>
+<td>Eje Y del primer punto que orienta la curva bezier.</td>
+<td>P<sub>1</sub></td>
+</tr>
+<tr>
+<td><code>C</code></td>
+<td>X<sub>2</sub></td>
+<td>Eje X del segundo punto que orienta la curva bezier.</td>
+<td>P<sub>2</sub></td>
+</tr>
+<tr>
+<td><code>D</code></td>
+<td>Y<sub>2</sub></td>
+<td>Eje Y del segundo punto que orienta la curva bezier.</td>
+<td>P<sub>2</sub></td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Cubic Bezier" src="../img/cubic-bezier.png" /></p>
+<p>También puedes utilizar la página <a href="http://cubic-bezier.com/">Cubic Bezier</a>, donde puedes ver de forma interactiva la velocidad de las transiciones dependiendo de los parámetros utilizados.</p>
+<p>Por último, la propiedad <code>transition-delay</code> nos ofrece la posibilidad de <strong>retrasar el inicio de la transición</strong> los segundos especificados.</p>
+<p>Veamos un pequeño ejemplo de todo ello:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">a</span> <span class="p">{</span>
+      <span class="k">background</span><span class="p">:</span> <span class="mh">#DDD</span><span class="p">;</span>
+      <span class="k">color</span><span class="p">:</span> <span class="mh">#222</span><span class="p">;</span>
+      <span class="k">padding</span><span class="p">:</span> <span class="mi">2</span><span class="kt">px</span><span class="p">;</span>
+      <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#AAA</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nt">a</span><span class="p">:</span><span class="nd">hover</span> <span class="p">{</span>
+      <span class="k">background</span><span class="p">:</span> <span class="mh">#FFF</span><span class="p">;</span>
+      <span class="k">color</span><span class="p">:</span> <span class="mh">#666</span><span class="p">;</span>
+      <span class="k">padding</span><span class="p">:</span> <span class="mi">8</span><span class="kt">px</span> <span class="mi">14</span><span class="kt">px</span><span class="p">;</span>
+      <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#888</span><span class="p">;</span>
+
+      <span class="k">transition-property</span><span class="p">:</span> <span class="kc">all</span><span class="p">;</span>
+      <span class="k">transition-duration</span><span class="p">:</span> <span class="mf">0.2</span><span class="kt">s</span><span class="p">;</span>
+      <span class="k">transition-timing-function</span><span class="p">:</span> <span class="kc">ease-in</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<blockquote>
+<p><strong>Truco</strong>: Si nos fijamos bien, este estilo se aplica sólo al mover el ratón sobre el enlace (<em>transición de entrada</em>). Sin embargo, si movemos el ratón fuera del enlace, no se produce transición sino que realiza el cambio de forma brusca. Si movemos las propiedades de transición al primer bloque, se aplicarán tanto en las <strong>transiciones de entrada como en las de salida</strong>.</p>
+</blockquote>
+<h3 id="atajo-transiciones"><a href="https://lenguajecss.com/css/animaciones/transiciones/#atajo-transiciones">Atajo: Transiciones</a><a class="headerlink" href="#atajo-transiciones" title="Permanent link">&para;</a></h3>
+<p>Como siempre, podemos resumir todas estas operaciones en una propiedad de atajo denominada <code>transition</code>. Los valores del ejemplo superior, se podrían escribir como se puede ver a continuación (<em>si no necesitas algún valor, se puede omitir</em>):</p>
+<h2 id="div-transition-property-duration-timing-function-delay-transition-all-02s-ease-in"><div class="highlight"><pre><span></span><code><span class="nt">div</span> <span class="p">{</span>
+      <span class="c">/* transition: &lt;property&gt; &lt;duration&gt; &lt;timing-function&gt; &lt;delay&gt; */</span>
+      <span class="k">transition</span><span class="p">:</span> <span class="kc">all</span> <span class="mf">0.2</span><span class="kt">s</span> <span class="kc">ease-in</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div><a class="headerlink" href="#div-transition-property-duration-timing-function-delay-transition-all-02s-ease-in" title="Permanent link">&para;</a></h2>
+<h2 id="animaciones-css_1">Animaciones CSS<a class="headerlink" href="#animaciones-css_1" title="Permanent link">&para;</a></h2>
+<p>Una vez conocemos las <a href="/css/animaciones/transiciones/">transiciones CSS</a>, es muy fácil adaptarnos al concepto de animaciones de CSS, el cual amplia el concepto de transiciones convirtiéndolo en algo mucho más flexible y potente.</p>
+<p>Las transiciones son una manera de suavizar un cambio de un estado inicial a un estado final. La idea de las animaciones CSS parte del mismo concepto, permitiendo añadir más estados, pudiendo realizar cambios desde un estado inicial, a un estado posterior, a otro estado posterior, y así sucesivamente. Además, esto será posible de forma automática, sin que el usuario tenga que realizar una acción concreta.</p>
+<p>El primer paso para crear animaciones es tener dos cosas claras. Por un lado, utilizaremos la regla <code>@keyframes</code>, que incluye los fotogramas de la animación. Por otro lado, tendremos que utilizar las propiedades de las <strong>animaciones</strong>, que definen el comportamiento de la misma.</p>
+<h3 id="propiedades-de-animacion-css"><a href="https://lenguajecss.com/css/animaciones/animaciones/#propiedades-de-animación-css">Propiedades de animación CSS</a><a class="headerlink" href="#propiedades-de-animacion-css" title="Permanent link">&para;</a></h3>
+<p>Para definir dicho comportamiento necesitamos conocer las siguientes propiedades, que son una ampliación de las transiciones CSS:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedades</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>animation-name</code></td>
+<td><strong>none</strong></td>
+</tr>
+<tr>
+<td><code>animation-duration</code></td>
+<td><strong>0</strong></td>
+</tr>
+<tr>
+<td><code>animation-timing-function</code></td>
+<td><strong>ease</strong></td>
+</tr>
+<tr>
+<td><code>animation-delay</code></td>
+<td><strong>0</strong></td>
+</tr>
+<tr>
+<td><code>animation-iteration-count</code></td>
+<td><strong>1</strong></td>
+</tr>
+<tr>
+<td><code>animation-direction</code></td>
+<td><strong>normal</strong></td>
+</tr>
+<tr>
+<td><code>animation-fill-mode</code></td>
+<td><strong>none</strong></td>
+</tr>
+<tr>
+<td><code>animation-play-state</code></td>
+<td><strong>running</strong></td>
+</tr>
+</tbody>
+</table>
+<p>La propiedad <code>animation-name</code> permite especificar el nombre del fotograma a utilizar, mientras que las propiedades <code>animation-duration</code>, <code>animation-timing-function</code> y <code>animation-delay</code> funcionan exactamente igual que en el tema anterior de <strong>transiciones</strong>.</p>
+<p>La propiedad <code>animation-iteration-count</code> permite indicar el número de veces que se repite la animación, pudiendo establecer un número concreto de repeticiones o indicando <code>infinite</code> para que se repita continuamente. Por otra parte, especificando un valor en <code>animation-direction</code> conseguiremos indicar el orden en el que se reproducirán los fotogramas, pudiendo escoger un valor de los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>normal</code></td>
+<td>Los fotogramas se reproducen desde el principio al final.</td>
+</tr>
+<tr>
+<td><code>reverse</code></td>
+<td>Los fotogramas se reproducen desde el final al principio.</td>
+</tr>
+<tr>
+<td><code>alternate</code></td>
+<td>En iteraciones par, de forma normal. Impares, a la inversa.</td>
+</tr>
+<tr>
+<td><code>alternate-reverse</code></td>
+<td>En iteraciones impares, de forma normal. Pares, normal.</td>
+</tr>
+</tbody>
+</table>
+<p>Por defecto, cuando se termina una animación que se ha indicado que se reproduzca sólo una vez, la animación vuelve a su estado inicial (<em>primer fotograma</em>). Mediante la propiedad <code>animation-fill-mode</code> podemos indicar que debe mostrar la animación cuando ha finalizado y ya no se está reproduciendo; si mostrar el estado inicial (<em>backwards</em>), el estado final (<em>forwards</em>) o una combinación de ambas (<em>both</em>).</p>
+<p>Por último, la propiedad <code>animation-play-state</code> nos permite establecer la animación a estado de reproducción (<em>running</em>) o pausarla (<em>paused</em>).</p>
+<h3 id="atajo-animaciones"><a href="https://lenguajecss.com/css/animaciones/animaciones/#atajo-animaciones">Atajo: Animaciones</a><a class="headerlink" href="#atajo-animaciones" title="Permanent link">&para;</a></h3>
+<p>Nuevamente, CSS ofrece la posibilidad de resumir todas estas propiedades en una sola, para hacer nuestras hojas de estilos más específicas. El orden de la propiedad de atajo sería el siguiente:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">div</span> <span class="p">{</span>
+      <span class="c">/* animation: &lt;name&gt; &lt;duration&gt; &lt;timing-function&gt; &lt;delay&gt;</span>
+<span class="c">                    &lt;iteration-count&gt; &lt;direction&gt; &lt;fill-mode&gt; &lt;play-state&gt; */</span>
+      <span class="k">animation</span><span class="p">:</span> <span class="n">changeColor</span> <span class="mi">5</span><span class="kt">s</span> <span class="kc">linear</span> <span class="mf">0.5</span><span class="kt">s</span> <span class="mi">4</span> <span class="kc">normal</span> <span class="kc">forwards</span> <span class="kc">running</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<blockquote>
+<p><strong>Consejo</strong>: Mucho cuidado al indicar los segundos en las propiedades de duración. Al ser una unidad diferente a las que solemos manejar (<em>px, em, etc...</em>) hay que especificar <strong>siempre</strong> la <code>s</code>, aunque sea un valor igual a <code>0</code>.</p>
+</blockquote>
+<h3 id="fotogramas-keyframes"><a href="https://lenguajecss.com/css/animaciones/animaciones/#fotogramas-keyframes">Fotogramas (keyframes)</a><a class="headerlink" href="#fotogramas-keyframes" title="Permanent link">&para;</a></h3>
+<p>Ya sabemos como indicar a ciertas etiquetas HTML que reproduzcan una animación, con ciertas propiedades. Sin embargo, nos falta la parte más importante: definir los fotogramas de dicha animación. Para ello utilizaremos la regla <code>@keyframes</code>, la cuál es muy sencilla de utilizar y se basa en el siguiente esquema:</p>
+<p><img alt="Sintaxis del esquema de los keyframes" src="../img/keyframes-syntax.png" /></p>
+<p>En primer lugar elegiremos un <strong>nombre</strong> para la animación (<em>el cuál utilizamos en el apartado anterior, para hacer referencia a la animación, ya que podemos tener varias en una misma página</em>), mientras que podremos utilizar varios selectores para definir el transcurso de los fotogramas en la animación.</p>
+<p>Veamos algunos ejemplos:</p>
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">keyframes</span> <span class="nt">changeColor</span> <span class="p">{</span>
+      <span class="nt">from</span> <span class="p">{</span> <span class="k">background</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span> <span class="p">}</span>  <span class="c">/* Primer fotograma */</span>
+      <span class="nt">to</span> <span class="p">{</span> <span class="k">background</span><span class="p">:</span> <span class="kc">green</span><span class="p">;</span> <span class="p">}</span>  <span class="c">/* Último fotograma */</span>
+    <span class="p">}</span>
+
+    <span class="p">.</span><span class="nc">anim</span> <span class="p">{</span>
+      <span class="k">background</span><span class="p">:</span> <span class="kc">grey</span><span class="p">;</span>
+      <span class="k">color</span><span class="p">:</span> <span class="mh">#FFF</span><span class="p">;</span>
+      <span class="k">width</span><span class="p">:</span> <span class="mi">150</span><span class="kt">px</span><span class="p">;</span>
+      <span class="k">height</span><span class="p">:</span> <span class="mi">150</span><span class="kt">px</span><span class="p">;</span>
+      <span class="k">animation</span><span class="p">:</span> <span class="n">changeColor</span> <span class="mi">2</span><span class="kt">s</span> <span class="kc">ease</span> <span class="mi">0</span> <span class="kc">infinite</span><span class="p">;</span>  <span class="c">/* Relaciona con @keyframes */</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>En este ejemplo nombrado <code>changeColor</code>, partimos de un primer fotograma en el que el elemento en cuestión será de color de fondo rojo. Si observamos el último fotograma, le ordenamos que termine con el color de fondo verde. Así pues, la regla <code>@keyframes</code> se inventará la animación intermedia para conseguir que el elemento cambie de color.</p>
+<p>Los selectores <code>from</code> y <code>to</code> son realmente sinónimos de <code>0%</code> y <code>100%</code>, así que los modificaremos y de esta forma podremos ir añadiendo nuevos fotogramas intermedios. Vamos a modificar el ejemplo anterior añadiendo un fotograma intermedio e indentando, ahora sí, correctamente el código:</p>
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">keyframes</span> <span class="nt">changeColor</span> <span class="p">{</span>
+      <span class="nt">0</span><span class="o">%</span> <span class="p">{</span>
+        <span class="k">background</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>         <span class="c">/* Primer fotograma */</span>
+      <span class="p">}</span>
+      <span class="nt">50</span><span class="o">%</span> <span class="p">{</span>
+        <span class="k">background</span><span class="p">:</span> <span class="kc">yellow</span><span class="p">;</span>      <span class="c">/* Segundo fotograma */</span>
+        <span class="k">width</span><span class="p">:</span> <span class="mi">400</span><span class="kt">px</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="nt">100</span><span class="o">%</span> <span class="p">{</span>
+        <span class="k">background</span><span class="p">:</span> <span class="kc">green</span><span class="p">;</span>       <span class="c">/* Último fotograma */</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="p">.</span><span class="nc">anim</span> <span class="p">{</span>
+      <span class="k">background</span><span class="p">:</span> <span class="kc">grey</span><span class="p">;</span>
+      <span class="k">color</span><span class="p">:</span> <span class="mh">#FFF</span><span class="p">;</span>
+      <span class="k">width</span><span class="p">:</span> <span class="mi">150</span><span class="kt">px</span><span class="p">;</span>
+      <span class="k">height</span><span class="p">:</span> <span class="mi">150</span><span class="kt">px</span><span class="p">;</span>
+      <span class="k">animation</span><span class="p">:</span> <span class="n">changeColor</span> <span class="mi">2</span><span class="kt">s</span> <span class="kc">ease</span> <span class="mi">0</span> <span class="kc">infinite</span><span class="p">;</span>  <span class="c">/* Relaciona con @keyframes */</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<blockquote>
+<p><strong>Truco</strong>: Si tienes fotogramas que van a utilizar los mismos estilos que uno anterior, siempre puedes separarlos con comas, por ejemplo: <code>0%, 75% { ... }</code>, que utilizarían dichos estilos al inicio de la animación y al 75% de la misma.</p>
+</blockquote>
+<h3 id="encadenar-animaciones"><a href="https://lenguajecss.com/css/animaciones/animaciones/#encadenar-animaciones">Encadenar animaciones</a><a class="headerlink" href="#encadenar-animaciones" title="Permanent link">&para;</a></h3>
+<p>Es posible encadenar múltiples animaciones, separando con comas las animaciones individuales y estableciendo un tiempo de tardo a cada animación posterior:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">animated</span> <span class="p">{</span>
+      <span class="k">animation</span><span class="p">:</span>
+        <span class="n">moveRight</span> <span class="mi">5</span><span class="kt">s</span> <span class="kc">linear</span> <span class="mi">0</span><span class="p">,</span>    <span class="c">/* Comienza a los 0s */</span>
+        <span class="n">lookUp</span> <span class="mf">2.5</span><span class="kt">s</span> <span class="kc">linear</span> <span class="mi">5</span><span class="kt">s</span><span class="p">,</span>    <span class="c">/* Comienza a los 5s */</span>
+        <span class="n">moveLeft</span> <span class="mi">5</span><span class="kt">s</span> <span class="kc">linear</span> <span class="mf">7.5</span><span class="kt">s</span><span class="p">,</span>  <span class="c">/* Comienza a los 7.5s (5 + 2.5) */</span>
+        <span class="n">dissapear</span> <span class="mi">2</span><span class="kt">s</span> <span class="kc">linear</span> <span class="mf">9.5</span><span class="kt">s</span><span class="p">;</span> <span class="c">/* Comienza a los 9.5s (5 + 2.5 + 2) */</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>En este caso, lo que hemos hecho es aplicar varias animaciones a la vez, pero estableciendo un retardo (<em>cuarto parámetro</em>) que es la suma de la duración de las animaciones anteriores. De esta forma, encadenamos una animación con otra.</p>
+<hr />
+<h2 id="transformaciones-css">Transformaciones CSS<a class="headerlink" href="#transformaciones-css" title="Permanent link">&para;</a></h2>
+<p>Las transformaciones es uno de los elementos más interesantes que se introducen en CSS3 para convertir el lenguaje de hojas de estilo en un sistema capaz de realizar todo tipo de efectos visuales, incluido 2D y 3D. Las propiedades principales para realizar transformaciones son las siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedades</th>
+<th>Formato</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>transform</code></td>
+<td><em>función1</em>, <em>función2</em>, ...</td>
+<td>Aplica una o varias funciones de transformación sobre un elemento.</td>
+</tr>
+<tr>
+<td><code>transform-origin</code></td>
+<td></td>
+<td>Cambia el punto de origen del elemento en una transformación.</td>
+</tr>
+<tr>
+<td><code>transform-style</code></td>
+<td><strong>flat</strong></td>
+<td>preserve-3d</td>
+</tr>
+</tbody>
+</table>
+<p>Comencemos por la propiedad <code>transform</code>, mediante la cual podemos indicar una o varias transformaciones para realizar sobre un elemento, ya sean 2D (<em>sobre dos ejes</em>) o 3D (<em>sobre tres ejes</em>).</p>
+<h3 id="funciones-2d"><a href="https://lenguajecss.com/css/animaciones/transformaciones/#funciones-2d">Funciones 2D</a><a class="headerlink" href="#funciones-2d" title="Permanent link">&para;</a></h3>
+<p>Existen múltiples propiedades CSS que ofrecen diferentes funcionalidades de transformación en dos dimensiones, que veremos a continuación:</p>
+<p><img alt="Transformaciones CSS" src="../img/css-transforms.png" /></p>
+<h4 id="translaciones"><a href="https://lenguajecss.com/css/animaciones/transformaciones/#translaciones">Translaciones</a><a class="headerlink" href="#translaciones" title="Permanent link">&para;</a></h4>
+<p>Las <strong>funciones de translación</strong> son aquellas que realizan una transformación en la que <strong>mueven</strong> un elemento de un lugar a otro. Si especificamos un valor positivo en el eje X (<em>horizontal</em>), lo moveremos hacia la derecha, y si especificamos un valor negativo, lo moveremos hacia la izquierda. Lo mismo con el eje Y (<em>vertical</em>):</p>
+<table>
+<thead>
+<tr>
+<th>Funciones</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>translateX(x)</code></td>
+<td>Traslada el elemento una distancia de <em>x</em> horizontalmente.</td>
+</tr>
+<tr>
+<td><code>translateY(y)</code></td>
+<td>Traslada el elemento una distancia de <em>y</em> verticalmente.</td>
+</tr>
+<tr>
+<td><code>translate(x, y)</code></td>
+<td>Propiedad de <strong>atajo</strong> de las dos anteriores.</td>
+</tr>
+</tbody>
+</table>
+<p>Por ejemplo, <code>transform: translate(20px, -30px)</code> traslada el elemento 20 píxeles a la derecha y 30 píxeles hacia arriba, que es equivalente a utilizar <code>transform: translateX(20px) translateY(-30px)</code>.</p>
+<h4 id="escalado"><a href="https://lenguajecss.com/css/animaciones/transformaciones/#escalado">Escalado</a><a class="headerlink" href="#escalado" title="Permanent link">&para;</a></h4>
+<p>Las <strong>funciones de escalado</strong> realizan una transformación en la que aumentan o reducen el tamaño de un elemento, basándose en el parámetro indicado, que no es más que un factor de escala:</p>
+<table>
+<thead>
+<tr>
+<th>Funciones</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>scaleX(fx)</code></td>
+<td>Reescala el elemento a un nuevo tamaño con un factor <em>fx</em> horizontal.</td>
+</tr>
+<tr>
+<td><code>scaleY(fy)</code></td>
+<td>Reescala el elemento a un nuevo tamaño con un factor <em>fy</em> vertical.</td>
+</tr>
+<tr>
+<td><code>scale(fx, fy)</code></td>
+<td>Propiedad de <strong>atajo</strong> de las dos anteriores.</td>
+</tr>
+</tbody>
+</table>
+<p>En este ejemplo, <code>transform: scale(2, 2)</code> realiza una transformación de escalado del elemento, ampliándolo al doble de su tamaño original. Si utilizamos <code>scale()</code> con dos parámetros iguales, estamos manteniendo la proporción del elemento, pero si utilizamos diferentes valores, acabaría deformándose.</p>
+<h4 id="rotaciones"><a href="https://lenguajecss.com/css/animaciones/transformaciones/#rotaciones">Rotaciones</a><a class="headerlink" href="#rotaciones" title="Permanent link">&para;</a></h4>
+<p>Las <strong>funciones de rotación</strong> simplemente giran el elemento el número de grados indicado:</p>
+<table>
+<thead>
+<tr>
+<th>Funciones</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rotateX(xdeg)</code></td>
+<td>Establece una rotación 2D en <em>xdeg</em> grados sólo para el eje horizontal X.</td>
+</tr>
+<tr>
+<td><code>rotateY(ydeg)</code></td>
+<td>Establece una rotación 2D en <em>ydeg</em> grados sólo para el eje vertical Y.</td>
+</tr>
+<tr>
+<td><code>rotate(deg)</code></td>
+<td>Establece una rotación 2D en <em>deg</em> grados sobre si mismo.</td>
+</tr>
+</tbody>
+</table>
+<p>Con <code>transform: rotate(5deg)</code> realizamos una rotación de 5 grados del elemento sobre si mismo. Utilizando <code>rotateX()</code> y <code>rotateY()</code> podemos hacer lo mismo respecto al eje X o el eje Y respectivamente.</p>
+<h4 id="deformaciones"><a href="https://lenguajecss.com/css/animaciones/transformaciones/#deformaciones">Deformaciones</a><a class="headerlink" href="#deformaciones" title="Permanent link">&para;</a></h4>
+<p>Por último, las <strong>funciones de deformación</strong> establecen un ángulo para torcer, tumbar o inclinar un elemento en 2D:</p>
+<table>
+<thead>
+<tr>
+<th>Funciones</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>skewX(xdeg)</code></td>
+<td>Establece un ángulo de <em>xdeg</em> para una deformación 2D respecto al eje X</td>
+</tr>
+<tr>
+<td><code>skewY(ydeg)</code></td>
+<td>Establece un ángulo de <em>ydeg</em> para una deformación 2D respecto al eje Y</td>
+</tr>
+</tbody>
+</table>
+<p>Aunque la función <code>skew()</code> existe, no debería ser utilizada, ya que está marcada como obsoleta y serán retiradas de los navegadores en el futuro. En su lugar deberían utilizarse <code>skewX()</code> o <code>skewY()</code>.</p>
+<h3 id="funciones-3d"><a href="https://lenguajecss.com/css/animaciones/transformaciones/#funciones-3d">Funciones 3D</a><a class="headerlink" href="#funciones-3d" title="Permanent link">&para;</a></h3>
+<p>Sin embargo, esto no es todo. A las funciones anteriores, también podemos añadir las funciones equivalentes de CSS para hacer uso del eje Z, o lo que es lo mismo, las tres dimensiones o 3D. Basta con utilizar el <strong>eje Z</strong> o las funciones específicas de 3D para poner estas animaciones en práctica.</p>
+<p>Recordar siempre que el <strong>eje X</strong> es el eje horizontal, el <strong>eje Y</strong> es el eje vertical y el <strong>eje Z</strong> es el eje de profundidad.</p>
+<p><img alt="Ejes X, Y, Z" src="../img/eje-x-y-z.png" /></p>
+<p>Las propiedades de transformación que completarían la colección de transformaciones 2D que vimos anteriormente, son las siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Funciones</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>translateZ(z)</code></td>
+<td>Traslada el elemento una distancia de <em>z</em> en el eje de profundidad.</td>
+</tr>
+<tr>
+<td><code>translate3d(x, y, z)</code></td>
+<td>Establece una translación 3D, donde aplica los parámetros de a cada eje.</td>
+</tr>
+<tr>
+<td><code>scaleZ(fz)</code></td>
+<td>Reescala el elemento a un nuevo tamaño con factor <em>fz</em> de profundidad.</td>
+</tr>
+<tr>
+<td><code>scale3d(fx, fy, fz)</code></td>
+<td>Establece un escalado 3D, donde aplica los factores a cada eje.</td>
+</tr>
+<tr>
+<td><code>rotateZ(zdeg)</code></td>
+<td>Establece una rotación 2D en <em>zdeg</em> grados sólo para el eje de profundidad Z.</td>
+</tr>
+<tr>
+<td><code>rotate3d(x, y, z, deg)</code></td>
+<td>Establece una rotación 3D, aplicando un vector [<em>x, y, z</em>] y el ángulo en <em>deg</em>.</td>
+</tr>
+<tr>
+<td><code>perspective(n)</code></td>
+<td>Establece una perspectiva 3D de <em>n</em></td>
+</tr>
+<tr>
+<td><code>matrix3d(n, n, ...)</code></td>
+<td>Establece una matriz de transformación 3D (<em>16 valores</em>)</td>
+</tr>
+</tbody>
+</table>
+<p>Veamos un ejemplo con <code>rotate3d()</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">keyframes</span> <span class="nt">rotation</span> <span class="p">{</span>
+      <span class="nt">0</span><span class="o">%</span> <span class="p">{</span>
+        <span class="k">transform</span><span class="p">:</span> <span class="nb">rotate3d</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="kt">deg</span><span class="p">);</span>
+      <span class="p">}</span>
+      <span class="nt">100</span><span class="o">%</span> <span class="p">{</span>
+        <span class="k">transform</span><span class="p">:</span> <span class="nb">rotate3d</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">220</span><span class="kt">deg</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="p">.</span><span class="nc">anim</span> <span class="p">{</span>
+      <span class="k">background</span><span class="p">:</span> <span class="mh">#000</span><span class="p">;</span>
+      <span class="k">color</span><span class="p">:</span> <span class="mh">#FFF</span><span class="p">;</span>
+      <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+      <span class="k">animation</span><span class="p">:</span> <span class="k">rotation</span> <span class="mi">2</span><span class="kt">s</span> <span class="kc">ease-in-out</span> <span class="mi">0</span> <span class="kc">infinite</span> <span class="kc">alternate</span> <span class="kc">none</span> <span class="kc">running</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>Finalmente, se puede utilizar la función <code>matrix()</code> y <code>matrix3d()</code> para obtener transformaciones personalizadas más complejas y específicas. Tienes más información sobre ellas en el artículo <a href="https://dev.opera.com/articles/understanding-the-css-transforms-matrix/">Understanding the CSS Transforms Matrix</a> de los desarrolladores del navegador <strong>Opera</strong>.</p>
+<h3 id="transformaciones-multiples"><a href="https://lenguajecss.com/css/animaciones/transformaciones/#transformaciones-múltiples">Transformaciones múltiples</a><a class="headerlink" href="#transformaciones-multiples" title="Permanent link">&para;</a></h3>
+<p>Recuerda que si estableces varias propiedades <code>transform</code> en el mismo elemento con diferentes funciones de transformación, la segunda propiedad de transformación sobreescribirá a la anterior, como lo haría cualquier propiedad de CSS:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">div</span> <span class="p">{</span>
+      <span class="k">transform</span><span class="p">:</span> <span class="nb">rotate</span><span class="p">(</span><span class="mi">5</span><span class="kt">deg</span><span class="p">);</span>
+      <span class="k">transform</span><span class="p">:</span> <span class="nb">scale</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>    <span class="c">/* Sobreescribe la anterior */</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>Para evitar este comportamiento, una forma sencilla se basa en emplear múltiples transformaciones separándolas mediante un espacio. En el siguiente ejemplo, aplicamos una función de rotación, una función de escalado y una función de traslación de forma simultánea:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">div</span> <span class="p">{</span>
+      <span class="k">transform</span><span class="p">:</span> <span class="nb">rotate</span><span class="p">(</span><span class="mi">5</span><span class="kt">deg</span><span class="p">)</span> <span class="nb">scale</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="nb">translate</span><span class="p">(</span><span class="mi">20</span><span class="kt">px</span><span class="p">,</span> <span class="mi">40</span><span class="kt">px</span><span class="p">);</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>Si lo que queremos hacer no es posible realizarlo de esta forma, probablemente lo más apropiado sería guardar los valores en atributos de metadatos como <code>data-tx</code>, <code>data-ty</code>, <code>data-sx</code>, <code>data-sy</code> y <code>data-rz</code> o similares y manipulándolos desde Javascript.</p>
+<p>El soporte de estas propiedades es muy bueno en el ecosistema de navegadores actual, por lo que puede utilizarse con seguridad:</p>
+<hr />
+<p><strong>Fuente:</strong> <a href="https://lenguajecss.com/">Lenguaje de CSS</a> por <a href="https://manzdev.github.io/">Manz</a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../10-responsive_Web_Design/" title="Responsive Web Design" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Responsive Web Design
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../javascript/01-introducci%C3%B3n_a_javascript/" title="Introducción a Javascript" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Introducción a Javascript
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/saucedoinfo" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/saucedoinfo" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.instagram.com/saucedo.info/" target="_blank" rel="noopener" title="www.instagram.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.instant', 'navigation.expand', 'tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1712 @@
+
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Coleccion de Guias de Desarrollo y diseño.">
+      
+      
+        <link rel="canonical" href="https://saucedoinfo.github.io/guias/desarrollo/html/01-introduccion_a_HTML5/">
+      
+      
+        <meta name="author" content="Fernando S. Saucedo">
+      
+      <link rel="shortcut icon" href="../../../img/favicon-16x16.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.14">
+    
+    
+      
+        <title>Introduccion a HTML - Guias de Desarrollo y diseño</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d3202873.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ff0a5ce4.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#000000">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduccion-a-html5" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-header-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Guias de Desarrollo y diseño
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Introduccion a HTML
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" class="md-tabs__link md-tabs__link--active">
+          Desarrollo
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" class="md-tabs__link">
+          Herramientas IT
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    Guias de Desarrollo y diseño
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Desarrollo
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Desarrollo" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Desarrollo
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1" checked>
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Html
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Html" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        <span class="md-nav__icon md-icon"></span>
+        Html
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Introduccion a HTML
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Introduccion a HTML" class="md-nav__link md-nav__link--active">
+      Introduccion a HTML
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-html" class="md-nav__link">
+    Que es HTML
+  </a>
+  
+    <nav class="md-nav" aria-label="Que es HTML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-una-etiqueta-html" class="md-nav__link">
+    ¿Qué es una etiqueta HTML?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-es-la-semantica" class="md-nav__link">
+    ¿Qué es la semántica?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-de-etiqueta-html" class="md-nav__link">
+    Estructura de etiqueta HTML
+  </a>
+  
+    <nav class="md-nav" aria-label="Estructura de etiqueta HTML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etiqueta-html" class="md-nav__link">
+    Etiqueta HTML
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atributo" class="md-nav__link">
+    Atributo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contenido-de-la-etiqueta" class="md-nav__link">
+    Contenido de la etiqueta
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comentario-html" class="md-nav__link">
+    Comentario HTML
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atributos-comunes-en-html" class="md-nav__link">
+    Atributos comunes en HTML
+  </a>
+  
+    <nav class="md-nav" aria-label="Atributos comunes en HTML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#identificador-de-etiqueta-id" class="md-nav__link">
+    Identificador de etiqueta (id)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clases-de-etiquetas-class" class="md-nav__link">
+    Clases de etiquetas (class)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idioma-del-contenido" class="md-nav__link">
+    Idioma del contenido
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#titulos-o-tooltips" class="md-nav__link">
+    Títulos o tooltips
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadatos-datasets" class="md-nav__link">
+    Metadatos (datasets)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atajo-de-teclado-accesskey" class="md-nav__link">
+    Atajo de teclado (accesskey)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#direccionalidad-del-contenido" class="md-nav__link">
+    Direccionalidad del contenido
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estilos-en-linea" class="md-nav__link">
+    Estilos en línea
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-del-documento-html" class="md-nav__link">
+    Estructura del documento HTML
+  </a>
+  
+    <nav class="md-nav" aria-label="Estructura del documento HTML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipo-de-documento" class="md-nav__link">
+    Tipo de documento
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cabecera-html" class="md-nav__link">
+    Cabecera HTML
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuerpo-de-pagina" class="md-nav__link">
+    Cuerpo de página
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validacion-de-errores-en-html" class="md-nav__link">
+    Validacion de errores en HTML
+  </a>
+  
+    <nav class="md-nav" aria-label="Validacion de errores en HTML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validador-html5-de-w3c" class="md-nav__link">
+    Validador HTML5 de W3C
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabla-periodica-de-html5" class="md-nav__link">
+    Tabla periódica de HTML5
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02-etiquetas_semanticas/" title="Etiquetas semánticas" class="md-nav__link">
+      Etiquetas semánticas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-etiquetas_multimedia/" title="Etiquetas multimedias" class="md-nav__link">
+      Etiquetas multimedias
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-etiquetas_de_cabecera/" title="Etiquetas de cabecera" class="md-nav__link">
+      Etiquetas de cabecera
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-etiquetas_de_formularios/" title="Etiquetas de formularios" class="md-nav__link">
+      Etiquetas de formularios
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-etiquetas_de_scripting/" title="Etiquetas de scripting" class="md-nav__link">
+      Etiquetas de scripting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Css
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Css" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        <span class="md-nav__icon md-icon"></span>
+        Css
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/01-introduccion_a_CSS/" title="Introducción a CSS" class="md-nav__link">
+      Introducción a CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/02-modelo_de_cajas/" title="Modelo de cajas" class="md-nav__link">
+      Modelo de cajas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/03-colores_y_fondos/" title="Colores y fondos" class="md-nav__link">
+      Colores y fondos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/04-selectores_CSS/" title="Selectores CSS" class="md-nav__link">
+      Selectores CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/05-Fuentes_y_tipografias/" title="Fuentes y tipografías" class="md-nav__link">
+      Fuentes y tipografías
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/06-representacion_de_datos/" title="Representación de datos" class="md-nav__link">
+      Representación de datos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/07_maquetacion_y_colocacion/" title="Maquetación y colocación" class="md-nav__link">
+      Maquetación y colocación
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/08-interacciones/" title="Interacciones" class="md-nav__link">
+      Interacciones
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/09-efectos/" title="Efectos" class="md-nav__link">
+      Efectos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/10-responsive_Web_Design/" title="Responsive Web Design" class="md-nav__link">
+      Responsive Web Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/11-animaciones_CSS/" title="Animaciones CSS" class="md-nav__link">
+      Animaciones CSS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      JavaScript
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="JavaScript" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon"></span>
+        JavaScript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/01-introducci%C3%B3n_a_javascript/" title="Introducción a Javascript" class="md-nav__link">
+      Introducción a Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/02-fundamentos_de_javascript/" title="Fundamentos de Javascript" class="md-nav__link">
+      Fundamentos de Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/03-caracteristicas/" title="Características" class="md-nav__link">
+      Características
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/04-DOM/" title="DOM" class="md-nav__link">
+      DOM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/05-asincronia/" title="Asincronía" class="md-nav__link">
+      Asincronía
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/06-peticiones_HTTP/" title="Peticiones HTTP" class="md-nav__link">
+      Peticiones HTTP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Herramientas IT
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Herramientas IT" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Herramientas IT
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Terminal
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Terminal" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon"></span>
+        Terminal
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" title="Introducción a la terminal" class="md-nav__link">
+      Introducción a la terminal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/02-operaciones_con_ficheros/" title="Operaciones con ficheros" class="md-nav__link">
+      Operaciones con ficheros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/03-administraci%C3%B3n_del_sistema/" title="Administración del sistema" class="md-nav__link">
+      Administración del sistema
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/markdown/" title="Markdown" class="md-nav__link">
+      Markdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/pip/" title="Pip" class="md-nav__link">
+      Pip
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/mkdocs/" title="Mkdocs" class="md-nav__link">
+      Mkdocs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../about/" title="Acerca de" class="md-nav__link">
+      Acerca de
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-html" class="md-nav__link">
+    Que es HTML
+  </a>
+  
+    <nav class="md-nav" aria-label="Que es HTML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-una-etiqueta-html" class="md-nav__link">
+    ¿Qué es una etiqueta HTML?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-es-la-semantica" class="md-nav__link">
+    ¿Qué es la semántica?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-de-etiqueta-html" class="md-nav__link">
+    Estructura de etiqueta HTML
+  </a>
+  
+    <nav class="md-nav" aria-label="Estructura de etiqueta HTML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etiqueta-html" class="md-nav__link">
+    Etiqueta HTML
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atributo" class="md-nav__link">
+    Atributo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contenido-de-la-etiqueta" class="md-nav__link">
+    Contenido de la etiqueta
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comentario-html" class="md-nav__link">
+    Comentario HTML
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atributos-comunes-en-html" class="md-nav__link">
+    Atributos comunes en HTML
+  </a>
+  
+    <nav class="md-nav" aria-label="Atributos comunes en HTML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#identificador-de-etiqueta-id" class="md-nav__link">
+    Identificador de etiqueta (id)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clases-de-etiquetas-class" class="md-nav__link">
+    Clases de etiquetas (class)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idioma-del-contenido" class="md-nav__link">
+    Idioma del contenido
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#titulos-o-tooltips" class="md-nav__link">
+    Títulos o tooltips
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadatos-datasets" class="md-nav__link">
+    Metadatos (datasets)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atajo-de-teclado-accesskey" class="md-nav__link">
+    Atajo de teclado (accesskey)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#direccionalidad-del-contenido" class="md-nav__link">
+    Direccionalidad del contenido
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estilos-en-linea" class="md-nav__link">
+    Estilos en línea
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-del-documento-html" class="md-nav__link">
+    Estructura del documento HTML
+  </a>
+  
+    <nav class="md-nav" aria-label="Estructura del documento HTML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipo-de-documento" class="md-nav__link">
+    Tipo de documento
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cabecera-html" class="md-nav__link">
+    Cabecera HTML
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuerpo-de-pagina" class="md-nav__link">
+    Cuerpo de página
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validacion-de-errores-en-html" class="md-nav__link">
+    Validacion de errores en HTML
+  </a>
+  
+    <nav class="md-nav" aria-label="Validacion de errores en HTML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validador-html5-de-w3c" class="md-nav__link">
+    Validador HTML5 de W3C
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabla-periodica-de-html5" class="md-nav__link">
+    Tabla periódica de HTML5
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/saucedoinfo/guias/edit/master/docs/desarrollo/html/01-introduccion_a_HTML5.md" title="Editar esta página" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="introduccion-a-html5">Introducción a HTML5<a class="headerlink" href="#introduccion-a-html5" title="Permanent link">&para;</a></h1>
+<p align="center">
+<img src="/img/html.svg"  width="250" height="250" /> 
+</p>
+
+<h2 id="que-es-html">Que es HTML<a class="headerlink" href="#que-es-html" title="Permanent link">&para;</a></h2>
+<p>Cuando accedemos a una página web, debemos tener en cuenta que lo que realmente está ocurriendo es que nuestro navegador web está pidiendo un documento de texto al sistema (<em>máquina</em>) donde está almacenada esa página web.</p>
+<p>En cualquier navegador, existe una opción para ver el <strong>código fuente</strong> de la página web, la cuál nos mostrará exactamente el texto de dicho documento. El navegador normalmente no nos muestra esa información literalmente, sino que la interpreta y va dibujando los elementos de una página web.</p>
+<p>El documento que lee el navegador está escrito en un <strong>lenguaje de marcado</strong> llamado <strong>HTML</strong>, que son las siglas de <strong>HyperText Markup Language</strong> (<em>Lenguaje de marcas de hipertexto</em>), o lo que es lo mismo, un lenguaje de etiquetas que permite incluir o hacer referencia a todo tipo de información.</p>
+<p><img alt="Los navegadores leen documentos de texto en «idioma» HTML" src="../img/documento-texto-chrome.png" /></p>
+<h3 id="que-es-una-etiqueta-html">¿Qué es una etiqueta HTML?<a class="headerlink" href="#que-es-una-etiqueta-html" title="Permanent link">&para;</a></h3>
+<p>En el navegador Chrome, puedes pulsar la combinación de teclas CTRL+U para ver el código fuente de la página en la que te encuentras. Dicho documento esta formado por <strong>etiquetas</strong>, que son la base del <strong>lenguaje HTML</strong>.</p>
+<p>Existen muchas etiquetas y cada una se utiliza para contener información y darle un cierto significado a dicha información, dependiendo de la etiqueta que se trate. Las etiquetas HTML tienen la siguiente estructura:</p>
+<pre><code>&lt;etiqueta&gt;contenido&lt;/etiqueta&gt;
+</code></pre>
+<p>En <strong>HTML</strong> no se puede utilizar cualquier palabra como etiqueta (<em>en el ejemplo anterior, es incorrecto utilizar la etiqueta «etiqueta»</em>). En su lugar, existen una serie de etiquetas concretas, cada una de ellas con su finalidad y características propias, que tendremos que utilizar según requiera la ocasión. Por norma general, las etiquetas deben cerrarse para indicar donde finaliza su contenido.</p>
+<p>A continuación, utilicemos la etiqueta <code>&lt;strong&gt;</code> (<em>etiqueta utilizada para darle importancia a una palabra sobre el resto</em>) en el siguiente ejemplo:</p>
+<pre><code>&lt;p&gt;Dentro de este texto, esta &lt;strong&gt;palabra&lt;/strong&gt; es más importante que el resto.&lt;/p&gt;
+</code></pre>
+<p>Obsérvese que en el ejemplo estamos utilizando dos etiquetas diferentes. La etiqueta <code>&lt;p&gt;</code>, que contiene toda la frase, y la etiqueta <code>&lt;strong&gt;</code>, que contiene sólo la palabra <strong>palabra</strong>. La primera etiqueta, <code>&lt;p&gt;</code>, se utiliza para contener párrafos, mientras que la segunda etiqueta, <code>&lt;strong&gt;</code>, indica la palabra que tiene mayor importancia del texto.</p>
+<p>También se habrá observado que se pueden anidar etiquetas, esto es, incluir etiquetas dentro de otras. Es algo que se hace continuamente en HTML y que a medida que avancemos se tornará habitual.</p>
+<h3 id="que-es-la-semantica">¿Qué es la semántica?<a class="headerlink" href="#que-es-la-semantica" title="Permanent link">&para;</a></h3>
+<p>Uno de los principales objetivos de HTML5 es introducir información en un documento HTML5 de forma que sea semántico y no visual. Con esto queremos decir que todos los aspectos visuales deben dejarse para el apartado de presentación, que se gestiona desde el <a href="http://lenguajecss.com/">lenguaje CSS</a>. En el documento HTML debe aparecer información correctamente individualizada, de modo que al leer una página HTML comprendamos su significado, y si queremos cambiar la apariencia, lo hagamos en el documento CSS. Esto es lo que comunmente se conoce como <strong>separación de la presentación del contenido</strong>.</p>
+<p>Un ejemplo donde se ve claramente esto es con la etiqueta <code>&lt;b&gt;</code> de HTML4 y anteriores. Dicha etiqueta se utilizaba para poner en <strong>negrita</strong> (<em>bold</em>) un texto específico:</p>
+<pre><code>Hola, quiero resaltar esta &lt;b&gt;palabra&lt;/b&gt;.
+</code></pre>
+<p>En este caso, se está utilizando una propiedad de <strong>presentación</strong> (<em>visual</em>) en el HTML, algo que no se debe hacer en HTML5. La misión de HTML5 es mantener sólo contenido e información semántica en HTML5. Por ello, la forma de hacerlo en HTML5 es la siguiente:</p>
+<pre><code>Hola, quiero resaltar esta &lt;strong&gt;palabra&lt;/strong&gt;.
+</code></pre>
+<p>En este nuevo ejemplo, se reemplaza la etiqueta <code>&lt;b&gt;</code> (<em>negrita, característica de presentación</em>) por <code>&lt;strong&gt;</code>, una etiqueta que indica información semántica (<em>importante, característica semántica</em>). De esta forma, en el HTML5 sólo se está añadiendo información particular sobre fragmentos de texto, y si queremos dotar de presentación visual, lo haremos desde CSS:</p>
+<pre><code>strong {
+  font-weight: bold;
+  color: black;
+}
+</code></pre>
+<p>De esta forma podríamos cambiar el estilo (<em>negrita, colores, tipo de letra, etc...</em>) independientemente de la información y contenido que existe en el HTML. Incluso podríamos establecer el mismo estilo que en el texto, para que visualmente se vea todo de forma uniforme, pero sin embargo, al leer la página HTML, el navegador sabrá siempre que fragmentos de texto son más importantes, aunque tenga el mismo estilo visual.</p>
+<p>El objetivo de crear documentos HTML semánticos es que, aunque estamos acostumbrados a crear páginas para usuarios (<em>o más concretamente, para navegadores</em>), cada vez tendemos más a una Internet capaz de procesar información de forma autónoma. Muestra de ello son, por ejemplo, los robots o crawlers de buscadores como <strong>Googlebot</strong> (<em>el robot de búsqueda de Google</em>) que es capaz de acceder a páginas web para analizar la información de la misma, entenderla e indexarla en su buscador.</p>
+<hr />
+<h2 id="estructura-de-etiqueta-html">Estructura de etiqueta HTML<a class="headerlink" href="#estructura-de-etiqueta-html" title="Permanent link">&para;</a></h2>
+<p>Como habíamos mencionado, las páginas webs son realmente documentos de texto que contienen información y muchas etiquetas HTML que indican que tipo de contenido se va a mostrar en el navegador al cargar la página web.</p>
+<p>La <strong>estructura de las etiquetas HTML</strong> tiene el siguiente formato:</p>
+<p><img alt="Estructura de una etiqueta HTML" src="../img/estructura-etiqueta-html.png" /></p>
+<h3 id="etiqueta-html">Etiqueta HTML<a class="headerlink" href="#etiqueta-html" title="Permanent link">&para;</a></h3>
+<p>La parte esencial de una etiqueta HTML es lo que se denomina la <strong>etiqueta de apertura</strong>. Se trata de escribir el nombre de la etiqueta en cuestión, colocándola entre los carácteres <code>&lt;</code> y <code>&gt;</code>. Aunque no es terminantemente obligatorio, se recomienda y considera una buena costumbre escribir las etiquetas siempre en minúsculas.</p>
+<p>En HTML5 no se puede colocar cualquier palabra como etiqueta, sino que existen una serie específica de etiquetas, cada una con una misión y objetivo diferente. Por ejemplo, la etiqueta <code>&lt;strong&gt;</code>:</p>
+<pre><code>&lt;strong&gt;Contenido&lt;/strong&gt;
+</code></pre>
+<p>Como se puede ver, la mayoría de las etiquetas requieren que se especifique un <strong>cierre de etiqueta</strong> para saber donde termina de actuar. Se caracteriza en que se escribe igual que la etiqueta de apertura, pero con la barra <code>/</code> inmediatamente después del <code>&lt;</code>.</p>
+<h3 id="atributo">Atributo<a class="headerlink" href="#atributo" title="Permanent link">&para;</a></h3>
+<p>En algunas etiquetas HTML, existen algunos atributos específicos (<em>que pueden ser opcionales u obligatorios</em>). Los atributos determinan cierta información sobre la etiqueta (<em>o su modo de actuar</em>) y generalmente van asociados a un valor determinado. Este par <strong>atributo-valor</strong> se escribe después del nombre de la etiqueta, separándola por espacio y antes del carácter <code>&gt;</code> de la etiqueta de apertura:</p>
+<pre><code>&lt;strong id="dato"&gt;Contenido&lt;/strong&gt;
+</code></pre>
+<p>En este caso, la etiqueta sería <strong>strong</strong>, el atributo <strong>id</strong>, el valor de <strong>id</strong> sería <strong>dato</strong>, mientras que el contenido de la etiqueta es <strong>Contenido</strong>. Por otro lado, y al igual que las etiquetas, cada atributo tiene una misión y comportamiento concreto. Aunque los valores pueden ir rodeados por comillas simples, se recomienda escribir el valor siempre entre <strong>comillas dobles</strong>.</p>
+<p>Existen 3 tipos de atributos dependiendo de sus valores:</p>
+<ul>
+<li><strong>Conjunto finito de valores</strong>: Son los atributos en los que puedes especificarle una serie de valores limitada. Cualquier otro valor que no sea uno de ellos, no será válido.</li>
+<li><strong>Valores libres</strong>: Son los atributos en los que puedes especificar un valor libremente, como una dirección URL o un texto, y no existe una serie de valores específicos para escribir.</li>
+<li><strong>Valores booleanos</strong>: Son los atributos que deben tener un valor verdadero (<em>true</em>) o un valor falso (<em>false</em>). En HTML5 estos atributos se escriben sin valor (<em>solo el atributo</em>) si son verdaderos y se omiten para indicar que son falsos.</li>
+</ul>
+<h3 id="contenido-de-la-etiqueta">Contenido de la etiqueta<a class="headerlink" href="#contenido-de-la-etiqueta" title="Permanent link">&para;</a></h3>
+<p>En el interior de la etiqueta HTML (<em>después de la etiqueta de apertura y antes de la etiqueta de cierre</em>) se debe colocar la información que queremos que sea afectada por dicha etiqueta. En el siguiente ejemplo se ve como contiene un <strong>fragmento de texto</strong>:</p>
+<pre><code>&lt;strong id="dato" class="clase1" lang="es"&gt;Contenido de texto&lt;/strong&gt;
+</code></pre>
+<p>Ten en cuenta que una etiqueta puede tener varios pares atributo-valor, como se ve en el ejemplo anterior, pero nunca se debe repetir el mismo atributo en una misma etiqueta varias veces, ya que sobreescribiría al anterior. El orden de los atributos no importa. Más adelante explicaremos que tipos de atributos existen y para que sirven.</p>
+<p>Sin embargo, una etiqueta puede contener desde un fragmento de texto hasta un <strong>grupo de etiquetas</strong>. Esto depende mucho de la etiqueta a utilizar, y se verá más adelante en el apartado de etiquetas. Un posible ejemplo sería el siguiente:</p>
+<pre><code>&lt;div id="pagina"&gt;
+  &lt;strong&gt;Contenido importante&lt;/strong&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Nótese que dentro de la etiqueta <code>&lt;div&gt;</code> vemos que no sólo hay un fragmento de texto, sino que además incluye otra etiqueta, <code>&lt;strong&gt;</code> en este caso. Esto ocurre en las etiquetas de agrupación, que veremos más adelante.</p>
+<h3 id="comentario-html">Comentario HTML<a class="headerlink" href="#comentario-html" title="Permanent link">&para;</a></h3>
+<p>Los <strong>comentarios</strong> son una práctica muy común y habitual en los desarrolladores o programadores. Se basa en introducir breves fragmentos de texto que el navegador ignora y no tendrá en cuenta a la hora de crear la página visualmente, pero que a nosotros nos sirven de ayuda para documentar algún detalle, explicar algo importante o simplemente introducir algún texto que consideramos relevante:</p>
+<pre><code>&lt;!-- Esto es un comentario de ejemplo que el navegador ignorará --&gt;
+</code></pre>
+<p>Como se puede ver, para introducir estos comentarios en el código HTML, basta con escribir los fragmentos de texto <code>&lt;!--</code> y <code>--&gt;</code> entre el comentario en cuestión que queramos incluir.</p>
+<hr />
+<h2 id="atributos-comunes-en-html">Atributos comunes en HTML<a class="headerlink" href="#atributos-comunes-en-html" title="Permanent link">&para;</a></h2>
+<p>Como hemos visto, el HTML está formado por etiquetas. Muchas etiquetas. Cada etiqueta tiene una misión y tarea y contendrá cierto contenido relacionado con su misión. Y además tenemos los <strong>atributos</strong>, que son palabras clave de texto que modifican ligeramente el comportamiento de la etiqueta que lo contiene.</p>
+<p>En este apartado vamos a ver una lista de <strong>atributos comunes</strong> que pueden ser utilizados en <strong>cualquier etiqueta HTML</strong>:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Atributo</th>
+<th align="left">Valor</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>id</code></td>
+<td align="left"><em>nombre</em></td>
+<td align="left">Establece un <strong>identificador</strong> a la etiqueta HTML (sólo una por página con ese nombre).</td>
+</tr>
+<tr>
+<td align="left"><code>class</code></td>
+<td align="left"><em>nombre</em></td>
+<td align="left">Establece una <strong>clase</strong> (género) a una etiqueta HTML. Puede repetirse por página.</td>
+</tr>
+<tr>
+<td align="left"><code>lang</code></td>
+<td align="left"><em>idioma</em></td>
+<td align="left">Indica el idioma del contenido de la etiqueta HTML.</td>
+</tr>
+<tr>
+<td align="left"><code>translate</code></td>
+<td align="left"><strong>yes</strong> | <code>no</code></td>
+<td align="left">Indica si el contenido de la etiqueta es traducible o no.</td>
+</tr>
+<tr>
+<td align="left"><code>title</code></td>
+<td align="left"><em>título</em></td>
+<td align="left">Mensaje mostrado en un <strong>tooltip</strong> (aviso amarillo emergente) al mover el ratón encima.</td>
+</tr>
+<tr>
+<td align="left"><code>data-*</code></td>
+<td align="left"><em>nombre</em></td>
+<td align="left">Metadatos en la propia etiqueta. Se puede usar cualquier nombre con prefijo <code>data-</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>accesskey</code></td>
+<td align="left"><em>atajo</em></td>
+<td align="left">Combinación de teclas que puede pulsar el usuario para activar el elemento.</td>
+</tr>
+<tr>
+<td align="left"><code>dir</code></td>
+<td align="left"><strong>ltr</strong> | <code>rtl</code></td>
+<td align="left">Establece la direccionalidad del texto (<em>left to right</em> o <em>right to left</em>).</td>
+</tr>
+<tr>
+<td align="left"><code>style</code></td>
+<td align="left"><em>estilos</em></td>
+<td align="left">Aplica propiedades CSS directamente al elemento en cuestión.</td>
+</tr>
+</tbody>
+</table>
+<p>Esta sección no es absolutamente necesaria para usuarios iniciados, y quizás requiera adquirir más práctica con HTML antes de comenzar a leer esta parte.</p>
+<h3 id="identificador-de-etiqueta-id">Identificador de etiqueta (id)<a class="headerlink" href="#identificador-de-etiqueta-id" title="Permanent link">&para;</a></h3>
+<p>En HTML, podemos darle un identificador a una etiqueta HTML y de esta forma darle un nombre. Simplemente, añadimos el atributo <strong>id</strong> y colocamos el nombre como valor de ese atributo. Ese nombre de identificador no debe empezar nunca por un número y puede contener letras mayúsculas, minúsculas, signos especiales (<em>guión, guión bajo...</em>) o números:</p>
+<pre><code>&lt;div id="pagina"&gt;
+  &lt;div&gt;Aquí irá un anuncio&lt;/div&gt;
+  &lt;div id="articulo"&gt;Aquí irá el contenido de texto del artículo&lt;/div&gt;
+  &lt;div&gt;Aquí irá un anuncio&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Los <strong>id</strong> se suelen indicar cuando queremos localizar zonas específicas que <strong>sabemos que no se van a repetir en esa misma página</strong>.</p>
+<p>Uno de los detalles importantes de los id, es que no pueden haber dos con el mismo nombre en una página. Ejemplos correctos de id serían «pagina» (<em>para contener toda la página completa</em>), «comentarios» (<em>para contener toda la zona de comentarios de la página</em>) o «header» (<em>para contener la parte con el logo y la cabecera de la página</em>). Lo que debe quedar claro de los ids, es que <strong>no se puede tener el mismo id</strong> en varias etiquetas HTML en una misma página.</p>
+<p>Más adelante, en el apartado de <a href="/html/semantica/enlaces-o-hipervinculos">enlaces o hipervínculos</a>, veremos que también podemos utilizarlos para acceder rápidamente, desde un enlace, a esa sección concreta de la página.</p>
+<h3 id="clases-de-etiquetas-class">Clases de etiquetas (class)<a class="headerlink" href="#clases-de-etiquetas-class" title="Permanent link">&para;</a></h3>
+<p>Las clases funcionan de una forma muy similar a los id, pero son mucho más flexibles. En primer lugar, no tienen la limitación de los ids, por lo que su nombre se puede repetir y no es necesario que aparezca sólo una vez por página.</p>
+<p>De hecho, la idea de las clases es establecer géneros o tipos de etiquetas, a los que les asociemos características comunes. Sigamos con el ejemplo anterior:</p>
+<pre><code>&lt;div id="pagina"&gt;
+  &lt;div class="anuncio"&gt;Aquí irá un anuncio&lt;/div&gt;
+  &lt;div id="articulo"&gt;Aquí irá el contenido de texto del artículo&lt;/div&gt;
+  &lt;div class="anuncio"&gt;Aquí irá un anuncio&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Obsérvese que, al tener la misma clase «anuncio», podemos realizar acciones para todas las etiquetas de ese tipo y no tener que hacerlo para cada una de ellas por separado. Un ejemplo clásico donde se ve bien su utilidad, es respecto a utilizar <a href="http://lenguajecss.com/css/selectores/selectores-basicos">ids y clases para dar estilo CSS</a>, donde aplicaremos unos estilos concretos a todas las etiquetas HTML con clase «anuncio».</p>
+<p>Además, una etiqueta puede tener múltiples clases diferentes, no una sola. Esto nos da más flexibilidad a la hora de crear clases específicas:</p>
+<pre><code>&lt;div id="pagina"&gt;
+  &lt;div class="anuncio primero"&gt;Aquí irá un anuncio&lt;/div&gt;
+  &lt;div id="articulo"&gt;Aquí irá el contenido de texto del artículo&lt;/div&gt;
+  &lt;div class="anuncio ultimo"&gt;Aquí irá un anuncio&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Nótese que en la primera etiqueta del anuncio hemos aplicado las clases <strong>anuncio</strong> y <strong>primero</strong>, mientras que en el último anuncio hemos aplicado las clases <strong>anuncio</strong> y <strong>último</strong>. Esto nos permitiría asignar atributos comunes al anuncio en la clase anuncio, y atributos que sólo dependan de la posición donde esta colocado en <strong>primero</strong> y/o <strong>ultimo</strong>.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Recordar siempre que para indicar múltiples clases se debe separar las clases por espacio dentro de un mismoa atributo <strong>class</strong>. No se debe nunca indicar varios atributos <strong>class</strong> en una misma etiqueta, ya que el navegador lo que haría es sobreescribir el valor del último <strong>class</strong> con los de los primeros.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="idioma-del-contenido">Idioma del contenido<a class="headerlink" href="#idioma-del-contenido" title="Permanent link">&para;</a></h3>
+<p>Mediante el atributo <strong>lang</strong> podemos indicar el idioma del contenido de la etiqueta. El valor de dicho atributo tendrá que ser el <a href="https://es.wikipedia.org/wiki/ISO_639-1">código ISO 639-1</a> del idioma al que queremos hacer referencia. También podemos utilizar el atributo <strong>translate</strong> para indicar si el contenido de un texto es o no traducible:</p>
+<pre><code>&lt;p&gt;
+  Hace algunos días fuí a ver la nueva película de &lt;span translate="no"&gt;StarWars&lt;/span&gt;.
+&lt;/p&gt;
+</code></pre>
+<p>De esta forma, le indicamos al navegador o a herramientas como <strong>Google Translator</strong>, que esa frase específica no se debe traducir porque es el título que queremos que aparezca siempre. Por defecto, si no se indica el atributo <strong>translate</strong> en una etiqueta, es como si tuviera el valor <strong>yes</strong> por defecto.</p>
+<h3 id="titulos-o-tooltips">Títulos o tooltips<a class="headerlink" href="#titulos-o-tooltips" title="Permanent link">&para;</a></h3>
+<p>En la mayoría de las etiquetas HTML podemos indicar el atributo <strong>title</strong> para especificar un mensaje de texto que aparezca cuando el usuario detenga el ratón sobre el elemento un instante. Al usuario le aparece un pequeño aviso emergente, generalmente con fondo amarillo y letras negras, que muestra el texto en cuestión:</p>
+<pre><code>&lt;div&gt;
+  &lt;img src="Gandalf.jpg"
+    alt="Gandalf el gris, utilizando un portátil para consultar su correo."
+    title="¡Este es Gandalf el gris!" /&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Es importante no confundir el atributo <strong>title</strong> con el atributo <strong>alt</strong> de las imágenes, que generalmente se confunden porque pueden tener objetivos idénticos, pero no siempre es así. El atributo <strong>alt</strong> debe ser un texto alternativo que describa la imagen en el caso de que no se pueda ver visualmente, mientras que el atributo <strong>title</strong> puede describir la imagen, pero no tiene porque ser una descripción alternativa.</p>
+<p>De la misma forma, podemos utilizar el atributo <strong>title</strong> para otros elementos, como por ejemplo, etiquetas <code>&lt;a&gt;</code> (<em>enlaces</em>) u otras.</p>
+<h3 id="metadatos-datasets">Metadatos (datasets)<a class="headerlink" href="#metadatos-datasets" title="Permanent link">&para;</a></h3>
+<p>En HTML, veremos que la mayoría de los metadatos (<em>información adicional</em>) se incluyen en la etiqueta <code>&lt;head&gt;</code> del documento HTML. Sin embargo, también se puede incluir metadatos en la propia etiqueta HTML a través de un atributo con prefijo <strong>data-</strong>.</p>
+<p>De esta forma, podemos inventarnos cualquier atributo que contenga información, habitualmente orientada a utilizarse desde Javascript:</p>
+<pre><code>&lt;div id="compartir"&gt;
+  &lt;a href="https://twitter.com/share/?url=https://lenguajehtml.com/"
+     data-share="43"&gt;Twitter&lt;/a&gt;
+  &lt;a href="https://www.facebook.com/sharer/sharer.php?u=https://lenguajehtml.com/"
+     data-share="66"&gt;Facebook&lt;/a&gt;
+  &lt;a href="https://plus.google.com/share?url=https://lenguajehtml.com/"
+     data-share="38"&gt;Google+&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+<p>En este ejemplo guardamos, a través de Javascript, el número de veces que ha sido compartido un enlace de la página, pudiendo reutilizarlo posteriormente en nuestro código. Si queremos hacer referencia a estos elementos desde Javascript, debemos hacerlo mediante la propiedad <code>.dataset</code>:</p>
+<pre><code>var links = document.querySelectorAll("#compartir a");
+
+links[0].dataset.share; // 43
+links[1].dataset.share; // 66
+links[2].dataset.share; // 38
+</code></pre>
+<h3 id="atajo-de-teclado-accesskey">Atajo de teclado (accesskey)<a class="headerlink" href="#atajo-de-teclado-accesskey" title="Permanent link">&para;</a></h3>
+<p>En HTML es posible añadir el atributo <strong>accesskey</strong> para indicar un atajo de teclado que puede pulsar el usuario para activar ese elemento. En el siguiente ejemplo, tenemos 4 elementos: dos campos de texto, un enlace y un botón. Cada uno de ellos tiene su atributo <strong>accesskey</strong> para que cuando el usuario pulse ALT+tecla, se active ese elemento:</p>
+<pre><code>&lt;form&gt;
+  &lt;input accesskey="N" placeholder="Nombre (ALT+N)" /&gt; &lt;!-- Campo de datos --&gt;
+  &lt;input accesskey="A" placeholder="Apellidos (ALT+A)" /&gt; &lt;!-- Campo de datos --&gt;
+  &lt;a accesskey="L" href="#"&gt;Enlace (ALT+L)&lt;/a&gt; &lt;!-- Enlace HTML --&gt;
+  &lt;button accesskey="B"&gt;Botón (ALT+B)&lt;/button&gt; &lt;!-- Botón HTML --&gt;
+&lt;/form&gt;
+</code></pre>
+<p>De esta forma, si pulsamos ALT+N, se colocará el foco en el primer campo de texto, si pulsamos ALT+L será como si hubieramos pulsado el enlace con el ratón y si pulsamos ALT+B se pulsará el botón.</p>
+<p>Sin embargo, una de las desventajas de este sistema, es que no está demasiado unificado entre navegadores y sistemas, lo que lo hacen bastante complejo. Por ejemplo, si establecemos un atajo con la tecla <strong>A</strong>, es decir, con el atributo <strong>accesskey</strong> a <strong>A</strong>, tendríamos que pulsar la siguiente combinación de teclas:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Navegador</th>
+<th align="left">Plataforma Windows</th>
+<th align="left">Plataforma Linux</th>
+<th align="left">Plataforma Mac</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>Chrome</strong></td>
+<td align="left">ALT+A</td>
+<td align="left">ALT+A</td>
+<td align="left">CTRL+ALT+A</td>
+</tr>
+<tr>
+<td align="left"><strong>Firefox</strong></td>
+<td align="left">ALT+SHIFT+A</td>
+<td align="left">ALT+SHIFT+A</td>
+<td align="left">CTRL+A</td>
+</tr>
+<tr>
+<td align="left"><strong>IE/Edge</strong></td>
+<td align="left">ALT+A</td>
+<td align="left">No aplicable</td>
+<td align="left">No aplicable</td>
+</tr>
+<tr>
+<td align="left"><strong>Safari</strong></td>
+<td align="left">No aplicable</td>
+<td align="left">No aplicable</td>
+<td align="left">CTRL+ALT+A</td>
+</tr>
+<tr>
+<td align="left"><strong>Opera</strong></td>
+<td align="left">ALT+A</td>
+<td align="left">ALT+A</td>
+<td align="left">CTRL+ALT+A</td>
+</tr>
+</tbody>
+</table>
+<p>Esto hace que la combinación de teclas para un usuario poco familiarizado con este proceso, además de la incertidumbre de no saber que navegador va a utilizar, hagan que este proceso sea poco práctico.</p>
+<h3 id="direccionalidad-del-contenido">Direccionalidad del contenido<a class="headerlink" href="#direccionalidad-del-contenido" title="Permanent link">&para;</a></h3>
+<p>Existe un atributo <code>dir</code> que permite al desarrollador indicar la direccionalidad del texto en el documento, ideal para idiomas en los que se escribe de derecha a izquierda. El valor por defecto de este atributo es <code>ltr</code> (<em>left to right, de izquierda a derecha</em>), pero podemos modificarlo y establecer el valor <code>rtl</code> (<em>right to left, de derecha a izquierda</em>):</p>
+<pre><code>&lt;p&gt;Esto es un ejemplo de texto con direccionalidad de izquierda a derecha.&lt;/p&gt;
+&lt;p dir="rtl"&gt;Esto es un ejemplo de texto con direccionalidad de derecha a izquierda.&lt;/p&gt;
+</code></pre>
+<p>También es posible conseguir este efecto utilizando la propiedad CSS <code>direction</code>, que puede establecer su valor a <code>ltr</code> (<em>por defecto</em>) o a <code>rtl</code>.</p>
+<h3 id="estilos-en-linea">Estilos en línea<a class="headerlink" href="#estilos-en-linea" title="Permanent link">&para;</a></h3>
+<p>El atributo <code>style</code> es un atributo que se utiliza en las etiquetas HTML para incrustar código CSS directamente en la propia etiqueta. También se suele denominar <a href="http://lenguajecss.com/css/introduccion/como-usar-css#css-embebido">CSS embebido o CSS incrustado</a>.</p>
+<p>Aunque generalmente, la mejor forma de aplicar estilos CSS es colocarlos en un documento CSS al margen de la página (<em>lo que garantiza que todo esté bien separado y modularizado</em>), hay situaciones en las que es conveniente o incluso necesario, añadir el código CSS en la propia etiqueta. En ese caso, se haría de la siguiente forma:</p>
+<pre><code>&lt;p style="background: red; color: white;"&gt;Esto es un mensaje con estilos CSS&lt;/p&gt;
+</code></pre>
+<p>Nótese que estamos indicando dos reglas CSS dentro de una misma etiqueta. En <a href="http://lenguajecss.com/css/introduccion/como-usar-css">¿Cómo usar CSS?</a> tienes otros métodos para indicar CSS en una página web.</p>
+<hr />
+<h2 id="estructura-del-documento-html">Estructura del documento HTML<a class="headerlink" href="#estructura-del-documento-html" title="Permanent link">&para;</a></h2>
+<p>Un documento HTML debe tener siempre una estructura inicial, con algunas etiquetas y características obligatorias y otras recomendables. Ese esquema es el siguiente, donde se diferencian tres zonas principales:</p>
+<ul>
+<li>
+<p><strong>Tipo de documento</strong>: En la primera línea del documento HTML debe ir especificado siempre de que tipo de documento HTML se trata. No es absolutamente obligatorio indicarlo (<em>de hecho, hay páginas webs que no lo tienen</em>), pero eso trae algunas consecuencias que veremos más adelante.</p>
+</li>
+<li>
+<p><strong>Head</strong>: En el documento HTML hay una primera sección donde se especificarán todos los <strong>metadatos</strong> del documento, es decir, la parte «que no se ve» directamente en el navegador de forma visual.</p>
+</li>
+<li>
+<p><strong>Body</strong>: La segunda sección es el cuerpo de la página, donde si aparecen todos los elementos que aparecerán visualmente en el navegador del usuario.</p>
+</li>
+</ul>
+<p>Las dos últimas secciones deben estar dentro de la etiqueta <code>&lt;html&gt;</code>, que es la que debe contener cualquier tipo de etiqueta HTML (<em>salvo el tipo de documento, que debe especificarse antes</em>):</p>
+<p><img alt="Estructura de un documento HTML" src="../img/estructura-documento-html.png" /></p>
+<h3 id="tipo-de-documento">Tipo de documento<a class="headerlink" href="#tipo-de-documento" title="Permanent link">&para;</a></h3>
+<p>Antes de comenzar un documento HTML, en su primera línea, es siempre conveniente indicar el tipo de documento a utilizar. Para indicar que se trata de un <strong>documento HTML5</strong> colocaremos la siguiente linea:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+</code></pre>
+<p>En versiones anteriores, como <strong>HTML4</strong> o <strong>XHTML</strong>, el tipo de documento se especificaba en la primera línea de la siguiente forma (<em>más compleja</em>):</p>
+<pre><code>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+</code></pre>
+<p>Los navegadores, antes de comenzar a dibujar una página web, lo primero que hacen es leer la línea donde se indica el <strong>tipo de documento</strong> del que se trata. De esta forma, el navegador ya está preparado para actuar adaptándose perfectamente a cada tipo de documento.</p>
+<p>En el caso de no indicar el tipo de documento en una página HTML, el navegador entra en lo que se llama <strong>Quirk mode</strong> (<em>modo peculiar o modo no estándar</em>), donde se activa un <strong>modo de retrocompatibilidad</strong> con páginas antiguas, que procesará de forma diferente muchas etiquetas HTML o propiedades CSS.</p>
+<h3 id="cabecera-html">Cabecera HTML<a class="headerlink" href="#cabecera-html" title="Permanent link">&para;</a></h3>
+<p>La zona de la cabecera de una página web es la parte que se incluye en el interior de las etiquetas <code>&lt;head&gt;</code>, que son las primeras etiquetas que se encuentran en el documento y a su vez están dentro de las etiquetas <code>&lt;html&gt;</code> que engloban todo el documento HTML.</p>
+<p>En esta zona se indicarán, en su mayoría, <strong>metadatos</strong> como el título y descripción de la página o elementos relacionados que no se representarán visualmente en el navegador del usuario. También es el lugar indicado para incluir etiquetas que relacionen el documento actual con otros documentos externos (<em>por ejemplo, para cargar estilos CSS o scripts</em>).</p>
+<h3 id="cuerpo-de-pagina">Cuerpo de página<a class="headerlink" href="#cuerpo-de-pagina" title="Permanent link">&para;</a></h3>
+<p>La zona del cuerpo de página es la parte que se incluye en el interior de las etiquetas <code>&lt;body&gt;</code>, la segunda parte de un documento HTML, que va inmediatamente después del cierre de la etiqueta <code>&lt;head&gt;</code>. En esta zona se incluyen todas las etiquetas HTML que si tienen repercusión visual en el navegador del usuario, generalmente utilizadas para dibujar secciones o partes de una página.</p>
+<hr />
+<h2 id="validacion-de-errores-en-html">Validacion de errores en HTML<a class="headerlink" href="#validacion-de-errores-en-html" title="Permanent link">&para;</a></h2>
+<p>Si estamos empezando con nuestro primer documento HTML y queremos comprobar si hay errores o hemos hecho mal, ¿qué podemos hacer? Los programadores suelen estar acostumbrados a los <strong>lenguajes de programación</strong>, donde si tenemos un error en nuestro código, debemos corregirlo para continuar, ya que en caso contrario no podremos utilizar ese programa.</p>
+<p>En los lenguajes de marcas como HTML, los navegadores son más permisivos, ya que en el caso de encontrar un error, intentan «intuir» lo que se quiso decir y prosiguen con la carga del documento. De esta forma tenemos un método más flexible a errores, pero también es un arma de doble filo donde podemos experimentar problemas derivado de ello.</p>
+<h3 id="validador-html5-de-w3c">Validador HTML5 de W3C<a class="headerlink" href="#validador-html5-de-w3c" title="Permanent link">&para;</a></h3>
+<p>Para evitar esto y asegurarnos de que nuestro código está correctamente escrito, podemos utilizar un <strong>Validador HTML</strong>, que no es más que un sistema que analiza nuestro código y nos dice el número de errores que tenemos, junto a una breve descripción del mismo.</p>
+<p>Para realizar ese proceso de validación podemos utilizar <a href="https://validator.w3.org/">HTML Validator</a>, de W3C, que contiene <strong>Nu HTML Checker</strong>, un validador de HTML5 aún en fase experimental, pero que actualmente puede ser utilizado sin problemas para este proceso de búsqueda de errores:</p>
+<p><img alt="Nu HTML Checker, validador HTML5" src="../img/validador-html.png" /></p>
+<p>Existen 3 formas de enviar nuestro documento HTML a este validador HTML:</p>
+<ul>
+<li>
+<p><strong>Address</strong>: Indicando la dirección URL de la página que se quiere validar. Obviamente, es necesario que la página esté colgada en Internet.</p>
+</li>
+<li>
+<p><strong>File Upload</strong>: Seleccionando el archivo HTML de nuestro equipo, subirlo al validador y, posterior y finalmente, realizar el proceso de análisis.</p>
+</li>
+<li>
+<p><strong>Text Input</strong>: Escribiendo (<em>o pegando</em>) directamente el código HTML del documento HTML íntegro a analizar.</p>
+</li>
+</ul>
+<p>Además, si nos fijamos en la parte superior de la herramienta de validación, veremos que hay tres casillas disponibles para marcar, con las que podemos agregar nuevas características que se mostrarán tras la validación. Dichas características son las siguientes:</p>
+<ul>
+<li>
+<p><strong>Source</strong>: Nos muestra el código fuente, numerado por líneas. Útil para corregir problemas sobre la marcha o comprobar los errores en las líneas especificadas.</p>
+</li>
+<li>
+<p><strong>Outline</strong>: Nos muestra una especie de árbol o esquema de la página.</p>
+</li>
+<li>
+<p><strong>Image report</strong>: Genera un informe de las imágenes del sitio web, con una miniatura y sus características asociadas.</p>
+</li>
+</ul>
+<p>Es una buena práctica acostumbrarse a utilizar el validador para acostumbrarse a crear código HTML de calidad y sin errores, ya que si tenemos documentos sin errores de validación, es más probable que se vean correctamente en cualquier tipo de dispositivo.</p>
+<blockquote>
+<blockquote>
+<p>En el editor <strong>VSCode</strong> podemos encontrar el paquete <a href="https://marketplace.visualstudio.com/items?itemName=Umoxfo.vscode-w3cvalidation">w3c-validation</a>, que nos permite analizar los documentos HTML directamente desde el editor.</p>
+</blockquote>
+</blockquote>
+<hr />
+<h2 id="tabla-periodica-de-html5">Tabla periódica de HTML5<a class="headerlink" href="#tabla-periodica-de-html5" title="Permanent link">&para;</a></h2>
+<p><img alt="Tabla_Periodica_de_Html" src="../img/periodic_table.png" /></p>
+<hr />
+<p><strong>Fuente:</strong> <a href="https://lenguajehtml.com/">Lenguaje de Html</a> por <a href="https://manzdev.github.io/">Manz</a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../../.." title="Home" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Home
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../02-etiquetas_semanticas/" title="Etiquetas semánticas" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Etiquetas semánticas
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/saucedoinfo" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/saucedoinfo" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.instagram.com/saucedo.info/" target="_blank" rel="noopener" title="www.instagram.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.instant', 'navigation.expand', 'tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

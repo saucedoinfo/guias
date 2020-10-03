@@ -1,0 +1,1969 @@
+
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Coleccion de Guias de Desarrollo y diseño.">
+      
+      
+        <link rel="canonical" href="https://saucedoinfo.github.io/guias/desarrollo/html/06-etiquetas_de_scripting/">
+      
+      
+        <meta name="author" content="Fernando S. Saucedo">
+      
+      <link rel="shortcut icon" href="../../../img/favicon-16x16.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.14">
+    
+    
+      
+        <title>Etiquetas de scripting - Guias de Desarrollo y diseño</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d3202873.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ff0a5ce4.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#000000">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#etiquetas-de-scripting" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-header-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Guias de Desarrollo y diseño
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Etiquetas de scripting
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../01-introduccion_a_HTML5/" class="md-tabs__link md-tabs__link--active">
+          Desarrollo
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" class="md-tabs__link">
+          Herramientas IT
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    Guias de Desarrollo y diseño
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Desarrollo
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Desarrollo" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Desarrollo
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1" checked>
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Html
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Html" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        <span class="md-nav__icon md-icon"></span>
+        Html
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01-introduccion_a_HTML5/" title="Introduccion a HTML" class="md-nav__link">
+      Introduccion a HTML
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02-etiquetas_semanticas/" title="Etiquetas semánticas" class="md-nav__link">
+      Etiquetas semánticas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-etiquetas_multimedia/" title="Etiquetas multimedias" class="md-nav__link">
+      Etiquetas multimedias
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-etiquetas_de_cabecera/" title="Etiquetas de cabecera" class="md-nav__link">
+      Etiquetas de cabecera
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-etiquetas_de_formularios/" title="Etiquetas de formularios" class="md-nav__link">
+      Etiquetas de formularios
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Etiquetas de scripting
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Etiquetas de scripting" class="md-nav__link md-nav__link--active">
+      Etiquetas de scripting
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#etiquetas-html-interactivas" class="md-nav__link">
+    Etiquetas HTML interactivas
+  </a>
+  
+    <nav class="md-nav" aria-label="Etiquetas HTML interactivas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elementos-desplegables" class="md-nav__link">
+    Elementos desplegables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dialogos-emergentes" class="md-nav__link">
+    Diálogos emergentes
+  </a>
+  
+    <nav class="md-nav" aria-label="Diálogos emergentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dialogos-modales" class="md-nav__link">
+    Diálogos modales
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atributo-contenteditable" class="md-nav__link">
+    Atributo contentEditable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atributo-hidden" class="md-nav__link">
+    Atributo hidden
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etiquetas-html-de-scripts" class="md-nav__link">
+    Etiquetas HTML de scripts
+  </a>
+  
+    <nav class="md-nav" aria-label="Etiquetas HTML de scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-etiqueta-script" class="md-nav__link">
+    La etiqueta script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modo-de-carga-del-script" class="md-nav__link">
+    Modo de carga del script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carga-de-modulos-javascript" class="md-nav__link">
+    Carga de módulos Javascript
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenguajes-de-scripting" class="md-nav__link">
+    Lenguajes de scripting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-etiqueta-noscript" class="md-nav__link">
+    La etiqueta noscript
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-etiqueta-template" class="md-nav__link">
+    La etiqueta template
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eventos-en-html" class="md-nav__link">
+    Eventos en HTML
+  </a>
+  
+    <nav class="md-nav" aria-label="Eventos en HTML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eventos" class="md-nav__link">
+    Eventos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detalles-del-evento" class="md-nav__link">
+    Detalles del evento
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otros-eventos" class="md-nav__link">
+    Otros Eventos
+  </a>
+  
+    <nav class="md-nav" aria-label="Otros Eventos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eventos-de-documento" class="md-nav__link">
+    Eventos de documento
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eventos-de-carga-de-recursos" class="md-nav__link">
+    Eventos de carga de recursos
+  </a>
+  
+    <nav class="md-nav" aria-label="Eventos de carga de recursos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eventos-de-foco-en-elementos" class="md-nav__link">
+    Eventos de foco en elementos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eventos-de-raton" class="md-nav__link">
+    Eventos de ratón
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eventos-de-entrada-de-datos" class="md-nav__link">
+    Eventos de entrada de datos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eventos-multimedia" class="md-nav__link">
+    Eventos multimedia
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Css
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Css" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        <span class="md-nav__icon md-icon"></span>
+        Css
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/01-introduccion_a_CSS/" title="Introducción a CSS" class="md-nav__link">
+      Introducción a CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/02-modelo_de_cajas/" title="Modelo de cajas" class="md-nav__link">
+      Modelo de cajas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/03-colores_y_fondos/" title="Colores y fondos" class="md-nav__link">
+      Colores y fondos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/04-selectores_CSS/" title="Selectores CSS" class="md-nav__link">
+      Selectores CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/05-Fuentes_y_tipografias/" title="Fuentes y tipografías" class="md-nav__link">
+      Fuentes y tipografías
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/06-representacion_de_datos/" title="Representación de datos" class="md-nav__link">
+      Representación de datos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/07_maquetacion_y_colocacion/" title="Maquetación y colocación" class="md-nav__link">
+      Maquetación y colocación
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/08-interacciones/" title="Interacciones" class="md-nav__link">
+      Interacciones
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/09-efectos/" title="Efectos" class="md-nav__link">
+      Efectos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/10-responsive_Web_Design/" title="Responsive Web Design" class="md-nav__link">
+      Responsive Web Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/11-animaciones_CSS/" title="Animaciones CSS" class="md-nav__link">
+      Animaciones CSS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      JavaScript
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="JavaScript" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon"></span>
+        JavaScript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/01-introducci%C3%B3n_a_javascript/" title="Introducción a Javascript" class="md-nav__link">
+      Introducción a Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/02-fundamentos_de_javascript/" title="Fundamentos de Javascript" class="md-nav__link">
+      Fundamentos de Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/03-caracteristicas/" title="Características" class="md-nav__link">
+      Características
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/04-DOM/" title="DOM" class="md-nav__link">
+      DOM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/05-asincronia/" title="Asincronía" class="md-nav__link">
+      Asincronía
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/06-peticiones_HTTP/" title="Peticiones HTTP" class="md-nav__link">
+      Peticiones HTTP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Herramientas IT
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Herramientas IT" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Herramientas IT
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Terminal
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Terminal" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon"></span>
+        Terminal
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" title="Introducción a la terminal" class="md-nav__link">
+      Introducción a la terminal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/02-operaciones_con_ficheros/" title="Operaciones con ficheros" class="md-nav__link">
+      Operaciones con ficheros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/03-administraci%C3%B3n_del_sistema/" title="Administración del sistema" class="md-nav__link">
+      Administración del sistema
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/markdown/" title="Markdown" class="md-nav__link">
+      Markdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/pip/" title="Pip" class="md-nav__link">
+      Pip
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/mkdocs/" title="Mkdocs" class="md-nav__link">
+      Mkdocs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../about/" title="Acerca de" class="md-nav__link">
+      Acerca de
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#etiquetas-html-interactivas" class="md-nav__link">
+    Etiquetas HTML interactivas
+  </a>
+  
+    <nav class="md-nav" aria-label="Etiquetas HTML interactivas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elementos-desplegables" class="md-nav__link">
+    Elementos desplegables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dialogos-emergentes" class="md-nav__link">
+    Diálogos emergentes
+  </a>
+  
+    <nav class="md-nav" aria-label="Diálogos emergentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dialogos-modales" class="md-nav__link">
+    Diálogos modales
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atributo-contenteditable" class="md-nav__link">
+    Atributo contentEditable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atributo-hidden" class="md-nav__link">
+    Atributo hidden
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etiquetas-html-de-scripts" class="md-nav__link">
+    Etiquetas HTML de scripts
+  </a>
+  
+    <nav class="md-nav" aria-label="Etiquetas HTML de scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-etiqueta-script" class="md-nav__link">
+    La etiqueta script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modo-de-carga-del-script" class="md-nav__link">
+    Modo de carga del script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carga-de-modulos-javascript" class="md-nav__link">
+    Carga de módulos Javascript
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenguajes-de-scripting" class="md-nav__link">
+    Lenguajes de scripting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-etiqueta-noscript" class="md-nav__link">
+    La etiqueta noscript
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-etiqueta-template" class="md-nav__link">
+    La etiqueta template
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eventos-en-html" class="md-nav__link">
+    Eventos en HTML
+  </a>
+  
+    <nav class="md-nav" aria-label="Eventos en HTML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eventos" class="md-nav__link">
+    Eventos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detalles-del-evento" class="md-nav__link">
+    Detalles del evento
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otros-eventos" class="md-nav__link">
+    Otros Eventos
+  </a>
+  
+    <nav class="md-nav" aria-label="Otros Eventos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eventos-de-documento" class="md-nav__link">
+    Eventos de documento
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eventos-de-carga-de-recursos" class="md-nav__link">
+    Eventos de carga de recursos
+  </a>
+  
+    <nav class="md-nav" aria-label="Eventos de carga de recursos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eventos-de-foco-en-elementos" class="md-nav__link">
+    Eventos de foco en elementos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eventos-de-raton" class="md-nav__link">
+    Eventos de ratón
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eventos-de-entrada-de-datos" class="md-nav__link">
+    Eventos de entrada de datos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eventos-multimedia" class="md-nav__link">
+    Eventos multimedia
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/saucedoinfo/guias/edit/master/docs/desarrollo/html/06-etiquetas_de_scripting.md" title="Editar esta página" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="etiquetas-de-scripting">Etiquetas de scripting<a class="headerlink" href="#etiquetas-de-scripting" title="Permanent link">&para;</a></h1>
+<h2 id="etiquetas-html-interactivas">Etiquetas HTML interactivas<a class="headerlink" href="#etiquetas-html-interactivas" title="Permanent link">&para;</a></h2>
+<p>A partir de HTML5, existen algunas etiquetas que proporcionan <strong>características interactivas</strong> a una página. En dichas etiquetas el usuario debe tomar parte de forma activa para activarlas o utilizarlas. Elementos desplegables, menús contextuales, diálogos emergentes, etc...</p>
+<p>Veamos una lista de dichas etiquetas:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Etiqueta</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>&lt;details&gt;</code></td>
+<td align="left">Crea un elemento desplegable. Etiqueta que contiene todo el contenido del elemento.</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;summary&gt;</code></td>
+<td align="left">Título del desplegable que aparece siempre, se encuentre desplegado o no.</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;dialog&gt;</code></td>
+<td align="left">Ventana de diálogo que puede contener y mostrar cierta información.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="elementos-desplegables">Elementos desplegables<a class="headerlink" href="#elementos-desplegables" title="Permanent link">&para;</a></h3>
+<p>Con la etiqueta <code>&lt;details&gt;</code> se puede crear un elemento desplegable que el usuario puede expandir o contraer para ver más información. Se trata de una etiqueta contenedora que actúa como un <code>&lt;div&gt;</code>, salvo que todo el contenido de esta etiqueta no se muestra inicialmente. En su lugar, aparece una flecha y el texto proporcionado en la etiqueta <code>&lt;summary&gt;</code> (<em>o el texto «Detalles» si se omite</em>).</p>
+<pre><code>&lt;details&gt;
+  &lt;summary&gt;Más información&lt;/summary&gt;
+  &lt;h2&gt;Nombre del sujeto&lt;/h2&gt;
+  &lt;img src="foto.jpg" alt="Foto del sujeto" /&gt;
+&lt;/details&gt;
+</code></pre>
+<p>Si pulsamos sobre el texto o la mencionada flecha, el contenido de la etiqueta <code>&lt;details&gt;</code> se muestra o se oculta, dependiendo de si se encontraba oculto o visible respectivamente. La etiqueta <code>&lt;details&gt;</code> tiene un atributo <strong>open</strong>, que si se especifica el contenido es visible por defecto.</p>
+<p>Esta etiqueta pertenece a HTML5.1 y aún no está soportado por la mayoría de navegadores.</p>
+<h3 id="dialogos-emergentes">Diálogos emergentes<a class="headerlink" href="#dialogos-emergentes" title="Permanent link">&para;</a></h3>
+<p>HTML5.1 incorporará los denominados <strong>diálogos emergentes</strong>, o lo que es lo mismo, ventanas emergentes compatibles con código HTML que podemos utilizar y personalizar para realizar avisos o alertas al usuario. Hasta ahora, la forma más simple de crear avisos o alertas emergentes era recurrir al <code>alert</code> de Javascript o crear ventanas personalizadas desde Javascript. Sin embargo, con HTML5.1 podremos crear desde HTML sencillos o complejos diálogos con texto, botones, imágenes, video o cualquier elemento HTML que se nos ocurra.</p>
+<p>La forma de crear diálogos es muy sencilla. Utilizaremos la etiqueta <code>&lt;dialog&gt;</code> y en su interior colocaremos toda la información que queramos mostrar en la ventana:</p>
+<p>.sandbox pre { margin: 0; overflow: auto; max-height: var(--height, auto); }</p>
+<pre><code>&lt;dialog id="ms"&gt;
+  &lt;p&gt;¡Hola, soy un mensaje!&lt;/p&gt;
+  &lt;button id="close" onclick="document.getElementById('ms').close()"&gt;Ok!&lt;/button&gt;
+&lt;/dialog&gt;
+&lt;button id="show" onclick="document.getElementById('ms').show()"&gt;Mostrar&lt;/button&gt;
+</code></pre>
+<p>En este caso, estamos creando una ventana de diálogo con un párrafo de texto y un botón para cerrar la ventana. Fuera de ella, un botón para mostrar el diálogo. La etiqueta <code>&lt;dialog&gt;</code> puede tener el atributo <strong>open</strong> para indicar que la ventana debe estar abierta por defecto. En caso contrario, no se muestra inicialmente.</p>
+<h4 id="dialogos-modales">Diálogos modales<a class="headerlink" href="#dialogos-modales" title="Permanent link">&para;</a></h4>
+<p>En programación, una <a href="https://en.wikipedia.org/wiki/Modal_window">ventana modal</a> es un tipo de ventana que se muestra al usuario, generalmente para avisarle de algo o pedirle una información necesaria para continuar. Se caracteriza en que una vez se muestra, no se le permite realizar otra tarea hasta que atienda el mensaje de esa ventana modal (<em>pulsar ok, responder una pregunta, etc...</em>).</p>
+<p>Para crear una ventana modal sólo tendremos que usar la función <code>showModal()</code> desde Javascript, en lugar de utilizar la función <code>show()</code> que utilizamos en el ejemplo anterior:</p>
+<pre><code>&lt;dialog id="ms"&gt;
+  &lt;h2&gt;¡Vuelve a la sombra!&lt;/h2&gt;
+  &lt;img src="gandalf.jpg" alt="Gandalf" /&gt;
+  &lt;p&gt;¡NO.. PUEDES... PASAR!&lt;/p&gt;
+  &lt;button id="close" onclick="document.getElementById('ms').close()"&gt;Ok!&lt;/button&gt;
+&lt;/dialog&gt;
+&lt;button id="show" onclick="document.getElementById('ms').showModal()"&gt;Mostrar&lt;/button&gt;
+</code></pre>
+<p>Esto mostrará la siguiente ventana de diálogo modal:</p>
+<p><img alt="Diálogo modal con HTML5" src="../img/dialog-html5-modal.png" /></p>
+<p>Obsérvese que hemos utilizado la pseudoclase CSS <code>::backdrop</code> sobre la ventana de diálogo para darle estilos a la parte de detrás de la ventana modal, pudiendo, por ejemplo, aplicarle un color de fondo negro con transparencia al 25% con la propiedad <code>background-color:RGBA(0,0,0, .75)</code>:</p>
+<pre><code>#ms::backdrop {
+  background-color: RGBA(0, 0, 0, 0.75);
+}
+</code></pre>
+<p>Las ventanas de diálogo de HTML5.1 aún son muy recientes y el soporte no está muy extendido entre los diferentes navegadores del panorama web:</p>
+<h3 id="atributo-contenteditable">Atributo contentEditable<a class="headerlink" href="#atributo-contenteditable" title="Permanent link">&para;</a></h3>
+<p>En HTML5 podemos utilizar el atributo <code>contentEditable</code> sobre cualquier elemento para darle al usuario capacidades de edición sobre el mismo. De esta forma, podemos incluir el atributo <code>contentEditable</code> a una etiqueta <code>&lt;p&gt;</code> de párrafo, o a una etiqueta <code>&lt;h3&gt;</code>, por ejemplo, lo que permitirá al usuario que, al pulsar sobre dichos elementos, pueda modificar el texto que aparece:</p>
+<pre><code>&lt;h3 contenteditable&gt;Título del artículo&lt;/h3&gt;
+&lt;div contenteditable&gt;
+  &lt;p&gt;Este es un párrafo de ejemplo del ejemplo en cuestión.&lt;/p&gt;
+  &lt;p&gt;Con él se pretende mostrar el funcionamiento del atributo contentEditable.&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<p>De esta forma, podemos dotar de capacidades de edición al usuario. Obsérvese siempre que el HTML, CSS y Javascript son tecnologías que trabajan en el <strong>front-end</strong>, o lo que es lo mismo, son descargadas desde el alojamiento web y transferidas a una carpeta temporal de nuestro sistema. En ella, el navegador la lee y ahí es donde estamos realizando dichas modificaciones.</p>
+<p>Si el usuario volviese a recargar la página tras modificar ciertos elementos, los cambios no se verán reflejados. Para ello, hay que hacer ciertas operaciones (<em>por ejemplo, mediante Javascript o con un botón de Guardar cambios</em>), y realizar una petición al backend del alojamiento web para que guarde los cambios.</p>
+<h3 id="atributo-hidden">Atributo hidden<a class="headerlink" href="#atributo-hidden" title="Permanent link">&para;</a></h3>
+<p>HTML5 incorpora también un atributo <code>hidden</code> mediante el cuál podemos hacer desaparecer visualmente un elemento HTML (<em>y todo su contenido, si es una etiqueta contenedora</em>). Hasta ahora, para realizar esta tarea teníamos que recurrir a CSS, ya que se trata de una cuestión de presentación visual. Sin embargo, la diferencia entre el atributo <code>hidden</code> o utilizar estilos es que mediante CSS podemos mostrar elementos dependiendo de acciones del usuario o del medio en el que estén (<em>media queries, por ejemplo</em>).</p>
+<p>Por otro lado, el attributo <code>hidden</code> se propone utilizarse cuando el usuario ha realizado una acción y hay una serie de elementos que queremos ocultar porque ya no son relevantes, independientemente de los estilos que se estén aplicando en la página:</p>
+<pre><code>&lt;div id="info" hidden&gt;Información&lt;/div&gt;
+&lt;button onClick="toggleHidden('#info')"&gt;
+  Mostrar/ocultar información
+&lt;/button&gt;
+</code></pre>
+<p>En el caso anterior, tenemos un <code>&lt;div&gt;</code> con texto que vamos a ocultar cada vez que el usuario pulse el botón. Dicho botón ejecuta la función Javascript <code>toggleHidden()</code> para ocultar o mostrar el elemento, dependiendo si ya estaba visibile o si estaba oculto:</p>
+<pre><code>function toggleHidden(selector) {
+  element = document.querySelector(selector);
+  element.hidden = element.hidden ? false : true;
+}
+</code></pre>
+<p>El soporte de este atributo es completo en la mayoría de los navegadores: <a href="https://caniuse.com/hidden">https://caniuse.com/hidden</a></p>
+<hr />
+<h2 id="etiquetas-html-de-scripts">Etiquetas HTML de scripts<a class="headerlink" href="#etiquetas-html-de-scripts" title="Permanent link">&para;</a></h2>
+<p>A medida que aprendemos HTML vemos que se trata de un lenguaje de marcas estupendo y muy potente, pero también nos vamos dando cuenta que ciertos detalles no se pueden cubrir sólo con HTML y CSS. Para ello tenemos que hacer uso de un lenguaje de programación llamado <strong>Javascript</strong>.</p>
+<p>Este lenguaje es muy potente y flexible, pero también requiere mayor dominio del código que con HTML y CSS, puesto que estos últimos sólo son lenguajes de marcas y estilos respectivamente, mientras que Javascript es un lenguaje de programación que requiere ciertos conocimientos y metodología de desarrollo.</p>
+<div class="admonition nota">
+<p class="admonition-title">Nota<p>En este artículo cubriremos una parte básica de Javascript muy relacionada con HTML. Si quieres aprender Javascript en profundidad, echa un ojo a <a href="https://lenguajejs.com/javascript/"><strong>LenguajeJS.com</strong></a>.</p>
+</p>
+</div>
+<h3 id="la-etiqueta-script">La etiqueta script<a class="headerlink" href="#la-etiqueta-script" title="Permanent link">&para;</a></h3>
+<p>Para utilizar Javascript, lo que hacemos normalmente es indicar al HTML que queremos cargar un <strong>script</strong> (<em>generalmente, un archivo de texto con código Javascript</em>) y hacerlo funcionar sobre la página actual. Para hacer esto, utilizaremos la etiqueta <code>&lt;script&gt;</code>, que permite indicar una serie de atributos:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Atributo</th>
+<th align="left">Valor</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>src</code></td>
+<td align="left"><em>URL</em></td>
+<td align="left">Dirección URL del script externo a cargar.</td>
+</tr>
+<tr>
+<td align="left"><code>type</code></td>
+<td align="left"><em>tipo</em></td>
+<td align="left">Tipo de script a cargar. Si se omite, se asume <code>text/javascript</code> como valor.</td>
+</tr>
+<tr>
+<td align="left"><code>nomodule</code></td>
+<td align="left">Boolean</td>
+<td align="left">Si se define este atributo, el script no se carga en navegadores modernos.</td>
+</tr>
+<tr>
+<td align="left"><code>async</code></td>
+<td align="left">Boolean</td>
+<td align="left">Ejecuta el script cuando se haya descargado, sin bloquear el navegador.</td>
+</tr>
+<tr>
+<td align="left"><code>defer</code></td>
+<td align="left">Boolean</td>
+<td align="left">Aplaza la ejecución del script, lo ejecuta al final, cuando haya descargado todo.</td>
+</tr>
+</tbody>
+</table>
+<p>Para empezar, ten en cuenta que la etiqueta <code>&lt;script&gt;</code> tiene fundamentalmente dos modos de funcionar, que se basan en como definas la etiqueta <code>&lt;script&gt;</code>:</p>
+<ul>
+<li>Como <strong>script en línea</strong>: El código JS se incluye en el HTML, dentro de la etiqueta.</li>
+<li>Como <strong>script externo</strong>: El código JS se incluye en el fichero Javascript enlazado en <code>src</code>.</li>
+</ul>
+<p>Un ejemplo de <strong>script en línea</strong> sería el siguiente. Observa que el código se incluye en el interior de la etiqueta, por lo que permanece en el documento HTML:</p>
+<pre><code>&lt;script&gt;
+  alert('¡Hola!');
+&lt;/script&gt;
+</code></pre>
+<p>El siguiente código, por otro lado, es un <strong>script externo</strong>, donde el código Javascript se encuentra en un archivo separado del HTML, concretamente en la ruta <code>/js/script.js</code>:</p>
+<pre><code>&lt;script src="/js/script.js"&gt;&lt;/script&gt;
+</code></pre>
+<p>En ambos casos, el navegador interrumpirá la carga de la página para procesar y ejecutar el Javascript, detalle que quizás no sea el más adecuado para nuestro desarrollo. Veremos como se puede modificar en el siguiente apartado.</p>
+<h3 id="modo-de-carga-del-script">Modo de carga del script<a class="headerlink" href="#modo-de-carga-del-script" title="Permanent link">&para;</a></h3>
+<p>Cuando indicamos un <strong>script externo</strong> mediante el atributo <code>src</code>, por defecto <strong>el proceso de carga del script</strong> por parte del navegador es el siguiente:</p>
+<ul>
+<li><strong>Detiene</strong> temporalmente la carga del HTML en el lugar donde se encontró el <code>&lt;script&gt;</code>.</li>
+<li><strong>Descarga</strong> el script <code>.js</code> al caché de ficheros temporales del navegador.</li>
+<li><strong>Ejecuta</strong> el script una vez descargado.</li>
+<li><strong>Reanuda</strong> la carga del documento HTML por donde lo dejó, en cuanto termina la ejecución del script.</li>
+</ul>
+<p>Este es el modo de carga por defecto de los scripts por parte del navegador. Sin embargo, existen dos métodos de carga diferentes: la carga <strong>asíncrona</strong> y la carga <strong>diferida</strong>:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Modo de carga</th>
+<th align="left">Atributo</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>Carga normal</strong></td>
+<td align="left">(ninguno)</td>
+<td align="left">Bloquea la carga de la página y se ejecuta inmediatamente.</td>
+</tr>
+<tr>
+<td align="left">Carga asíncrona</td>
+<td align="left"><code>async</code></td>
+<td align="left">Ejecuta el script tan pronto como esté disponible.</td>
+</tr>
+<tr>
+<td align="left">Carga diferida</td>
+<td align="left"><code>defer</code></td>
+<td align="left">Aplaza la ejecución del script al final de la carga de la página.</td>
+</tr>
+</tbody>
+</table>
+<p>Estos dos métodos tienen ligeras diferencias respecto al modo de carga básico que vimos anteriormente, y que aparece el primero en la siguiente ilustración:</p>
+<p><img alt="Modo de carga de scripts" src="../img/script-async-defer.png" /></p>
+<ul>
+<li>
+<p><a href="https://caniuse.com/#feat=script-async"><strong>Carga asíncrona</strong></a>: El navegador descarga el script sin detener la carga del documento HTML. Una vez descargado, detiene la carga del documento HTML temporalmente, ejecuta el script, y una vez terminada la ejecución, continua con la carga del documento HTML. Este tipo de carga se realiza incluyendo el atributo <code>async</code> en la etiqueta <code>&lt;script&gt;</code>.</p>
+</li>
+<li>
+<p><a href="https://caniuse.com/#feat=script-defer"><strong>Carga diferida</strong></a>: El navegador le da prioridad a la carga del documento HTML. Descarga el script de forma paralela sin detener la carga del documento HTML. Una vez ha terminado de cargar el documento HTML, ejecuta el script. Este tipo de carga se realiza incluyendo el atributo <code>defer</code> en la etiqueta <code>&lt;script&gt;</code>.</p>
+</li>
+</ul>
+<h3 id="carga-de-modulos-javascript">Carga de módulos Javascript<a class="headerlink" href="#carga-de-modulos-javascript" title="Permanent link">&para;</a></h3>
+<p>En los últimos años, Javascript ha incluido una funcionalidad llamada <a href="https://lenguajejs.com/javascript/caracteristicas/modulos-es6/">módulos de Javascript</a>. Dichos módulos son una modalidad específica de archivos Javascript, los cuales pueden compartir funcionalidades a través de las palabras clave <code>import</code> y <code>export</code>.</p>
+<p>Estas funcionalidades están prohibidas por defecto, y sólo se podrán realizar si a la hora de cargar el script con la etiqueta <code>&lt;script&gt;</code> definimos el atributo <code>type</code> a <code>module</code>. Esto nos permitirá cargar el archivo Javascript como módulo y utilizarlo:</p>
+<pre><code>&lt;script type="module"&gt;
+  import { Howler, Howl } from "https://unpkg.com/howler";
+&lt;/script&gt;
+</code></pre>
+<div class="admonition nota">
+<p class="admonition-title">Nota<p>Es posible usar el atributo <code>type="module"</code> tanto en etiquetas <code>&lt;script&gt;</code> en línea (<em>ejemplo anterior</em>) como con etiquetas <code>&lt;script&gt;</code> que utilicen el atributo <code>src</code>. Además, todos los scripts cargados como módulos, se ejecutarán en <strong>modo diferido</strong>.</p>
+</p>
+</div>
+<p>En algunos casos, podemos crear etiquetas <code>&lt;script&gt;</code> que utilicen un atributo <code>nomodule</code>. Dicho atributo indicará a navegadores modernos que soportan el atributo <code>type=module</code>, que no deben descargar ni ejecutar ese script. Sin embargo, navegadores antiguos que no lo soportan cargarán el script como un fichero Javascript normal y corriente:</p>
+<pre><code>&lt;script type="module"&gt;
+  /* Código para navegadores modernos */
+  import { Howler, Howl } from "https://unpkg.com/howler";
+&lt;/script&gt;
+&lt;script nomodule&gt;
+  /* Código para navegadores antiguos */
+&lt;/script&gt;
+</code></pre>
+<p>La finalidad de este atributo es poder crear <strong>scripts</strong> a modo de <strong>fallback</strong> para realizar tareas equivalentes en navegadores antiguos y dar soporte a otros sistemas menos modernos. Es lo que se conoce como el <strong>patrón module/nomodule</strong>.</p>
+<h3 id="lenguajes-de-scripting">Lenguajes de scripting<a class="headerlink" href="#lenguajes-de-scripting" title="Permanent link">&para;</a></h3>
+<p>Por defecto, el lenguaje de scripting soportado por los navegadores es <strong>Javascript</strong>, por lo que cuando hablamos de scripting en el navegador (<em>front-end, o en el lado del cliente</em>) hablamos de este lenguaje. <strong>Javascript</strong> está basado en <a href="https://lenguajejs.com/javascript/introduccion/ecmascript/"><strong>ECMAScript</strong></a>, el estándar que indica como debe actuar el lenguaje. Luego, es misión de cada navegador implementarlo de acuerdo a esas normas, aunque siempre hay algunas diferencias entre navegadores.</p>
+<p>Existen alternativas para no utilizar Javascript directamente, sino algún lenguaje similar que traduce (<em>o mejor dicho, transpila</em>) a Javascript. Directamente, los navegadores solo soportan Javascript. Quizás, los transpiladores más populares a Javascript sean <a href="https://www.typescriptlang.org/">TypeScript</a> y <a href="https://babeljs.io/">Babel</a>.</p>
+<h3 id="la-etiqueta-noscript">La etiqueta noscript<a class="headerlink" href="#la-etiqueta-noscript" title="Permanent link">&para;</a></h3>
+<p>Debemos ser conscientes de que, aunque actualmente la mayoría de los navegadores poseen Javascript, un usuario puede acceder desde un dispositivo que no tenga Javascript (<em>muy poco habitual</em>) o que tenga Javascript deshabilitado (<em>poco habitual</em>). Una buena costumbre, es proporcionar una alternativa (<em>aunque sea mínima</em>) para aquellos usuarios que no tengan Javascript habilitado.</p>
+<p>Para ello, utilizaremos la etiqueta <code>&lt;noscript&gt;</code>:</p>
+<pre><code>&lt;script&gt;
+  var usuario = prompt("¿Cuál es tu nombre?");
+  alert("¡Hola, " + usuario + "!");
+&lt;/script&gt;
+&lt;noscript&gt;
+  ¡Hola, usuario!
+&lt;/noscript&gt;
+</code></pre>
+<p>En caso de que el usuario tenga capacidades de Javascript en su navegador, se ejecutará el código de la etiqueta <code>&lt;script&gt;</code>, sin embargo, si el navegador no tiene Javascript, se mostrará el texto proporcionado en la etiqueta <code>&lt;noscript&gt;</code>, que aunque no puede recoger el nombre de usuario, mostrará una alternativa.</p>
+<p>De esta forma evitamos que si el usuario no tiene Javascript, vea una página en blanco.</p>
+<h3 id="la-etiqueta-template">La etiqueta template<a class="headerlink" href="#la-etiqueta-template" title="Permanent link">&para;</a></h3>
+<p>La etiqueta <code>&lt;template&gt;</code> es un método ideal para reutilizar información HTML y tratarla mediante Javascript. En el siguiente ejemplo tenemos una tabla HTML que sólo tiene definida la cabecera de la misma. Sin embargo, un poco más abajo hay una etiqueta <code>&lt;template&gt;</code> que contiene una fila con 3 celdas:</p>
+<pre><code>&lt;table id="tabla"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Nombre&lt;/th&gt;
+    &lt;th&gt;Apellidos&lt;/th&gt;
+    &lt;th&gt;Calificación&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;template id="usuario"&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/template&gt;
+&lt;/table&gt;
+</code></pre>
+<p>El contenido de una etiqueta <code>&lt;template&gt;</code> es inerte, de modo que el navegador no interpreta su interior (<em>no descarga imágenes, no ejecuta scripts, etc...</em>) hasta que el usuario clona su contenido para insertarlo en el HTML.</p>
+<p>En este ejemplo anterior, nosotros podríamos desde Javascript obtener el contenido de la plantilla <code>&lt;template&gt;</code>, clonarlo y añadirlo al final de la tabla de forma dinámica, para posteriormente modificar los datos de cada fila:</p>
+<pre><code>var template = document.getElementById("usuario");
+var tabla = document.getElementById("tabla");
+
+tabla.appendChild(template.content.cloneNode(true));
+</code></pre>
+<div class="admonition nota">
+<p class="admonition-title">Nota<p>Si te interesa este tema, tienes más información sobre la etiqueta <code>&lt;template&gt;</code> (<em>y plantillas en general</em>) en este artículo sobre <a href="https://lenguajejs.com/webcomponents/nativos/plantillas-dom-componente/">Plantillas, DOM y WebComponents</a>.</p>
+</p>
+</div>
+<p>Las plantillas HTML tienen relativamente buen soporte, aunque en el caso de querer dar soporte a Internet Explorer habría que utilizar algún polyfill como <a href="https://github.com/webcomponents/polyfills/tree/master/packages/template">Minimal Polyfill for Template</a>: <a href="https://caniuse.com/template">https://caniuse.com/template</a></p>
+<hr />
+<h2 id="eventos-en-html">Eventos en HTML<a class="headerlink" href="#eventos-en-html" title="Permanent link">&para;</a></h2>
+<p>En Javascript hay un concepto llamado <strong>evento</strong> que se utiliza para referirse al instante justo en el que ocurre un determinado suceso. Por ejemplo, existe un evento llamado <strong>click</strong> que se dispara cuando <strong>un usuario hace clic sobre un elemento HTML</strong>. Podemos decirle al navegador que cuando ocurra un evento concreto, realice una acción determinada. De esta forma, podemos preparar nuestra página para que actúe según las circunstancias.</p>
+<h3 id="eventos">Eventos<a class="headerlink" href="#eventos" title="Permanent link">&para;</a></h3>
+<p>Existen muchísimos tipos de eventos en Javascript. Para activarlos, lo primero es elegir la etiqueta en la que ocurrirá el evento. Una vez elegida, colocaremos un atributo en dicha etiqueta para detectar si se produce el evento. Además, hay que indicar el prefijo <strong>on</strong> en el atributo del evento. Por ejemplo, si queremos detectar el evento <strong>click</strong>, el atributo HTML deberá llamarse <strong>onClick</strong>.</p>
+<p>Así pues, veamos un ejemplo:</p>
+<pre><code>&lt;div&gt;
+  &lt;img src="gandalf.jpg" alt="Gandalf" onClick="alert('¡Has hecho clic!')" /&gt;
+&lt;/div&gt;
+</code></pre>
+<p>En este sencillo ejemplo, hemos especificado una imagen que es la que estará «escuchando» el evento <strong>click</strong>. Si el usuario hace clic sobre ese elemento, o sea, sobre la imagen, el navegador dispará el evento y ejecutará la función Javascript <code>alert()</code>, mostrando un mensaje por pantalla: <strong>¡Has hecho clic!</strong>.</p>
+<h3 id="detalles-del-evento">Detalles del evento<a class="headerlink" href="#detalles-del-evento" title="Permanent link">&para;</a></h3>
+<p>En los eventos, puede que queramos obtener información más específica, como por ejemplo, el número de veces que hizo clic el usuario sobre la imagen (<em>si fue un solo clic, si fue doble clic, etc...</em>). Este dato específico lo devuelve el evento <strong>onClick</strong> a través del objeto especial <strong>event</strong>, así que continuemos con el ejemplo anterior, modificando algunas cosas:</p>
+<pre><code>&lt;div&gt;
+  &lt;img src="gandalf.jpg" alt="Gandalf" onClick="updateCounter(event)" /&gt;
+  &lt;p&gt;Has hecho clic a Gandalf &lt;span id="num"&gt;0&lt;/span&gt; veces.&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Obsérvese que en este caso, en lugar del <code>alert()</code> usado antes, ejecutamos una función javascript que crearemos nosotros, llamada <strong>updateCounter()</strong>. Después de la imagen, hay un párrafo de texto que contiene una frase y un fragmento <code>&lt;span id="num"&gt;</code> que contendrá el número de veces que se ha pulsado sobre la imagen. Inicialmente se encuentra establecido a <strong>0</strong>.</p>
+<p>Por su parte, la función <code>updateCounter()</code> pasa por parámetro una variable especial <strong>event</strong>, que es la que tiene la información sobre el evento ocurrido, y que posteriormente utilizaremos para extraer dicha información.</p>
+<p>Definimos la función <code>updateCounter()</code> en Javascript:</p>
+<pre><code>function updateCounter(e) {
+  document.querySelector("#num").textContent = e.detail;
+}
+</code></pre>
+<p>Esta función busca la etiqueta HTML que tiene un <code>id="num"</code>, y mediante <code>.textContent</code> modificamos su contenido. El nuevo contenido es <code>e.detail</code> que no es más que un dato que se encuentra en el evento que se ha disparado. Ese dato devuelve el número de veces seguidas (<em>contador</em>) que el usuario pulsó sobre la imagen.</p>
+<p>Veamos finalmente lo que ocurriría con este ejemplo. Lo que aparece a la izquierda es cuando el usuario pulsa el botón del ratón (<em>LButtonDown</em>) y cuando lo suelta (<em>LButtonUp</em>):</p>
+<h3 id="otros-eventos">Otros Eventos<a class="headerlink" href="#otros-eventos" title="Permanent link">&para;</a></h3>
+<p>Existen muchos otros eventos, prácticamente uno para cada acción que pueda ocurrir en un documento HTML. A continuación, muestro <strong>algunos</strong> grupos de eventos muy utilizados frecuentemente de la gran cantidad de eventos existentes en Javascript.</p>
+<h4 id="eventos-de-documento">Eventos de documento<a class="headerlink" href="#eventos-de-documento" title="Permanent link">&para;</a></h4>
+<p>Es posible poner a escuchar ciertos eventos sobre el documento HTML completo, estableciendo el atributo del evento en la etiqueta <code>&lt;body&gt;</code>:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Tipo de evento</th>
+<th align="left">Atributo HTML</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">UIEvent</td>
+<td align="left">onLoad</td>
+<td align="left">La página (el documento HTML) ha terminado de cargarse.</td>
+</tr>
+<tr>
+<td align="left">UIEvent</td>
+<td align="left">onUnload</td>
+<td align="left">La página (el documento HTML) va a cerrarse.</td>
+</tr>
+<tr>
+<td align="left">UIEvent</td>
+<td align="left">onScroll</td>
+<td align="left">El usuario ha hecho scroll sobre la página (el documento HTML).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="eventos-de-carga-de-recursos">Eventos de carga de recursos<a class="headerlink" href="#eventos-de-carga-de-recursos" title="Permanent link">&para;</a></h3>
+<p>Sobre las etiquetas que cargan un archivo externo, como podrían ser <code>&lt;img&gt;</code> o <code>&lt;script&gt;</code>, e incluso <code>&lt;style&gt;</code> con estilos CSS en línea. Los archivos multimedia <code>&lt;audio&gt;</code> y <code>&lt;video&gt;</code> tienen sus propios eventos específicos, ya que tienen un proceso de carga especial:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Tipo de evento</th>
+<th align="left">Atributo HTML</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">UIEvent</td>
+<td align="left">onLoad</td>
+<td align="left">El recurso ha terminado de cargarse en la página.</td>
+</tr>
+<tr>
+<td align="left">UIEvent</td>
+<td align="left">onUnload</td>
+<td align="left">El recurso ha sido eliminado de la página.</td>
+</tr>
+<tr>
+<td align="left">UIEvent</td>
+<td align="left">onAbort</td>
+<td align="left">El recurso ha sido cancelado y no ha terminado su carga.</td>
+</tr>
+<tr>
+<td align="left">UIEvent</td>
+<td align="left">onError</td>
+<td align="left">El recurso ha dado un error y no ha terminado su carga.</td>
+</tr>
+<tr>
+<td align="left">UIEvent</td>
+<td align="left">onSelect</td>
+<td align="left">El usuario ha seleccionado un texto de un campo de datos.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="eventos-de-foco-en-elementos">Eventos de foco en elementos<a class="headerlink" href="#eventos-de-foco-en-elementos" title="Permanent link">&para;</a></h4>
+<p>Sobre etiquetas <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;select&gt;</code>, <code>&lt;a&gt;</code> o cualquier otra etiqueta que pueda ser seleccionable por el usuario pulsando la tecla TAB, existen una serie de eventos para controlar cuando gana o pierde el foco un elemento:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Tipo de evento</th>
+<th align="left">Atributo HTML</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">FocusEvent</td>
+<td align="left">onBlur</td>
+<td align="left">El elemento ha perdido el foco (foco de salida).</td>
+</tr>
+<tr>
+<td align="left">FocusEvent</td>
+<td align="left">onFocusout</td>
+<td align="left">El elemento ha perdido el foco (y permite bubble).</td>
+</tr>
+<tr>
+<td align="left">FocusEvent</td>
+<td align="left">onFocus</td>
+<td align="left">El elemento ha ganado el foco (foco de entrada).</td>
+</tr>
+<tr>
+<td align="left">FocusEvent</td>
+<td align="left">onFocusin</td>
+<td align="left">El elemento ha ganado el foco (y permite bubble).</td>
+</tr>
+</tbody>
+</table>
+<h4 id="eventos-de-raton">Eventos de ratón<a class="headerlink" href="#eventos-de-raton" title="Permanent link">&para;</a></h4>
+<p>Los eventos de ratón se utilizan para detectar todas aquellas acciones que el usuario realiza mediante el ratón con algún elemento de la página, como podría ser mover el ratón por encima de ellos, hacer clic, mover la rueda del ratón, etc...</p>
+<table>
+<thead>
+<tr>
+<th align="left">Tipo de evento</th>
+<th align="left">Atributo HTML</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">MouseEvent</td>
+<td align="left">onClick</td>
+<td align="left">El usuario ha pulsado (<em>y soltado</em>) el elemento.</td>
+</tr>
+<tr>
+<td align="left">MouseEvent</td>
+<td align="left">onDblclick</td>
+<td align="left">El usuario ha hecho doble clic en el elemento.</td>
+</tr>
+<tr>
+<td align="left">MouseEvent</td>
+<td align="left">onMousedown</td>
+<td align="left">El usuario ha pulsado (<em>aún sin haber soltado</em>) el elemento.</td>
+</tr>
+<tr>
+<td align="left">MouseEvent</td>
+<td align="left">onMouseup</td>
+<td align="left">El usuario ha soltado el botón pulsado en un elemento.</td>
+</tr>
+<tr>
+<td align="left">MouseEvent</td>
+<td align="left">onMousemove</td>
+<td align="left">El usuario ha movido el ratón.</td>
+</tr>
+<tr>
+<td align="left">MouseEvent</td>
+<td align="left">onMouseenter</td>
+<td align="left">El usuario ha movido el ratón dentro de un elemento.</td>
+</tr>
+<tr>
+<td align="left">MouseEvent</td>
+<td align="left">onMouseleave</td>
+<td align="left">El usuario ha movido el ratón fuera de un elemento.</td>
+</tr>
+<tr>
+<td align="left">MouseEvent</td>
+<td align="left">onMouseout</td>
+<td align="left">El usuario ha movido el ratón fuera de un elemento (bubbles).</td>
+</tr>
+<tr>
+<td align="left">MouseEvent</td>
+<td align="left">onMouseover</td>
+<td align="left">El usuario ha movido el ratón dentro de un elemento (bubbles).</td>
+</tr>
+<tr>
+<td align="left">WheelEvent</td>
+<td align="left">onWheel</td>
+<td align="left">El usuario ha movido la rueda del ratón.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="eventos-de-entrada-de-datos">Eventos de entrada de datos<a class="headerlink" href="#eventos-de-entrada-de-datos" title="Permanent link">&para;</a></h4>
+<p>Sobre elementos <code>&lt;input&gt;</code> o elementos HTML con el atributo <strong>contentEditable</strong>, y por lo tanto, elementos HTML que son editables por el usuario:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Tipo de evento</th>
+<th align="left">Atributo HTML</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">InputEvent</td>
+<td align="left">onBeforeInput</td>
+<td align="left">Un elemento <code>&lt;input&gt;</code> o con atributo contentEditable a punto de cambiar.</td>
+</tr>
+<tr>
+<td align="left">InputEvent</td>
+<td align="left">onInput</td>
+<td align="left">Un elemento <code>&lt;input&gt;</code> o con atributo contentEditable ha cambiado.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="eventos-multimedia">Eventos multimedia<a class="headerlink" href="#eventos-multimedia" title="Permanent link">&para;</a></h4>
+<p>Sobre elementos multimedia como <code>&lt;audio&gt;</code> o <code>&lt;video&gt;</code>, donde se carga un recurso (<em>MP4, WebM, MP3, OGG...</em>) externo:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Tipo de evento</th>
+<th align="left">Atributo HTML</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">MediaEvent</td>
+<td align="left">onEmptied</td>
+<td align="left">El audio o video se ha vacíado (recargar elemento).</td>
+</tr>
+<tr>
+<td align="left">MediaEvent</td>
+<td align="left">onLoadedMetadata</td>
+<td align="left">Se han precargado los metadatos del audio o video (duración, subs...)</td>
+</tr>
+<tr>
+<td align="left">MediaEvent</td>
+<td align="left">onLoadedData</td>
+<td align="left">Se ha precargado el comienzo del audio o video.</td>
+</tr>
+<tr>
+<td align="left">MediaEvent</td>
+<td align="left">onCanPlay</td>
+<td align="left">El audio o video se ha precargado lo suficiente para reproducir.</td>
+</tr>
+<tr>
+<td align="left">MediaEvent</td>
+<td align="left">onCanPlayThrough</td>
+<td align="left">El audio o video se ha precargado completamente.</td>
+</tr>
+<tr>
+<td align="left">MediaEvent</td>
+<td align="left">onPlay</td>
+<td align="left">El audio o video comienza a reproducirse (tras haber sido pausado).</td>
+</tr>
+<tr>
+<td align="left">MediaEvent</td>
+<td align="left">onPlaying</td>
+<td align="left">El audio o video comienza a reproducirse.</td>
+</tr>
+<tr>
+<td align="left">MediaEvent</td>
+<td align="left">onPause</td>
+<td align="left">El audio o video ha sido pausado.</td>
+</tr>
+<tr>
+<td align="left">MediaEvent</td>
+<td align="left">onTimeUpdate</td>
+<td align="left">El audio o video ha avanzado en su reproducción.</td>
+</tr>
+<tr>
+<td align="left">MediaEvent</td>
+<td align="left">onEnded</td>
+<td align="left">El audio o video ha completado su reproducción.</td>
+</tr>
+<tr>
+<td align="left">MediaEvent</td>
+<td align="left">onWaiting</td>
+<td align="left">El audio o video está esperando a que el buffer se complete.</td>
+</tr>
+<tr>
+<td align="left">MediaEvent</td>
+<td align="left">onDurationChange</td>
+<td align="left">El audio o video ha cambiado su duración total (metadatos).</td>
+</tr>
+<tr>
+<td align="left">MediaEvent</td>
+<td align="left">onRateChange</td>
+<td align="left">El audio o video ha cambiado su velocidad de reproducción.</td>
+</tr>
+<tr>
+<td align="left">MediaEvent</td>
+<td align="left">onVolumeChange</td>
+<td align="left">El audio o video ha cambiado su volumen de reproducción.</td>
+</tr>
+<tr>
+<td align="left">ProgressEvent</td>
+<td align="left">onProgress</td>
+<td align="left">El audio o video se está descargando.</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">ProgressEvent</td>
+<td align="left">onLoadStart</td>
+</tr>
+<tr>
+<td align="left">MediaEvent</td>
+<td align="left">onSuspend</td>
+<td align="left">La precarga del audio o video ha sido suspendida (ok o pause).</td>
+</tr>
+<tr>
+<td align="left">UIEvent</td>
+<td align="left">onAbort</td>
+<td align="left">La precarga del audio o video ha sido abortada o reiniciada.</td>
+</tr>
+<tr>
+<td align="left">UIEvent</td>
+<td align="left">onError</td>
+<td align="left">Ha ocurrido un error.</td>
+</tr>
+<tr>
+<td align="left">MediaEvent</td>
+<td align="left">onStalled</td>
+<td align="left">El navegador intenta precargar el audio o video, pero se ha estancado.</td>
+</tr>
+<tr>
+<td align="left">MediaEvent</td>
+<td align="left">onSeeking</td>
+<td align="left">El navegador comenzó a buscar un momento concreto del audio/video.</td>
+</tr>
+<tr>
+<td align="left">MediaEvent</td>
+<td align="left">onSeeked</td>
+<td align="left">El navegador terminó de buscar un momento concreto del audio/video.</td>
+</tr>
+<tr>
+<td align="left">UIEvent</td>
+<td align="left">onResize</td>
+<td align="left">El video ha sido redimensionado.</td>
+</tr>
+</tbody>
+</table>
+<p>Todos estos eventos (<em>y muchos otros no incluídos en esta sección</em>) se pueden llamar desde Javascript para realizar personalizaciones más específicas, pero en ese caso ya hay que recurrir a Javascript y realizar tareas y metodologías de programación más específicas.</p>
+<hr />
+<p><strong>Fuente:</strong> <a href="https://lenguajehtml.com/">Lenguaje de Html</a> por <a href="https://manzdev.github.io/">Manz</a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../05-etiquetas_de_formularios/" title="Etiquetas de formularios" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Etiquetas de formularios
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../css/01-introduccion_a_CSS/" title="Introducción a CSS" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Introducción a CSS
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/saucedoinfo" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/saucedoinfo" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.instagram.com/saucedo.info/" target="_blank" rel="noopener" title="www.instagram.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.instant', 'navigation.expand', 'tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

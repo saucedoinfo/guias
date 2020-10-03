@@ -1,0 +1,3825 @@
+
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Coleccion de Guias de Desarrollo y diseño.">
+      
+      
+        <link rel="canonical" href="https://saucedoinfo.github.io/guias/desarrollo/javascript/03-caracteristicas/">
+      
+      
+        <meta name="author" content="Fernando S. Saucedo">
+      
+      <link rel="shortcut icon" href="../../../img/favicon-16x16.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.14">
+    
+    
+      
+        <title>Características - Guias de Desarrollo y diseño</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d3202873.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ff0a5ce4.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#000000">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#caracteristicas" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-header-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Guias de Desarrollo y diseño
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Características
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../html/01-introduccion_a_HTML5/" class="md-tabs__link">
+          Desarrollo
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" class="md-tabs__link">
+          Herramientas IT
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    Guias de Desarrollo y diseño
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Desarrollo
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Desarrollo" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Desarrollo
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Html
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Html" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        <span class="md-nav__icon md-icon"></span>
+        Html
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/01-introduccion_a_HTML5/" title="Introduccion a HTML" class="md-nav__link">
+      Introduccion a HTML
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/02-etiquetas_semanticas/" title="Etiquetas semánticas" class="md-nav__link">
+      Etiquetas semánticas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/03-etiquetas_multimedia/" title="Etiquetas multimedias" class="md-nav__link">
+      Etiquetas multimedias
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/04-etiquetas_de_cabecera/" title="Etiquetas de cabecera" class="md-nav__link">
+      Etiquetas de cabecera
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/05-etiquetas_de_formularios/" title="Etiquetas de formularios" class="md-nav__link">
+      Etiquetas de formularios
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/06-etiquetas_de_scripting/" title="Etiquetas de scripting" class="md-nav__link">
+      Etiquetas de scripting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Css
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Css" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        <span class="md-nav__icon md-icon"></span>
+        Css
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/01-introduccion_a_CSS/" title="Introducción a CSS" class="md-nav__link">
+      Introducción a CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/02-modelo_de_cajas/" title="Modelo de cajas" class="md-nav__link">
+      Modelo de cajas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/03-colores_y_fondos/" title="Colores y fondos" class="md-nav__link">
+      Colores y fondos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/04-selectores_CSS/" title="Selectores CSS" class="md-nav__link">
+      Selectores CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/05-Fuentes_y_tipografias/" title="Fuentes y tipografías" class="md-nav__link">
+      Fuentes y tipografías
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/06-representacion_de_datos/" title="Representación de datos" class="md-nav__link">
+      Representación de datos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/07_maquetacion_y_colocacion/" title="Maquetación y colocación" class="md-nav__link">
+      Maquetación y colocación
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/08-interacciones/" title="Interacciones" class="md-nav__link">
+      Interacciones
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/09-efectos/" title="Efectos" class="md-nav__link">
+      Efectos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/10-responsive_Web_Design/" title="Responsive Web Design" class="md-nav__link">
+      Responsive Web Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/11-animaciones_CSS/" title="Animaciones CSS" class="md-nav__link">
+      Animaciones CSS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3" checked>
+    
+    <label class="md-nav__link" for="nav-2-3">
+      JavaScript
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="JavaScript" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon"></span>
+        JavaScript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01-introducci%C3%B3n_a_javascript/" title="Introducción a Javascript" class="md-nav__link">
+      Introducción a Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02-fundamentos_de_javascript/" title="Fundamentos de Javascript" class="md-nav__link">
+      Fundamentos de Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Características
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Características" class="md-nav__link md-nav__link--active">
+      Características
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#array-functions" class="md-nav__link">
+    Array functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Array functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-son-las-array-functions" class="md-nav__link">
+    ¿Qué son las Array functions?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué son las Array functions?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#foreach-cada-uno" class="md-nav__link">
+    forEach (Cada uno)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#every-todos" class="md-nav__link">
+    every (Todos)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#some-al-menos-uno" class="md-nav__link">
+    some (Al menos uno)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map-transformaciones" class="md-nav__link">
+    map (Transformaciones)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter-filtrado" class="md-nav__link">
+    filter (Filtrado)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-busqueda" class="md-nav__link">
+    find (Búsqueda)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reduce-acumuladores" class="md-nav__link">
+    reduce (Acumuladores)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteradores" class="md-nav__link">
+    Iteradores
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expresiones-regulares-regexp" class="md-nav__link">
+    Expresiones regulares (RegExp)
+  </a>
+  
+    <nav class="md-nav" aria-label="Expresiones regulares (RegExp)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-una-regexp" class="md-nav__link">
+    ¿Qué es una RegExp?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué es una RegExp?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#propiedades-de-una-regexp" class="md-nav__link">
+    Propiedades de una RegExp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flags-de-una-regexp" class="md-nav__link">
+    Flags de una RegExp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-de-regexp" class="md-nav__link">
+    Métodos de RegExp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caracteres-especiales" class="md-nav__link">
+    Carácteres especiales
+  </a>
+  
+    <nav class="md-nav" aria-label="Carácteres especiales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clases-basicas" class="md-nav__link">
+    Clases básicas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conjunto-de-caracteres-o-alternativas" class="md-nav__link">
+    Conjunto de carácteres o alternativas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anclas" class="md-nav__link">
+    Anclas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuantificadores" class="md-nav__link">
+    Cuantificadores
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#captura-de-patrones" class="md-nav__link">
+    Captura de patrones
+  </a>
+  
+    <nav class="md-nav" aria-label="Captura de patrones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regex-en-strings" class="md-nav__link">
+    RegEx en Strings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    JSON
+  </a>
+  
+    <nav class="md-nav" aria-label="JSON">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-json" class="md-nav__link">
+    ¿Qué es JSON?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-utilizar-json" class="md-nav__link">
+    ¿Cómo utilizar JSON?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Cómo utilizar JSON?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#convertir-json-a-objeto" class="md-nav__link">
+    Convertir JSON a Objeto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convertir-objeto-a-json" class="md-nav__link">
+    Convertir Objeto a JSON
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leyendo-json-externo" class="md-nav__link">
+    Leyendo JSON externo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recursos-para-json" class="md-nav__link">
+    Recursos para JSON
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clases-es6" class="md-nav__link">
+    Clases ES6
+  </a>
+  
+    <nav class="md-nav" aria-label="Clases ES6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-una-clase" class="md-nav__link">
+    ¿Qué es una clase?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elementos-de-una-clase" class="md-nav__link">
+    Elementos de una clase
+  </a>
+  
+    <nav class="md-nav" aria-label="Elementos de una clase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-un-metodo" class="md-nav__link">
+    ¿Qué es un método?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-es-un-metodo-estatico" class="md-nav__link">
+    ¿Qué es un método estático?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-es-un-constructor" class="md-nav__link">
+    ¿Qué es un constructor?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-es-una-propiedad" class="md-nav__link">
+    ¿Qué es una propiedad?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#propiedades-y-metodos-privados" class="md-nav__link">
+    Propiedades y métodos privados
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#los-ambitos-en-una-clase" class="md-nav__link">
+    Los ámbitos en una clase
+  </a>
+  
+    <nav class="md-nav" aria-label="Los ámbitos en una clase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-palabra-clave-this" class="md-nav__link">
+    La palabra clave this
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#propiedades-computadas" class="md-nav__link">
+    Propiedades computadas
+  </a>
+  
+    <nav class="md-nav" aria-label="Propiedades computadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-un-getter" class="md-nav__link">
+    ¿Qué es un getter?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-es-un-setter" class="md-nav__link">
+    ¿Qué es un setter?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#herencia-de-clases" class="md-nav__link">
+    Herencia de Clases
+  </a>
+  
+    <nav class="md-nav" aria-label="Herencia de Clases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-extender-una-clase" class="md-nav__link">
+    ¿Qué es extender una clase?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-palabra-clave-super" class="md-nav__link">
+    La palabra clave super
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eslint" class="md-nav__link">
+    ESLint
+  </a>
+  
+    <nav class="md-nav" aria-label="ESLint">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-eslint" class="md-nav__link">
+    ¿Qué es ESLint?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-de-eslint" class="md-nav__link">
+    Instalación de ESLint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-inicial-de-eslint" class="md-nav__link">
+    Configuración inicial de ESLint
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuración inicial de ESLint">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-would-you-like-to-use-eslint" class="md-nav__link">
+    How would you like to use ESLint?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-type-of-modules-does-your-project-use" class="md-nav__link">
+    What type of modules does your project use?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#which-framework-does-your-project-use" class="md-nav__link">
+    Which framework does your project use?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-does-your-code-run" class="md-nav__link">
+    Where does your code run?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-would-you-like-to-define-a-style-for-your-project" class="md-nav__link">
+    How would you like to define a style for your project?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-format-do-you-want-your-config-file-to-be-in" class="md-nav__link">
+    What format do you want your config file to be in?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#would-you-like-to-install-them-now-with-npm" class="md-nav__link">
+    Would you like to install them now with npm?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-a-popular-style-guide" class="md-nav__link">
+    Use a popular style guide
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#answer-questions-about-style" class="md-nav__link">
+    Answer questions about style
+  </a>
+  
+    <nav class="md-nav" aria-label="Answer questions about style">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-style-of-indentation-do-you-use" class="md-nav__link">
+    What style of indentation do you use?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-quotes-do-you-use-for-strings" class="md-nav__link">
+    What quotes do you use for strings?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-line-endings-do-you-use" class="md-nav__link">
+    What line endings do you use?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#do-you-require-semicolons" class="md-nav__link">
+    Do you require semicolons?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inspect-your-javascript-files" class="md-nav__link">
+    Inspect your JavaScript file(s)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formato-de-configuracion" class="md-nav__link">
+    Formato de configuración
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-de-ejemplo" class="md-nav__link">
+    Configuración de ejemplo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plugins-de-eslint" class="md-nav__link">
+    Plugins de ESLint
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modulos-ecmascript-esm" class="md-nav__link">
+    Módulos ECMAScript (ESM)
+  </a>
+  
+    <nav class="md-nav" aria-label="Módulos ECMAScript (ESM)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-son-los-modulos-es" class="md-nav__link">
+    ¿Qué son los módulos ES?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué son los módulos ES?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exportacion-de-modulos" class="md-nav__link">
+    Exportación de módulos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importacion-de-modulos" class="md-nav__link">
+    Importación de módulos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convenciones-de-modulos-es" class="md-nav__link">
+    Convenciones de módulos ES
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-DOM/" title="DOM" class="md-nav__link">
+      DOM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-asincronia/" title="Asincronía" class="md-nav__link">
+      Asincronía
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-peticiones_HTTP/" title="Peticiones HTTP" class="md-nav__link">
+      Peticiones HTTP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Herramientas IT
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Herramientas IT" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Herramientas IT
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Terminal
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Terminal" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon"></span>
+        Terminal
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" title="Introducción a la terminal" class="md-nav__link">
+      Introducción a la terminal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/02-operaciones_con_ficheros/" title="Operaciones con ficheros" class="md-nav__link">
+      Operaciones con ficheros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/03-administraci%C3%B3n_del_sistema/" title="Administración del sistema" class="md-nav__link">
+      Administración del sistema
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/markdown/" title="Markdown" class="md-nav__link">
+      Markdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/pip/" title="Pip" class="md-nav__link">
+      Pip
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/mkdocs/" title="Mkdocs" class="md-nav__link">
+      Mkdocs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../about/" title="Acerca de" class="md-nav__link">
+      Acerca de
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#array-functions" class="md-nav__link">
+    Array functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Array functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-son-las-array-functions" class="md-nav__link">
+    ¿Qué son las Array functions?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué son las Array functions?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#foreach-cada-uno" class="md-nav__link">
+    forEach (Cada uno)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#every-todos" class="md-nav__link">
+    every (Todos)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#some-al-menos-uno" class="md-nav__link">
+    some (Al menos uno)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map-transformaciones" class="md-nav__link">
+    map (Transformaciones)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter-filtrado" class="md-nav__link">
+    filter (Filtrado)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-busqueda" class="md-nav__link">
+    find (Búsqueda)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reduce-acumuladores" class="md-nav__link">
+    reduce (Acumuladores)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteradores" class="md-nav__link">
+    Iteradores
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expresiones-regulares-regexp" class="md-nav__link">
+    Expresiones regulares (RegExp)
+  </a>
+  
+    <nav class="md-nav" aria-label="Expresiones regulares (RegExp)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-una-regexp" class="md-nav__link">
+    ¿Qué es una RegExp?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué es una RegExp?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#propiedades-de-una-regexp" class="md-nav__link">
+    Propiedades de una RegExp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flags-de-una-regexp" class="md-nav__link">
+    Flags de una RegExp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-de-regexp" class="md-nav__link">
+    Métodos de RegExp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caracteres-especiales" class="md-nav__link">
+    Carácteres especiales
+  </a>
+  
+    <nav class="md-nav" aria-label="Carácteres especiales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clases-basicas" class="md-nav__link">
+    Clases básicas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conjunto-de-caracteres-o-alternativas" class="md-nav__link">
+    Conjunto de carácteres o alternativas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anclas" class="md-nav__link">
+    Anclas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuantificadores" class="md-nav__link">
+    Cuantificadores
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#captura-de-patrones" class="md-nav__link">
+    Captura de patrones
+  </a>
+  
+    <nav class="md-nav" aria-label="Captura de patrones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regex-en-strings" class="md-nav__link">
+    RegEx en Strings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    JSON
+  </a>
+  
+    <nav class="md-nav" aria-label="JSON">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-json" class="md-nav__link">
+    ¿Qué es JSON?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-utilizar-json" class="md-nav__link">
+    ¿Cómo utilizar JSON?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Cómo utilizar JSON?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#convertir-json-a-objeto" class="md-nav__link">
+    Convertir JSON a Objeto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convertir-objeto-a-json" class="md-nav__link">
+    Convertir Objeto a JSON
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leyendo-json-externo" class="md-nav__link">
+    Leyendo JSON externo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recursos-para-json" class="md-nav__link">
+    Recursos para JSON
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clases-es6" class="md-nav__link">
+    Clases ES6
+  </a>
+  
+    <nav class="md-nav" aria-label="Clases ES6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-una-clase" class="md-nav__link">
+    ¿Qué es una clase?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elementos-de-una-clase" class="md-nav__link">
+    Elementos de una clase
+  </a>
+  
+    <nav class="md-nav" aria-label="Elementos de una clase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-un-metodo" class="md-nav__link">
+    ¿Qué es un método?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-es-un-metodo-estatico" class="md-nav__link">
+    ¿Qué es un método estático?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-es-un-constructor" class="md-nav__link">
+    ¿Qué es un constructor?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-es-una-propiedad" class="md-nav__link">
+    ¿Qué es una propiedad?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#propiedades-y-metodos-privados" class="md-nav__link">
+    Propiedades y métodos privados
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#los-ambitos-en-una-clase" class="md-nav__link">
+    Los ámbitos en una clase
+  </a>
+  
+    <nav class="md-nav" aria-label="Los ámbitos en una clase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-palabra-clave-this" class="md-nav__link">
+    La palabra clave this
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#propiedades-computadas" class="md-nav__link">
+    Propiedades computadas
+  </a>
+  
+    <nav class="md-nav" aria-label="Propiedades computadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-un-getter" class="md-nav__link">
+    ¿Qué es un getter?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-es-un-setter" class="md-nav__link">
+    ¿Qué es un setter?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#herencia-de-clases" class="md-nav__link">
+    Herencia de Clases
+  </a>
+  
+    <nav class="md-nav" aria-label="Herencia de Clases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-extender-una-clase" class="md-nav__link">
+    ¿Qué es extender una clase?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-palabra-clave-super" class="md-nav__link">
+    La palabra clave super
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eslint" class="md-nav__link">
+    ESLint
+  </a>
+  
+    <nav class="md-nav" aria-label="ESLint">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-eslint" class="md-nav__link">
+    ¿Qué es ESLint?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-de-eslint" class="md-nav__link">
+    Instalación de ESLint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-inicial-de-eslint" class="md-nav__link">
+    Configuración inicial de ESLint
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuración inicial de ESLint">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-would-you-like-to-use-eslint" class="md-nav__link">
+    How would you like to use ESLint?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-type-of-modules-does-your-project-use" class="md-nav__link">
+    What type of modules does your project use?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#which-framework-does-your-project-use" class="md-nav__link">
+    Which framework does your project use?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-does-your-code-run" class="md-nav__link">
+    Where does your code run?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-would-you-like-to-define-a-style-for-your-project" class="md-nav__link">
+    How would you like to define a style for your project?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-format-do-you-want-your-config-file-to-be-in" class="md-nav__link">
+    What format do you want your config file to be in?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#would-you-like-to-install-them-now-with-npm" class="md-nav__link">
+    Would you like to install them now with npm?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-a-popular-style-guide" class="md-nav__link">
+    Use a popular style guide
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#answer-questions-about-style" class="md-nav__link">
+    Answer questions about style
+  </a>
+  
+    <nav class="md-nav" aria-label="Answer questions about style">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-style-of-indentation-do-you-use" class="md-nav__link">
+    What style of indentation do you use?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-quotes-do-you-use-for-strings" class="md-nav__link">
+    What quotes do you use for strings?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-line-endings-do-you-use" class="md-nav__link">
+    What line endings do you use?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#do-you-require-semicolons" class="md-nav__link">
+    Do you require semicolons?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inspect-your-javascript-files" class="md-nav__link">
+    Inspect your JavaScript file(s)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formato-de-configuracion" class="md-nav__link">
+    Formato de configuración
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-de-ejemplo" class="md-nav__link">
+    Configuración de ejemplo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plugins-de-eslint" class="md-nav__link">
+    Plugins de ESLint
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modulos-ecmascript-esm" class="md-nav__link">
+    Módulos ECMAScript (ESM)
+  </a>
+  
+    <nav class="md-nav" aria-label="Módulos ECMAScript (ESM)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-son-los-modulos-es" class="md-nav__link">
+    ¿Qué son los módulos ES?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué son los módulos ES?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exportacion-de-modulos" class="md-nav__link">
+    Exportación de módulos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importacion-de-modulos" class="md-nav__link">
+    Importación de módulos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convenciones-de-modulos-es" class="md-nav__link">
+    Convenciones de módulos ES
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/saucedoinfo/guias/edit/master/docs/desarrollo/javascript/03-caracteristicas.md" title="Editar esta página" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="caracteristicas">Características<a class="headerlink" href="#caracteristicas" title="Permanent link">&para;</a></h1>
+<h2 id="array-functions">Array functions<a class="headerlink" href="#array-functions" title="Permanent link">&para;</a></h2>
+<p>Así como tenemos un conjunto de métodos para realizar sobre variables que sean u otro conjunto de métodos para variables que sean , existe una serie de métodos que podemos utilizar sobre variables que sean de tipo . Son las llamadas <strong>array functions</strong> que veremos a continuación.</p>
+<h3 id="que-son-las-array-functions">¿Qué son las Array functions?<a class="headerlink" href="#que-son-las-array-functions" title="Permanent link">&para;</a></h3>
+<p>Básicamente, son métodos que tiene cualquier variable que sea de tipo , y que permite realizar una operación con todos los elementos de dicho array para conseguir un objetivo concreto, dependiendo del método. En general, a dichos métodos se les pasa por parámetro una <strong>función callback</strong> y unos parámetros opcionales.</p>
+<p>Estas son las <strong>Array functions</strong> que podemos encontrarnos en Javascript:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Método</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>.forEach(cb, arg)</code></td>
+<td align="left">Realiza la operación definida en <code>cb</code> por cada elemento del array.</td>
+</tr>
+<tr>
+<td align="left"><code>.every(cb, arg)</code></td>
+<td align="left">Comprueba si <strong>todos</strong> los elementos del array cumplen la condición de <code>cb</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.some(cb, arg)</code></td>
+<td align="left">Comprueba si <strong>al menos</strong> un elem. del array cumple la condición de <code>cb</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.map(cb, arg)</code></td>
+<td align="left">Construye un array con lo que devuelve <code>cb</code> por cada elemento del array.</td>
+</tr>
+<tr>
+<td align="left"><code>.filter(cb, arg)</code></td>
+<td align="left">Construye un array con los elementos que cumplen el filtro de <code>cb</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.findIndex(cb, arg)</code></td>
+<td align="left">Devuelve la posición del elemento que cumple la condición de <code>cb</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.find(cb, arg)</code></td>
+<td align="left">Devuelve el elemento que cumple la condición de <code>cb</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.reduce(cb, arg)</code></td>
+<td align="left">Ejecuta <code>cb</code> con cada elemento (de izq a der), acumulando el resultado.</td>
+</tr>
+<tr>
+<td align="left"><code>.reduceRight(cb, arg)</code></td>
+<td align="left">Idem al anterior, pero en orden de derecha a izquierda.</td>
+</tr>
+</tbody>
+</table>
+<p>A grandes rasgos, a cada uno de estos métodos se les pasa una función <strong>callback</strong> que se ejecutará por cada uno de los elementos que contiene el array. Empecemos por <code>forEach()</code>, que es quizás el más sencillo de todos.</p>
+<h4 id="foreach-cada-uno">forEach (Cada uno)<a class="headerlink" href="#foreach-cada-uno" title="Permanent link">&para;</a></h4>
+<p>Como se puede ver, el método <code>forEach()</code> no devuelve nada y espera que se le pase por parámetro una que se ejecutará por cada elemento del array. Esa función, puede ser pasada en cualquiera de los formatos que hemos visto: como función tradicional o como función flecha:</p>
+<pre><code>const arr = ["a", "b", "c", "d"];
+
+// Con funciones por expresión
+const f = function () {
+  console.log("Un elemento.");
+};
+arr.forEach(f);
+
+// Con funciones anónimas
+arr.forEach(function () {
+  console.log("Un elemento.");
+});
+
+// Con funciones flecha
+arr.forEach(() =&gt; console.log("Un elemento."));
+</code></pre>
+<p>Sin embargo, este ejemplo no tiene demasiada utilidad. A la <strong>callback</strong> se le pueden pasar varios parámetros opcionales:</p>
+<ul>
+<li>Si se le pasa un <strong>primer parámetro</strong>, este será el elemento del array.</li>
+<li>Si se le pasa un <strong>segundo parámetro</strong>, este será la posición en el array.</li>
+<li>Si se le pasa un <strong>tercer parámetro</strong>, este será el array en cuestión.</li>
+</ul>
+<p>Veamos un ejemplo:</p>
+<pre><code>const arr = ["a", "b", "c", "d"];
+
+arr.forEach((e) =&gt; console.log(e)); // Devuelve 'a' / 'b' / 'c' / 'd'
+arr.forEach((e, i) =&gt; console.log(e, i)); // Devuelve 'a' 0 / 'b' 1 / 'c' 2 / 'd' 3
+arr.forEach((e, i, a) =&gt; console.log(a[0])); // Devuelve 'a' / 'a' / 'a' / 'a'
+</code></pre>
+<p>En este ejemplo, he nombrado <code>e</code> al parámetro que hará referencia al <strong>elemento</strong>, <code>i</code> al parámetro que hará referencia al índice (<em>posición del array</em>) y <code>a</code> al parámetro que hará referencia al <strong>array</strong> en cuestión. Aún así, el usuario puede ponerle a estos parámetros el nombre que prefiera. Como se puede ver, realmente <code>forEach()</code> es otra forma de hacer un bucle (<em>sobre un array</em>), sin tener que recurrir a bucles tradicionales como <code>for</code> o <code>while</code>.</p>
+<blockquote>
+<p>Como vemos en la tabla anterior, al método <code>forEach()</code> se le puede pasar un segundo parámetro <code>arg</code>, que representa el valor que sobreescribiría a la palabra clave <code>this</code> en el código dentro de la función <strong>callback</strong>. De necesitar esta funcionalidad, recuerda que no puedes utilizar las funciones flecha, ya que el <code>this</code> no tiene efecto en ellas.</p>
+</blockquote>
+<h4 id="every-todos">every (Todos)<a class="headerlink" href="#every-todos" title="Permanent link">&para;</a></h4>
+<p>El método <code>every()</code> permite comprobar si <strong>todos y cada uno</strong> de los elementos de un array cumplen la condición que se especifique en la <strong>callback</strong>:</p>
+<pre><code>const arr = ["a", "b", "c", "d"];
+arr.every((e) =&gt; e.length == 1); // true
+</code></pre>
+<p>En este caso, la magia está en el <strong>callback</strong>. La condición es que la longitud de cada elemento del array sea <code>1</code>. Si dicha función devuelve <code>true</code>, significa que cumple la condición, si devuelve <code>false</code>, no la cumple. Por lo tanto, si todos los elementos del array devuelven <code>true</code>, entonces <code>every()</code> devolverá <code>true</code>.</p>
+<p>Si expandimos el ejemplo anterior a un código más detallado, tendríamos el siguiente ejemplo equivalente, que quizás sea más comprensible para entenderlo:</p>
+<pre><code>const arr = ["a", "b", "c", "d"];
+
+// Esta función se ejecuta por cada elemento del array
+const todos = function (e) {
+  // Si el tamaño del string es igual a 1
+  if (e.length == 1) return true;
+  else return false;
+};
+
+arr.every(todos); // Le pasamos la función callback todos() a every
+</code></pre>
+<h4 id="some-al-menos-uno">some (Al menos uno)<a class="headerlink" href="#some-al-menos-uno" title="Permanent link">&para;</a></h4>
+<p>De la misma forma que el método anterior sirve para comprobar si todos los elementos del array cumplen una determinada condición, con <code>some()</code> podemos comprobar si <strong>al menos uno</strong> de los elementos del array, cumplen dicha condición definida por el <strong>callback</strong>.</p>
+<pre><code>const arr = ["a", "bb", "c", "d"];
+arr.some((e) =&gt; e.length == 2); // true
+</code></pre>
+<p>Observa que en este ejemplo, el método <code>some()</code> devuelve <code>true</code> porque existe al menos un elemento del array con una longitud de <code>2</code> carácteres.</p>
+<h4 id="map-transformaciones">map (Transformaciones)<a class="headerlink" href="#map-transformaciones" title="Permanent link">&para;</a></h4>
+<p>El método <code>map()</code> es un método muy potente y útil para trabajar con arrays, puesto que su objetivo es devolver un nuevo array donde cada uno de sus elementos será lo que devuelva la función <strong>callback</strong> por cada uno de los elementos del array original:</p>
+<pre><code>const arr = ["Ana", "Pablo", "Pedro", "Pancracio", "Heriberto"];
+const nuevoArr = arr.map((e) =&gt; e.length);
+
+nuevoArr; // Devuelve [3, 5, 5, 9, 9]
+</code></pre>
+<p>Observa que el array devuelto por <code>map()</code> es <code>nuevoArr</code>, y cada uno de los elementos que lo componente, es el número devuelto por el <strong>callback</strong> (e.length), que no es otra cosa sino el tamaño de cada .</p>
+<p>Este método nos permite hacer multitud de operaciones, ya que donde devolvemos <code>e.length</code> podriamos devolver el propio modificado o cualquier otra cosa.</p>
+<h4 id="filter-filtrado">filter (Filtrado)<a class="headerlink" href="#filter-filtrado" title="Permanent link">&para;</a></h4>
+<p>El método <code>filter()</code> nos permite filtrar los elementos de un array y devolver un nuevo array con sólo los elementos que queramos. Para ello, utilizaremos la función <strong>callback</strong> para establecer una condición que devuelve <code>true</code> sólo en los elementos que nos interesen:</p>
+<pre><code>const arr = ["Ana", "Pablo", "Pedro", "Pancracio", "Heriberto"];
+const nuevoArr = arr.filter((e) =&gt; e[0] == "P");
+
+nuevoArr; // Devuelve ['Pablo', 'Pedro', 'Pancracio']
+</code></pre>
+<p>En este ejemplo, filtramos sólo los elementos en los que su primera letra sea <code>P</code>. Por lo tanto, la variable <code>nuevoArr</code> será un array con sólo esos elementos.</p>
+<p>Ten en cuenta que si ningún elemento cumple la condición, <code>filter()</code> devuelve un vacío.</p>
+<h4 id="find-busqueda">find (Búsqueda)<a class="headerlink" href="#find-busqueda" title="Permanent link">&para;</a></h4>
+<p>En <strong>ECMAScript 6</strong> se introducen dos nuevos métodos dentro de las <strong>Array functions</strong>: <code>find()</code> y <code>findIndex()</code>. Ambos se utilizan para buscar elementos de un array mediante una condición, la diferencia es que el primero devuelve el elemento mientras que el segundo devuelve su posición en el array original. Veamos como funcionan:</p>
+<pre><code>const arr = ["Ana", "Pablo", "Pedro", "Pancracio", "Heriberto"];
+
+arr.find((e) =&gt; e.length == 5); // 'Pablo'
+arr.findIndex((e) =&gt; e.length == 5); // 1
+</code></pre>
+<p>La condición que hemos utilizado en este ejemplo es buscar el elemento que tiene <code>5</code> carácteres de longitud. Al buscarlo en el array original, el primero que encontramos es <code>Pablo</code>, puesto que <code>find()</code> devolverá 'Pablo' y <code>findIndex()</code> devolverá <code>1</code>, que es la segunda posición del array donde se encuentra.</p>
+<p>En el caso de no encontrar ningún elemento que cumpla la condición, <code>find()</code> devolverá , mientras que <code>findIndex()</code>, que debe devolver un , devolverá <code>-1</code>.</p>
+<h4 id="reduce-acumuladores">reduce (Acumuladores)<a class="headerlink" href="#reduce-acumuladores" title="Permanent link">&para;</a></h4>
+<p>Por último, nos encontramos con una pareja de métodos denominados <code>reduce()</code> y <code>reduceRight()</code>. Ambos métodos se encargan de recorrer todos los elementos del array, e ir acumulando sus valores (<em>o alguna operación diferente</em>) y sumarlo todo, para devolver su resultado final.</p>
+<p>En este par de métodos, encontraremos una primera diferencia en su función <strong>callback</strong>, puesto que en lugar de tener los clásicos parámetros opcionales <code>(e, i, a)</code> que hemos utilizado hasta ahora, tiene <code>(p, e, i, a)</code>, donde vemos que aparece un primer parámetro extra inicial: <code>p</code>.</p>
+<p>En la primera iteración, <code>p</code> contiene el valor del primer elemento del array y <code>e</code> del segundo. En siguientes iteraciones, <code>p</code> es el acumulador que contiene lo que devolvió el <strong>callback</strong> en la iteración anterior, mientras que <code>e</code> es el siguiente elemento del array, y así sucesivamente. Veamos un ejemplo para entenderlo:</p>
+<pre><code>const arr = [95, 5, 25, 10, 25];
+arr.reduce((p, e) =&gt; {
+  console.log(`P=${p} e=${e}`);
+  return p + e;
+});
+
+// P=95 e=5     (1ª iteración: elemento 1: 95 + elemento 2: 5) = 100
+// P=100 e=25   (2ª iteración: 100 + elemento 3: 25) = 125
+// P=125 e=10   (3ª iteración: 125 + elemento 4: 10) = 135
+// P=135 e=25   (4ª iteración: 135 + elemento 5: 25) = 160
+
+// Finalmente, devuelve 160
+</code></pre>
+<p>Gracias a esto, podemos utilizar el método <code>reduce()</code> como acumulador de elementos de izquierda a derecha y <code>reduceRight()</code> como acumulador de elementos de derecha a izquierda. Veamos un ejemplo de cada uno, realizando una resta en lugar de una suma:</p>
+<pre><code>const arr = [95, 5, 25, 10, 25];
+arr.reduce((p, e) =&gt; p - e); // 95 - 5 - 25 - 10 - 25. Devuelve 30
+arr.reduceRight((p, e) =&gt; p - e); // 25 - 10 - 25 - 5 - 95. Devuelve -110
+</code></pre>
+<blockquote>
+<p>Recuerda que en cualquiera de estas <strong>array functions</strong> puedes realizar operaciones o condiciones tanto con el parámetro <code>e</code> (<em>elemento</em>), como con el parámetro <code>i</code> (<em>índice o posición</em>) o con el parámetro <code>a</code> (<em>array</em>).</p>
+</blockquote>
+<h3 id="iteradores">Iteradores<a class="headerlink" href="#iteradores" title="Permanent link">&para;</a></h3>
+<p>En <strong>ECMAScript 6</strong> se introducen unos métodos muy útiles para utilizar como <strong>iteradores</strong> (<em>objetos preparados para recorrer los elementos de un array y devolver información</em>). Hablamos de los métodos <code>keys()</code>, <code>values()</code> y <code>entries()</code>. El primero de ellos permite avanzar en un array, mientras va devolviendo las posiciones, el segundo los valores (<em>el elemento en sí</em>) y el tercero devuelve un array con la posición en el primer elemento y el valor en el segundo elemento.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Método</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">i <code>.keys()</code></td>
+<td align="left">Permite iterar un array e ir devolviendo sus <strong>índices</strong> o posiciones (keys).</td>
+</tr>
+<tr>
+<td align="left">i <code>.values()</code></td>
+<td align="left">Permite iterar un array e ir devolviendo sus <strong>valores</strong> (elementos).</td>
+</tr>
+<tr>
+<td align="left">i <code>.entries()</code></td>
+<td align="left">Permite iterar un array e ir devolviendo un array <code>[índice, valor]</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Estos métodos, combinados con un <code>for...of</code> por ejemplo, permiten recorrer los arrays y obtener diferente información del array rápidamente. En el siguiente ejemplo utilizamos una característica avanzada que veremos más adelante llamada <strong>desestructuración</strong>:</p>
+<pre><code>const arr = ["Sonic", "Mario", "Luigi"];
+
+// Obtiene un array con las keys (posiciones)
+const keys = [...arr.keys()]; // [0, 1, 2]
+
+// Obtiene un array con los valores (elementos)
+const values = [...arr.values()]; // ['Sonic', 'Mario', 'Luigi']
+
+// Obtiene un array con las entradas (par key, valor)
+const entries = [...arr.entries()]; // [[0, 'Sonic'], [1, 'Mario'], [2, 'Luigi']]
+</code></pre>
+<hr />
+<h2 id="expresiones-regulares-regexp">Expresiones regulares (RegExp)<a class="headerlink" href="#expresiones-regulares-regexp" title="Permanent link">&para;</a></h2>
+<p>En muchas ocasiones nos encontraremos en la situación de querer realizar una o varias acciones si se cumple un determinado caso. Pero muchas veces, esos casos no son tan simples, sino que existe un número muy alto de situaciones diferentes que no podemos cubrir de formas tradicionales. En esas situaciones es donde las <strong>expresiones regulares</strong> quizás nos puedan ser de ayuda.</p>
+<h3 id="que-es-una-regexp">¿Qué es una RegExp?<a class="headerlink" href="#que-es-una-regexp" title="Permanent link">&para;</a></h3>
+<p>Las <strong>expresiones regulares</strong> (<em>a menudo llamadas RegExp o RegEx</em>) son un sistema para buscar, capturar o reemplazar texto utilizando <strong>patrones</strong>. Estos patrones permiten realizar una búsqueda de texto de una forma relativamente sencilla y abstracta, de forma que abarca una gran cantidad de posibilidades que de otra forma sería imposible o muy costosa.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Constructor</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>new RegExp(r, flags)</code></td>
+<td align="left">Crea una nueva expresión regular a partir de <code>r</code> con los <code>flags</code> indicados.</td>
+</tr>
+<tr>
+<td align="left"><code>/r/flags</code></td>
+<td align="left">Simplemente, la expresión regular <code>r</code> entre barras <code>/</code>. <strong>Notación preferida.</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Así pues, podríamos crear expresiones regulares de estas dos formas, siempre teniendo como notación preferida la primera:</p>
+<pre><code>// Notación literal (preferida)
+const r = /.a.o/i;
+
+// Notación de objeto
+const r = new RegExp(".a.o", "i");
+const r = new RegExp(/.a.o/, "i");
+</code></pre>
+<p>En ambos ejemplos, estamos estableciendo la expresión regular <code>.a.o</code>, donde el <strong>punto</strong> (<em>como veremos más adelante</em>) es un comodín que simboliza cualquier carácter, y la <code>i</code> es un <strong>flag</strong> que establece que no diferencia mayúsculas de minúsculas.</p>
+<blockquote>
+<p>En Javascript, se prefiere utilizar las barras <code>/</code> para delimitar una expresión regular en una variable. Se trata de una forma más cómoda y compacta que evita tener que hacer un <code>new</code> del objeto .</p>
+</blockquote>
+<h4 id="propiedades-de-una-regexp">Propiedades de una RegExp<a class="headerlink" href="#propiedades-de-una-regexp" title="Permanent link">&para;</a></h4>
+<p>Cada <strong>expresión regular</strong> creada, tiene unas propiedades definidas, donde podemos consultar ciertas características de la expresión regular en cuestión. Además, también tiene unas propiedades de comprobación para saber si un flag determinado está activo o no:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Propiedades</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>.source</code></td>
+<td align="left">Devuelve un string con la expresión regular original al crear el objeto (<em>sin flags</em>).</td>
+</tr>
+<tr>
+<td align="left"><code>.flags</code></td>
+<td align="left">Devuelve un string con los flags activados en la expresión regular.</td>
+</tr>
+<tr>
+<td align="left"><code>.lastIndex</code></td>
+<td align="left">Devuelve la posición donde se encontró una ocurrencia en la última búsqueda.</td>
+</tr>
+<tr>
+<td align="left"><code>.global</code></td>
+<td align="left">Comprueba si el flag <code>g</code> está activo en la expresión regular.</td>
+</tr>
+<tr>
+<td align="left"><code>.ignoreCase</code></td>
+<td align="left">Comprueba si el flag <code>i</code> está activo en la expresión regular.</td>
+</tr>
+<tr>
+<td align="left"><code>.multiline</code></td>
+<td align="left">Comprueba si el flag <code>m</code> está activo en la expresión regular.</td>
+</tr>
+<tr>
+<td align="left"><code>.unicode</code></td>
+<td align="left">Comprueba si el flag <code>u</code> está activo en la expresión regular.</td>
+</tr>
+<tr>
+<td align="left"><code>.sticky</code></td>
+<td align="left">Comprueba si el flag <code>y</code> está activo en la expresión regular.</td>
+</tr>
+</tbody>
+</table>
+<p>El funcionamiento de los <strong>flags</strong> los veremos en el apartado siguiente. No obstante, con las propiedades <code>.source</code> y <code>.flags</code> se puede obtener casi toda la información que se puede hacer con dichos flags.</p>
+<pre><code>const r = /reg/gi;
+
+r.source; // 'reg'
+r.flags; // 'ig'
+
+r.flags.includes("g"); // true (equivalente a r.global)
+r.flags.includes("u"); // false (equivalente a r.unicode)
+</code></pre>
+<p>También podemos comprobar si un flag está activo con la propiedad <code>.flags</code> combinada con <code>includes()</code>, como se puede ver en el ejemplo anterior. Por otro lado, <code>.source</code> nos devuelve un con la expresión regular definida (<em>y sin flags</em>). La utilidad de <code>lastIndex()</code> la veremos más adelante.</p>
+<h4 id="flags-de-una-regexp">Flags de una RegExp<a class="headerlink" href="#flags-de-una-regexp" title="Permanent link">&para;</a></h4>
+<p>El segundo parámetro del <code>new RegExp()</code> o el que se escribe después de la segunda barra <code>/</code> delimitadora del literal de las expresiones regulares, son una serie de carácteres que indican los <strong>flags</strong> activos en la expresión regular en cuestión:</p>
+<pre><code>const r1 = /reg/;
+const r2 = /reg/i;
+const r3 = /reg/gi;
+</code></pre>
+<p>La expresión regular <code>r1</code> no tiene ningún <code>flag</code> activado, mientras que <code>r2</code> tiene el flag <code>i</code> activado y <code>r3</code> tiene el flag <code>i</code> y el flag <code>g</code> activado. Veamos para que sirve cada flag:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Flag</th>
+<th align="left">Booleano</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>i</code></td>
+<td align="left"><code>.ignoreCase</code></td>
+<td align="left">Ignora mayúsculas y minúsculas. Se suele denominar <strong>insensible a mayús/minús</strong>.</td>
+</tr>
+<tr>
+<td align="left"><code>g</code></td>
+<td align="left"><code>.global</code></td>
+<td align="left">Búsqueda global. Sigue buscando coincidencias en lugar de pararse al encontrar una.</td>
+</tr>
+<tr>
+<td align="left"><code>m</code></td>
+<td align="left"><code>.multiline</code></td>
+<td align="left">Multilínea. Permite a <code>^</code> y <code>$</code> tratar los finales de línea <code>\r</code> o <code>\n</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>u</code></td>
+<td align="left"><code>.unicode</code></td>
+<td align="left">Unicode. Interpreta el patrón como un código de una secuencia Unicode.</td>
+</tr>
+<tr>
+<td align="left"><code>y</code></td>
+<td align="left"><code>.sticky</code></td>
+<td align="left">Sticky. Busca sólo desde la posición indicada por <code>lastIndex</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Cada una de estas flags se pueden comprobar si están activas desde Javascript con su booleano asociado, que es una propiedad de la expresión regular:</p>
+<pre><code>const r = /reg/gi;
+
+r.global; // true
+r.ignoreCase; // true
+r.multiline; // false
+r.sticky; // false
+r.unicode; // false
+</code></pre>
+<h4 id="metodos-de-regexp">Métodos de RegExp<a class="headerlink" href="#metodos-de-regexp" title="Permanent link">&para;</a></h4>
+<p>Los objetos <code>RegExp</code> tienen varios métodos para utilizar expresiones regulares contra textos y saber si «casan» o no, es decir, si el patrón de la expresión regular encaja con el texto propuesto.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Método</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>test(str)</code></td>
+<td align="left">Comprueba si la expresión regular «casa» con el texto <code>str</code> pasado por parámetro.</td>
+</tr>
+<tr>
+<td align="left"><code>exec(str)</code></td>
+<td align="left">Ejecuta una búsqueda de patrón en el texto <code>str</code>. Devuelve un array con las capturas.</td>
+</tr>
+</tbody>
+</table>
+<p>Por ejemplo, veamos como utilizar la expresión regular del ejemplo anterior con el método <code>test()</code> para comprobar si encaja con un texto determinado:</p>
+<pre><code>const r = /.a.o/i;
+
+r.test("gato"); // true
+r.test("pato"); // true
+r.test("perro"); // false
+r.test("DATO"); // true   (el flag i permite mayús/minús)
+</code></pre>
+<p>El método <code>exec()</code> lo veremos un poco más adelante en el apartado de <strong>captura de patrones</strong>, ya que es algo más complejo. Primero debemos aprender que carácteres especiales existen en las expresiones regulares para dominarlas.</p>
+<h4 id="caracteres-especiales">Carácteres especiales<a class="headerlink" href="#caracteres-especiales" title="Permanent link">&para;</a></h4>
+<p>Antes de comenzar a utilizar <strong>expresiones regulares</strong> hay que aprender la parte más compleja de ellas: los carácteres especiales. Dentro de las expresiones regulares, existen ciertos carácteres que tienen un significado especial, y también, muchos de ellos dependen de donde se encuentren para tener ese significado especial, por lo que hay que aprender bien como funcionan.</p>
+<h5 id="clases-basicas">Clases básicas<a class="headerlink" href="#clases-basicas" title="Permanent link">&para;</a></h5>
+<p>Empecemos con algunos de los más sencillos:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Caracter especial</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>.</code></td>
+<td align="left">Comodín, cualquier caracter.</td>
+</tr>
+<tr>
+<td align="left"><code>\</code></td>
+<td align="left">Invierte el significado de un carácter. Si es especial, lo escapa. Si no, lo vuelve especial.</td>
+</tr>
+<tr>
+<td align="left"><code>\t</code></td>
+<td align="left">Caracter especial. Tabulador.</td>
+</tr>
+<tr>
+<td align="left"><code>\r</code></td>
+<td align="left">Caracter especial. Retorno de carro. A menudo denominado <code>CR</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>\n</code></td>
+<td align="left">Caracter especial. Nueva línea. A menudo denominado «line feed» o <code>LF</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>En esta pequeña tabla vemos algunos caracteres especiales que podemos usar en expresiones regulares. Observa que al igual que con otros tipos de datos, podemos utilizar el método <code>test()</code> sobre el literal de la expresión regular, sin necesidad de guardarla en una variable previamente:</p>
+<pre><code>// Buscamos RegExp que encaje con "Manz"
+/M.nz/.test("Manz"); // true
+/M.nz/.test("manz"); // false  (La «M» debe ser mayúscula)
+/M.nz/i.test("manz"); // true   (Ignoramos mayús/minús con el flag «i»)
+
+// Buscamos RegExp que encaje con "A."
+/A./.test("A."); // true   (Ojo, nos da true, pero el punto es comodín)
+/A./.test("Ab"); // true   (Nos da true con cualquier cosa)
+/A\./.test("A."); // true   (Solución correcta)
+/A\./.test("Ab"); // false  (Ahora no deja pasar algo que no sea punto)
+</code></pre>
+<h5 id="conjunto-de-caracteres-o-alternativas">Conjunto de carácteres o alternativas<a class="headerlink" href="#conjunto-de-caracteres-o-alternativas" title="Permanent link">&para;</a></h5>
+<p>Dentro de las expresiones regulares los corchetes <code>[]</code> tienen un significado especial. Se trata de un mecanismo para englobar un <strong>conjunto de carácteres personalizado</strong>. Por otro lado, si incluimos un circunflejo <code>^</code> antes de los carácteres del corchete, invertimos el significado, pasando a ser que <strong>no exista</strong> el conjunto de carácteres personalizado:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Caracter especial</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>[]</code></td>
+<td align="left">Rango de carácteres. Cualquiera de los caracteres del interior de los corchetes.</td>
+</tr>
+<tr>
+<td align="left"><code>[^]</code></td>
+<td align="left">No exista cualquiera de los caracteres del interior de los corchetes.</td>
+</tr>
+<tr>
+<td align="left"><code>|</code></td>
+<td align="left">Establece una alternativa: lo que está a la izquierda o lo que está a la derecha.</td>
+</tr>
+</tbody>
+</table>
+<p>Por último, tenemos el «pipe» <code>|</code>, con el que podemos establecer alternativas. Veamos un ejemplo aplicado a esto, que se verá más claro:</p>
+<pre><code>const r = /[aeiou]/i; // RegExp que acepta vocales (mayús/minús)
+
+r.test("a"); // true (es vocal)
+r.test("E"); // true (es vocal, y tiene flag «i»)
+r.test("t"); // false (no es vocal)
+
+const r = /[^aeiou]/i; // RegExp que acepta lo que no sea vocal (mayús/minús)
+
+r.test("a"); // false
+r.test("E"); // false
+r.test("T"); // true
+r.test("m"); // true
+
+const r = /casa|cama/; // RegExp que acepta la primera o la segunda opción
+
+r.test("casa"); // true
+r.test("cama"); // true
+r.test("capa"); // false
+</code></pre>
+<p>En el interior de los corchetes, si establecemos dos carácteres separados por guión, por ejemplo <code>[0-9]</code>, se entiende que indicamos el rango de carácteres entre <code>0</code> y <code>9</code>, sin tener que escribirlos todos explícitamente.</p>
+<p>De esta forma podemos crear rangos como <code>[A-Z]</code> (<em>mayúsculas</em>) o <code>[a-z]</code> (<em>minúsculas</em>), o incluso varios rangos específicos como <code>[A-Za-z0-9]</code>:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Caracter especial</th>
+<th align="left">Alternativa</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>[0-9]</code></td>
+<td align="left"><code>\d</code></td>
+<td align="left">Un dígito del 0 al 9.</td>
+</tr>
+<tr>
+<td align="left"><code>[^0-9]</code></td>
+<td align="left"><code>\D</code></td>
+<td align="left">No exista un dígito del 0 al 9.</td>
+</tr>
+<tr>
+<td align="left"><code>[A-Z]</code></td>
+<td align="left"></td>
+<td align="left">Letra mayúscula de la <code>A</code> a la <code>Z</code>. Excluye <code>ñ</code> o letras acentuadas.</td>
+</tr>
+<tr>
+<td align="left"><code>[a-z]</code></td>
+<td align="left"></td>
+<td align="left">Letra minúscula de la <code>a</code> a la <code>z</code>. Excluye <code>ñ</code> o letras acentuadas.</td>
+</tr>
+<tr>
+<td align="left"><code>[A-Za-z0-9]</code></td>
+<td align="left"><code>\w</code></td>
+<td align="left">Carácter alfanumérico (letra mayúscula, minúscula o dígito).</td>
+</tr>
+<tr>
+<td align="left"><code>[^A-Za-z0-9]</code></td>
+<td align="left"><code>\W</code></td>
+<td align="left">No exista carácter alfanumérico (letra mayúscula, minúscula o dígito).</td>
+</tr>
+<tr>
+<td align="left"><code>[ \t\r\n\f]</code></td>
+<td align="left"><code>\s</code></td>
+<td align="left">Carácter de espacio en blanco (espacio, <code>TAB</code>, <code>CR</code>, <code>LF</code> o <code>FF</code>).</td>
+</tr>
+<tr>
+<td align="left"><code>[^ \t\r\n\f]</code></td>
+<td align="left"><code>\S</code></td>
+<td align="left">No exista carácter de espacio en blanco (espacio, <code>TAB</code>, <code>CR</code>, <code>LF</code> o <code>FF</code>).</td>
+</tr>
+<tr>
+<td align="left"><code>\xN</code></td>
+<td align="left"></td>
+<td align="left">Carácter hexadecimal número <code>N</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>\uN</code></td>
+<td align="left"></td>
+<td align="left">Carácter Unicode número <code>N</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Observa que en esta tabla tenemos una notación <strong>alternativa</strong> que es equivalente al caracter especial indicado. Por ejemplo, es lo mismo escribir <code>[0-9]</code> que <code>\d</code>. Algunos programadores encuentran más explicativa la primera forma y otros más cómoda la segunda.</p>
+<h5 id="anclas">Anclas<a class="headerlink" href="#anclas" title="Permanent link">&para;</a></h5>
+<p>Dentro de las expresiones regulares, las <strong>anclas</strong> son un recurso muy importante, ya que permiten deliminar los patrones de búsqueda e indicar si empiezan o terminan por carácteres concretos, siendo mucho más específicos al realizar la búsqueda:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Caracter especial</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>^</code></td>
+<td align="left">Ancla. Delimina el inicio del patrón. Significa <strong>empieza por</strong>.</td>
+</tr>
+<tr>
+<td align="left"><code>$</code></td>
+<td align="left">Ancla. Delimina el final del patrón. Significa <strong>acaba en</strong>.</td>
+</tr>
+<tr>
+<td align="left"><code>\b</code></td>
+<td align="left">Posición de una palabra limitada por espacios, puntuación o inicio/final.</td>
+</tr>
+<tr>
+<td align="left"><code>\B</code></td>
+<td align="left">Opuesta al anterior. Posición entre 2 caracteres alfanuméricos o no alfanuméricos.</td>
+</tr>
+</tbody>
+</table>
+<p>Las dos primeras son bastante útiles cuando sabemos que el texto que estamos buscando termina o empieza de una forma concreta. De este modo podemos hacer cosas como las siguientes:</p>
+<pre><code>const r = /^mas/i;
+
+r.test("Formas"); // false  (no empieza por "mas")
+r.test("Master"); // true
+r.test("Masticar"); // true
+
+const r = /do$/i;
+
+r.test("Vívido"); // true
+r.test("Dominó"); // false
+</code></pre>
+<p>Por otro lado, <code>\b</code> nos permite indicar si el texto adyacente está seguido o precedido de un límite de palabra (<em>espacio</em>), puntuación (<em>comas o puntos</em>) o inicio o final del :</p>
+<pre><code>const r = /fo\b/;
+
+r.test("Esto es un párrafo de texto."); // true (tras "fo" hay un límite de palabra)
+r.test("Esto es un párrafo."); // true (tras "fo" hay un signo de puntuación)
+r.test("Un círculo es una forma."); // false (tras "fo" sigue la palabra)
+r.test("Frase que termina en fo"); // true (tras "fo" termina el string)
+</code></pre>
+<p>Por último, <code>\B</code> es la operación opuesta a <code>\b</code>, por lo que podemos utilizarla cuando nos interesa que el texto no esté delimitado por una palabra, puntuación o string en sí.</p>
+<h5 id="cuantificadores">Cuantificadores<a class="headerlink" href="#cuantificadores" title="Permanent link">&para;</a></h5>
+<p>En las <strong>expresiones regulares</strong> los cuantificadores permiten indicar cuántas veces se puede repetir el carácter inmediatamente anterior. Existen varios tipos de cuantificadores:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Caracter especial</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>*</code></td>
+<td align="left">El carácter anterior puede aparecer <code>0</code> o más veces.</td>
+</tr>
+<tr>
+<td align="left"><code>+</code></td>
+<td align="left">El carácter anterior puede aparecer <code>1</code> o más veces.</td>
+</tr>
+<tr>
+<td align="left"><code>?</code></td>
+<td align="left">El carácter anterior puede aparecer o no aparecer.</td>
+</tr>
+<tr>
+<td align="left"><code>{n}</code></td>
+<td align="left">El carácter anterior aparece <code>n</code> veces.</td>
+</tr>
+<tr>
+<td align="left"><code>{n,}</code></td>
+<td align="left">El carácter anterior aparece <code>n</code> o más veces.</td>
+</tr>
+<tr>
+<td align="left"><code>{n,m}</code></td>
+<td align="left">El carácter anterior aparece de <code>n</code> a <code>m</code> veces.</td>
+</tr>
+</tbody>
+</table>
+<p>Veamos algunos ejemplos para aprender a aplicarlos. Comencemos con <code>*</code> (<em>0 o más veces</em>):</p>
+<pre><code>// 'a' aparece 0 o más veces en el string
+const r = /a*/;
+
+r.test(""); // true ('a' aparece 0 veces)
+r.test("a"); // true ('a' aparece 1 veces)
+r.test("aa"); // true ('a' aparece 2 veces)
+r.test("aba"); // true ('a' aparece 2 veces)
+r.test("bbb"); // true ('a' aparece 0 veces)
+</code></pre>
+<p>El cuantificador <code>+</code> es muy parecido a <code>*</code>, sólo que con el primero es necesario que el carácter anterior aparezca al menos una vez:</p>
+<pre><code>// 'a' aparece 1 o más veces (equivalente a /aa*/)
+const r = /a+/;
+
+r.test(""); // false ('a' aparece 0 veces)
+r.test("a"); // true ('a' aparece 1 veces)
+r.test("aa"); // true ('a' aparece 2 veces)
+r.test("aba"); // true ('a' aparece 2 veces)
+r.test("bbb"); // false ('a' aparece 0 veces)
+</code></pre>
+<p>El cuantificador <code>?</code> se suele utilizar para indicar que el carácter anterior es opcional (<em>puede aparecer o puede no aparecer</em>). Normalmente se utiliza cuando quieres indicar que no importa que aparezca un carácter opcional:</p>
+<pre><code>const r = /disparos?/i;
+
+r.test("Escuché disparos en la habitación."); // true
+r.test("Efectuó un disparo al sujeto."); // true
+r.test("La pistola era de agua."); // false
+</code></pre>
+<p>Los tres cuantificadores siguientes, se utilizan cuando necesitamos concretar más el número de repeticiones del caracter anterior. Por ejemplo, <code>{n}</code> indica un número exacto, <code>{n,}</code> indica al menos <code>n</code> veces y <code>{n,m}</code> establece que se repita de <code>n</code> a <code>m</code> veces.</p>
+<pre><code>// Un número formado de 2 dígitos (del 0 al 9)
+const r = /[0-9]{2}/;
+
+r.test(42); // true
+r.test(88); // true
+r.test(1); // false
+r.test(100); // true
+</code></pre>
+<p>Observa que el último aparece como <code>true</code>. Esto ocurre porque en la expresión regular no se han establecido <strong>anclas</strong> que delimiten el inicio y/o el final del texto. Si las añadimos, es más estricto con las comprobaciones:</p>
+<pre><code>const r = /^[0-9]{2}$/;
+
+r.test(4); // false
+r.test(55); // true
+r.test(100); // false
+
+const r = /^[0-9]{3,}$/;
+
+r.test(33); // false
+r.test(4923); // true
+
+const r = /^[0-9]{2,5}$/;
+
+r.test(2); // false
+r.test(444); // true
+r.test(543213); // false
+</code></pre>
+<p>Si quieres profundizar con las <strong>expresiones regulares</strong>, puedes jugar a <a href="https://manzdev.github.io/regex-people/">RegEx People</a>, un pequeño y básico juego para aprender a utilizar las expresiones regulares y buscar patrones, con su código fuente disponible en <a href="https://github.com/ManzDev/regex-people">GitHub</a>.</p>
+<blockquote>
+<p>Recuerda también que aunque <code>test()</code> espera un por parámetro, en caso de enviarle otro objeto, lo pasará a mediante el método <code>toString()</code> que existe en todos los objetos de Javascript</p>
+</blockquote>
+<h3 id="captura-de-patrones">Captura de patrones<a class="headerlink" href="#captura-de-patrones" title="Permanent link">&para;</a></h3>
+<p>Pero con las <strong>expresiones regulares</strong> no sólo podemos realizar búsquedas de patrones. Una de las características más importantes de las expresiones regulares es lo potente y versátil que resultan las <strong>capturas de patrones</strong>.</p>
+<p>Toda expresión regular que utilice la <strong>parentización</strong> (<em>englobe con paréntesis fragmentos de texto</em>) está realizando implícitamente una captura de texto, que es muy útil para obtener rápidamente información.</p>
+<p>Para ello, dejamos de utilizar el método <code>test(str)</code> y comenzamos a utilizar <code>exec(str)</code>, que funciona exactamente igual, sólo que devuelve un array con las capturas realizadas. Antes de empezar a utilizarlo, necesitamos saber detalles sobre la <strong>parentización</strong>:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Caracter especial</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>(x)</code></td>
+<td align="left">El patrón incluído dentro de paréntesis se captura y se guarda en <code>$1</code> o sucesivos.</td>
+</tr>
+<tr>
+<td align="left"><code>(?:x)</code></td>
+<td align="left">Si incluímos <code>?:</code> al inicio del contenido de los paréntesis, evitamos capturar ese patrón.</td>
+</tr>
+<tr>
+<td align="left"><code>x(?=y)</code></td>
+<td align="left">Busca sólo si <code>x</code> está seguido de <code>y</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>x(?!y)</code></td>
+<td align="left">Busca sólo si <code>x</code> no está seguido de <code>y</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Así pues, vamos a realizar una captura a través de los paréntesis de una expresión regular:</p>
+<pre><code>// RegExp que captura palabras de 3 letras.
+const r = /\b([a-z]{3})\b/gi;
+const str = "Hola a todos, amigos míos. Esto es una prueba que permitirá ver que ocurre.";
+
+r.global; // true (el flag global está activado)
+
+r.exec(str); // ['una', 'una']     index: 35
+r.exec(str); // ['que', 'que']     index: 46
+r.exec(str); // ['ver', 'ver']     index: 60
+r.exec(str); // ['que', 'que']     index: 64
+r.exec(str); // null
+</code></pre>
+<p>El método <code>exec()</code> nos permite ejecutar una búsqueda sobre el texto <code>str</code> hasta encontrar una coincidencia. En ese caso, se detiene la búsqueda y nos devuelve un array con los capturados por la parentización. Si el flag <code>g</code> está activado, podemos volver a ejecutar <code>exec()</code> para continuar buscando la siguiente aparición, hasta que no encuentre ninguna más, que devolverá <code>null</code>.</p>
+<h5 id="regex-en-strings">RegEx en Strings<a class="headerlink" href="#regex-en-strings" title="Permanent link">&para;</a></h5>
+<p>Quizás, generalmente el usuario prefiera utilizar el método <code>match(reg)</code> de los , que permiten ejecutar la búsqueda de la expresión regular <code>reg</code> pasada por parámetro, sobre esa variable de texto. El resultado es que nos devuelve un con los capturados:</p>
+<pre><code>const r = /\b([a-z]{3})\b/gi;
+const str = "Hola a todos, amigos míos. Esto es una prueba que permitirá ver que ocurre.";
+
+str.match(r); // Devuelve ['una', 'que', 'ver', 'que']
+
+const r = /\bv([0-9]+)\.([0-9]+)\.([0-9]+)\b/;
+const str = "v1.0.21";
+
+str.match(r); // Devuelve ['v1.0.21', '1', '0', '21']
+</code></pre>
+<p>En el caso de no existir <strong>parentización</strong>, el array devuelto contiene un con todo el texto capturado. En el caso de existir múltiples parentizaciones (<em>como en el último ejemplo</em>), el array devuelto contiene un con todo el texto capturado, y un por cada parentización.</p>
+<p>Recuerda que los tienen varios métodos que permiten el uso de expresiones regulares para realizar operaciones, como por ejemplo, el <code>replace()</code>, para hacer reemplazos en todas las ocurrencias:</p>
+<pre><code>const daenerys = "Javascript es un gran lenguaje";
+
+daenerys.replace(/[aeou]/g, "i"); // 'Jiviscript is in grin lingiiji'
+</code></pre>
+<hr />
+<h2 id="json">JSON<a class="headerlink" href="#json" title="Permanent link">&para;</a></h2>
+<p>Cuando trabajamos con mucha cantidad de información, se puede volver necesario aislar el código de programación de los datos. De esta forma, podemos guardar información en un fichero independiente, separado del archivo donde tenemos el código de nuestro programa. Así, si necesitamos actualizar o modificar datos, no tenemos que tocar el código de nuestro programa.</p>
+<h3 id="que-es-json">¿Qué es JSON?<a class="headerlink" href="#que-es-json" title="Permanent link">&para;</a></h3>
+<p><strong>JSON</strong> son las siglas de <strong>JavaScript Object Notation</strong>, y no es más que un formato ligero de datos, con una estructura (<em>notación</em>) específica, que es totalmente compatible de forma nativa con Javascript. Como su propio nombre indica, <strong>JSON</strong> se basa en la sintaxis que tiene Javascript para crear objetos.</p>
+<p>Un archivo <strong>JSON</strong> mínimo debe tener la siguiente sintaxis:</p>
+<pre><code>{
+}
+</code></pre>
+<p>Esto simplemente es un objeto vacío. Un archivo JSON, puede contener varios tipos de datos:</p>
+<pre><code>{
+  "name": "Manz",
+  "life": 99,
+  "dead": false,
+  "props": ["invisibility", "coding", "happymood"],
+  "senses": {
+    "vision": 50,
+    "audition": 75,
+    "taste": 40,
+    "smell": 50,
+    "touch": 80
+  }
+}
+</code></pre>
+<p>Como se puede ver, en <strong>JSON</strong> todos los textos deben estar entrecomillados con «comillas dobles», y solo se pueden utilizar tipos de datos como , , , , o <code>null</code>. Un valor <code>null</code>, simplemente, también sería un <strong>JSON</strong> válido.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><strong>OJO</strong>: JSON no permite utilizar tipos de datos como , , o valores <code>undefined</code>. Tampoco es válido incluir comentarios en un JSON.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Mucho cuidado con las <strong>comillas mal cerradas</strong> o las <strong>comas sobrantes</strong> (<em>antes de un cierre de llaves, por ejemplo</em>). Suelen ser motivos de error de sintaxis frecuentemente. Si tienes dudas sobre si la sintaxis del JSON que has construído es correcta, puedes utilizar <a href="https://jsonlint.com/">JSONLint</a>, una página que te permitirá pegar el código JSON y validarlo para saber si es correcto. También nos puede servir para indentar correctamente el JSON.</p>
+<h3 id="como-utilizar-json">¿Cómo utilizar JSON?<a class="headerlink" href="#como-utilizar-json" title="Permanent link">&para;</a></h3>
+<p>Si analizamos bien la sintaxis de un JSON, nos daremos cuenta que es muy similar a algo a lo que ya deberíamos estar acostumbrados:</p>
+<pre><code>const o = {
+  name: "Manz",
+  life: 99,
+};
+</code></pre>
+<p>Simplemente añadiendo <code>const o =</code> al principio, nos daremos cuenta (<em>si no era evidente ya</em>) de que se trata de un <strong>objeto</strong> de Javascript y que no debería ser muy sencillo pasar de JSON a Javascript y viceversa.</p>
+<p>En Javascript tenemos una serie de métodos que nos facilitan esa tarea, pudiendo trabajar con que contengan JSON y objetos Javascript de forma indiferente:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Método</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>JSON.parse(str)</code></td>
+<td align="left">Convierte el texto <code>str</code> (un JSON válido) a un objeto y lo devuelve.</td>
+</tr>
+<tr>
+<td align="left"><code>JSON.stringify(obj)</code></td>
+<td align="left">Convierte un objeto Javascript <code>obj</code> a su representación JSON y la devuelve.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="convertir-json-a-objeto">Convertir JSON a Objeto<a class="headerlink" href="#convertir-json-a-objeto" title="Permanent link">&para;</a></h4>
+<p>La acción de <strong>convertir JSON a objeto</strong> Javascript se le suele denominar <strong>parsear</strong>. Es una acción que analiza un que contiene un <strong>JSON</strong> válido y devuelve un objeto Javascript con dicha información correctamente estructurada. Para ello, utilizaremos el método <code>JSON.parse()</code>:</p>
+<pre><code>const str = '{ "name": "Manz", "life": 99 }';
+
+const obj = JSON.parse(str);
+
+obj.name; // 'Manz'
+obj.life; // 99
+</code></pre>
+<p>Como se puede ver, <code>obj</code> es un objeto generado a partir del JSON recogido en la variable <code>str</code> y podemos consultar sus propiedades y trabajar con ellas sin problemas.</p>
+<h4 id="convertir-objeto-a-json">Convertir Objeto a JSON<a class="headerlink" href="#convertir-objeto-a-json" title="Permanent link">&para;</a></h4>
+<p>La acción inversa, <strong>convertir un objeto Javascript a JSON</strong> también se puede realizar facilmente haciendo uso del método <code>JSON.stringify()</code>. Este método dificil de pronunciar viene a ser algo así como «convertir a texto», y lo podemos utilizar para transformar un objeto de Javascript a <strong>JSON</strong> rápidamente:</p>
+<pre><code>const obj = {
+  name: "Manz",
+  life: 99,
+  saludar: function () {
+    return "Hola!";
+  },
+};
+
+const str = JSON.stringify(obj);
+
+str; // '{"name":"Manz","life":99}'
+</code></pre>
+<p>Observa que, como habíamos dicho, las funciones no están soportadas por <strong>JSON</strong>, por lo que si intentamos convertir un objeto que contiene métodos o funciones, <code>JSON.stringify()</code> no fallará, pero simplemente devolverá un omitiendo las propiedades que contengan funciones.</p>
+<h3 id="leyendo-json-externo">Leyendo JSON externo<a class="headerlink" href="#leyendo-json-externo" title="Permanent link">&para;</a></h3>
+<p>Teniendo en cuenta todo lo visto hasta ahora, <strong>JSON</strong> es un formato ideal para guardar en pequeños archivos de texto que se puedan leer desde Javascript, pasar a objetos y trabajar con ellos. Para hacer esto, existen varias estrategias. La más común es utilizar <strong>AJAX</strong> para leer este tipo de datos, pero eso lo veremos más adelante.</p>
+<h3 id="recursos-para-json">Recursos para JSON<a class="headerlink" href="#recursos-para-json" title="Permanent link">&para;</a></h3>
+<p>Existen varios recursos interesantes para trabajar con JSON y que pueden sernos de utilidad como programadores. Cito varios de ellos a continuación:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Nombre</th>
+<th align="left">Descripción</th>
+<th align="left">GitHub</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="https://jsonlint.com/">JSONLint</a></td>
+<td align="left">Validador JSON. Comprueba sintaxis e indica errores.</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left"><a href="http://zaa.ch/jsonlint/">JSONLint</a></td>
+<td align="left">Validador JSON. También disponible versión de terminal (CLI).</td>
+<td align="left"><a href="https://github.com/zaach/jsonlint">@zaach/jsonlint</a></td>
+</tr>
+<tr>
+<td align="left"><strong>prettyjson</strong></td>
+<td align="left">Lector de JSON para terminal (CLI) con resaltado en colores.</td>
+<td align="left"><a href="https://github.com/rafeca/prettyjson">@rafeca/prettyjson</a></td>
+</tr>
+<tr>
+<td align="left"><a href="https://jsoneditoronline.org/">JSONEditor</a></td>
+<td align="left">Editor JSON visual y online.</td>
+<td align="left"><a href="https://github.com/josdejong/jsoneditor">@josdejong/jsoneditor</a></td>
+</tr>
+<tr>
+<td align="left"><strong>JSONSelect</strong></td>
+<td align="left">Selector de datos JSON al estilo CSS. Experimental.</td>
+<td align="left"><a href="https://github.com/lloyd/JSONSelect">@lloyd/JSONSelect</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="clases-es6">Clases ES6<a class="headerlink" href="#clases-es6" title="Permanent link">&para;</a></h2>
+<p>Una vez dominamos las bases de la programación y nuestro código va creciendo cada vez más, comprobaremos que las funciones no suelen ser suficiente como para <strong>organizar</strong> nuestro código y los mecanismos que tenemos a nuestro alcance quizás no resultan todo lo prácticos que deberían ser.</p>
+<p>Aunque Javascript no soporta clases de forma nativa, en <strong>ECMAScript 2015</strong> se introduce la posibilidad de usar clases como en otros lenguajes, aunque internamente Javascript traduce estas clases al sistema basado en prototipos que usa en realidad. Para los programadores funciona a modo de <strong>azúcar sintáctico</strong>, es decir, sólo «endulza» la forma de trabajar para que sea más agradable para nosotros.</p>
+<h3 id="que-es-una-clase">¿Qué es una clase?<a class="headerlink" href="#que-es-una-clase" title="Permanent link">&para;</a></h3>
+<p>Una <strong>clase</strong> es una forma de organizar código de forma entendible con el objetivo de simplificar el funcionamiento de nuestro programa. Además, hay que tener en cuenta que las clases son «conceptos abstractos» de los que se pueden crear objetos de programación, cada uno con sus características concretas.</p>
+<p>Esto puede ser complicado de entender con palabras, pero se ve muy claro con ejemplos:</p>
+<p><img alt="Clases y objetos" src="../img/clases-objetos.png" /></p>
+<p>En primer lugar tenemos la <strong>clase</strong>. La clase es el <strong>concepto abstracto</strong> de un objeto, mientras que el <strong>objeto</strong> es el elemento final que se basa en la clase. En la imagen anterior tenemos varios ejemplos:</p>
+<ul>
+<li>
+<p>En el <strong>primer ejemplo</strong> tenemos dos variables: <code>pato</code> y <code>lucas</code>. Ambos son animales, por lo que son objetos que están basados en la clase <code>Animal</code>. Tanto <code>pato</code> como <code>lucas</code> tienen las características que estarán definidas en la clase <code>Animal</code>: color, sonido que emiten, nombre, etc...</p>
+</li>
+<li>
+<p>En el <strong>segundo ejemplo</strong> tenemos dos variables <code>seat</code> y <code>opel</code>. Se trata de dos coches, que son vehículos, puesto que están basados en la clase <code>Vehículo</code>. Cada uno tendrá las características de su clase: color del vehículo, número de ruedas, marca, modelo, etc...</p>
+</li>
+<li>
+<p>En el <strong>tercer ejemplo</strong> tenemos dos variables <code>cuadrado</code> y <code>c2</code>. Se trata de dos formas geométricas, que al igual que los ejemplos anteriores tendrán sus propias características, como por ejemplo el tamaño de sus lados. El elemento <code>cuadrado</code> puede tener un lado de <code>3</code> cm y el elemento <code>c2</code> puede tener un lado de <code>6</code> cm.</p>
+</li>
+</ul>
+<p>En Javascript se utiliza una sintaxis muy similar a otros lenguajes como, por ejemplo, Java. Declarar una clase es tan sencillo como escribir lo siguiente:</p>
+<pre><code>// Declaración de una clase
+class Animal {}
+
+// Crear o instanciar un objeto
+const pato = new Animal();
+</code></pre>
+<p>El nombre elegido debería hacer referencia a la información que va a contener dicha clase. Piensa que el objetivo de las clases es almacenar en ella todo lo que tenga relación (<em>en este ejemplo, con los animales</em>). Si te fijas, es lo que venimos haciendo hasta ahora con objetos como , , u otros.</p>
+<p>Observa que luego creamos una variable donde hacemos un <code>new Animal()</code>. Estamos creando una variable <code>pato</code> (<em>un objeto</em>) que es de tipo <code>Animal</code>, y que contendrá todas las características definidas dentro de la clase <code>Animal</code> (<em>de momento, vacía</em>).</p>
+<blockquote>
+<p>Una norma de estilo en el mundo de la programación es que las <strong>clases</strong> deben siempre <strong>empezar en mayúsculas</strong>. Esto nos ayudará a diferenciarlas sólo con leerlas. Si te interesa este tema, puedes echar un vistazo al tema de las <a href="/javascript/introduccion/convenciones-de-nombres">convenciones de nombres en programación</a>.</p>
+</blockquote>
+<h3 id="elementos-de-una-clase">Elementos de una clase<a class="headerlink" href="#elementos-de-una-clase" title="Permanent link">&para;</a></h3>
+<p>Una clase tiene diferentes **características que la forman, vamos a ir explicándolas todas detalladamente. Pero primero, una tabla general para verlas en conjunto:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Elemento</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>Propiedad</strong></td>
+<td align="left">Variable que existe dentro de una clase. Puede ser pública o privada.</td>
+</tr>
+<tr>
+<td align="left"><code>Propiedad pública</code></td>
+<td align="left">Propiedad a la que se puede acceder desde fuera de la clase.</td>
+</tr>
+<tr>
+<td align="left"><code>Propiedad privada</code></td>
+<td align="left">Propiedad a la que no se puede acceder desde fuera de la clase.</td>
+</tr>
+<tr>
+<td align="left"><code>Propiedad computada</code></td>
+<td align="left">Función para acceder a una propiedad con modificaciones (getter/setter).</td>
+</tr>
+<tr>
+<td align="left"><strong>Método</strong></td>
+<td align="left">Función que existe dentro de una clase. Puede ser pública o privada.</td>
+</tr>
+<tr>
+<td align="left"><code>Método público</code></td>
+<td align="left">Método que se puede ejecutar desde dentro y fuera de la clase.</td>
+</tr>
+<tr>
+<td align="left"><code>Método privado</code></td>
+<td align="left">Método que sólo se puede ejecutar desde dentro de la clase.</td>
+</tr>
+<tr>
+<td align="left"><code>Método estático</code></td>
+<td align="left">Método que se ejecuta directamente desde la clase, no desde la instancia.</td>
+</tr>
+<tr>
+<td align="left"><code>Constructor</code></td>
+<td align="left">Método que se ejecuta automáticamente cuando se crea una instancia.</td>
+</tr>
+</tbody>
+</table>
+<p>Como vemos, todos estas características se dividen en dos grupos: las <strong>propiedades</strong> (<em>a grandes rasgos, variables dentro de clases</em>) y los <strong>métodos</strong> (<em>a grandes rasgos, funciones dentro de clases</em>). Veamos cada una de ellas en detalle, pero empecemos por los <strong>métodos</strong>.</p>
+<h4 id="que-es-un-metodo">¿Qué es un método?<a class="headerlink" href="#que-es-un-metodo" title="Permanent link">&para;</a></h4>
+<p>Hasta ahora habíamos visto que los <strong>métodos</strong> eran funciones que viven dentro de una variable, más concretamente de un objeto. Los objetos de tipo tienen varios métodos, los objetos de tipo tiene otros métodos, etc... Justo eso es lo que definimos en el interior de una clase.</p>
+<p>Si añadimos un método a la clase <code>Animal</code>, al crear cualquier variable haciendo un <code>new Animal()</code>, tendrá automáticamente ese método disponible. Ten en cuenta que podemos crear varias variables de tipo <code>Animal</code> y serán totalmente independientes cada una:</p>
+<pre><code>// Declaración de clase
+class Animal {
+  // Métodos
+  hablar() {
+    return "Cuak";
+  }
+}
+
+// Creación de una instancia u objeto
+const pato = new Animal();
+pato.hablar(); // 'Cuak'
+
+const donald = new Animal();
+donald.hablar(); // 'Cuak'
+</code></pre>
+<p>Observa que el método <code>hablar()</code>, que se encuentra dentro de la clase <code>Animal</code>, existe en las variables <code>pato</code> y <code>donald</code> porque realmente son de tipo <code>Animal</code>. Al igual que con las funciones, se le pueden pasar varios parámetros al método y trabajar con ellos como venimos haciendo normalmente con las funciones.</p>
+<h4 id="que-es-un-metodo-estatico">¿Qué es un método estático?<a class="headerlink" href="#que-es-un-metodo-estatico" title="Permanent link">&para;</a></h4>
+<p>En el caso anterior, para usar un método de una clase, como por ejemplo <code>hablar()</code>, debemos crear el objeto basado en la clase haciendo un <code>new</code> de la clase. Lo que se denomina crear un objeto o una instancia de la clase. En algunos casos, nos puede interesar crear <strong>métodos estáticos</strong> en una clase porque para utilizarlos no hace falta crear ese objeto, sino que se pueden ejecutar directamente sobre la clase directamente:</p>
+<pre><code>class Animal {
+  static despedirse() {
+    return "Adiós";
+  }
+
+  hablar() {
+    return "Cuak";
+  }
+}
+
+Animal.despedirse(); // 'Adiós'
+</code></pre>
+<p>Como veremos más adelante, lo habitual suele ser utilizar métodos normales (<em>no estáticos</em>), porque normalmente nos suele interesar crear varios objetos y guardar información diferente en cada uno de ellos, y para eso tendríamos que instanciar un objeto.</p>
+<p>Una de las limitaciones de los <strong>métodos estáticos</strong> es que en su interior sólo podremos hacer referencia a elementos que también sean estáticos. No podremos acceder a propiedades o métodos no estáticos, ya que necesitaríamos instanciar un objeto para hacerlo.</p>
+<blockquote>
+<p>Los <strong>métodos estáticos</strong> se suelen utilizar para crear funciones de apoyo que realicen tareas concretas o genéricas, porque están relacionadas con la clase en general.</p>
+</blockquote>
+<h4 id="que-es-un-constructor">¿Qué es un constructor?<a class="headerlink" href="#que-es-un-constructor" title="Permanent link">&para;</a></h4>
+<p>Se le llama <strong>constructor</strong> a un tipo especial de método de una clase, que se ejecuta automáticamente a la hora de hacer un <code>new</code> de dicha clase. Una clase <strong>solo puede tener un constructor</strong>, y en el caso de que no se especifique un constructor a una clase, tendrá uno vacío de forma implícita.</p>
+<p>Veamos el ejemplo anterior, donde añadiremos un constructor a la clase:</p>
+<pre><code>// Declaración de clase
+class Animal {
+  // Método que se ejecuta al hacer un new
+  constructor() {
+    console.warn("Ha nacido un pato.");
+  }
+  // Métodos
+  hablar() {
+    return "Cuak";
+  }
+}
+
+// Creación de una instancia u objeto
+const pato = new Animal(); // 'Ha nacido un pato'
+</code></pre>
+<p>El <strong>constructor</strong> es un mecanismo muy interesante y utilizado para tareas de inicialización o que quieres realizar tras haber creado el nuevo objeto. Otros lenguajes de programación tienen concepto de <strong>destructor</strong> (<em>el opuesto al constructor</em>), sin embargo, en Javascript no existe este concepto.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><strong>Ojo</strong>: En un constructor no se puede utilizar nunca un <code>return</code>, puesto que al hacer un <code>new</code> se devuelve siempre el propio objeto creado.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h4 id="que-es-una-propiedad">¿Qué es una propiedad?<a class="headerlink" href="#que-es-una-propiedad" title="Permanent link">&para;</a></h4>
+<p>Las clases, siendo estructuras para guardar información, pueden guardar variables con su correspondiente información. Dicho concepto se denomina <strong>propiedades</strong> y en Javascript se realiza en el interior del constructor, precedido de la palabra clave <code>this</code> (<em>que hace referencia a «este» elemento, es decir, la clase</em>), como puedes ver en el siguiente ejemplo:</p>
+<pre><code>class Animal {
+  constructor(n = "pato") {
+    this.nombre = n;
+  }
+
+  hablar() {
+    return "Cuak";
+  }
+  quienSoy() {
+    return "Hola, soy " + this.nombre;
+  }
+}
+
+// Creación de objetos
+const pato = new Animal();
+pato.quienSoy(); // 'Hola, soy pato'
+
+const donald = new Animal("Donald");
+pato.quienSoy(); // 'Hola, soy Donald'
+</code></pre>
+<blockquote>
+<p>Desde <strong>ECMAScript</strong> se pueden declarar propiedades en la parte superior de la clase, justo después de abrir el <code>{</code> del <code>class</code>. De esta forma, ya no es necesario utilizar la palabra clave <code>this</code> ni declararlas obligatoriamente dentro del <code>constructor()</code>.</p>
+</blockquote>
+<p>Como se puede ver, estas <strong>propiedades</strong> existen en la clase, y se puede establecer de forma que todos los objetos tengan el mismo valor, o como en el ejemplo anterior, tengan valores diferentes dependiendo del objeto en cuestión, pasándole los valores específicos por parámetro.</p>
+<p>Observa que, las propiedades de la clase podrán ser modificadas externamente, ya que por defecto son <strong>propiedades públicas</strong>:</p>
+<pre><code>const pato = new Animal("Donald");
+pato.quienSoy(); // 'Hola, soy Donald'
+
+pato.nombre = "Paco";
+pato.quienSoy(); // 'Hola, soy Paco'
+</code></pre>
+<h4 id="propiedades-y-metodos-privados">Propiedades y métodos privados<a class="headerlink" href="#propiedades-y-metodos-privados" title="Permanent link">&para;</a></h4>
+<p>A partir de la versión <strong>ECMAScript</strong> , se introduce la posibilidad de crear <a href="https://caniuse.com/#feat=mdn-javascript_classes_private_class_fields">campos de clase privados</a> (<em>los cuales aún cuentan con poco soporte</em>). Antiguamente todas las propiedades y métodos eran públicos por defecto, pero ahora también pueden ser privados. Para ello, solo hay que añadir el carácter <code>#</code> justo antes del nombre de la propiedad o método:</p>
+<pre><code>class Animal {
+  #miSecreto = "Me gusta Internet Explorer";
+
+  #decirSecreto() {
+    return this.#miSecreto;
+  }
+
+  decirSacrilegio() {
+    return this.#decirSecreto();
+  }
+}
+
+const patitoFeo = new Animal();
+patitoFeo.#decirSecreto();     // Error
+patitoFeo.decirSacrilegio();   // OK
+</code></pre>
+<p>Estas propiedades o métodos precedidos de <code>#</code> son privados y sólo podrán ser llamados desde un método de clase, ya que si se hace desde fuera obtendremos un error similar al siguiente:</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Uncaught SyntaxError: Private field '#decirSecreto' must be declared in an enclosing class</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Sin embargo, si se llama a un método público como <code>decirSacrilegio()</code>, que a su vez llama a un método privado (<em>pero desde dentro de la clase</em>), todo funcionará correctamente sin error, ya que el método <code>#decirSecreto()</code> se está llamando desde dentro de la clase.</p>
+<h3 id="los-ambitos-en-una-clase">Los ámbitos en una clase<a class="headerlink" href="#los-ambitos-en-una-clase" title="Permanent link">&para;</a></h3>
+<p>Dentro de una clase tenemos dos tipos de ámbitos: <strong>ámbito de método</strong> y <strong>ámbito de clase</strong>:</p>
+<p>En primer lugar, veamos el <strong>ámbito dentro de un método</strong>. Si declaramos variables o funciones dentro de un método con <code>var</code>, <code>let</code> o <code>const</code>, estos elementos existirán sólo en el método en cuestión. Además, no serán accesibles desde fuera del método:</p>
+<pre><code>class Clase {
+  constructor() {
+    const name = "Manz";
+    console.log("Constructor: " + name);
+  }
+
+  metodo() {
+    console.log("Método: " + name);
+  }
+}
+
+const c = new Clase(); // 'Constructor: Manz'
+
+c.name; // undefined
+c.metodo(); // 'Método: '
+</code></pre>
+<p>Observa que la variable <code>name</code> solo se muestra cuando se hace referencia a ella dentro del <code>constructor()</code> que es donde se creó y donde existe.</p>
+<p>En segundo lugar, tenemos el <strong>ámbito de clase</strong>. Podemos crear propiedades precedidas por <code>this.</code> (<em>desde dentro del constructor</em>) y desde desde la parte superior de la clase, lo que significa que estas propiedades tendrán alcance en toda la clase, tanto desde el constructor, como desde otros métodos del mismo:</p>
+<pre><code>class Clase {
+  role = "Teacher";   // ES2020+
+
+  constructor() {
+    this.name = "Manz";
+    console.log("Constructor: " + this.name);
+  }
+
+  metodo() {
+    console.log("Método: " + this.name);
+  }
+}
+
+const c = new Clase(); // 'Constructor: Manz'
+
+c.name;     // 'Manz'
+c.metodo(); // 'Método: Manz'
+c.role;     // 'Teacher'
+</code></pre>
+<p>Ojo, estas propiedades también pueden ser modificadas desde fuera de la clase, simplemente asignándole otro valor. Si quieres evitarlo, añade el <code>#</code> antes del nombre de la propiedad al declararla.</p>
+<h4 id="la-palabra-clave-this">La palabra clave this<a class="headerlink" href="#la-palabra-clave-this" title="Permanent link">&para;</a></h4>
+<p>Como te habrás fijado en ejemplos anteriores, hemos introducido la palabra clave <code>this</code>, que hace referencia al <strong>elemento padre</strong> que la contiene. Así pues, si escribimos <code>this.nombre</code> dentro de un método, estaremos haciendo referencia a la propiedad <code>nombre</code> que existe dentro de ese objeto. De la misma forma, si escribimos <code>this.hablar()</code> estaremos ejecutando el método <code>hablar()</code> de ese objeto.</p>
+<p>Veamos el siguiente ejemplo, volviendo al símil de los animales:</p>
+<pre><code>class Animal {
+  constructor(n = "pato") {
+    this.nombre = n;
+  }
+
+  hablar() {
+    return "Cuak";
+  }
+  quienSoy() {
+    return "Hola, soy " + this.nombre + ". ~" + this.hablar();
+  }
+}
+
+const pato = new Animal("Donald");
+
+pato.quienSoy(); // 'Hola, soy Donald. ~Cuak'
+</code></pre>
+<p>Ten en cuenta que si usas <code>this</code> en contextos concretos, como por ejemplo fuera de una clase te devolverá el objeto <code>Window</code>, que no es más que una referencia al objeto global de la pestaña actual donde nos encontramos y tenemos cargada la página web.</p>
+<blockquote>
+<p>Es importante tener mucho cuidado con la palabra clave <code>this</code>, ya que en muchas situaciones creeremos que devolverá una referencia al elemento padre que la contiene, pero devolverá el objeto <code>Window</code> porque se encuentra fuera de una clase o dentro de una función con otro contexto. Asegúrate siempre de que <code>this</code> tiene el valor que realmente crees que tiene.</p>
+</blockquote>
+<h3 id="propiedades-computadas">Propiedades computadas<a class="headerlink" href="#propiedades-computadas" title="Permanent link">&para;</a></h3>
+<p>En algunos casos nos puede interesar utilizar lo que se llaman <strong>propiedades computadas</strong>. Las <strong>propiedades computadas</strong> son un tipo de propiedades a las que queremos realizarle ligeros cambios antes de guardarla o antes de obtenerla.</p>
+<p>Imagina un caso en el que, tenemos una clase con 3 propiedades <code>A</code>, <code>B</code> y <code>C</code> que guardan valores específicos. Sin embargo, <code>B</code> y <code>C</code> guardan unos valores que se precalculan con unas fórmulas pero que parten del valor de la propiedad <code>A</code>. En lugar de guardar las 3 propiedades por separadas y tener que mantenerlas actualizadas, podemos simplemente crear una propiedad <code>A</code>, y una propiedad computada <code>B</code> y <code>C</code>, que obtendrán el valor de <code>A</code> y aplicarán la formula en cuestión para devolver el valor resultante.</p>
+<p>Por ejemplo, en una clase <code>Circulo</code> podríamos tener una propiedad <code>radio</code> con un valor numérico y una propiedad computada <strong>area</strong> que devuelve ese valor numérico elevado por <code>2</code> y multiplicado por <code>π</code>, ya que el <strong>área</strong> de un círculo es <code>π · radio²</code>.</p>
+<h4 id="que-es-un-getter">¿Qué es un getter?<a class="headerlink" href="#que-es-un-getter" title="Permanent link">&para;</a></h4>
+<p>Los <strong>getters</strong> son la forma de definir propiedades computadas de lectura en una clase. Veamos un ejemplo sobre el ejemplo anterior de la clase <code>Animal</code>:</p>
+<pre><code>class Animal {
+  constructor(n) {
+    this._nombre = n;
+  }
+
+  get nombre() {
+    return "Sr. " + this._nombre;
+  }
+
+  hablar() {
+    return "Cuak";
+  }
+  quienSoy() {
+    return "Hola, soy " + this.nombre;
+  }
+}
+
+// Creación de objetos
+const pato = new Animal("Donald");
+
+pato.nombre; // 'Sr. Donald'
+pato.nombre = "Pancracio"; // 'Pancracio'
+pato.nombre; // 'Sr. Donald'
+</code></pre>
+<p>Si observas los resultados de este último ejemplo, puedes comprobar que la diferencia al utilizar <strong>getters</strong> es que las propiedades con <code>get</code> no se pueden cambiar, son de sólo lectura.</p>
+<h4 id="que-es-un-setter">¿Qué es un setter?<a class="headerlink" href="#que-es-un-setter" title="Permanent link">&para;</a></h4>
+<p>De la misma forma que tenemos un <strong>getter</strong> para obtener información mediante <strong>propiedades computadas</strong>, también podemos tener un <strong>setter</strong>, que es el mismo concepto pero en lugar de obtener información, para establecer información.</p>
+<p>Si incluímos un <strong>getter</strong> y un <strong>setter</strong> a una propiedad en una clase, podremos modificarla directamente:</p>
+<pre><code>class Animal {
+  constructor(n) {
+    this.nombre = n;
+  }
+
+  get nombre() {
+    return "Sr. " + this._nombre;
+  }
+
+  set nombre(n) {
+    this._nombre = n.trim();
+  }
+
+  hablar() {
+    return "Cuak";
+  }
+  quienSoy() {
+    return "Hola, soy " + this.nombre;
+  }
+}
+
+// Creación de objetos
+const pato = new Animal("Donald");
+
+pato.nombre; // 'Sr. Donald'
+pato.nombre = "   Lucas  "; // '   Lucas  '
+pato.nombre; // 'Sr. Lucas'
+</code></pre>
+<p>Observa que de la misma forma que con los <strong>getters</strong>, podemos realizar tareas sobre los parámetros del <strong>setter</strong> antes de guardarlos en la propiedad interna. Esto nos servirá para hacer modificaciones previas, como por ejemplo, en el ejemplo anterior, realizando un <code>trim()</code> para limpiar posibles espacios antes de guardar esa información.</p>
+<p>En el siguiente artículo seguiremos explorando las clases, centrándonos en esta ocasión en la denominada <strong>herencia de clases</strong>.</p>
+<hr />
+<h2 id="herencia-de-clases">Herencia de Clases<a class="headerlink" href="#herencia-de-clases" title="Permanent link">&para;</a></h2>
+<p>A medida que trabajamos con <a href="/javascript/caracteristicas/clases-es6/">Clases y objetos</a> en nuestro código, una de las características fundamentales que nos ayudan a reutilizar código y simplificar nuestro trabajo es la <strong>herencia de Clases</strong>. Con esta característica podemos establecer una jerarquía de elementos y reutilizar características según en que nivel se encuentra cada elemento.</p>
+<p>Tomemos el ejemplo del capítulo anterior de la <strong>forma geométrica</strong> para trabajar con él:</p>
+<p><img alt="Herencia" src="../img/herencia.png" /></p>
+<p>Observa que en primer lugar tenemos una <strong>clase superior</strong> llamada <code>Forma</code> que representa a una forma geométrica. Dicha forma geométrica tendrá las características comunes a todos los elementos (<em>color, nombre...</em>).</p>
+<p>Luego, vemos que tenemos varias clases: <code>Cuadrado</code>, <code>Circulo</code> y <code>Triangulo</code>. Dichas clases tendrán las características propias de cada una: el <strong>Cuadrado</strong> tendrá una característica que será <code>lado</code>, el <strong>Círculo</strong> tendrá <code>radio</code> y <code>diametro</code>, etc... Además, las clases <strong>heredan</strong> las características comunes de su padre, en este caso de la clase <code>Forma</code>.</p>
+<p>Así, finalmente los elementos <code>c1</code> y <code>c2</code> son objetos generados a partir de la clase <code>Cuadrado</code>, los elementos <code>r1</code> y <code>r2</code> son objetos generados a partir de la clase <code>Circulo</code> y así sucesivamente.</p>
+<h3 id="que-es-extender-una-clase">¿Qué es extender una clase?<a class="headerlink" href="#que-es-extender-una-clase" title="Permanent link">&para;</a></h3>
+<p>En Javascript, a partir de <strong>ECMAScript</strong> podemos «<strong>extender clases</strong>» de forma muy similar a como se hace en otros lenguajes de programación como Java. Veamos el ejemplo del capítulo anterior pasado a Clases que utilizan herencia:</p>
+<pre><code>// Clase padre
+class Forma {
+  constructor() {
+    console.log("Soy una forma geométrica.");
+  }
+
+  gritar() {
+    console.log("YEP!!");
+  }
+}
+
+// Clases hijas
+class Cuadrado extends Forma {
+  constructor() {
+    super();
+    console.log("Soy un cuadrado.");
+  }
+}
+
+class Circulo extends Forma {
+  constructor() {
+    super();
+    console.log("Soy un círculo.");
+  }
+}
+
+class Triangulo extends Forma {
+  constructor() {
+    super();
+    console.log("Soy un triángulo.");
+  }
+}
+</code></pre>
+<p>Observa que la clase padre <code>Forma</code> muestra un mensaje en su constructor y tiene un método <code>gritar()</code>. Cada clase hija <strong>extiende</strong> a su clase padre, por lo que la clase <code>Cuadrado</code> será una mezcla de la clase <code>Forma</code> más la clase <code>Cuadrado</code>.</p>
+<p>El método especial <code>super()</code> llama al constructor de la clase padre, por lo que si creamos varios objetos, funcionará en cascada, mostrando primero el texto del constructor del padre, y luego el texto del constructor del hijo:</p>
+<pre><code>const c1 = new Cuadrado();
+// 'Soy una forma geométrica.'
+// 'Soy un cuadrado.'
+
+c1.gritar();
+// 'YEP!!'
+
+const t1 = new Triangulo();
+// 'Soy una forma geométrica.'
+// 'Soy un triángulo.'
+
+t1.gritar();
+// 'YEP!!'
+</code></pre>
+<p>Además, todas las clases hijas heredarán el método <code>gritar()</code>, ya que pertenece a la clase padre <code>Forma</code> y todas extienden de ella.</p>
+<blockquote>
+<p>Recuerda que es <strong>obligatorio</strong> llamar a <code>super()</code> en el constructor de la clase hija antes de realizar ninguna tarea. No te olvides de escribirlo.</p>
+</blockquote>
+<h3 id="la-palabra-clave-super">La palabra clave super<a class="headerlink" href="#la-palabra-clave-super" title="Permanent link">&para;</a></h3>
+<p>Como hemos visto, la palabra clave <code>super()</code> hace referencia a la superclase, es decir, a la clase padre. Se debe indicar de forma <strong>obligatoria</strong> en el constructor de las clases hijas que extienden de un padre, no obstante, también podemos utilizarlas en métodos para llamar de forma opcional u obligatoria a métodos del padre para que hagan tareas complementarias o parciales:</p>
+<pre><code>class Padre {
+  tarea() {
+    console.log("Tarea del padre...");
+  }
+}
+
+class Hijo extends Padre {
+  tarea() {
+    super.tarea();
+    console.log("Tarea del hijo...");
+  }
+}
+</code></pre>
+<p>Si nos fijamos en el ejemplo anterior, en el caso de que la clase <code>Hijo</code> no tuviera método <code>tarea()</code> heredaría dicho método de su clase padre, ejecutándolo. En el caso del ejemplo anterior, tiene un método <code>tarea()</code> en la clase hijo que sobreescribe el método <code>tarea()</code> del padre, realizando únicamente el código indicado en esa clase hija. Sin embargo, la diferencia radica en lo siguiente:</p>
+<ul>
+<li>
+<p>Si se indica <code>super.tarea()</code> (<em>donde tarea es el nombre del método de la clase padre</em>), esto llamará y ejecutará el método de la clase Padre, y al terminar, continua realizando el código del método de la clase hija. Es el caso del ejemplo anterior.</p>
+</li>
+<li>
+<p>Si no se indica <code>super.tarea()</code>, el método <code>tarea()</code> de la clase hijo sobreescribe al de la clase Padre, ocultándolo y ejecutando sólo el código de la clase hija.</p>
+</li>
+</ul>
+<p>Es nuestra decisión que camino tomar, en algunos casos nos interesará una de estas posibilidades y en otras ocasiones nos interesará otra.</p>
+<hr />
+<h2 id="eslint">ESLint<a class="headerlink" href="#eslint" title="Permanent link">&para;</a></h2>
+<p>Los <strong>linters</strong> son herramientas de programación que examinan el código del programador y lo ayudan a corregir errores de sintaxis, código incorrecto, malas prácticas o costumbres o incluso ayudarlo a seguir guías de estilo, favoreciendo escribir código de calidad y acostumbrando al usuario a solventar ciertos problemas comunes en fases tempranas (<em>y no tan tempranas</em>) como programador.</p>
+<blockquote>
+<p>Hay que tener claro que un <strong>linter</strong> no sólo busca errores que hacen que nuestro código no funcione, sino que también nos ayuda a corregir malos hábitos. Un programa puede ser perfectamente válido y funcionar correctamente, y aún así, <strong>ESLint</strong> encontrar errores en él.</p>
+</blockquote>
+<h3 id="que-es-eslint">¿Qué es ESLint?<a class="headerlink" href="#que-es-eslint" title="Permanent link">&para;</a></h3>
+<p><a href="https://eslint.org/">ESLint</a> es un <strong>linter</strong> que examina código Javascript, siguiendo unas ciertas normas y criterios personalizables por el programador, para que el código Javascript siga ciertos estándares y estilos, favoreciendo la escritura de código de calidad. Existen otras herramientas similares como <strong>JSHint</strong> o <strong>JSLint</strong>, sin embargo, <strong>ESLint</strong> ofrece muchas características que lo hacen destacar sobre los anteriores.</p>
+<p><strong>ESLint</strong> es totalmente configurable y puedes indicarle que criterios (<em>llamados reglas</em>) quieres que utilice y cuales prefieres que ignore, adaptándose a las necesidades de cualquier empresa, programador o equipo de trabajo.</p>
+<h3 id="instalacion-de-eslint">Instalación de ESLint<a class="headerlink" href="#instalacion-de-eslint" title="Permanent link">&para;</a></h3>
+<p>Aunque la herramienta <strong>ESLint</strong> requiere como mínimo <strong>Node 6.14+</strong> y <strong>NPM 3+</strong> para funcionar, es recomendable tener la última versión estable de <strong>Node / NPM</strong> <a href="https://nodejs.org/en/download/package-manager/">instalada desde la web oficial</a>, ya que otras versiones incluídas en los repositorios por defecto de Debian o Ubuntu no están completamente actualizadas y pueden carecer de funcionalidades como <strong>npx</strong> o similares. Aquí tienes una <a href="/npm/introduccion/que-es/#instalaci%C3%B3n-de-nodenpm">guía para instalar Node/NPM</a>.</p>
+<p>Para instalar <strong>ESLint</strong> en nuestro proyecto haremos lo siguiente:</p>
+<pre><code>$ npm install --save-dev eslint
+</code></pre>
+<p>Este comando instalará <strong>ESLint</strong> en nuestro proyecto (<em>localmente</em>) y añadirá la referencia del paquete al fichero <code>package.json</code> (<em>que debe existir previamente</em>). Para ejecutar <strong>ESLint</strong> en nuestro proyecto escribiremos <code>npx eslint</code>. Para más información, lee esta sección: <a href="https://lenguajejs.com/npm/administracion/instalar-paquetes-npm/#el-comando-npx">¿Qué es npx?</a>.</p>
+<h3 id="configuracion-inicial-de-eslint">Configuración inicial de ESLint<a class="headerlink" href="#configuracion-inicial-de-eslint" title="Permanent link">&para;</a></h3>
+<p>Una vez instalado, en la carpeta raíz de nuestro proyecto escribimos lo siguiente:</p>
+<pre><code>$ npx eslint --init
+</code></pre>
+<p>Esto arrancará un asistente para configurar <strong>ESLint</strong> en nuestro proyecto, preguntándonos algunas cuestiones sobre el proyecto a revisar. Hagamos un repaso rápido:</p>
+<h5 id="how-would-you-like-to-use-eslint">How would you like to use ESLint?<a class="headerlink" href="#how-would-you-like-to-use-eslint" title="Permanent link">&para;</a></h5>
+<p>Esta opción nos permite seleccionar el modo en el que funcionará el linter. <strong>To check syntax only</strong> nos revisa sólo la sintaxis de nuestro código, <strong>To check syntax and find problems</strong> además nos ayuda a encontrar potenciales problemas y <strong>To check syntax, find problems, and enforce code style</strong> además de lo anterior, nos ayuda a reforzar nuestro estilo de código. Se recomienda utilizar la última.</p>
+<h5 id="what-type-of-modules-does-your-project-use">What type of modules does your project use?<a class="headerlink" href="#what-type-of-modules-does-your-project-use" title="Permanent link">&para;</a></h5>
+<p>Esta opción nos permite seleccionar la forma en la que importamos código Javascript. Si utilizamos <code>import</code>, seleccionamos <strong>JavaScript modules (import/export)</strong>. Por otro lado, si estamos utilizando el sistema de node con <code>require</code>, seleccionaremos <strong>CommonJS (require/exports)</strong>.</p>
+<h5 id="which-framework-does-your-project-use">Which framework does your project use?<a class="headerlink" href="#which-framework-does-your-project-use" title="Permanent link">&para;</a></h5>
+<p>Esta opción nos da la posibilidad de indicar si usamos un framework específico como <strong>React</strong> o <strong>Vue.js</strong> y así poder adaptarse a la sintaxis correspondiente de estos frameworks. Si no fuera el caso, seleccionamos <strong>None of these</strong>.</p>
+<h5 id="where-does-your-code-run">Where does your code run?<a class="headerlink" href="#where-does-your-code-run" title="Permanent link">&para;</a></h5>
+<p>Con esta opción enfocamos el linter para revisar código orientado a navegadores, marcando <strong>Browser</strong>, o código orientado a otros sistemas como <strong>Node</strong>. Ten en cuenta que puedes marcar ambas si así lo necesitas.</p>
+<h5 id="how-would-you-like-to-define-a-style-for-your-project">How would you like to define a style for your project?<a class="headerlink" href="#how-would-you-like-to-define-a-style-for-your-project" title="Permanent link">&para;</a></h5>
+<p>Esta es una de las opciones más importantes, ya que con ella nutrimos al linter con la información necesaria para saber como corregir nuestro código. Las opciones disponibles son <strong>Use a popular style guide</strong>, <strong>Answer questions about your style</strong> o <strong>Inspect your JavaScript file(s)</strong>, y las explicaremos en los siguientes apartados.</p>
+<h5 id="what-format-do-you-want-your-config-file-to-be-in">What format do you want your config file to be in?<a class="headerlink" href="#what-format-do-you-want-your-config-file-to-be-in" title="Permanent link">&para;</a></h5>
+<p>Esta opción nos pregunta en que formato queremos guardar la configuración de ESLint. Tenemos a nuestra disposición un formato <strong>Javascript</strong>, otro <strong>YAML</strong> y otro <strong>JSON</strong>. Personalmente, suelo optar por el último, ya que suele ser el más extendido.</p>
+<h5 id="would-you-like-to-install-them-now-with-npm">Would you like to install them now with npm?<a class="headerlink" href="#would-you-like-to-install-them-now-with-npm" title="Permanent link">&para;</a></h5>
+<p>Por último, y dependiendo de las opciones escogidas, nos puede aparecer un mensaje como este, que al responderlo de forma afirmativa, instalará automáticamente los paquetes de NPM necesarios.</p>
+<h4 id="use-a-popular-style-guide">Use a popular style guide<a class="headerlink" href="#use-a-popular-style-guide" title="Permanent link">&para;</a></h4>
+<p>En este modo, <strong>ESLint</strong> utilizará una guía de estilo predefinida, creada por otra empresa o grupo. Por defecto tenemos las 3 siguientes para elegir:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Promotores</th>
+<th align="left">GitHub</th>
+<th align="left">Nombre del paquete (NPM)</th>
+<th align="left">Observaciones</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="https://www.airbnb.es/">Airbnb</a></td>
+<td align="left"><a href="https://github.com/airbnb/javascript">@airbnb/javascript</a></td>
+<td align="left"><code>eslint-config-airbnb</code></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="https://standardjs.com/">StandardJS</a></td>
+<td align="left"><a href="https://github.com/standard/standard">@standard/standard</a></td>
+<td align="left"><code>eslint-config-standard</code></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.google.com/">Google</a></td>
+<td align="left"><a href="https://github.com/google/eslint-config-google">@google/eslint-config-google</a></td>
+<td align="left"><code>eslint-config-google</code></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p>Cada una de ellas, tiene una serie de reglas preconfiguradas que luego, puedes modificar o cambiar si lo deseas. También puedes crear/modificar tu propio conjunto de reglas, aunque eso te llevará un poco más de tiempo.</p>
+<p>Además de estos 3 paquetes del asistente, existen muchos otros como <code>eslint-config-react-app</code>, <code>eslint-config-prettier</code>, <code>eslint-config-eslint</code>, <code>eslint-config-jest-enzyme</code> y muchos otros que puedes buscar en NPM con un simple <code>npm search eslint-config</code> e instalar con un <code>npm install</code> seguido del nombre del paquete.</p>
+<blockquote>
+<blockquote>
+<p>Ten en cuenta que aunque el asistente de <strong>ESLint</strong> instala y configura los paquetes necesarios automáticamente, si queremos hacerlo con una guía concreta no basta con hacer el <code>npm install</code>, sino que además hay que modificar el archivo de configuración, como se verá más adelante.</p>
+</blockquote>
+</blockquote>
+<h4 id="answer-questions-about-style">Answer questions about style<a class="headerlink" href="#answer-questions-about-style" title="Permanent link">&para;</a></h4>
+<p>En el caso de que no queramos utilizar un paquete de reglas preconfiguradas, <strong>ESLint</strong> permite crear uno desde cero mediante una serie de preguntas que nos realizará y determinarán de forma general el estilo que utilizamos:</p>
+<h5 id="what-style-of-indentation-do-you-use">What style of indentation do you use?<a class="headerlink" href="#what-style-of-indentation-do-you-use" title="Permanent link">&para;</a></h5>
+<p>Esta opción nos pregunta si queremos que el código esté <a href="/javascript/introduccion/indentacion">indentado</a> con tabuladores o con espacios. En el caso de los espacios, puedes indicar incluso cuantos espacios requieres. Equivale a la regla <code>rules.indent</code>.</p>
+<h5 id="what-quotes-do-you-use-for-strings">What quotes do you use for strings?<a class="headerlink" href="#what-quotes-do-you-use-for-strings" title="Permanent link">&para;</a></h5>
+<p>Debemos indicar en esta opción si utilizamos comillas dobles o comillas simples para los . Equivale a la regla <code>rules.quotes</code>.</p>
+<h5 id="what-line-endings-do-you-use">What line endings do you use?<a class="headerlink" href="#what-line-endings-do-you-use" title="Permanent link">&para;</a></h5>
+<p>Esta opción nos permite indicar si escribimos código en Windows o en Unix (Linux). Equivale a la regla <code>rules.linebreak-style</code>.</p>
+<h5 id="do-you-require-semicolons">Do you require semicolons?<a class="headerlink" href="#do-you-require-semicolons" title="Permanent link">&para;</a></h5>
+<p>Esta opción nos pregunta si queremos utilizar punto y coma al final de cada sentencia. Recuerda que en Javascript es opcional el uso de punto y coma. Equivale a la regla <code>rules.semi</code>.</p>
+<p>Obviamente, estas no son sino las preguntas principales y más importantes para tener un fichero de configuración de reglas mínimo para comenzar. Puedes encontrar todas las reglas que tiene ESLint en esta página: <a href="https://eslint.org/docs/rules/">reglas de ESLint</a>.</p>
+<h4 id="inspect-your-javascript-files">Inspect your JavaScript file(s)<a class="headerlink" href="#inspect-your-javascript-files" title="Permanent link">&para;</a></h4>
+<p>Por último, esta tercera opción se basará en una inspección de tus archivos Javascript para determinar cuál sería la guía de estilo que deberías utilizar, siguiendo las normas que se utilizan en los archivos Javascript actuales.</p>
+<h3 id="formato-de-configuracion">Formato de configuración<a class="headerlink" href="#formato-de-configuracion" title="Permanent link">&para;</a></h3>
+<p>En cualquiera de las 3 opciones del asistente, se nos preguntará <strong>What format do you want your config file to be in?</strong>. Esta opción nos permite seleccionar que formato de configuración queremos utilizar en nuestro proyecto para utilizar con <strong>ESLint</strong>. Ten en cuenta que el asistente anterior lo que hace es generar un fichero de configuración con <a href="https://eslint.org/docs/rules/">reglas de ESLint</a> que luego podrás modificar, añadir y/o personalizar.</p>
+<p>En principio, puedes utilizar el formato que más te guste. Si existen varios archivos de configuración, tendrá preferencia en el orden de la siguiente lista.</p>
+<p>Las opciones disponibles son:</p>
+<ul>
+<li><strong>Javascript</strong>: Generará un archivo de configuración <code>.eslintrc.js</code></li>
+<li><strong>YAML</strong>: Generará un archivo de configuración <code>.eslintrc.yaml</code> o <code>.eslintrc.yml</code></li>
+<li><strong>JSON</strong>: Generará un archivo de configuración <code>.eslintrc.json</code>. Aunque en el formato JSON no se admiten comentarios, ESLint sí soporta comentarios de tipo <code>/* */</code>.</li>
+</ul>
+<p>También es posible utilizar un objeto <code>eslintConfig</code> dentro del <code>package.json</code> de nuestro proyecto.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Antiguamente se utilizaba un fichero <code>.eslintrc</code> (<em>YAML o JSON</em>), pero está marcado como obsoleto, por lo que sería conveniente evitar utilizar ese nombre para el fichero de configuración.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Por último, comentar que también es posible crear un fichero <code>.eslintignore</code> donde podemos indicar archivos o globs (<em>patrones de archivos, comodines, etc...</em>) que se ignorarán a la hora de realizar una comprobación de <strong>ESLint</strong>. Se pueden añadir comentarios, con línea que comiencen por <code>#</code>.</p>
+<h3 id="configuracion-de-ejemplo">Configuración de ejemplo<a class="headerlink" href="#configuracion-de-ejemplo" title="Permanent link">&para;</a></h3>
+<p>A continuación, tenemos un <strong>fichero de configuración de ejemplo de ESLint</strong>, con las opciones recomendadas y ciertas reglas personalizadas y comentadas:</p>
+<pre><code>{
+    /* Entorno de desarrollo:
+       https://eslint.org/docs/user-guide/configuring#specifying-environments */
+    "env": {
+        "browser": true,         /* El objetivo del código es ejecutar en navegadores */
+        "es6": true              /* El código estará escrito en ES6 */
+    },
+    /* Activa las reglas marcadas con ✓ en la documentación oficial de ESLint:
+       https://eslint.org/docs/rules/ y el paquete eslint-config-standard */
+    "extends": ["eslint:recommended", "standard"],
+    /* Opciones de parseo:
+       https://eslint.org/docs/user-guide/configuring#specifying-parser-options */
+    "parserOptions": {
+        "ecmaVersion": 2018,     /* Establece la versión de ECMAScript que se usará */
+        "sourceType": "module"   /* Indica si se usan módulos ES6 o solo scripts */
+    },
+    /* Reglas de ESLint personalizadas (sobreescriben a anteriores):
+        https://eslint.org/docs/rules/ */
+    "rules": {
+        /* Indentación a 2 espacios: https://eslint.org/docs/rules/indent */
+        "indent": [
+          "error",
+          2
+        ],
+        /* Finales de línea de UNIX: https://eslint.org/docs/rules/linebreak-style */
+        "linebreak-style": [
+          "error",
+          "unix"
+        ],
+        /* Uso de comillas simples para strings: https://eslint.org/docs/rules/quotes */
+        "quotes": [
+          "error",
+          "single"
+        ],
+        /* Uso de punto y coma obligatorio: https://eslint.org/docs/rules/semi */
+        "semi": [
+          "error",
+          "always"
+        ]
+    }
+}
+</code></pre>
+<p>Podemos guardar este fichero con nombre <code>.eslintrc.json</code> en la carpeta raíz de nuestro proyecto y escribir en una <strong>terminal</strong> el siguiente comando para que nos revise los errores de nuestro código (<em>asumiendo que queremos revisar un archivo llamado index.js</em>):</p>
+<pre><code>$ npx eslint src/js/index.js
+</code></pre>
+<p>También se pueden usar <strong>globs</strong> como <code>*.js</code> o similares.</p>
+<blockquote>
+<blockquote>
+<p>Observa que en la opción <strong>extends</strong> del archivo de configuración se están utilizando dos fuentes de datos. Por un lado, las recomendaciones básicas oficiales de ESLint, y por otro lado, la guía de estilo <code>eslint-config-standard</code>. En el caso de querer seguir añadiendo más guías sólo necesitaríamos añadir el nombre del paquete, omitiendo el fragmento <code>eslint-config-</code>.</p>
+</blockquote>
+</blockquote>
+<h3 id="plugins-de-eslint">Plugins de ESLint<a class="headerlink" href="#plugins-de-eslint" title="Permanent link">&para;</a></h3>
+<p>Aunque se pueden mostrar los errores por terminal, algo más cómodo y común es configurarlo en nuestro <strong>editor de código</strong> para que nos muestre las recomendaciones y errores a medida que vamos escribiendo nuestro programa. También puede ser interesante tenerlo configurado con algún automatizador como WebPack o Gulp y que nos aparezca cuando estemos trabajando con él.</p>
+<p>A continuación tienes una lista de editores o automatizadores con algunas de las extensiones o plugins que puedes instalar para usar ESLint:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Editor o sistema</th>
+<th align="left">Plugin o extensión</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Visual Studio Code</td>
+<td align="left"><a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint">VSCode ESLint</a></td>
+</tr>
+<tr>
+<td align="left">Adobe Brackets</td>
+<td align="left"><a href="https://github.com/brackets-userland/brackets-eslint">Backets ESLint</a></td>
+</tr>
+<tr>
+<td align="left">IntelliJ IDEA</td>
+<td align="left"><a href="https://plugins.jetbrains.com/plugin/7494-eslint">ESLint Plugin</a></td>
+</tr>
+<tr>
+<td align="left">ATOM</td>
+<td align="left"><a href="https://atom.io/packages/linter-eslint">linter-eslint</a></td>
+</tr>
+<tr>
+<td align="left">Vim</td>
+<td align="left"><a href="https://github.com/w0rp/ale">ALE</a> o <a href="https://github.com/vim-syntastic/syntastic/tree/master/syntax_checkers/javascript">Syntastic</a></td>
+</tr>
+<tr>
+<td align="left">Sublime Text 3</td>
+<td align="left"><a href="https://github.com/roadhump/SublimeLinter-eslint">SublimeLinter-eslint</a></td>
+</tr>
+<tr>
+<td align="left">Gulp</td>
+<td align="left"><a href="https://www.npmjs.com/package/gulp-eslint">gulp-eslint</a></td>
+</tr>
+<tr>
+<td align="left">Webpack</td>
+<td align="left"><a href="https://www.npmjs.com/package/eslint-loader">eslint-loader</a></td>
+</tr>
+<tr>
+<td align="left">RollUp</td>
+<td align="left"><a href="https://www.npmjs.com/package/rollup-plugin-eslint">rollup-plugin-eslint</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="modulos-ecmascript-esm">Módulos ECMAScript (ESM)<a class="headerlink" href="#modulos-ecmascript-esm" title="Permanent link">&para;</a></h2>
+<p>Uno de los principales problemas que ha ido arrastrando Javascript desde sus inicios es la <strong>dificultad de organizar</strong> de una forma adecuada una aplicación grande, con muchas líneas de código. En muchos lenguajes, cuando un programa crece, se comienza a estructurar en <strong>funciones</strong> y, posteriormente, en <strong>clases</strong>. De esta forma organizamos de forma más lógica el código de nuestro programa.</p>
+<p>Pero tener todo el código en <strong>un sólo fichero Javascript</strong> también se vuelve confuso y complejo de organizar. En la mayoría de los lenguajes de programación, las clases se dividen en ficheros diferentes, de modo que <strong>cada clase</strong> está localizada <strong>en un fichero separado</strong>. Esto en el «lado del cliente» (<em>como es el caso de Javascript en el navegador</em>) presenta varias problemáticas.</p>
+<p><img alt="Funciones, clases y ficheros (módulos)" src="../img/function-classes-files.png" /></p>
+<p>En un principio, y de forma nativa, la forma más extendida era incluir varias etiquetas <code>&lt;script&gt;</code> desde nuestra página HTML. De esta forma, podíamos tener varios ficheros Javascript separados, cada uno para una finalidad concreta. Sin embargo, este sistema es poco modular, ofrecía un control pobre y resultaba lento, ya que sobrecargaba al cliente con múltiples peticiones extra.</p>
+<p>Con el tiempo, se desarrollaron otros sistemas como <strong>CommonJS</strong> (<em>utilizado en NodeJS</em>) o <strong>RequireJS</strong> (<em>AMD</em>), cada uno con sus particularidades, virtudes y desventajas.</p>
+<h3 id="que-son-los-modulos-es">¿Qué son los módulos ES?<a class="headerlink" href="#que-son-los-modulos-es" title="Permanent link">&para;</a></h3>
+<p>En <strong>ECMAScript</strong> se introduce una característica nativa denominada <strong>Módulos ES</strong> o <strong>ESM</strong>, que permite la importación y exportación de código entre diferentes ficheros Javascript, eliminando las desventajas que teníamos hasta ahora y permitiendo trabajar de forma más flexible desde el código Javascript.</p>
+<p>Para trabajar con módulos tenemos a nuestra disposición las siguientes palabras clave:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Declaración</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>export</code></td>
+<td align="left">Exporta uno o varios elementos (variables, funciones, clases...) del fichero actual</td>
+</tr>
+<tr>
+<td align="left"><code>import</code></td>
+<td align="left">Importa uno o varios elementos (variables, funciones, clases...) desde otro fichero <code>.js</code></td>
+</tr>
+</tbody>
+</table>
+<p>Mediante la palabra clave <code>export</code> crearemos un <strong>objeto</strong> (<em>módulo de exportación</em>) que contendrá una o varias propiedades. En estas propiedades podremos guardar variables, funciones o clases (<em>a partir de ahora, elementos</em>). Si dicho módulo ya existe, podremos ir añadiendo más propiedades. Por otro lado, con la palabra clave <code>import</code> podremos leer dichos módulos de otros ficheros y utilizar sus propiedades en nuestro código.</p>
+<h4 id="exportacion-de-modulos">Exportación de módulos<a class="headerlink" href="#exportacion-de-modulos" title="Permanent link">&para;</a></h4>
+<p>Por defecto, un fichero Javascript no tiene módulo de exportación si no se usa un <code>export</code> al menos una vez. Existen varias formas de exportar código mediante la palabra clave <code>export</code> :</p>
+<table>
+<thead>
+<tr>
+<th align="left">Forma</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>export { name };</code></td>
+<td align="left">Añade el elemento <code>name</code> al módulo de exportación.</td>
+</tr>
+<tr>
+<td align="left"><code>export { n1, n2, n3... };</code></td>
+<td align="left">Añade los elementos indicados ( <code>n1</code> , <code>n2</code> , <code>n3</code> ...) al módulo de exportación.</td>
+</tr>
+<tr>
+<td align="left"><code>export * from './file.js';</code></td>
+<td align="left">Añade todos los elementos del módulo <code>file.js</code> al módulo de exportación.</td>
+</tr>
+<tr>
+<td align="left"><code>export declaration;</code></td>
+<td align="left">Declara una variable, función o clase y la añade al módulo de exportación.</td>
+</tr>
+<tr>
+<td align="left"><code>export default declaration;</code></td>
+<td align="left">Declara una función o clase y la añade al módulo de exportación.</td>
+</tr>
+</tbody>
+</table>
+<p>Es posible renombrar los elementos sobre la marcha utilizando <code>as</code> seguido del nuevo nombre. Además, si se indica <code>default</code> como nuevo nombre, ese elemento será la <strong>exportación por defecto</strong>. Sólo puede haber una exportación por defecto por fichero.</p>
+<p>Veamos algunos ejemplos:</p>
+<pre><code>let number = 4;
+const saludar = () =&gt; "¡Hola!";
+const goodbye = () =&gt; "¡Adiós!";
+class Clase {}
+
+export { number }; // Se crea un módulo y se añade number
+export { saludar, goodbye as despedir }; // Se añade saludar y despedir al módulo
+export { Clase as default }; // Se añade Clase al módulo (default)
+export { saludar as otroNombre }; // Se añade otroNombre al módulo
+</code></pre>
+<p>También es posible <strong>exportar</strong> variables, funciones o clases simplemente incluyendo la palabra <code>export</code> a la izquierda de la línea de su declaración:</p>
+<pre><code>export const f1 = () =&gt; 42; // Se crea un módulo y se añade f1
+
+// Se añade f2 al módulo (default)
+export default function f2() {
+    return "Manz";
+}
+</code></pre>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Ten en cuenta que en el caso de utilizar una exportación por defecto en una declaración, no es posible utilizar <code>var</code> , <code>let</code> o <code>const</code> . Tampoco es posible usar <code>export</code> dentro de funciones, bucles o contextos específicos.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h4 id="importacion-de-modulos">Importación de módulos<a class="headerlink" href="#importacion-de-modulos" title="Permanent link">&para;</a></h4>
+<p>Si por un lado tenemos <code>export</code> , la palabra clave <code>import</code> es su opuesta. Con ella podemos cargar un módulo de exportación de otro fichero Javascript, con todos los elementos exportados que contiene.</p>
+<p>Existen varias formas de importar código utilizando <code>import</code> :</p>
+<table>
+<thead>
+<tr>
+<th align="left">Forma</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>import nombre from './file.js';</code></td>
+<td align="left">Importa sólo el elemento por defecto de <code>file.js</code> en <code>nombre</code> .</td>
+</tr>
+<tr>
+<td align="left"><code>import { nombre } from './file.js';</code></td>
+<td align="left">Importa sólo el elemento <code>nombre</code> de <code>file.js</code> .</td>
+</tr>
+<tr>
+<td align="left"><code>import { n1, n2.. } from './file.js';</code></td>
+<td align="left">Importa los elementos indicados desde <code>file.js</code> .</td>
+</tr>
+<tr>
+<td align="left"><code>import * as obj from './file.js';</code></td>
+<td align="left">Importa todos los elementos de <code>file.js</code> en el objeto <code>obj</code> .</td>
+</tr>
+<tr>
+<td align="left"><code>import './file.js';</code></td>
+<td align="left">No importa elementos, pero ejecuta el código de <code>file.js</code> .</td>
+</tr>
+</tbody>
+</table>
+<p>Recuerda, que al igual que con la <strong>exportación</strong>, también puedes renombrar elementos utilizando <code>as</code> seguido del nuevo nombre.</p>
+<p>En el primer caso, importamos el elemento <strong>por defecto</strong> desde el módulo <code>file.js</code> y lo guardamos en la variable <code>nombre</code> . En el segundo y tercer caso, importamos los elementos indicados en el interior de los corchetes, desde el módulo <code>file.js</code> .</p>
+<p>En el cuarto caso, importamos todos los elementos del módulo externo <code>file.js</code> en un objeto de nombre <code>obj</code> (<em>es obligatorio indicar el nombre</em>) y en el quinto caso, no importamos elementos, pero leemos el código del módulo y lo ejecutamos.</p>
+<h3 id="convenciones-de-modulos-es">Convenciones de módulos ES<a class="headerlink" href="#convenciones-de-modulos-es" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Si queremos utilizar <code>import</code> y <code>export</code> desde el navegador directamente, deberemos añadir los archivos con módulos con la etiqueta <code>&lt;script&gt;</code> utilizando el atributo <code>type="module"</code> . Estas etiquetas de módulos se cargan en diferido, o lo que es lo mismo, como si fueran un <code>&lt;script defer&gt;</code> :</p>
+<p><script type="module" src="file.js"></script></p>
+</li>
+<li>
+<p>Por norma general, a los archivos Javascript con módulos se les pone la extensión <code>.js</code>, aunque también se pueden encontrar con otra extensión como <code>.es2015</code> o <code>.mjs</code>.</p>
+</li>
+<li>
+<p>Se aconseja utilizar las rutas <strong>UNIX</strong> en los <code>export</code> e <code>import</code> , ya que son las que tienen mejor soporte, tanto en navegadores como en <strong>NodeJS</strong>. También se pueden indicar rutas absolutas para cargar directamente desde el navegador:</p>
+<p>// Incorrecto
+import { elemento } from "module.mjs";
+import { elemento } from "folder/module.mjs";</p>
+<p>// Correcto
+import { elemento } from "./module.mjs"; // misma carpeta del .js
+import { elemento } from "/module.mjs"; // carpeta raíz
+import { elemento } from "../module.mjs"; // carpeta anterior al .js
+import { ceil } from "<a href="https://unpkg.com/lodash-es@4.17.11/lodash.js">https://unpkg.com/lodash-es@4.17.11/lodash.js</a>";</p>
+</li>
+</ul>
+<blockquote>
+<p>Una práctica habitual es realizar las exportaciones al final de los ficheros Javascript. Aunque no es obligatorio, muchos desarrolladores esperan que los <code>export</code> aparezcan al final del código, ya que así solía hacerse también en <strong>NodeJS</strong> con los <code>module.exports</code>.</p>
+</blockquote>
+<hr />
+<p><strong>Fuente:</strong> <a href="https://lenguajejs.com/">Lenguaje Javascript</a> por <a href="https://manzdev.github.io/">Manz</a></p>
+<h2 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../02-fundamentos_de_javascript/" title="Fundamentos de Javascript" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Fundamentos de Javascript
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../04-DOM/" title="DOM" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                DOM
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/saucedoinfo" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/saucedoinfo" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.instagram.com/saucedo.info/" target="_blank" rel="noopener" title="www.instagram.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.instant', 'navigation.expand', 'tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

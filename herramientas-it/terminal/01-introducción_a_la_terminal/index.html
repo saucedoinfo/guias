@@ -1,0 +1,3048 @@
+
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Coleccion de Guias de Desarrollo y diseño.">
+      
+      
+        <link rel="canonical" href="https://saucedoinfo.github.io/guias/herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/">
+      
+      
+        <meta name="author" content="Fernando S. Saucedo">
+      
+      <link rel="shortcut icon" href="../../../img/favicon-16x16.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.14">
+    
+    
+      
+        <title>Introducción a la terminal - Guias de Desarrollo y diseño</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d3202873.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ff0a5ce4.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#000000">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduccion-a-la-terminal" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-header-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Guias de Desarrollo y diseño
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Introducción a la terminal
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../desarrollo/html/01-introduccion_a_HTML5/" class="md-tabs__link">
+          Desarrollo
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" class="md-tabs__link md-tabs__link--active">
+          Herramientas IT
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    Guias de Desarrollo y diseño
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Desarrollo
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Desarrollo" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Desarrollo
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Html
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Html" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        <span class="md-nav__icon md-icon"></span>
+        Html
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/html/01-introduccion_a_HTML5/" title="Introduccion a HTML" class="md-nav__link">
+      Introduccion a HTML
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/html/02-etiquetas_semanticas/" title="Etiquetas semánticas" class="md-nav__link">
+      Etiquetas semánticas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/html/03-etiquetas_multimedia/" title="Etiquetas multimedias" class="md-nav__link">
+      Etiquetas multimedias
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/html/04-etiquetas_de_cabecera/" title="Etiquetas de cabecera" class="md-nav__link">
+      Etiquetas de cabecera
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/html/05-etiquetas_de_formularios/" title="Etiquetas de formularios" class="md-nav__link">
+      Etiquetas de formularios
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/html/06-etiquetas_de_scripting/" title="Etiquetas de scripting" class="md-nav__link">
+      Etiquetas de scripting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Css
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Css" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        <span class="md-nav__icon md-icon"></span>
+        Css
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/01-introduccion_a_CSS/" title="Introducción a CSS" class="md-nav__link">
+      Introducción a CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/02-modelo_de_cajas/" title="Modelo de cajas" class="md-nav__link">
+      Modelo de cajas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/03-colores_y_fondos/" title="Colores y fondos" class="md-nav__link">
+      Colores y fondos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/04-selectores_CSS/" title="Selectores CSS" class="md-nav__link">
+      Selectores CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/05-Fuentes_y_tipografias/" title="Fuentes y tipografías" class="md-nav__link">
+      Fuentes y tipografías
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/06-representacion_de_datos/" title="Representación de datos" class="md-nav__link">
+      Representación de datos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/07_maquetacion_y_colocacion/" title="Maquetación y colocación" class="md-nav__link">
+      Maquetación y colocación
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/08-interacciones/" title="Interacciones" class="md-nav__link">
+      Interacciones
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/09-efectos/" title="Efectos" class="md-nav__link">
+      Efectos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/10-responsive_Web_Design/" title="Responsive Web Design" class="md-nav__link">
+      Responsive Web Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/11-animaciones_CSS/" title="Animaciones CSS" class="md-nav__link">
+      Animaciones CSS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      JavaScript
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="JavaScript" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon"></span>
+        JavaScript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/javascript/01-introducci%C3%B3n_a_javascript/" title="Introducción a Javascript" class="md-nav__link">
+      Introducción a Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/javascript/02-fundamentos_de_javascript/" title="Fundamentos de Javascript" class="md-nav__link">
+      Fundamentos de Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/javascript/03-caracteristicas/" title="Características" class="md-nav__link">
+      Características
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/javascript/04-DOM/" title="DOM" class="md-nav__link">
+      DOM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/javascript/05-asincronia/" title="Asincronía" class="md-nav__link">
+      Asincronía
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/javascript/06-peticiones_HTTP/" title="Peticiones HTTP" class="md-nav__link">
+      Peticiones HTTP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Herramientas IT
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Herramientas IT" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Herramientas IT
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" checked>
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Terminal
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Terminal" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon"></span>
+        Terminal
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Introducción a la terminal
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Introducción a la terminal" class="md-nav__link md-nav__link--active">
+      Introducción a la terminal
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-una-terminal" class="md-nav__link">
+    ¿Que es una terminal?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Que es una terminal?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conceptos-basicos" class="md-nav__link">
+    Conceptos básicos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ayuda-a-terminal-man-pages" class="md-nav__link">
+    Ayuda a terminal (Man pages)
+  </a>
+  
+    <nav class="md-nav" aria-label="Ayuda a terminal (Man pages)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ayuda-rapida-help" class="md-nav__link">
+    Ayuda rápida (--help)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#para-que-sirve-este-comando" class="md-nav__link">
+    ¿Para qué sirve este comando?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paginas-de-manual-man-pages" class="md-nav__link">
+    Páginas de manual (man pages)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paginas-man-simplificadas-tldr" class="md-nav__link">
+    Páginas man simplificadas (tldr)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navi-el-hada-del-terminal" class="md-nav__link">
+    Navi, el hada del terminal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-de-wsl" class="md-nav__link">
+    Instalación de WSL
+  </a>
+  
+    <nav class="md-nav" aria-label="Instalación de WSL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requisitos-previos" class="md-nav__link">
+    Requisitos previos
+  </a>
+  
+    <nav class="md-nav" aria-label="Requisitos previos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#activacion-de-caracteristicas" class="md-nav__link">
+    Activación de características
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-distros-tengo-en-wsl" class="md-nav__link">
+    ¿Qué distros tengo en WSL?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalar-linux-wsl" class="md-nav__link">
+    Instalar Linux (WSL)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convertir-distro-wsl1-a-wsl2" class="md-nav__link">
+    Convertir distro WSL1 a WSL2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iniciar-distro-de-linux-wsl" class="md-nav__link">
+    Iniciar distro de Linux WSL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convertir-rutas-windows-a-wsl" class="md-nav__link">
+    Convertir rutas Windows a WSL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-de-zsh" class="md-nav__link">
+    Instalación de zsh
+  </a>
+  
+    <nav class="md-nav" aria-label="Instalación de zsh">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalar-z-shell-zsh" class="md-nav__link">
+    Instalar Z Shell (zsh)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilizar-zsh-por-defecto" class="md-nav__link">
+    Utilizar zsh por defecto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#framework-oh-my-zsh" class="md-nav__link">
+    Framework Oh-My-Zsh
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cambiar-el-tema-de-zsh" class="md-nav__link">
+    Cambiar el tema de zsh
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autocompletado-y-sugerencias" class="md-nav__link">
+    Autocompletado y sugerencias
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-12-character-not-in-range" class="md-nav__link">
+    Error 12: character not in range
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#carpetas-directorios-en-linux" class="md-nav__link">
+    Carpetas (directorios) en Linux
+  </a>
+  
+    <nav class="md-nav" aria-label="Carpetas (directorios) en Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#en-que-carpeta-estoy-pwd" class="md-nav__link">
+    ¿En qué carpeta estoy? (pwd)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listar-ficheros-ls" class="md-nav__link">
+    Listar ficheros (ls)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mejora-del-ls-exa" class="md-nav__link">
+    Mejora del ls (exa)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cambiar-de-carpetas-cd" class="md-nav__link">
+    Cambiar de carpetas (cd)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pila-de-carpetas-pushd-popd" class="md-nav__link">
+    Pila de carpetas (pushd / popd)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mejora-del-cd-autojump" class="md-nav__link">
+    Mejora del cd (autojump)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carpetas-del-sistema" class="md-nav__link">
+    Carpetas del sistema
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manipular-ficheros-y-carpetas" class="md-nav__link">
+    Manipular ficheros y carpetas
+  </a>
+  
+    <nav class="md-nav" aria-label="Manipular ficheros y carpetas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#identificar-ficheros-file" class="md-nav__link">
+    Identificar ficheros (file)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copiar-ficheros-cp" class="md-nav__link">
+    Copiar ficheros (cp)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mover-o-renombrar-ficheros-mv" class="md-nav__link">
+    Mover o renombrar ficheros (mv)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#borrar-ficheros-rm" class="md-nav__link">
+    Borrar ficheros (rm)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mejora-del-rm-rip" class="md-nav__link">
+    Mejora del rm (rip)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crear-carpetas-o-ficheros-vacios" class="md-nav__link">
+    Crear carpetas o ficheros vacíos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crear-enlaces-ln" class="md-nav__link">
+    Crear enlaces (ln)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mostrar-contenido-de-un-fichero" class="md-nav__link">
+    Mostrar contenido de un fichero
+  </a>
+  
+    <nav class="md-nav" aria-label="Mostrar contenido de un fichero">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mostrar-contenido-cat" class="md-nav__link">
+    Mostrar contenido (cat)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mejora-del-cat-bat" class="md-nav__link">
+    Mejora del cat (bat)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mostrar-contenido-al-reves-tac" class="md-nav__link">
+    Mostrar contenido al revés (tac)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paginar-contenido-more" class="md-nav__link">
+    Paginar contenido (more)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mejora-de-paginacion-less" class="md-nav__link">
+    Mejora de paginación (less)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#soporte-de-compresion" class="md-nav__link">
+    Soporte de compresión
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cambiar-idioma-de-la-terminal" class="md-nav__link">
+    Cambiar idioma de la terminal
+  </a>
+  
+    <nav class="md-nav" aria-label="Cambiar idioma de la terminal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cambiar-idioma-a-espanol" class="md-nav__link">
+    Cambiar idioma a español
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#man-pages-en-espanol" class="md-nav__link">
+    Man pages en español
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminar-idiomas-innecesarios" class="md-nav__link">
+    Eliminar idiomas innecesarios]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cambiar-la-zona-horaria" class="md-nav__link">
+    Cambiar la zona horaria
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02-operaciones_con_ficheros/" title="Operaciones con ficheros" class="md-nav__link">
+      Operaciones con ficheros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-administraci%C3%B3n_del_sistema/" title="Administración del sistema" class="md-nav__link">
+      Administración del sistema
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../markdown/" title="Markdown" class="md-nav__link">
+      Markdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../pip/" title="Pip" class="md-nav__link">
+      Pip
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../mkdocs/" title="Mkdocs" class="md-nav__link">
+      Mkdocs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../about/" title="Acerca de" class="md-nav__link">
+      Acerca de
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-una-terminal" class="md-nav__link">
+    ¿Que es una terminal?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Que es una terminal?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conceptos-basicos" class="md-nav__link">
+    Conceptos básicos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ayuda-a-terminal-man-pages" class="md-nav__link">
+    Ayuda a terminal (Man pages)
+  </a>
+  
+    <nav class="md-nav" aria-label="Ayuda a terminal (Man pages)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ayuda-rapida-help" class="md-nav__link">
+    Ayuda rápida (--help)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#para-que-sirve-este-comando" class="md-nav__link">
+    ¿Para qué sirve este comando?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paginas-de-manual-man-pages" class="md-nav__link">
+    Páginas de manual (man pages)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paginas-man-simplificadas-tldr" class="md-nav__link">
+    Páginas man simplificadas (tldr)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navi-el-hada-del-terminal" class="md-nav__link">
+    Navi, el hada del terminal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-de-wsl" class="md-nav__link">
+    Instalación de WSL
+  </a>
+  
+    <nav class="md-nav" aria-label="Instalación de WSL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requisitos-previos" class="md-nav__link">
+    Requisitos previos
+  </a>
+  
+    <nav class="md-nav" aria-label="Requisitos previos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#activacion-de-caracteristicas" class="md-nav__link">
+    Activación de características
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-distros-tengo-en-wsl" class="md-nav__link">
+    ¿Qué distros tengo en WSL?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalar-linux-wsl" class="md-nav__link">
+    Instalar Linux (WSL)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convertir-distro-wsl1-a-wsl2" class="md-nav__link">
+    Convertir distro WSL1 a WSL2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iniciar-distro-de-linux-wsl" class="md-nav__link">
+    Iniciar distro de Linux WSL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convertir-rutas-windows-a-wsl" class="md-nav__link">
+    Convertir rutas Windows a WSL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-de-zsh" class="md-nav__link">
+    Instalación de zsh
+  </a>
+  
+    <nav class="md-nav" aria-label="Instalación de zsh">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalar-z-shell-zsh" class="md-nav__link">
+    Instalar Z Shell (zsh)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilizar-zsh-por-defecto" class="md-nav__link">
+    Utilizar zsh por defecto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#framework-oh-my-zsh" class="md-nav__link">
+    Framework Oh-My-Zsh
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cambiar-el-tema-de-zsh" class="md-nav__link">
+    Cambiar el tema de zsh
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autocompletado-y-sugerencias" class="md-nav__link">
+    Autocompletado y sugerencias
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-12-character-not-in-range" class="md-nav__link">
+    Error 12: character not in range
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#carpetas-directorios-en-linux" class="md-nav__link">
+    Carpetas (directorios) en Linux
+  </a>
+  
+    <nav class="md-nav" aria-label="Carpetas (directorios) en Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#en-que-carpeta-estoy-pwd" class="md-nav__link">
+    ¿En qué carpeta estoy? (pwd)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listar-ficheros-ls" class="md-nav__link">
+    Listar ficheros (ls)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mejora-del-ls-exa" class="md-nav__link">
+    Mejora del ls (exa)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cambiar-de-carpetas-cd" class="md-nav__link">
+    Cambiar de carpetas (cd)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pila-de-carpetas-pushd-popd" class="md-nav__link">
+    Pila de carpetas (pushd / popd)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mejora-del-cd-autojump" class="md-nav__link">
+    Mejora del cd (autojump)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carpetas-del-sistema" class="md-nav__link">
+    Carpetas del sistema
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manipular-ficheros-y-carpetas" class="md-nav__link">
+    Manipular ficheros y carpetas
+  </a>
+  
+    <nav class="md-nav" aria-label="Manipular ficheros y carpetas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#identificar-ficheros-file" class="md-nav__link">
+    Identificar ficheros (file)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copiar-ficheros-cp" class="md-nav__link">
+    Copiar ficheros (cp)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mover-o-renombrar-ficheros-mv" class="md-nav__link">
+    Mover o renombrar ficheros (mv)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#borrar-ficheros-rm" class="md-nav__link">
+    Borrar ficheros (rm)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mejora-del-rm-rip" class="md-nav__link">
+    Mejora del rm (rip)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crear-carpetas-o-ficheros-vacios" class="md-nav__link">
+    Crear carpetas o ficheros vacíos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crear-enlaces-ln" class="md-nav__link">
+    Crear enlaces (ln)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mostrar-contenido-de-un-fichero" class="md-nav__link">
+    Mostrar contenido de un fichero
+  </a>
+  
+    <nav class="md-nav" aria-label="Mostrar contenido de un fichero">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mostrar-contenido-cat" class="md-nav__link">
+    Mostrar contenido (cat)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mejora-del-cat-bat" class="md-nav__link">
+    Mejora del cat (bat)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mostrar-contenido-al-reves-tac" class="md-nav__link">
+    Mostrar contenido al revés (tac)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paginar-contenido-more" class="md-nav__link">
+    Paginar contenido (more)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mejora-de-paginacion-less" class="md-nav__link">
+    Mejora de paginación (less)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#soporte-de-compresion" class="md-nav__link">
+    Soporte de compresión
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cambiar-idioma-de-la-terminal" class="md-nav__link">
+    Cambiar idioma de la terminal
+  </a>
+  
+    <nav class="md-nav" aria-label="Cambiar idioma de la terminal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cambiar-idioma-a-espanol" class="md-nav__link">
+    Cambiar idioma a español
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#man-pages-en-espanol" class="md-nav__link">
+    Man pages en español
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminar-idiomas-innecesarios" class="md-nav__link">
+    Eliminar idiomas innecesarios]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cambiar-la-zona-horaria" class="md-nav__link">
+    Cambiar la zona horaria
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/saucedoinfo/guias/edit/master/docs/herramientas-it/terminal/01-introducción_a_la_terminal.md" title="Editar esta página" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="introduccion-a-la-terminal">Introducción a la terminal<a class="headerlink" href="#introduccion-a-la-terminal" title="Permanent link">&para;</a></h1>
+<p align="center"> <img src="/img/terminal.png"/> </p>
+
+<h2 id="que-es-una-terminal">¿Que es una terminal?<a class="headerlink" href="#que-es-una-terminal" title="Permanent link">&para;</a></h2>
+<p>La <strong>terminal</strong> o <strong>consola</strong> es una forma generalizada de llamar a la interfaz de usuario de línea de comandos: una pantalla (<em>generalmente, de color de fondo negro sobre letras blancas</em>) donde escribiendo <strong>comandos</strong> (<em>secuencias de palabras especiales</em>) ordenamos al sistema realizar acciones concretas.</p>
+<p>Estas interfaces de usuario fueron muy populares en la década de los 70 y 80, ya que los sistemas de la época carecían de interfaces gráficas y era el sistema habitual para comunicarse con un dispositivo. Con el tiempo, las interfaces gráficas de usuario ganaron popularidad y relegaron a las <strong>interfaces de línea de comandos</strong> a un segundo plano, aunque nunca terminaron de perder la popularidad que las caracterizaba, sobre todo entre los usuarios más técnicos.</p>
+<p>Aunque una interfaz gráfica de usuario (<em>GUI</em>) puede ser más cómoda y agradable para el usuario, las razones para preferir una interfaz de línea de comandos son muchas:</p>
+<ul>
+<li>Es más rápido crear un programa para línea de comandos.</li>
+<li>Suele ser más potente en cuanto a personalización de opciones.</li>
+<li>Permite creación de scripts para automatizar tareas repetitivas.</li>
+<li>Suele ser una opción más universal entre sistemas.</li>
+<li>Suele ser instantáneo, al no tener que cargar pantallas gráficas.</li>
+</ul>
+<p>Es por ello que en el mundo de la informática, y del desarrollo en particular, es una vertiente muy utilizada aún en nuestros días, que no suele ser comprendida por personas externas al sector, que lo consideran un «atraso» al no conocer sus ventajas y sólo conocer sus desventajas.</p>
+<p>No obstante, el panorama de línea de comandos ha mejorado muchísimo desde estas primeras décadas y hoy en día existen multitud de opciones para convertir una terminal en una herramienta de trabajo muy productiva, que será nada menos que nuestro objetivo.</p>
+<h3 id="conceptos-basicos">Conceptos básicos<a class="headerlink" href="#conceptos-basicos" title="Permanent link">&para;</a></h3>
+<p>Hasta ahora, para simplificar, hemos utilizado una gran cantidad de términos que no son exactamente lo que parecen, por lo que antes de continuar, vamos a dedicar unos minutos a explicarlos, ya que los utilizaremos bastante:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Término</th>
+<th align="left">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>Interfaz de usuario</code></td>
+<td align="left">Medio (genérico) por el cuál se comunica un usuario y una máquina. Abreviada <strong>UI</strong>.</td>
+</tr>
+<tr>
+<td align="left"><code>Interfaz de línea de comandos</code></td>
+<td align="left">Interfaz de usuario (UI) basado en texto. Abreviada como <strong>CLI</strong>.</td>
+</tr>
+<tr>
+<td align="left"><code>Interfaz gráfica de usuario</code></td>
+<td align="left">Interfaz de usuario (UI) basado en paneles gráficos o táctiles. Abreviada como <strong>GUI</strong>.</td>
+</tr>
+<tr>
+<td align="left"><code>Interprete de comandos</code></td>
+<td align="left">Software encargado de gestionar los comandos del usuario y sus respuestas. Se suele abreviar como <strong>Shell</strong>.</td>
+</tr>
+<tr>
+<td align="left"><code>Terminal</code> o <code>Consola</code></td>
+<td align="left">Dispositivo utilizado antiguamente para comunicarse con un sistema.</td>
+</tr>
+<tr>
+<td align="left"><code>Emulador de terminal</code></td>
+<td align="left">Software que simula ser una terminal, generalmente una ventana donde hay una interfaz CLI.</td>
+</tr>
+<tr>
+<td align="left"><code>Comando</code></td>
+<td align="left">Es cada una de las instrucciones que escribimos en una interfaz CLI para comunicarnos.</td>
+</tr>
+<tr>
+<td align="left"><code>Parámetro</code></td>
+<td align="left">Son las diferentes opciones que puede tomar un comando para alterar su funcionamiento.</td>
+</tr>
+<tr>
+<td align="left"><code>Script</code></td>
+<td align="left">Es un grupo de comandos, creado con la intención de automatizar tareas.</td>
+</tr>
+</tbody>
+</table>
+<p>Una <strong>interfaz de usuario</strong> (<em>UI</em>) es como se denomina al medio que utiliza un usuario para comunicarse con una máquina. En nuestro caso nos vamos a referir a <strong>interfaces de línea de comandos</strong> (<em>CLI</em>) cuando son basadas en texto, donde los usuarios escriben órdenes o comandos y el sistema las lee y realiza, o devuelve resultados e información.</p>
+<p>Por otra parte, las <strong>interfaces gráficas de usuario</strong> (<em>GUI</em>) son la evolución natural de estas, utilizando pantallas gráficas o sistemas táctiles, mucho más sencillos y agradables de utilizar para la mayoría de los usuarios, sin embargo, habitualmente menos apropiadas y flexibles en contextos informáticos de desarrollo o sistemas.</p>
+<p>Además, también hay que aclarar el concepto de <strong>intérprete de comandos</strong> (<em>shell</em>). Se trata del software que tiene instalado el sistema y que utilizamos en la interfaz de línea de comandos. Por ejemplo, una interfaz de línea de comandos puede utilizar varios intérpretes diferentes, como por ejemplo, suele ocurrir con <strong>Bash</strong> o <strong>Zsh</strong> en GNU/Linux.</p>
+<p><img alt="Shells de Linux: bash, zsh, fish o sh" src="../img/shells.svg" /></p>
+<p>Es también muy frecuente utilizar la palabra <strong>terminal</strong> (<em>en esta misma página lo hago frecuentemente</em>) en lugar de <strong>emulador de terminal</strong>. Se hace para acortar, porque en realidad una terminal es un aparato que antiguamente se utilizaba para comunicarse con otro sistema, mientras que un <strong>emulador de terminal</strong>, que es lo que realmente utilizamos en nuestros dispositivos, es un software que simula ser una de esas terminales, habitualmente con apariencia de ventana de línea de comandos, aunque se puede encontrar de todo, como <a href="https://github.com/GitSquared/edex-ui">EDEX-UI</a>.</p>
+<p>Solemos utilizar la palabra <strong>comando</strong> para referirnos a la instrucción que escribimos en el emulador de terminal para comunicarnos con el sistema, mientras que <strong>opciones</strong> o <strong>parámetros</strong> son los detalles que se suelen escribir a continuación para personalizar la forma de trabajar del comando o alterar su funcionamiento.</p>
+<p>Por último, también es muy común crear <strong>scripts</strong>, que no son más que ficheros de texto donde se escriben una colección de comandos para realizar una tarea concreta, con la intención de automatizarla y sea mucho más fácil para nosotros realizarla, ya que en lugar de escribir todos esos comandos por separado, sólo tenemos que llamar a ese script.</p>
+<p>Por ejemplo, en el ejemplo anterior, tenemos lo siguiente:</p>
+<ul>
+<li>El <strong>comando</strong> (verde). Muestra todos los ficheros que tenemos en la carpeta actual.</li>
+<li>El primer <strong>parámetro</strong> (amarillo). Muestra ese listado en formato ancho.</li>
+<li>El segundo <strong>parámetro</strong> (azul). Muestra sólo el contenido de la carpeta <code>folder</code>.</li>
+</ul>
+<hr />
+<h2 id="ayuda-a-terminal-man-pages">Ayuda a terminal (Man pages)<a class="headerlink" href="#ayuda-a-terminal-man-pages" title="Permanent link">&para;</a></h2>
+<p>Quizás uno de los primeros consejos que nos pueden dar en la <strong>terminal de GNU/Linux</strong> es el de aprender a consultar la <strong>ayuda</strong>. Continuamente, nos estaremos enfrentando a nuevos comandos, parámetros adicionales o intentando buscar detalles sobre un comando que desconocemos o que, quizás, no recordamos.</p>
+<p><img alt="Ayuda en la terminal" src="../img/terminal-ayuda-help.png" /></p>
+<p>Para lidiar con ello, Linux tiene varias formas de consultar ayuda breve o amplios manuales de ayuda, por lo que es conveniente conocer cada una de las formas más interesantes de obtener más información sobre algún detalle.</p>
+<h3 id="ayuda-rapida-help">Ayuda rápida (--help)<a class="headerlink" href="#ayuda-rapida-help" title="Permanent link">&para;</a></h3>
+<p>Quizás, la <strong>forma más rápida de consultar la ayuda</strong>, es utilizar el parámetro <code>--help</code> después del comando que desconocemos y queremos más ayuda. Esto nos mostrará una, generalmente, breve pantalla de ayuda, con los parámetros u opciones más comunes. Útil para consultar rápidamente detalles frecuentes o, aparentemente, muy populares.</p>
+<p>Por ejemplo, si queremos consultar la ayuda del comando <code>uptime</code>, simplemente escribimos:</p>
+<pre><code>$ uptime --help
+
+Usage:
+ uptime [options]
+
+Options:
+ -p, --pretty   show uptime in pretty format
+ -h, --help     display this help and exit
+ -s, --since    system up since
+ -V, --version  output version information and exit
+
+For more details see uptime(1).
+</code></pre>
+<div class="admonition nota">
+<p class="admonition-title">Nota</p>
+<p>No todos los comandos tienen <strong>ayuda rápida</strong>, pero si la mayoría, por lo que es una primera opción bastante interesante.</p>
+</div>
+<h3 id="para-que-sirve-este-comando">¿Para qué sirve este comando?<a class="headerlink" href="#para-que-sirve-este-comando" title="Permanent link">&para;</a></h3>
+<p>En el caso de que simplemente queramos saber <strong>para que sirve un comando</strong> específico, podemos utilizar el comando <code>whatis</code> (<em>qué es</em>) seguido del nombre del comando:</p>
+<pre><code>$ whatis cat
+cat (1)              - concatenate files and print on the standard output
+</code></pre>
+<p>Otro comando muy similar es <code>apropos</code> (<em>a propósito de...</em>), el cuál nos muestra comandos relacionados al que escribimos a continuación, algo muy útil para aprender nuevos comandos:</p>
+<pre><code>$ apropos bzip2
+bzcmp (1)            - compare bzip2 compressed files
+bzdiff (1)           - compare bzip2 compressed files
+bzegrep (1)          - search possibly bzip2 compressed files for a regular expression
+bzfgrep (1)          - search possibly bzip2 compressed files for a regular expression
+bzgrep (1)           - search possibly bzip2 compressed files for a regular expression
+bzip2 (1)            - a block-sorting file compressor, v1.0.6
+bzip2recover (1)     - recovers data from damaged bzip2 files
+bzless (1)           - file perusal filter for crt viewing of bzip2 compressed text
+bzmore (1)           - file perusal filter for crt viewing of bzip2 compressed text
+</code></pre>
+<div class="admonition nota">
+<p class="admonition-title">Nota</p>
+<p>Ten en cuenta que el número que aparece a continuación (<em>entre paréntesis</em>), denota en que página del manual se encuentra (<em>ver siguiente apartado</em>). Si lo que buscamos son comandos, el número debe ser <strong>1</strong>. También podemos escribir <code>apropos 1</code> seguido del comando, para obligar a <code>apropos</code> a sólo mostrarnos resultados de esa página.</p>
+</div>
+<h3 id="paginas-de-manual-man-pages">Páginas de manual (man pages)<a class="headerlink" href="#paginas-de-manual-man-pages" title="Permanent link">&para;</a></h3>
+<p>Si existe un comando de ayuda por excelencia en Linux, son las «páginas <strong>man</strong>», o lo que es lo mismo, las páginas de manual. En ellas puedes encontrar extensa información sobre comandos, parámetros, opciones y otros detalles sobre comandos, programación, ficheros del sistema u otros detalles.</p>
+<p>La forma de consultar estas páginas de manual es muy sencilla: escribimos <code>man</code> seguido del nombre del comando (<em>o la palabra a investigar</em>), por ejemplo: <code>man ls</code>. Esto nos mostrará una página de ayuda sobre el mismo, donde podemos aprender a utilizarlo, ver que opciones o parámetros tiene, el autor del mismo, etc. Ten en cuenta que muchas veces no vienen instaladas en el sistema, y hay que instalarlas con un <code>sudo apt install man</code>.</p>
+<p>Esta es la opción preferida cuando queremos <strong>buscar información detallada</strong> sobre alguna funcionalidad específica de algún comando.</p>
+<p>Si estamos utilizando la shell <strong>zsh</strong>, una forma de mejorar las <strong>páginas man</strong> es incluyendo el plugin <code>colored-man-pages</code> en la línea de <code>plugins</code> del fichero <code>~/.zshrc</code>. Esto añadirá un resaltado de color a las páginas man, que harán la experiencia de leer estas páginas un poco más agradable.</p>
+<div class="admonition nota">
+<p class="admonition-title">Nota</p>
+<p>Si quieres poner las <strong>páginas man en español</strong>, lo recomendable sería instalar los paquetes en español en el sistema con <code>sudo apt install manpages-es manpages-es-extra</code> y establecer el idioma del sistema en español.</p>
+</div>
+<h3 id="paginas-man-simplificadas-tldr">Páginas man simplificadas (tldr)<a class="headerlink" href="#paginas-man-simplificadas-tldr" title="Permanent link">&para;</a></h3>
+<p>La abreviatura <a href="https://es.wikipedia.org/wiki/TL;DR">TL;DR</a> (<em>Too long, didn't read</em>) es un acrónimo utilizado para referirse a que algo <strong>no se ha leído porque es demasiado largo</strong>. Las páginas man, aunque muy útiles, tienen esa característica: muchas veces no se consultan porque debes leer gran cantidad de información, tardando así bastante en encontrar lo que buscas.</p>
+<p>Si esta es tu opinión, probablemente te interese el proyecto <a href="https://tldr.sh/">tldr pages</a>, un sustituto de las páginas man, ideadas para simplificar la ayuda y mostrar directamente ejemplos prácticos de referencia que suelen resolver la mayoría de las dudas, sobre todo cuando sólo consultas para recordar algo olvidado.</p>
+<p>Su forma de utilizarlo, es simplemente escribir <code>tldr</code> seguido del comando en cuestión:</p>
+<p><img alt="tldr man pages" src="../img/tldr-pages.png" /></p>
+<h3 id="navi-el-hada-del-terminal">Navi, el hada del terminal<a class="headerlink" href="#navi-el-hada-del-terminal" title="Permanent link">&para;</a></h3>
+<p>Otro recurso bastante interesante de cara a mostrar ayuda al usuario, el uso de <a href="https://github.com/denisidoro/navi">navi</a>, un asistente interactivo desarrollado en Rust y que toma su nombre del hada del videojuego «<strong>The Legend of Zelda</strong>», que tiene como finalidad mostrar unas cheatsheets interactivas con los comandos y parámetros más utilizados, al estilo de <code>tldr</code>.</p>
+<p>Para instalar <strong>navi</strong>, necesitaremos tener instalado <a href="https://rustup.rs/">Rust</a>. Si lo tenemos instalado, podemos escribir <code>cargo install navi</code>. Con ello tendremos el asistente <strong>navi</strong>, pero tendremos que instalar las cheatsheets que queramos tener descargadas.</p>
+<p><img alt="Navi linux" src="../img/navi-linux.png" /></p>
+<p>Con <code>navi repo browse</code> se nos muestran varios repositorios con las cheatsheets más conocidas, de ahí podemos ir instalando las que más nos interese consultar para tenerlas instaladas en nuestro sistema. Si por otro lado, lo que queremos es instalar una cheatsheet concreta de un repositorio de GitHub, podemos hacerlo con el comando <code>navi repo add &lt;URL&gt;</code>.</p>
+<p>Una vez descargadas en nuestro sistema, podemos consultar rápidamente con el comando <code>navi query</code> seguido de la palabra clave a consultar. Otros proyectos similares podrían ser <a href="https://github.com/cheat/cheat">cheat</a> o <a href="https://github.com/carlbordum/manly">manly</a>.</p>
+<blockquote>
+<blockquote>
+<p><strong>Nota:</strong> Recuerda que si lo que quieres es una <strong>cheatsheet física en formato PDF</strong> lista para imprimir, tienes nuestra <a href="/cheatsheets">cheatsheet de la terminal de Linux</a> en esta misma página.</p>
+</blockquote>
+</blockquote>
+<hr />
+<h2 id="instalacion-de-wsl">Instalación de WSL<a class="headerlink" href="#instalacion-de-wsl" title="Permanent link">&para;</a></h2>
+<p>Tradicionalmente, Windows ha proporcionado a sus usuarios una interfaz de línea de comandos que funciona bajo su propio sistema, heredado de MS-DOS y diferente a GNU/Linux, el cuál se basa en un sistema UNIX. Sin embargo, en Windows 10, con la irrupción de <strong>Windows Subsystem for Linux</strong> (<em>más comunmente denominado WSL</em>), esto ha cambiado radicalmente.</p>
+<p>Otros sistemas operativos como GNU/Linux o Mac, disponen de una interfaz de línea de comandos basada en UNIX, por lo que hasta el momento era bastante complejo tener compatibilidad entre sistemas. Con la adopción de <strong>WSL</strong> en Windows, Microsoft introduce una capa intermedia que funciona con un <strong>núcleo de Linux real</strong> (<em>kernel</em>) y en el que se pueden instalar distribuciones de GNU/Linux (<em>desde la tienda oficial de Microsoft o de forma manual</em>) como por ejemplo <strong>Ubuntu</strong>, <strong>Debian</strong>, <strong>Kali</strong> o incluso la distribución minimalista <strong>Alpine</strong>.</p>
+<h3 id="requisitos-previos">Requisitos previos<a class="headerlink" href="#requisitos-previos" title="Permanent link">&para;</a></h3>
+<p>Para poder disponer de una terminal de GNU/Linux en nuestro Windows, antes necesitamos asegurarnos que nuestro equipo cumple los siguientes requisitos:</p>
+<ul>
+<li>Necesitaremos soportar y tener activada la <strong>virtualización Hyper-V</strong> en la BIOS/UEFI.</li>
+<li>Necesitaremos tener Windows 10, en cualquiera de sus versiones (<em>salvo Windows S</em>).</li>
+<li>Debemos tener la característica <strong>Windows Subsystem for Linux</strong> activada.</li>
+<li>Debemos tener la característica <strong>Virtual machine plataform</strong> activada.</li>
+<li>Para usar <strong>WSL2</strong> debemos actualizar Windows 10 al menos hasta Mayo de 2020.</li>
+</ul>
+<h4 id="activacion-de-caracteristicas">Activación de características<a class="headerlink" href="#activacion-de-caracteristicas" title="Permanent link">&para;</a></h4>
+<p>En la BIOS/UEFI del equipo, debes tener activada la característica <strong>Virtualización Hyper-V</strong> o <strong>Hyper-threading virtualization</strong>. Dicha característica puede encontrarse en un menú diferente, dependiendo de la marca y modelo de la placa.</p>
+<p>Por otro lado, para activar las características mencionadas anteriormente en Windows, accedemos a Inicio y buscamos <strong>Activar o desactivar características de Windows</strong>, donde encontraremos un menú de selección para activar las casillas <strong>Subsistema de Windows para Linux</strong> y <strong>Plataforma de máquina virtual</strong>:</p>
+<p><img alt="Instalación de características para Windows Subsystem Linux (WSL)" src="../img/wsl-activar-caracteristicas-windows.png" /></p>
+<p>La primera de ellas es absolutamente necesaria, puesto que es el propio <strong>WSL</strong>. La segunda de ellas es necesaria para utilizar <strong>WSL2</strong>, y es posible que no aparezca si no tienes Windows 10 actualizado. Puedes comprobarlo, accediendo a Inicio y abriendo una terminal de Windows escribiendo <strong>CMD</strong> o <strong>Símbolo de sistema</strong> y escribiendo lo siguiente:</p>
+<pre><code>&gt; ver
+
+Microsoft Windows [Versión 10.0.19041.329]
+</code></pre>
+<p>El comando <strong>ver</strong> nos mostrará la versión instalada de Windows 10. Si es igual o superior a <code>10.0.19041</code>, podremos utilizar <strong>WSL2</strong>, en caso contrario, es posible que no podamos utilizar WSL o sólo <strong>WSL1</strong>. Para solucionarlo, revisa las actualizaciones de Windows e instala las que tengas pendientes.</p>
+<p>!!! Nota:
+    También es posible comprobar que versión tenemos instalada pulsando +R y escribiendo <code>winver</code>. Si tenemos la versión 2004 o superior, podremos utilizar <strong>WSL2</strong>.</p>
+<h3 id="que-distros-tengo-en-wsl">¿Qué distros tengo en WSL?<a class="headerlink" href="#que-distros-tengo-en-wsl" title="Permanent link">&para;</a></h3>
+<p><strong>Windows Subsystem for Linux</strong> funciona de modo que podemos tener varias distribuciones instaladas en nuestro sistema y utilizar la que queramos. Para ver que distribuciones tenemos instaladas, abrimos una terminal de Windows (<strong>CMD</strong>) y escribimos <code>wsl --list</code>:</p>
+<pre><code>&gt; wsl --list
+
+El subsistema de Windows para Linux no tiene distribuciones instaladas.
+Para instalar las distribuciones, se puede visitar Microsoft Store:
+https://aka.ms/wslstore
+</code></pre>
+<p>En el caso de tener alguna distribución de Linux instalada, nos aparecerían en la lista, como veremos un poco más adelante.</p>
+<blockquote>
+<p>Si en lugar de aparecernos el mensaje anterior nos muestra un error por no encontrar el comando <code>wsl</code>, muy probablemente no tengamos instalada la característica <strong>Windows Subsystem for Linux</strong> que mencionamos en el apartado anterior.</p>
+</blockquote>
+<h3 id="instalar-linux-wsl">Instalar Linux (WSL)<a class="headerlink" href="#instalar-linux-wsl" title="Permanent link">&para;</a></h3>
+<p>El primer paso que deberíamos realizar es instalar una distribución de GNU/Linux en nuestro <strong>WSL</strong>. Existen muchas de ellas para elegir. Personalmente suelo elegir <code>Debian</code>, aunque también hay otras distribuciones:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Distribución</th>
+<th align="left">Página oficial</th>
+<th align="left">Enlace a tienda Microsoft</th>
+<th align="left">Descarga manual (.appx)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>Debian Linux</strong></td>
+<td align="left"><a href="https://www.debian.org/">Debian</a></td>
+<td align="left">Debian MS Store</td>
+<td align="left"><a href="https://aka.ms/wsl-debian-gnulinux">Debian <code>.appx</code></a></td>
+</tr>
+<tr>
+<td align="left"><strong>Ubuntu Linux</strong></td>
+<td align="left"><a href="https://ubuntu.com/">Ubuntu</a></td>
+<td align="left"><a href="https://www.microsoft.com/es-es/p/ubuntu-2004-lts/9n6svws3rx71">Ubuntu MS Store</a></td>
+<td align="left"><a href="https://aka.ms/wslubuntu2004">Ubuntu 20.04 <code>.appx</code></a></td>
+</tr>
+<tr>
+<td align="left"><strong>Kali Linux</strong></td>
+<td align="left"><a href="https://www.kali.org/">Kali</a></td>
+<td align="left"><a href="https://www.microsoft.com/es-es/p/kali-linux/9pkr34tncv07">Kali MS Store</a></td>
+<td align="left"><a href="https://aka.ms/wsl-kali-linux-new">Kali Linux <code>.appx</code></a></td>
+</tr>
+<tr>
+<td align="left"><strong>Open Suse</strong></td>
+<td align="left"><a href="https://www.opensuse.org/">Open Suse</a></td>
+<td align="left"><a href="https://www.microsoft.com/es-es/p/opensuse-leap-15-1/9njfzk00fgkv">Open Suse MS Store</a></td>
+<td align="left"><a href="https://aka.ms/wsl-opensuse-42">Open Suse <code>.appx</code></a></td>
+</tr>
+<tr>
+<td align="left"><strong>Alpine Linux</strong> <strong>¹</strong></td>
+<td align="left"><a href="https://alpinelinux.org/">Alpine</a></td>
+<td align="left"><a href="https://www.microsoft.com/es-es/p/alpine-wsl/9p804crf0395">Alpine MS Store</a></td>
+<td align="left"><strong>¹</strong> No oficial.</td>
+</tr>
+</tbody>
+</table>
+<p>Las distribuciones se pueden instalar automáticamente desde la <a href="https://www.microsoft.com/es-es">tienda oficial de Microsoft</a>, o manualmente, ejecutando un archivo <code>.appx</code> que contiene la distribución de Linux a instalar. Si lo hacemos de la primera forma, se instalará de forma transparente, si lo hacemos de la segunda forma, nos mostrará una ventana similar a la siguiente:</p>
+<p><img alt="WSL: Instalación de Debian en Windows Subsystem Linux" src="../img/wsl-install-debian.png" /></p>
+<p>Una vez instalada la distribución de Linux en nuestro sistema, tras esperar un corto espacio de tiempo, al iniciarla por primera vez nos aparecerá una ventana parecida a esta:</p>
+<pre><code>Installing, this may take a few minutes...
+Please create a default UNIX user account. The username does not need to match your Windows username.
+For more information visit: https://aka.ms/wslusers
+Enter new UNIX username:
+</code></pre>
+<p>En ella, se nos preguntará el <strong>nombre de usuario</strong> y su correspondiente <strong>contraseña</strong> para utilizar en nuestra distribución de Linux de WSL. El nombre de usuario debe ser en minúsculas y no es necesario que coincida con el nombre que tengamos en nuestra cuenta de Windows.</p>
+<p>Una vez hecho esto, escribimos <code>exit</code> (<em>o cerramos la ventana y volvemos a abrir un <strong>símbolo del sistema</strong></em>). Vamos a comprobar que todo ha ido bien y tenemos una distribución instalada:</p>
+<pre><code>&gt; wsl --list
+Distribuciones del subsistema de Windows para Linux:
+Debian (predet.)
+</code></pre>
+<p>Como se puede ver, en nuestro caso nos aparece una distribución <strong>Debian</strong> (<em>marcada como predeterminada</em>). Si instalasemos varias distribuciones las veríamos en esta lista, y podríamos seleccionar una como predeterminada escribiendo <code>wsl --set-default Debian</code> o <code>wsl -s Debian</code>.</p>
+<h3 id="convertir-distro-wsl1-a-wsl2">Convertir distro WSL1 a WSL2<a class="headerlink" href="#convertir-distro-wsl1-a-wsl2" title="Permanent link">&para;</a></h3>
+<p>Por defecto, en nuestro Windows 10, actualmente las distribuciones se instalan como distros utilizando <strong>WSL1</strong>. Sin embargo, <strong>WSL2</strong> está disponible y proporciona múltiples mejoras, ya que incorpora un kernel de Linux real utilizando <strong>Hyper-V</strong>, ofreciendo así un rendimiento más alto, a la vez que mejor soporte y compatibilidad.</p>
+<p>Para aprovechar las últimas ventajas de <strong>WSL</strong>, es necesario convertir las distribuciones a <strong>WSL2</strong>, cosa que podemos hacer simplemente escribiendo <code>wsl --set-version Debian 2</code>, lo que convertirá nuestra distribución «<strong>Debian</strong>» a WSL2:</p>
+<blockquote>
+<p>En el caso de que nos aparezca el error <code>Habilita la característica Plataforma de máquina virtual de Windows y asegúrate de que la virtualización esté habilitada en el BIOS.</code> revisa los puntos mencionados en el primer apartado de esta página.</p>
+</blockquote>
+<p>Si todo ha ido bien, nos debería aparecer una pantalla similar a esta:</p>
+<pre><code>&gt; wsl --set-version Debian 2
+Conversión en curso, esto puede tardar unos minutos...
+Para información sobre las diferencias clave con WSL 2, visita https://aka.ms/wsl2
+Conversión completada.
+</code></pre>
+<blockquote>
+<p>En el caso de que nos aparezca el mensaje <code>La distribución ya es la versión solicitada.</code> significa que no se requiere conversión, ya que la distribución actual ya es <strong>WSL2</strong>.</p>
+</blockquote>
+<p>Si estamos completamente seguros de querer que todas las distribuciones que utilicemos a partir de ahora sean <strong>WSL2</strong>, no tenemos más que escribir el comando <code>wsl --set-default-version 2</code>, que indicará a WSL que todas las distribuciones que utilicemos funcionen bajo <strong>WSL2</strong> por defecto. De esta forma, el paso anterior no será necesario a partir de ahora.</p>
+<h3 id="iniciar-distro-de-linux-wsl">Iniciar distro de Linux WSL<a class="headerlink" href="#iniciar-distro-de-linux-wsl" title="Permanent link">&para;</a></h3>
+<p>Hay que tener bien claro que bajo Windows, la terminal que utilizamos es <code>cmd.exe</code> o <strong>Símbolo de sistema</strong>, lo que nos arranca una interfaz de línea de comandos de Windows. Es en esta interfaz donde podemos ejecutar comandos de Windows como <code>wsl</code> u otros.</p>
+<p>Para arrancar una distribución de Linux de las que hemos instalado, tendremos que acceder escribiendo <code>wsl</code> (<em>para entrar en la distribución predeterminada</em>) o escribiendo <code>wsl -d Debian</code> para indicar la distribución a la que queremos entrar, en el caso de tener varias.</p>
+<p>Sin embargo, ya te habrás dado cuenta que la terminal de Windows (<em>CMD</em>) es bastante pobre y limitada, sobre todo en cuanto a características de personalización. La mejor opción, ahora que tenemos WSL, es instalar un buen y moderno emulador de terminal, que nos de una buena experiencia al utilizar la terminal.</p>
+<p>Algunos de los mejores <strong>emuladores de terminal</strong> para Windows son los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Emulador</th>
+<th align="left">GitHub</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="https://www.microsoft.com/es-es/p/windows-terminal/9n0dx20hk701">Terminal</a></td>
+<td align="left"><a href="https://github.com/microsoft/terminal">GitHub</a></td>
+<td align="left">Nueva terminal oficial de Microsoft.</td>
+</tr>
+<tr>
+<td align="left"><a href="https://conemu.github.io/">ConEmu</a></td>
+<td align="left"><a href="https://github.com/Maximus5/ConEmu">GitHub</a></td>
+<td align="left">ConEmu-Maximus5, potente emulador de terminal ultra-personalizable.</td>
+</tr>
+<tr>
+<td align="left"><a href="https://cmder.net/">Cmder</a></td>
+<td align="left"><a href="https://github.com/cmderdev/cmder">GitHub</a></td>
+<td align="left">Fork de ConEmu, orientado a usabilidad y aspecto visual.</td>
+</tr>
+<tr>
+<td align="left"><a href="https://hyper.is/">Hyper</a></td>
+<td align="left"><a href="https://github.com/vercel/hyper">GitHub</a></td>
+<td align="left">Emulador de terminal basado en Electron.</td>
+</tr>
+<tr>
+<td align="left">wsl-terminal</td>
+<td align="left"><a href="https://github.com/mskyaxl/wsl-terminal">GitHub</a></td>
+<td align="left">Emulador de terminal diseñado especialmente para WSL.</td>
+</tr>
+<tr>
+<td align="left">ConsoleZ</td>
+<td align="left"><a href="https://github.com/cbucher/console">GitHub</a></td>
+<td align="left">Fork de Console2, orientado en una mejor experiencia visual.</td>
+</tr>
+<tr>
+<td align="left">FluentTerminal</td>
+<td align="left"><a href="https://github.com/felixse/FluentTerminal">GitHub</a></td>
+<td align="left">Emulador de terminal construída como aplicación universal de Windows (UWP).</td>
+</tr>
+<tr>
+<td align="left"><a href="https://eugeny.github.io/terminus/">Terminus</a></td>
+<td align="left"><a href="https://github.com/Eugeny/terminus">GitHub</a></td>
+<td align="left">Emulador de terminal moderno y visual.</td>
+</tr>
+</tbody>
+</table>
+<p>Personalmente, mi preferido es <strong>ConEmu</strong>, el cuál tiene multitud de opciones de personalización y permite configurar prácticamente cualquier aspecto del mismo, como por ejemplo, crear una tarea llamada <code>{Shells::WSL}</code> que ejecute <code>wsl.exe</code> al abrir la terminal, y así utilice directamente la distribución de Linux por defecto de WSL.</p>
+<h3 id="convertir-rutas-windows-a-wsl">Convertir rutas Windows a WSL<a class="headerlink" href="#convertir-rutas-windows-a-wsl" title="Permanent link">&para;</a></h3>
+<p>Si lo necesitas, <strong>WSL</strong> incorpora un comando llamado <code>wslpath</code>, que te permite hacer traducciones <strong>de rutas Windows a rutas Linux</strong> y viceversa. Para ello, solo tienes que escribir el comando <code>wslpath RUTA_WINDOWS</code> para obtener la misma ruta en formato Linux, o al contrario, escribir el comando <code>wslpath -w RUTA_LINUX</code> para obtener la ruta en formato Windows:</p>
+<p><img alt="WSL: wslpath" src="../img/wsl-wslpath.png" /></p>
+<p>Esto puede ser una forma interesante para intercomunicar ambos sistemas mediante scripts o tareas.</p>
+<hr />
+<h2 id="instalacion-de-zsh">Instalación de zsh<a class="headerlink" href="#instalacion-de-zsh" title="Permanent link">&para;</a></h2>
+<p>Como mencionamos en un apartado anterior, el <strong>intérprete de comandos</strong> (<em>también llamado <strong>shell</strong></em>) es el software o programa que gestiona los comandos que introduce el usuario, para intentar comprenderlos lo mejor posible y comunicarselos a la máquina o sistema de la mejor forma posible.</p>
+<p>En GNU/Linux, tenemos multitud de intérpretes de comandos, siendo quizás los más conocidos <strong>bash</strong> y <strong>zsh</strong>. Sin embargo, existen multitud de ellos:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Nombre</th>
+<th align="left">Año</th>
+<th align="left">Abreviatura</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Bourne Shell</td>
+<td align="left">1977</td>
+<td align="left"><code>sh</code></td>
+<td align="left">Intérprete ligero y sencillo, considerado el estándar.</td>
+</tr>
+<tr>
+<td align="left">C Shell</td>
+<td align="left">1978</td>
+<td align="left"><code>csh</code></td>
+<td align="left">Intérprete basado en el lenguaje de programación C.</td>
+</tr>
+<tr>
+<td align="left">Korn Shell</td>
+<td align="left">1983</td>
+<td align="left"><code>ksh</code></td>
+<td align="left">Intérprete de AT&amp;T de Bourne Shell.</td>
+</tr>
+<tr>
+<td align="left">Almquist Shell</td>
+<td align="left">1989</td>
+<td align="left"><code>ash</code></td>
+<td align="left">Intérprete ligero y rápido, popularizado en máquinas de bajo coste.</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.gnu.org/software/bash/">Bourne Again Shell</a></td>
+<td align="left">1989</td>
+<td align="left"><code>bash</code></td>
+<td align="left">Popular intérprete de la mayoría de los GNU/Linux.</td>
+</tr>
+<tr>
+<td align="left">Z Shell</td>
+<td align="left">1990</td>
+<td align="left"><code>zsh</code></td>
+<td align="left">Intérprete shell mejorado, con añadidos de otras shells.</td>
+</tr>
+<tr>
+<td align="left"><a href="https://fishshell.com/">Fish Shell</a></td>
+<td align="left">2005</td>
+<td align="left"><code>fish</code></td>
+<td align="left">Intérprete enfocado en la sencillez y una interfaz agradable.</td>
+</tr>
+<tr>
+<td align="left"><a href="https://gitlab.redox-os.org/redox-os/ion">Ion Shell</a></td>
+<td align="left">2015</td>
+<td align="left"><code>ion</code></td>
+<td align="left">Shell del sistema operativo <a href="https://www.redox-os.org/">Redox</a></td>
+</tr>
+</tbody>
+</table>
+<p>En este artículo veremos como instalar y configurar <strong>zsh</strong> para tener una terminal moderna, atractiva y con funcionalidades interesantes como autocompletado de comandos basado en el historial, resaltado y detección de comandos existentes o completado avanzado de comandos.</p>
+<h3 id="instalar-z-shell-zsh">Instalar Z Shell (zsh)<a class="headerlink" href="#instalar-z-shell-zsh" title="Permanent link">&para;</a></h3>
+<p>El intérprete <strong>Z Shell</strong> (<em>más conocido como <code>zsh</code></em>) es uno de los shells más conocidos de GNU/Linux, adoptado hace poco por Apple como su intérprete de terminal por defecto desde 2019. Hoy en día, quizás el más extendido es <strong>bash</strong>, sin embargo, <strong>zsh</strong> gana cada día más adeptos debido a su capacidad y potencia de personalización y su activa comunidad. Es una excelente <strong>alternativa a bash</strong>.</p>
+<p><img alt="Intérprete de comandos Z Shell (Zsh)" src="../img/shell-zsh.svg" /></p>
+<p>Si tenemos un sistema recién instalado (<em>o por defecto</em>), lo más probable es que tengamos un <strong>bash</strong> o un <strong>sh</strong> (<em>más simple</em>). Lo primero que necesitamos tener instalado en nuestro sistema es el intérprete de <strong>zsh</strong>. Para instalarlo utilizaremos <code>apt</code>, que se encargará de buscar los paquetes necesarios y sus dependencias:</p>
+<pre><code>sudo apt update &amp;&amp; sudo apt install zsh
+</code></pre>
+<p>Con esto tendríamos el <strong>intérprete</strong> instalado, pero se trata de un «zsh pelado», sin configuración. De hecho, de momento ni siquiera se va a iniciar por si solo y seguiremos utilizando el <strong>interprete</strong> que teníamos antes. Si escribimos <code>zsh</code> podemos obligar al sistema a abrir <strong>zsh</strong> y ver si se ha instalado correctamente. Nos debería aparece una pantalla similar a la siguiente:</p>
+<pre><code>zsh.newuser-install.
+You are seeing this message because you have no zsh startup files
+(the files .zshenv, .zprofile, .zshrc, .zlogin in the directory
+~). This function can help you with a few settings that should
+make your use of the shell easier.
+
+You can:
+
+(q)  Quit and do nothing.  The function will be run again next time.
+
+(0)  Exit, creating the file ~/.zshrc containing just a comment.
+     That will prevent this function being run again.
+
+(1)  Continue to the main menu.
+
+(2)  Populate your ~/.zshrc with the configuration recommended
+     by the system administrator and exit (you will need to edit
+     the file by hand, if so desired).
+
+--- Type one of the keys in parentheses ---
+</code></pre>
+<p>Esta es la pantalla de bienvenida de <strong>zsh</strong>, que nos da varias opciones para configurarlo manualmente, dejar su configuración vacía, entre otras. Marcamos la opción <strong>0</strong>, que simplemente creará nuestro fichero de configuración <code>~/.zshrc</code> para que no nos vuelva a salir este mensaje de bienvenida cada vez que arranquemos <strong>zsh</strong>.</p>
+<p>Si todo ha ido bien, debería aparecernos algo parecido a esto (<em>con el nombre de nuestro sistema</em>):</p>
+<pre><code>DESKTOP-OHQ7ANH% _
+</code></pre>
+<p>Escribimos <code>exit</code> para salir de esta sesión y volver a la anterior (<em>donde aún no usabamos <code>zsh</code></em>).</p>
+<h3 id="utilizar-zsh-por-defecto">Utilizar zsh por defecto<a class="headerlink" href="#utilizar-zsh-por-defecto" title="Permanent link">&para;</a></h3>
+<p>Habrás comprobado que si cierras la terminal y la vuelves a abrir, parece no haber cambiado nada y no inicia <strong>zsh</strong>. Esto ocurre porque aunque está instalada en el sistema, aún estás usando otro intérprete de comandos (<em>probablemente, el anterior que tenías</em>). Para saber que intérprete de comandos o <strong>shell</strong> estamos utilizando, puedes escribir <code>echo $0</code> o <code>echo $SHELL</code>, el cuál debería mostrarte cuál estas utilizando en el momento actual.</p>
+<p>Por otro lado, escribiendo <code>cat /etc/shells</code> podemos ver que intérpretes tenemos instalados en nuestro sistema y podemos utilizar. Si queremos cambiar el shell con el que inicia un usuario (<em>por ejemplo, manz</em>), solo tenemos que utilizar el comando <code>chsh</code> (<em>change shell</em>):</p>
+<pre><code>chsh manz -s /bin/zsh
+</code></pre>
+<p>Perfecto. Ahora cuando volvamos a abrir una terminal, nos arrancará la shell <strong>zsh</strong>. Ahora que ya lo tenemos todo listo, toca configurarlo para que haga <strong>magia</strong>.</p>
+<h3 id="framework-oh-my-zsh">Framework Oh-My-Zsh<a class="headerlink" href="#framework-oh-my-zsh" title="Permanent link">&para;</a></h3>
+<p>Uno de los frameworks más populares de <strong>zsh</strong> es <a href="https://ohmyz.sh/">Oh-My-Zsh!</a>, el cuál podremos instalar para dotar a nuestro sistema de funcionalidades muy interesantes que nos harán más cómodo su uso. Para instalarlo necesitaremos <code>curl</code> y <code>git</code>, por lo que instalamos dichos requisitos previamente:</p>
+<pre><code>$ sudo apt install git curl -y
+</code></pre>
+<p>Una vez los tengamos instalados, escribimos el comando siguiente, el cuál descargará el script oficial de instalación de <strong>Oh-my-fish!</strong>:</p>
+<pre><code>$ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+Cloning Oh My Zsh...
+Cloning into '/home/manz/.oh-my-zsh'...
+</code></pre>
+<p>Es posible que al finalizar la instalación nos pregunte si queremos sobreescribir la configuración de <code>~/.zshrc</code> o si queremos establecer <strong>zsh</strong> como shell por defecto, si corresponde. Una vez terminado el proceso, debería aparecernos algo como lo siguiente:</p>
+<p><img alt="Instalación de Oh My Zsh (framework de ZSH)" src="../img/oh-my-zsh-install.png" /></p>
+<p>Podemos ver que el <strong>prompt</strong> de la shell ya ha cambiado a algo más bonito y amigable, haciendo uso de colores. Sin embargo, puede resultarnos demasiado simple. Veamos como podemos cambiarlo por otro <strong>theme</strong>.</p>
+<h3 id="cambiar-el-tema-de-zsh">Cambiar el tema de zsh<a class="headerlink" href="#cambiar-el-tema-de-zsh" title="Permanent link">&para;</a></h3>
+<p>Una de las características más llamativas de <strong>zsh</strong> es la posibilidad de cambiar el <strong>theme</strong> de la terminal, a uno más vistoso y llamativo. La shell <strong>zsh</strong> incorpora de serie varios <a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes#the-themes">themes para la terminal</a> que podemos utilizar según nuestros gustos.</p>
+<p>Por ejemplo, uno de mis preferidos es <strong>agnoster</strong>. Para seleccionar este tema, simplemente tenemos que editar el archivo de configuración <code>~/.zshrc</code> y buscar la línea siguiente:</p>
+<pre><code>ZSH_THEME="robbyrussell"
+</code></pre>
+<p>El tema <code>robbyrussell</code> es el que viene por defecto, pero podemos cambiarlo por <code>agnoster</code> o por cualquier otro de la lista de <a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes#the-themes">themes de zsh</a>. De hecho, incluso podemos indicar <code>random</code> como tema, y descomentar una línea que aparece más abajo, que nos activar un tema aleatorio de esa lista, de forma aleatoria cada vez que abramos una terminal:</p>
+<pre><code>ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" "xiong-chiamiov" )
+</code></pre>
+<p>Si todo ha ido bien al cambiar el tema por <code>agnoster</code>, al guardar el fichero de configuración y abrir una nueva terminal ya debería aparecernos la nueva interfaz del intérprete de comandos:</p>
+<p><img alt="Theme Agnoster de Oh My Zsh" src="../img/oh-my-zsh-agnoster.png" /></p>
+<h3 id="autocompletado-y-sugerencias">Autocompletado y sugerencias<a class="headerlink" href="#autocompletado-y-sugerencias" title="Permanent link">&para;</a></h3>
+<p>Existen una serie de plugins creados por la comunidad de <strong>zsh</strong> muy interesantes, que podemos instalar en nuestra terminal para ampliar sus capacidades y hacerla mucho más cómoda.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Plugin</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="https://github.com/zsh-users/zsh-syntax-highlighting">zsh-syntax-highlighting</a></td>
+<td align="left">Resaltado de sintaxis para comandos, basado en <strong>fish</strong>.</td>
+</tr>
+<tr>
+<td align="left"><a href="https://github.com/zsh-users/zsh-autosuggestions">zsh-autosuggestions</a></td>
+<td align="left">Sugerencias basadas en el historial, basado en <strong>fish</strong>.</td>
+</tr>
+<tr>
+<td align="left"><a href="https://github.com/zsh-users/zsh-completions">zsh-completions</a></td>
+<td align="left">Autocompletado mejorado para comandos.</td>
+</tr>
+</tbody>
+</table>
+<p>El primero de ellos, <code>zsh-syntax-highlighting</code>, es el <strong>resaltado de color de comandos</strong>, el cuál viene de una característica que incorporaba inicialmente el intérprete de comandos <strong>fish</strong>. Al escribir un comando en la terminal nos aparecerá en <strong>rojo</strong> si no está instalado en el sistema o en <strong>verde</strong> si está disponible para utilizar. De esta forma sabremos, a medida que vamos escribiendo los comandos, si los estamos escribiendo bien (<em>o por lo contrario, tenemos erratas</em>) o si no se encuentra instalado un comando, por ejemplo, incluso antes de pulsar la tecla ENTER.</p>
+<p>El segundo, <code>zsh-autosuggestions</code>, es un plugin que a medida que escribimos un comando, nos sugiere y recuerda comandos escritos anteriormente (<em>que residen en el historial de la terminal</em>) en color gris de fondo, para que sea más sencillo para nosotros identificarlos. Pulsando → le decimos a zsh que lo recupere íntegro, lo que puede ser útil para comandos largos.</p>
+<p><img alt="Autocompletado y sugerencias en zsh" src="../img/zsh-autocompletado.gif" /></p>
+<p>Por último, el plugin <code>zsh-completions</code> nos permite activar ciertas características interesantes de autocompletado en <strong>zsh</strong>, como por ejemplo atajos al pulsar TAB en <code>git</code>, <code>composer</code> de PHP, <code>nano</code>, el firewall <code>ufw</code>, <code>node</code> y muchos otros.</p>
+<p>Para instalar estos plugins, lo que tendremos que hacer es simplemente copiar y pegar los siguientes comandos. En ellos, lo que estamos haciendo es descargarnos (<em>clonar el repositorio del plugin de git</em>) y guardándolo en nuestra carpeta personal, en un apartado de plugins personalizados de oh-my-zsh. Podemos hacerlo todo con estos tres comandos:</p>
+<pre><code>git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
+</code></pre>
+<p>Una vez hecho, editamos el fichero <code>~/.zshrc</code> y bajamos hasta la linea donde se cargan los plugins, generalmente con esta configuración <code>plugins=(git)</code>. Ampliamos esa lista de plugins, escribiendo lo siguiente:</p>
+<pre><code>plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-completions)
+autoload -U compinit &amp;&amp; compinit
+</code></pre>
+<p>Con esto, cargaremos esos 4 plugins y tendremos listo estas funcionalidades adicionales desde que volvamos a abrir una nueva terminal.</p>
+<h3 id="error-12-character-not-in-range">Error 12: character not in range<a class="headerlink" href="#error-12-character-not-in-range" title="Permanent link">&para;</a></h3>
+<p>Es muy común, que instalando los plugins, gestionando los themes y personalizando los apartados anteriores, te puedas encontrar de repente con que al iniciar la terminal, nos aparece un error similar al siguiente:</p>
+<pre><code>(anon):12: character not in range
+</code></pre>
+<p>Este problema ocurre por conflictos en la lectura de carácteres Unicode, ya que es posible que esté intentando leer alguno que no exista en el conjunto de carácteres instalados. Para resolverlo, simplemente instala los paquetes de localización escribiendo <code>sudo apt install locales-all</code> y reinicia la terminal.</p>
+<hr />
+<h2 id="carpetas-directorios-en-linux">Carpetas (directorios) en Linux<a class="headerlink" href="#carpetas-directorios-en-linux" title="Permanent link">&para;</a></h2>
+<p>GNU/Linux tiene su propia distribución de ficheros y carpetas que, para usuarios que provengan de Windows, puede ser confusa, ya que es bastante diferente. En <strong>Linux</strong> hay una máxima que se sigue como filosofía: <strong>todo son ficheros</strong>: los «accesos directos», los dispositivos físicos como el ratón o el teclado, los discos duros, las carpetas, e incluso y obviamente, los ficheros.</p>
+<p>Mientras que en Windows, una ruta normal de carpetas podría ser <code>C:\Users\Manz</code>, una ruta equivalente en un sistema operativo Linux sería <code>/home/manz</code>:</p>
+<p><img alt="Comparativa de carpetas (directorios) en Windows y Linux" src="../img/carpetas-windows-linux.png" /></p>
+<blockquote>
+<p>En Linux, los nombres de ficheros son <strong>sensibles a mayúsculas y minúsculas</strong>, es decir, puede coexistir un fichero llamado <strong>gato</strong> y otro <strong>Gato</strong> en la misma carpeta, puesto que son ficheros diferentes. Sin embargo, en un sistema Windows, serían el mismo fichero.</p>
+</blockquote>
+<h3 id="en-que-carpeta-estoy-pwd">¿En qué carpeta estoy? (pwd)<a class="headerlink" href="#en-que-carpeta-estoy-pwd" title="Permanent link">&para;</a></h3>
+<p>En una terminal de Linux, normalmente a la izquierda se nos muestra la carpeta donde nos encontramos (<em>o parte de ella</em>). Sin embargo, dependiendo de la configuración de nuestra <a href="/terminal/introduccion/instalacion-zsh/">shell</a>, es posible que no aparezca. Si queremos saber en que carpeta nos encontramos, podemos utilizar el comando <code>pwd</code> (<em>print work directory</em>).</p>
+<p>Si no tenemos muy clara la estructura de carpetas donde estamos, podemos utilizar el comando <code>tree</code>, el cuál nos muestra un árbol de carpetas, esquematizado. Por ejemplo, escribiendo <code>tree /var/log</code> nos mostrará algo parecido a esto:</p>
+<pre><code>$ tree /var/log
+
+/var/log
+|-- alternatives.log
+|-- apt
+|   |-- eipp.log.xz
+|   |-- history.log
+|   `-- term.log
+|-- btmp
+|-- dpkg.log
+|-- faillog
+|-- lastlog
+`-- wtmp
+
+1 directory, 9 files
+</code></pre>
+<p>De esta forma podemos ver «pseudo-gráficamente» la estructura de carpetas. Ten en cuenta que el comando <code>tree</code> no viene instalado en el sistema, y hay que instalarlo previamente con un <code>sudo apt install tree</code>.</p>
+<h3 id="listar-ficheros-ls">Listar ficheros (ls)<a class="headerlink" href="#listar-ficheros-ls" title="Permanent link">&para;</a></h3>
+<p>Para ver los ficheros y carpetas del directorio actual, basta con utilizar el comando <code>ls</code> (<em>LiSt files</em>). Esto mostrará una lista en horizontal con todos los ficheros y carpetas encontradas. También podemos especificar la ruta que queremos listar por parámetro, por ejemplo: <code>ls /home</code>. Por ejemplo:</p>
+<pre><code>$ ls /
+
+bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+</code></pre>
+<blockquote>
+<blockquote>
+<p>En algunos casos, puede que el <code>ls</code> devuelva los ficheros <strong>sin resaltado de sintaxis de color</strong>. Puedes probar con <code>ls --color</code> para ver si muestra los ficheros con colores. Las distribuciones de Linux, suelen crear un alias en el fichero <code>~/.bashrc</code> o <code>~/.zshrc</code> para que cuando se escriba <code>ls</code>, realmente se haga un <code>ls --color</code>.</p>
+</blockquote>
+</blockquote>
+<p>Existen algunos parámetros interesantes para mostrar más información al listar ficheros y carpetas, como por ejemplo <code>ls -lh</code>, donde la <code>l</code> usa el formato ancho (<em>más información</em>) y la <code>h</code> muestra «en humano» el tamaño de los ficheros (<em>usando unidades para que sea más fácil</em>).</p>
+<p>Aquí vemos algunos de los más interesantes:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Parámetros</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>-l</code> (long)</td>
+<td align="left">Usa el formato ancho para mostrar datos adicionales (tamaño, permisos, etc...)</td>
+</tr>
+<tr>
+<td align="left"><code>-a</code> (all)</td>
+<td align="left">Muestra también ficheros ocultos (<em>que empiezan por punto</em>)</td>
+</tr>
+<tr>
+<td align="left"><code>--color</code></td>
+<td align="left">Activa colores al mostrar los ficheros.</td>
+</tr>
+<tr>
+<td align="left"><code>-h</code> (human)</td>
+<td align="left">Muestra el tamaño de los archivos con la unidad <code>K</code>, <code>M</code> o <code>G</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>-S</code> (size)</td>
+<td align="left">Ordena ficheros por tamaño, el más pesado primero.</td>
+</tr>
+<tr>
+<td align="left"><code>-t</code> (time)</td>
+<td align="left">Ordena ficheros por fecha de modificación, el más reciente primero.</td>
+</tr>
+<tr>
+<td align="left"><code>-r</code> (reverse)</td>
+<td align="left">Invierte el orden de los ficheros.</td>
+</tr>
+</tbody>
+</table>
+<p>Observa que para indicar varios parámetros, en lugar de escribir, por ejemplo, <code>ls -l -h -S</code> puedes contraer los parámetros y escribir <code>ls -lhS</code>.</p>
+<h3 id="mejora-del-ls-exa">Mejora del ls (exa)<a class="headerlink" href="#mejora-del-ls-exa" title="Permanent link">&para;</a></h3>
+<p>Existe una alternativa al <code>ls</code>, bastante interesante, que utiliza resaltado de sintaxis para que sea más sencillo identificar los permisos rápidamente. Se llama <a href="https://the.exa.website/">exa</a> y está desarrollada en Rust. Podemos instalar esta herramienta fácilmente si disponemos de <a href="https://rustup.rs/">Rust</a> en nuestro sistema, utilizando su gestor de paquetes. Simplemente escribimos <code>cargo install exa</code> y lo instalaremos.</p>
+<p>La salida del formato largo de <code>exa</code> es el siguiente:</p>
+<p><img alt="exa: ls mejorado con sintaxis de color" src="../img/exa-ls-mejorado.png" /></p>
+<p>Aunque no es un reemplazo 100% idéntico en parámetros, puedes crear un <strong>alias</strong> de <code>ls</code> para que ejecute <code>exa</code> en su lugar. Como curiosidad y para una mejor identificación de ficheros, con el parámetro <code>exa --icons</code> puede mostrar iconos de los tipos de ficheros a la izquierda.</p>
+<p>Existe otra alternativa a <code>ls</code> llamada <a href="https://github.com/Peltoche/lsd">lsd</a> y muy parecida a <a href="https://the.exa.website/">exa</a>. Puedes descargarla e instalarla haciendo lo siguiente:</p>
+<pre><code>sudo apt install wget
+wget https://github.com/Peltoche/lsd/releases/download/0.17.0/lsd_0.17.0_amd64.deb
+sudo dpkg -i lsd_0.17.0_amd64.deb
+</code></pre>
+<p>También tiene resaltado de sintaxis con colores, soporte de iconos, junto a otras características, por lo que también es una buena opción.</p>
+<h3 id="cambiar-de-carpetas-cd">Cambiar de carpetas (cd)<a class="headerlink" href="#cambiar-de-carpetas-cd" title="Permanent link">&para;</a></h3>
+<p>Para <strong>movernos entre carpetas</strong>, utilizaremos el comando <code>cd</code> (<em>change directory</em>) seguido del nombre de la carpeta (<em>movimiento relativo</em>) o ruta completa (<em>movimiento absoluto</em>) a la que queremos acceder. Ten en cuenta que al escribir el nombre de la carpeta o ruta, puedes pulsar TAB y el sistema te sugiere las opciones que encajen con lo que has escrito (<em>o autocompleta si solo hay una opción</em>), de modo que no tendrás que escribirlo por completo.</p>
+<p>Existen algunas palabras clave para referirnos a rutas específicas:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Símbolo</th>
+<th align="left">Ejemplo</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>..</code></td>
+<td align="left"><code>cd ..</code></td>
+<td align="left">«Sale» de la carpeta actual y se mueve a la carpeta padre.</td>
+</tr>
+<tr>
+<td align="left"><code>.</code></td>
+<td align="left"></td>
+<td align="left">Hace referencia a la carpeta actual. Útil como abreviatura.</td>
+</tr>
+<tr>
+<td align="left"><code>~</code></td>
+<td align="left"><code>cd ~</code></td>
+<td align="left">Accede a la carpeta personal del usuario. Igual que escribir <code>cd</code> sin parámetros.</td>
+</tr>
+</tbody>
+</table>
+<p>De la misma forma, se pueden hacer combinaciones como <code>ls ~/.oh-my-fish/</code>, que es lo mismo que <code>ls /home/manz/.oh-my-fish/</code> (<em>si soy el usuario manz</em>) o <code>ls ../etc</code> sería equivalente a <code>ls /etc</code> si estoy en la carpeta <code>/home</code>.</p>
+<h3 id="pila-de-carpetas-pushd-popd">Pila de carpetas (pushd / popd)<a class="headerlink" href="#pila-de-carpetas-pushd-popd" title="Permanent link">&para;</a></h3>
+<p>Otra forma de trabajar entre carpetas, es utilizando los comandos <code>pushd</code> (<em>push directory</em>) y <code>popd</code> (<em>pop directory</em>). Ambos funcionan trabajando con una <strong>estructura de pila</strong> donde podemos hacer <strong>push</strong> (<em>para meter una carpeta</em>) o <strong>pop</strong> (<em>para sacar una carpeta</em>). De esta forma, si sabemos que más adelante necesitaremos volver a acceder a una ruta compleja, podemos hacer lo siguiente:</p>
+<pre><code>$ pushd /etc/nginx          # Guarda la ruta /etc/nginx en la pila
+$ cd /home/manz             # Cambiamos a otra ruta
+...                       # Trabajamos en esa ruta
+$ popd                      # Vuelve a la ruta guardada previamente en la pila
+</code></pre>
+<p>Podemos ejecutar varias veces el comando <code>pushd</code> e ir apilando varias rutas o carpetas diferentes. También tener en cuenta que se puede utilizar <code>.</code> como parámetro de <code>pushd</code> para guardar la ruta actual en la que nos encontramos de forma rápida.</p>
+<h3 id="mejora-del-cd-autojump">Mejora del cd (autojump)<a class="headerlink" href="#mejora-del-cd-autojump" title="Permanent link">&para;</a></h3>
+<p>Si acostumbras a trabajar en una terminal, es muy común perder bastante tiempo escribiendo los nombres de las carpetas o pensando cuál era la ruta, en la que estabas, si no estás muy familiarizado con ella.</p>
+<p>El comando <code>autojump</code> es una mejora interesante del <code>cd</code>, ya que se basa en <strong>saltar</strong> a la carpeta «freciente» que más se aproxime al parámetro escrito; esto es, la ruta o carpeta más frecuente y más reciente. Veamoslo con un ejemplo:</p>
+<pre><code>$ cd /etc/nginx
+$ ls -lh
+$ cd /home/manz
+$ j nginx
+/etc/nginx
+</code></pre>
+<p>En el ejemplo anterior, al escribir <code>j nginx</code>, el comando <code>autojump</code> accede a la ruta <code>/etc/nginx</code>, porque es la carpeta más reciente a la que hemos accedido frecuentemente que encaja con el texto escrito por parámetro: <code>nginx</code>. El comando nos muestra por pantalla la carpeta coincidente, y cambia a ella automáticamente.</p>
+<div class="admonition nota">
+<p class="admonition-title">Nota</p>
+<p>El comando <code>j</code> es un alias de <code>autojump</code> y no viene instalado por defecto en el sistema. Para instalarlo en Debian, basta con hacer un <code>sudo apt install autojump</code> y añadir la línea <code>source /usr/share/autojump/autojump.bash</code> (<em>la extensión depende de la shell que usemos</em>). Existen otras mejoras similares como <a href="https://github.com/rupa/z">z</a>, <a href="https://github.com/rupa/v">v</a> o <a href="https://github.com/clvv/fasd">fasd</a>.</p>
+</div>
+<h3 id="carpetas-del-sistema">Carpetas del sistema<a class="headerlink" href="#carpetas-del-sistema" title="Permanent link">&para;</a></h3>
+<p>Linux tiene una <strong>estructura de carpetas</strong> bien definida, donde cada carpeta tiene una finalidad muy concreta, y en ella se guardan los archivos correspondientes. Por otra parte, mientras que en Windows la ruta <strong>raíz</strong> (<em>la primera carpeta del sistema</em>) es <code>C:\</code>, en Linux es <code>/</code>, puesto que todo parte de esa <strong>ruta raíz</strong>.</p>
+<p>Desde esa ruta <code>/</code> nos podemos encontrar varias carpetas, cada una con una finalidad concreta:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Carpeta</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>/</code></td>
+<td align="left">Carpeta <strong>raíz</strong> del sistema. Equivalente a <code>C:\</code> en Windows.</td>
+</tr>
+<tr>
+<td align="left"><code>/bin</code></td>
+<td align="left">Binarios (<em>comandos ejecutables</em>) principales.</td>
+</tr>
+<tr>
+<td align="left"><code>/boot</code></td>
+<td align="left">Archivos de arranque. Equivale a <code>C:\bootmgr</code> en Windows.</td>
+</tr>
+<tr>
+<td align="left"><code>/dev</code></td>
+<td align="left">Dispositivos físicos de hardware.</td>
+</tr>
+<tr>
+<td align="left"><code>/etc</code></td>
+<td align="left">Archivos de configuración. Equivale al <strong>registro de Windows.</strong></td>
+</tr>
+<tr>
+<td align="left"><code>/home</code></td>
+<td align="left">Carpetas del usuario. Equivale a <code>C:\Users</code> en Windows.</td>
+</tr>
+<tr>
+<td align="left"><code>/lib</code></td>
+<td align="left">Bibliotecas del sistema. Equivale a <code>C:\Windows\System32</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>/lost+found</code></td>
+<td align="left">Archivos corruptos o recuperados.</td>
+</tr>
+<tr>
+<td align="left"><code>/media</code></td>
+<td align="left">Medios extraíbles. Generalmente, carpetas de CD/DVD, usb, unidades extraíbles...</td>
+</tr>
+<tr>
+<td align="left"><code>/mnt</code></td>
+<td align="left">Montaje temporal reservado para el administrador de sistemas.</td>
+</tr>
+<tr>
+<td align="left"><code>/opt</code></td>
+<td align="left">Aplicaciones o paquetes adicionales (<em>opcionales</em>).</td>
+</tr>
+<tr>
+<td align="left"><code>/proc</code></td>
+<td align="left">Procesos internos del sistema.</td>
+</tr>
+<tr>
+<td align="left"><code>/root</code></td>
+<td align="left">Carpeta personal del administrador.</td>
+</tr>
+<tr>
+<td align="left"><code>/run</code></td>
+<td align="left">Información reciente.</td>
+</tr>
+<tr>
+<td align="left"><code>/sbin</code></td>
+<td align="left">Archivos binarios reservados para root. Sólo accesible si tienes privilegios.</td>
+</tr>
+<tr>
+<td align="left"><code>/srv</code></td>
+<td align="left">Datos específicos para servicios.</td>
+</tr>
+<tr>
+<td align="left"><code>/sys</code></td>
+<td align="left">Nueva versión o evolución de <code>/proc/</code></td>
+</tr>
+<tr>
+<td align="left"><code>/tmp</code></td>
+<td align="left">Archivos temporales. Muchas veces, eliminados al reiniciar el sistema.</td>
+</tr>
+<tr>
+<td align="left"><code>/usr</code></td>
+<td align="left">Datos de paquetes instalados. Equivale a <code>C:\Archivos de Programa</code> en Windows.</td>
+</tr>
+<tr>
+<td align="left"><code>/var</code></td>
+<td align="left">Logs, cache, variables, etc...</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="manipular-ficheros-y-carpetas">Manipular ficheros y carpetas<a class="headerlink" href="#manipular-ficheros-y-carpetas" title="Permanent link">&para;</a></h2>
+<p>Para trabajar desde una terminal, es muy necesario saber <a href="/terminal/introduccion/carpetas-directorios-linux/">moverse entre carpetas</a> y <strong>manipular ficheros y carpetas</strong>. Acciones como copiar, mover y borrar ficheros o crear carpetas forman parte del día a día en nuestras terminales de texto.</p>
+<p>Por esa razón es necesario conocer algunos de los comandos más habituales para estas y otras tareas relacionadas, así como sus parámetros o curiosidades más importantes.</p>
+<h3 id="identificar-ficheros-file">Identificar ficheros (file)<a class="headerlink" href="#identificar-ficheros-file" title="Permanent link">&para;</a></h3>
+<p>Existe un comando no demasiado conocido llamado <code>file</code> con el cuál puedes saber con que tipo de fichero estás trabajando. En principio, normalmente identificamos a los ficheros por sus extensiones, si es <code>.txt</code> es un fichero de texto y si es <code>.mp3</code> se trata de un archivo de audio. Sin embargo, estas extensiones son una convención. Nada me impide renombrar un fichero <code>.txt</code> como <code>.mp3</code>. Simplemente, no funcionará si lo abro con un reproductor de audio.</p>
+<pre><code>$ file /etc/hosts
+/etc/hosts: ASCII text
+
+$ file music.s3m
+/home/manz/music.s3m: ScreamTracker III Module sound data
+</code></pre>
+<p>Sin embargo, <code>file</code> no se guiará por la extensión, sino que analizará su contenido, más concretamente su <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_m%C3%A1gico_(inform%C3%A1tica)">número mágico</a>, para intentar reconocer que tipo de archivo es.</p>
+<div class="admonition nota">
+<p class="admonition-title">Nota</p>
+<p>Si <code>file</code> no es lo suficientemente exhaustivo para ti, existe un proyecto llamado <a href="https://mark0.net/soft-trid-e.html">trID</a> que tiene la misma filosofía que <strong>file</strong> pero analiza los ficheros en mayor profundidad.</p>
+</div>
+<h3 id="copiar-ficheros-cp">Copiar ficheros (cp)<a class="headerlink" href="#copiar-ficheros-cp" title="Permanent link">&para;</a></h3>
+<p>Una operación básica a la hora de usar una terminal es la de <strong>copiar ficheros</strong>. Nos encontramos continuamente haciendo copias de ficheros o carpetas, ya sea de una ruta a otra o sobre la misma carpeta donde nos encontramos. Para ello, utilizamos el comando <code>cp</code> (<em>copy</em>), que suele utilizarse de la siguiente forma:</p>
+<pre><code>$ pwd
+/home/manz
+
+$ cp origen.txt /home/tux/destino.txt
+</code></pre>
+<p>En este sencillo ejemplo hemos copiado el fichero <code>origen.txt</code> desde la carpeta <code>/home/manz</code> a la carpeta <code>/home/tux</code> cambiándole el nombre a <code>destino.txt</code>.</p>
+<p>Asumamos que seguimos en la carpeta <code>/home/manz</code>:</p>
+<p><img alt="Rutas relativas y rutas absolutas" src="../img/rutas-relativas-rutas-absolutas.png" /></p>
+<p>La forma en la que especificamos las rutas y copiamos ficheros, pueden simplificarse y hacerse más flexibles dependiendo de si utilizamos <strong>rutas absolutas</strong> o <strong>rutas relativas</strong>:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Tipo</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>Ruta absoluta</strong></td>
+<td align="left">Ruta completa de la carpeta o fichero desde el raíz. Ej: <code>/home/tux</code></td>
+</tr>
+<tr>
+<td align="left"><strong>Ruta actual</strong></td>
+<td align="left">Ruta donde nos encontramos actualmente. Ej: <code>.</code></td>
+</tr>
+<tr>
+<td align="left"><strong>Ruta padre</strong></td>
+<td align="left">Ruta a la carpeta anterior de donde nos encontramos actualmente. Ej: <code>..</code></td>
+</tr>
+<tr>
+<td align="left"><strong>Ruta relativa</strong></td>
+<td align="left">Ruta completa, pero sólo a partir de la carpeta donde nos encontramos. Ej: <code>../tux</code></td>
+</tr>
+</tbody>
+</table>
+<p>Veámoslo con varios ejemplos:</p>
+<pre><code># Caso 1: Rutas absolutas
+$ cp /home/manz/origen.txt /home/tux/destino.txt
+
+# Caso 2: Rutas relativas
+$ cp origen.txt destino.txt
+
+# Caso 3: Rutas relativas
+$ cp origen.txt ../tux/destino.txt
+
+# Caso 4: Ruta absoluta y ruta relativa
+$ cp /etc/resolv.conf ./backup.conf
+</code></pre>
+<ul>
+<li>El primer caso, equivalente al primer ejemplo, pero indicando <strong>rutas absolutas</strong>.</li>
+<li>El segundo caso, creamos una copia con nombre <code>destino.txt</code> en la misma ruta.</li>
+<li>El tercer caso, asumiendo que seguimos en la ruta <code>/home/manz</code>, copiamos el fichero <code>origen.txt</code> a la ruta relativa <code>../tux</code>, es decir, a <code>/home/tux</code>, con nombre <code>destino.txt</code>.</li>
+<li>El cuarto caso, copiamos el fichero <code>resolv.conf</code> de la ruta <code>/etc</code> a <code>.</code>, o sea, la carpeta actual donde nos encontramos, pero con el nombre <code>backup.conf</code>.</li>
+</ul>
+<p>Por otro lado, es importante recalcar que el comando <code>cp</code> tiene algunos parámetros que pueden resultarnos útiles, como por ejemplo el parámetro <code>-r</code> que nos permite hacer <strong>copias recursivas</strong>, esto es, no sólo copiar ficheros, sino <strong>carpetas y su contenido</strong>, ya que por defecto <code>cp</code> solo copia ficheros.</p>
+<p>Los parámetros más populares son los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Parámetro</th>
+<th align="left">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>-r</code> (<em>recursive</em>)</td>
+<td align="left">El comando <code>cp</code> sólo copia ficheros. Usar <code>-r</code> si se quiere copiar carpetas y su contenido.</td>
+</tr>
+<tr>
+<td align="left"><code>-u</code> (<em>update</em>)</td>
+<td align="left">Copia sólo cuando no hay fichero de destino. Si existe, sólo cuando el origen es más nuevo.</td>
+</tr>
+<tr>
+<td align="left"><code>-n</code> (<em>no clobber</em>)</td>
+<td align="left">No sobreescribe en el destino un fichero que ya existe.</td>
+</tr>
+<tr>
+<td align="left"><code>-v</code> (<em>verbose</em>)</td>
+<td align="left">Por defecto, <code>cp</code> trabaja en silencio. Con este parámetro muestra lo que está haciendo.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mover-o-renombrar-ficheros-mv">Mover o renombrar ficheros (mv)<a class="headerlink" href="#mover-o-renombrar-ficheros-mv" title="Permanent link">&para;</a></h3>
+<p>Al igual que hemos utilizado <code>cp</code> para copiar ficheros, podríamos utilizar <code>mv</code> (<em>move</em>) para mover archivos. La diferencia entre estos dos comandos es que, <code>mv</code> en lugar de mantener el fichero original como hace <code>cp</code>, lo elimina tras la copia:</p>
+<pre><code># Caso 1: Mueve un fichero
+$ mv /home/tux/info.txt /home/manz/
+
+# Caso 2: Mueve y renombra un fichero
+$ mv /home/tux/info.txt /home/manz/tuxdata.txt
+
+# Caso 3: Renombra un fichero
+$ mv info.txt tuxdata.txt
+</code></pre>
+<p>Obsérvese que en el primer caso, se está moviendo un fichero a una ruta concreta, pero podemos utilizar <code>mv</code> para renombrar a la vez que movemos (<em>como en el caso 2</em>) o simplemente renombrar sin mover de ruta (<em>caso 3</em>).</p>
+<p>De la misma forma que <code>cp</code>, el comando <code>mv</code> tiene los mismos parámetros que mencionamos.</p>
+<h3 id="borrar-ficheros-rm">Borrar ficheros (rm)<a class="headerlink" href="#borrar-ficheros-rm" title="Permanent link">&para;</a></h3>
+<p>Probablemente, otro de los comandos más utilizados en la terminal es <code>rm</code> (<em>remove</em>), que sirve para <strong>eliminar ficheros o carpetas</strong> de nuestro sistema. Hay que tener mucho cuidado con él, ya que una vez un fichero es eliminado, aunque no es imposible, es complicado recuperarlo.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Parámetro</th>
+<th align="left">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>-f</code> (<em>force</em>)</td>
+<td align="left">Fuerza a hacer el borrado, sin preguntar.</td>
+</tr>
+<tr>
+<td align="left"><code>-r</code> (<em>recursive</em>)</td>
+<td align="left">Elimina recursivamente carpetas y su contenido.</td>
+</tr>
+<tr>
+<td align="left"><code>-d</code> (<em>dir</em>)</td>
+<td align="left">Elimina carpetas vacías.</td>
+</tr>
+<tr>
+<td align="left"><code>-v</code> (<em>verbose</em>)</td>
+<td align="left">Por defecto, <code>rm</code> trabaja en silencio. Con este parámetro muestra lo que está haciendo.</td>
+</tr>
+</tbody>
+</table>
+<p>Como mencionamos anteriormente, el comando <code>rm</code> realmente no borra un fichero, sino que lo «marca» en el disco como reutilizable. Si la zona del disco donde residía es sobreescrita con otro fichero, probablemente sea imposible recuperarlo, pero en caso contrario hay cierta posibilidad.</p>
+<div class="admonition nota">
+<p class="admonition-title">Nota</p>
+<p>Si deseas eliminar por completo un fichero, sin posibilidad de recuperación, es mejor utilizar el comando <code>shred -u</code> seguido del nombre del fichero a eliminar. Este comando sobreescribe con información aleatoria el fichero, y luego lo elimina (<em>parámetro -u</em>).</p>
+</div>
+<h3 id="mejora-del-rm-rip">Mejora del rm (rip)<a class="headerlink" href="#mejora-del-rm-rip" title="Permanent link">&para;</a></h3>
+<p>Si la filosofía por defecto del comando <code>rm</code> no te agrada, o eres una persona que suele eliminar ficheros por accidente, quizás te interese el comando <a href="https://github.com/nivekuil/rip">rip</a> (<em>rm improved</em>).</p>
+<p>Se trata de una alternativa a <code>rm</code> desarrollada en Rust, que establece que al eliminar un archivo con <code>rip</code>, pasa a estar «muerto» en una zona del disco denominada «cementerio» (<em>por defecto, <code>/tmp/graveyard-user</code>, donde <code>user</code> es el nombre de usuario</em>), que hace las veces de papelera de reciclaje tétrica.</p>
+<p>Si hemos borrado accidentalmente el fichero, podemos «resucitarlo» escribiendo <code>rip -u</code> (<em>undelete</em>) o simplemente acceder a los ficheros dentro de la estructura del cementerio. Si queremos vaciar el cementerio, basta con escribir <code>rip -d</code> (<em>decompose</em>) o eliminar la estructura de carpetas manualmente.</p>
+<p>Otra alternativa similar a <code>rm</code> podría ser <a href="https://github.com/sindresorhus/trash-cli">trash-cli</a>.</p>
+<h3 id="crear-carpetas-o-ficheros-vacios">Crear carpetas o ficheros vacíos<a class="headerlink" href="#crear-carpetas-o-ficheros-vacios" title="Permanent link">&para;</a></h3>
+<p>Mediante el comando <code>mkdir</code>, seguido de un nombre de carpeta, podemos crear nuevas carpetas vacías.</p>
+<p>Si queremos crear una estructura de varias carpetas una dentro de otra, en vez de hacerlo una por una. El siguiente comando crea una carpeta <code>parent</code>, que dentro tiene una carpeta <code>child</code> y dentro de ella, una carpeta <code>grandchild</code>:</p>
+<pre><code>$ mkdir -p parent/child/grandchild
+</code></pre>
+<p>Por otro lado, el comando <code>touch</code> sería la versión de <code>mkdir</code> orientada a ficheros en lugar de carpetas. Si necesitamos crear un archivo vacío, por ejemplo, para editar más tarde, podemos hacerlo rápidamente con <code>touch</code>:</p>
+<pre><code>touch file.txt
+</code></pre>
+<p>El comando anterior crearía un fichero vacío con nombre <code>file.txt</code>. Si ya existiera el archivo, simplemente actualiza su fecha de modificación.</p>
+<h3 id="crear-enlaces-ln">Crear enlaces (ln)<a class="headerlink" href="#crear-enlaces-ln" title="Permanent link">&para;</a></h3>
+<p>El comando <code>ln</code> (<em>link names</em>) permite crear <strong>enlaces entre ficheros</strong>, una especie de referencias o accesos directos a ficheros, rutas o carpetas. Existen dos tipos de enlaces:</p>
+<ul>
+<li>
+<p>Los <strong>enlaces duros</strong>. Son los ficheros que apuntan a otro fichero basándose en su número interno (<em>inodo</em>). Se crean utilizando el comando <code>ln</code>. De esta forma podemos tener varios archivos con el mismo contenido, pero sus copias no duplican el contenido del fichero original, sino que son una referencia al primero. Son poco utilizados.</p>
+</li>
+<li>
+<p>Los <strong>enlaces simbólicos</strong> (<em>también considerados enlaces blandos</em>). Son un tipo de referencia a otros ficheros, pero esta vez basándose en su ubicación. Se crean utilizando el comando y parámetro <code>ln -s</code>. De esta forma, cuando accedemos a un enlace simbólico, realmente estamos accediendo al fichero que apunta. Si creamos un enlace simbólico y borramos su archivo original, el enlace aparecerá en rojo y se considerará un <strong>enlace simbólico roto</strong>.</p>
+</li>
+</ul>
+<p>Veamos un ejemplo:</p>
+<pre><code>$ ln -s original.txt link
+
+$ ls -lh
+
+total 0
+lrwxrwxrwx 1 manz manz 12 jul  1 19:37 link -&gt; original.txt
+-rw-r--r-- 1 manz manz  0 jul  1 19:37 original.txt
+</code></pre>
+<p>Como se puede ver, con el comando <code>ln</code> creamos un enlace, y con el parámetro <code>-s</code> indicamos que queremos que sea simbólico. El primer fichero indicado sería el archivo original al que queremos apuntar, mientras que el segundo fichero indicado sería el enlace simbólico que queremos crear.</p>
+<p>Al hacer un <code>ls</code>, observaremos que nos indica a donde apunta el enlace simbólico (<em>puede ser un fichero, una carpeta, etc...</em>). En el caso de que el enlace se encuentre correcto, aparecerá en azul cyan, pero si el fichero original a donde apunta no existiera, aparecería en rojo.</p>
+<p>Estos enlaces pueden ser realmente útiles cuando necesitamos que en la carpeta actual exista el contenido de otra carpeta, pero no queramos duplicar la información (<em>son carpetas con mucho espacio ocupado</em>) o queremos mantenerlo actualizado y simplemente queremos una referencia de una carpeta a otra.</p>
+<hr />
+<h2 id="mostrar-contenido-de-un-fichero">Mostrar contenido de un fichero<a class="headerlink" href="#mostrar-contenido-de-un-fichero" title="Permanent link">&para;</a></h2>
+<p>A medida que trabajamos con ficheros en una terminal, el nombre del fichero, su ubicación o su extensión puede no ser información suficiente para saber si se trata del fichero que buscamos, e interesarnos <strong>mostrar el contenido de un fichero</strong> rápidamente, para saber si es el que buscamos o simplemente porque queremos ver su contenido.</p>
+<h3 id="mostrar-contenido-cat">Mostrar contenido (cat)<a class="headerlink" href="#mostrar-contenido-cat" title="Permanent link">&para;</a></h3>
+<p>Para ello, se suele utilizar el comando <code>cat</code> (<em>conCATenate files</em>), que técnicamente se considera un comando que <strong>concatena</strong> (<em>une</em>) la salida de uno o varios ficheros. Esto, dicho de otra forma, es que <code>cat</code> no se limita a mostrar el contenido de un solo fichero (<em>como suele usarse habitualmente</em>), sino que puede hacer cosas aún más potentes.</p>
+<p>Por ejemplo, el caso más básico sería el siguiente:</p>
+<pre><code>$ cat /etc/timezone
+
+Atlantic/Canary
+</code></pre>
+<p>En este ejemplo, mostraríamos el contenido del fichero <code>timezone</code> ubicado en la ruta <code>/etc</code>. Se trata de un fichero que guarda la zona horaria del sistema. De esta forma, podríamos consultarla rápidamente, sin tener que abrirla con un editor. Sin embargo, también podríamos hacer lo siguiente para mostrar el contenido de varios ficheros:</p>
+<pre><code>$ ls /etc/deb*
+/etc/debconf.conf  /etc/debian_version
+
+$ cat /etc/deb*
+</code></pre>
+<p>Con el comando <code>cat /etc/deb*</code> indicamos que queremos que nos muestre el contenido de todos los fichero que comiencen por <code>deb</code> y estén situados en <code>/etc</code> (<em>en este caso 2 ficheros</em>) y no tendríamos que hacerlo individualmente, uno por uno.</p>
+<p>El comando <code>cat</code> tiene algunos parámetros interesantes:</p>
+<p>Parám.</p>
+<p>Descripción</p>
+<p><code>-s</code></p>
+<p>Suprime espacios consecutivos repetidos y los convierte en uno solo.</p>
+<p><code>-n</code></p>
+<p>Numera las líneas, a la izquierda.</p>
+<p><code>-b</code></p>
+<p>Numera solo las líneas no vacías.</p>
+<h3 id="mejora-del-cat-bat">Mejora del cat (bat)<a class="headerlink" href="#mejora-del-cat-bat" title="Permanent link">&para;</a></h3>
+<p>Existe una alternativa muy interesante al comando <code>cat</code>, llamada <a href="https://github.com/sharkdp/bat">bat</a> y desarrollada en Rust. Dicho comando mejora sustancialmente al comando <code>cat</code>, utilizando características como resaltado de sintaxis en color para lenguajes de programación, soporte para cambios de git, paginación (<em>ver más adelante</em>) automática, etc...</p>
+<p>Para instalarla, necesitaremos tener en nuestro sistema <a href="https://rustup.rs/">Rust</a> instalado, y utilizar su gestor de paquetes <strong>cargo</strong>. Con él, podremos escribir <code>cargo install bat</code> y lo tendremos disponible. Las últimas versiones de Debian, ya lo incorporan para instalar con un simple <code>sudo apt install bat</code>.</p>
+<p>La salida del comando <code>bat</code> de un fichero Javascript sería similar a la siguiente:</p>
+<p><img alt="bat: alternative to cat (Linux)" src="../img/bat-alternative-to-cat.png" /></p>
+<p>El comando <code>bat</code> dispone de varios parámetros interesantes:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Parám.</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>--list-languages</code></td>
+<td align="left">Muestra los lenguajes soportado en el resaltado de sintaxis.</td>
+</tr>
+<tr>
+<td align="left"><code>-l &lt;lang&gt;</code></td>
+<td align="left">Especifica el lenguaje a resaltar (<em>C++, javascript, css, rust, ...</em>)</td>
+</tr>
+<tr>
+<td align="left"><code>--list-themes</code></td>
+<td align="left">Muestra los temas de resaltado de sintaxis disponibles en <code>bat</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>--theme &lt;theme&gt;</code></td>
+<td align="left">Especifica el tema de resaltado a utilizar.</td>
+</tr>
+<tr>
+<td align="left"><code>-p</code></td>
+<td align="left">Muestra un formato plano, por si queremos desactivar temporalmente el resaltado.</td>
+</tr>
+<tr>
+<td align="left"><code>-n</code></td>
+<td align="left">Numera las líneas, pero no utiliza otras decoraciones como los bordes.</td>
+</tr>
+<tr>
+<td align="left"><code>-A</code></td>
+<td align="left">Muestra los carácteres ocultos (espacios, tabuladores, nueva línea, etc...)</td>
+</tr>
+<tr>
+<td align="left"><code>-r &lt;ini&gt;:&lt;fin&gt;</code></td>
+<td align="left">Muestra las líneas <code>ini</code> a <code>fin</code> del fichero. Por ejemplo: <code>bat -r 4:10 file.js</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition nota">
+<p class="admonition-title">Nota</p>
+<p>Ejecutando <code>bat --list-themes</code> veremos la lista de temas disponibles para el resaltado de sintaxis. Puedes usar uno de ellos escribiendo <code>bat --theme base16</code> (<em>por ejemplo</em>). También puedes aprovechar para incluirlo en un alias de la shell y que se ejecute al hacer un <code>cat</code>.</p>
+</div>
+<h3 id="mostrar-contenido-al-reves-tac">Mostrar contenido al revés (tac)<a class="headerlink" href="#mostrar-contenido-al-reves-tac" title="Permanent link">&para;</a></h3>
+<p>Si el comando <code>cat</code> nos muestra el contenido de un fichero de arriba a abajo, es decir, desde su primera línea a su última línea, el comando <code>tac</code> (<em>cat al revés</em>) hace justo lo contrario, mostrar el contenido de un fichero de abajo a arriba, desde su última línea a la primera.</p>
+<pre><code>$ tac textfile.txt
+
+Esta es la última línea.
+Esta es la segunda línea.
+Esta es la primera línea.
+</code></pre>
+<p>Otra opción posible, aunque menos común, es que si buscamos <strong>mostrar el contenido de un archivo al revés</strong>, pero en lugar de abajo a arriba, de derecha a izquierda, podemos utilizar el comando <code>rev</code>, que invierte el orden horizontal:</p>
+<pre><code>$ cat textfile.txt | rev
+
+.aeníl aremirp al se atsE
+.aeníl adnuges al se atsE
+.aeníl amitlú al se atsE
+</code></pre>
+<h3 id="paginar-contenido-more">Paginar contenido (more)<a class="headerlink" href="#paginar-contenido-more" title="Permanent link">&para;</a></h3>
+<p>Pero en algunos casos, nos encontraremos que el contenido de un archivo es demasiado extenso y no nos da tiempo de leer su contenido antes de que siga avanzando en el contenido. La mejor forma de solucionar ese problema es utilizar un <strong>paginador</strong>.</p>
+<p>Se trata de un comando que, una vez detecta que la pantalla está llena, hace una pausa, y no continua hasta que el usuario pulse una tecla. De esta forma, puede ir leyendo poco a poco los contenidos mostrados en pantalla. El paginador más conocido se llama <code>more</code> y se utiliza de la siguiente forma:</p>
+<pre><code>$ cat largetextfile.txt | more
+</code></pre>
+<p>En este caso estamos utilizando un pipe <code>|</code> que obtiene la salida por pantalla del primer comando y se lo envía al segundo, que es el paginador.</p>
+<p>De esta forma, el paginador hace una <strong>pausa</strong> cuando se llena la pantalla, mostrando una línea <strong>more</strong> al final de la pantalla y esperando a que el usuario pulse una tecla. Dependiendo de la tecla que se pulse, el paginador <code>more</code> hará una acción concreta:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Tecla</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">ENTER</td>
+<td align="left">Avanza una sola línea.</td>
+</tr>
+<tr>
+<td align="left">SPACE</td>
+<td align="left">Avanza una página.</td>
+</tr>
+<tr>
+<td align="left">=</td>
+<td align="left">Muestra la línea donde se encuentra el paginador.</td>
+</tr>
+<tr>
+<td align="left">/word</td>
+<td align="left">Busca la palabra <code>word</code> en el texto y va hasta ella.</td>
+</tr>
+<tr>
+<td align="left">n</td>
+<td align="left">Vuelve a buscar la última palabra buscada.</td>
+</tr>
+<tr>
+<td align="left">Q</td>
+<td align="left">Sale del paginador y vuelve a la terminal.</td>
+</tr>
+</tbody>
+</table>
+<p>Sin embargo, el <code>more</code> es bastante limitado en cuanto a ciertas acciones.</p>
+<h3 id="mejora-de-paginacion-less">Mejora de paginación (less)<a class="headerlink" href="#mejora-de-paginacion-less" title="Permanent link">&para;</a></h3>
+<p>Muchas veces el paginador <code>more</code> se nos queda corto por varias razones. Por ejemplo, una vez pulsado enter para avanzar, no podemos volver hacia atrás. Existen otros paginadores como <code>less</code> que son un poco más versátiles en este sentido, permitiendo utilizar los cursores ↑ y ↓ o las teclas RePág o AvPág para subir o bajar en el texto más facilmente.</p>
+<p>El comando <code>most</code> es otro paginador que además muestra una barra inferior y resaltado de colores para hacer la lectura un poco más sencilla. Estos paginadores se pueden instalar en el sistema utilizando <code>sudo apt install less most</code>.</p>
+<div class="admonition nota">
+<p class="admonition-title">Nota</p>
+<p>Tanto <code>more</code>, como <code>less</code> como <code>most</code> pueden utilizarse directamente como alternativa de <code>cat</code>. Es decir, ejecutar <code>less largetextfile.txt</code> para mostrar el contenido paginado.</p>
+</div>
+<h3 id="soporte-de-compresion">Soporte de compresión<a class="headerlink" href="#soporte-de-compresion" title="Permanent link">&para;</a></h3>
+<p>En Linux, es muy habitual trabajar con <strong>ficheros de texto plano</strong>, aunque en el caso de registros o logs, cuando son muy extensos suelen terminar ocupando mucho espacio. Para evitarlo, se suelen comprimir utilizando formatos muy comunes en Linux como <code>.gz</code>, <code>.bz2</code> o <code>.xz</code>, de modo que podríamos tener los ficheros de texto originales <code>access.log</code> o los ficheros comprimidos, por ejemplo <code>access.log.gz</code>.</p>
+<p>Los comandos <code>cat</code> y <code>less</code> tienen unas versiones alternativas que permiten realizar su finalidad (<em>mostrar contenido o paginar</em>) sobre archivos de texto comprimidos. De esta forma, nos ahorramos tener que descomprimir el fichero, visualizar su contenido y volverlo a comprimir, ya que estos comandos lo hacen todo sobre el archivo comprimido, sin alterarlo.</p>
+<p>Los comandos son los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Comando</th>
+<th align="left">Compresor</th>
+<th align="left">Finalidad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>zcat</code></td>
+<td align="left"><strong>gzip</strong></td>
+<td align="left">Muestra el contenido de un fichero de texto comprimido <code>.gz</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>zless</code></td>
+<td align="left"><strong>gzip</strong></td>
+<td align="left">Pagina el contenido de un fichero de texto comprimido <code>.gz</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>bzcat</code></td>
+<td align="left"><strong>bzip2</strong></td>
+<td align="left">Muestra el contenido de un fichero de texto comprimido <code>.bz2</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>bzless</code></td>
+<td align="left"><strong>bzip2</strong></td>
+<td align="left">Pagina el contenido de un fichero de texto comprimido <code>.bz2</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>xzcat</code></td>
+<td align="left"><strong>xz</strong></td>
+<td align="left">Muestra el contenido de un fichero de texto comprimido <code>.xz</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>xzless</code></td>
+<td align="left"><strong>xz</strong></td>
+<td align="left">Pagina el contenido de un fichero de texto comprimido <code>.xz</code>.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="cambiar-idioma-de-la-terminal">Cambiar idioma de la terminal<a class="headerlink" href="#cambiar-idioma-de-la-terminal" title="Permanent link">&para;</a></h2>
+<p>Pueden ocurrir situaciones donde el <strong>idioma de la terminal</strong> está establecido a otro diferente del que queremos. Esto, en algunos casos, puede chocar con nuestro objetivo. Aunque es muy habitual trabajar en terminales con el idioma <strong>inglés</strong> (<em>ya que los comandos siempre van a mantener el mismo nombre</em>), es posible que queramos traducir las respuestas de los comandos, los mensajes de error o incluso los mensajes de ayuda o manuales, así como gestionar ciertos detalles interesantes relacionados con el idioma.</p>
+<h3 id="cambiar-idioma-a-espanol">Cambiar idioma a español<a class="headerlink" href="#cambiar-idioma-a-espanol" title="Permanent link">&para;</a></h3>
+<p>El primer paso es asegurarnos cuál está tomando como <strong>idioma por defecto</strong> el sistema. Por ejemplo, si realizamos un <code>sudo apt update</code> podremos observar en que idioma nos muestra los procesos de actualización de los repositorios de apt. Es muy probable que nos aparezcan en inglés, lo que significaría que tenemos ese idioma por defecto.</p>
+<p>Vamos a comprobar que idioma o configuración regional tenemos en el sistema. Para ello, utilizaremos el comando <code>locale</code>:</p>
+<pre><code>$ locale
+
+LANG=
+LANGUAGE=
+LC_CTYPE="POSIX"
+LC_NUMERIC="POSIX"
+LC_TIME="POSIX"
+LC_COLLATE="POSIX"
+LC_MONETARY="POSIX"
+LC_MESSAGES="POSIX"
+LC_PAPER="POSIX"
+LC_NAME="POSIX"
+LC_ADDRESS="POSIX"
+LC_TELEPHONE="POSIX"
+LC_MEASUREMENT="POSIX"
+LC_IDENTIFICATION="POSIX"
+LC_ALL=
+</code></pre>
+<p>Vemos que la mayoría de variables de <strong>localización</strong> nos aparecen con la palabra clave <code>POSIX</code>, la cuál también podría aparecer con otros valores, como por ejemplo <code>en_US.UTF-8</code>, que significaría que tiene establecido el idioma <strong>Inglés (Americano)</strong>.</p>
+<p>Cada una de esas variables que aparece, tiene como objetivo definir el idioma de una característica concreta:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Variable</th>
+<th align="left">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>LANG</code></td>
+<td align="left">Idioma general del sistema.</td>
+</tr>
+<tr>
+<td align="left"><code>LANGUAGE</code></td>
+<td align="left">Fallback de idioma de traducción de mensajes (<em>herramientas GNU</em>).</td>
+</tr>
+<tr>
+<td align="left"><code>LC_CTYPE</code></td>
+<td align="left">Clasificación de carácteres y conversiones de mayúsculas y minúsculas.</td>
+</tr>
+<tr>
+<td align="left"><code>LC_NUMERIC</code></td>
+<td align="left">Formato numérico, decimales...</td>
+</tr>
+<tr>
+<td align="left"><code>LC_TIME</code></td>
+<td align="left">Formato de fechas y horas, según región.</td>
+</tr>
+<tr>
+<td align="left"><code>LC_COLLATE</code></td>
+<td align="left">Orden de clasificación (<em>collation</em>).</td>
+</tr>
+<tr>
+<td align="left"><code>LC_MONETARY</code></td>
+<td align="left">Formato monetario, según región.</td>
+</tr>
+<tr>
+<td align="left"><code>LC_MESSAGES</code></td>
+<td align="left">Formato de palabras y respuestas interactivas.</td>
+</tr>
+<tr>
+<td align="left"><code>LC_PAPER</code></td>
+<td align="left">Tamaño y formato de página, según región.</td>
+</tr>
+<tr>
+<td align="left"><code>LC_NAME</code></td>
+<td align="left">Formato de nombres.</td>
+</tr>
+<tr>
+<td align="left"><code>LC_ADDRESS</code></td>
+<td align="left">Convenciones de formateo de direcciones físicas o postales.</td>
+</tr>
+<tr>
+<td align="left"><code>LC_TELEPHONE</code></td>
+<td align="left">Convenciones usadas para la representación de números telefónicos.</td>
+</tr>
+<tr>
+<td align="left"><code>LC_MEASUREMENT</code></td>
+<td align="left">Sistema de medida por defecto, según región.</td>
+</tr>
+<tr>
+<td align="left"><code>LC_IDENTIFICATION</code></td>
+<td align="left">Metadatos sobre la información de región.</td>
+</tr>
+<tr>
+<td align="left"><code>LC_ALL</code></td>
+<td align="left">Localización aplicada a todas las variables anteriores.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition ojo">
+<p class="admonition-title">Ojo</p>
+<p>Ten cuidado en el caso de establecer un valor a <code>LC_ALL</code>, el cuál se desaconseja utilizar si quieres establecer excepciones particulares en alguna de las variables anteriores, ya que sobreescribe las demás.</p>
+</div>
+<p>Nuestro sistema puede estar preparado para soportar diferentes idiomas. Con el parámetro <code>locale -a</code> podemos ver cuales son los que tenemos a nuestra disposición. En el caso de que no tengamos el idioma que queremos establecer, lo que podemos hacer es instalar el paquete de generación de localizaciones con <code>sudo apt install locales</code> y editar el fichero <code>/etc/locale.gen</code>, donde descomentaremos los idiomas que queremos activar:</p>
+<pre><code>sudo vim /etc/locale.gen
+
+en_US.UTF-8 UTF-8
+es_ES ISO-8859-1
+es_ES.UTF-8 UTF-8
+es_ES@euro ISO-8859-15
+</code></pre>
+<p>En el ejemplo anterior, he descomentado el idioma inglés (<em>en_US</em>) y las diferentes variaciones del español (<em>es_ES</em>). Una vez hecho esto, guardamos los cambios y ejecutamos el comando <code>locale-gen</code>, que generará los idiomas descomentados, poniéndolos a nuestra disposición:</p>
+<pre><code>$ locale-gen
+
+Generating locales (this might take a while)...
+  en_US.UTF-8... done
+  es_ES.ISO-8859-1... done
+  es_ES.UTF-8... done
+  es_ES.ISO-8859-15@euro... done
+Generation complete.
+</code></pre>
+<p>Si tuvieramos algún tipo de problema al generarlos, también podemos instalar el paquete <code>locales-all</code> de APT, donde generalmente se incluyen todos los datos regionales precompilados.</p>
+<div class="admonition nota">
+<p class="admonition-title">Nota</p>
+<p>En algunos casos, esta operación puede realizarse de forma mucho más guiada y automática con un <code>dpkg-reconfigure locales</code>, eligiendo posteriormente los idiomas que nos interesan de la lista que nos muestran.</p>
+</div>
+<p>Una vez terminados todos estos pasos, sólo nos quedaría añadir la siguiente línea a nuestro fichero de arranque, como por ejemplo, en la última linea de <code>~/.bashrc</code> si usamos <strong>Bash</strong>, o <code>~/.zshrc</code> si usamos <strong>Zsh</strong>:</p>
+<pre><code>export LANG=es_ES.UTF-8
+</code></pre>
+<p>Con ello añadimos la variable <code>LANG</code> para indicar que nuestro idioma por defecto será el aplicado. Esto se puede escribir en la línea de comandos directamente (<em>sólo se usará ese idioma en la sesión actual</em>) o se puede añadir al fichero que comentabamos anteriormente, para que los cambios se guarden de forma permanente.</p>
+<div class="admonition nota">
+<p class="admonition-title">Nota</p>
+<p>Ten cuidado a la hora de establecer el idioma en las variables de sistema. En este ejemplo he puesto <code>es_ES.UTF-8</code>, pero en algunos casos puede ser <code>es_ES.utf8</code> o tener un nombre ligeramente diferente. Es aconsejable mirar con el comando <code>locale -a</code> cuál es el que nos interesa y como se escribe concretamente.</p>
+</div>
+<h3 id="man-pages-en-espanol">Man pages en español<a class="headerlink" href="#man-pages-en-espanol" title="Permanent link">&para;</a></h3>
+<p>Es posible que aún realizando los pasos anteriores, las <strong>páginas man</strong> no muestren la ayuda en español y sólo lo haga la salida de ciertos comandos, por ejemplo. Normalmente esto se suele solucionar instalando los paquetes <code>manpages-es</code> (<em>en el caso del idioma español</em>):</p>
+<pre><code>apt install man manpages-es manpages-es-extra
+</code></pre>
+<p>Con dichos paquetes instalaremos las páginas man en español (<em>ojo, siguen haciendo falta los pasos del primer apartado</em>).</p>
+<h3 id="eliminar-idiomas-innecesarios">Eliminar idiomas innecesarios]<a class="headerlink" href="#eliminar-idiomas-innecesarios" title="Permanent link">&para;</a></h3>
+<p>Si acostumbramos a instalar muchos paquetes, comandos o aplicaciones, debemos saber que las «páginas man» suelen venir junto a cada paquete, de modo que si instalamos un comando concreto, también se instala su ayuda en formato «man pages».</p>
+<p>De la misma forma, algunos paquetes solo incorporan la ayuda en un idioma (<em>inglés</em>), pero en otras ocasiones, incorporan <strong>ayuda en muchos otros idiomas diferentes</strong>, cosa que puede llegar a ocupar bastante espacio en disco, y que probablemente, nunca consultemos en algún idioma diferente a los que establecemos en el primer apartado.</p>
+<p>Justo en esta dirección va el objetivo del comando <code>localepurge</code>, el cuál se encarga de eliminar todas las páginas de ayuda en idiomas que no tenemos predefinidos como preferidos. De esta forma, cada vez que instalamos algo con <code>apt</code>, el sistema se tomará un pequeño fragmento de tiempo en eliminar las páginas man en otros idiomas, para dejar sólo las que tengamos marcadas, ahorrando así espacio en disco (<em>en algunas situaciones es esencial, por ejemplo, docker</em>).</p>
+<p>Para configurarlo todo correctamente, editaremos el fichero <code>/etc/locale.nopurge</code>. En él podemos establecer algunas configuraciones, pero sobre todo, los idiomas permitidos que <strong>no deben ser eliminados</strong>. Un ejemplo de las últimas líneas de este fichero:</p>
+<pre><code>en
+en_US.UTF-8
+es
+es_ES.UTF-8
+</code></pre>
+<p>Así pues, <code>localepurge</code> mantendrá toda la ayuda y páginas del manual que se encuentren en inglés o en español.</p>
+<h3 id="cambiar-la-zona-horaria">Cambiar la zona horaria<a class="headerlink" href="#cambiar-la-zona-horaria" title="Permanent link">&para;</a></h3>
+<p>Otro problema bastante frecuente es el de querer <strong>cambiar la zona horaria</strong> del sistema. Para consultar la zona horaria que tenemos establecida, se puede hacer simplemente haciendo un <code>cat</code> al fichero <code>/etc/timezone</code>. De esta forma nos dirá que zona horaria tenemos configurada:</p>
+<pre><code>$ cat /etc/timezone
+Etc/UTC
+</code></pre>
+<p>Para cambiarla nos basta con editar ese fichero y establecer la zona horaria que queremos utilizar, o utilizar el comando <code>tzselect</code>, el cuál nos permitirá seleccionar la zona horaria de una lista.</p>
+<p>!!!
+    Si queremos optar por un proceso interactivo más automatizado, podemos utilizar el comando <code>dpkg-reconfigure tzdata</code> y seleccionar las opciónes <strong>7</strong> (Atlántico) de <strong>Área geográfica</strong> y <strong>3</strong> (Canarias) de <strong>Zona horaria</strong>.</p>
+<pre><code>$ cat /etc/timezone
+Atlantic/Canary
+</code></pre>
+<p>Si volvemos a consultar, veremos que ahora ya tenemos otra zona horaria configurada.</p>
+<hr />
+<p><strong>Fuente</strong>: <a href="https://terminaldelinux.com/">https://terminaldelinux.com/</a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../../../desarrollo/javascript/06-peticiones_HTTP/" title="Peticiones HTTP" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Peticiones HTTP
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../02-operaciones_con_ficheros/" title="Operaciones con ficheros" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Operaciones con ficheros
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/saucedoinfo" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/saucedoinfo" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.instagram.com/saucedo.info/" target="_blank" rel="noopener" title="www.instagram.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.instant', 'navigation.expand', 'tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

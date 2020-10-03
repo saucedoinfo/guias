@@ -1,0 +1,3104 @@
+
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Coleccion de Guias de Desarrollo y diseño.">
+      
+      
+        <link rel="canonical" href="https://saucedoinfo.github.io/guias/desarrollo/html/05-etiquetas_de_formularios/">
+      
+      
+        <meta name="author" content="Fernando S. Saucedo">
+      
+      <link rel="shortcut icon" href="../../../img/favicon-16x16.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.14">
+    
+    
+      
+        <title>Etiquetas de formularios - Guias de Desarrollo y diseño</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d3202873.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ff0a5ce4.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#000000">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#etiquetas-de-formularios" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-header-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Guias de Desarrollo y diseño
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Etiquetas de formularios
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../01-introduccion_a_HTML5/" class="md-tabs__link md-tabs__link--active">
+          Desarrollo
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" class="md-tabs__link">
+          Herramientas IT
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    Guias de Desarrollo y diseño
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Desarrollo
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Desarrollo" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Desarrollo
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1" checked>
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Html
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Html" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        <span class="md-nav__icon md-icon"></span>
+        Html
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01-introduccion_a_HTML5/" title="Introduccion a HTML" class="md-nav__link">
+      Introduccion a HTML
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02-etiquetas_semanticas/" title="Etiquetas semánticas" class="md-nav__link">
+      Etiquetas semánticas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-etiquetas_multimedia/" title="Etiquetas multimedias" class="md-nav__link">
+      Etiquetas multimedias
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-etiquetas_de_cabecera/" title="Etiquetas de cabecera" class="md-nav__link">
+      Etiquetas de cabecera
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Etiquetas de formularios
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Etiquetas de formularios" class="md-nav__link md-nav__link--active">
+      Etiquetas de formularios
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-un-formulario" class="md-nav__link">
+    Creación de un formulario
+  </a>
+  
+    <nav class="md-nav" aria-label="Creación de un formulario">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#contenedor-de-formulario" class="md-nav__link">
+    Contenedor de formulario
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-datos" class="md-nav__link">
+    Tipos de datos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#campos-de-entrada" class="md-nav__link">
+    Campos de entrada
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-etiqueta-input" class="md-nav__link">
+    La etiqueta "input"
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controles-campos-de-texto" class="md-nav__link">
+    Controles: Campos de texto
+  </a>
+  
+    <nav class="md-nav" aria-label="Controles: Campos de texto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#texto-alfanumerico-corto" class="md-nav__link">
+    Texto alfanumérico corto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textos-cortos-especificos" class="md-nav__link">
+    Textos cortos específicos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#campos-para-contrasenas" class="md-nav__link">
+    Campos para contraseñas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#campos-extensos-de-texto" class="md-nav__link">
+    Campos extensos de texto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comprobacion-de-ortografia" class="md-nav__link">
+    Comprobación de ortografía
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controles-campos-numericos" class="md-nav__link">
+    Controles: Campos numéricos
+  </a>
+  
+    <nav class="md-nav" aria-label="Controles: Campos numéricos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-campos-numericos" class="md-nav__link">
+    Tipos de campos numéricos
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de campos numéricos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimos-maximos-y-saltos" class="md-nav__link">
+    Mínimos, máximos y saltos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controles-campos-de-fechahora" class="md-nav__link">
+    Controles: Campos de fecha/hora
+  </a>
+  
+    <nav class="md-nav" aria-label="Controles: Campos de fecha/hora">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fecha-y-hora" class="md-nav__link">
+    Fecha y hora
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fecha-y-hora-local" class="md-nav__link">
+    Fecha y hora local
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controles-casillas-o-botones" class="md-nav__link">
+    Controles: Casillas o botones
+  </a>
+  
+    <nav class="md-nav" aria-label="Controles: Casillas o botones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#casillas-de-verificacion" class="md-nav__link">
+    Casillas de verificación
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#botones-de-radio" class="md-nav__link">
+    Botones de radio
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controles-listas-de-seleccion" class="md-nav__link">
+    Controles: Listas de selección
+  </a>
+  
+    <nav class="md-nav" aria-label="Controles: Listas de selección">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#listas-seleccionables" class="md-nav__link">
+    Listas seleccionables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listas-seleccionables-multiples" class="md-nav__link">
+    Listas seleccionables múltiples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listas-seleccionables-abiertas" class="md-nav__link">
+    Listas seleccionables abiertas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controles-seleccion-de-color" class="md-nav__link">
+    Controles: Selección de color
+  </a>
+  
+    <nav class="md-nav" aria-label="Controles: Selección de color">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interfaz-del-colorpicker" class="md-nav__link">
+    Interfaz del ColorPicker
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controles-seleccion-de-archivos" class="md-nav__link">
+    Controles: Selección de archivos
+  </a>
+  
+    <nav class="md-nav" aria-label="Controles: Selección de archivos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atributos" class="md-nav__link">
+    Atributos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#organizacion-de-campos" class="md-nav__link">
+    Organización de campos
+  </a>
+  
+    <nav class="md-nav" aria-label="Organización de campos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agrupacion-visual" class="md-nav__link">
+    Agrupación visual
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orden-de-campos" class="md-nav__link">
+    Orden de campos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relacion-texto-campo" class="md-nav__link">
+    Relación texto-campo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#botones-de-envio-de-formularios" class="md-nav__link">
+    Botones de envío de formularios
+  </a>
+  
+    <nav class="md-nav" aria-label="Botones de envío de formularios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boton-normal" class="md-nav__link">
+    Botón normal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boton-con-imagen" class="md-nav__link">
+    Botón con imagen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boton-de-borrar-reset" class="md-nav__link">
+    Botón de borrar (reset)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boton-alternativo" class="md-nav__link">
+    Botón alternativo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boton-personalizado" class="md-nav__link">
+    Botón personalizado
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#medidores-y-barras-de-progreso" class="md-nav__link">
+    Medidores y barras de progreso
+  </a>
+  
+    <nav class="md-nav" aria-label="Medidores y barras de progreso">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#barra-de-progreso" class="md-nav__link">
+    Barra de progreso
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medidores" class="md-nav__link">
+    Medidores
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validaciones-html5" class="md-nav__link">
+    Validaciones HTML5
+  </a>
+  
+    <nav class="md-nav" aria-label="Validaciones HTML5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-validacion" class="md-nav__link">
+    Tipos de validación
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atributos-basicos" class="md-nav__link">
+    Atributos básicos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patrones-de-validacion-html5" class="md-nav__link">
+    Patrones de validación HTML5
+  </a>
+  
+    <nav class="md-nav" aria-label="Patrones de validación HTML5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-de-patrones-html5" class="md-nav__link">
+    Ejemplos de patrones HTML5
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expresiones-regulares" class="md-nav__link">
+    Expresiones regulares
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-etiquetas_de_scripting/" title="Etiquetas de scripting" class="md-nav__link">
+      Etiquetas de scripting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Css
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Css" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        <span class="md-nav__icon md-icon"></span>
+        Css
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/01-introduccion_a_CSS/" title="Introducción a CSS" class="md-nav__link">
+      Introducción a CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/02-modelo_de_cajas/" title="Modelo de cajas" class="md-nav__link">
+      Modelo de cajas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/03-colores_y_fondos/" title="Colores y fondos" class="md-nav__link">
+      Colores y fondos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/04-selectores_CSS/" title="Selectores CSS" class="md-nav__link">
+      Selectores CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/05-Fuentes_y_tipografias/" title="Fuentes y tipografías" class="md-nav__link">
+      Fuentes y tipografías
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/06-representacion_de_datos/" title="Representación de datos" class="md-nav__link">
+      Representación de datos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/07_maquetacion_y_colocacion/" title="Maquetación y colocación" class="md-nav__link">
+      Maquetación y colocación
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/08-interacciones/" title="Interacciones" class="md-nav__link">
+      Interacciones
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/09-efectos/" title="Efectos" class="md-nav__link">
+      Efectos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/10-responsive_Web_Design/" title="Responsive Web Design" class="md-nav__link">
+      Responsive Web Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/11-animaciones_CSS/" title="Animaciones CSS" class="md-nav__link">
+      Animaciones CSS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      JavaScript
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="JavaScript" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon"></span>
+        JavaScript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/01-introducci%C3%B3n_a_javascript/" title="Introducción a Javascript" class="md-nav__link">
+      Introducción a Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/02-fundamentos_de_javascript/" title="Fundamentos de Javascript" class="md-nav__link">
+      Fundamentos de Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/03-caracteristicas/" title="Características" class="md-nav__link">
+      Características
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/04-DOM/" title="DOM" class="md-nav__link">
+      DOM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/05-asincronia/" title="Asincronía" class="md-nav__link">
+      Asincronía
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/06-peticiones_HTTP/" title="Peticiones HTTP" class="md-nav__link">
+      Peticiones HTTP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Herramientas IT
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Herramientas IT" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Herramientas IT
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Terminal
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Terminal" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon"></span>
+        Terminal
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" title="Introducción a la terminal" class="md-nav__link">
+      Introducción a la terminal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/02-operaciones_con_ficheros/" title="Operaciones con ficheros" class="md-nav__link">
+      Operaciones con ficheros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/03-administraci%C3%B3n_del_sistema/" title="Administración del sistema" class="md-nav__link">
+      Administración del sistema
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/markdown/" title="Markdown" class="md-nav__link">
+      Markdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/pip/" title="Pip" class="md-nav__link">
+      Pip
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/mkdocs/" title="Mkdocs" class="md-nav__link">
+      Mkdocs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../about/" title="Acerca de" class="md-nav__link">
+      Acerca de
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-un-formulario" class="md-nav__link">
+    Creación de un formulario
+  </a>
+  
+    <nav class="md-nav" aria-label="Creación de un formulario">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#contenedor-de-formulario" class="md-nav__link">
+    Contenedor de formulario
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-datos" class="md-nav__link">
+    Tipos de datos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#campos-de-entrada" class="md-nav__link">
+    Campos de entrada
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-etiqueta-input" class="md-nav__link">
+    La etiqueta "input"
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controles-campos-de-texto" class="md-nav__link">
+    Controles: Campos de texto
+  </a>
+  
+    <nav class="md-nav" aria-label="Controles: Campos de texto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#texto-alfanumerico-corto" class="md-nav__link">
+    Texto alfanumérico corto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textos-cortos-especificos" class="md-nav__link">
+    Textos cortos específicos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#campos-para-contrasenas" class="md-nav__link">
+    Campos para contraseñas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#campos-extensos-de-texto" class="md-nav__link">
+    Campos extensos de texto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comprobacion-de-ortografia" class="md-nav__link">
+    Comprobación de ortografía
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controles-campos-numericos" class="md-nav__link">
+    Controles: Campos numéricos
+  </a>
+  
+    <nav class="md-nav" aria-label="Controles: Campos numéricos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-campos-numericos" class="md-nav__link">
+    Tipos de campos numéricos
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de campos numéricos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimos-maximos-y-saltos" class="md-nav__link">
+    Mínimos, máximos y saltos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controles-campos-de-fechahora" class="md-nav__link">
+    Controles: Campos de fecha/hora
+  </a>
+  
+    <nav class="md-nav" aria-label="Controles: Campos de fecha/hora">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fecha-y-hora" class="md-nav__link">
+    Fecha y hora
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fecha-y-hora-local" class="md-nav__link">
+    Fecha y hora local
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controles-casillas-o-botones" class="md-nav__link">
+    Controles: Casillas o botones
+  </a>
+  
+    <nav class="md-nav" aria-label="Controles: Casillas o botones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#casillas-de-verificacion" class="md-nav__link">
+    Casillas de verificación
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#botones-de-radio" class="md-nav__link">
+    Botones de radio
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controles-listas-de-seleccion" class="md-nav__link">
+    Controles: Listas de selección
+  </a>
+  
+    <nav class="md-nav" aria-label="Controles: Listas de selección">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#listas-seleccionables" class="md-nav__link">
+    Listas seleccionables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listas-seleccionables-multiples" class="md-nav__link">
+    Listas seleccionables múltiples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listas-seleccionables-abiertas" class="md-nav__link">
+    Listas seleccionables abiertas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controles-seleccion-de-color" class="md-nav__link">
+    Controles: Selección de color
+  </a>
+  
+    <nav class="md-nav" aria-label="Controles: Selección de color">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interfaz-del-colorpicker" class="md-nav__link">
+    Interfaz del ColorPicker
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controles-seleccion-de-archivos" class="md-nav__link">
+    Controles: Selección de archivos
+  </a>
+  
+    <nav class="md-nav" aria-label="Controles: Selección de archivos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atributos" class="md-nav__link">
+    Atributos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#organizacion-de-campos" class="md-nav__link">
+    Organización de campos
+  </a>
+  
+    <nav class="md-nav" aria-label="Organización de campos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agrupacion-visual" class="md-nav__link">
+    Agrupación visual
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orden-de-campos" class="md-nav__link">
+    Orden de campos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relacion-texto-campo" class="md-nav__link">
+    Relación texto-campo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#botones-de-envio-de-formularios" class="md-nav__link">
+    Botones de envío de formularios
+  </a>
+  
+    <nav class="md-nav" aria-label="Botones de envío de formularios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boton-normal" class="md-nav__link">
+    Botón normal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boton-con-imagen" class="md-nav__link">
+    Botón con imagen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boton-de-borrar-reset" class="md-nav__link">
+    Botón de borrar (reset)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boton-alternativo" class="md-nav__link">
+    Botón alternativo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boton-personalizado" class="md-nav__link">
+    Botón personalizado
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#medidores-y-barras-de-progreso" class="md-nav__link">
+    Medidores y barras de progreso
+  </a>
+  
+    <nav class="md-nav" aria-label="Medidores y barras de progreso">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#barra-de-progreso" class="md-nav__link">
+    Barra de progreso
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medidores" class="md-nav__link">
+    Medidores
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validaciones-html5" class="md-nav__link">
+    Validaciones HTML5
+  </a>
+  
+    <nav class="md-nav" aria-label="Validaciones HTML5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-validacion" class="md-nav__link">
+    Tipos de validación
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atributos-basicos" class="md-nav__link">
+    Atributos básicos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patrones-de-validacion-html5" class="md-nav__link">
+    Patrones de validación HTML5
+  </a>
+  
+    <nav class="md-nav" aria-label="Patrones de validación HTML5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-de-patrones-html5" class="md-nav__link">
+    Ejemplos de patrones HTML5
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expresiones-regulares" class="md-nav__link">
+    Expresiones regulares
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/saucedoinfo/guias/edit/master/docs/desarrollo/html/05-etiquetas_de_formularios.md" title="Editar esta página" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="etiquetas-de-formularios">Etiquetas de formularios<a class="headerlink" href="#etiquetas-de-formularios" title="Permanent link">&para;</a></h1>
+<h2 id="creacion-de-un-formulario">Creación de un formulario<a class="headerlink" href="#creacion-de-un-formulario" title="Permanent link">&para;</a></h2>
+<p>HTML5 proporciona una serie de etiquetas interesantes para utilizar en formularios (<em>además de las ya existentes en versiones anteriores</em>). Los <strong>formularios</strong> son una forma sencilla de establecer mecanismos para que el usuario pueda introducir información en una página web de forma sencilla e intuitiva, y el sitio web sea capaz de procesarla correctamente y añadirla en una base de datos de la página, enviarla por email o procesarla para mostrar información final al usuario.</p>
+<p>Nuestros <strong>objetivos al crear un formulario</strong> HTML5 deben ser los siguientes:</p>
+<ul>
+<li>Hacer lo más <strong>sencillo</strong> posible el proceso de inserción de datos por parte del usuario.</li>
+<li>Intentar que la experiencia de usuario sea lo más <strong>agradable</strong> posible.</li>
+<li>Intentar que los datos introducidos estén en un <strong>formato predecible</strong> y esperado.</li>
+<li>Reducir los errores al introducir datos en la medida de lo posible.</li>
+<li>Comunicar claramente si ocurren errores al introducir datos.</li>
+</ul>
+<h3 id="contenedor-de-formulario">Contenedor de formulario<a class="headerlink" href="#contenedor-de-formulario" title="Permanent link">&para;</a></h3>
+<p>Para comenzar con la creación de un formulario, el primer paso es indicar una etiqueta contenedora <code>&lt;form&gt;</code>, que incluirá toda la información que se quiere recoger en ese formulario:</p>
+<pre><code>&lt;form&gt;&lt;/form&gt;
+</code></pre>
+<p>De esta forma, se puede incluso crear varias etiquetas <code>&lt;form&gt;</code> por página, pudiendo así crear varios formularios diferentes, como por ejemplo, uno para realizar una búsqueda en la página, otro para dejar un comentario y otro para enviar un email al autor.</p>
+<p>!!!
+        También es posible colocar campos de formulario <strong>fuera</strong> de una etiqueta <code>&lt;form&gt;</code>, sin embargo, no tendrán un funcionamiento específico y necesitaría manejarse desde Javascript.</p>
+<p>La etiqueta <code>&lt;form&gt;</code> dispone de varios <strong>atributos</strong> para utilizar:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Atributo</th>
+<th align="left">Valor</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>action</code></td>
+<td align="left"><em>URL</em></td>
+<td align="left">Dirección URL del back-end donde se enviará la información del formulario.</td>
+</tr>
+<tr>
+<td align="left"><code>method</code></td>
+<td align="left"><strong>get</strong> | <code>post</code></td>
+<td align="left">Método HTTP de envío. <code>GET</code> a través de URL, <code>POST</code> para envío extenso.</td>
+</tr>
+<tr>
+<td align="left"><code>name</code></td>
+<td align="left"><em>nombre</em></td>
+<td align="left">Nombre del formulario. Útil para procesar posteriormente.</td>
+</tr>
+<tr>
+<td align="left"><code>target</code></td>
+<td align="left"><em>destino</em></td>
+<td align="left">Nombre del lugar donde se abrirá el formulario. <code>\_blank</code> para nueva pestaña.</td>
+</tr>
+<tr>
+<td align="left"><code>enctype</code></td>
+<td align="left">_tipo_Codificación para el envío del formulario. Importante para envío de archivos.</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>accept-charset</code></td>
+<td align="left"><em>codificación</em></td>
+<td align="left">Fuerza a utilizar una codificación en los parámetros de texto del formulario.</td>
+</tr>
+<tr>
+<td align="left"><code>autocomplete</code></td>
+<td align="left"><strong>on</strong> | <code>off</code></td>
+<td align="left">Activa o desactiva el autocompletado para todos los campos del formulario.</td>
+</tr>
+<tr>
+<td align="left"><code>novalidate</code></td>
+<td align="left">Boolean</td>
+<td align="left">Con este atributo presente, el formulario obvia la validación HTML5.</td>
+</tr>
+</tbody>
+</table>
+<p>Así pues, un primer formulario base de ejemplo (<em>aún vacío, sin campos de entrada de datos, sólo con la etiqueta contenedora</em>) podría ser el que vemos en el siguiente ejemplo:</p>
+<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;&lt;/form&gt;
+</code></pre>
+<p>Nótese que se definen 3 atributos base en <code>&lt;form&gt;</code>:</p>
+<ul>
+<li>En <code>action</code> se indica la dirección donde se enviarán los datos cuando el usuario pulse el botón de enviar. En caso de omitirse esta información, se enviarían los datos a la propia página actual, volviéndola a cargar.</li>
+<li>En <code>method</code> se define el tipo de método HTTP a utilizar. Utilizaremos el método <code>GET</code> cuando nos interese que los datos se envíen en la propia URL. En caso contrario, <code>POST</code>.</li>
+<li>En <code>name</code> el nombre del formulario para cuando necesitemos hacer referencia a él (<em>generalmente desde Javascript o desde backend</em>).</li>
+</ul>
+<h3 id="tipos-de-datos">Tipos de datos<a class="headerlink" href="#tipos-de-datos" title="Permanent link">&para;</a></h3>
+<p>Para que un usuario pueda introducir información en un formulario, requiere que se le indiquen una serie de campos que le permitan introducir la información de la forma más cómoda y rápida posible. Para ello, debemos saber a priori que <strong>tipo de dato</strong> le vamos a pedir al usuario (<em>texto, numérico, fecha, etc...</em>), y así saber que tipo de campo de entrada de datos es más conveniente colocar.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Información a obtener</th>
+<th align="left">Ejemplos</th>
+<th align="left">Etiqueta y atributo a utilizar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Información de texto</td>
+<td align="left">Nombres, apellidos, direcciones físicas...</td>
+<td align="left"><code>&lt;input&gt;</code>  - <code>&lt;textarea&gt;</code></td>
+</tr>
+<tr>
+<td align="left">Números o cantidades</td>
+<td align="left">Edades, precios, cuantías...</td>
+<td align="left"><code>&lt;input&gt;</code> para números</td>
+</tr>
+<tr>
+<td align="left">Fechas u horas</td>
+<td align="left">Fecha de nacimiento, inicio de evento...</td>
+<td align="left"><code>&lt;input&gt;</code> para fechas</td>
+</tr>
+<tr>
+<td align="left">Verdadero/falso</td>
+<td align="left">Si/No, Opción A/B, ON/OFF...</td>
+<td align="left"><code>&lt;input type="checkbox"&gt;</code></td>
+</tr>
+<tr>
+<td align="left">Opción única</td>
+<td align="left">(Elegir una opción de 2 ó más posibles)</td>
+<td align="left"><code>&lt;input type="radio"&gt;</code>  - <code>&lt;select&gt;</code></td>
+</tr>
+<tr>
+<td align="left">Varias opciones</td>
+<td align="left">(Elegir varias opciones de 2 ó más posibles)</td>
+<td align="left"><code>&lt;select multiple&gt;</code>  - <code>&lt;input type="checkbox"&gt;</code></td>
+</tr>
+<tr>
+<td align="left">Opción única abierta</td>
+<td align="left">(Elegir una opción o indicar una propia)</td>
+<td align="left"><code>&lt;datalist&gt;</code></td>
+</tr>
+<tr>
+<td align="left">Selección de color</td>
+<td align="left">(Escoger un color o tonalidad)</td>
+<td align="left"><code>&lt;input type="color"&gt;</code></td>
+</tr>
+<tr>
+<td align="left">Selección de archivo</td>
+<td align="left">(Escoger un archivo para enviar)</td>
+<td align="left"><code>&lt;input type="file"&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p>En HTML5, de forma nativa, el navegador proporciona estos <strong>campos de entrada</strong> en los que el usuario puede introducir información específica. Cada uno de ellos tiene sus propias particularidades y características, además de que hay que tener cuidado con algunos, ya que pueden no estar soportados por completo en todos los navegadores.</p>
+<h3 id="campos-de-entrada">Campos de entrada<a class="headerlink" href="#campos-de-entrada" title="Permanent link">&para;</a></h3>
+<p>Una de las etiquetas que más utilizaremos para obtener información a modo de campo de entrada de datos en un formulario es la etiqueta <code>&lt;input&gt;</code>. Su funcionalidad más utilizada es la de servir como campo de texto:</p>
+<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
+  &lt;!-- Primer campo de entrada de datos --&gt;
+  Nombre de usuario:
+  &lt;input type="text" name="nombre" value="" /&gt;
+  &lt;!-- Botón de envío del formulario --&gt;
+  &lt;input type="submit" value="Enviar" /&gt;
+&lt;/form&gt;
+</code></pre>
+<p>En este ejemplo tenemos un pequeño formulario donde se le pide al usuario su nombre con la etiqueta <code>&lt;input type="text"&gt;</code> y, posteriormente, se coloca un botón para enviar el formulario con la etiqueta <code>&lt;input type="submit"&gt;</code>. Aunque vemos que se trata de la misma etiqueta <code>&lt;input&gt;</code>, dependiendo del valor indicado en el atributo <strong>type</strong> realizará una tarea u otra.</p>
+<h3 id="la-etiqueta-input">La etiqueta "input"<a class="headerlink" href="#la-etiqueta-input" title="Permanent link">&para;</a></h3>
+<p>La etiqueta <code>&lt;input&gt;</code> tiene una gran cantidad de atributos (<em>algunos dependiendo del valor de type, que mostraremos más adelante</em>). Estos son los atributos que podemos utilizar de forma general para prácticamente cualquier campo de entrada de datos con la etiqueta <code>&lt;input&gt;</code>:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Atributo</th>
+<th align="left">Valor</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>type</code></td>
+<td align="left"><em>tipo de campo</em></td>
+<td align="left">Indica el tipo de campo del que se trata.</td>
+</tr>
+<tr>
+<td align="left"><code>name</code></td>
+<td align="left"><em>nombre del campo</em></td>
+<td align="left">Indica el nombre del campo para hacer referencia más tarde.</td>
+</tr>
+<tr>
+<td align="left"><code>value</code></td>
+<td align="left"><em>valor por defecto</em></td>
+<td align="left">Indica el valor inicial que tendrá ese campo de datos.<code>form</code></td>
+</tr>
+<tr>
+<td align="left"><code>placeholder</code></td>
+<td align="left"><em>sugerencia</em></td>
+<td align="left">Indica una sugerencia al usuario antes de escribir.</td>
+</tr>
+<tr>
+<td align="left"><code>size</code></td>
+<td align="left"><em>número</em></td>
+<td align="left">Tamaño visual (<em>número de carácteres</em>) del campo de datos.</td>
+</tr>
+<tr>
+<td align="left"><code>autocomplete</code></td>
+<td align="left"><strong>on</strong> | <code>off</code></td>
+<td align="left">Activa o desactiva el autocompletado para este campo.</td>
+</tr>
+<tr>
+<td align="left"><code>autofocus</code></td>
+<td align="left">-</td>
+<td align="left">Establece el foco (<em>coloca el cursor</em>) en este campo al cargar la página.</td>
+</tr>
+</tbody>
+</table>
+<p>El atributo <strong>type</strong> nos permitirá indicar que tipo de campo de dato mostrará en el navegador (<em>text, number, date... los veremos más adelante</em>). Mediante el atributo <strong>name</strong> le daremos un nombre al campo de texto, así cuando enviemos la información del formulario, podremos manejarla desde javascript o desde el back-end haciendo referencia a dicho nombre.</p>
+<p>Iremos viendo más atributos en cada campo específico que trataremos en los siguientes temas.</p>
+<hr />
+<h2 id="controles-campos-de-texto">Controles: Campos de texto<a class="headerlink" href="#controles-campos-de-texto" title="Permanent link">&para;</a></h2>
+<p>La etiqueta HTML <code>&lt;input&gt;</code> puede tomar varios valores diferentes en su atributo <strong>type</strong> para permitir al usuario introducir <strong>información de texto</strong>, además de otra etiqueta denominada <code>&lt;textarea&gt;</code> para cantidades de texto más grandes como varios párrafos.</p>
+<p>Según nuestras necesidades, tendremos varias opciones:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Tipo de información a obtener</th>
+<th align="left">Etiqueta a utilizar</th>
+<th align="left">Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Texto alfanumérico libre (texto corto)</td>
+<td align="left"><code>&lt;input type="text"&gt;</code></td>
+<td align="left"><input type="text"></td>
+</tr>
+<tr>
+<td align="left">Texto para búsquedas</td>
+<td align="left"><code>&lt;input type="search"&gt;</code></td>
+<td align="left"><input type="search" value="abc.."></td>
+</tr>
+<tr>
+<td align="left">Número de teléfono o móvil</td>
+<td align="left"><code>&lt;input type="tel"&gt;</code></td>
+<td align="left"><input type="tel" value="123456"></td>
+</tr>
+<tr>
+<td align="left">Dirección URL</td>
+<td align="left"><code>&lt;input type="url"&gt;</code></td>
+<td align="left"><input type="url" value="www.google.com"></td>
+</tr>
+<tr>
+<td align="left">Dirección de correo email</td>
+<td align="left"><code>&lt;input type="email"&gt;</code></td>
+<td align="left"><input type="email"value="hi@gmail.com" ></td>
+</tr>
+<tr>
+<td align="left">Clave o contraseña</td>
+<td align="left"><code>&lt;input type="password"&gt;</code></td>
+<td align="left"><input type="password" value="fffsss"></td>
+</tr>
+<tr>
+<td align="left">Campo oculto (no mostrar al usuario)</td>
+<td align="left"><code>&lt;input type="hidden"&gt;</code></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Texto alfanumérico libre (extenso)</td>
+<td align="left"><code>&lt;textarea&gt;</code></td>
+<td align="left"><textarea > </textarea></td>
+</tr>
+</tbody>
+</table>
+<p>Esto es un campo de texto más extenso, útil para textos de uno o más párrafos.</p>
+<h3 id="texto-alfanumerico-corto">Texto alfanumérico corto<a class="headerlink" href="#texto-alfanumerico-corto" title="Permanent link">&para;</a></h3>
+<p>En primer lugar, si lo que queremos es guardar información de texto libremente, la opción más habitual es optar por utilizar el campo de entrada de datos <code>&lt;input type="text"&gt;</code>. Este atributo es el que se utiliza en las etiquetas <code>&lt;input&gt;</code> por defecto si no indicamos ningún atributo <strong>type</strong>. Es un campo de texto ideal para fragmentos cortos de información: nombres, apellidos, direcciones físicas, etc...</p>
+<p>En resumen, pequeños fragmentos de texto menores a un par de palabras. Un sencillo ejemplo:</p>
+<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
+  &lt;!-- Campo de entrada de datos --&gt;
+  &lt;input type="text" name="nombre" autocomplete="off"
+         placeholder="Introduce tu nombre de usuario" /&gt;
+&lt;/form&gt;
+</code></pre>
+<p>Obsérvese que además hemos indicado dos atributos adicionales:</p>
+<ul>
+<li><strong>Autocompletado desactivado</strong>: No aparecerá información escrita anteriormente en ese campo.</li>
+<li><strong>Placeholder</strong>: Es el texto que aparecerá a modo de sugerencia/ayuda para el usuario (<em>en gris, ligeramente menos visible que el texto del campo</em>). En cuanto el usuario escriba en el mismo, el mensaje desaparecerá. Sólo volvería a aparecer si el usuario decide borrar nuevamente la información que ha escrito en ese campo.</li>
+</ul>
+<p>!!!
+        Es importante no escribir sugerencias de usuario en el atributo <code>value</code>, sino en <code>placeholder</code>. Utiliza el atributo <code>value</code> sólo si quieres indicar valores por defecto del campo.</p>
+<h3 id="textos-cortos-especificos">Textos cortos específicos<a class="headerlink" href="#textos-cortos-especificos" title="Permanent link">&para;</a></h3>
+<p>Por otro lado, en HTML5 se añaden nuevos tipos para etiquetas <code>&lt;input&gt;</code> como <strong>search</strong>, <strong>tel</strong>, <strong>url</strong> o <strong>email</strong>. Aunque la idea es la misma que un campo de texto y en principio no notaremos ningún cambio, estos campos específicos tienen como objetivo hacer más sencillo el proceso de introducción de datos por parte del usuario.</p>
+<p>Si utilizamos <strong>tel</strong> en vez de <strong>text</strong>, al hacer clic en el campo del formulario desde un smartphone/tablet, se nos desplegará el teclado numérico en lugar del teclado habitual, lo que nos facilitará en gran medida escribir el dispositivo móvil, ya que la intención es utilizar sólo caracteres para números. Lo mismo ocurre con los campos de tipo <strong>email</strong> o <strong>url</strong>, ya que nos mostrará un teclado con botones especiales con <code>@</code>, <code>.com</code> u otros atajos rápidos:</p>
+<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
+  &lt;!-- Campo de entrada de teléfono --&gt;
+  Teléfono:
+  &lt;input type="tel" name="telefono" placeholder="+XX XXX XXXXXX" /&gt;
+  &lt;!-- Campo de entrada de email --&gt;
+  Email:
+  &lt;input type="email" name="correo" placeholder="nombre@dominio.com" /&gt;
+  &lt;!-- Campo de entrada de url --&gt;
+  Página web:
+  &lt;input type="url" name="web" placeholder="https://pagina.com/" /&gt;
+&lt;/form&gt;
+</code></pre>
+<p>El atributo <code>type</code> también permite el valor <strong>search</strong>, que es muy similar a los anteriores. Se utiliza para campos orientados a la búsqueda de palabras o textos en un sitio web, mostrando desde dispositivos móviles una <strong>x</strong> para borrar la palabra escrita con un sólo clic.</p>
+<h3 id="campos-para-contrasenas">Campos para contraseñas<a class="headerlink" href="#campos-para-contrasenas" title="Permanent link">&para;</a></h3>
+<p>La etiqueta <code>&lt;input&gt;</code> tiene el valor <strong>password</strong> en su atributo <code>type</code> para crear campos de texto orientados a almacenar información sensible como podrían ser contraseñas, claves o pins numéricos. Esto no lo convertiría en un campo más seguro técnicamente, sino que simplemente muestra puntos o asteriscos en lugar del texto visualmente, protegiéndolo visualmente de ojos ajenos.</p>
+<p>Por otro lado también tenemos el tipo <strong>hidden</strong>, que se puede utilizar cuando queremos enviar información en el formulario, pero que no queremos que el navegador lo muestre visualmente en el formulario, como por ejemplo un código numérico o una id informativa:</p>
+<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
+  &lt;!-- Campo de entrada de usuario --&gt;
+  Usuario:`
+  &lt;input type="text" name="nombre" placeholder="Por ejemplo, Juan" /&gt;
+  &lt;!-- Campo de entrada de password --&gt;
+  Password:
+  &lt;input type="password" name="pass" placeholder="Contraseña" /&gt;
+  &lt;!-- Campo oculto: Este campo no se verá en el navegador --&gt;
+  &lt;input type="hidden" name="informacion" value="72625" /&gt;
+&lt;/form&gt;
+</code></pre>
+<h3 id="campos-extensos-de-texto">Campos extensos de texto<a class="headerlink" href="#campos-extensos-de-texto" title="Permanent link">&para;</a></h3>
+<p>Por último, si queremos indicar un campo para escribir textos más extensos, lo más apropiado es utilizar la etiqueta <code>&lt;textarea&gt;</code>, que tiene también algunos atributos adicionales:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Atributo</th>
+<th align="left">Valor</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>cols</code></td>
+<td align="left"><em>número de columnas</em></td>
+<td align="left">Número de carácteres que caben en horizontal (<em>columnas</em>).</td>
+</tr>
+<tr>
+<td align="left"><code>rows</code></td>
+<td align="left"><em>número de filas</em></td>
+<td align="left">Número de carácteres que caben en vertical (<em>filas</em>).</td>
+</tr>
+<tr>
+<td align="left"><code>wrap</code></td>
+<td align="left"><strong>soft</strong> | <code>hard</code></td>
+<td align="left">Indica si el texto debe enviarse recolocado o como se ve visualmente.</td>
+</tr>
+</tbody>
+</table>
+<p>Esta etiqueta nos permite añadir gran cantidad de texto, ya que las etiquetas <code>&lt;input type="text"&gt;</code> sólo nos permiten escribir una línea de texto y es muy incómodo si nuestra intención es escribir grandes cantidades de texto. Sus atributos <strong>cols</strong> y <strong>rows</strong> nos permiten aumentar el tamaño de ancho y alto, así como indicar si queremos que se modifique la apariencia visual del párrafo al enviar al formulario con el atributo <strong>wrap</strong>.</p>
+<p>Un ejemplo básico de esta etiqueta <code>&lt;textarea&gt;</code>:</p>
+<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
+  &lt;!-- Area de texto extensa --&gt;
+  &lt;textarea name="texto" cols="80" rows="10" placeholder="Escribe aquí el texto..."&gt;
+    Este es el valor por defecto
+  &lt;/textarea&gt;
+&lt;/form&gt;
+</code></pre>
+<p>Existen unas librerías de <a href="https://lenguajejs.com/">javascript</a> para «enriquecer» y ampliar la funcionalidad de estas áreas de texto, permitiendo realizar ciertas tareas visuales como fragmentos en negrita, cursiva, imágenes, tablas, etc... Este tipo de librerías se llaman <a href="https://github.com/cheeaun/mooeditable/wiki/Javascript-WYSIWYG-editors">editores WYSIWYG</a> (<em>lo que ves es lo que obtienes</em>).</p>
+<h3 id="comprobacion-de-ortografia">Comprobación de ortografía<a class="headerlink" href="#comprobacion-de-ortografia" title="Permanent link">&para;</a></h3>
+<p>En todos estos campos, tanto etiquetas <code>&lt;input&gt;</code> como <code>&lt;textarea&gt;</code>, podemos utilizar un atributo denominado <code>spellcheck</code> mediante el cuál indicamos al navegador si debe revisar la ortografía del texto escrito en dicho elemento (<em>en el cuál aparece una línea roja inferior cuando la palabra no se encuentra en el diccionario</em>).</p>
+<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
+  &lt;input type="text" name="objeto1" value="camion azul " spellcheck="true" /&gt;
+  &lt;input type="text" name="objeto2" value="camion azul " spellcheck="false" /&gt;
+  &lt;textarea cols="40" name="objeto3" spellcheck="true"&gt;camion azul&lt;/textarea&gt;
+&lt;/form&gt;
+</code></pre>
+<p>Si el atributo <strong>spellcheck</strong> está a <strong>true</strong>, el navegador comprobará la ortografía, si se encuentra a <strong>false</strong>, no la comprobará. Si no se especifica el atributo, el navegador busca el atributo <strong>spellcheck</strong> en los elementos contenedores padres, y si no lo encuentra, toma el valor por defecto, que es <strong>true</strong>.</p>
+<p><img alt="Atributo spellcheck" src="../img/spellcheck.png" /></p>
+<p>En el ejemplo anterior, hemos desactivado la <strong>comprobación de ortografía</strong> en el segundo campo (<em>objeto2</em>), por lo que al pulsar sobre él no aparece ninguna línea roja, a pesar de estar mal escrita. En los demás campos si ocurre.</p>
+<hr />
+<h2 id="controles-campos-numericos">Controles: Campos numéricos<a class="headerlink" href="#controles-campos-numericos" title="Permanent link">&para;</a></h2>
+<p>Si deseamos obtener información o cantidades numéricas en un formulario, tenemos a nuestra disposición dos tipos de etiquetas <code>&lt;input&gt;</code>.</p>
+<h3 id="tipos-de-campos-numericos">Tipos de campos numéricos<a class="headerlink" href="#tipos-de-campos-numericos" title="Permanent link">&para;</a></h3>
+<p>La primera de ellas es <strong>number</strong>, un tipo con el que podremos utilizar un campo de texto donde el usuario sólo puede escribir números (<em>o carácteres como <code>+</code>, <code>-</code> o el número <code>e</code>, entre otros</em>). La diferencia respecto a otros campos es que al mover el ratón sobre él, nos aparecen dos flechas que nos permiten aumentar o disminuir la cantidad numérica del campo.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Tipo de información a obtener</th>
+<th align="left">Etiqueta a utilizar</th>
+<th align="left">Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="https://caniuse.com/#feat=input-number">Número o cantidad numérica</a></td>
+<td align="left"><code>&lt;input type="number"&gt;</code></td>
+<td align="left"><input type="number"></td>
+</tr>
+<tr>
+<td align="left"><a href="https://caniuse.com/#feat=input-range">Rango numérico</a></td>
+<td align="left"><code>&lt;input type="range"&gt;</code></td>
+<td align="left"><input type="range"></td>
+</tr>
+</tbody>
+</table>
+<p>Por otro lado, tenemos la etiqueta <code>&lt;input type="range"&gt;</code>, que en lugar de mostrarnos un campo de texto que podemos modificar introduciendo directamente el número, podemos hacerlo mediante un «slider» o <strong>barra de desplazamiento</strong> que representa un número entre un <strong>rango numérico</strong> específico.</p>
+<h4 id="minimos-maximos-y-saltos">Mínimos, máximos y saltos<a class="headerlink" href="#minimos-maximos-y-saltos" title="Permanent link">&para;</a></h4>
+<p>Tanto en una como en otra podemos indicar los atributos <strong>min</strong>, <strong>max</strong> y <strong>step</strong>, que veremos más adelante en el tema de <strong>validaciones HTML5</strong>, para indicar límites y restricciones:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Atributo</th>
+<th align="left">Valor</th>
+<th align="left">Significado del atributo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>min</code></td>
+<td align="left"><em>número mínimo</em></td>
+<td align="left">Número <strong>mínimo</strong> permitido para pasar validación.</td>
+</tr>
+<tr>
+<td align="left"><code>max</code></td>
+<td align="left"><em>número máximo</em></td>
+<td align="left">Número <strong>máximo</strong> permitido para pasar validación.</td>
+</tr>
+<tr>
+<td align="left"><code>step</code></td>
+<td align="left"><em>incremento o decremento</em></td>
+<td align="left">Variación permitida entre números para aceptar validación.</td>
+</tr>
+</tbody>
+</table>
+<p>Esto no significa que el usuario no pueda introducir un número menor que el indicado en el atributo <code>min</code>, por ejemplo, sino que si el usuario introduce ese número, los datos del campo no serán válidos, y no se podrá enviar el formulario hasta que se cumpla esa restricción.</p>
+<p>Un ejemplo de código:</p>
+<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
+  &lt;!-- Número entre 10 y 50, de 5 en 5. Valor por defecto: 25 --&gt;
+  &lt;input type="number" name="numero" value="25" min="10" max="50" step="5" /&gt;
+  &lt;!-- Su misma versión, utilizando el slider en un rango numérico --&gt;
+  &lt;input type="range" name="numrango" value="25" min="10" max="50" step="5" /&gt;
+&lt;/form&gt;
+</code></pre>
+<p>Las diferencias son las siguientes:</p>
+<ul>
+<li>En el campo con <code>type</code> a <code>number</code> es posible introducir manualmente números no permitidos.</li>
+<li>En el campo con <code>type</code> a <code>range</code> no es posible salirse del rango indicado.</li>
+<li>Tanto en uno como en otro, no es posible enviar el formulario si no se cumplen las restricciones.</li>
+</ul>
+<p>De cualquier forma, si indicamos <code>min=10</code>, <code>max=50</code> y <code>step=5</code> en una etiqueta numérica <code>&lt;input&gt;</code>, los valores permitidos por el usuario serían <code>10</code>, <code>15</code>, <code>20</code>, <code>25</code>, <code>30</code>, <code>35</code>, <code>40</code>, <code>45</code> y <code>50</code>.</p>
+<hr />
+<h2 id="controles-campos-de-fechahora">Controles: Campos de fecha/hora<a class="headerlink" href="#controles-campos-de-fechahora" title="Permanent link">&para;</a></h2>
+<p>Si nuestra intención es que el usuario introduzca una fecha concreta, en lugar de utilizar un campo de texto, lo ideal sería utilizar un control llamado <strong>datepicker</strong>. Básicamente, se trata de un calendario donde el usuario puede seleccionar el día, mes y año que desee, simplemente a golpe de clic, ahorrándose el escribirlo y simplificando el formato a utilizar, ya que puede ser muy complicado guardar siempre la fecha en un mismo formato.</p>
+<p>Además, también existe otro control llamado <strong>timepicker</strong>, que en lugar de solicitar al usuario una fecha, solicita una hora. Ambos campos están a nuestra disposición de forma nativa en HTML5, aunque su interfaz depende del navegador y algunos no tienen soporte para todas sus características.</p>
+<p>En HTML5.1, además, se incluyen nuevos campos que también permiten obtener <strong>fecha y hora</strong> (<em>en un mismo campo</em>), un <strong>mes</strong> específico o el número de <strong>semana</strong> del año, este último algo que se utiliza bastante en EEUU, aunque no demasiado en España.</p>
+<h3 id="fecha-y-hora">Fecha y hora<a class="headerlink" href="#fecha-y-hora" title="Permanent link">&para;</a></h3>
+<p>Los atributos <strong>type</strong> de fecha/hora existentes en los campos <code>&lt;input&gt;</code> serían los dos primeros, mientras que los tres últimos se añadirán en HTML5.1:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Tipo de información a obtener</th>
+<th align="left">Etiqueta a utilizar</th>
+<th align="left">Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Fecha</td>
+<td align="left"><code>&lt;input type="date"&gt;</code></td>
+<td align="left"><input type="date"></td>
+</tr>
+<tr>
+<td align="left">Hora</td>
+<td align="left"><code>&lt;input type="time"&gt;</code></td>
+<td align="left"><input type="time"></td>
+</tr>
+<tr>
+<td align="left">Fecha y hora local</td>
+<td align="left"><code>&lt;input type="datetime-local"&gt;</code></td>
+<td align="left"><input type="datetime-local"></td>
+</tr>
+<tr>
+<td align="left">Mes</td>
+<td align="left"><code>&lt;input type="month"&gt;</code></td>
+<td align="left"><input type="month"></td>
+</tr>
+<tr>
+<td align="left">Semana</td>
+<td align="left"><code>&lt;input type="week"&gt;</code></td>
+<td align="left"><input type="week"></td>
+</tr>
+</tbody>
+</table>
+<p>Veamos algún ejemplo básico con las dos primeras, <code>&lt;input type="date"&gt;</code> e <code>&lt;input type="time"&gt;</code>:</p>
+<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
+  &lt;!-- Campo de entrada de fecha --&gt;
+  Selecciona la fecha deseada:
+  &lt;input type="date" name="fecha" min="2018-03-25" max="2018-05-25" step="2" /&gt;
+  &lt;!-- Campo de entrada de hora --&gt;
+  Selecciona la hora deseada:
+  &lt;input type="time" name="hora" min="18:00" max="21:00" step="3600" /&gt;
+&lt;/form&gt;
+</code></pre>
+<p>Como se puede ver, se pueden indicar los atributos <strong>min</strong> y <strong>max</strong> en campos <code>&lt;input&gt;</code> de fecha, donde actuarán estableciendo un límite de fecha mínima o máxima permitida, así como el campo <strong>step</strong> se podrá utilizar para restricciones al variar unidades.</p>
+<p>!!!
+        Mención especial al apartado <strong>step</strong> donde hemos indicado el número de días (<em>en el caso de la fecha</em>), por lo que sólo aceptará días de dos en dos desde el 25 de marzo de 2018 hasta el 25 de mayo de 2018. Por su parte, el campo de la hora sólo permitirá variar las horas, ya que se ha indicado <strong>3600 segundos</strong> (<em>salto cada 60x60seg, o sea cada hora</em>) en el atributo <strong>step</strong>.</p>
+<h3 id="fecha-y-hora-local">Fecha y hora local<a class="headerlink" href="#fecha-y-hora-local" title="Permanent link">&para;</a></h3>
+<p>Como comentabamos, los tres últimos campos pertenecen a la especificación de HTML 5.1, aunque en algunos navegadores ya están implementados. Con ellos podremos seleccionar fecha y hora local, así como meses especificos o semanas concretas del año:</p>
+<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
+  &lt;!-- Campo de entrada de mes --&gt;
+  Selecciona el mes deseado:
+  &lt;input type="month" name="mes"
+         value="2018-05" min="2018-02" max="2018-06" step="2" /&gt;
+  &lt;!-- Campo de entrada de semana --&gt;
+  Selecciona la semana deseada:
+  &lt;input type="week" name="semana"
+         value="2018-W18" min="2018-W10" max="2018-W20" step="2" /&gt;
+&lt;/form&gt;
+</code></pre>
+<p>En el primer campo <code>&lt;input&gt;</code> seleccionamos el mes con el formato <code>yyyy-mm</code>, donde <code>yyyy</code> es la cifra de 4 dígitos del año y <code>mm</code> el mes con 2 dígitos. En el segundo campo <code>&lt;input&gt;</code> seleccionamos la semana con el formato <code>yyyy-Wss</code>, donde nuevamente <code>yyyy</code> es el año en formato de 4 dígitos, <code>W</code> es siempre esa letra y <code>ss</code> es el número de la semana en formato de 2 dígitos.</p>
+<p>Obsérvese que también se aplica el atributo <code>step="2"</code> lo que hace que sólo se puedan seleccionar <strong>semanas o meses impares</strong>. Vigilar bien la compatibilidad con navegadores de estos campos.</p>
+<hr />
+<h2 id="controles-casillas-o-botones">Controles: Casillas o botones<a class="headerlink" href="#controles-casillas-o-botones" title="Permanent link">&para;</a></h2>
+<p>Si queremos definir opciones que el usuario debe elegir o escoger, en muchos casos lo más apropiado suele ser utilizar <strong>casillas de verificación</strong> o <strong>botones de opción</strong> (<em>botones de radio</em>). La diferencia principal entre estos dos tipos de botones es la siguiente:</p>
+<ul>
+<li>Las <strong>casillas de verificación</strong> se marcan para establecer una opción como <strong>activada</strong> (<em>verdadero</em>).</li>
+<li>Los botones de radio se marcan para elegir <strong>sólo una opción de varias posibles</strong>.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Tipo de información a obtener</th>
+<th align="left">Etiqueta a utilizar</th>
+<th align="left">Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Casilla de verificación (activado o desactivado)</td>
+<td align="left"><code>&lt;input type="checkbox"&gt;</code></td>
+<td align="left"><input type="checkbox"></td>
+</tr>
+<tr>
+<td align="left">Botón radio (casilla de opción única)</td>
+<td align="left"><code>&lt;input type="radio"&gt;</code></td>
+<td align="left"><input type="radio"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="casillas-de-verificacion">Casillas de verificación<a class="headerlink" href="#casillas-de-verificacion" title="Permanent link">&para;</a></h3>
+<p>Las casillas de verificación permiten mostrar al usuario la posibilidad de marcar una opción como activada, verdadera o afirmativa, o dejarla sin marcar, lo que representa una opción desactivada, falsa o negativa.</p>
+<p>!!!
+        Se puede añadir el atributo <strong>checked</strong> para forzar que esa casilla esté activada inicialmente.</p>
+<h3 id="botones-de-radio">Botones de radio<a class="headerlink" href="#botones-de-radio" title="Permanent link">&para;</a></h3>
+<p>Los botones de radio se suelen utilizar cuando el usuario debe elegir <strong>sólo una opción específica</strong> de varias disponibles. Si las opciones son demasiadas, se suele optar por una <a href="/html/formularios/controles-listas-de-seleccion">lista de selección</a>.</p>
+<p>Para tener varios botones radio en un mismo grupo, y que sólo se active uno de ellos, el truco está en colocarle el mismo nombre en el atributo <strong>name</strong> a cada opción. Luego, en el atributo <strong>value</strong> le colocamos el valor que habrá seleccionado el usuario de haber marcado esa opción.</p>
+<p>Un ejemplo de ambos tipos de botones:</p>
+<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
+  &lt;!-- Botones de opción --&gt;
+  &lt;p&gt;
+    Sexo:
+    &lt;input type="radio" name="sexo" value="H" /&gt; Hombre
+    &lt;input type="radio" name="sexo" value="M" /&gt; Mujer
+  &lt;/p&gt;
+
+  &lt;!-- Casillas de verificación (marcada por defecto) --&gt;
+  &lt;input type="checkbox" name="empresa" checked /&gt;
+  ¿Eres autónomo/empresa?
+&lt;/form&gt;
+</code></pre>
+<p>De la misma forma que en las casillas de verificación, si queremos que un botón de radio se encuentre marcado por defecto, le añadimos el atributo <code>checked</code>.</p>
+<p>!!!
+         Si el usuario no marca una casilla de verificación o alguna de las opciones de un botón radio, esos datos del formulario no se envían.</p>
+<hr />
+<h2 id="controles-listas-de-seleccion">Controles: Listas de selección<a class="headerlink" href="#controles-listas-de-seleccion" title="Permanent link">&para;</a></h2>
+<p>Si las casillas de verificación se nos quedan cortas o necesitamos mostrar una lista más extensa de datos, quizás sería conveniente utilizar una <strong>lista de selección</strong>, también llamada frecuentemente <strong>combo</strong> o <strong>lista desplegable</strong>. Estas listas nos permiten mostrar al usuario varias opciones disponibles para que se decanten por una.</p>
+<p>Hay dos tipos de <strong>listas seleccionables</strong>:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Tipo de información a obtener</th>
+<th align="left">Etiqueta a utilizar</th>
+<th align="left">Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Lista (cerrada) de opciones</td>
+<td align="left"><code>&lt;select&gt;</code> y <code>&lt;option&gt;</code></td>
+<td align="left"><select><option>option</option> </select></td>
+</tr>
+<tr>
+<td align="left">Lista (abierta) de opciones</td>
+<td align="left"><code>&lt;datalist&gt;</code></td>
+<td align="left"><select><option>option 1</option> <option>option 2</option></select></td>
+</tr>
+</tbody>
+</table>
+<h3 id="listas-seleccionables">Listas seleccionables<a class="headerlink" href="#listas-seleccionables" title="Permanent link">&para;</a></h3>
+<p>Su forma más básica se compone de una etiqueta contenedora <code>&lt;select&gt;</code> que en su interior incluirá varias etiquetas <code>&lt;option&gt;</code>, una por opción posible a elegir. Si queremos que una opción de la lista esté marcada por defecto, incluiremos el atributo <code>selected</code>:</p>
+<pre><code>&lt;form name="formulario" method="post" action="http://pagina.com/send.php"&gt;
+  &lt;!-- Lista de selección --&gt;
+  Selecciona la opción deseada:
+  &lt;select name="combo"&gt;
+    &lt;!-- Opciones de la lista --&gt;
+    &lt;option value="1"&gt;Opción 1&lt;/option&gt;
+    &lt;option value="2" selected&gt;Opción 2&lt;/option&gt; &lt;!-- Opción por defecto --&gt;
+    &lt;option value="3"&gt;Opción 3&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/form&gt;
+</code></pre>
+<h3 id="listas-seleccionables-multiples">Listas seleccionables múltiples<a class="headerlink" href="#listas-seleccionables-multiples" title="Permanent link">&para;</a></h3>
+<p>A la etiqueta <code>&lt;select&gt;</code> le podemos aplicar el atributo <strong>multiple</strong>, de modo que desaparecerá la posibilidad de desplegar la lista, mostrando directamente las opciones en otro formato que hará posible pulsar la tecla CTRL y marcar varias de las opciones de la lista.</p>
+<p>También podemos utilizar la etiqueta <code>&lt;optgroup&gt;</code>, que es una etiqueta contenedora para agrupar varias etiquetas <code>&lt;option&gt;</code>. De esta forma, podemos crear pequeñas agrupaciones para tener más organizada la lista de opciones. La propia etiqueta <code>&lt;optgroup&gt;</code> no es seleccionable por el usuario, aparecerá en negrita y sólo estará disponible para organizar las opciones:</p>
+<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
+  &lt;!-- Lista de selección múltiple --&gt;
+  &lt;select name="combo" multiple&gt;
+    &lt;!-- Formato alternativo con atributo label --&gt;
+    &lt;optgroup label="Opciones básicas"&gt;
+      &lt;option value="1" label="Opcion 1"&gt; &lt;/option&gt;
+    &lt;/optgroup&gt;
+
+    &lt;optgroup label="Opciones avanzadas"&gt;
+      &lt;option value="2" label="Opcion 2"&gt; &lt;/option&gt;
+      &lt;option value="3" label="Opcion 3"&gt; &lt;/option&gt;
+    &lt;/optgroup&gt;
+  &lt;/select&gt;
+&lt;/form&gt;
+</code></pre>
+<p>Obsérvese que en esta segunda lista hemos utilizado el atributo <strong>label</strong> que es un formato alternativo al ejemplo anterior.</p>
+<h3 id="listas-seleccionables-abiertas">Listas seleccionables abiertas<a class="headerlink" href="#listas-seleccionables-abiertas" title="Permanent link">&para;</a></h3>
+<p>Por último, también podemos crear una <strong>lista abierta</strong>, donde el usuario puede seleccionar opciones sugeridas mediante un <code>&lt;datalist&gt;</code> o indicar la suya propia escribiéndola manualmente. Para ello, utilizaremos una etiqueta <code>&lt;datalist&gt;</code> que funcionará exactamente igual que un <code>&lt;select&gt;</code>, conteniendo las opciones posibles en etiquetas <code>&lt;option&gt;</code>.</p>
+<p>Al hacer esto, y al contrario que las etiquetas <code>&lt;select&gt;</code>, el elemento <code>&lt;datalist&gt;</code> no mostrará visualmente nada. Sin embargo, la diferencia radica en que le daremos un atributo <strong>id</strong> al <code>&lt;datalist&gt;</code> y lo combinaremos con un campo de texto <code>&lt;input&gt;</code> a través del atributo <strong>list</strong>:</p>
+<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
+  &lt;!-- Campo de texto combinado con lista de opciones --&gt;
+  &lt;input type="text" list="items" /&gt;
+  &lt;!-- Lista de opciones --&gt;
+  &lt;datalist id="items"&gt;
+    &lt;option value="1"&gt;Opción 1&lt;/option&gt;
+    &lt;option value="2"&gt;Opción 2&lt;/option&gt;
+    &lt;option value="3"&gt;Opción 3&lt;/option&gt;
+  &lt;/datalist&gt;
+&lt;/form&gt;
+</code></pre>
+<p>De esta forma, tenemos una <strong>lista de selección</strong> donde podemos marcar las opciones del <code>&lt;datalist&gt;</code> pero además se nos ofrece la opción de escribir manualmente nuestra propia opción.</p>
+<div class="admonition nota">
+<p class="admonition-title">Nota</p>
+<p>En listas con muchas opciones, también se tiene la ventaja que al escribir un primer carácter, sólo nos aparecen los ítems que comienzan por ese caracter, lo que lo hace ideal para crear listas de opciones extensas o de forma dinámica con Javascript.</p>
+</div>
+<p>No obstante, cuidado con el soporte de este tipo de lista, que puede no estar disponible para algunos navegadores <a href="https://caniuse.com/datalist">https://caniuse.com/datalist</a></p>
+<hr />
+<h2 id="controles-seleccion-de-color">Controles: Selección de color<a class="headerlink" href="#controles-seleccion-de-color" title="Permanent link">&para;</a></h2>
+<p>En HTML5 se incluye un nuevo campo de entrada de datos para seleccionar un color. Dicho campo facilita un interfaz conocido como <strong>colorpicker</strong>, que permite al usuario seleccionar un color específico, variando sus parámetros, generalmente desde un <a href="https://lenguajecss.com/css/propiedades/colores-css#formato-rgb">esquema de colores RGB</a>.</p>
+<h4 id="interfaz-del-colorpicker">Interfaz del ColorPicker<a class="headerlink" href="#interfaz-del-colorpicker" title="Permanent link">&para;</a></h4>
+<p>La etiqueta que utilizaremos para mostrar esta interfaz será <code>&lt;input&gt;</code> con el atributo <code>type</code> a <code>color</code>. Ten en cuenta que el interfaz puede variar dependiendo del sistema operativo:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Tipo de información a obtener</th>
+<th align="left">Etiqueta a utilizar</th>
+<th align="left">Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Campo de entrada de datos de selección de color</td>
+<td align="left"><code>&lt;input type="color"&gt;</code></td>
+<td align="left"><input type="color"></td>
+</tr>
+</tbody>
+</table>
+<p>El usuario puede elegir un color en su interfaz de selección de colores y este color es guardado en el campo en <a href="http://lenguajecss.com/css/propiedades/colores-css#formato-hexadecimal">formato hexadecimal</a>. También se puede indicar en el atributo <code>value</code> para establecer un color por defecto:</p>
+<pre><code>&lt;form name="formulario" method="post" action="http://pagina.com/send.php"&gt;
+  &lt;!-- Selección de color --&gt;
+  Selecciona el color deseado:
+  &lt;!-- Color verde por defecto HEX(1B, F4, 4A) --&gt;
+  &lt;input type="color" name="color" value="#1BF44A" /&gt;
+&lt;/form&gt;
+</code></pre>
+<p>El soporte de este campo de selección de colores en los diferentes navegadores es el siguiente: <a href="https://caniuse.com/#feat=input-color">https://caniuse.com/#feat=input-color</a></p>
+<hr />
+<h2 id="controles-seleccion-de-archivos">Controles: Selección de archivos<a class="headerlink" href="#controles-seleccion-de-archivos" title="Permanent link">&para;</a></h2>
+<p>HTML nos proporciona un campo de entrada de datos para seleccionar archivos, adjuntarlos y enviarlos junto al resto del formulario. Esta interfaz habitualmente se muestra como un botón «<strong>Examinar...</strong>» o «<strong>Seleccionar archivo</strong>» junto a un texto del archivo seleccionado por el usuario.</p>
+<p>Para colocar este campo en nuestro formulario se indicará la etiqueta <code>&lt;input type="file"&gt;</code>:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Tipo de información a obtener</th>
+<th align="left">Etiqueta a utilizar</th>
+<th align="left">Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Adjuntar archivo</td>
+<td align="left"><code>&lt;input type="file"&gt;</code></td>
+<td align="left"><input type="file"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="atributos">Atributos<a class="headerlink" href="#atributos" title="Permanent link">&para;</a></h4>
+<p>En primer lugar, debemos saber que si queremos adjuntar archivos a nuestro formulario, es necesario indicar en la etiqueta <code>&lt;form&gt;</code> el atributo <code>enctype="multipart/form-data"</code>. Con esto nos aseguramos que las cabeceras del formulario indican que estamos enviando archivos adjuntos.</p>
+<p>También se nos permite añadir el atributo <strong>accept</strong> a la etiqueta <code>&lt;input type="file"&gt;</code> a modo de sugerencia, para indicar los formatos de archivos permitidos al usuario en el campo de selección de archivos.</p>
+<p>Un ejemplo de este campo de selección de archivo:</p>
+<pre><code>&lt;form name="formulario" method="post" action="/send.php" enctype="multipart/form-data"&gt;
+  &lt;!-- ¡No olvides el enctype! --&gt;
+  &lt;!-- Campo de selección de archivo --&gt;
+  &lt;input type="file" name="adjunto" accept=".pdf,.jpg,.png" multiple /&gt;
+&lt;/form&gt;
+</code></pre>
+<div class="admonition nota">
+<p class="admonition-title">Nota<p>Si indicamos el atributo <strong>multiple</strong> en la etiqueta <code>&lt;input&gt;</code>, se le da la opción al usuario de pulsar la tecla CTRL para adjuntar varios archivos a la vez, y no uno solo.</p>
+</p>
+</div>
+<hr />
+<h2 id="organizacion-de-campos">Organización de campos<a class="headerlink" href="#organizacion-de-campos" title="Permanent link">&para;</a></h2>
+<p>En este apartado, vamos a comentar las siguientes etiquetas, que sirven para organizar mejor los elementos de un formulario, reagrupándolos por categorías o temáticas, mostrándolos de forma más ordenada o incluso para que visualmente sea más sencillo encontrar la información del formulario.</p>
+<p>Las etiquetas que veremos son las siguientes:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Tipo de información a obtener</th>
+<th align="left">Etiqueta a utilizar</th>
+<th align="left">Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Agrupación visual o temática de campos de entrada</td>
+<td align="left"><code>&lt;fieldset&gt;</code></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Leyenda para la etiqueta <code>&lt;fieldset&gt;</code></td>
+<td align="left"><code>&lt;legend&gt;</code></td>
+<td align="left"><legend>Leyenda</legend></td>
+</tr>
+<tr>
+<td align="left">Relación de campo y texto</td>
+<td align="left"><code>&lt;label&gt;</code></td>
+<td align="left"><label></td>
+</tr>
+</tbody>
+</table>
+<h3 id="agrupacion-visual">Agrupación visual<a class="headerlink" href="#agrupacion-visual" title="Permanent link">&para;</a></h3>
+<p>La primera etiqueta es <code>&lt;fieldset&gt;</code>, un elemento utilizado como etiqueta contenedora para agrupar visualmente, mediante un trazo simple, todos los campos de un formulario que estén relacionados (<em>misma temática o apartado, por ejemplo</em>). La etiqueta <code>&lt;legend&gt;</code>, suele incluirse en el interior de <code>&lt;fieldset&gt;</code> para mostrar un título en el trazo de esa agrupación.</p>
+<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
+  &lt;!-- Agrupación de campos --&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Datos personales&lt;/legend&gt;
+
+    &lt;!-- Campo de texto --&gt;
+    Nombre de usuario:
+    &lt;input type="text" name="nombre" placeholder="Por ej: John Smith" /&gt;
+
+    &lt;!-- Campo numérico --&gt;
+    Edad:
+    &lt;input type="number" name="edad" min="18" max="100" placeholder="18" /&gt;
+
+    &lt;!-- Botón radio de opción --&gt;
+    Sexo:
+    &lt;!-- Primera opción --&gt;
+    &lt;input type="radio" name="sexo" value="H" /&gt; Hombre
+    &lt;!-- Segunda opción --&gt;
+    &lt;input type="radio" name="sexo" value="M" /&gt; Mujer
+  &lt;/fieldset&gt;
+&lt;/form&gt;
+</code></pre>
+<h3 id="orden-de-campos">Orden de campos<a class="headerlink" href="#orden-de-campos" title="Permanent link">&para;</a></h3>
+<p>Cuando nos encontramos en un campo de un formulario, al pulsar la tecla TAB podemos avanzar al siguiente campo sin necesidad de recurrir al ratón. También podemos conseguir la operación inversa pulsando SHIFT+TAB, es decir, retroceder al campo anterior del formulario.</p>
+<p>Por defecto, el navegador sigue el orden de los campos según el HTML. Sin embargo, si queremos personalizar dicho orden, podemos utilizar el atributo <strong>tabindex</strong>, indicando un número con el orden en cuestión:</p>
+<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
+  Nombre de usuario:
+  &lt;input type="text" name="nombre" placeholder="Por ej: John Smith" tabindex="1" /&gt;
+  Edad:
+  &lt;input type="number" name="edad" min="18" max="100" placeholder="18" tabindex="3" /&gt;
+  Apellidos:
+  &lt;input type="text" name="apellidos" placeholder="Apellidos" tabindex="2" /&gt;
+&lt;/form&gt;
+</code></pre>
+<p>En este caso, si nos colocamos en el primer campo del formulario y pulsamos TAB, saltaremos directamente al tercer campo, ya que tiene indicado <strong>tabindex</strong> a <strong>2</strong>, y con un nuevo TAB saltaremos al segundo campo, ya que es el que tiene <strong>tabindex</strong> a <strong>3</strong>.</p>
+<p>Se recomienda utilizar este atributo sólo cuando esté justificado y las circunstancias lo requieran, ya que cambiar el orden de los campos puede confundir al usuario o facilitar equivocaciones al rellenar el formulario.</p>
+<h3 id="relacion-texto-campo">Relación texto-campo<a class="headerlink" href="#relacion-texto-campo" title="Permanent link">&para;</a></h3>
+<p>Sin embargo, el ejemplo superior podría modificar un aspecto minúsculo que podría mejorar su usabilidad. Por ejemplo, si un usuario quiere pulsar sobre uno de los botones de radio para elegir el sexo y pulsa sobre el texto (<em>Hombre o Mujer</em>), no ocurrirá nada. El usuario debe pulsar exactamente sobre el botón de radio a elegir.</p>
+<p>Sin embargo, si utilizamos la etiqueta contenedora <code>&lt;label&gt;</code>, podemos establecer una relación semántica de un texto con un campo de entrada de datos. Al incluir texto y campo de texto dentro de la etiqueta <code>&lt;label&gt;</code>, tiene el mismo efecto pulsar en el campo de texto que en el propio texto (<em>muy útil también en casillas de verificación</em>).</p>
+<p>Veamos el ejemplo anterior, mejorado con las etiquetas <code>&lt;label&gt;</code>:</p>
+<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Datos personales&lt;/legend&gt;
+    &lt;!-- Relación del texto con el campo --&gt;
+    &lt;label&gt;
+      Nombre de usuario:
+      &lt;input type="text" name="nombre" placeholder="Por ej: John Smith" /&gt;
+    &lt;/label&gt;
+    &lt;!-- Relación del texto con el campo --&gt;
+    &lt;label&gt;
+      Edad:
+      &lt;input type="number" name="edad" min="18" max="100" placeholder="18" /&gt;
+    &lt;/label&gt;
+    Sexo:
+    &lt;!-- Relación del texto con el primer botón --&gt;
+    &lt;label&gt; &lt;input type="radio" name="sexo" value="H" /&gt; Hombre &lt;/label&gt;
+    &lt;!-- Relación del texto con el segundo botón --&gt;
+    &lt;label&gt; &lt;input type="radio" name="sexo" value="M" /&gt; Mujer &lt;/label&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;
+</code></pre>
+<div class="admonition nota">
+<p class="admonition-title">Nota<p>A las etiquetas <code>&lt;label&gt;</code> se le puede indicar opcionalmente un atributo <strong>for</strong> con un nombre específico, y así poder establecer la relación con una etiqueta HTML con <strong>id</strong> con el mismo nombre, sin necesidad de que estén contiguos o adyacentes.</p>
+</p>
+</div>
+<hr />
+<h2 id="botones-de-envio-de-formularios">Botones de envío de formularios<a class="headerlink" href="#botones-de-envio-de-formularios" title="Permanent link">&para;</a></h2>
+<p>Por último, y no por ello menos importante, tenemos los <strong>botones de envío de formulario</strong>. Si un formulario carece de estos botones, el usuario sólo puede enviarlo si pulsa ENTER en el último campo del formulario. No obstante, siempre es aconsejable incluir un botón explícitamente para que el usuario pueda pulsarlo y enviar el formulario sin confusión y de forma clara.</p>
+<p>Tenemos varios tipos de botones que actúan sobre el formulario:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Tipo de botón de control</th>
+<th align="left">Etiqueta a utilizar</th>
+<th align="left">Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Botón de envío de formulario</td>
+<td align="left"><code>&lt;input type="submit"&gt;</code></td>
+<td align="left"><input type="submit"></td>
+</tr>
+<tr>
+<td align="left">Botón de envío con imagen</td>
+<td align="left"><code>&lt;input type="image"&gt;</code></td>
+<td align="left"><input type="image" src="img/enviar-button.png"></td>
+</tr>
+<tr>
+<td align="left">Botón de borrar formulario</td>
+<td align="left"><code>&lt;input type="reset"&gt;</code></td>
+<td align="left"><input type="reset"></td>
+</tr>
+<tr>
+<td align="left">Botón sin funcionalidad</td>
+<td align="left"><code>&lt;input type="button"&gt;</code> o <code>&lt;button&gt;</code></td>
+<td align="left"><button>Boton </button></td>
+</tr>
+</tbody>
+</table>
+<h3 id="boton-normal">Botón normal<a class="headerlink" href="#boton-normal" title="Permanent link">&para;</a></h3>
+<p>El botón <code>&lt;input type="submit"&gt;</code> sirve para enviar el formulario una vez el usuario ha rellenado todos sus campos y pulsa en este botón. El texto por defecto del botón será <strong>Enviar</strong> (<em>o equivalente según el idioma</em>). Podemos modificar el texto del botón mediante el atributo <strong>value</strong>.</p>
+<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
+  &lt;!-- Datos del formulario --&gt;
+  Usuario: &lt;input type="text" name="usuario" /&gt;
+  &lt;!-- Botón de envío de formulario --&gt;
+  &lt;input type="submit" value="Enviar formulario" /&gt;
+&lt;/form&gt;
+</code></pre>
+<h3 id="boton-con-imagen">Botón con imagen<a class="headerlink" href="#boton-con-imagen" title="Permanent link">&para;</a></h3>
+<p>El botón <code>&lt;input type="image"&gt;</code> es un botón que tiene la misma funcionalidad que el botón anterior, pero es un híbrido entre el botón <code>&lt;input type="submit"&gt;</code> y una etiqueta de imagen <code>&lt;img&gt;</code>, puesto que también posee los atributos <strong>src</strong>, <strong>alt</strong>, <strong>width</strong> y <strong>height</strong> para indicar una imagen que actuará de botón:</p>
+<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
+  &lt;!-- Datos del formulario --&gt;
+  Usuario: &lt;input type="text" name="usuario" /&gt;
+  &lt;!-- Botón de envío de formulario con imagen --&gt;
+  &lt;input type="image" src="enviar.png" alt="Enviar" width="80" height="28" /&gt;
+&lt;/form&gt;
+</code></pre>
+<h3 id="boton-de-borrar-reset">Botón de borrar (reset)<a class="headerlink" href="#boton-de-borrar-reset" title="Permanent link">&para;</a></h3>
+<p>El botón <code>&lt;input type="reset"&gt;</code> nos ofrece la posibilidad de disponer de un botón que al pulsarse borre completamente el formulario y reestablece todos sus campos de entrada de datos a sus <strong>valores por defecto</strong> iniciales. Es muy útil si queremos que el usuario disponga de la posibilidad de borrar todos los campos del formulario fácilmente y no tener que hacerlo uno por uno.</p>
+<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
+  &lt;!-- Datos del formulario --&gt;
+  Usuario: &lt;input type="text" name="usuario" /&gt;
+  &lt;!-- Botón de envío de formulario --&gt;
+  &lt;input type="submit" value="Enviar formulario" /&gt;
+  &lt;!-- Botón de reseteo de formulario --&gt;
+  &lt;input type="reset" value="Borrar formulario" /&gt;
+&lt;/form&gt;
+</code></pre>
+<div class="admonition nota">
+<p class="admonition-title">Nota<p>Cuidado al incluir el botón de reseteo al lado del botón de envío de formulario. Quizás sería una buena opción separarlos notablemente para evitar que el usuario lo pulse sin querer.</p>
+</p>
+</div>
+<h3 id="boton-alternativo">Botón alternativo<a class="headerlink" href="#boton-alternativo" title="Permanent link">&para;</a></h3>
+<p>Los botones de envío de formulario habituales funcionan en base a los atributos <strong>action</strong>, <strong>enctype</strong>, <strong>method</strong>, <strong>target</strong> y <strong>novalidate</strong> de la etiqueta <code>&lt;form&gt;</code> que los contiene.</p>
+<p>Sin embargo, es posible crear <strong>botones de envío alternativos</strong> que tengan un comportamiento de envío diferente a los botones por defecto. Para ello, tenemos que crear un botón de envío <code>&lt;input type="submit"&gt;</code> o <code>&lt;input type="image"&gt;</code> e incluir los atributos <strong>formaction</strong>, <strong>formenctype</strong>, <strong>formmethod</strong>, <strong>formtarget</strong> y <strong>formnovalidate</strong> respectivamente, según nos interese, ya que sobreescribirán el comportamiento por defecto del formulario:</p>
+<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
+  &lt;!-- Datos del formulario --&gt;
+  Usuario: &lt;input type="text" name="usuario" /&gt;
+  &lt;!-- Botón por defecto, hace caso a atributos de &lt;form&gt; --&gt;
+  &lt;input type="submit" value="Enviar" /&gt;
+  &lt;!-- Botones con datos de envío alterados --&gt;
+  &lt;input type="submit" value="Enviar al dpto. marketing" formaction="/send-mkt.php" /&gt;
+  &lt;input type="submit" value="Enviar al dpto. informática" formaction="/send-sat.php" /&gt;
+&lt;/form&gt;
+</code></pre>
+<h3 id="boton-personalizado">Botón personalizado<a class="headerlink" href="#boton-personalizado" title="Permanent link">&para;</a></h3>
+<p>Por último, tenemos el botón <code>&lt;input type="button"&gt;</code> o la etiqueta <code>&lt;button&gt;</code>, que en ambos casos añade un botón sin ninguna funcionalidad por defecto. Podemos redefinir la funcionalidad de este botón, pero necesitaríamos Javascript para dotarle de una funcionalidad concreta, por lo que no podríamos hacer mucho sin este lenguaje.</p>
+<p>A continuación un pequeño ejemplo muy básico:</p>
+<p>.sandbox pre { margin: 0; overflow: auto; max-height: var(--height, auto); }</p>
+<pre><code>&lt;button onClick="alert('¡Hola, señor!')"&gt;Saludar&lt;/button&gt;
+</code></pre>
+<hr />
+<h2 id="medidores-y-barras-de-progreso">Medidores y barras de progreso<a class="headerlink" href="#medidores-y-barras-de-progreso" title="Permanent link">&para;</a></h2>
+<p>Existen algunos otros controles que, aunque no nos permiten introducir información, pueden ser muy útiles en formularios para presentar información de una forma más visual u ofrecer datos adicionales al usuario. Eso sí, se trata de etiquetas que sin el uso de Javascript sólo podremos realizar funcionalidades muy básicas:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Tipo de botón de control</th>
+<th align="left">Etiqueta a utilizar</th>
+<th align="left">Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="https://caniuse.com/#feat=progress">Barra de progreso</a></td>
+<td align="left"><code>&lt;progress&gt;</code></td>
+<td align="left"><progress></td>
+</tr>
+<tr>
+<td align="left"><a href="https://caniuse.com/#feat=meter">Medidor</a></td>
+<td align="left"><code>&lt;meter&gt;</code></td>
+<td align="left"><meter></td>
+</tr>
+</tbody>
+</table>
+<h3 id="barra-de-progreso">Barra de progreso<a class="headerlink" href="#barra-de-progreso" title="Permanent link">&para;</a></h3>
+<p>En primer lugar, tenemos una <strong>barra de progreso</strong> que puede ser útil para colocarla cuando necesitamos que el usuario sepa que debe esperar mientras se realizan otras tareas, o incluso para indicar el progreso de algún proceso o incluso del usuario a través de la página.</p>
+<p>La etiqueta <code>&lt;progress&gt;</code> muestra por defecto una barra de progreso «infinita», que se mueve de izquierda a derecha sin parar. Es la funcionalidad que tiene la barra de progreso sin interactividad desde Javascript.</p>
+<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
+  &lt;!-- Barra de progreso --&gt;
+  &lt;progress max="100" value="25"&gt;
+&lt;/form&gt;
+</code></pre>
+<div class="admonition nota">
+<p class="admonition-title">Nota<p>Mediante el atributo <code>max</code> podemos definir el valor que debe tener la barra de progreso para estar completa y mediante el atributo <code>value</code> el valor actual de la barra de progreso.</p>
+</p>
+</div>
+<p>Además, utilizando javascript podríamos ir aumentando el valor de la barra de progreso a medida que realizamos procesos, tareas o incluso acciones del usuario.</p>
+<h3 id="medidores">Medidores<a class="headerlink" href="#medidores" title="Permanent link">&para;</a></h3>
+<p>La etiqueta <code>&lt;meter&gt;</code> nos permite la creación de <strong>medidores</strong> para mostrar el nivel o estado de algún detalle. Este control es muy útil para ciertas tareas donde debemos mostrar información que se puede representar mediante un medidor que traspase ciertos umbrales.</p>
+<p>Un ejemplo clásico es el <strong>medidor de seguridad de una contraseña</strong>, donde puede reflejar de forma gráfica y sencilla si la contraseña tiene un nivel de seguridad bajo, medio o alto, incluso especificando diferentes grados de nivel.</p>
+<p>Para ello, tenemos ciertos atributos disponibles en esta etiqueta <code>&lt;meter&gt;</code>:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Atributo</th>
+<th align="left">Valor</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>min</code></td>
+<td align="left"><em>valor mínimo</em></td>
+<td align="left">Valor mínimo que puede alcanzar el medidor.</td>
+</tr>
+<tr>
+<td align="left"><code>max</code></td>
+<td align="left"><em>valor máximo</em></td>
+<td align="left">Valor máximo que puede alcanzar el medidor.</td>
+</tr>
+<tr>
+<td align="left"><code>value</code></td>
+<td align="left"><em>valor actual</em></td>
+<td align="left">Cantidad actual del medidor.</td>
+</tr>
+<tr>
+<td align="left"><code>low</code></td>
+<td align="left"><em>umbral bajo</em></td>
+<td align="left">Indica el umbral donde se considera bajo-medio.</td>
+</tr>
+<tr>
+<td align="left"><code>high</code></td>
+<td align="left"><em>umbral alto</em></td>
+<td align="left">Indica el umbral donde se considera medio-alto.</td>
+</tr>
+<tr>
+<td align="left"><code>optimum</code></td>
+<td align="left"><em>valor óptimo</em></td>
+<td align="left">Indica el valor óptimo del medidor.</td>
+</tr>
+</tbody>
+</table>
+<p>Un ejemplo de este medidor con la etiqueta <code>&lt;meter&gt;</code>:</p>
+<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
+  &lt;!-- Medidor --&gt;
+  &lt;meter min="0" max="100"
+         low="25" high="75"
+         optimum="100" value="75"&gt;
+&lt;/form&gt;
+</code></pre>
+<p>Además, dependiendo del valor de <strong>value</strong> y la posición del atributo <strong>optimum</strong> respecto al resto, los colores de la barra de medida cambiarán. A continuación tenemos un esquema de colores que nos muestra las combinaciones posibles:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Low &lt; Optimum &lt; High</th>
+<th align="left">Low &lt; High &lt; Optimum</th>
+<th align="left">Optimum &lt; Low &lt; High</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><meter min="0" max="100" low="25" optimum="50" high="75" value="15"></meter>Value \&lt; low</td>
+<td align="left"><meter min="0" max="100" low="25" high="50" optimum="75" value="15"></meter> Value &lt; low</td>
+<td align="left"><meter min="0" max="100" optimum="25" low="50" high="75" value="30"></meter> Value &lt; Low</td>
+</tr>
+<tr>
+<td align="left"><meter min="0" max="100" low="25" optimum="50" high="75" value="60"></meter> Low &lt; Value &lt; High</td>
+<td align="left"><meter min="0" max="100" low="25" high="50" optimum="75" value="40"></meter> Low &lt; Value &lt; high</td>
+<td align="left"><meter min="0" max="100" optimum="25" low="50" high="75" value="60"></meter> Low &lt; Value &lt; High</td>
+</tr>
+<tr>
+<td align="left"><meter min="0" max="100" low="25" optimum="50" high="75" value="85"></meter> Value &gt; high</td>
+<td align="left"><meter min="0" max="100" low="25" high="50" optimum="75" value="80"></meter> Value &gt; High</td>
+<td align="left"><meter min="0" max="100" optimum="25" low="50" high="75" value="95"></meter> Value &gt; high</td>
+</tr>
+</tbody>
+</table>
+<p>Como siempre, hay que prestar atención a la compatibilidad entre navegadores, si se quiere dar soporte a navegadores muy antiguos: <a href="https://caniuse.com/meter">https://caniuse.com/meter</a></p>
+<hr />
+<h2 id="validaciones-html5">Validaciones HTML5<a class="headerlink" href="#validaciones-html5" title="Permanent link">&para;</a></h2>
+<p>Al crear un formulario en HTML, debemos ser conscientes de un detalle ineludible: <strong>los usuarios se equivocan al rellenar un formulario</strong>. Ya sea por equivocación del usuario, ambigüedad del formulario, o error del creador del formulario, el caso es que debemos estar preparados y anticiparnos a estos errores, para intentar que los datos lleguen correctamente a su destino y evitar cualquier tipo de moderación o revisión posterior.</p>
+<div class="admonition nota">
+<p class="admonition-title">Nota<p>Para evitar estos casos, se suele recurrir a un tipo de proceso automático llamado <strong>validación</strong>, en el cuál, establecemos unas pautas para que si el usuario introduce alguna información incorrecta, deba modificarla o en caso contrario no podrá continuar ni enviar el formulario correctamente.</p>
+</p>
+</div>
+<p>Un esquema tradicional de validación de ejemplo podría ser el siguiente, donde tenemos un formulario diseñado en HTML5 y mediante <a href="http://lenguajejs.com/">javascript</a> realizamos una validación para comprobar que los datos son correctos. Una vez superada, el formulario se envía al back-end de la página para ser procesado y enviarlo por email (<em>por ejemplo</em>).</p>
+<p><img alt="Escenario tradicional de validación" src="../img/formulario-frontend-backend-tradicional.png" /></p>
+<h3 id="tipos-de-validacion">Tipos de validación<a class="headerlink" href="#tipos-de-validacion" title="Permanent link">&para;</a></h3>
+<p>Cada vez que creamos un formulario, la <strong>validación</strong> de los datos introducidos estará situada en uno de los siguientes casos (<em>colocados de peor a mejor</em>):</p>
+<ol>
+<li>
+<p>En este primer caso, <strong>el formulario no tiene validación</strong> de ningún tipo. El usuario puede escribir la información y el sistema no comprobará los datos, ni realizará ningún tipo de validación. Es el peor escenario posible, puesto que el usuario podría enviar desde información incorrecta, hasta datos malintencionados que podrían comprometer la seguridad de la página.</p>
+</li>
+<li>
+<p>Otro caso podría ser que <strong>el formulario tiene validación sólo en el front-end</strong> (<em>cliente</em>). De esta forma, los datos son verificados en el navegador del usuario antes de enviarse, pero carecen de validación en el <strong>back-end</strong>, por lo que un usuario malintencionado podría eliminar la validación del front-end y saltársela, enviando datos malintencionados que comprometan la seguridad de la página.</p>
+</li>
+<li>
+<p>El tercer caso posible es uno donde <strong>el formulario tiene validación sólo en el back-end</strong>. De esta forma, garantizamos que un usuario malintencionado no podrá eliminar el proceso de validación, y los datos siempre se comprobarán. Sin embargo, la desventaja de este método es que el usuario puede rellenar un formulario y es necesario que lo envíe (<em>con la tardanza que eso puede acarrear</em>), se procese en el back-end y al devolver un error, el usuario tenga que retroceder al formulario y en algunos casos, incluso tener que volver a rellenar todos los campos de nuevo.</p>
+</li>
+<li>
+<p>Por último, tendríamos el <strong>caso ideal</strong>, donde el formulario <strong>tiene validación en el front-end y en el back-end</strong>, también denominado <strong>doble validación</strong>. En este caso, el formulario es sometido a un proceso de validación en la parte del front-end, y si lo supera, vuelve a pasar otro proceso de validación en el back-end. La desventaja de este método es que conlleva más trabajo de validación, pero es el sistema recomendado, puesto que es más estricto y sobre todo, más seguro.</p>
+</li>
+</ol>
+<p>Tradicionalmente, la validación de un formulario se ha hecho siempre en Javascript, sin embargo, HTML5 introduce unos nuevos atributos para formularios que permiten realizar la validación del formulario directamente en HTML5, sin necesidad de recurrir a Javascript (<em>aunque es posible hacerlo si se desea</em>):</p>
+<p><img alt="Doble validación de datos de un formulario" src="../img/formulario-frontend-backend-html5.png" /></p>
+<p>Recuerda siempre realizar la <strong>validación en el servidor o back-end</strong> (<em>en rojo</em>), ya que puede evitar problemas graves de seguridad.</p>
+<h3 id="atributos-basicos">Atributos básicos<a class="headerlink" href="#atributos-basicos" title="Permanent link">&para;</a></h3>
+<p>En nuestros campos de entrada de datos, se pueden utilizar ciertos <strong>atributos</strong> para realizar validaciones sencillas. Algunos de estos atributos ya lo hemos visto en apartados anteriores, sin embargo, vamos a comentarlos uno por uno:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Atributo</th>
+<th align="left">Valor</th>
+<th align="left">Puede actuar sobre...</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>minlength</code></td>
+<td align="left"><em>número</em></td>
+<td align="left">Campos de texto</td>
+<td align="left">Establece la longitud mínima del texto requerida.</td>
+</tr>
+<tr>
+<td align="left"><code>maxlength</code></td>
+<td align="left"><em>número</em></td>
+<td align="left">Campos de texto</td>
+<td align="left">No permite escribir textos superiores a <em>número</em> carácteres.</td>
+</tr>
+<tr>
+<td align="left"><code>min</code></td>
+<td align="left"><em>número</em></td>
+<td align="left">Campos numéricos</td>
+<td align="left">Establece el número mínimo permitido.</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"><em>fecha</em></td>
+<td align="left">Campos de fecha</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"><em>hora</em></td>
+<td align="left">Campos de hora</td>
+</tr>
+<tr>
+<td align="left"><code>max</code></td>
+<td align="left"><em>número</em></td>
+<td align="left">Campos numéricos</td>
+<td align="left">Establece el número máximo permitido.</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"><em>fecha</em></td>
+<td align="left">Campos de fecha</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"><em>hora</em></td>
+<td align="left">Campos de hora</td>
+</tr>
+<tr>
+<td align="left"><code>step</code></td>
+<td align="left"><em>número</em></td>
+<td align="left">Campos numéricos</td>
+<td align="left">Establece el salto de números permitido. Por defecto, 1.</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"><em>fecha</em></td>
+<td align="left">Campos de fecha</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"><em>hora</em></td>
+<td align="left">Campos de hora</td>
+</tr>
+<tr>
+<td align="left"><code>required</code></td>
+<td align="left"></td>
+<td align="left">Campos en general</td>
+<td align="left">Campo obligatorio. Se debe rellenar para enviar formulario.</td>
+</tr>
+<tr>
+<td align="left"><code>disabled</code></td>
+<td align="left"></td>
+<td align="left">Campos en general</td>
+<td align="left">Campo desactivado. No se puede modificar. No se envía.</td>
+</tr>
+<tr>
+<td align="left"><code>readonly</code></td>
+<td align="left"></td>
+<td align="left">Campos en general</td>
+<td align="left">Campo de sólo lectura. No se puede modificar. Se envía.</td>
+</tr>
+</tbody>
+</table>
+<p>Con estos atributos, podemos crear validaciones básicas en nuestros campos de entrada de datos, obligando al usuario a rellenar un campo obligatorio, forzando a indicar valores entre un rango numérico o permitiendo sólo textos con un tamaño específico, entre otros.</p>
+<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
+    &lt;!-- Nombre de usuario. Obligatorio, entre 5-40 carácteres --&gt;
+    Usuario:
+    &lt;input type="text" name="nombre" placeholder="Por ejemplo, Juan"
+           minlength="5" maxlength="40" required /&gt;
+    &lt;!-- Contraseña. Obligatorio, mínimo 11 carácteres --&gt;
+    Password:
+    &lt;input type="password" name="pass" placeholder="Contraseña"
+           minlength="11" required /&gt;
+&lt;/form&gt;
+</code></pre>
+<p>Además, utilizando las <a href="https://lenguajecss.com/css/selectores/pseudoclases/#pseudoclases-de-validaci%C3%B3n">pseudoclases CSS de validación</a> <code>:valid</code> e <code>:invalid</code> podemos aplicar estilos a los campos <code>&lt;input&gt;</code> y <code>&lt;textarea&gt;</code> teniendo en cuenta su validación. Aplicando el siguiente código CSS se mostrará un fondo verde o rojo, dependiendo de si cumple o no la validación, respectivamente:</p>
+<pre><code>input:valid,
+textarea:valid {
+    background: green;
+}
+
+input:invalid,
+textarea:invalid {
+    background: red;
+}
+</code></pre>
+<p>En el caso particular de un campo <code>&lt;input type="email"&gt;</code> se puede indicar el atributo <strong>multiple</strong> para permitir varios emails y que valide correctamente en el caso de estar realizando una validación HTML5.</p>
+<h3 id="patrones-de-validacion-html5">Patrones de validación HTML5<a class="headerlink" href="#patrones-de-validacion-html5" title="Permanent link">&para;</a></h3>
+<p>No obstante, aunque los atributos de validación básicos son muy interesantes y pueden facilitarnos la tarea de validación, en muchos casos son insuficientes. Para ello tenemos los <strong>patrones de validación HTML5</strong>, mucho más potentes y flexibles, que nos permitirán ser mucho más específicos utilizando expresiones regulares para validar datos.</p>
+<p>Una <strong>expresión regular</strong> es una cadena de texto que representa un posible patrón de coincidencias, que aplicaremos mediante el atributo <strong>pattern</strong> en los campos que queramos validar.</p>
+<p>Para ello hay que conocer algunas características básicas de las expresiones regulares:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Expresión regular</th>
+<th align="left">Carácter especial</th>
+<th align="left">Significado</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>.</code></td>
+<td align="left">Punto</td>
+<td align="left">Comodín</td>
+<td align="left">Cualquier carácter (o texto de tamaño 1)</td>
+</tr>
+<tr>
+<td align="left"><code>A|B</code></td>
+<td align="left"><em>Pipe</em></td>
+<td align="left">Opciones lógicas</td>
+<td align="left">Opciones alternativas (o <code>A</code> o <code>B</code> )</td>
+</tr>
+<tr>
+<td align="left"><code>C(A|B)</code></td>
+<td align="left">Paréntesis</td>
+<td align="left">Agrupaciones</td>
+<td align="left">Agrupaciones alternativas (o <code>CA</code> o <code>CB</code> )</td>
+</tr>
+<tr>
+<td align="left"><code>[0-9]</code></td>
+<td align="left">Corchetes</td>
+<td align="left">Rangos de carácteresUn dígito (del <code>0</code> al <code>9</code> )</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>[A-Z]</code></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">Una letra mayúscula de la <code>A</code> a la <code>Z</code></td>
+</tr>
+<tr>
+<td align="left"><code>[^A-Z]</code></td>
+<td align="left"><code>^</code> en corchetes</td>
+<td align="left">Rango de exclusión</td>
+<td align="left">Una letra que no sea mayúscula de la <code>A</code> a la <code>Z</code></td>
+</tr>
+<tr>
+<td align="left"><code>[0-9]*</code></td>
+<td align="left">Asterisco</td>
+<td align="left">Cierre o clausura</td>
+<td align="left">Un dígito repetido 0 ó más veces (vacío incluido)</td>
+</tr>
+<tr>
+<td align="left"><code>[0-9]+</code></td>
+<td align="left">Signo más</td>
+<td align="left">Cierre positivo</td>
+<td align="left">Un dígito repetido 1 ó más veces</td>
+</tr>
+<tr>
+<td align="left"><code>[0-9]{3}</code></td>
+<td align="left">Llaves</td>
+<td align="left">Coincidencia exacta</td>
+<td align="left">Cifra de 3 dígitos (dígito repetido <code>3</code> veces)</td>
+</tr>
+<tr>
+<td align="left"><code>[0-9]{2,4}</code></td>
+<td align="left"></td>
+<td align="left">Coincidencia (rango)</td>
+<td align="left">Cifra de 2 a 4 dígitos (rep. de <code>2</code> a <code>4</code> veces)</td>
+</tr>
+<tr>
+<td align="left"><code>b?</code></td>
+<td align="left">Interrogación</td>
+<td align="left">Carácter opcional</td>
+<td align="left">El carácter <code>b</code> puede aparecer o puede que no</td>
+</tr>
+<tr>
+<td align="left"><code>\.</code></td>
+<td align="left">Barra invertida</td>
+<td align="left">Escape</td>
+<td align="left">El carácter <code>.</code> literalmente (no como comodín)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="ejemplos-de-patrones-html5">Ejemplos de patrones HTML5<a class="headerlink" href="#ejemplos-de-patrones-html5" title="Permanent link">&para;</a></h4>
+<p>Para clarificar estos conceptos y entenderlos mejor, vamos a mostrar algunos ejemplos de campos con validaciones HTML5 en casos reales, y así afianzar conceptos sobre expresiones regulares y su aplicación en los atributos <strong>pattern</strong>:</p>
+<ul>
+<li>Tipo de campo: <strong>Nombre de usuario</strong></li>
+<li>Campo obligatorio: <strong>required</strong>.</li>
+<li>Entre 5-40 carácteres: <strong>minlength="5" maxlength="40"</strong></li>
+<li>
+<p>Sólo se permiten letras (mayúsculas y minúsculas) y números: <strong>pattern="[A-Za-z0-9]+"</strong></p>
+<p><form name="formulario" method="post" action="/send.php">
+    <!-- Nombre de usuario. Obligatorio, entre 5-40 carácteres
+       Sólo se permiten letras y números -->
+    <input type="text" name="nombre" placeholder="Su nombre de usuario"
+           minlength="5" maxlength="40" required pattern="[A-Za-z0-9]+" />
+</form></p>
+</li>
+</ul>
+<p>Nótese que de no incluir los atributos <strong>minlength</strong> y <strong>maxlength</strong> el usuario no tendría limitación en cuanto al tamaño. Esto también puede incorporarse en la propia expresión regular, y prescindir de dichos atributos:</p>
+<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
+    &lt;!-- Nombre de usuario. Obligatorio, entre 5-40 carácteres
+       Sólo se permiten letras y números --&gt;
+    &lt;input type="text" name="nombre" placeholder="Su nombre de usuario"
+           required pattern="[A-Za-z0-9]{5,40}"
+           title="Letras y números. Tamaño mínimo: 5. Tamaño máximo: 40" /&gt;
+&lt;/form&gt;
+</code></pre>
+<p>Sin embargo, en este caso, no se limitará al usuario a la hora de escribir, como hace <strong>maxlength</strong>, sino que permitirá al usuario escribir la información que desee y en caso de no pasar la validación, mostrará un mensaje de advertencia y no lo dejará continuar hasta que termine. Podemos ampliar el mensaje de advertencia incluyendo el texto en el atributo <strong>title</strong>.</p>
+<p><img alt="Validaciones HTML5" src="../img/validaciones-html5.png" /></p>
+<p>En el siguiente caso, se pide al usuario que indique el modelo de coche que posee, en un posible formulario de servicio técnico. Los modelos posibles son A1, A3, A4 y A15. En lugar de mostrar una <strong>lista de selección</strong>, podemos mostrar un campo de texto y colocar una validación como la siguiente:</p>
+<ul>
+<li>Tipo de campo: <strong>Modelo de coche</strong></li>
+<li>Campo obligatorio: <strong>required</strong>.</li>
+<li>
+<p>Sólo se permiten las opciones: <strong>A1, A3, A4 y A15</strong></p>
+<p><form name="formulario" method="post" action="/send.php">
+    <!-- Modelo de coche. Obligatorio, opciones posibles: A1, A3, A4 y A15
+       Sólo se permiten letras y números -->
+    <input type="text" name="coche" placeholder="Su modelo de coche"
+           required pattern="A|a(1|3|4|15)"
+           title="Modelos posibles: A1, A3, A4 y A15" />
+</form></p>
+</li>
+</ul>
+<p>Nótese que se permite tanto el formato <code>a1</code> como el formato <code>A1</code> .</p>
+<h3 id="expresiones-regulares">Expresiones regulares<a class="headerlink" href="#expresiones-regulares" title="Permanent link">&para;</a></h3>
+<p>A continuación, algunas herramientas útiles para crear o probar <strong>expresiones regulares</strong>:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Herramienta</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="https://regexr.com/">RegExR</a></td>
+<td align="left">Herramienta para construir y testear expresiones regulares.</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.debuggex.com/">Debuggex</a></td>
+<td align="left">Herramienta de creación gráfica de expresiones regulares.</td>
+</tr>
+<tr>
+<td align="left"><a href="https://regex101.com/">RegEx101</a></td>
+<td align="left">Herramienta para construir y testear expresiones regulares.</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.regexbuddy.com/create.html">RegExBuddy</a></td>
+<td align="left">Herramienta profesional para el trabajo con expresiones regulares.</td>
+</tr>
+<tr>
+<td align="left"><a href="https://leaverou.github.io/regexplained/">RegExplained</a></td>
+<td align="left">Herramienta visual para explicar el funcionamiento de una expresión regular.</td>
+</tr>
+<tr>
+<td align="left"><a href="https://regexper.com/">RegExper</a></td>
+<td align="left">Herramienta para generar diagramas visuales de expresiones regulares.</td>
+</tr>
+<tr>
+<td align="left"><a href="https://rubular.com/">Rubular</a></td>
+<td align="left">Editor de expresiones regulares.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>Fuente:</strong> <a href="https://lenguajehtml.com/">Lenguaje de Html</a> por <a href="https://manzdev.github.io/">Manz</a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../04-etiquetas_de_cabecera/" title="Etiquetas de cabecera" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Etiquetas de cabecera
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../06-etiquetas_de_scripting/" title="Etiquetas de scripting" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Etiquetas de scripting
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/saucedoinfo" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/saucedoinfo" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.instagram.com/saucedo.info/" target="_blank" rel="noopener" title="www.instagram.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.instant', 'navigation.expand', 'tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

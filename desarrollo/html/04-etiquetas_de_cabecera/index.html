@@ -1,0 +1,1561 @@
+
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Coleccion de Guias de Desarrollo y diseño.">
+      
+      
+        <link rel="canonical" href="https://saucedoinfo.github.io/guias/desarrollo/html/04-etiquetas_de_cabecera/">
+      
+      
+        <meta name="author" content="Fernando S. Saucedo">
+      
+      <link rel="shortcut icon" href="../../../img/favicon-16x16.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.14">
+    
+    
+      
+        <title>Etiquetas de cabecera - Guias de Desarrollo y diseño</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d3202873.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ff0a5ce4.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#000000">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#etiquetas-de-cabecera" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-header-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Guias de Desarrollo y diseño
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Etiquetas de cabecera
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../01-introduccion_a_HTML5/" class="md-tabs__link md-tabs__link--active">
+          Desarrollo
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" class="md-tabs__link">
+          Herramientas IT
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    Guias de Desarrollo y diseño
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Desarrollo
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Desarrollo" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Desarrollo
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1" checked>
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Html
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Html" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        <span class="md-nav__icon md-icon"></span>
+        Html
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01-introduccion_a_HTML5/" title="Introduccion a HTML" class="md-nav__link">
+      Introduccion a HTML
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02-etiquetas_semanticas/" title="Etiquetas semánticas" class="md-nav__link">
+      Etiquetas semánticas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-etiquetas_multimedia/" title="Etiquetas multimedias" class="md-nav__link">
+      Etiquetas multimedias
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Etiquetas de cabecera
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Etiquetas de cabecera" class="md-nav__link md-nav__link--active">
+      Etiquetas de cabecera
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#etiquetas-html-de-relacion" class="md-nav__link">
+    Etiquetas HTML de relación
+  </a>
+  
+    <nav class="md-nav" aria-label="Etiquetas HTML de relación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cabecera-del-documento" class="md-nav__link">
+    Cabecera del documento
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#titulo-y-codificacion" class="md-nav__link">
+    Título y codificación
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otros-documentos" class="md-nav__link">
+    Otros documentos
+  </a>
+  
+    <nav class="md-nav" aria-label="Otros documentos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#versiones-alternativas" class="md-nav__link">
+    Versiones alternativas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referencias-a-datos" class="md-nav__link">
+    Referencias a datos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#favicon-icono-de-pestanas" class="md-nav__link">
+    Favicon (icono de pestañas)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posicionamiento-google" class="md-nav__link">
+    Posicionamiento (Google)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estilos-css-de-documento" class="md-nav__link">
+    Estilos CSS de documento
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etiquetas-html-de-metadatos" class="md-nav__link">
+    Etiquetas HTML de metadatos
+  </a>
+  
+    <nav class="md-nav" aria-label="Etiquetas HTML de metadatos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tema-de-color-del-navegador" class="md-nav__link">
+    Tema de color del navegador
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadatos-para-google" class="md-nav__link">
+    Metadatos para Google
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadatos-de-cabeceras" class="md-nav__link">
+    Metadatos de cabeceras
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etiquetas-html-de-redes-sociales" class="md-nav__link">
+    Etiquetas HTML de redes sociales
+  </a>
+  
+    <nav class="md-nav" aria-label="Etiquetas HTML de redes sociales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#facebook-open-graph" class="md-nav__link">
+    Facebook (Open Graph
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#twitter-twitter-cards" class="md-nav__link">
+    Twitter (Twitter Cards)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-etiquetas_de_formularios/" title="Etiquetas de formularios" class="md-nav__link">
+      Etiquetas de formularios
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-etiquetas_de_scripting/" title="Etiquetas de scripting" class="md-nav__link">
+      Etiquetas de scripting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Css
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Css" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        <span class="md-nav__icon md-icon"></span>
+        Css
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/01-introduccion_a_CSS/" title="Introducción a CSS" class="md-nav__link">
+      Introducción a CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/02-modelo_de_cajas/" title="Modelo de cajas" class="md-nav__link">
+      Modelo de cajas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/03-colores_y_fondos/" title="Colores y fondos" class="md-nav__link">
+      Colores y fondos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/04-selectores_CSS/" title="Selectores CSS" class="md-nav__link">
+      Selectores CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/05-Fuentes_y_tipografias/" title="Fuentes y tipografías" class="md-nav__link">
+      Fuentes y tipografías
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/06-representacion_de_datos/" title="Representación de datos" class="md-nav__link">
+      Representación de datos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/07_maquetacion_y_colocacion/" title="Maquetación y colocación" class="md-nav__link">
+      Maquetación y colocación
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/08-interacciones/" title="Interacciones" class="md-nav__link">
+      Interacciones
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/09-efectos/" title="Efectos" class="md-nav__link">
+      Efectos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/10-responsive_Web_Design/" title="Responsive Web Design" class="md-nav__link">
+      Responsive Web Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/11-animaciones_CSS/" title="Animaciones CSS" class="md-nav__link">
+      Animaciones CSS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      JavaScript
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="JavaScript" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon"></span>
+        JavaScript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/01-introducci%C3%B3n_a_javascript/" title="Introducción a Javascript" class="md-nav__link">
+      Introducción a Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/02-fundamentos_de_javascript/" title="Fundamentos de Javascript" class="md-nav__link">
+      Fundamentos de Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/03-caracteristicas/" title="Características" class="md-nav__link">
+      Características
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/04-DOM/" title="DOM" class="md-nav__link">
+      DOM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/05-asincronia/" title="Asincronía" class="md-nav__link">
+      Asincronía
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/06-peticiones_HTTP/" title="Peticiones HTTP" class="md-nav__link">
+      Peticiones HTTP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Herramientas IT
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Herramientas IT" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Herramientas IT
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Terminal
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Terminal" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon"></span>
+        Terminal
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" title="Introducción a la terminal" class="md-nav__link">
+      Introducción a la terminal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/02-operaciones_con_ficheros/" title="Operaciones con ficheros" class="md-nav__link">
+      Operaciones con ficheros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/03-administraci%C3%B3n_del_sistema/" title="Administración del sistema" class="md-nav__link">
+      Administración del sistema
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/markdown/" title="Markdown" class="md-nav__link">
+      Markdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/pip/" title="Pip" class="md-nav__link">
+      Pip
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/mkdocs/" title="Mkdocs" class="md-nav__link">
+      Mkdocs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../about/" title="Acerca de" class="md-nav__link">
+      Acerca de
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#etiquetas-html-de-relacion" class="md-nav__link">
+    Etiquetas HTML de relación
+  </a>
+  
+    <nav class="md-nav" aria-label="Etiquetas HTML de relación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cabecera-del-documento" class="md-nav__link">
+    Cabecera del documento
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#titulo-y-codificacion" class="md-nav__link">
+    Título y codificación
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otros-documentos" class="md-nav__link">
+    Otros documentos
+  </a>
+  
+    <nav class="md-nav" aria-label="Otros documentos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#versiones-alternativas" class="md-nav__link">
+    Versiones alternativas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referencias-a-datos" class="md-nav__link">
+    Referencias a datos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#favicon-icono-de-pestanas" class="md-nav__link">
+    Favicon (icono de pestañas)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posicionamiento-google" class="md-nav__link">
+    Posicionamiento (Google)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estilos-css-de-documento" class="md-nav__link">
+    Estilos CSS de documento
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etiquetas-html-de-metadatos" class="md-nav__link">
+    Etiquetas HTML de metadatos
+  </a>
+  
+    <nav class="md-nav" aria-label="Etiquetas HTML de metadatos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tema-de-color-del-navegador" class="md-nav__link">
+    Tema de color del navegador
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadatos-para-google" class="md-nav__link">
+    Metadatos para Google
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadatos-de-cabeceras" class="md-nav__link">
+    Metadatos de cabeceras
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etiquetas-html-de-redes-sociales" class="md-nav__link">
+    Etiquetas HTML de redes sociales
+  </a>
+  
+    <nav class="md-nav" aria-label="Etiquetas HTML de redes sociales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#facebook-open-graph" class="md-nav__link">
+    Facebook (Open Graph
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#twitter-twitter-cards" class="md-nav__link">
+    Twitter (Twitter Cards)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/saucedoinfo/guias/edit/master/docs/desarrollo/html/04-etiquetas_de_cabecera.md" title="Editar esta página" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="etiquetas-de-cabecera">Etiquetas de cabecera<a class="headerlink" href="#etiquetas-de-cabecera" title="Permanent link">&para;</a></h1>
+<h2 id="etiquetas-html-de-relacion">Etiquetas HTML de relación<a class="headerlink" href="#etiquetas-html-de-relacion" title="Permanent link">&para;</a></h2>
+<p>Habíamos mencionado que la <a href="/html/introduccion/estructura-documento-html">estructura de un documento HTML</a> debía contener siempre dos etiquetas HTML principales: la cabecera de la página o <code>&lt;head&gt;</code> y el cuerpo de la página o <code>&lt;body&gt;</code> . El primero de ellos, del que hablaremos en este apartado, se encarga de contener <strong>etiquetas de metadatos</strong> (<em>información sobre el documento</em>) así como establecer <strong>relaciones con otros documentos</strong>. El segundo de ellos, se encarga de la parte visual que verá el usuario en el navegador.</p>
+<h3 id="cabecera-del-documento">Cabecera del documento<a class="headerlink" href="#cabecera-del-documento" title="Permanent link">&para;</a></h3>
+<p>Existen varias etiquetas que se suelen utilizar en esta sección de cabecera del documento:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Etiqueta</th>
+<th align="left">Atributos</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>&lt;title&gt;</code></td>
+<td align="left"></td>
+<td align="left">Título de la página (pestaña o título del navegador o en buscadores).</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;base&gt;</code></td>
+<td align="left"><code>href</code>, <code>target</code></td>
+<td align="left">URL base del documento (<em>usado para gestionar rutas relativas</em>).</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;link&gt;</code></td>
+<td align="left"><code>href</code>, <code>hreflang</code>, <code>rel</code>, <code>media</code>, <code>type</code></td>
+<td align="left">Establece una relación del documento actual con otro externo.</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;meta&gt;</code></td>
+<td align="left"><code>name</code>, <code>content</code>, <code>http-equiv</code>, <code>charset</code></td>
+<td align="left">Establece un metadato específico en el documento actual.</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;style&gt;</code></td>
+<td align="left"><code>media</code>, <code>type</code></td>
+<td align="left">Crea estilos CSS que afectarán únicamente al documento actual.</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;script&gt;</code></td>
+<td align="left"><code>src</code>, <code>type</code>, <code>charset</code>, <code>async</code>, <code>defer</code></td>
+<td align="left">Indica un script a cargar o ejecutar en la página actual.</td>
+</tr>
+</tbody>
+</table>
+<p>Existe dos etiquetas que tradicionalmente solían incluirse en la cabecera de un documento HTML. Sin embargo, actualmente también pueden utilizarse en el cuerpo de la página. Hablamos de las etiquetas <code>&lt;style&gt;</code> y <code>&lt;script&gt;</code>.</p>
+<ul>
+<li>La etiqueta <code>&lt;style&gt;</code> sirve para <a href="https://lenguajecss.com/css/introduccion/como-usar-css/#incluir-css-en-el-html-style">incluir estilos CSS en la propia página HTML</a>.</li>
+<li>La etiqueta <code>&lt;script&gt;</code> sirve para incluir código Javascript en la propia página HTML (<em>o de forma externa</em>), pero tiene una explicación mucho más extensa y la retomaremos más adelante.</li>
+</ul>
+<h3 id="titulo-y-codificacion">Título y codificación<a class="headerlink" href="#titulo-y-codificacion" title="Permanent link">&para;</a></h3>
+<p>En el interior de la etiqueta <code>&lt;head&gt;</code> es aconsejable, como mínimo, indicar siempre las siguientes dos etiquetas:</p>
+<pre><code>&lt;head&gt;
+  &lt;title&gt;Título del documento&lt;/title&gt;
+  &lt;meta charset="utf-8" /&gt;
+&lt;/head&gt;
+</code></pre>
+<p>En este ejemplo, la etiqueta <code>&lt;meta&gt;</code> indica que el navegador utilice la <strong>codificación UTF-8</strong> para mostrar el texto. Es muy importante utilizar siempre de forma coherente una misma codificación en todos nuestros documentos, de esta forma evitaremos problemas con vocales acentuadas, o carácteres como <code>ñ</code> , <code>¿</code> , <code>¡</code> u otros.</p>
+<p>Para evitar este tipo de problemas, se recomienda siempre realizar los siguientes pasos:</p>
+<ol>
+<li>Utilizar la etiqueta <code>&lt;meta charset="utf-8"&gt;</code> en la cabecera del documento.</li>
+<li>Guarda el archivo HTML con codificación <strong>UTF-8</strong> en las opciones del editor que utilicemos.</li>
+<li>Si aún tenemos problemas de codificación, revisar la configuración del servidor web (<em>server-side</em>).</li>
+</ol>
+<p>De esta forma reducimos la probabilidad de tener problemas de este tipo.</p>
+<h3 id="otros-documentos">Otros documentos<a class="headerlink" href="#otros-documentos" title="Permanent link">&para;</a></h3>
+<p>Como habíamos comentado, la etiqueta <code>&lt;link&gt;</code> permite establecer relaciones con otros documentos. De esta forma, el navegador o cualquier sistema capaz de leer código web puede saber que un documento HTML está relacionado con otro documento (<em>independientemente del formato que sea</em>) y así relacionarse entre ellos.</p>
+<p>Veamos algunos ejemplos de relaciones que podemos establecer.</p>
+<h4 id="versiones-alternativas">Versiones alternativas<a class="headerlink" href="#versiones-alternativas" title="Permanent link">&para;</a></h4>
+<p>Con el valor <code>alternate</code> en el atributo <code>rel</code> de la etiqueta <code>&lt;link&gt;</code> podemos indicar que el documento actual tiene versiones alternativas en otros formatos o idiomas. El siguiente ejemplo indica que el documento HTML que estamos leyendo tiene una versión en PDF, y además, una versión HTML en inglés:</p>
+<pre><code>&lt;head&gt;
+  &lt;link rel="alternate" href="document.pdf" type="application/pdf" /&gt;
+  &lt;link rel="alternate" href="document-en.html" hreflang="en" /&gt;
+&lt;/head&gt;
+</code></pre>
+<h4 id="referencias-a-datos">Referencias a datos<a class="headerlink" href="#referencias-a-datos" title="Permanent link">&para;</a></h4>
+<p>El atributo <code>rel</code> también nos permite indicar el tipo de relación que tiene el documento referenciado. Por ejemplo, a continuación indicamos una referencia al autor del documento, a la zona de ayuda, la zona de búsqueda y la licencia que cubre el contenido de la página:</p>
+<pre><code>&lt;head&gt;
+  &lt;link rel="author" href="http://twitter.com/Manz" /&gt;
+  &lt;link rel="help" href="http://lenguajehtml.com/ayuda/" /&gt;
+  &lt;link rel="search" href="http://lenguajehtml.com/busqueda/" /&gt;
+  &lt;link rel="license" href="http://lenguajehtml.com/licencia/" /&gt;
+&lt;/head&gt;
+</code></pre>
+<h4 id="favicon-icono-de-pestanas">Favicon (icono de pestañas)<a class="headerlink" href="#favicon-icono-de-pestanas" title="Permanent link">&para;</a></h4>
+<p>Cuando tenemos varias pestañas en nuestro navegador, para una búsqueda más fácil e intuitiva entre pestañas, el navegador suele colocarnos unos iconos a la izquierda del título de las pestañas. Estos iconos son conocidos como <code>favicons</code> (<em>iconos de favoritos</em>) ya que fue un invento de <strong>Internet Explorer</strong> para colocar el icono cuando el usuario añadía una página a favoritos:</p>
+<pre><code>&lt;head&gt;
+  &lt;link rel="shortcut icon" href="/favicon.ico" /&gt; &lt;!-- HTML4 --&gt;
+  &lt;link rel="icon" sizes="64x64" href="/favicon.png" /&gt; &lt;!-- HTML5 --&gt;
+  &lt;link rel="apple-touch-icon" sizes="180x180"
+        href="/apple-touch-icon-180x180.png" /&gt; &lt;!-- iPhone/iPad --&gt;
+  &lt;meta name="msapplication-TileImage"
+        content="/mstile-144x144.png" /&gt; &lt;!-- Windows Phone --&gt;
+&lt;/head&gt;
+</code></pre>
+<p>Desgraciadamente, esta característica no está definida en la especificación, por lo que cada navegador (<em>¡y cada sistema operativo!</em>) la implementa como quiere. Hay navegadores que sólo soportan favicon en formato PNG, otros que solo soportan resoluciones específicas, etc.</p>
+<p>!!!
+        Para generar los favicons de una forma más cómoda, aconsejo utilizar la herramienta <a href="https://realfavicongenerator.net/">Real Favicon Generator</a>, a la cuál le pasamos un logo a alta resolución y nos generará un <code>.zip</code> con el código y diferentes versiones y resoluciones de los iconos.</p>
+<h4 id="posicionamiento-google">Posicionamiento (Google)<a class="headerlink" href="#posicionamiento-google" title="Permanent link">&para;</a></h4>
+<p>La etiqueta <code>&lt;link&gt;</code> también nos permite indicar algunos datos interesantes de cara al buscador para evitar ser marcado como <strong>contenido duplicado</strong> o indicarle al buscador exactamente las URLs que debe tener en cuenta. Para ello, podemos utilizar los siguientes atributos:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Atributo rel</th>
+<th align="left">Atributo href</th>
+<th align="left">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>canonical</code><em>Dirección URL</em></td>
+<td align="left">URL exacta que Google debería asociar al documento actual en el buscador.</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>prev</code></td>
+<td align="left"><em>Dirección URL</em></td>
+<td align="left">Si el documento actual tiene varias partes, indica la URL de la página anterior.</td>
+</tr>
+<tr>
+<td align="left"><code>next</code></td>
+<td align="left"><em>Dirección URL</em></td>
+<td align="left">Si el documento actual tiene varias partes, indica la URL de la página siguiente.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="estilos-css-de-documento">Estilos CSS de documento<a class="headerlink" href="#estilos-css-de-documento" title="Permanent link">&para;</a></h4>
+<p>Por último, otra de las funciones más conocidas y utilizadas de la etiqueta <code>&lt;link&gt;</code> es la de establecer una relación con un <a href="http://lenguajecss.com/">documento CSS</a> para aplicar estilos a la página HTML actual (<em>y a todas las que establezcan una relación a ella</em>).</p>
+<p>Para ello, no hay más que utilizar el valor <code>stylesheet</code> en el atributo <code>rel</code> de la siguiente forma:</p>
+<pre><code>&lt;head&gt;
+  &lt;link rel="stylesheet" href="index.css" type="text/css" /&gt;
+&lt;/head&gt;
+</code></pre>
+<p>Con esto, el documento HTML estará relacionado con el documento CSS <code>index.css</code> , y aplicará todos los estilos CSS que se encuentren en él. El atributo <code>type</code> es opcional y no se suele indicar, puesto que el tipo por defecto de las hojas de estilos ya es <code>text/css</code>.</p>
+<hr />
+<h2 id="etiquetas-html-de-metadatos">Etiquetas HTML de metadatos<a class="headerlink" href="#etiquetas-html-de-metadatos" title="Permanent link">&para;</a></h2>
+<p>Quizás, la etiqueta con mayor número de posibilidades en la cabecera de un documento HTML es la etiqueta <code>&lt;meta&gt;</code>. En ella, y a través de los atributos <strong>name</strong> y <strong>content</strong> podemos indicar una gran cantidad de metadatos al documento. Veamos los más conocidos:</p>
+<p>Atributo name | Atributo content |Descripción
+<code>description</code>|<em>texto</em>|Indica la descripción de la página que aparece en buscadores.
+<code>keywords</code>|<em>palabras clave</em>|Lista de palabras clave separadas por comas. Google no la tiene en cuenta.
+<code>author</code>|<em>nombre</em>|Indica el nombre del autor de la página.
+<code>language</code>|<em>idioma</em>|<a href="https://es.wikipedia.org/wiki/ISO_639-1">Código ISO 639-1</a> del idioma del documento HTML.
+<code>generator</code>|<em>software</em>|Indica el software utilizado para crear la página web.
+<code>theme-color</code>|<em>color</em>|<a href="https://lenguajecss.com/css/colores-y-fondos/colores-css/">Color en formato hexadecimal</a> de la barra de navegación del navegador.
+<code>viewport</code>|<em>parámetros</em>|Comportamiento de la región visible del navegador. Ver <a href="https://lenguajecss.com/css/responsive-web-design/que-es/">Responsive</a>.</p>
+<h4 id="tema-de-color-del-navegador">Tema de color del navegador<a class="headerlink" href="#tema-de-color-del-navegador" title="Permanent link">&para;</a></h4>
+<p>Un cambio muy reciente, incluído por parte de Google en <strong>Google Chrome</strong> y dispositivos Android, es el atributo <strong>theme-color</strong> que colorea la barra de direcciones del navegador:</p>
+<pre><code>&lt;head&gt;
+  &lt;meta name="theme-color" content="#1e7bbf" /&gt;
+&lt;/head&gt;
+</code></pre>
+<p>Con esto conseguiremos que, un dispositivo móvil con Android y Google Chrome, muestre la barra de navegación de la siguiente forma:</p>
+<p><img alt="Meta theme" src="../img/meta-theme.png" /></p>
+<h4 id="metadatos-para-google">Metadatos para Google<a class="headerlink" href="#metadatos-para-google" title="Permanent link">&para;</a></h4>
+<p>Al margen de etiquetas <code>&lt;meta&gt;</code> como <strong>description</strong> o <code>&lt;title&gt;</code>, que las entiende y procesa perfectamente para crear los resultados de búsqueda, Google es capaz de leer otros metadatos que le indicarán como realizar ciertas acciones:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Atributo name</th>
+<th align="left">Atributo content</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>google</code></td>
+<td align="left"><code>nositelinkssearchbox</code></td>
+<td align="left">Indica a Google que no muestre el minibuscador en los <a href="https://support.google.com/webmasters/answer/47334?hl=es">sitelinks</a>.</td>
+</tr>
+<tr>
+<td align="left"><code>google</code></td>
+<td align="left"><code>notranslate</code></td>
+<td align="left">Indica a Google que no debe traducir la página.</td>
+</tr>
+<tr>
+<td align="left"><code>robots</code></td>
+<td align="left"><em>parámetros</em></td>
+<td align="left">Indica al robot de un buscador si debe indexar o no la página.</td>
+</tr>
+</tbody>
+</table>
+<p>Un pequeño ejemplo de esta etiqueta con los citados atributos:</p>
+<pre><code>&lt;head&gt;
+  &lt;meta name="google" content="nositelinkssearchbox" /&gt;
+  &lt;meta name="google" content="notranslate" /&gt;
+  &lt;meta name="robots" content="index, nofollow" /&gt;
+&lt;/head&gt;
+</code></pre>
+<p>Por su parte, la etiqueta <code>&lt;meta name="robots"&gt;</code> puede tener varios parámetros (<em>separados por comas</em>) para indicarle a Google diferentes detalles:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Parámetros</th>
+<th align="left">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>index</code></td>
+<td align="left">Sugiere a Google que se quiere indexar el contenido de la página en el buscador.</td>
+</tr>
+<tr>
+<td align="left"><code>noindex</code></td>
+<td align="left">Indica a Google que no debe indexar el contenido de la página en el buscador.</td>
+</tr>
+<tr>
+<td align="left"><code>follow</code></td>
+<td align="left">Sugiere a Google que siga los enlaces que encuentre en la página.</td>
+</tr>
+<tr>
+<td align="left"><code>nofollow</code></td>
+<td align="left">Indica a Google que no debe seguir los enlaces que encuentre en la página.</td>
+</tr>
+<tr>
+<td align="left"><code>nosnippet</code></td>
+<td align="left">Indica a Google que no muestre fragmentos (descripción, etc...).</td>
+</tr>
+<tr>
+<td align="left"><code>noodp</code></td>
+<td align="left">Indica a Google que no use la descripción alternativa de <a href="https://www.dmoz.org/">DMOZ</a>.</td>
+</tr>
+<tr>
+<td align="left"><code>noarchive</code></td>
+<td align="left">Indica a Google que no almacene una versión en caché de la página.</td>
+</tr>
+<tr>
+<td align="left"><code>unavailable_after</code> <em>fecha</em></td>
+<td align="left">Establece una fecha de caducidad para que no se rastree más la página.</td>
+</tr>
+<tr>
+<td align="left"><code>noimageindex</code></td>
+<td align="left">Indica a Google que no indexe la página en resultados de Google Imágenes.</td>
+</tr>
+<tr>
+<td align="left"><code>none</code></td>
+<td align="left">Equivalente a indicar los parámetros <strong>noindex, nofollow</strong>.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="metadatos-de-cabeceras">Metadatos de cabeceras<a class="headerlink" href="#metadatos-de-cabeceras" title="Permanent link">&para;</a></h4>
+<p>Existe una serie de metadatos especiales que indican a los robots del buscador o al navegador, que deben modificar las cabeceras HTTP para realizar acciones que suelen hacerse desde el lado del servidor. Para ello, en lugar de utilizar el atributo <strong>name</strong>, utilizamos el atributo <strong>http-equiv</strong>. Sin embargo, estas etiquetas pueden ser ignoradas por algunos navegadores o robots de búsqueda y se utilizan por motivos históricos.</p>
+<p>Algunos ejemplos de estos atributos son los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Atributo http-equiv</th>
+<th align="left">Atributo content</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>refresh</code></td>
+<td align="left"><em>segundos</em><code>;url=</code><em>URL</em></td>
+<td align="left">Redirige a la URL después del número de segundos indicado.</td>
+</tr>
+<tr>
+<td align="left"><code>expires</code></td>
+<td align="left"><em>fecha</em></td>
+<td align="left">Fecha a partir de la cuál se considera página expirada.</td>
+</tr>
+<tr>
+<td align="left"><code>pragma</code></td>
+<td align="left"><code>no-cache</code></td>
+<td align="left">Indica al navegador que no guarde en caché la página.</td>
+</tr>
+<tr>
+<td align="left"><code>cache-control</code></td>
+<td align="left"><code>public</code> | <code>private</code></td>
+<td align="left"><code>no-cache</code></td>
+</tr>
+</tbody>
+</table>
+<p>Indica a Internet Explorer si guardar o no en caché la página.</p>
+<p>Y finalmente, un ejemplo aplicando cada una de estas etiquetas:</p>
+<pre><code>&lt;head&gt;
+  &lt;meta http-equiv="refresh" content="300;url=http://www.emezeta.com/" /&gt;
+  &lt;meta http-equiv="expires" content="Fri, 29 Apr 2016 12:56:00 GMT" /&gt;
+  &lt;meta http-equiv="pragma" content="no-cache" /&gt;
+  &lt;meta http-equiv="cache-control" content="no-cache" /&gt;
+&lt;/head&gt;
+</code></pre>
+<hr />
+<h2 id="etiquetas-html-de-redes-sociales">Etiquetas HTML de redes sociales<a class="headerlink" href="#etiquetas-html-de-redes-sociales" title="Permanent link">&para;</a></h2>
+<p>Al igual que vimos como establecer un título y descripción para un documento HTML, es posible definir una serie de <strong>etiquetas de metadatos</strong> orientadas a <strong>redes sociales</strong> como Facebook o Twitter. De esta forma, al margen de los datos del documento HTML, podemos indicar títulos o descripciones diferentes, orientadas al público de cada red social.</p>
+<h3 id="facebook-open-graph">Facebook (Open Graph<a class="headerlink" href="#facebook-open-graph" title="Permanent link">&para;</a></h3>
+<p>Facebook utiliza <a href="http://ogp.me/">Open Graph</a>, un protocolo que permite dotar de metadatos orientados a redes sociales. Al compartir un enlace de una página en Facebook, de forma automática, <strong>Facebook</strong> analiza el código HTML en busca de metadatos.</p>
+<p>Si no los encuentra, se crea sus propios metadatos en base a criterios internos (<em>que podrían ser incorrectos</em>). Por ejemplo, Facebook podría analizar la página y, como no existen metadatos, poner como imagen de presentación del enlace, una imagen de un usuario que comenta, y no la imagen correspondiente al propio artículo. Sin embargo, si tenemos los metadatos sociales de <strong>Open Graph</strong> especificados, podría aparecer algo parecido a esto:</p>
+<p><img alt="Metadatos sociales: Open Graph (Facebook)" src="../img/metadatos-sociales-open-graph-facebook.jpg" /></p>
+<p>Con <strong>Open Graph</strong> podemos personalizar los datos que queremos que se ofrezcan cuando un usuario comparta el enlace en Facebook o lo envíe por un mensaje privado. Un ejemplo básico para páginas genéricas (<em>con título, imagen, descripción y tipo de página</em>) podría ser el siguiente:</p>
+<pre><code>&lt;head&gt;
+  &lt;meta property="og:type" content="article" /&gt;
+  &lt;meta property="og:title" content="Título del post" /&gt;
+  &lt;meta property="og:image" content="http://pagina.com/img/imagen32.jpg" /&gt;
+  &lt;meta property="og:description" content="Descripción de la página" /&gt;
+&lt;/head&gt;
+</code></pre>
+<p>Algunos enlaces interesantes sobre <strong>Open Graph</strong>:</p>
+<ul>
+<li><a href="https://developers.facebook.com/tools/debug/og/object/">Open Graph Debugger</a>: Herramienta de validación de Open Graph que permite comprobar si el código es correcto y no hay ningún error en la utilización del protocolo en nuestro documento HTML.</li>
+</ul>
+<h3 id="twitter-twitter-cards">Twitter (Twitter Cards)<a class="headerlink" href="#twitter-twitter-cards" title="Permanent link">&para;</a></h3>
+<p>Por su parte, Twitter utiliza <a href="https://dev.twitter.com/cards/overview">Twitter Cards</a>, un sistema que permite integrar metadatos para su uso en la red social de Twitter, y enriquecer la información de tweets donde se mencionan o enlazan páginas de nuestro sitio web.</p>
+<p>Datos como el formato y tipo de la información mostrada, el nombre del autor de la página del enlace, el título, descripción e imagen de presentación son perfectamente personalizables desde <strong>Twitter Cards</strong>, que mostraría una apariencia similar a la siguiente:</p>
+<p><img alt="Metadatos sociales: Twitter Cards (Twitter)" src="../img/metadatos-sociales-twittercards.jpg" /></p>
+<p>Para utilizar <strong>Twitter Cards</strong> se requiere dar de alta previamente en <a href="https://dev.twitter.com/">Twitter Developers</a> así como pasar un pequeño proceso de moderación para saber si tu página cumple los requisitos para utilizar este tipo de metadatos en la red de Twitter. Respecto al código a utilizar, es muy sencillo:</p>
+<pre><code>&lt;head&gt;
+  &lt;meta property="twitter:card" content="summary_large_image" /&gt;
+  &lt;meta property="twitter:creator" content="@Manz" /&gt;
+  &lt;meta property="twitter:title" content="Título" /&gt;
+  &lt;meta property="twitter:description" content="Descripción" /&gt;
+  &lt;meta property="twitter:image:src" content="URL_img.jpg" /&gt;
+&lt;/head&gt;
+</code></pre>
+<p>Algunos enlaces interesantes sobre <strong>Twitter Cards</strong>:</p>
+<ul>
+<li><a href="https://cards-dev.twitter.com/validator">Twitter Cards Validator</a>: Herramienta de validación de Twitter Cards que permite realizar una comprobación del código de los metadatos de tu página para saber si existen errores.</li>
+</ul>
+<hr />
+<p><strong>Fuente:</strong> <a href="https://lenguajehtml.com/">Lenguaje de Html</a> por <a href="https://manzdev.github.io/">Manz</a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../03-etiquetas_multimedia/" title="Etiquetas multimedias" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Etiquetas multimedias
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../05-etiquetas_de_formularios/" title="Etiquetas de formularios" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Etiquetas de formularios
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/saucedoinfo" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/saucedoinfo" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.instagram.com/saucedo.info/" target="_blank" rel="noopener" title="www.instagram.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.instant', 'navigation.expand', 'tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

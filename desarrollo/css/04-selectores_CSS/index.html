@@ -1,0 +1,2613 @@
+
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Coleccion de Guias de Desarrollo y diseño.">
+      
+      
+        <link rel="canonical" href="https://saucedoinfo.github.io/guias/desarrollo/css/04-selectores_CSS/">
+      
+      
+        <meta name="author" content="Fernando S. Saucedo">
+      
+      <link rel="shortcut icon" href="../../../img/favicon-16x16.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.14">
+    
+    
+      
+        <title>Selectores CSS - Guias de Desarrollo y diseño</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d3202873.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ff0a5ce4.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#000000">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#selectores-css" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-header-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Guias de Desarrollo y diseño
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Selectores CSS
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../html/01-introduccion_a_HTML5/" class="md-tabs__link">
+          Desarrollo
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" class="md-tabs__link">
+          Herramientas IT
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    Guias de Desarrollo y diseño
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Desarrollo
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Desarrollo" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Desarrollo
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Html
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Html" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        <span class="md-nav__icon md-icon"></span>
+        Html
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/01-introduccion_a_HTML5/" title="Introduccion a HTML" class="md-nav__link">
+      Introduccion a HTML
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/02-etiquetas_semanticas/" title="Etiquetas semánticas" class="md-nav__link">
+      Etiquetas semánticas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/03-etiquetas_multimedia/" title="Etiquetas multimedias" class="md-nav__link">
+      Etiquetas multimedias
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/04-etiquetas_de_cabecera/" title="Etiquetas de cabecera" class="md-nav__link">
+      Etiquetas de cabecera
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/05-etiquetas_de_formularios/" title="Etiquetas de formularios" class="md-nav__link">
+      Etiquetas de formularios
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/06-etiquetas_de_scripting/" title="Etiquetas de scripting" class="md-nav__link">
+      Etiquetas de scripting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" checked>
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Css
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Css" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        <span class="md-nav__icon md-icon"></span>
+        Css
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01-introduccion_a_CSS/" title="Introducción a CSS" class="md-nav__link">
+      Introducción a CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02-modelo_de_cajas/" title="Modelo de cajas" class="md-nav__link">
+      Modelo de cajas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-colores_y_fondos/" title="Colores y fondos" class="md-nav__link">
+      Colores y fondos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Selectores CSS
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Selectores CSS" class="md-nav__link md-nav__link--active">
+      Selectores CSS
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#selectores-css-basicos" class="md-nav__link">
+    Selectores CSS básicos
+  </a>
+  
+    <nav class="md-nav" aria-label="Selectores CSS básicos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seleccionar-por-etiquetas" class="md-nav__link">
+    Seleccionar por etiquetas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seleccionar-por-id-unicos" class="md-nav__link">
+    Seleccionar por ID (únicos)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seleccionar-por-clases" class="md-nav__link">
+    Seleccionar por clases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selecciones-mixtas" class="md-nav__link">
+    Selecciones mixtas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selectores-css-avanzados" class="md-nav__link">
+    Selectores CSS avanzados
+  </a>
+  
+    <nav class="md-nav" aria-label="Selectores CSS avanzados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agrupacion-de-selectores" class="md-nav__link">
+    Agrupación de selectores
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selector-descendiente" class="md-nav__link">
+    Selector descendiente
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selector-hijo" class="md-nav__link">
+    Selector hijo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selector-hermano-adyacente" class="md-nav__link">
+    Selector hermano adyacente
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selector-hermano-general" class="md-nav__link">
+    Selector hermano general
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selector-universal" class="md-nav__link">
+    Selector universal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pseudoclases-css" class="md-nav__link">
+    Pseudoclases CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Pseudoclases CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pseudoclases-de-enlaces" class="md-nav__link">
+    Pseudoclases de enlaces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pseudoclases-de-raton" class="md-nav__link">
+    Pseudoclases de ratón
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pseudoclases-de-interaccion" class="md-nav__link">
+    Pseudoclases de interacción
+  </a>
+  
+    <nav class="md-nav" aria-label="Pseudoclases de interacción">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pseudoclases-de-activacion" class="md-nav__link">
+    Pseudoclases de activación
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pseudoclases-de-validacion" class="md-nav__link">
+    Pseudoclases de validación
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pseudoclases-de-negacion" class="md-nav__link">
+    Pseudoclases de negación
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otras-pseudoclases" class="md-nav__link">
+    Otras pseudoclases
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pseudoclases-css-avanzadas" class="md-nav__link">
+    Pseudoclases CSS avanzadas
+  </a>
+  
+    <nav class="md-nav" aria-label="Pseudoclases CSS avanzadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elementos-del-mismo-tipo" class="md-nav__link">
+    Elementos del mismo tipo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hijos-unicos" class="md-nav__link">
+    Hijos únicos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pseudoelementos-css" class="md-nav__link">
+    Pseudoelementos CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Pseudoelementos CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generacion-de-contenido" class="md-nav__link">
+    Generación de contenido
+  </a>
+  
+    <nav class="md-nav" aria-label="Generación de contenido">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atributos-html" class="md-nav__link">
+    Atributos HTML
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#primera-letra-y-primera-linea" class="md-nav__link">
+    Primera letra y primera línea
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signos-de-las-listas-markers" class="md-nav__link">
+    Signos de las listas (markers)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otros-pseudoelementos" class="md-nav__link">
+    Otros pseudoelementos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atributos-css" class="md-nav__link">
+    Atributos CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Atributos CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atributo-existente" class="md-nav__link">
+    Atributo existente
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atributo-con-valor-exacto" class="md-nav__link">
+    Atributo con valor exacto
+  </a>
+  
+    <nav class="md-nav" aria-label="Atributo con valor exacto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atributo-contiene-texto" class="md-nav__link">
+    Atributo contiene texto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comienzofinal-de-atributo" class="md-nav__link">
+    Comienzo/final de atributo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-Fuentes_y_tipografias/" title="Fuentes y tipografías" class="md-nav__link">
+      Fuentes y tipografías
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-representacion_de_datos/" title="Representación de datos" class="md-nav__link">
+      Representación de datos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../07_maquetacion_y_colocacion/" title="Maquetación y colocación" class="md-nav__link">
+      Maquetación y colocación
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../08-interacciones/" title="Interacciones" class="md-nav__link">
+      Interacciones
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../09-efectos/" title="Efectos" class="md-nav__link">
+      Efectos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../10-responsive_Web_Design/" title="Responsive Web Design" class="md-nav__link">
+      Responsive Web Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../11-animaciones_CSS/" title="Animaciones CSS" class="md-nav__link">
+      Animaciones CSS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      JavaScript
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="JavaScript" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon"></span>
+        JavaScript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/01-introducci%C3%B3n_a_javascript/" title="Introducción a Javascript" class="md-nav__link">
+      Introducción a Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/02-fundamentos_de_javascript/" title="Fundamentos de Javascript" class="md-nav__link">
+      Fundamentos de Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/03-caracteristicas/" title="Características" class="md-nav__link">
+      Características
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/04-DOM/" title="DOM" class="md-nav__link">
+      DOM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/05-asincronia/" title="Asincronía" class="md-nav__link">
+      Asincronía
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/06-peticiones_HTTP/" title="Peticiones HTTP" class="md-nav__link">
+      Peticiones HTTP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Herramientas IT
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Herramientas IT" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Herramientas IT
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Terminal
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Terminal" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon"></span>
+        Terminal
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" title="Introducción a la terminal" class="md-nav__link">
+      Introducción a la terminal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/02-operaciones_con_ficheros/" title="Operaciones con ficheros" class="md-nav__link">
+      Operaciones con ficheros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/03-administraci%C3%B3n_del_sistema/" title="Administración del sistema" class="md-nav__link">
+      Administración del sistema
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/markdown/" title="Markdown" class="md-nav__link">
+      Markdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/pip/" title="Pip" class="md-nav__link">
+      Pip
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/mkdocs/" title="Mkdocs" class="md-nav__link">
+      Mkdocs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../about/" title="Acerca de" class="md-nav__link">
+      Acerca de
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#selectores-css-basicos" class="md-nav__link">
+    Selectores CSS básicos
+  </a>
+  
+    <nav class="md-nav" aria-label="Selectores CSS básicos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seleccionar-por-etiquetas" class="md-nav__link">
+    Seleccionar por etiquetas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seleccionar-por-id-unicos" class="md-nav__link">
+    Seleccionar por ID (únicos)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seleccionar-por-clases" class="md-nav__link">
+    Seleccionar por clases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selecciones-mixtas" class="md-nav__link">
+    Selecciones mixtas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selectores-css-avanzados" class="md-nav__link">
+    Selectores CSS avanzados
+  </a>
+  
+    <nav class="md-nav" aria-label="Selectores CSS avanzados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agrupacion-de-selectores" class="md-nav__link">
+    Agrupación de selectores
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selector-descendiente" class="md-nav__link">
+    Selector descendiente
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selector-hijo" class="md-nav__link">
+    Selector hijo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selector-hermano-adyacente" class="md-nav__link">
+    Selector hermano adyacente
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selector-hermano-general" class="md-nav__link">
+    Selector hermano general
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selector-universal" class="md-nav__link">
+    Selector universal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pseudoclases-css" class="md-nav__link">
+    Pseudoclases CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Pseudoclases CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pseudoclases-de-enlaces" class="md-nav__link">
+    Pseudoclases de enlaces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pseudoclases-de-raton" class="md-nav__link">
+    Pseudoclases de ratón
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pseudoclases-de-interaccion" class="md-nav__link">
+    Pseudoclases de interacción
+  </a>
+  
+    <nav class="md-nav" aria-label="Pseudoclases de interacción">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pseudoclases-de-activacion" class="md-nav__link">
+    Pseudoclases de activación
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pseudoclases-de-validacion" class="md-nav__link">
+    Pseudoclases de validación
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pseudoclases-de-negacion" class="md-nav__link">
+    Pseudoclases de negación
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otras-pseudoclases" class="md-nav__link">
+    Otras pseudoclases
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pseudoclases-css-avanzadas" class="md-nav__link">
+    Pseudoclases CSS avanzadas
+  </a>
+  
+    <nav class="md-nav" aria-label="Pseudoclases CSS avanzadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elementos-del-mismo-tipo" class="md-nav__link">
+    Elementos del mismo tipo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hijos-unicos" class="md-nav__link">
+    Hijos únicos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pseudoelementos-css" class="md-nav__link">
+    Pseudoelementos CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Pseudoelementos CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generacion-de-contenido" class="md-nav__link">
+    Generación de contenido
+  </a>
+  
+    <nav class="md-nav" aria-label="Generación de contenido">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atributos-html" class="md-nav__link">
+    Atributos HTML
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#primera-letra-y-primera-linea" class="md-nav__link">
+    Primera letra y primera línea
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signos-de-las-listas-markers" class="md-nav__link">
+    Signos de las listas (markers)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otros-pseudoelementos" class="md-nav__link">
+    Otros pseudoelementos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atributos-css" class="md-nav__link">
+    Atributos CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Atributos CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atributo-existente" class="md-nav__link">
+    Atributo existente
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atributo-con-valor-exacto" class="md-nav__link">
+    Atributo con valor exacto
+  </a>
+  
+    <nav class="md-nav" aria-label="Atributo con valor exacto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atributo-contiene-texto" class="md-nav__link">
+    Atributo contiene texto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comienzofinal-de-atributo" class="md-nav__link">
+    Comienzo/final de atributo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/saucedoinfo/guias/edit/master/docs/desarrollo/css/04-selectores_CSS.md" title="Editar esta página" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="selectores-css">Selectores CSS<a class="headerlink" href="#selectores-css" title="Permanent link">&para;</a></h1>
+<h2 id="selectores-css-basicos">Selectores CSS básicos<a class="headerlink" href="#selectores-css-basicos" title="Permanent link">&para;</a></h2>
+<p>Cuando comenzamos a trabajar con CSS, es habitual dar estilo con ejemplos muy sencillos, donde generalmente utilizamos un <strong>selector genérico</strong> que representa (<em>por ejemplo</em>) una etiqueta HTML. Sin embargo, lo que estamos haciendo en realidad es seleccionar todos los elementos del documento que sean dicha etiqueta.</p>
+<p>Por ejemplo, consideremos el siguiente caso:</p>
+<pre><code>div {
+  background-color: red;
+}
+</code></pre>
+<p>En este ejemplo, le decimos al navegador que a todas las etiquetas <code>div</code> que encuentre en la página, le ponga color de fondo rojo. La parte donde he colocado <code>div</code> es lo que se denomina <strong>selector</strong>, y puede llegar a ser <strong>mucho más complejo y potente</strong>, como veremos en los siguientes capítulos.</p>
+<p>La verdadera potencia de CSS radica en la capacidad de poder <strong>seleccionar sólo los elementos que nos interesen</strong>, ya que a medida que el documento HTML crece, aparecerán nuevos elementos que podrían adoptar ese estilo, y ser eso algo que no nos interese.</p>
+<p><img alt="Sintaxis básica" src="../img/sintaxis-basica.png" /></p>
+<p>Aunque el esquema general es mucho más amplio (<em>lo iremos viendo todo, poco a poco</em>), para empezar, vamos a centrarnos en la sintaxis básica de los selectores CSS, y la más utilizada: los <strong>ID</strong> y las <strong>clases</strong>.</p>
+<h3 id="seleccionar-por-etiquetas">Seleccionar por etiquetas<a class="headerlink" href="#seleccionar-por-etiquetas" title="Permanent link">&para;</a></h3>
+<p>Como ya hemos mencionado, la forma más básica de seleccionar elementos en CSS es indicar el elemento al cuál queremos aplicarle los estilos. Esto se comportará como parece lógico: aplicando el estilo CSS a <strong>TODOS</strong> los elementos <strong>de ese tipo</strong>:</p>
+<pre><code>strong {
+  color: red;
+}
+</code></pre>
+<p>En el ejemplo anterior, todos los elementos marcados con la etiqueta HTML <code>&lt;strong&gt;</code> se visualizarán de color rojo. Este pequeño ejemplo es didáctico pero no suele ser práctico, ya que no nos permite diferenciar entre todos los elementos de ese tipo. Para ello tenemos los selectores que veremos a continuación.</p>
+<h3 id="seleccionar-por-id-unicos">Seleccionar por ID (únicos)<a class="headerlink" href="#seleccionar-por-id-unicos" title="Permanent link">&para;</a></h3>
+<p>Todas las etiquetas HTML pueden tener un atributo <code>id</code> con un valor concreto. Este valor será el nombre que le daremos a la etiqueta. Un buen símil con la vida real es la de un <strong>DNI</strong> o tarjeta de identificación, ya que la particularidad clave de los <strong>ID</strong> es que no se deben repetir, es decir, que <strong>sólo debe haber una etiqueta con el mismo ID</strong> por documento. Veamos un ejemplo:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Documento de ejemplo&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id="saludo"&gt;
+    &lt;p&gt;¡Hola, visitante! ¡Bienvenido a esta página!&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div id="main"&gt;
+    &lt;p&gt;En esta página encontrarás los siguientes temas:&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>En el documento anterior, encontramos dos elementos <code>&lt;div&gt;</code>. El primero de ellos, tiene ID <strong>saludo</strong>, una capa donde se le da la bienvenida al usuario. La segunda, con ID <strong>main</strong>, es una capa donde hay contenido. Sería incorrecto crear otra etiqueta con ID <strong>saludo</strong> o <strong>main</strong> en este mismo documento, ya que ya existe una con esos nombres.</p>
+<p>En la práctica no suelen utilizarse demasiado los <strong>IDs</strong>, ya que en la mayoría de los casos utilizar una <strong>clase</strong> es perfectamente válido y mucho más mantenible a la larga. La situación en la que los <strong>IDs</strong> están bien utilizados, es cuando se usan para designar una zona del documento que sabemos perfectamente que no se va a repetir, y debe ser identificada como una zona única.</p>
+<pre><code>#saludo {
+  background-color: blue;
+  color: white;
+}
+</code></pre>
+<p>Como podemos ver en el ejemplo, en CSS la forma de hacer referencia a los IDs es con el símbolo <code>#</code>, mientras que en el HTML se indica el atributo <code>id="saludo"</code>.</p>
+<h3 id="seleccionar-por-clases">Seleccionar por clases<a class="headerlink" href="#seleccionar-por-clases" title="Permanent link">&para;</a></h3>
+<p>A medida que vamos codificando y creando nuestros documentos HTML, comprobaremos que necesitamos cosas más flexibles y cómodas que los IDs, ya que los elementos tienden a repetirse y no deben ser únicos. Aquí es donde entran en escena las <strong>clases de CSS</strong>.</p>
+<p>Las etiquetas HTML pueden tener otro atributo interesante: <code>class</code>. La diferencia principal respecto a los <strong>IDs</strong> es que las clases no se requiere que sean únicas, sino que pueden repetirse a lo largo del documento HTML:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Documento de ejemplo&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id="main"&gt;
+    &lt;p&gt;Escoge uno de los siguientes botones:&lt;/p&gt;
+
+    &lt;button class="classic"&gt;Opción 1&lt;/button&gt;
+    &lt;button class="classic"&gt;Opción 2&lt;/button&gt;
+    &lt;button class="classic"&gt;Opción 3&lt;/button&gt;
+    &lt;button class="back"&gt;Volver&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>En el documento HTML anterior, tenemos cuatro botones HTML. Los 3 primeros son botones de opciones, por lo que establecemos una misma clase llamada <code>classic</code>, mientras que el último botón (<em>un botón para volver hacia atrás</em>), le hemos indicado la clase <code>back</code> para que tenga un estilo diferente a los anteriores.</p>
+<p>Para hacer esto con <strong>IDs</strong> (<em>recordemos que son únicos, no deberían repetirse</em>) tendríamos que crear <strong>3 IDs con nombres diferentes</strong>, mientras que con las <strong>clases</strong> (<em>las cuales si se pueden repetir</em>) podemos reutilizar el mismo nombre. Esto nos permite indicar en la parte de CSS un sólo selector con los estilos y reutilizarlos en todos los elementos HTML que se desee.</p>
+<pre><code>.classic {
+  background-color: green;
+  color: white;
+}
+
+.back {
+  background-color: orange;
+  color: white;
+}
+</code></pre>
+<p>En CSS se hace referencia a las clases con un punto: <code>.classic</code>, mientras que en el HTML se escribiría el atributo <code>class="classic"</code>.</p>
+<p>Además, en el caso de las clases, podemos incluso diferenciar el tipo de elemento del que se trata. Gracias a esto podríamos utilizar la clase <code>.classic</code> en <code>&lt;button&gt;</code> para dar estilo visual a botones, y la clase <code>.classic</code> en <code>&lt;p&gt;</code> para dar otros estilos diferentes a los párrafos de texto:</p>
+<pre><code>button.classic {
+  background-color: green;
+  color: white;
+}
+
+p.classic {
+  color: red;
+}
+</code></pre>
+<h3 id="selecciones-mixtas">Selecciones mixtas<a class="headerlink" href="#selecciones-mixtas" title="Permanent link">&para;</a></h3>
+<p>Al margen de todo lo que hemos visto, es posible utilizar varias clases en un mismo elemento HTML, simplemente separando por espacios dentro del atributo <code>class</code>.</p>
+<p>De esta forma, a dicho elemento se le aplicarán los estilos de cada una de las clases indicadas, las cuales suelen tener un grupo de características relacionadas con su nombre, lo cuál es interesantes y muy práctico de recordar, dándonos mucha soltura a la hora de crear clases y reutilizarlas:</p>
+<pre><code>&lt;button class="classic green-border big"&gt;Botón&lt;/button&gt;
+</code></pre>
+<blockquote>
+<blockquote>
+<p>Este enfoque se considera uno de los principios del denominado <strong>CSS atómico</strong>, en el que se basan frameworks CSS como <a href="https://tachyons.io/">Tachyons</a> o <a href="https://tailwindcss.com/">TailwindCSS</a>.</p>
+</blockquote>
+</blockquote>
+<p>Por último, mencionar que también tenemos la posibilidad de ser más específicos y aplicar estilo sólo a los elementos HTML que contengan todas las clases indicadas, colocando cada clase de forma consecutiva en el CSS, de la siguiente forma:</p>
+<pre><code>button.classic.green-border.big {
+  /* Estilos CSS */
+}
+</code></pre>
+<p>En este ejemplo, sólo se aplicarán los estilos cuando el elemento HTML <code>&lt;button&gt;</code> tenga una clase <code>classic</code>, una clase <code>green-border</code> y una clase <code>big</code>. Si falta alguna de ellas, no se aplicará el estilo.</p>
+<hr />
+<h2 id="selectores-css-avanzados">Selectores CSS avanzados<a class="headerlink" href="#selectores-css-avanzados" title="Permanent link">&para;</a></h2>
+<p>Al margen de la selección «básica» de elementos a través de CSS, que suele realizarse mediante clases e IDs, existe un amplio abanico de métodos para <strong>seleccionar elementos dependiendo de la estructura del documento HTML</strong> denominados <strong>combinadores CSS</strong>:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Nombre</th>
+<th align="left">Símbolo</th>
+<th align="left">Ejemplo</th>
+<th align="left">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Agrupación de selectores</td>
+<td align="left"><code>,</code></td>
+<td align="left"><code>p, a, div { }</code></td>
+<td align="left">Se aplican estilos a varios elementos.</td>
+</tr>
+<tr>
+<td align="left">Selector descendiente</td>
+<td align="left"></td>
+<td align="left"><code>#page div { }</code></td>
+<td align="left">Se aplican estilos a elementos dentro de otros.</td>
+</tr>
+<tr>
+<td align="left">Selector hijo</td>
+<td align="left"><code>&gt;</code></td>
+<td align="left"><code>#page &gt; div { }</code></td>
+<td align="left">Se aplican estilos a elementos hijos directos.</td>
+</tr>
+<tr>
+<td align="left">Selector hermano adyacente</td>
+<td align="left"><code>+</code></td>
+<td align="left"><code>div + div { }</code></td>
+<td align="left">Se aplican estilos a elementos que siguen a otros.</td>
+</tr>
+<tr>
+<td align="left">Selector hermano general</td>
+<td align="left"><code>~</code></td>
+<td align="left"><code>div ~ div { }</code></td>
+<td align="left">Se aplican estilos a elementos al mismo nivel.</td>
+</tr>
+<tr>
+<td align="left">Selector universal</td>
+<td align="left"><code>*</code></td>
+<td align="left"><code>#page * { }</code></td>
+<td align="left">Se aplican estilos a todos los elementos.</td>
+</tr>
+</tbody>
+</table>
+<p>En los siguientes apartados, veremos varios ejemplos gráficos sobre un supuesto ejemplo de documento HTML, dibujado en forma de árbol esquemático. Así sabremos que elementos están dentro de otros y nos será más fácil entender cada uno de los <strong>combinadores CSS</strong>.</p>
+<h3 id="agrupacion-de-selectores">Agrupación de selectores<a class="headerlink" href="#agrupacion-de-selectores" title="Permanent link">&para;</a></h3>
+<p>En muchas ocasiones nos ocurrirá que tenemos varios bloques CSS con selectores diferentes pero con los mismos estilos exactamente, algo que generalmente no es apropiado. Si esto ocurre a menudo, el tamaño del documento CSS ocupará más y tardará más en descargarse:</p>
+<pre><code>.container-logo {
+  border-color: red;
+  background: white;
+}
+
+.container-alert {
+  border-color: red;
+  background: white;
+}
+
+.container-warning {
+  border-color: red;
+  background: white;
+}
+</code></pre>
+<p>Una buena práctica es <strong>ahorrar texto y simplificar</strong> nuestro documento CSS lo máximo posible, por lo que podemos hacer uso de la <strong>agrupación CSS</strong> utilizando la <code>,</code> (<em>coma</em>).</p>
+<p>De esta forma, podemos pasar de tener el ejemplo anterior, a tener el siguiente ejemplo (<em>que es totalmente equivalente</em>), donde hemos utilizado la agrupación para decirle al navegador que aplique dichos estilos las diferentes clases:</p>
+<pre><code>.container-logo, .container-alert, .container-warning {
+  border-color: white;
+  background: red;
+}
+</code></pre>
+<p>Al margen de esto, dos buenas prácticas que podríamos aplicar en esta situación serían las siguientes:</p>
+<ul>
+<li>
+<p><strong>Simplifica por responsabilidades</strong>: <code>.container-alert</code> y <code>.container-warning</code> parecen tener un concepto muy similar: alertas o mensajes de advertencia. Es posible que estos selectores tengan la misma funcionalidad y sean sinónimos. Si es así, lo ideal sería refactorizar y simplificarlos a uno: <code>.container-warning</code>, haciendo desaparecer el otro.</p>
+</li>
+<li>
+<p><strong>Legibilidad por delante</strong>: CSS por si sólo puede ser dificil de leer y mantener. Aunque a priori puede parecer que es mejor poner la lista de selectores uno detrás de otro, la experiencia nos dicta que deberíamos separarlos en una línea diferente cada selector. Esto lo hace tremendamente más legible a la hora de revisar código CSS.</p>
+<p>.container-logo,
+.container-warning {
+  border-color: white;
+  background: red;
+}</p>
+</li>
+</ul>
+<blockquote>
+<blockquote>
+<p><strong>Consejo</strong>: Esto puede parecer poco importante a priori, pero a medida que avanzamos con nuestro diseño, los documentos CSS se hacen tremendamente grandes y difíciles de mantener, por lo que cuanto más sencillos sean, mejor.</p>
+</blockquote>
+</blockquote>
+<h3 id="selector-descendiente">Selector descendiente<a class="headerlink" href="#selector-descendiente" title="Permanent link">&para;</a></h3>
+<p>En CSS podemos utilizar lo que se llama el <strong>selector descendiente</strong>, que no es más que una forma de seleccionar ciertos elementos que están dentro de otros elementos. Esto puede parecer sencillo, pero cuidado, ya que puede ser una fuente de problemas si no se entiende bien.</p>
+<p>Su sintaxis se basa en colocar los elementos uno a continuación de otro, separado por un espacio:</p>
+<pre><code>div#pagina div {
+  background-color: blue;
+}
+</code></pre>
+<p>En el ejemplo anterior, aplicamos los estilos CSS (<em>color azul de fondo</em>) a todos los elementos <code>&lt;div&gt;</code> que estén dentro de un <code>&lt;div&gt;</code> con ID <strong>pagina</strong>. De esta forma, si existe un elemento <code>&lt;div&gt;</code> fuera del <code>&lt;div&gt;</code> con id <strong>pagina</strong>, no se aplicarán los estilos indicados:</p>
+<p><img alt="Selector descendiente" src="../img/selector-descendiente.png" /></p>
+<p>Repasemos varios detalles importantes respecto a este combinador CSS:</p>
+<ul>
+<li>Se están seleccionando todos los elementos <code>&lt;div&gt;</code> que están dentro de <code>&lt;div&gt;</code> con ID <strong>pagina</strong>.</li>
+<li>Observa que se seleccionan independientemente del nivel al que estén (<em>hijos, abuelos, ...</em>)</li>
+<li>En este caso, el <code>div</code> de <code>div#pagina</code> es innecesario, ya que habíamos dicho que los <strong>IDs</strong> no se pueden repetir. Si ya existe un elemento con ID <strong>pagina</strong>, no hace falta diferenciarlo también por etiqueta. Si se tratase de una clase, si podría usarse.</li>
+</ul>
+<p>Se pueden construir selectores muy complejos con tantos elementos como se quiera, pero una buena práctica es mantenerlos simples. Cuántos más elementos descendientes existan en un selector, más complejo será el procesamiento de dicha regla por los navegadores. Lo recomendable es ser despierto y utilizar sólo los necesarios.</p>
+<pre><code>  &lt;div class="menu"&gt;
+    &lt;div class="options"&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href="/one"&gt;Option 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/two"&gt;Option 2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/three"&gt;Option 3&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+</code></pre>
+<p>Observando el fragmento de código HTML anterior, veamos las siguientes 2 formas de aplicar estilos CSS a los enlaces <code>&lt;a&gt;</code>:</p>
+<pre><code>/* Forma 1 */
+.menu .options ul li a {
+  color: orange;
+}
+
+/* Forma 2 */
+.menu a {
+  color: orange;
+}
+</code></pre>
+<p>Mientras que la primera es mucho más específica, es una <strong>muy buena práctica</strong> en CSS mantener los selectores lo <strong>menos específicos</strong> posibles para evitar problemas de <a href="/css/introduccion/cascada-css/">Especificidad</a> (<em>a.k.a. CSS Peter Griffin</em>):</p>
+<p><img alt="GIF de Peter Griffin usando CSS" src="../img/peter-griffin-css.gif" /></p>
+<h3 id="selector-hijo">Selector hijo<a class="headerlink" href="#selector-hijo" title="Permanent link">&para;</a></h3>
+<p>Aunque el <strong>selector descendiente</strong> es bastante interesante, nos puede interesar hacer la misma operación, pero en lugar de seleccionar todos los elementos descendientes, seleccionar sólo los descendientes directos del elemento con el símbolo <code>&gt;</code>, descartando así nietos y sucesivos.</p>
+<pre><code>#pagina &gt; div {
+  background-color: blue;
+}
+</code></pre>
+<p>Veamos los elementos seleccionados en el documento de ejemplo para afianzar conceptos:</p>
+<p><img alt="Selector hijo" src="../img/selector-hijo.png" /></p>
+<p>Al contrario que en el caso anterior, no se seleccionan todos los elementos <code>&lt;div&gt;</code> descendientes, sino solo aquellos que son hijos directos del primer elemento especificado.</p>
+<h3 id="selector-hermano-adyacente">Selector hermano adyacente<a class="headerlink" href="#selector-hermano-adyacente" title="Permanent link">&para;</a></h3>
+<p>Es posible también hacer referencia a los elementos hermanos, es decir, aquellos elementos que están directamente a continuación del elemento especificado. Mediante el símbolo <code>+</code> del <strong>selector hermano adyacente</strong>, se pueden seleccionar aquellos elementos hermanos que están seguidos el uno de otro (<em>en el mismo nivel</em>):</p>
+<pre><code>div.articulo span + span {
+  color: blue;
+}
+</code></pre>
+<p>Cómo se podrá ver en este nuevo ejemplo, este combinador CSS hará que se seleccionen los elementos <code>span</code> que estén a continuación de un <code>div.articulo span</code>:</p>
+<p><img alt="Selector hermano adyacente" src="../img/selector-hermano-adyacente.png" /></p>
+<p>Obsérvese que el primer elemento <code>&lt;span&gt;</code> no es seleccionado, puesto que es el que estamos tomando de base. Una buena forma para entenderlo es leerlo de la siguiente forma: «<em>todo elemento <code>&lt;span&gt;</code> que esté inmediatamente precedido de un <code>&lt;span&gt;</code></em>».</p>
+<h3 id="selector-hermano-general">Selector hermano general<a class="headerlink" href="#selector-hermano-general" title="Permanent link">&para;</a></h3>
+<p>Si pensamos otras opciones en el ejemplo anterior, es posible que necesitemos ser menos específicos y en lugar de querer seleccionar los elementos hermanos <strong>que sean adyacentes</strong>, queramos seleccionar todos los hermanos en general, sin necesidad de que sean adyacentes. Esto se puede conseguir con el <strong>selector hermano general</strong>, simbolizado con el carácter <code>~</code>:</p>
+<p><img alt="Selector hermano general" src="../img/selector-hermano-general.png" /></p>
+<p>Como se ve en el ejemplo, no es necesario que el elemento <code>strong</code> se encuentre adyacente al primero, sino que basta con que sean hermanos en el mismo nivel.</p>
+<h3 id="selector-universal">Selector universal<a class="headerlink" href="#selector-universal" title="Permanent link">&para;</a></h3>
+<p>Por último, el <strong>selector universal</strong> se simboliza con un asterisco <code>*</code> y es la forma de aplicar ciertos estilos en <strong>TODOS Y CADA UNO</strong> de los elementos HTML correspondientes.</p>
+<p><img alt="Selector universal" src="../img/selector-universal.png" /></p>
+<p>Este ejemplo selecciona todos los elementos dentro de <code>div#menu</code>. Es importante recalcar la diferencia de seleccionar <code>#menu</code>, a seleccionar todos los elementos dentro de <code>#menu</code>, que es lo que estamos haciendo en este caso.</p>
+<p>El <strong>selector universal</strong> puede ser muy útil en algunos casos para <strong>resetear</strong> ciertas propiedades de todo un documento, como en el siguiente ejemplo, donde se eliminan los márgenes de todos los elementos del documento HTML, puesto que algunos navegadores ponen márgenes diferentes y esto puede producir ciertas inconsistencias en los diseños:</p>
+<pre><code>/* Elimina márgenes y rellenos de todos los elementos de un documento HTML */
+* {
+  margin: 0;
+  padding: 0;
+}
+</code></pre>
+<hr />
+<h2 id="pseudoclases-css">Pseudoclases CSS<a class="headerlink" href="#pseudoclases-css" title="Permanent link">&para;</a></h2>
+<p>Las <strong>pseudoclases</strong> se utilizan para hacer referencia a ciertos comportamientos de los elementos HTML. Así como los combinadores CSS se utilizan para dar estilos dependiendo de donde estén colocados en la estructura del HTML, las pseudoclases se utilizan para dar estilos a elementos <strong>respecto al comportamiento</strong> que experimentan en determinado momento.</p>
+<p>Volvamos a recordar el esquema general de sintaxis de CSS:</p>
+<p><img alt="Sintaxis avanzada" src="../img/sintaxis-avanzada.png" /></p>
+<p>Las pseudoclases se definen añadiendo <strong>dos puntos</strong> antes de la pseudoclase concreta. En el caso de existir selectores de etiqueta, id o clases, estas se escribirían a su izquierda.</p>
+<h3 id="pseudoclases-de-enlaces">Pseudoclases de enlaces<a class="headerlink" href="#pseudoclases-de-enlaces" title="Permanent link">&para;</a></h3>
+<p>Existen algunas pseudoclases orientadas a los enlaces o hipervínculos. En este caso, permiten cambiar los estilos dependiendo del comportamiento del enlace:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Pseudoclase</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>:link</code></td>
+<td align="left">Aplica estilos cuando el enlace no ha sido visitado todavía.</td>
+</tr>
+<tr>
+<td align="left"><code>:visited</code></td>
+<td align="left">Aplica estilos cuando el enlace ha sido visitado anteriormente.</td>
+</tr>
+</tbody>
+</table>
+<p>A continuación veremos un ejemplo donde seleccionamos mediante un simple selector <code>a</code> los enlaces que <strong>aún no han sido visitados</strong>, cambiando el color de los mismos o su formato, lo que mostrará dichos enlaces de color verde y en negrita:</p>
+<pre><code>a:link {
+  color: green;
+  font-weight: bold
+}
+</code></pre>
+<p>Por otro lado, la pseudoclase <code>:visited</code> puede utilizarse para dar estilo a los enlaces que <strong>hayan sido visitados previamente</strong> en el navegador del usuario:</p>
+<pre><code>a:visited {
+  color: purple;
+  font-weight: bold
+}
+</code></pre>
+<h3 id="pseudoclases-de-raton">Pseudoclases de ratón<a class="headerlink" href="#pseudoclases-de-raton" title="Permanent link">&para;</a></h3>
+<p>Originalmente, las siguientes pseudoclases se utilizaban solamente en enlaces (<em>Internet Explorer no los soportaba en otros elementos</em>). Sin embargo, actualmente pueden ser utilizadas con seguridad en cualquier otro elemento, sin necesidad de ser <code>&lt;a&gt;</code>.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Pseudoclase</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>:hover</code></td>
+<td align="left">Aplica estilos cuando pasamos el ratón sobre un elemento.</td>
+</tr>
+<tr>
+<td align="left"><code>:active</code></td>
+<td align="left">Aplica estilos cuando estamos pulsando sobre el elemento.</td>
+</tr>
+</tbody>
+</table>
+<p>La primera de ellas, <code>:hover</code>, es muy útil e interesante, ya que permite aplicar estilos a un elemento justo cuando el usuario está pasando el ratón sobre él. Es una de las pseudoclases más utilizadas:</p>
+<pre><code>/* Usuario mueve el ratón sobre un enlace */
+a:hover {
+  background-color: cyan;
+  padding: 2px
+}
+
+/* Usuario mueve el ratón sobre un div y resalta todos los enlaces que contiene */
+div:hover a {
+  background-color: steelblue;
+  color: white;
+}
+</code></pre>
+<p>Observese que podemos realizar acciones un poco más específicas, como el segundo ejemplo anterior, donde al movernos sobre un elemento div (<em>div:hover</em>), aplicaremos los estilos a los enlaces (<em>a</em>) que están dentro del mencionado <code>div</code>.</p>
+<p>Por otro lado, la segunda pseudoclase, <code>:active</code>, permite resaltar los elementos que se encuentran activos, donde el usuario está pulsando de forma activa con el ratón:</p>
+<pre><code>a:active {
+  border: 2px solid #FF0000;
+  padding: 2px
+}
+</code></pre>
+<blockquote>
+<p><strong>Nota:</strong> Aunque las pseudoclases anteriores se inventaron para interactuar con <strong>un ratón</strong> en un sistema de escritorio, pueden funcionar en dispositivos táctiles. Aún así, ten en cuenta que, por ejemplo, el <code>:hover</code> no tiene mucho sentido en dispositivos móviles, ya que, aunque podría hacerlo, un usuario no navega por móvil arrastrando el dedo por la pantalla.</p>
+</blockquote>
+<h3 id="pseudoclases-de-interaccion">Pseudoclases de interacción<a class="headerlink" href="#pseudoclases-de-interaccion" title="Permanent link">&para;</a></h3>
+<p>Existen pseudoclases orientadas principalmente a los campos de formulario de páginas webs y la interacción del usuario con ellos, veamos otro par interesante:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Pseudoclase</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>:focus</code></td>
+<td align="left">Aplica estilos cuando el elemento tiene el foco.</td>
+</tr>
+<tr>
+<td align="left"><code>:checked</code></td>
+<td align="left">Aplica estilos cuando la casilla está seleccionada.</td>
+</tr>
+</tbody>
+</table>
+<p>Cuando estamos escribiendo en un campo de texto de un formulario de una página web, generalmente pulsamos TAB para cambiar al siguiente campo y SHIFT+TAB para volver al anterior. Cuando estamos posicionados en un campo se dice que ese campo <strong>tiene el foco</strong>, mientras que al pulsar TAB y saltar al siguiente, decimos que <strong>pierde el foco</strong>.</p>
+<p>El comportamiento de «ganar el foco» puede gestionarse mediante la pseudoclase <code>:focus</code>:</p>
+<pre><code>/* El campo ha ganado el foco */
+input:focus {
+  border: 2px dotted #444
+}
+</code></pre>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><strong>Nota</strong>: Aunque estas pseudoclases suelen utilizarse con elementos de formularios como <code>&lt;input&gt;</code>, también pueden utilizarse con otros elementos, como por ejemplo los enlaces <code>&lt;a&gt;</code>. Esta es una excelente oportunidad para personalizar el estilo de los campos de texto de un formulario (<em><code>&lt;input&gt;</code> y <code>&lt;textarea&gt;</code></em>) mientras el usuario escribe y se mueve por ellos.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Por otro lado, la pseudoclase <code>:checked</code> permite aplicar el estilo especificado a los elementos <code>&lt;input&gt;</code> (<em>casillas de verificación o botones de radio</em>) u <code>&lt;option&gt;</code> (<em>la opción seleccionada de un <code>&lt;select&gt;</code></em>).</p>
+<p>Por ejemplo, se podría utilizar el siguiente fragmento de código:</p>
+<pre><code>input:checked + span {
+  color: green;
+}
+</code></pre>
+<p>Este ejemplo añade el selector hermano <code>+</code> para darle formato al <code>&lt;span&gt;</code> que contiene el texto y se encuentra colocado a continuación de la casilla <code>&lt;input&gt;</code>. De esta forma, los textos que hayan sido seleccionados, se mostrarán en verde.</p>
+<h4 id="pseudoclases-de-activacion">Pseudoclases de activación<a class="headerlink" href="#pseudoclases-de-activacion" title="Permanent link">&para;</a></h4>
+<p>Por norma general, los elementos de un formulario HTML están siempre activados, aunque se pueden desactivar añadiendo el atributo <code>disabled</code> (<em>es un atributo booleano, no lleva valor</em>) al elemento HTML en cuestión. Esto es una práctica muy utilizada para impedir al usuario escribir en cierta parte de un formulario porque, por ejemplo, no es aplicable.</p>
+<p>Existen varias pseudoclases para detectar si un campo de un formulario está activado o desactivado:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Pseudoclase</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>:enabled</code></td>
+<td align="left">Aplica estilos cuando el campo del formulario está activado.</td>
+</tr>
+<tr>
+<td align="left"><code>:disabled</code></td>
+<td align="left">Aplica estilos cuando el campo del formulario está desactivado.</td>
+</tr>
+<tr>
+<td align="left"><code>:read-only</code></td>
+<td align="left">Aplica estilos cuando el campo es de sólo lectura.</td>
+</tr>
+<tr>
+<td align="left"><code>:read-write</code></td>
+<td align="left">Aplica estilos cuando el campo es editable por el usuario.</td>
+</tr>
+</tbody>
+</table>
+<p>Utilizando las dos primeras pseudoclases, bastante autoexplicativas por si solas, podemos seleccionar elementos que se encuentren activados (<em>comportamiento por defecto</em>) o desactivados:</p>
+<pre><code>/* Muestra en fondo blanco las casillas que permiten escribir */
+input:enabled {
+  background-color: white;
+}
+
+/* Muestra en fondo gris las casillas que no permiten escribir */
+input:disabled {
+  background-color: grey;
+}
+</code></pre>
+<p>Por otro lado, las pseudoclases <code>read-only</code> y <code>read-write</code> nos permiten seleccionar y diferenciar elementos que se encuentran en modo de solo lectura (<em>tienen especificado el atributo <code>readonly</code> en el HTML</em>) o no:</p>
+<pre><code>input:read-only {
+  background-color: darkred;
+  color: white
+}
+</code></pre>
+<p>En el ejemplo anterior, la pseudoclase <code>:read-only</code> le da estilo a aquellos campos <code>&lt;input&gt;</code> de un formulario que están marcados con el atributo de sólo lectura <code>readonly</code>. La diferencia entre un campo con atributo <code>disabled</code> y un campo con atributo <code>readonly</code> es que la información del campo con <code>readonly</code> se enviará a través del formulario, mientras que la del campo con <code>disabled</code> no se enviará. Aún así, ambas no permiten modificar el valor.</p>
+<blockquote>
+<blockquote>
+<p><strong>Nota</strong>: Ten en cuenta que <code>:read-only</code> aplicará los estilos a todos los elementos HTML que no puedan ser modificados por el usuario.</p>
+</blockquote>
+</blockquote>
+<p>Por otro lado, la pseudoclase <code>:read-write</code> es muy útil para dar estilos a todos aquellos elementos que son editables por el usuario, sean campos de texto <code>&lt;input&gt;</code> o <code>&lt;textarea&gt;</code>.</p>
+<pre><code>input:read-write {
+  background-color: green;
+  color: white
+}
+</code></pre>
+<blockquote>
+<blockquote>
+<p><strong>Nota</strong>: La pseudoclase <code>read-write</code> da estilo también a elementos HTML que contengan el atributo <code>contenteditable</code>, como por ejemplo un párrafo editable por el usuario con dicho atributo.</p>
+</blockquote>
+</blockquote>
+<h4 id="pseudoclases-de-validacion">Pseudoclases de validación<a class="headerlink" href="#pseudoclases-de-validacion" title="Permanent link">&para;</a></h4>
+<p>En HTML5 es posible dotar de capacidades de validación a los campos de un formulario, pudiendo interactuar desde Javascript o incluso desde CSS. Con estas validaciones podemos asegurarnos de que el usuario escribe en un campo de un formulario el valor esperado que debería. Existen algunas pseudoclases útiles para las validaciones, como por ejemplo las siguientes:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Pseudoclase</th>
+<th align="left">¿Cuándo aplica estilos?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>:required</code></td>
+<td align="left">Cuando el campo es obligatorio, o sea, tiene el atributo <code>required</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>:optional</code></td>
+<td align="left">Cuando el campo es opcional (por defecto, todos los campos).</td>
+</tr>
+<tr>
+<td align="left"><code>:invalid</code></td>
+<td align="left">Cuando los campos no cumplen la validación HTML5.</td>
+</tr>
+<tr>
+<td align="left"><code>:valid</code></td>
+<td align="left">Cuando los campos cumplen la validación HTML5.</td>
+</tr>
+<tr>
+<td align="left"><code>:out-of-range</code></td>
+<td align="left">Cuando los campos numéricos están fuera del rango.</td>
+</tr>
+<tr>
+<td align="left"><code>:in-range</code></td>
+<td align="left">Cuando los campos numéricos están dentro del rango.</td>
+</tr>
+</tbody>
+</table>
+<p>En un formulario HTML es posible establecer un campo obligatorio que será necesario rellenar para enviar el formulario. Por ejemplo, el DNI de una persona que va a matricularse en un curso, o el nombre de usuario de alta en una plataforma web para identificarse. Campos que son absolutamente necesarios.</p>
+<p>Para hacer obligatorios dichos campos, tenemos que indicar en el HTML el atributo <code>required</code>, al cuál será posible darle estilo mediante la pseudoclase <code>:required</code>:</p>
+<pre><code>input:required {
+  border: 2px solid blue;
+}
+</code></pre>
+<p>Por otra parte, los campos opcionales (<em>no obligatorios, sin el atributo <code>required</code></em>) pueden seleccionarse con la pseudoclase <code>:optional</code>:</p>
+<pre><code>input:optional {
+  border: 2px solid grey;
+}
+</code></pre>
+<p>Las <strong>validaciones en formularios HTML</strong> siempre han sido un proceso tedioso, hasta la llegada de HTML5. HTML5 brinda un excelente soporte de validaciones desde el lado del cliente, pudiendo comprobar si los datos especificados son correctos o no antes de realizar las validaciones en el lado del servidor, y <strong>evitando la latencia</strong> de enviar la información al servidor y recibirla de vuelta.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><strong>Ojo:</strong> Ten en cuenta que la validación de cliente es apropiada solo para reducir la latencia de envío/recepción al servidor, pero nunca como estrategia para evitar problemas de seguridad o similares, para la cuál se debe tener <strong>validación en el servidor</strong> siempre. Las validaciones utilizadas en frontend, es posible falsearlas o saltárselas.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Imaginemos un campo de entrada en el que queremos obtener la <strong>edad del usuario</strong>. Nuestra intención es que solo se puedan introducir números. Para ello hacemos uso de la <strong>expresión regular</strong> <code>[0-9]+</code>, que significa «<em>una o más cifras del 0 al 9</em>»:</p>
+<pre><code>&lt;input type="text" name="age" pattern="[0-9]+" /&gt;
+</code></pre>
+<p>Sin embargo, el atributo <code>pattern</code> permite expresiones regulares realmente complejas, como por ejemplo, una <strong>expresión regular</strong> para validar el formato de un DNI, ya sea en el formato nacional de España (<em>12345678L</em>) o en formato NIE (<em>X1234567L</em>), aceptando guiones si se indican:</p>
+<pre><code>&lt;input type="text" name="dni"
+       pattern="(([X-Z]{1})([-]?)(\d{7})([-]?)([A-Z]{1}))|((\d{8})([-]?)([A-Z]{1}))" /&gt;
+</code></pre>
+<p>Se pueden aplicar ciertos estilos dependiendo de si se cumple o no el patrón de validación, utilizando las siguientes pseudoclases:</p>
+<pre><code>input:invalid {
+  background-color: darkred;
+  color: white;
+}
+
+input:valid {
+  background-color: green;
+  color: white;
+}
+</code></pre>
+<p>Sin embargo, en la validación numérica que vimos anteriormente, un usuario podría escribir <strong>500</strong>, que es una edad imposible, porque en el patrón de validación indicamos «una o más cifras del 0 al 9». Lo ideal sería establecer un rango, algo que se suele hacer muy a menudo si tenemos campos numéricos de formulario:</p>
+<pre><code>&lt;input type="number" name="age" min="18" max="100" /&gt;
+</code></pre>
+<p>Este campo permite al usuario especificar su edad, utilizando los atributos de validación <code>min</code> y <code>max</code>, que sólo permiten valores entre 18 y 100 años. Los valores fuera de este rango, no serán válidos.</p>
+<p>De la misma forma que antes, es posible aplicar estilos para los valores fuera de rango, como dentro de rango:</p>
+<pre><code>input:out-of-range {
+  background-color: darkred;
+  color: white;
+}
+
+input:in-range {
+  background-color: green;
+  color: white;
+}
+</code></pre>
+<h3 id="pseudoclases-de-negacion">Pseudoclases de negación<a class="headerlink" href="#pseudoclases-de-negacion" title="Permanent link">&para;</a></h3>
+<p>Existe una pseudoclase muy útil, denominada <strong>pseudoclase de negación</strong>. Permite seleccionar todos los elementos que no cumplan los selectores indicados entre paréntesis.</p>
+<p>Veamos un ejemplo:</p>
+<pre><code>p:not(.general) {
+  border: 1px solid #DDD;
+  padding: 8px;
+  background: #FFF;
+}
+</code></pre>
+<p>Este pequeño fragmento de código nos indica que todos los párrafos (<em>elementos <code>&lt;p&gt;</code></em>) que no pertenezcan a la clase <code>general</code>, se les aplique el estilo especificado.</p>
+<blockquote>
+<p><strong>Consejo</strong>: Las reglas de negación pueden ser complejas, ineficientes y poco escalables. Intenta utilizarlas sólo en los casos que sea absolutamente necesario.</p>
+</blockquote>
+<h3 id="otras-pseudoclases">Otras pseudoclases<a class="headerlink" href="#otras-pseudoclases" title="Permanent link">&para;</a></h3>
+<p>Para finalizar el apartado de pseudoclases, quiero mencionar algunas que no encajan en los apartados anteriores, pero que pueden ser muy útiles en algunos casos:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Pseudoclase</th>
+<th align="left">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>:lang(es)</code></td>
+<td align="left">Aplica estilo a los elementos con el atributo <code>lang="es"</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>:target</code></td>
+<td align="left">Aplica estilo al elemento que coincida con el ancla de la URL.</td>
+</tr>
+<tr>
+<td align="left"><code>:root</code></td>
+<td align="left">Aplica estilo al elemento raíz (padre) del documento.</td>
+</tr>
+<tr>
+<td align="left"><code>:default</code></td>
+<td align="left">Experimental. Aplica estilo al elemento por defecto. Útil en formularios</td>
+</tr>
+<tr>
+<td align="left"><code>:dir(A)</code></td>
+<td align="left">Experimental. Aplica estilo al elemento que coincide con la dirección <code>ltr</code> o <code>rtl</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>:indeterminate</code></td>
+<td align="left">Experimental. Aplica estilo a la casilla checkbox o al elemento <code>&lt;progress&gt;</code> sin definir.</td>
+</tr>
+<tr>
+<td align="left"><code>:fullscreen</code></td>
+<td align="left">Experimental. Aplica estilo si la página está en el modo de pantalla completa.</td>
+</tr>
+<tr>
+<td align="left"><code>:scope</code></td>
+<td align="left">Experimental. Aplica estilo a los elementos en el ámbito indicado.</td>
+</tr>
+<tr>
+<td align="left"><code>:any(A)</code></td>
+<td align="left">Experimental. Aplica estilo si coincide con algún elemento indicado en <code>A</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Otras pseudoclases como <code>:first</code>, <code>:left</code>, <code>:right</code> o <code>:blank</code> las mencionamos en el capítulo de <a href="/css/responsive-web-design/medios/">medios paginados</a>.</p>
+<hr />
+<h2 id="pseudoclases-css-avanzadas">Pseudoclases CSS avanzadas<a class="headerlink" href="#pseudoclases-css-avanzadas" title="Permanent link">&para;</a></h2>
+<p>Existen varias pseudoclases que permiten hacer referencias a los elementos del documento HTML según su <strong>posición y estructura de los elementos hijos</strong>. A continuación muestro un pequeño resumen de estas pseudoclases:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Pseudoclase</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>:first-child</code></td>
+<td align="left">Primer elemento hijo (de cualquier tipo).</td>
+</tr>
+<tr>
+<td align="left"><code>:last-child</code></td>
+<td align="left">Último elemento hijo (de cualquier tipo).</td>
+</tr>
+<tr>
+<td align="left"><code>:nth-child(n)</code></td>
+<td align="left">N-elemento hijo (de cualquier tipo).</td>
+</tr>
+<tr>
+<td align="left"><code>:nth-last-child(n)</code></td>
+<td align="left">N-elemento hijo (de cualquier tipo) partiendo desde el final.</td>
+</tr>
+</tbody>
+</table>
+<p>Para ello, volvamos a utilizar una estructura en forma de árbol para ver cómodamente la ubicación de cada uno de los elementos.</p>
+<p>Las dos primeras pseudoclases, <code>:first-child</code> y <code>:last-child</code> hacen referencia a los primeros y últimos elementos (<em>al mismo nivel</em>) respectivamente.</p>
+<pre><code>strong:first-child {
+  background-color:cyan;
+}
+
+strong:last-child {
+  background-color:green;
+}
+</code></pre>
+<p><img alt="Primero o último elemento" src="../img/first-last-child.png" /></p>
+<p>Sin embargo, si no queremos quedarnos en los primeros o últimos elementos y necesitamos más potencia para elegir, podemos hacer uso de la pseudoclase <code>:nth-child(A)</code>, que permite especificar el elemento deseado, simplemente estableciendo su número en el parámetro <code>A</code>:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Número</th>
+<th align="left">Equivalente a la pseudoclase</th>
+<th align="left">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>strong:nth-child(1)</code></td>
+<td align="left"><code>strong:first-child {}</code></td>
+<td align="left">Primer elemento hijo, que además es un <code>&lt;strong&gt;</code></td>
+</tr>
+<tr>
+<td align="left"><code>strong:nth-child(2)</code></td>
+<td align="left"></td>
+<td align="left">Segundo elemento hijo, que además es un <code>&lt;strong&gt;</code></td>
+</tr>
+<tr>
+<td align="left"><code>strong:nth-child(3)</code></td>
+<td align="left"></td>
+<td align="left">Tercer elemento hijo, que además es un <code>&lt;strong&gt;</code></td>
+</tr>
+<tr>
+<td align="left"><code>strong:nth-child(n)</code></td>
+<td align="left"></td>
+<td align="left">Todos los elementos hijos que son <code>&lt;strong&gt;</code></td>
+</tr>
+<tr>
+<td align="left"><code>strong:nth-child(2n)</code></td>
+<td align="left"></td>
+<td align="left">Todos los elementos hijos pares <code>&lt;strong&gt;</code></td>
+</tr>
+<tr>
+<td align="left"><code>strong:nth-child(2n-1)</code></td>
+<td align="left"></td>
+<td align="left">Todos los elementos hijos impares <code>&lt;strong&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>A continuación puedes comprobar los valores de la tabla anterior de un modo más visual y práctico, estableciendo en el campo de texto valores como <code>n</code>, <code>n+2</code>, <code>2n</code>, <code>2n-1</code> (<em>o similares</em>) y observando los resultados.</p>
+</blockquote>
+<p><code>:nth-child()</code></p>
+<p>.nth-test { display: flex; flex-direction: column; align-items: center; } .nth-test input { padding: 5px; max-width: 70px; margin-bottom: 0.5em; font-family: var(--header-font); font-size: 18px; } .nth-test .table { display: flex; flex-wrap: wrap; } .nth-test .cell { border: 1px solid #aaa; width: 75px; height: 32px; margin: 3px; } const nth = document.querySelector(".nth-test"); const input = nth.querySelector("input"); const table = nth.querySelector(".table"); const style = nth.querySelector(".nth-style"); for (let i = 0; i &lt; 60; i++) { const div = document.createElement("div"); div.className = "cell"; table.appendChild(div); } input.onkeyup = (ev) =&gt; { const value = ev.target.value; style.textContent = `.nth-test .cell:nth-child(${value}) { background: green; }`; }</p>
+<p>Veamos además un ejemplo gráfico:</p>
+<p><img alt="Hijo número N" src="../img/nth-child-1.png" /></p>
+<p>Como se aprecia en el ejemplo, en el caso <code>:nth-child(2)</code> se puede ver como el segundo elemento lo ocupa un elemento <code>span</code>, por lo que sólo se selecciona el elemento <code>strong</code> del segundo caso, donde si existe.</p>
+<h4 id="elementos-del-mismo-tipo">Elementos del mismo tipo<a class="headerlink" href="#elementos-del-mismo-tipo" title="Permanent link">&para;</a></h4>
+<p>En los casos anteriores, seleccionamos elementos independientemente de que elemento sea. Simplemente, hacemos caso a la posición donde está ubicado. Si queremos hacer referencia sólo a elementos del mismo tipo, utilizaremos los selectores siguientes, análogos a los anteriores, pero haciendo referencia sólo a elementos del mismo tipo:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Pseudoclase</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>:first-of-type</code></td>
+<td align="left">Primer elemento hijo (de su mismo tipo).</td>
+</tr>
+<tr>
+<td align="left"><code>:last-of-type</code></td>
+<td align="left">Último elemento hijo (de su mismo tipo).</td>
+</tr>
+<tr>
+<td align="left"><code>:nth-of-type(n)</code></td>
+<td align="left">N-elemento hijo (de su mismo tipo).</td>
+</tr>
+<tr>
+<td align="left"><code>:nth-last-of-type(n)</code></td>
+<td align="left">N-elemento hijo (de su mismo tipo) partiendo desde el final.</td>
+</tr>
+</tbody>
+</table>
+<p>Las pseudoclases <code>:first-of-type</code> y <code>:last-of-type</code> son las equivalentes a <code>:first-child</code> y <code>:last-child</code> pero sólo teniendo en cuenta elementos del mismo tipo. Por otro lado, la pseudoclase <code>:nth-of-type(A)</code> es la equivalente a <code>:nth-child(A)</code> y <code>:nth-last-of-type(A)</code> es la equivalente a <code>:nth-last-child(A)</code>. Veamos un ejemplo sobre el ejercicio anterior:</p>
+<p><img alt="Hijo número N" src="../img/nth-of-type.png" /></p>
+<p>En este ejemplo, se puede ver como <code>:nth-of-type(2)</code> selecciona el segundo elemento <code>strong</code> en ambos casos, a pesar de que en el primero ocupa la tercera posición. En este caso se selecciona porque es el segundo elemento de su mismo tipo (<code>&lt;strong&gt;</code>).</p>
+<p>Por otro lado, <code>:nth-last-of-type(A)</code> hace una selección de forma inversa, empezando por el último elemento.</p>
+<h4 id="hijos-unicos">Hijos únicos<a class="headerlink" href="#hijos-unicos" title="Permanent link">&para;</a></h4>
+<p>Existen también varias pseudoclases para la gestión de hijos únicos. Son las siguientes:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Pseudoclase</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>:only-child</code></td>
+<td align="left">Elemento que es hijo único (de cualquier tipo).</td>
+</tr>
+<tr>
+<td align="left"><code>:only-of-type</code></td>
+<td align="left">Elemento que es hijo único (de su mismo tipo).</td>
+</tr>
+<tr>
+<td align="left"><code>:empty</code></td>
+<td align="left">Elemento vacío (sin hijos, ni texto).</td>
+</tr>
+</tbody>
+</table>
+<p>La propiedad <code>:only-child</code> nos proporciona un método para aplicar estilo a aquellos elementos que sean el único hijo de su elemento padre. Además, como ha ocurrido anteriormente, también existe la pseudoclase <code>:only-of-type</code> que es equivalente al anterior pero sólo para elementos del mismo tipo, es decir, que puede ser que no sea el único elemento hijo, pero sí el único de su tipo.</p>
+<p>Muy relacionada está también la pseudoclase <code>:empty</code>, que permite seleccionar los elementos que estén vacíos. Ojo con esto, ya que un elemento que contenga comentarios HTML <code>&lt;!-- --&gt;</code> la pseudoclase <code>:empty</code> lo detectará como vacío, pero si contiene espacios en blanco, no.</p>
+<hr />
+<h2 id="pseudoelementos-css">Pseudoelementos CSS<a class="headerlink" href="#pseudoelementos-css" title="Permanent link">&para;</a></h2>
+<p>Al igual que las pseudoclases, los pseudoelementos son otra de las características de CSS que permiten hacer referencias a «comportamientos virtuales no tangibles», o lo que es lo mismo, se le puede dar estilo a elementos que no existen realmente en el HTML, y que se pueden generar desde CSS.</p>
+<p>Recordemos la sintaxis de los pseudoelementos, que está precedida de <strong>dos puntos dobles</strong> (<code>::</code>) para diferenciarlos de las pseudoclases, las cuales sólo tienen <strong>dos puntos</strong> (<code>:</code>). No obstante, este cambio surgió posteriormente, por lo que aún hoy en día es frecuente ver fragmentos de código con pseudoelementos con la sintaxis de pseudoclase con <strong>un solo par de puntos</strong> <code>:</code>.</p>
+<p><img alt="Sintaxis avanzada" src="../img/sintaxis-avanzada.png" /></p>
+<h3 id="generacion-de-contenido">Generación de contenido<a class="headerlink" href="#generacion-de-contenido" title="Permanent link">&para;</a></h3>
+<p>Dentro de la categoría de los <strong>pseudoelementos CSS</strong>, como punto central, se encuentra la propiedad <code>content</code>. Esta propiedad se utiliza en selectores que incluyen los pseudoelementos <code>::before</code> o <code>::after</code>, para indicar que vamos a crear contenido antes o después del elemento en cuestión:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Propiedad/Pseudoelemento</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>content</code></td>
+<td align="left">Propiedad para generar contenido. Sólo usable en <code>::before</code> o <code>::after</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>::before</code></td>
+<td align="left">Aplica los estilos <strong>antes</strong> del elemento indicado.</td>
+</tr>
+<tr>
+<td align="left"><code>::after</code></td>
+<td align="left">Aplica los estilos <strong>después</strong> del elemento indicado.</td>
+</tr>
+</tbody>
+</table>
+<p>La propiedad <code>content</code> admite parámetros de diverso tipo, incluso concatenando información mediante espacios. Podemos utilizar tres tipos de contenido:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Valor</th>
+<th align="left">Descripción</th>
+<th align="left">Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">"<em>string</em>"</td>
+<td align="left">Añade el contenido de texto indicado.</td>
+<td align="left"><code>content: "Contenido:";</code></td>
+</tr>
+<tr>
+<td align="left">attr(<em>atributo</em>)</td>
+<td align="left">Añade el valor del atributo HTML indicado.</td>
+<td align="left"><code>content: attr(href);</code></td>
+</tr>
+<tr>
+<td align="left">url(<em>URL</em>)</td>
+<td align="left">Añade la imagen indicada en la <code>URL</code>.</td>
+<td align="left"><code>content: url(icon.png);</code></td>
+</tr>
+</tbody>
+</table>
+<p>Por otro lado, los pseudoelementos <code>::before</code> y <code>::after</code> permiten hacer referencia a «justo antes del elemento» y «justo después del elemento», respectivamente. Así, se podría generar información (<em>usualmente con fines decorativos</em>) que no existe en el HTML, pero que por circunstancias de diseño sería apropiado colocar:</p>
+<pre><code>q::before {
+  content: "«";
+  color: #888;
+}
+
+q::before {
+  content: "»";
+  color: #888;
+}
+</code></pre>
+<p>Los ejemplos anteriores insertan el carácter <code>«</code> antes de las citas indicadas con el elemento HTML <code>&lt;q&gt;</code> y el carácter <code>»</code> al finalizar la misma, ambas de color gris.</p>
+<h4 id="atributos-html">Atributos HTML<a class="headerlink" href="#atributos-html" title="Permanent link">&para;</a></h4>
+<p>Es interesante recalcar la utilidad de la expresión <strong>attr()</strong>, que en lugar de generar el contenido textual que le indiquemos, permite recuperar esa información del valor del <strong>atributo HTML</strong> especificado. Veamos un ejemplo para clarificarlo, concatenándolo con texto:</p>
+<pre><code>a::after {
+  content: " ( " attr(href) " )";
+}
+</code></pre>
+<p>Este pequeño ejemplo muestra a continuación de todos los enlaces la URL literalmente, dentro de dos paréntesis. Esto puede ser realmente útil en una página de estilos que se aplica a una página en el momento de imprimir, en los cuales se pierde la información del enlace al no ser un medio interactivo.</p>
+<blockquote>
+<p><strong>Truco</strong>: También se puede utilizar la expresión <strong>url()</strong> para añadir una imagen al contenido generado, tal y como lo hacemos en la propiedad <code>background</code>, por ejemplo.</p>
+</blockquote>
+<h3 id="primera-letra-y-primera-linea">Primera letra y primera línea<a class="headerlink" href="#primera-letra-y-primera-linea" title="Permanent link">&para;</a></h3>
+<p>También existen pseudoelementos con los que podemos hacer referencia a la <strong>primera letra</strong> de un texto. Para ello utilizamos el pseudoelemento <code>::first-letter</code>, así como el pseudoelemento <code>::first-line</code> si queremos hacer referencia a la <strong>primera línea</strong> de un texto. De esta forma, podemos dar estilo a esas secciones concretas del texto:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Pseudoelemento</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>::first-letter</code></td>
+<td align="left">Aplica los estilos en la primera letra del texto.</td>
+</tr>
+<tr>
+<td align="left"><code>::first-line</code></td>
+<td align="left">Aplica los estilos en la primera línea del texto.</td>
+</tr>
+</tbody>
+</table>
+<p>Veamos un ejemplo en acción sobre un párrafo de texto:</p>
+<pre><code>p {
+  color: #333;
+  font-family: Verdana, sans-serif;
+  font-size: 16px;
+}
+
+p::first-letter {
+  color: black;
+  font-family: 'Times New Roman', serif;
+  font-size: 42px;
+}
+
+p::first-line {
+  color: #999;
+}
+</code></pre>
+<p>Esto puede darnos la posibilidad de dar formato a un texto con ciertas propiedades, como cuentos clásicos:</p>
+<p><img alt="First-letter y First-line en CSS" src="../img/first-letter-first-line.png" /></p>
+<h3 id="signos-de-las-listas-markers">Signos de las listas (markers)<a class="headerlink" href="#signos-de-las-listas-markers" title="Permanent link">&para;</a></h3>
+<p>Existe también un pseudoelemento para hacer referencias a los signos o marcas de la listas (<code>&lt;ol&gt;</code> o <code>&lt;ul&gt;</code>), en el caso de que queramos que tengan, por ejemplo, un color diferente al del texto de la lista.</p>
+<p>Se aplican a los elementos <code>&lt;li&gt;</code> de los ítems de una lista. Veamos un ejemplo:</p>
+<pre><code>ul ::marker {
+  color: green;
+}
+</code></pre>
+<p>Esto mostraría el texto de la lista con el color habitual que tenga (<em>por ejemplo, negro</em>), pero los signos que preceden a cada ítem de la lista, aparecerían en color verde. Hay que tener cuidado, puesto que el soporte de esta característica aún no es muy bueno.</p>
+<h3 id="otros-pseudoelementos">Otros pseudoelementos<a class="headerlink" href="#otros-pseudoelementos" title="Permanent link">&para;</a></h3>
+<p>Existen otros pseudoelementos quizás menos conocidos:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Pseudoelemento</th>
+<th align="left">Descripción</th>
+<th align="left">Soporte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>::backdrop</code></td>
+<td align="left">Aplica estilos al fondo exterior de la ventana de diálogo mostrada.</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>::input-placeholder</code></td>
+<td align="left">Aplica estilos a los textos de sugerencia de los campos de entrada.</td>
+<td align="left"><a href="https://caniuse.com/#feat=css-placeholder">Soporte</a></td>
+</tr>
+<tr>
+<td align="left"><code>::selection</code></td>
+<td align="left">Aplica estilos al fragmento de texto seleccionado por el usuario.</td>
+<td align="left"><a href="https://caniuse.com/#feat=css-selection">Soporte</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="atributos-css">Atributos CSS<a class="headerlink" href="#atributos-css" title="Permanent link">&para;</a></h2>
+<p>Por último, una característica muy interesante de CSS es la posibilidad de aplicar estilos dependiendo de la existencia o el contenido de ciertos <strong>atributos de los elementos HTML</strong>. En CSS, estos atributos se rodean de corchetes <code>[]</code> y hay varias formas de utilizarlos, inspirados en un concepto llamado expresiones regulares:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Atributo</th>
+<th align="left">¿Cuándo se aplica el estilo?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>[href]</code></td>
+<td align="left">Si el elemento tiene atributo <code>href</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>[href="#"]</code></td>
+<td align="left">Si el elemento tiene atributo <code>href</code> y su valor es <code>#</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>[href*="emezeta"]</code></td>
+<td align="left">Si el elemento tiene atributo <code>href</code> y su valor contiene <code>emezeta</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>[href^="https://"]</code></td>
+<td align="left">Si el elemento tiene atributo <code>href</code> y su valor comienza por <code>https://</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>[href$=".pdf"]</code></td>
+<td align="left">Si el elemento tiene atributo <code>href</code> y su valor termina por <code>.pdf</code> (un enlace a un PDF).</td>
+</tr>
+<tr>
+<td align="left"><code>[class~="emezeta"]</code></td>
+<td align="left">Si el elemento tiene atributo <code>class</code> con una lista de valores y uno de ellos es <code>emezeta</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>[lang|="es"]</code></td>
+<td align="left">Si el elemento tiene atributo <code>lang</code> con una lista de valores, donde alguno empieza por <code>es-</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="atributo-existente">Atributo existente<a class="headerlink" href="#atributo-existente" title="Permanent link">&para;</a></h3>
+<p>Para empezar, podemos utilizar el atributo <code>[style]</code> para seleccionar todas las etiquetas HTML que contengan un atributo <code>style</code> para darles estilos en línea a un elemento. Estos elementos, aparecerían con fondo rojo:</p>
+<pre><code>[style] {
+  background: red;
+}
+</code></pre>
+<p>Este ejemplo es didáctico y no tiene finalidad práctica de diseño, ya que la idea sería mostrar visualmente que elementos tienen esa característica, algo que podría interesarle a un desarrollador. Si el elemento no tiene un atributo <code>style</code> definido, no se le aplican los estilos.</p>
+<h3 id="atributo-con-valor-exacto">Atributo con valor exacto<a class="headerlink" href="#atributo-con-valor-exacto" title="Permanent link">&para;</a></h3>
+<p>Pero la potencia de los atributos en CSS es que podemos indicar el valor exacto que deben tener para que sean seleccionados. Para ello, simplemente utilizamos el <code>=</code> y escribimos el texto entre comillas dobles:</p>
+<pre><code>a[rel="nofollow"] {
+  background: red;
+}
+</code></pre>
+<p>Este ejemplo selecciona los enlaces <code>&lt;a&gt;</code> que tienen un atributo <code>rel</code> establecido a <code>nofollow</code>. Esta es una característica que le indica a Google (<em>u otros robots o crawlers</em>) que ese enlace <strong>no se debería tener en cuenta</strong> para seguirlo, algo que puede ser realmente útil para desincentivar SPAM en comentarios, por ejemplo.</p>
+<h4 id="atributo-contiene-texto">Atributo contiene texto<a class="headerlink" href="#atributo-contiene-texto" title="Permanent link">&para;</a></h4>
+<p>En lugar de un valor específico, también podemos querer indicar un fragmento de texto que debe estar incluído, pero que no es el texto íntegro, casando con varias posibles coincidencias:</p>
+<pre><code>a[href*="emezeta"] {
+  background-color: orange;
+}
+</code></pre>
+<p>En la siguiente tabla se pueden ver varios ejemplos de enlaces, y cuáles se seleccionarían en este caso:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Etiqueta</th>
+<th align="left">Valor del atributo href</th>
+<th align="left">¿Seleccionado?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>&lt;a&gt;</code></td>
+<td align="left"><a href="https://www">https://www</a>.<strong>emezeta</strong>.com/</td>
+<td align="left">Sí</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;a&gt;</code></td>
+<td align="left"><a href="https://www">https://www</a>.<strong>emezeta</strong>.com/articulos/alternativas-a-bootstrap</td>
+<td align="left">Sí</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;a&gt;</code></td>
+<td align="left"><a href="https://www.google.com/">https://www.google.com/</a></td>
+<td align="left">No, no incluye <code>emezeta</code></td>
+</tr>
+<tr>
+<td align="left"><code>&lt;a&gt;</code></td>
+<td align="left"><a href="https://www.google.com/search?q=">https://www.google.com/search?q=</a><strong>emezeta</strong></td>
+<td align="left">Sí</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;a&gt;</code></td>
+<td align="left"><strong>emezeta</strong></td>
+<td align="left">Sí</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;link&gt;</code></td>
+<td align="left"><a href="https://www.emezeta.com/index.css">https://www.emezeta.com/index.css</a></td>
+<td align="left">No, no es <code>&lt;a&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p>De la misma forma, existe una variante que utiliza el comparador <code>~=</code>. Esta variante nos permitiría seleccionar los elementos HTML que tengan un atributo con una lista de palabras separadas por espacios, donde una de ellas es el texto que hemos escrito a continuación. Se trata de una versión más restrictiva del comparador <code>*=</code>.</p>
+<h4 id="comienzofinal-de-atributo">Comienzo/final de atributo<a class="headerlink" href="#comienzofinal-de-atributo" title="Permanent link">&para;</a></h4>
+<p>Otro recurso bastante útil es la posibilidad de seleccionar elementos dependiendo del texto con el que empiezan o con el que acaban en el valor de un atributo específico. Veamos un ejemplo, donde se apreciará mucho mejor esta funcionalidad:</p>
+<pre><code>a[href]::before {
+  content: url(icon_url.png);
+  padding-right: 3px;
+}
+
+a[href$=".pdf"]::before {
+  content: url(icon_pdf.png);
+}
+
+a[href]::after {
+  content: ": " attr(href);
+  display: inline-block;
+  color: #666;
+}
+</code></pre>
+<p>Obtendremos el siguiente resultado:</p>
+<ul>
+<li>
+<p>El primer bloque CSS mostrará un icono (<em>icon_url.png</em>) antes (<em><code>::before</code></em>) de cualquier enlace con el atributo <code>href</code>.</p>
+</li>
+<li>
+<p>El segundo bloque CSS sobrescribimos la regla anterior si se trata de un enlace donde el atributo <code>href</code> acaba en <code>.pdf</code>. Si es así, mostramos el icono de un archivo PDF (<em>icon_pdf.png</em>).</p>
+</li>
+<li>
+<p>Por último, el tercer bloque se aplica a cualquier enlace con un atributo <code>href</code>, cambiamos el modo de representación con <code>display: inline-block</code>, para que el subrayado sólo afecte al enlace en sí.</p>
+</li>
+</ul>
+<p>Recuerda que también es posible seleccionar el principio de un atributo, utilizando <code>^=</code> en lugar de <code>$=</code>, como podemos ver en el siguiente ejemplo:</p>
+<pre><code>a[href^="http://"]::after {
+  content: " (Página no segura): " attr(href);
+  display: inline-block;
+  color: #666;
+}
+</code></pre>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><strong>Ojo:</strong> En el segundo caso del ejemplo anterior, sólo se seleccionarían los enlaces que tengan un fichero <code>.pdf</code> donde la extensión esté en minúsculas. Si tenemos un enlace a un fichero <code>.PDF</code> no se incluiría en esa selección. Para evitar eso, podemos añadir una <code>i</code> antes del cierre <code>]</code> del atributo:</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<pre><code>a[href$=".pdf" i]::before {
+  content: url(icon_pdf.png);
+}
+</code></pre>
+<p>De esta forma no tendríamos problemas ese problema, ya que esa <code>i</code> hace referencia a «case **i**nsensitive». Así no tendría en cuenta si son mayúsculas o minúsculas, sino que las tratas a todas como iguales.</p>
+<hr />
+<p><strong>Fuente:</strong> <a href="https://lenguajecss.com/">Lenguaje de CSS</a> por <a href="https://manzdev.github.io/">Manz</a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../03-colores_y_fondos/" title="Colores y fondos" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Colores y fondos
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../05-Fuentes_y_tipografias/" title="Fuentes y tipografías" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Fuentes y tipografías
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/saucedoinfo" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/saucedoinfo" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.instagram.com/saucedo.info/" target="_blank" rel="noopener" title="www.instagram.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.instant', 'navigation.expand', 'tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

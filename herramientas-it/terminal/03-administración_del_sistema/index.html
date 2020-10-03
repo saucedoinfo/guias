@@ -1,0 +1,1443 @@
+
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Coleccion de Guias de Desarrollo y diseño.">
+      
+      
+        <link rel="canonical" href="https://saucedoinfo.github.io/guias/herramientas-it/terminal/03-administraci%C3%B3n_del_sistema/">
+      
+      
+        <meta name="author" content="Fernando S. Saucedo">
+      
+      <link rel="shortcut icon" href="../../../img/favicon-16x16.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.14">
+    
+    
+      
+        <title>Administración del sistema - Guias de Desarrollo y diseño</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d3202873.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ff0a5ce4.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#000000">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#aministracion-del-sistema" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-header-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Guias de Desarrollo y diseño
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Administración del sistema
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../desarrollo/html/01-introduccion_a_HTML5/" class="md-tabs__link">
+          Desarrollo
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../01-introducci%C3%B3n_a_la_terminal/" class="md-tabs__link md-tabs__link--active">
+          Herramientas IT
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    Guias de Desarrollo y diseño
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Desarrollo
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Desarrollo" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Desarrollo
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Html
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Html" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        <span class="md-nav__icon md-icon"></span>
+        Html
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/html/01-introduccion_a_HTML5/" title="Introduccion a HTML" class="md-nav__link">
+      Introduccion a HTML
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/html/02-etiquetas_semanticas/" title="Etiquetas semánticas" class="md-nav__link">
+      Etiquetas semánticas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/html/03-etiquetas_multimedia/" title="Etiquetas multimedias" class="md-nav__link">
+      Etiquetas multimedias
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/html/04-etiquetas_de_cabecera/" title="Etiquetas de cabecera" class="md-nav__link">
+      Etiquetas de cabecera
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/html/05-etiquetas_de_formularios/" title="Etiquetas de formularios" class="md-nav__link">
+      Etiquetas de formularios
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/html/06-etiquetas_de_scripting/" title="Etiquetas de scripting" class="md-nav__link">
+      Etiquetas de scripting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Css
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Css" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        <span class="md-nav__icon md-icon"></span>
+        Css
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/01-introduccion_a_CSS/" title="Introducción a CSS" class="md-nav__link">
+      Introducción a CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/02-modelo_de_cajas/" title="Modelo de cajas" class="md-nav__link">
+      Modelo de cajas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/03-colores_y_fondos/" title="Colores y fondos" class="md-nav__link">
+      Colores y fondos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/04-selectores_CSS/" title="Selectores CSS" class="md-nav__link">
+      Selectores CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/05-Fuentes_y_tipografias/" title="Fuentes y tipografías" class="md-nav__link">
+      Fuentes y tipografías
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/06-representacion_de_datos/" title="Representación de datos" class="md-nav__link">
+      Representación de datos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/07_maquetacion_y_colocacion/" title="Maquetación y colocación" class="md-nav__link">
+      Maquetación y colocación
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/08-interacciones/" title="Interacciones" class="md-nav__link">
+      Interacciones
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/09-efectos/" title="Efectos" class="md-nav__link">
+      Efectos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/10-responsive_Web_Design/" title="Responsive Web Design" class="md-nav__link">
+      Responsive Web Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/11-animaciones_CSS/" title="Animaciones CSS" class="md-nav__link">
+      Animaciones CSS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      JavaScript
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="JavaScript" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon"></span>
+        JavaScript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/javascript/01-introducci%C3%B3n_a_javascript/" title="Introducción a Javascript" class="md-nav__link">
+      Introducción a Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/javascript/02-fundamentos_de_javascript/" title="Fundamentos de Javascript" class="md-nav__link">
+      Fundamentos de Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/javascript/03-caracteristicas/" title="Características" class="md-nav__link">
+      Características
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/javascript/04-DOM/" title="DOM" class="md-nav__link">
+      DOM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/javascript/05-asincronia/" title="Asincronía" class="md-nav__link">
+      Asincronía
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/javascript/06-peticiones_HTTP/" title="Peticiones HTTP" class="md-nav__link">
+      Peticiones HTTP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Herramientas IT
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Herramientas IT" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Herramientas IT
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" checked>
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Terminal
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Terminal" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon"></span>
+        Terminal
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01-introducci%C3%B3n_a_la_terminal/" title="Introducción a la terminal" class="md-nav__link">
+      Introducción a la terminal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02-operaciones_con_ficheros/" title="Operaciones con ficheros" class="md-nav__link">
+      Operaciones con ficheros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Administración del sistema
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Administración del sistema" class="md-nav__link md-nav__link--active">
+      Administración del sistema
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instalar-paquetes-con-apt-get" class="md-nav__link">
+    Instalar paquetes con apt-get
+  </a>
+  
+    <nav class="md-nav" aria-label="Instalar paquetes con apt-get">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-manual-dpkg" class="md-nav__link">
+    Instalación manual (dpkg)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-automatica-apt" class="md-nav__link">
+    Instalación automática (apt)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actualizar-lista-de-paquetes" class="md-nav__link">
+    Actualizar lista de paquetes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buscar-paquetes-con-apt" class="md-nav__link">
+    Buscar paquetes con apt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ver-paquetes-instalados" class="md-nav__link">
+    Ver paquetes instalados
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalar-paquetes-con-apt" class="md-nav__link">
+    Instalar paquetes con apt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desinstalar-paquetes-con-apt" class="md-nav__link">
+    Desinstalar paquetes con apt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operaciones-de-mantenimiento" class="md-nav__link">
+    Operaciones de mantenimiento
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#equivalencias-de-apt-y-apt-get" class="md-nav__link">
+    Equivalencias de apt y apt-get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editar-los-repositorios" class="md-nav__link">
+    Editar los repositorios
+  </a>
+  
+    <nav class="md-nav" aria-label="Editar los repositorios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#actualizacion-de-debian" class="md-nav__link">
+    Actualización de Debian
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ampliacion-de-repositorios" class="md-nav__link">
+    Ampliación de repositorios
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#poderes-de-super-vaca" class="md-nav__link">
+    Poderes de super vaca
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../markdown/" title="Markdown" class="md-nav__link">
+      Markdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../pip/" title="Pip" class="md-nav__link">
+      Pip
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../mkdocs/" title="Mkdocs" class="md-nav__link">
+      Mkdocs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../about/" title="Acerca de" class="md-nav__link">
+      Acerca de
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instalar-paquetes-con-apt-get" class="md-nav__link">
+    Instalar paquetes con apt-get
+  </a>
+  
+    <nav class="md-nav" aria-label="Instalar paquetes con apt-get">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-manual-dpkg" class="md-nav__link">
+    Instalación manual (dpkg)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-automatica-apt" class="md-nav__link">
+    Instalación automática (apt)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actualizar-lista-de-paquetes" class="md-nav__link">
+    Actualizar lista de paquetes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buscar-paquetes-con-apt" class="md-nav__link">
+    Buscar paquetes con apt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ver-paquetes-instalados" class="md-nav__link">
+    Ver paquetes instalados
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalar-paquetes-con-apt" class="md-nav__link">
+    Instalar paquetes con apt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desinstalar-paquetes-con-apt" class="md-nav__link">
+    Desinstalar paquetes con apt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operaciones-de-mantenimiento" class="md-nav__link">
+    Operaciones de mantenimiento
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#equivalencias-de-apt-y-apt-get" class="md-nav__link">
+    Equivalencias de apt y apt-get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editar-los-repositorios" class="md-nav__link">
+    Editar los repositorios
+  </a>
+  
+    <nav class="md-nav" aria-label="Editar los repositorios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#actualizacion-de-debian" class="md-nav__link">
+    Actualización de Debian
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ampliacion-de-repositorios" class="md-nav__link">
+    Ampliación de repositorios
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#poderes-de-super-vaca" class="md-nav__link">
+    Poderes de super vaca
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/saucedoinfo/guias/edit/master/docs/herramientas-it/terminal/03-administración_del_sistema.md" title="Editar esta página" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="aministracion-del-sistema">Aministración del sistema<a class="headerlink" href="#aministracion-del-sistema" title="Permanent link">&para;</a></h1>
+<h2 id="instalar-paquetes-con-apt-get">Instalar paquetes con apt-get<a class="headerlink" href="#instalar-paquetes-con-apt-get" title="Permanent link">&para;</a></h2>
+<p>Las distribuciones de GNU/Linux tienen un sistema denominado <strong>gestor</strong> o <strong>administrador de paquetes</strong> que permite instalar aplicaciones (<em>llamados paquetes en linux</em>) directamente desde la línea de comandos, sin tener que acceder a una página concreta, descargar archivos o ejecutarlos. Todo ello se hace de forma transparente y automática mediante el mencionado gestor, que en distribuciones basadas en Debian se llama <strong>apt</strong> (<em>Advanced Packaging Tool</em>).</p>
+<p><img alt="Instalar paquetes: apt, dpkg o make" src="../img/debian-apt-apt-get-dpkg.svg" /></p>
+<p>Esta es la forma más cómoda y automática de instalar paquetes desde una línea de comandos. También tenemos el comando <code>dpkg</code>, que sirve para instalar de forma manual los paquetes (<em>es lo que usa por debajo apt</em>) y, por último, tenemos la forma más manual que existe: <strong>compilar el programa</strong> de su código fuente a un archivo ejecutable. Pero de eso hablaremos en otro momento.</p>
+<p>Volviendo a la <strong>instalación automática de paquetes</strong>, existen varios comandos relacionados:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Comando</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>dpkg</code></td>
+<td align="left">Gestor de paquetes <code>.deb</code> para instalar aplicaciones Debian manualmente.</td>
+</tr>
+<tr>
+<td align="left"><code>apt-get</code></td>
+<td align="left">Comando de bajo nivel para instalar paquetes y dependencias de forma automática.</td>
+</tr>
+<tr>
+<td align="left"><code>apt-cache</code></td>
+<td align="left">Comando de bajo nivel para consultar la caché de <code>apt</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>apt</code></td>
+<td align="left">Versión moderna y amigable del gestor de paquetes <code>apt-get</code>, destinada a usuarios finales.</td>
+</tr>
+</tbody>
+</table>
+<p>Existen algunos otros comando de gestión de instalación de paquetes como <code>aptitude</code>, <code>synaptic</code> (<em>entorno gráfico</em>) o <code>wajig</code>, pero no son el objeto de este artículo, ya que son menos populares o alternativas para otros contextos.</p>
+<h3 id="instalacion-manual-dpkg">Instalación manual (dpkg)<a class="headerlink" href="#instalacion-manual-dpkg" title="Permanent link">&para;</a></h3>
+<p>En Linux, más concretamente en <strong>Debian</strong> (<em>o distribuciones de Linux basadas en él</em>), el formato de paquetería que se utiliza para instalar aplicaciones es <code>.deb</code> (<em>Debian Packages</em>). Si quisieramos instalar un paquete de forma manual, tendríamos que descargar este archivo <code>.deb</code> y desde una línea de comandos escribir:</p>
+<pre><code>$ dpkg -i nombre_archivo.deb
+</code></pre>
+<p>Al igual que instalamos un paquete con el parámetro <code>-i</code> (<em>install</em>), podemos desinstalarlo con el parámetro <code>-r</code> (<em>remove</em>) o ver su contenido con <code>-l</code> (<em>list</em>). En la instalación, el comando <code>dpkg</code> (<em>Debian Package</em>) se encargaría de desempaquetar e instalar el paquete, después de comprobar si tenemos todas las dependencias (<em>otros paquetes</em>) necesarias instaladas.</p>
+<p>Como todo este trabajo puede llegar a ser muy laborioso si hay muchas dependencias, se ideó <strong>apt</strong>, un gestor de paquetes que haría todo esto de forma automática por nosotros, búsqueda e instalación de dependencias incluida.</p>
+<h3 id="instalacion-automatica-apt">Instalación automática (apt)<a class="headerlink" href="#instalacion-automatica-apt" title="Permanent link">&para;</a></h3>
+<p>El gestor de paquetes <strong>apt</strong> nos permite instalar de forma muy sencilla aplicaciones y programas a través del comando <code>apt</code> (<em>o <code>apt-get</code> si queremos usar el comando de bajo nivel</em>). Una vez dicho esto, veamos cuales son los parámetros más frecuentes de <strong>apt</strong>:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Comando</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>apt update</code></td>
+<td align="left">Actualiza la lista de paquetes disponibles desde los repositorios oficiales.</td>
+</tr>
+<tr>
+<td align="left"><code>apt search &lt;palabra&gt;</code></td>
+<td align="left">Busca una o varias palabras en la lista de paquetes disponibles.</td>
+</tr>
+<tr>
+<td align="left"><code>apt list</code></td>
+<td align="left">Lista todos los paquetes disponibles para instalar o instalados en el sistema.</td>
+</tr>
+<tr>
+<td align="left"><code>apt install &lt;paquete&gt;</code></td>
+<td align="left">Instala el paquete indicado en el sistema.</td>
+</tr>
+<tr>
+<td align="left"><code>apt remove &lt;paquete&gt;</code></td>
+<td align="left">Desinstala el paquete indicado del sistema.</td>
+</tr>
+<tr>
+<td align="left"><code>apt purge &lt;paquete&gt;</code></td>
+<td align="left">Desinstala el paquete indicado y elimina sus archivos de configuración.</td>
+</tr>
+</tbody>
+</table>
+<p>En primer lugar, debemos diferenciar bien un <strong>paquete</strong> (<em>aplicación o programa</em>), de la <strong>lista de paquetes disponibles</strong>, que es un índice donde se encuentran todos los paquetes instalables desde apt. Esta lista se suele actualizar (<em>para tener la última disponible</em>) mediante <code>apt update</code>, como veremos a continuación.</p>
+<h3 id="actualizar-lista-de-paquetes">Actualizar lista de paquetes<a class="headerlink" href="#actualizar-lista-de-paquetes" title="Permanent link">&para;</a></h3>
+<p>Lo primero que se debe hacer es ejecutar la línea de comandos <code>apt update</code>. Este comando lo que hará es <strong>actualizar la lista de paquetes disponibles para instalar</strong>, que puede estar obsoleta si han pasado varios días desde la última vez que lo hicimos, o incluso puede estar vacía si no lo hemos hecho nunca.</p>
+<div class="admonition consejo">
+<p class="admonition-title">Consejo</p>
+<p>Por defecto (<em>sobre todo si usas Docker</em>), las distribuciones suelen venir con esta lista (<em>índice de paquetes</em>) vacía, por lo que si hacemos un <code>apt install</code> o <code>apt search</code> es probable que no nos encuentre nada. Hay que hacer un <code>apt update</code> antes.</p>
+</div>
+<p>Si nos aparece un mensaje como el siguiente, es que no tenemos permisos para actualizar listas o instalar paquetes. Lo correcto sería hacerlo con privilegios de root, utilizando <code>sudo</code> antes del comando <code>apt update</code>:</p>
+<pre><code>$ apt update
+
+Reading package lists... Done
+E: Could not open lock file /var/lib/apt/lists/lock - open (13: Permission denied)
+E: Unable to lock directory /var/lib/apt/lists/
+W: Problem unlinking the file /var/cache/apt/pkgcache.bin - RemoveCaches (13: Permission denied)
+W: Problem unlinking the file /var/cache/apt/srcpkgcache.bin - RemoveCaches (13: Permission denied)
+</code></pre>
+<h3 id="buscar-paquetes-con-apt">Buscar paquetes con apt<a class="headerlink" href="#buscar-paquetes-con-apt" title="Permanent link">&para;</a></h3>
+<p>Para buscar paquetes con <code>apt</code>, solo tenemos que usar el parámetro <code>apt search</code> seguido de la palabra (<em>o palabras</em>) que queramos buscar:</p>
+<pre><code>$ apt search tint2
+
+Sorting... Done
+Full Text Search... Done
+gsimplecal/stable 2.1-1+b1 amd64
+  lightweight GUI calendar application
+
+pnmixer/stable 0.7.2-1 amd64
+  Simple mixer application for system tray
+
+tint2/stable 16.6.1-1 amd64
+  lightweight taskbar
+</code></pre>
+<p>Esto nos muestra una lista de paquetes que coinciden con los términos que hemos buscado, ya sea porque es el paquete concreto, porque contiene la palabra en su nombre, o porque se cita en la descripción o en alguna palabra clave relacionada.</p>
+<div class="admonition nota">
+<p class="admonition-title">Nota</p>
+<p>Si lo que queremos es más información sobre un paquete en particular, podemos utilizar el comando <code>apt show &lt;paquete&gt;</code> donde se nos mostrarán detalles como la versión, el usuario que mantiene el paquete, tamaño de instalación, dependencias, etc...</p>
+</div>
+<h3 id="ver-paquetes-instalados">Ver paquetes instalados<a class="headerlink" href="#ver-paquetes-instalados" title="Permanent link">&para;</a></h3>
+<p>Un poco más amplio es el objetivo de <code>apt list</code>, el cuál nos muestra la lista de <strong>paquetes disponibles para instalar</strong>, en un formato más compacto, donde cada línea es un paquete y no muestra descripción. Esto es útil si queremos filtrar haciendo un <code>apt list | grep tint2</code> por ejemplo. En este caso, solo filtraremos por nombre del paquete.</p>
+<p>Si lo que queremos es ver un listado de los <strong>paquetes instalados</strong> en nuestro sistema, simplemente hay que escribir: <code>apt list --installed</code>. Por otro lado, <code>apt list --upgradable</code> nos muestra un listado de los paquetes que tienen actualización disponible.</p>
+<h3 id="instalar-paquetes-con-apt">Instalar paquetes con apt<a class="headerlink" href="#instalar-paquetes-con-apt" title="Permanent link">&para;</a></h3>
+<p>Probablemente, lo que más nos interese es saber como instalar un paquete con <strong>apt</strong>. Es algo tan sencillo como escribir <code>apt install</code> seguido del nombre del paquete.</p>
+<p>En muchas ocasiones, <strong>apt</strong> nos preguntará si estamos seguros de querer continuar, teniendo que pulsar Y o N. Es posible omitir esta pregunta utilizando el flag <code>-y</code>:</p>
+<pre><code>$ sudo apt install mp3blaster -y
+</code></pre>
+<div class="admonition nota">
+<p class="admonition-title">Nota</p>
+<p>En el caso de querer instalar varios paquetes, puedes establecer una lista de ellos separados por espacio y <code>apt</code> los descargará e instalará uno detrás de otro.</p>
+</div>
+<h3 id="desinstalar-paquetes-con-apt">Desinstalar paquetes con apt<a class="headerlink" href="#desinstalar-paquetes-con-apt" title="Permanent link">&para;</a></h3>
+<p>En el caso de que queramos <strong>desinstalar un paquete</strong> de nuestro sistema, podremos utilizar <code>apt remove</code> seguido del nombre del paquete. Esto eliminará dicho paquete de nuestro sistema, <strong>exceptuando los ficheros de configuración</strong> que pudieramos haber modificado. En el caso de que desinstalemos un programa sin querer, con volverlo a instalar recuperaremos su configuración habitual.</p>
+<p>En el caso de que estemos seguros completamente y/o queramos eliminar por completo la aplicación, incluyendo también los archivos de configuración, podemos utilizar el comando <code>apt purge</code> seguido del nombre del paquete, en lugar de utilizar <code>apt remove</code>.</p>
+<h3 id="operaciones-de-mantenimiento">Operaciones de mantenimiento<a class="headerlink" href="#operaciones-de-mantenimiento" title="Permanent link">&para;</a></h3>
+<p>Otra de las ventajas de <strong>apt</strong>, es que también permite realizar tareas de mantenimiento o <strong>actualizar nuestro sistema</strong> mediante algunos de sus comandos. Los más populares son los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Comando</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>apt upgrade</code></td>
+<td align="left">Actualiza todos los paquetes instalados que tengan versiones nuevas.</td>
+</tr>
+<tr>
+<td align="left"><code>apt full-upgrade</code></td>
+<td align="left">Actualiza los paquetes importantes del sistema operativo.</td>
+</tr>
+<tr>
+<td align="left"><code>apt autoremove</code></td>
+<td align="left">Elimina paquetes que ya no son necesarios y quedaron en alguna desinstalación.</td>
+</tr>
+<tr>
+<td align="left"><code>apt edit-sources</code></td>
+<td align="left">Edita los repositorios de donde se obtienen los paquetes (ver más adelante).</td>
+</tr>
+</tbody>
+</table>
+<p>Por ejemplo, <code>apt upgrade</code> (<em>no confundir con <code>apt update</code></em>) permite actualizar todos los paquetes instalados que no se encuentren en su última versión. Es una excelente forma de mantener el software de tu sistema actualizado sin demasiadas complicaciones.</p>
+<p>El comando <code>apt full-upgrade</code> nos permite realizar una actualización completa del sistema. En el caso de <code>apt upgrade</code>, sólo nos actualizará paquetes que pasan a una nueva versión, pero en el caso de <code>apt full-upgrade</code> también eliminará paquetes instalados en el caso de que sea necesario, como suele serlo en las actualizaciones importantes del sistema.</p>
+<p>Por último, <code>apt autoremove</code> es un comando que permite eliminar paquetes que, tras una actualización, han pasado a ser paquetes huérfanos (<em>que ya no son utilizados</em>) y pueden eliminarse de forma segura para hacer espacio en el disco.</p>
+<p>Del nuevo comando <code>apt edit-sources</code> hablaremos un poco más adelante, en el apartado de <strong>Editar los repositorios</strong>.</p>
+<h3 id="equivalencias-de-apt-y-apt-get">Equivalencias de apt y apt-get<a class="headerlink" href="#equivalencias-de-apt-y-apt-get" title="Permanent link">&para;</a></h3>
+<p>Si quieres saber la <strong>equivalencia</strong> de los comandos entre <code>apt</code> vs <code>apt-get</code>, puedes echar un vistazo a la siguiente tabla:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Comando apt</th>
+<th align="left">Equivalencia a comando apt-get o forma clásica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>apt update</code></td>
+<td align="left"><code>apt-get update</code></td>
+</tr>
+<tr>
+<td align="left"><code>apt install &lt;paquete&gt;</code></td>
+<td align="left"><code>apt-get install &lt;paquete&gt;</code></td>
+</tr>
+<tr>
+<td align="left"><code>apt search &lt;paquete&gt;</code></td>
+<td align="left"><code>apt-cache search &lt;paquete&gt;</code></td>
+</tr>
+<tr>
+<td align="left"><code>apt list</code></td>
+<td align="left"><code>apt-cache search ^</code></td>
+</tr>
+<tr>
+<td align="left"><code>apt list --installed</code></td>
+<td align="left"><code>dpkg -l</code> o <code>dpkg --get-selections</code></td>
+</tr>
+<tr>
+<td align="left"><code>apt remove</code></td>
+<td align="left"><code>apt-get remove &lt;paquete&gt;</code></td>
+</tr>
+<tr>
+<td align="left"><code>apt reinstall &lt;paquete&gt;</code></td>
+<td align="left"><code>apt-get purge &lt;paquete&gt; &amp;&amp; apt-get install &lt;paquete&gt;</code></td>
+</tr>
+<tr>
+<td align="left"><code>apt upgrade</code></td>
+<td align="left"><code>apt-get upgrade</code></td>
+</tr>
+<tr>
+<td align="left"><code>apt full-upgrade</code></td>
+<td align="left"><code>apt-get dist-upgrade</code></td>
+</tr>
+<tr>
+<td align="left"><code>apt edit-sources</code></td>
+<td align="left"><code>sudo vim /etc/apt/sources.list</code></td>
+</tr>
+</tbody>
+</table>
+<p>Recuerda que las instalaciones se pueden realizar tanto desde <code>apt</code> como desde el comando de bajo nivel <code>apt-get</code>. Ambos sirven para lo mismo, pero <code>apt</code> está destinado a ser una opción más sencilla y atractiva (<em>usa colores, barras de progreso, simplifica tareas, etc...</em>) que <code>apt-get</code>, el cuál es un comando más a bajo nivel, que puede ser más interesante para crear scripts o realizar tareas automatizadas.</p>
+<h3 id="editar-los-repositorios">Editar los repositorios<a class="headerlink" href="#editar-los-repositorios" title="Permanent link">&para;</a></h3>
+<p>Las listas de paquetes de Debian se actualizan desde los repositorios definidos en el fichero <code>/etc/apt/sources.list</code>. En él, se suelen encontrar los repositorios que estamos utilizando, uno por línea. Algo similar a lo siguiente:</p>
+<pre><code>deb http://deb.debian.org/debian stretch main
+deb http://security.debian.org/debian-security stretch/updates main
+deb http://deb.debian.org/debian stretch-updates main
+</code></pre>
+<p>Observa que donde aparece la palabra clave <code>buster</code> está indicando la versión del sistema operativo. En el caso de Debian, cada versión del sistema operativo es definida por una palabra clave que es un personaje de <strong>Toy Story</strong>:</p>
+<p><img alt="Debian Jessie, Stretch, Buster, Bullseye y Bookworm" src="../img/debian-jessie-stretch-buster-bullseye-bookworm.jpg" /></p>
+<ul>
+<li>Debian 7: <code>wheezy</code> (2013)</li>
+<li>Debian 8: <code>jessie</code> (2015)</li>
+<li>Debian 9: <code>stretch</code> (2017)</li>
+<li>Debian 10: <code>buster</code> (2019)</li>
+<li>Debian 11: <code>bullseye</code> (próxima)</li>
+<li>Debian 12: <code>bookworm</code> (futuro)</li>
+</ul>
+<h4 id="actualizacion-de-debian">Actualización de Debian<a class="headerlink" href="#actualizacion-de-debian" title="Permanent link">&para;</a></h4>
+<p>Sabiendo esto, es muy sencillo configurar los repositorios para actualizar nuestro sistema a las futuras versiones. Imaginemos que tenemos un sistema con Debian 9 (<em>stretch</em>) como el del ejemplo anterior. Para actualizarlo a Debian 10 (<em>buster</em>), podemos hacer lo siguiente:</p>
+<pre><code>sed s/stretch/buster/g /etc/apt/sources.list &gt;/tmp/sources.list
+sudo mv /tmp/sources.list /etc/apt/sources.list
+</code></pre>
+<p>Con <code>sed</code> y una expresión regular, hemos reemplazado <code>stretch</code> por <code>buster</code>, por lo que nuestro fichero <code>/etc/apt/sources.list</code> debería ser ahora el siguiente:</p>
+<pre><code>deb http://deb.debian.org/debian buster main
+deb http://security.debian.org/debian-security buster/updates main
+deb http://deb.debian.org/debian buster-updates main
+</code></pre>
+<p>Con un <code>sudo apt update &amp;&amp; sudo apt upgrade</code> deberíamos tener la distribución y todos sus paquetes actualizados.</p>
+<h4 id="ampliacion-de-repositorios">Ampliación de repositorios<a class="headerlink" href="#ampliacion-de-repositorios" title="Permanent link">&para;</a></h4>
+<p>Comentar también que, por defecto, debian incorpora su repositorio principal (<em>debian</em>), su repositorio de actualizaciones de seguridad (<em>debian-security</em>) y su repositorio de actualizaciones por versión (<em>buster-updates en este caso</em>). Podemos ampliar estos repositorios para tener más paquetes a nuestra disposición.</p>
+<p>Veamos un fichero <code>/etc/apt/sources.list</code> ampliado:</p>
+<pre><code>deb http://deb.debian.org/debian buster main contrib non-free
+deb http://deb.debian.org/debian buster-updates main contrib non-free
+deb http://security.debian.org/debian-security/ buster/updates main contrib non-free
+deb http://deb.debian.org/debian buster-backports main contrib non-free
+</code></pre>
+<p>Si nos fijamos, cada repositorio (<em>cada línea</em>) tiene las palabras clave <code>contrib</code> y <code>non-free</code>. Esto hace que dichos repositorios no sólo muestren los paquetes generales, sino también los que son contribuciones de la comunidad (<em>contrib</em>) o los paquetes privativos (<em>non-free</em>).</p>
+<p>La última línea tiene un repositorio adicional <code>buster-backports</code>. Este es el llamado <strong>repositorio de retroimportaciones</strong>. Se trata de paquetes considerados inestables, pero mucho más actualizados que otros, por si se quisiera tener versiones más modernas, que las versiones estables consideradas por Debian.</p>
+<p>En muchos casos, encontrarás una carpeta adicional <code>/etc/apt/sources.list.d/</code> que contiene algunos archivos. Son repositorios adicionales particulares, divididos en archivos separados para ser más fácil de gestionar por herramientas automáticas. Muchas aplicaciones como <strong>node</strong>, <strong>docker</strong> u otros, utilizan este sistema para añadir sus propios repositorios de actualizaciones.</p>
+<h3 id="poderes-de-super-vaca">Poderes de super vaca<a class="headerlink" href="#poderes-de-super-vaca" title="Permanent link">&para;</a></h3>
+<p>Si nos fijamos bien, al ejecutar <code>apt</code> nos aparece al final el mensaje <code>This APT has Super Cow Powers</code> (<em>Este APT tiene poderes de super vaca</em>). Se trata de un <strong>huevo de pascua</strong> donde podemos ver a una vaquita escribiendo <code>apt moo</code>, <code>apt moo moo</code> o <code>apt moo moo moo</code>:</p>
+<p><img alt="apt moo: Super Cow Powers" src="../img/apt-moo-super-cow.png" /></p>
+<p>El mensaje <code>Have you mooed today?</code> es una referencia al eslogan de las campañas de Microsoft de los años 90, <strong>¿A dónde quieres ir hoy?</strong> <a href="https://es.wikipedia.org/wiki/Where_do_you_want_to_go_today%3F">Where do you want to go today?</a>.</p>
+<hr />
+<p><strong>Fuente:</strong> <a href="https://terminaldelinux.com/">https://terminaldelinux.com/</a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../02-operaciones_con_ficheros/" title="Operaciones con ficheros" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Operaciones con ficheros
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../markdown/" title="Markdown" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Markdown
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/saucedoinfo" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/saucedoinfo" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.instagram.com/saucedo.info/" target="_blank" rel="noopener" title="www.instagram.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.instant', 'navigation.expand', 'tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

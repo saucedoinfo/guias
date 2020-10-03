@@ -1,0 +1,5 @@
+var DISQUSWIDGETS;
+
+if (typeof DISQUSWIDGETS != 'undefined') {
+    DISQUSWIDGETS.displayCount({"text":{"and":"y","comments":{"zero":"Pulsa aqu\u00ed para dejar un comentario","multiple":"Leer {num} comentarios","one":"Leer 1 comentario"}},"counts":[{"id":"https:\/\/lenguajehtml.com\/html\/semantica\/enlaces-o-hipervinculos","comments":0}]});
+}

@@ -1,0 +1,2894 @@
+
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Coleccion de Guias de Desarrollo y diseño.">
+      
+      
+        <link rel="canonical" href="https://saucedoinfo.github.io/guias/desarrollo/css/07_maquetacion_y_colocacion/">
+      
+      
+        <meta name="author" content="Fernando S. Saucedo">
+      
+      <link rel="shortcut icon" href="../../../img/favicon-16x16.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.14">
+    
+    
+      
+        <title>Maquetación y colocación - Guias de Desarrollo y diseño</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d3202873.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ff0a5ce4.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#000000">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#maquetacion-y-colocacion" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-header-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Guias de Desarrollo y diseño
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Maquetación y colocación
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../html/01-introduccion_a_HTML5/" class="md-tabs__link">
+          Desarrollo
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" class="md-tabs__link">
+          Herramientas IT
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    Guias de Desarrollo y diseño
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Desarrollo
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Desarrollo" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Desarrollo
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Html
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Html" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        <span class="md-nav__icon md-icon"></span>
+        Html
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/01-introduccion_a_HTML5/" title="Introduccion a HTML" class="md-nav__link">
+      Introduccion a HTML
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/02-etiquetas_semanticas/" title="Etiquetas semánticas" class="md-nav__link">
+      Etiquetas semánticas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/03-etiquetas_multimedia/" title="Etiquetas multimedias" class="md-nav__link">
+      Etiquetas multimedias
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/04-etiquetas_de_cabecera/" title="Etiquetas de cabecera" class="md-nav__link">
+      Etiquetas de cabecera
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/05-etiquetas_de_formularios/" title="Etiquetas de formularios" class="md-nav__link">
+      Etiquetas de formularios
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/06-etiquetas_de_scripting/" title="Etiquetas de scripting" class="md-nav__link">
+      Etiquetas de scripting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" checked>
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Css
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Css" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        <span class="md-nav__icon md-icon"></span>
+        Css
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01-introduccion_a_CSS/" title="Introducción a CSS" class="md-nav__link">
+      Introducción a CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02-modelo_de_cajas/" title="Modelo de cajas" class="md-nav__link">
+      Modelo de cajas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-colores_y_fondos/" title="Colores y fondos" class="md-nav__link">
+      Colores y fondos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-selectores_CSS/" title="Selectores CSS" class="md-nav__link">
+      Selectores CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-Fuentes_y_tipografias/" title="Fuentes y tipografías" class="md-nav__link">
+      Fuentes y tipografías
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-representacion_de_datos/" title="Representación de datos" class="md-nav__link">
+      Representación de datos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Maquetación y colocación
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Maquetación y colocación" class="md-nav__link md-nav__link--active">
+      Maquetación y colocación
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-elementos" class="md-nav__link">
+    Tipos de elementos
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de elementos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#otros-tipos-de-elementos" class="md-nav__link">
+    Otros tipos de elementos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ocultar-elementos" class="md-nav__link">
+    Ocultar elementos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#posicionamiento" class="md-nav__link">
+    Posicionamiento
+  </a>
+  
+    <nav class="md-nav" aria-label="Posicionamiento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#posicionamiento-relativo" class="md-nav__link">
+    Posicionamiento relativo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posicionamiento-absoluto" class="md-nav__link">
+    Posicionamiento absoluto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posicionamiento-fijo" class="md-nav__link">
+    Posicionamiento fijo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otros-posicionamientos" class="md-nav__link">
+    Otros posicionamientos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#profundidad-niveles" class="md-nav__link">
+    Profundidad (niveles)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desplazamientos" class="md-nav__link">
+    Desplazamientos
+  </a>
+  
+    <nav class="md-nav" aria-label="Desplazamientos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elementos-flotantes" class="md-nav__link">
+    Elementos flotantes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limpiar-flujo-flotante" class="md-nav__link">
+    Limpiar flujo flotante
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flexbox-css" class="md-nav__link">
+    Flexbox CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Flexbox CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conceptos" class="md-nav__link">
+    Conceptos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#direccion-de-los-ejes" class="md-nav__link">
+    Dirección de los ejes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atajo-direccion-de-los-ejes" class="md-nav__link">
+    Atajo: Dirección de los ejes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#propiedades-de-alineacion" class="md-nav__link">
+    Propiedades de alineación
+  </a>
+  
+    <nav class="md-nav" aria-label="Propiedades de alineación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sobre-el-eje-principal" class="md-nav__link">
+    Sobre el eje principal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sobre-el-eje-secundario" class="md-nav__link">
+    Sobre el eje secundario
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atajo-alineaciones" class="md-nav__link">
+    Atajo: Alineaciones
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#propiedades-de-hijos" class="md-nav__link">
+    Propiedades de hijos
+  </a>
+  
+    <nav class="md-nav" aria-label="Propiedades de hijos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atajo-propiedades-de-hijos" class="md-nav__link">
+    Atajo: Propiedades de hijos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#huecos-gaps" class="md-nav__link">
+    Huecos (gaps)
+  </a>
+  
+    <nav class="md-nav" aria-label="Huecos (gaps)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atajo-huecos" class="md-nav__link">
+    Atajo: Huecos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orden-de-los-items" class="md-nav__link">
+    Orden de los ítems
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grid-css-cuadriculas" class="md-nav__link">
+    Grid CSS (Cuadrículas)
+  </a>
+  
+    <nav class="md-nav" aria-label="Grid CSS (Cuadrículas)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conceptos_1" class="md-nav__link">
+    Conceptos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grid-con-filas-y-columnas" class="md-nav__link">
+    Grid con filas y columnas
+  </a>
+  
+    <nav class="md-nav" aria-label="Grid con filas y columnas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unidad-fraccion-restante-fr" class="md-nav__link">
+    Unidad fracción restante (fr)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filas-y-columnas-repetitivas" class="md-nav__link">
+    Filas y columnas repetitivas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grid-con-lineas-nombradas" class="md-nav__link">
+    Grid con líneas nombradas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grid-por-areas" class="md-nav__link">
+    Grid por áreas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#huecos-en-grid" class="md-nav__link">
+    Huecos en grid
+  </a>
+  
+    <nav class="md-nav" aria-label="Huecos en grid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atajo-grid-con-huecos" class="md-nav__link">
+    Atajo: Grid con huecos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posicion-en-el-grid" class="md-nav__link">
+    Posición en el grid
+  </a>
+  
+    <nav class="md-nav" aria-label="Posición en el grid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atajo-de-posiciones-grid" class="md-nav__link">
+    Atajo de posiciones grid
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajuste-automatico-de-celdas" class="md-nav__link">
+    Ajuste automático de celdas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atajo-grid" class="md-nav__link">
+    Atajo: Grid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#propiedades-para-items-hijos" class="md-nav__link">
+    Propiedades para ítems hijos
+  </a>
+  
+    <nav class="md-nav" aria-label="Propiedades para ítems hijos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atajo-grid-column-y-grid-row" class="md-nav__link">
+    Atajo: grid-column y grid-row
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../08-interacciones/" title="Interacciones" class="md-nav__link">
+      Interacciones
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../09-efectos/" title="Efectos" class="md-nav__link">
+      Efectos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../10-responsive_Web_Design/" title="Responsive Web Design" class="md-nav__link">
+      Responsive Web Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../11-animaciones_CSS/" title="Animaciones CSS" class="md-nav__link">
+      Animaciones CSS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      JavaScript
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="JavaScript" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon"></span>
+        JavaScript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/01-introducci%C3%B3n_a_javascript/" title="Introducción a Javascript" class="md-nav__link">
+      Introducción a Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/02-fundamentos_de_javascript/" title="Fundamentos de Javascript" class="md-nav__link">
+      Fundamentos de Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/03-caracteristicas/" title="Características" class="md-nav__link">
+      Características
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/04-DOM/" title="DOM" class="md-nav__link">
+      DOM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/05-asincronia/" title="Asincronía" class="md-nav__link">
+      Asincronía
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/06-peticiones_HTTP/" title="Peticiones HTTP" class="md-nav__link">
+      Peticiones HTTP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Herramientas IT
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Herramientas IT" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Herramientas IT
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Terminal
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Terminal" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon"></span>
+        Terminal
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" title="Introducción a la terminal" class="md-nav__link">
+      Introducción a la terminal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/02-operaciones_con_ficheros/" title="Operaciones con ficheros" class="md-nav__link">
+      Operaciones con ficheros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/03-administraci%C3%B3n_del_sistema/" title="Administración del sistema" class="md-nav__link">
+      Administración del sistema
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/markdown/" title="Markdown" class="md-nav__link">
+      Markdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/pip/" title="Pip" class="md-nav__link">
+      Pip
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/mkdocs/" title="Mkdocs" class="md-nav__link">
+      Mkdocs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../about/" title="Acerca de" class="md-nav__link">
+      Acerca de
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-elementos" class="md-nav__link">
+    Tipos de elementos
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de elementos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#otros-tipos-de-elementos" class="md-nav__link">
+    Otros tipos de elementos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ocultar-elementos" class="md-nav__link">
+    Ocultar elementos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#posicionamiento" class="md-nav__link">
+    Posicionamiento
+  </a>
+  
+    <nav class="md-nav" aria-label="Posicionamiento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#posicionamiento-relativo" class="md-nav__link">
+    Posicionamiento relativo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posicionamiento-absoluto" class="md-nav__link">
+    Posicionamiento absoluto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posicionamiento-fijo" class="md-nav__link">
+    Posicionamiento fijo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otros-posicionamientos" class="md-nav__link">
+    Otros posicionamientos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#profundidad-niveles" class="md-nav__link">
+    Profundidad (niveles)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desplazamientos" class="md-nav__link">
+    Desplazamientos
+  </a>
+  
+    <nav class="md-nav" aria-label="Desplazamientos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elementos-flotantes" class="md-nav__link">
+    Elementos flotantes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limpiar-flujo-flotante" class="md-nav__link">
+    Limpiar flujo flotante
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flexbox-css" class="md-nav__link">
+    Flexbox CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Flexbox CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conceptos" class="md-nav__link">
+    Conceptos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#direccion-de-los-ejes" class="md-nav__link">
+    Dirección de los ejes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atajo-direccion-de-los-ejes" class="md-nav__link">
+    Atajo: Dirección de los ejes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#propiedades-de-alineacion" class="md-nav__link">
+    Propiedades de alineación
+  </a>
+  
+    <nav class="md-nav" aria-label="Propiedades de alineación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sobre-el-eje-principal" class="md-nav__link">
+    Sobre el eje principal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sobre-el-eje-secundario" class="md-nav__link">
+    Sobre el eje secundario
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atajo-alineaciones" class="md-nav__link">
+    Atajo: Alineaciones
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#propiedades-de-hijos" class="md-nav__link">
+    Propiedades de hijos
+  </a>
+  
+    <nav class="md-nav" aria-label="Propiedades de hijos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atajo-propiedades-de-hijos" class="md-nav__link">
+    Atajo: Propiedades de hijos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#huecos-gaps" class="md-nav__link">
+    Huecos (gaps)
+  </a>
+  
+    <nav class="md-nav" aria-label="Huecos (gaps)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atajo-huecos" class="md-nav__link">
+    Atajo: Huecos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orden-de-los-items" class="md-nav__link">
+    Orden de los ítems
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grid-css-cuadriculas" class="md-nav__link">
+    Grid CSS (Cuadrículas)
+  </a>
+  
+    <nav class="md-nav" aria-label="Grid CSS (Cuadrículas)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conceptos_1" class="md-nav__link">
+    Conceptos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grid-con-filas-y-columnas" class="md-nav__link">
+    Grid con filas y columnas
+  </a>
+  
+    <nav class="md-nav" aria-label="Grid con filas y columnas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unidad-fraccion-restante-fr" class="md-nav__link">
+    Unidad fracción restante (fr)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filas-y-columnas-repetitivas" class="md-nav__link">
+    Filas y columnas repetitivas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grid-con-lineas-nombradas" class="md-nav__link">
+    Grid con líneas nombradas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grid-por-areas" class="md-nav__link">
+    Grid por áreas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#huecos-en-grid" class="md-nav__link">
+    Huecos en grid
+  </a>
+  
+    <nav class="md-nav" aria-label="Huecos en grid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atajo-grid-con-huecos" class="md-nav__link">
+    Atajo: Grid con huecos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posicion-en-el-grid" class="md-nav__link">
+    Posición en el grid
+  </a>
+  
+    <nav class="md-nav" aria-label="Posición en el grid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atajo-de-posiciones-grid" class="md-nav__link">
+    Atajo de posiciones grid
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajuste-automatico-de-celdas" class="md-nav__link">
+    Ajuste automático de celdas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atajo-grid" class="md-nav__link">
+    Atajo: Grid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#propiedades-para-items-hijos" class="md-nav__link">
+    Propiedades para ítems hijos
+  </a>
+  
+    <nav class="md-nav" aria-label="Propiedades para ítems hijos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atajo-grid-column-y-grid-row" class="md-nav__link">
+    Atajo: grid-column y grid-row
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/saucedoinfo/guias/edit/master/docs/desarrollo/css/07_maquetacion_y_colocacion.md" title="Editar esta página" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="maquetacion-y-colocacion">Maquetación y colocación<a class="headerlink" href="#maquetacion-y-colocacion" title="Permanent link">&para;</a></h1>
+<h2 id="tipos-de-elementos">Tipos de elementos<a class="headerlink" href="#tipos-de-elementos" title="Permanent link">&para;</a></h2>
+<p>Una de las partes más complejas de CSS, probablemente, sea la colocación y distribución de los elementos de una página. Sin embargo, suele ser difícil porque se desconocen los detalles particulares que componen CSS. Una vez se analiza y se comprenden los detalles, todo resulta más fácil.</p>
+<p>Para comenzar, hay que saber que cada etiqueta HTML tiene un tipo de representación visual en un navegador, lo que habitualmente se suele denominar el <strong>tipo de caja</strong>. En principio, se parte de dos tipos básicos: <code>inline</code> y <code>block</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Denominación</th>
+<th>Significado</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>inline</td>
+<td>Elemento en línea</td>
+<td>El elemento se coloca en horizontal (un elemento a continuación del otro).</td>
+<td><code>&lt;span&gt;</code></td>
+</tr>
+<tr>
+<td>block</td>
+<td>Elemento en bloque</td>
+<td>El elemento se coloca en vertical (un elemento encima de otro).</td>
+<td><code>&lt;div&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p>Obsérvese que por defecto, todos los elementos <code>&lt;div&gt;</code> son elementos de bloque (<em>block</em>) y todos los elementos <code>&lt;span&gt;</code> son elementos en línea (<em>inline</em>). Para entender esto facilmente, vamos a crear un HTML con 3 etiquetas <code>&lt;div&gt;</code> como las siguientes:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Elemento 1<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Elemento 2<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Elemento 3<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p>A estas etiquetas HTML le vamos a aplicar el siguiente código CSS:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">div</span> <span class="p">{</span>
+      <span class="k">background</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span>
+      <span class="k">color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
+      <span class="k">margin</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>Con esto observaremos que en nuestro navegador nos aparecen 3 cajas azules colocadas en vertical (<em>una debajo de otra</em>) que cubren todo el ancho disponible de la página. Esto ocurre porque la etiqueta <code>&lt;div&gt;</code> es un elemento en bloque, o lo que es lo mismo, que tiene un tipo de representación <strong>block</strong> por defecto. Cada etiqueta HTML tiene un tipo de representación concreta.</p>
+<p>Sin embargo, este comportamiento de elementos puede cambiarse con la propiedad CSS <code>display</code>. Tan sencillo como añadir <code>display: inline</code> en el ejemplo anterior y veremos como pasan a ser 3 cajas azules colocadas en horizontal (<em>una al lado de la otra</em>) que cubren sólo el ancho del contenido de cada una. Ahora los <code>&lt;div&gt;</code> de esa página son <strong>elementos en línea</strong> (<em>el tipo de representación visual que tienen los <code>&lt;span&gt;</code></em>).</p>
+<h3 id="otros-tipos-de-elementos"><a href="https://lenguajecss.com/css/maquetacion-y-colocacion/tipos-de-elementos/#otros-tipos-de-elementos">Otros tipos de elementos</a><a class="headerlink" href="#otros-tipos-de-elementos" title="Permanent link">&para;</a></h3>
+<p>A medida que vamos cambiando el tipo de representación de estos elementos, nos damos cuenta que es insuficiente para realizar tareas y vamos necesitando más tipos de caja.</p>
+<p>Vamos a rellenar un poco más la tabla, con las características más importantes de las opciones que puede tomar la propiedad CSS <code>display</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Tipo de caja</th>
+<th>Características</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>block</td>
+<td>Se apila en vertical. Ocupa todo el ancho disponible de su etiqueta contenedora.</td>
+</tr>
+<tr>
+<td>inline</td>
+<td>Se coloca en horizontal. Se adapta al ancho de su contenido. Ignora <code>width</code> o <code>height</code>.</td>
+</tr>
+<tr>
+<td>inline-block</td>
+<td>Combinación de los dos anteriores. Se comporta como <code>inline</code> pero no ignora <code>width</code> o <code>height</code>.</td>
+</tr>
+<tr>
+<td>flex</td>
+<td>Utiliza el modelo de cajas flexibles <a href="/css/maquetacion-y-colocacion/flexbox/">Flexbox</a>. Muy útil para diseños adaptables.</td>
+</tr>
+<tr>
+<td>inline-flex</td>
+<td>La versión en línea (ocupa sólo su contenido) del modelo de cajas flexibles flexbox.</td>
+</tr>
+<tr>
+<td>grid</td>
+<td>Utiliza cuadrículas o rejillas con el modelo de cajas <a href="/css/maquetacion-y-colocacion/grid-css/">Grid CSS</a>.</td>
+</tr>
+<tr>
+<td>inline-grid</td>
+<td>La versión en línea (ocupa sólo su contenido) del modelo de cajas grid css.</td>
+</tr>
+<tr>
+<td>list-item</td>
+<td>Actúa como un ítem de una lista. Es el comportamiento de etiquetas como <code>&lt;li&gt;</code>.</td>
+</tr>
+<tr>
+<td>table</td>
+<td>Actúa como una tabla. Es el comportamiento de etiquetas como <code>&lt;table&gt;</code>.</td>
+</tr>
+<tr>
+<td>table-cell</td>
+<td>Actúa como la celda de una tabla. Es el comportamiento de etiquetas como <code>&lt;th&gt;</code> o <code>&lt;td&gt;</code>.</td>
+</tr>
+<tr>
+<td>table-row</td>
+<td>Actúa como la fila de una tabla. Es el comportamiento de etiquetas como <code>&lt;tr&gt;</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ocultar-elementos"><a href="https://lenguajecss.com/css/maquetacion-y-colocacion/tipos-de-elementos/#ocultar-elementos">Ocultar elementos</a><a class="headerlink" href="#ocultar-elementos" title="Permanent link">&para;</a></h3>
+<p>En la lista anterior, falta un valor de la propiedad <code>display</code>. Mediante la mencionada propiedad, es posible aplicar un valor <code>none</code> y ocultar completamente elementos que no queramos que se muestren, los cuales desaparecen por completo. Es muy útil para hacer desaparecer información cuando el usuario realiza alguna acción, por ejemplo.</p>
+<table>
+<thead>
+<tr>
+<th>Tipo de caja</th>
+<th>Características</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>none</td>
+<td>Hace desaparecer visualmente el elemento, como si no existiera.</td>
+</tr>
+</tbody>
+</table>
+<p>No obstante, también existe una propiedad CSS llamada <code>visibility</code> que realiza la misma acción, con la ligera diferencia de que no sólo oculta el elemento, sino que además mantiene un vacío con el mismo tamaño de lo que antes estaba ahí.</p>
+<p>Dicha propiedad <code>visibility</code> tiene los siguientes valores posibles:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>visible</strong></td>
+<td>El elemento es visible. Valor por defecto.</td>
+</tr>
+<tr>
+<td>hidden</td>
+<td>El elemento no es visible pero sigue ocupando su espacio y posición.</td>
+</tr>
+<tr>
+<td>collapse</td>
+<td>Sólo para tablas. El elemento se contrae para no ocupar espacio.</td>
+</tr>
+</tbody>
+</table>
+<p>Utilizar <code>visibility:hidden</code> es muy interesante si queremos que un elemento y su contenido se vuelva invisible, pero siga ocupando su espacio y así evitar que los elementos adyacentes se desplacen, lo que suele ser un comportamiento no deseado en algunas ocasiones cuando se aplica <code>display: none</code>.</p>
+<p>Otra opción interesante es utilizar la propiedad <code>opacity</code> junto a transiciones o animaciones, desplazarse desde el valor <code>0</code> al <code>1</code> o viceversa. De esta forma conseguimos una animación de aparición o desvanecimiento.</p>
+<hr />
+<h2 id="posicionamiento">Posicionamiento<a class="headerlink" href="#posicionamiento" title="Permanent link">&para;</a></h2>
+<p>A grandes rasgos, y como aprendimos en temas anteriores, si tenemos varios <strong>elementos en línea</strong> (<em>uno detrás de otro</em>) aparecerán colocados de <strong>izquierda hacia derecha</strong>, mientras que si son <strong>elementos en bloque</strong> se verán colocados desde <strong>arriba hacia abajo</strong>. Estos elementos se pueden ir combinando y anidando (<em>incluyendo unos dentro de otros</em>), construyendo así esquemas más complejos.</p>
+<p>Hasta ahora, hemos estado trabajando sin saberlo en lo que se denomina posicionamiento <strong>estático</strong> (<em>static</em>), donde todos los elementos aparecen con un orden natural según donde estén colocados en el HTML. Este es el <strong>modo por defecto</strong> en que un navegador renderiza una página.</p>
+<p>Sin embargo, existen otros modos alternativos de posicionamiento, que podemos cambiar mediante la propiedad <code>position</code>, que nos pueden interesar para modificar la posición en donde aparecen los diferentes elementos y su contenido.</p>
+<p>A la propiedad <code>position</code> se le pueden indicar los siguientes valores:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>static</strong></td>
+<td>Posicionamiento estático. Utiliza el orden natural de los elementos HTML.</td>
+</tr>
+<tr>
+<td>relative</td>
+<td>Posicionamiento relativo. Los elementos se mueven ligeramente en base a su posición estática.</td>
+</tr>
+<tr>
+<td>absolute</td>
+<td>Posicionamiento absoluto. Los elementos se colocan en base al contenedor padre.</td>
+</tr>
+<tr>
+<td>fixed</td>
+<td>Posicionamiento fijo. Idem al absoluto, pero aunque hagamos scroll no se mueve.</td>
+</tr>
+</tbody>
+</table>
+<p>Si utilizamos un modo de posicionamiento diferente al estático (<em>absolute, fixed o relative</em>), podemos utilizar una serie de propiedades para modificar la posición de un elemento. Estas propiedades son las siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>top:</td>
+<td><strong>auto</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>bottom:</td>
+<td><strong>auto</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>left:</td>
+<td><strong>auto</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>right:</td>
+<td><strong>auto</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>z-index:</td>
+<td><strong>auto</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Antes de pasar a explicar los tipos de posicionamiento, debemos tener claras las propiedades <code>top</code>, <code>bottom</code>, <code>left</code> y <code>right</code>, que sirven para mover un elemento desde la orientación que su propio nombre indica hasta su extremo contrario. Esto es, si utilizamos <code>left</code> e indicamos <code>20px</code>, estaremos indicando mover <strong>desde la izquierda</strong> 20 píxeles <strong>hacia la derecha</strong>.</p>
+<p>Pero pasemos a ver cada tipo de posicionamiento por separado y su comportamiento:</p>
+<h3 id="posicionamiento-relativo"><a href="https://lenguajecss.com/css/maquetacion-y-colocacion/posicionamiento-css/#posicionamiento-relativo">Posicionamiento relativo</a><a class="headerlink" href="#posicionamiento-relativo" title="Permanent link">&para;</a></h3>
+<p>Si utilizamos la palabra clave <code>relative</code> activaremos el modo de <strong>posicionamiento relativo</strong>, que es el más sencillo de todos. En este modo, los elementos se colocan exactamente igual que en el posicionamiento estático (<em>permanecen en la misma posición</em>), pero dependiendo del valor de las propiedades <code>top</code>, <code>bottom</code>, <code>left</code> o <code>right</code> variaremos ligeramente la posición del elemento.</p>
+<blockquote>
+<p><strong>Ejemplo</strong>: Si establecemos <code>left:40px</code>, el elemento se colocará 40 píxeles a la derecha <strong>desde la izquierda</strong> donde estaba colocado en principio, mientras que si especificamos <code>right:40px</code>, el elemento se colocará 40 píxeles a la izquierda <strong>desde la derecha</strong> donde estaba colocado en principio.</p>
+</blockquote>
+<h3 id="posicionamiento-absoluto"><a href="https://lenguajecss.com/css/maquetacion-y-colocacion/posicionamiento-css/#posicionamiento-absoluto">Posicionamiento absoluto</a><a class="headerlink" href="#posicionamiento-absoluto" title="Permanent link">&para;</a></h3>
+<p>Si utilizamos la palabra clave <code>absolute</code> estamos indicando que el elemento pasará a utilizar <strong>posicionamiento absoluto</strong>, que no es más que utilizar el documento completo como referencia. Esto no es exactamente el funcionamiento de este modo de posicionamiento, pero nos servirá como primer punto de partida para entenderlo.</p>
+<blockquote>
+<p><strong>Ejemplo</strong>: Si establecemos <code>left:40px</code>, el elemento se colocará 40 píxeles a la derecha del extremo izquierdo de la página. Sin embargo, si indicamos <code>right:40px</code>, el elemento se colocará 40 píxeles a la izquierda del extremo derecho de la página.</p>
+</blockquote>
+<p>Como mencionaba anteriormente, aunque este es el funcionamiento del posicionamiento absoluto, hay algunos detalles más complejos en su modo de trabajar. Realmente, este tipo de posicionamiento coloca los elementos <strong>utilizando como punto de origen el primer contenedor con posicionamiento diferente a estático</strong>.</p>
+<p>Por ejemplo, si el contenedor padre tiene posicionamiento estático, pasamos a mirar el posicionamiento del padre del contenedor padre, y así sucesivamente hasta encontrar un contenedor con posicionamiento no estático o llegar a la etiqueta <code>&lt;body&gt;</code>, en el caso que se comportaría como el ejemplo anterior.</p>
+<h3 id="posicionamiento-fijo"><a href="https://lenguajecss.com/css/maquetacion-y-colocacion/posicionamiento-css/#posicionamiento-fijo">Posicionamiento fijo</a><a class="headerlink" href="#posicionamiento-fijo" title="Permanent link">&para;</a></h3>
+<p>Por último, el <strong>posicionamiento fijo</strong> es hermano del <strong>posicionamiento absoluto</strong>. Funciona exactamente igual, salvo que hace que el elemento se muestre en una posición fija <strong>dependiendo de la región visual del navegador</strong>. Es decir, aunque el usuario haga scroll y se desplace hacia abajo en la página web, el elemento seguirá en el mismo sitio posicionado.</p>
+<blockquote>
+<p><strong>Ejemplo</strong>: Si establecemos <code>top:0</code> y <code>right:0</code>, el elemento se colocará justo en la esquina superior derecha y se mantendrá ahí aunque hagamos scroll hacia abajo en la página.</p>
+</blockquote>
+<h3 id="otros-posicionamientos"><a href="https://lenguajecss.com/css/maquetacion-y-colocacion/posicionamiento-css/#otros-posicionamientos">Otros posicionamientos</a><a class="headerlink" href="#otros-posicionamientos" title="Permanent link">&para;</a></h3>
+<p>Existen otros valores de <code>position</code> como <code>sticky</code>, <code>page</code> o <code>center</code>, sin embargo, su soporte e implementación aún es muy temprana y no se sabe si su funcionalidad terminará ofreciéndose desde los diferentes navegadores.</p>
+<h3 id="profundidad-niveles"><a href="https://lenguajecss.com/css/maquetacion-y-colocacion/posicionamiento-css/#profundidad-niveles">Profundidad (niveles)</a><a class="headerlink" href="#profundidad-niveles" title="Permanent link">&para;</a></h3>
+<p>Es interesante conocer también la existencia de la propiedad <code>z-index</code>, que establece el <strong>nivel de profundidad</strong> en el que está un elemento sobre los demás. De esta forma, podemos hacer que un elemento se coloque encima o debajo de otro.</p>
+<p>Su funcionamiento es muy sencillo, sólo hay que indicar un número que representará el nivel de profundidad del elemento. Los elementos un número más alto estarán por encima de otros con un número más bajo, que permanecerán ocultos detrás de los primeros.</p>
+<p><img alt="z-index CSS" src="../img/z-index.png" /></p>
+<blockquote>
+<blockquote>
+<p><strong>Nota</strong>: Los niveles <code>z-index</code>, así como las propiedades <code>top</code>, <code>left</code>, <code>bottom</code> y <code>right</code> no funcionan con elementos que estén utilizando posicionamiento estático. Deben tener un tipo de posicionamiento diferente a estático.</p>
+</blockquote>
+</blockquote>
+<hr />
+<h2 id="desplazamientos">Desplazamientos<a class="headerlink" href="#desplazamientos" title="Permanent link">&para;</a></h2>
+<p>Es posible que en algún momento necesitemos algo más de control sobre nuestra página y realizar cambios en determinados elementos. Existe una propiedad denominada <code>float</code> que tiene un funcionamiento peculiar con el que cambiamos el flujo de ordenación de elementos.</p>
+<p>Con <strong>float</strong> podemos conseguir que un elemento &lt;<flote>&gt; a la izquierda o a la derecha de otro elemento. Para ello podemos utilizar las siguientes propiedades:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>float</code></td>
+<td><strong>none</strong></td>
+<td>left</td>
+</tr>
+<tr>
+<td><code>clear</code></td>
+<td><strong>none</strong></td>
+<td>left</td>
+</tr>
+</tbody>
+</table>
+<h3 id="elementos-flotantes"><a href="https://lenguajecss.com/css/maquetacion-y-colocacion/desplazamientos/#elementos-flotantes">Elementos flotantes</a><a class="headerlink" href="#elementos-flotantes" title="Permanent link">&para;</a></h3>
+<p>Con la propiedad <code>float</code> puedes conseguir que los elementos que quieras, alteren su comportamiento y floten a la izquierda (<em>left</em>) o a la derecha (<em>right</em>). Con el valor <code>none</code> (<em>valor por defecto</em>) eliminas esta característica de desplazamiento.</p>
+<p>Imaginemos que tenemos un párrafo de texto, seguido de una lista, seguida de otro párrafo de texto:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">ul</span> <span class="p">{</span>
+      <span class="k">background</span><span class="p">:</span> <span class="kc">grey</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nt">li</span> <span class="p">{</span>
+      <span class="k">background</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span>
+      <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+      <span class="k">padding</span><span class="p">:</span> <span class="mi">8</span><span class="kt">px</span><span class="p">;</span>
+      <span class="k">margin</span><span class="p">:</span> <span class="mi">8</span><span class="kt">px</span><span class="p">;</span>
+      <span class="k">color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nt">ul</span><span class="o">,</span> <span class="nt">li</span> <span class="p">{</span>
+      <span class="k">float</span><span class="p">:</span> <span class="kc">left</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>Con esto conseguimos que los ítems de la lista floten uno a continuación de otro. No obstante, para conseguir este comportamiento siempre recomiendo utilizar <code>display</code> en lugar de <code>float</code>. Cambiando la representación de elementos se suele conseguir una solución más limpia y organizada.</p>
+<h3 id="limpiar-flujo-flotante"><a href="https://lenguajecss.com/css/maquetacion-y-colocacion/desplazamientos/#limpiar-flujo-flotante">Limpiar flujo flotante</a><a class="headerlink" href="#limpiar-flujo-flotante" title="Permanent link">&para;</a></h3>
+<p>Por otro lado, la propiedad <code>clear</code> se encarga de impedir elementos flotantes en la zona indicada, a la izquierda del elemento (<em>left</em>), a la derecha (<em>right</em>) o en ambos lados (<em>both</em>).</p>
+<p>En el ejemplo anterior, el segundo párrafo de texto aparecería a continuación de la lista, cuando probablemente, nuestra intención es que apareciera en la parte inferior. Se podría solucionar simplemente añadiendo el siguiente texto:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">p</span> <span class="p">{</span>
+      <span class="k">clear</span><span class="p">:</span><span class="kc">both</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<blockquote>
+<blockquote>
+<p><strong>OJO</strong>: La propiedad <code>float</code> es una propiedad que podría ser interesante en determinadas condiciones, sin embargo, el código resultante suele ser más sucio y complejo de lo que sería mediante otros métodos actuales, por lo que se recomienda sólo utilizarlo por razones de retrocompatibilidad y darle preferencia a métodos como <a href="/css/propiedades/flexbox">Flexbox</a> o <a href="/css/maquetacion-y-colocacion/grid-css/">Grid CSS</a>.</p>
+</blockquote>
+</blockquote>
+<hr />
+<h2 id="flexbox-css">Flexbox CSS<a class="headerlink" href="#flexbox-css" title="Permanent link">&para;</a></h2>
+<p>Tradicionalmente, en CSS se ha utilizado el posicionamiento (<em>static, relative, absolute...</em>), los elementos en línea o en bloque (<em>y derivados</em>) o los <strong>float</strong>, lo que a grandes rasgos no dejaba de ser un sistema de creación de diseños bastante tradicional que no encaja con los retos que tenemos hoy en día: sistemas de escritorio, dispositivos móviles, múltiples resoluciones, etc...</p>
+<p><img alt="Flexbox CSS" src="../img/flexbox-css.png" /></p>
+<p><strong>Flexbox</strong> es un sistema de <strong>elementos flexibles</strong> que llega con la idea de olvidar estos mecanismos y acostumbrarnos a una mecánica más potente, limpia y personalizable, en la que los elementos HTML se adaptan y colocan automáticamente y es más fácil personalizar los diseños. Está especialmente diseñado para crear, mediante CSS, estructuras de <strong>una sóla dimensión</strong>.</p>
+<h3 id="conceptos"><a href="https://lenguajecss.com/css/maquetacion-y-colocacion/flexbox/#conceptos">Conceptos</a><a class="headerlink" href="#conceptos" title="Permanent link">&para;</a></h3>
+<p>Para empezar a utilizar <strong>flexbox</strong> lo primero que debemos hacer es conocer algunos de los elementos básicos de este nuevo esquema, que son los siguientes:</p>
+<p><img alt="Flexbox CSS: ¿Cómo funciona?" src="../img/flexbox-como-funciona.png" /></p>
+<p>*
+<strong>Contenedor</strong>: Existe un elemento padre que es el contenedor que tendrá en su interior cada uno de los ítems flexibles y adaptables.</p>
+<ul>
+<li><strong>Eje principal</strong>: Los contenedores flexibles tendrán una orientación principal específica. Por defecto, es en horizontal (<em>fila</em>).</li>
+<li><strong>Eje secundario</strong>: De la misma forma, los contenedores flexibles tendrán una orientación secundaria, perpendicular a la principal. Si la principal es en horizontal, la secundaria será en vertical, y viceversa.
+*
+<strong>Ítem</strong>: Cada uno de los hijos flexibles que tendrá el contenedor en su interior.</li>
+</ul>
+<p>Imaginemos el siguiente escenario:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;contenedor&quot;</span><span class="p">&gt;</span> <span class="c">&lt;!-- contenedor flex --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;item item-1&quot;</span><span class="p">&gt;</span>1<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span> <span class="c">&lt;!-- cada uno de los ítems flexibles --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;item item-2&quot;</span><span class="p">&gt;</span>2<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;item item-3&quot;</span><span class="p">&gt;</span>3<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p>Para activar el modo <strong>flexbox</strong> hay que utilizar sobre el elemento contenedor la propiedad <code>display</code> que vimos en un capítulo previo, y especificar el valor <strong>flex</strong> o <strong>inline-flex</strong> dependiendo de como queramos que se comporte el contenedor: si como un elemento en línea, o como un elemento en bloque.</p>
+<table>
+<thead>
+<tr>
+<th>Tipo de elemento</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>inline-flex</td>
+<td>Establece un contenedor de ítems flexible en línea, de forma equivalente a inline-block.</td>
+</tr>
+<tr>
+<td>flex</td>
+<td>Establece un contenedor de ítems flexible en bloque, de forma equivalente a block.</td>
+</tr>
+</tbody>
+</table>
+<p>Por defecto, y sólo con esto, observaremos que los elementos se disponen todos sobre una misma línea. Esto ocurre porque estamos utilizando el modo <strong>flexbox</strong> y estaremos trabajando con ítems flexibles básicos, garantizando que no se desbordarán ni mostrarán los problemas que, por ejemplo, tienen los porcentajes sobre elementos que no utilizan flexbox.</p>
+<h3 id="direccion-de-los-ejes"><a href="https://lenguajecss.com/css/maquetacion-y-colocacion/flexbox/#dirección-de-los-ejes">Dirección de los ejes</a><a class="headerlink" href="#direccion-de-los-ejes" title="Permanent link">&para;</a></h3>
+<p>Existen dos propiedades principales para manipular la dirección y comportamiento de los ítems a lo largo del eje principal del contenedor. Son las siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>flex-direction</code></td>
+<td><strong>row</strong></td>
+<td>row-reverse</td>
+</tr>
+<tr>
+<td><code>flex-wrap</code></td>
+<td><strong>nowrap</strong></td>
+<td>wrap</td>
+</tr>
+</tbody>
+</table>
+<p>Mediante la propiedad <code>flex-direction</code> podemos modificar la dirección del <strong>eje principal</strong> del contenedor para que se oriente en horizontal (<em>por defecto</em>) o en vertical. Además, también podemos incluir el sufijo <code>-reverse</code> para indicar que coloque los ítems en orden inverso.</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>row</strong></td>
+<td>Establece la dirección del eje principal en horizontal.</td>
+</tr>
+<tr>
+<td>row-reverse</td>
+<td>Establece la dirección del eje principal en horizontal (invertido).</td>
+</tr>
+<tr>
+<td>column</td>
+<td>Establece la dirección del eje principal en vertical.</td>
+</tr>
+<tr>
+<td>column-reverse</td>
+<td>Establece la dirección del eje principal en vertical (invertido).</td>
+</tr>
+</tbody>
+</table>
+<p>Esto nos permite tener un control muy alto sobre el orden de los elementos en una página. Veamos la aplicación de estas propiedades sobre el ejemplo anterior, para modificar el flujo del eje principal del contenedor:</p>
+<div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">contenedor</span> <span class="p">{</span>
+      <span class="k">background</span><span class="p">:</span> <span class="mh">#CCC</span><span class="p">;</span>
+      <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
+      <span class="k">flex-direction</span><span class="p">:</span> <span class="kc">column</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
+      <span class="k">background</span><span class="p">:</span> <span class="mh">#777</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>Por otro lado, existe otra propiedad llamada <code>flex-wrap</code> con la que podemos especificar el comportamiento del contenedor respecto a evitar que se desborde (<em>nowrap, valor por defecto</em>) o permitir que lo haga, en cuyo caso, estaríamos hablando de un <strong>contenedor flexbox multilinea</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>nowrap</strong></td>
+<td>Establece los ítems en una sola línea (no permite que se desborde el contenedor).</td>
+</tr>
+<tr>
+<td>wrap</td>
+<td>Establece los ítems en modo multilínea (permite que se desborde el contenedor).</td>
+</tr>
+<tr>
+<td>wrap-reverse</td>
+<td>Establece los ítems en modo multilínea, pero en dirección inversa.</td>
+</tr>
+</tbody>
+</table>
+<p>Teniendo en cuenta estos valores de la propiedad <code>flex-wrap</code>, podemos conseguir cosas como la siguiente:</p>
+<div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">contenedor</span> <span class="p">{</span>
+      <span class="k">background</span><span class="p">:</span> <span class="mh">#CCC</span><span class="p">;</span>
+      <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
+      <span class="k">width</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+      <span class="k">flex-wrap</span><span class="p">:</span> <span class="kc">wrap</span><span class="p">;</span>  <span class="c">/* Comportamiento por defecto: nowrap */</span>
+    <span class="p">}</span>
+
+    <span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
+      <span class="k">background</span><span class="p">:</span> <span class="mh">#777</span><span class="p">;</span>
+      <span class="k">width</span><span class="p">:</span> <span class="mi">50</span><span class="kt">%</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>En el caso de especificar <strong>nowrap</strong> (<em>u omitir la propiedad <code>flex-wrap</code></em>) en el contenedor, los 3 ítems se mostrarían en una misma línea del contenedor. En ese caso, cada ítem debería tener un 50% de ancho (<em>o sea, 100px de los 200px del contenedor</em>). Un tamaño de <strong>100px</strong> por ítem, sumaría un total de <strong>300px</strong>, que no cabrían en el contenedor de <strong>200px</strong>, por lo que <strong>flexbox</strong> reajusta los ítems flexibles para que quepan todos en la misma línea, manteniendo las mismas proporciones.</p>
+<p>Sin embargo, si especificamos <strong>wrap</strong> en la propiedad <code>flex-wrap</code>, lo que permitimos es que el contenedor se pueda desbordar, pasando a ser un contenedor <strong>multilínea</strong>, que mostraría el <strong>ítem 1 y 2</strong> en la primera linea (<em>con un tamaño de 100px cada uno</em>) y el <strong>ítem 3</strong> en la línea siguiente, dejando un espacio libre para un posible <strong>ítem 4</strong>.</p>
+<h3 id="atajo-direccion-de-los-ejes"><a href="https://lenguajecss.com/css/maquetacion-y-colocacion/flexbox/#atajo-dirección-de-los-ejes">Atajo: Dirección de los ejes</a><a class="headerlink" href="#atajo-direccion-de-los-ejes" title="Permanent link">&para;</a></h3>
+<p>Recuerda que existe una propiedad de atajo (short-hand) llamada <code>flex-flow</code>, con la que podemos resumir los valores de las propiedades <code>flex-direction</code> y <code>flex-wrap</code>, especificándolas en una sola propiedad y ahorrándonos utilizar las propiedades concretas:</p>
+<div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">contenedor</span> <span class="p">{</span>
+      <span class="c">/* flex-flow: &lt;flex-direction&gt; &lt;flex-wrap&gt;; */</span>
+      <span class="k">flex-flow</span><span class="p">:</span> <span class="kc">row</span> <span class="kc">wrap</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<h3 id="propiedades-de-alineacion"><a href="https://lenguajecss.com/css/maquetacion-y-colocacion/flexbox/#propiedades-de-alineación">Propiedades de alineación</a><a class="headerlink" href="#propiedades-de-alineacion" title="Permanent link">&para;</a></h3>
+<p>Ahora que tenemos un control básico del contenedor de estos ítems flexibles, necesitamos conocer las propiedades existentes dentro de flexbox para disponer los ítems dependiendo de nuestro objetivo. Vamos a echar un vistazo a cuatro propiedades interesantes para ello:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Actúa sobre</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>justify-content</code></td>
+<td><strong>flex-start</strong></td>
+<td>flex-end</td>
+</tr>
+<tr>
+<td><code>align-content</code></td>
+<td>flex-start</td>
+<td>flex-end</td>
+</tr>
+<tr>
+<td><code>align-items</code></td>
+<td>flex-start</td>
+<td>flex-end</td>
+</tr>
+<tr>
+<td><code>align-self</code></td>
+<td><strong>auto</strong></td>
+<td>flex-start</td>
+</tr>
+</tbody>
+</table>
+<p>De esta pequeña lista, hay que centrarse en primer lugar en la primera y la tercera propiedad, que son las más importantes (<em>las otras dos son casos particulares que explicaremos más adelante</em>):</p>
+<ul>
+<li><code>justify-content</code>: Se utiliza para alinear los ítems del <strong>eje principal</strong> (<em>por defecto, el horizontal</em>).</li>
+<li><code>align-items</code>: Usada para alinear los ítems del <strong>eje secundario</strong> (<em>por defecto, el vertical</em>).</li>
+</ul>
+<h4 id="sobre-el-eje-principal"><a href="https://lenguajecss.com/css/maquetacion-y-colocacion/flexbox/#sobre-el-eje-principal">Sobre el eje principal</a><a class="headerlink" href="#sobre-el-eje-principal" title="Permanent link">&para;</a></h4>
+<p>La primera propiedad, <code>justify-content</code>, sirve para colocar los ítems de un contenedor mediante una disposición concreta a lo largo del <strong>eje principal</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>flex-start</strong></td>
+<td>Agrupa los ítems al principio del eje principal.</td>
+</tr>
+<tr>
+<td>flex-end</td>
+<td>Agrupa los ítems al final del eje principal.</td>
+</tr>
+<tr>
+<td>center</td>
+<td>Agrupa los ítems al centro del eje principal.</td>
+</tr>
+<tr>
+<td>space-between</td>
+<td>Distribuye los ítems dejando (el mismo) espacio entre ellos.</td>
+</tr>
+<tr>
+<td>space-around</td>
+<td>Distribuye los ítems dejando (el mismo) espacio a ambos lados de cada uno de ellos.</td>
+</tr>
+</tbody>
+</table>
+<p>Con cada uno de estos valores, modificaremos la disposición de los ítems del contenedor donde se aplica, pasando a colocarse como se ve en la imagen siguiente (<em>nótense las diferentes tonalidades azules para indicar las posiciones de cada ítem</em>):</p>
+<p><img alt="Propiedad justify-content de Flexbox CSS" src="../img/flexbox-justify-content.png" /></p>
+<p>Una vez entendido este caso, debemos atender a la propiedad <code>align-content</code>, que es un caso particular del anterior. Nos servirá cuando estemos tratando con un contenedor flex multilinea, que es un contenedor en el que los ítems no caben en el ancho disponible, y por lo tanto, el eje principal se divide en múltiples líneas.</p>
+<p>De esta forma, <code>align-content</code> servirá para alinear cada una de las líneas del contenedor multilinea. Los valores que puede tomar son los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>flex-start</td>
+<td>Agrupa los ítems al principio del eje principal.</td>
+</tr>
+<tr>
+<td>flex-end</td>
+<td>Agrupa los ítems al final del eje principal.</td>
+</tr>
+<tr>
+<td>center</td>
+<td>Agrupa los ítems al centro del eje principal.</td>
+</tr>
+<tr>
+<td>space-between</td>
+<td>Distribuye los ítems desde el inicio hasta el final.</td>
+</tr>
+<tr>
+<td>space-around</td>
+<td>Distribuye los ítems dejando el mismo espacio a los lados de cada uno.</td>
+</tr>
+<tr>
+<td><strong>stretch</strong></td>
+<td>Estira los ítems para ocupar de forma equitativa todo el espacio.</td>
+</tr>
+</tbody>
+</table>
+<p>Con estos valores, vemos como cambiamos la disposición en vertical (<em>porque partimos de un ejemplo en el que estamos utilizando flex-direction: row, y el eje principal es horizontal</em>) de los ítems que están dentro de un contenedor multilinea.</p>
+<p><img alt="Propiedad align-content de Flexbox CSS" src="../img/flexbox-align-content.png" /></p>
+<p>En el ejemplo siguiente, veremos que al indicar un contenedor de <strong>200 píxels de alto</strong> con ítems de <strong>50px</strong> de alto y un <strong>flex-wrap</strong> establecido para tener contenedores multilinea, podemos utilizar la propiedad <code>align-content</code> para alinear los ítems de forma vertical de modo que se queden en la zona inferior del contenedor:</p>
+<div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">contenedor</span> <span class="p">{</span>
+      <span class="k">background</span><span class="p">:</span> <span class="mh">#CCC</span><span class="p">;</span>
+      <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
+      <span class="k">width</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+      <span class="k">height</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+
+      <span class="k">flex-wrap</span><span class="p">:</span> <span class="kc">wrap</span><span class="p">;</span>
+      <span class="k">align-content</span><span class="p">:</span> <span class="kc">flex-end</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
+      <span class="k">background</span><span class="p">:</span> <span class="mh">#777</span><span class="p">;</span>
+      <span class="k">width</span><span class="p">:</span> <span class="mi">50</span><span class="kt">%</span><span class="p">;</span>
+      <span class="k">height</span><span class="p">:</span> <span class="mi">50</span><span class="kt">px</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<h4 id="sobre-el-eje-secundario"><a href="https://lenguajecss.com/css/maquetacion-y-colocacion/flexbox/#sobre-el-eje-secundario">Sobre el eje secundario</a><a class="headerlink" href="#sobre-el-eje-secundario" title="Permanent link">&para;</a></h4>
+<p>La otra propiedad importante de este apartado es <code>align-items</code>, que se encarga de alinear los ítems en el eje secundario del contenedor. Hay que tener cuidado de no confundir <code>align-content</code> con <code>align-items</code>, puesto que el primero actúa sobre cada una de las líneas de un contenedor multilinea (<em>no tiene efecto sobre contenedores de una sola línea</em>), mientras que <code>align-items</code> lo hace sobre la línea actual. Los valores que puede tomar son los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>flex-start</td>
+<td>Alinea los ítems al principio del eje secundario.</td>
+</tr>
+<tr>
+<td>flex-end</td>
+<td>Alinea los ítems al final del eje secundario.</td>
+</tr>
+<tr>
+<td>center</td>
+<td>Alinea los ítems al centro del eje secundario.</td>
+</tr>
+<tr>
+<td><strong>stretch</strong></td>
+<td>Alinea los ítems estirándolos de modo que cubran desde el inicio hasta el final del contenedor.</td>
+</tr>
+<tr>
+<td>baseline</td>
+<td>Alinea los ítems en el contenedor según la base del contenido de los ítems del contenedor.</td>
+</tr>
+</tbody>
+</table>
+<p>Por otro lado, la propiedad <code>align-self</code> actúa exactamente igual que <code>align-items</code>, sin embargo es la primera propiedad de flexbox que vemos que se utiliza sobre un ítem hijo específico y no sobre el elemento contenedor. Salvo por este detalle, funciona exactamente igual que <code>align-items</code>.</p>
+<p><img alt="Propiedad align-items y align-self de Flexbox CSS" src="../img/flexbox-align-items.png" /></p>
+<p>Gracias a ese detalle, <code>align-self</code> nos permite cambiar el comportamiento de <code>align-items</code> y sobreescribirlo con comportamientos específicos para ítems concretos que no queremos que se comporten igual que el resto. La propiedad puede tomar los siguientes valores:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>flex-start</td>
+<td>Alinea los ítems al principio del contenedor.</td>
+</tr>
+<tr>
+<td>flex-end</td>
+<td>Alinea los ítems al final del contenedor.</td>
+</tr>
+<tr>
+<td>center</td>
+<td>Alinea los ítems al centro del contenedor.</td>
+</tr>
+<tr>
+<td>stretch</td>
+<td>Alinea los ítems estirándolos al tamaño del contenedor.</td>
+</tr>
+<tr>
+<td>baseline</td>
+<td>Alinea los ítems en el contenedor según la base de los ítems.</td>
+</tr>
+<tr>
+<td><strong>auto</strong></td>
+<td>Hereda el valor de <strong>align-items</strong> del padre (o si no lo tiene, <strong>stretch</strong>).</td>
+</tr>
+</tbody>
+</table>
+<p>Si se especifica el valor <strong>auto</strong> a la propiedad <code>align-self</code>, el navegador le asigna el valor de la propiedad <code>align-items</code> del contenedor padre, y en caso de no existir, el valor por defecto: <strong>stretch</strong>.</p>
+<h4 id="atajo-alineaciones"><a href="https://lenguajecss.com/css/maquetacion-y-colocacion/flexbox/#atajo-alineaciones">Atajo: Alineaciones</a><a class="headerlink" href="#atajo-alineaciones" title="Permanent link">&para;</a></h4>
+<p>Existe una propiedad de atajo con la que se pueden establecer los valores de <code>align-content</code> y de <code>justify-content</code> de una sola vez, denominada <code>place-content</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">contenedor</span> <span class="p">{</span>
+      <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
+      <span class="n">place-content</span><span class="p">:</span> <span class="kc">flex-start</span> <span class="kc">flex-end</span><span class="p">;</span>
+
+      <span class="c">/* Equivalente a... */</span>
+      <span class="k">align-content</span><span class="p">:</span> <span class="kc">flex-start</span><span class="p">;</span>
+      <span class="k">justify-content</span><span class="p">:</span> <span class="kc">flex-end</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<h3 id="propiedades-de-hijos"><a href="https://lenguajecss.com/css/maquetacion-y-colocacion/flexbox/#propiedades-de-hijos">Propiedades de hijos</a><a class="headerlink" href="#propiedades-de-hijos" title="Permanent link">&para;</a></h3>
+<p>A excepción de la propiedad <code>align-self</code>, todas las propiedades que hemos visto hasta ahora se aplican sobre el elemento <strong>contenedor</strong>. Las siguientes propiedades, sin embargo, se aplican sobre los ítems hijos. Echemos un vistazo:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>flex-grow</code></td>
+<td><strong>0</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>flex-shrink</code></td>
+<td><strong>1</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>flex-basis</code></td>
+<td></td>
+<td><strong>content</strong></td>
+</tr>
+<tr>
+<td><code>order</code></td>
+<td><strong>0</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>En primer lugar, tenemos la propiedad <code>flex-grow</code> para indicar el factor de crecimiento de los ítems en el caso de que no tengan un ancho específico. Por ejemplo, si con <code>flex-grow</code> indicamos un valor de <strong>1</strong> a todos sus ítems, tendrían el mismo tamaño cada uno de ellos. Pero si colocamos un valor de <strong>1</strong> a todos los elementos, salvo a uno de ellos, que le indicamos <strong>2</strong>, ese ítem será más grande que los anteriores. Los ítems a los que no se le especifique ningún valor, tendrán por defecto valor de <strong>0</strong>.</p>
+<p>En segundo lugar, tenemos la propiedad <code>flex-shrink</code> que es la opuesta a <code>flex-grow</code>. Mientras que la anterior indica un factor de crecimiento, <code>flex-shrink</code> hace justo lo contrario, aplica un factor de decrecimiento. De esta forma, los ítems que tengan un valor numérico más grande, serán más pequeños, mientras que los que tengan un valor numérico más pequeño serán más grandes, justo al contrario de como funciona la propiedad <code>flex-grow</code>.</p>
+<p>Por último, tenemos la propiedad <code>flex-basis</code>, que define el tamaño por defecto (<em>de base</em>) que tendrán los ítems antes de aplicarle la distribución de espacio. Generalmente, se aplica un tamaño (<em>unidades, porcentajes, etc...</em>), pero también se puede aplicar la palabra clave <strong>content</strong> que ajusta automáticamente el tamaño al contenido del ítem, que es su valor por defecto.</p>
+<h4 id="atajo-propiedades-de-hijos"><a href="https://lenguajecss.com/css/maquetacion-y-colocacion/flexbox/#atajo-propiedades-de-hijos">Atajo: Propiedades de hijos</a><a class="headerlink" href="#atajo-propiedades-de-hijos" title="Permanent link">&para;</a></h4>
+<p>Existe una propiedad llamada <code>flex</code> que sirve de atajo para estas tres propiedades de los ítems hijos. Funciona de la siguiente forma:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
+      <span class="c">/* flex: &lt;flex-grow&gt; &lt;flex-shrink&gt; &lt;flex-basis&gt; */</span>
+      <span class="k">flex</span><span class="p">:</span> <span class="mi">1</span> <span class="mi">3</span> <span class="mi">35</span><span class="kt">%</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<h3 id="huecos-gaps"><a href="https://lenguajecss.com/css/maquetacion-y-colocacion/flexbox/#huecos-gaps">Huecos (gaps)</a><a class="headerlink" href="#huecos-gaps" title="Permanent link">&para;</a></h3>
+<p>Existen dos propiedades de flexbox que han surgido recientemente: <code>row-gap</code> y <code>column-gap</code>. Dichas propiedades, permiten establecer el tamaño de un &lt;<hueco>&gt; entre ítems desde el elemento padre contenedor, y sin necesidad de estar utilizando <code>padding</code> o <code>margin</code> en los elementos hijos.</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>row-gap</code></td>
+<td><strong>normal</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>column-gap</code></td>
+<td><strong>normal</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Ten en cuenta que sólo una de las dos propiedades tendrá efecto, dependiendo de si la propiedad <code>flex-direction</code> está establecida en <code>column</code> o en <code>row</code>. Eso sí, es posible usar ambas si tenemos la propiedad <code>flex-wrap</code> definida a <code>wrap</code> y, por lo tanto, disponemos de multicolumnas flexbox.</p>
+<h4 id="atajo-huecos"><a href="https://lenguajecss.com/css/maquetacion-y-colocacion/flexbox/#atajo-huecos">Atajo: Huecos</a><a class="headerlink" href="#atajo-huecos" title="Permanent link">&para;</a></h4>
+<p>En el caso de que queramos utilizar una propiedad de atajo para los huecos, podemos utilizar la propiedad <code>gap</code>. Eso sí, ten en cuenta que estas propiedades de huecos en flexbox, aún no tienen un soporte demasiado extendido entre navegadores:</p>
+<div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">contenedor</span> <span class="p">{</span>
+      <span class="c">/* gap: &lt;row&gt; &lt;column&gt; */</span>
+      <span class="n">gap</span><span class="p">:</span> <span class="mi">4</span><span class="kt">px</span> <span class="mi">8</span><span class="kt">px</span><span class="p">;</span>
+
+      <span class="c">/* 1 parámetro: usa el mismo para ambos */</span>
+      <span class="n">gap</span><span class="p">:</span> <span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<h3 id="orden-de-los-items"><a href="https://lenguajecss.com/css/maquetacion-y-colocacion/flexbox/#orden-de-los-ítems">Orden de los ítems</a><a class="headerlink" href="#orden-de-los-items" title="Permanent link">&para;</a></h3>
+<p>Por último, y quizás una de las propiedades más interesantes, es <code>order</code>, que modificar y establece el orden de los ítems según una secuencia numérica.</p>
+<p>Por defecto, todos los ítems flex tienen un <code>order: 0</code> implícito, aunque no se especifique. Si indicamos un <code>order</code> con un valor numérico, irá recolocando los ítems según su número, colocando antes los ítems con número más pequeño (<em>incluso valores negativos</em>) y después los ítems con números más altos.</p>
+<p>De esta forma podemos recolocar fácilmente los ítems incluso utilizando media queries o responsive design.</p>
+<hr />
+<h2 id="grid-css-cuadriculas">Grid CSS (Cuadrículas)<a class="headerlink" href="#grid-css-cuadriculas" title="Permanent link">&para;</a></h2>
+<p>Uno de los procesos más problematicos y frustrantes de CSS, sobre todo para novatos o principiantes, es el proceso de colocar y distribuir los elementos a lo largo de una página. Mecanismos como posicionamiento, floats o elementos en bloque o en línea, suelen ser insuficientes (<em>o muy complejos</em>) para crear un layout o estructuras para páginas web actuales.</p>
+<p>El sistema <strong>flexbox</strong> es una gran mejora, sin embargo, está orientado a estructuras de una sola dimensión, por lo que aún necesitamos algo más potente para estructuras web más específicas o complejas. Con el paso del tiempo, muchos frameworks y librerías utilizan un <strong>sistema grid</strong> donde definen una cuadrícula determinada, y modificando los nombres de las clases de los elementos HTML, podemos darle tamaño, posición o colocación.</p>
+<p><img alt="Grid CSS" src="../img/grid-css.png" /></p>
+<p><strong>Grid CSS</strong> nace de esa necesidad, y recoge las ventajas de ese sistema, añadiendole numerosas mejoras y características que permiten crear rápidamente cuadrículas sencillas y potentes de forma prácticamente instantánea.</p>
+<h3 id="conceptos_1"><a href="https://lenguajecss.com/css/maquetacion-y-colocacion/grid-css/#conceptos">Conceptos</a><a class="headerlink" href="#conceptos_1" title="Permanent link">&para;</a></h3>
+<p>Antes de comenzar con <strong>Grid CSS</strong>, quizás sería conveniente dominar el sistema <strong>Flexbox</strong>, ya que Grid toma la filosofía y bases de él. Para utilizar <strong>Grid CSS</strong> necesitaremos tener en cuenta una serie de conceptos que utilizaremos a partir de ahora y que definiremos a continuación:</p>
+<p><img alt="Grid CSS: ¿Cómo funciona?" src="../img/grid-css-conceptos.png" /></p>
+<ul>
+<li><strong>Contenedor</strong>: El elemento padre contenedor que definirá la cuadrícula o rejilla.</li>
+<li><strong>Ítem</strong>: Cada uno de los hijos que contiene la cuadrícula (<em>elemento contenedor</em>).</li>
+<li><strong>Celda (grid cell)</strong>: Cada uno de los cuadritos (<em>unidad mínima</em>) de la cuadrícula.</li>
+<li><strong>Area (grid area)</strong>: Región o conjunto de celdas de la cuadrícula.</li>
+<li><strong>Banda (grid track)</strong>: Banda horizontal o vertical de celdas de la cuadrícula.</li>
+<li><strong>Línea (grid line)</strong>: Separador horizontal o vertical de las celdas de la cuadrícula.</li>
+</ul>
+<p>Para utilizar cuadriculas <strong>Grid CSS</strong>, trabajaremos bajo el siguiente escenario:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;grid&quot;</span><span class="p">&gt;</span> <span class="c">&lt;!-- contenedor --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;a&quot;</span><span class="p">&gt;</span>Item 1<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span> <span class="c">&lt;!-- cada uno de los ítems del grid --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;b&quot;</span><span class="p">&gt;</span>Item 2<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;c&quot;</span><span class="p">&gt;</span>Item 3<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;d&quot;</span><span class="p">&gt;</span>Item 4<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p>Para activar la cuadrícula <strong>grid</strong> hay que utilizar sobre el elemento contenedor la propiedad <code>display</code> y especificar el valor <strong>grid</strong> o <strong>inline-grid</strong>. Este valor influye en como se comportará la cuadrícula con el contenido exterior. El primero de ellos permite que la cuadrícula aparezca encima/debajo del contenido exterior (<em>en bloque</em>) y el segundo de ellos permite que la cuadrícula aparezca a la izquierda/derecha (<em>en línea</em>) del contenido exterior.</p>
+<table>
+<thead>
+<tr>
+<th>Tipo de elemento</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>inline-grid</td>
+<td>Establece una cuadrícula con ítems en línea, de forma equivalente a inline-block.</td>
+</tr>
+<tr>
+<td>grid</td>
+<td>Establece una cuadrícula con ítems en bloque, de forma equivalente a block.</td>
+</tr>
+</tbody>
+</table>
+<p>Una vez elegido uno de estos dos valores, y establecida la propiedad <code>display</code> al elemento contenedor, hay varias formas de configurar nuestra cuadrícula grid. Comencemos con las propiedades que se aplican al elemento contenedor (<em>padre</em>).</p>
+<h3 id="grid-con-filas-y-columnas"><a href="https://lenguajecss.com/css/maquetacion-y-colocacion/grid-css/#grid-con-filas-y-columnas">Grid con filas y columnas</a><a class="headerlink" href="#grid-con-filas-y-columnas" title="Permanent link">&para;</a></h3>
+<p>Es posible crear cuadrículas con un tamaño explícito. Para ello, sólo tenemos que usar las propiedades CSS <code>grid-template-columns</code> y <code>grid-template-rows</code>, que sirven para indicar las dimensiones de cada <strong>celda</strong> de la cuadrícula, diferenciando entre columnas y filas. Las propiedades son las siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>grid-template-columns</code></td>
+<td>[<em>c1</em>] [<em>c2</em>] ...</td>
+<td>Establece el de cada columna (<em>col 1, col 2...</em>).</td>
+</tr>
+<tr>
+<td><code>grid-template-rows</code></td>
+<td>[<em>f1</em>] [<em>f2</em>] ...</td>
+<td>Establece el de cada fila (<em>fila 1, fila 2...</em>).</td>
+</tr>
+</tbody>
+</table>
+<p>Conociendo estas dos propiedades, asumamos el siguiente código CSS:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">grid</span> <span class="p">{</span>
+      <span class="k">display</span><span class="p">:</span> <span class="k">grid</span><span class="p">;</span>
+      <span class="k">grid-template-columns</span><span class="p">:</span> <span class="mi">50</span><span class="kt">px</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+      <span class="k">grid-template-rows</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span> <span class="mi">75</span><span class="kt">px</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>Esto significa que tendremos una cuadricula con <strong>2 columnas</strong> (<em>la primera con 50px de ancho y la segunda con 300px de ancho</em>) y con <strong>2 filas</strong> (<em>la primera con 200px de alto y la segunda con 75px de alto</em>). Ahora, dependiendo del número de ítems (<em>elementos hijos</em>) que tenga el contenedor <strong>grid</strong>, tendremos una cuadrícula de 2x2 elementos (<em>4 ítems</em>), 2x3 elementos (<em>6 ítems</em>), 2x4 elementos (<em>8 ítems</em>) y así sucesivamente. Si el número de ítems es impar, la última celda de la cuadrícula se quedará vacía.</p>
+<p><img alt="Cuadrículas explícitas (grid-template-rows y grid-template-columns)" src="../img/grid-template-rows-columns.png" /></p>
+<h4 id="unidad-fraccion-restante-fr"><a href="https://lenguajecss.com/css/maquetacion-y-colocacion/grid-css/#unidad-fracción-restante-fr">Unidad fracción restante (fr)</a><a class="headerlink" href="#unidad-fraccion-restante-fr" title="Permanent link">&para;</a></h4>
+<p>En el ejemplo anterior he utilizado <strong>píxels</strong> como unidades de las celdas de la cuadrícula, sin embargo, también podemos utilizar otras unidades (<em>o incluso combinarlas</em>) como porcentajes, la palabra clave <strong>auto</strong> (<em>que obtiene el tamaño restante</em>) o la unidad especial de Grid CSS <strong>fr</strong> (<em>fraction</em>), que simboliza una <strong>fracción de espacio restante en el grid</strong>. Veamos un código de ejemplo en acción:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">grid</span> <span class="p">{</span>
+      <span class="k">display</span><span class="p">:</span> <span class="k">grid</span><span class="p">;</span>
+      <span class="k">grid-template-columns</span><span class="p">:</span> <span class="mi">1</span><span class="n">fr</span> <span class="mi">1</span><span class="n">fr</span><span class="p">;</span>
+      <span class="k">grid-template-rows</span><span class="p">:</span> <span class="mi">2</span><span class="n">fr</span> <span class="mi">1</span><span class="n">fr</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>Este nuevo ejemplo, se crea una cuadrícula de 2x2, donde el tamaño de ancho de la cuadrícula se divide en <strong>dos columnas</strong> (<em>mismo tamaño de ancho para cada una</em>), y el tamaño de alto de la cuadrícula se divide en <strong>dos filas</strong>, donde la primera ocupará el doble (<em>2 fr</em>) que la segunda (<em>1 fr</em>):</p>
+<p><img alt="Cuadrículas explícitas mediante unidades fr" src="../img/grid-unidad-fr.png" /></p>
+<p>De esta forma, podemos tener un mejor control del espacio restante de la cuadrícula, y como utilizarlo.</p>
+<blockquote>
+<p><strong>Nota</strong>: Se pueden combinar varias unidades diferentes, pudiendo utilizar píxeles (<em>px</em>) y fracciones restantes (<em>fr</em>), porcentajes (<em>%</em>) y fracciones restantes (<em>fr</em>) o combinaciónes similares.</p>
+</blockquote>
+<h4 id="filas-y-columnas-repetitivas"><a href="https://lenguajecss.com/css/maquetacion-y-colocacion/grid-css/#filas-y-columnas-repetitivas">Filas y columnas repetitivas</a><a class="headerlink" href="#filas-y-columnas-repetitivas" title="Permanent link">&para;</a></h4>
+<p>En algunos casos, en las propiedades <code>grid-template-columns</code> y <code>grid-template-rows</code> podemos necesitar indicar las mismas cantidades un número alto de veces, resultando repetitivo y molesto. Se puede utilizar la expresión <code>repeat()</code> para indicar repetición de valores, indicando el número de veces que se repiten y el tamaño en cuestión.</p>
+<p>La expresión a utilizar sería la siguiente: <code>repeat([n&amp;#xFA;m de veces], [valor o valores])</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">grid</span> <span class="p">{</span>
+      <span class="k">display</span><span class="p">:</span> <span class="k">grid</span><span class="p">;</span>
+      <span class="k">grid-template-columns</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span> <span class="nf">repeat</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">50</span><span class="kt">px</span><span class="p">)</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+      <span class="k">grid-template-rows</span><span class="p">:</span> <span class="nf">repeat</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">50</span><span class="kt">px</span> <span class="mi">100</span><span class="kt">px</span><span class="p">);</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>Asumiendo que tuvieramos un contenedor grid con 8 ítems hijos (<em>o más</em>), el ejemplo anterior crearía una cuadrícula con <strong>4 columnas</strong> (<em>la primera de 100px de ancho, la segunda y tercera de 50px de ancho y la cuarta de 200px de ancho</em>). Por otro lado, tendría <strong>2 filas</strong> (<em>la primera de 50px de alto, y la segunda de 100px de alto</em>). En el caso de tener más ítems hijos, el patrón se seguiría repitiendo.</p>
+<p>El ejemplo anterior sería equivalente al código CSS siguiente:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">grid</span> <span class="p">{</span>
+      <span class="k">display</span><span class="p">:</span> <span class="k">grid</span><span class="p">;</span>
+      <span class="k">grid-template-columns</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span> <span class="mi">50</span><span class="kt">px</span> <span class="mi">50</span><span class="kt">px</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+      <span class="k">grid-template-rows</span><span class="p">:</span> <span class="mi">50</span><span class="kt">px</span> <span class="mi">100</span><span class="kt">px</span> <span class="mi">50</span><span class="kt">px</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<h3 id="grid-con-lineas-nombradas"><a href="https://lenguajecss.com/css/maquetacion-y-colocacion/grid-css/#grid-con-líneas-nombradas">Grid con líneas nombradas</a><a class="headerlink" href="#grid-con-lineas-nombradas" title="Permanent link">&para;</a></h3>
+<p>Con Grid CSS también tenemos la posibilidad de usar &lt;&lt; <strong>linenames</strong>&gt;&gt;, o lo que es lo mismo, ponerle nombre a las líneas de nuestro sistema grid. Vamos a verlo con un ejemplo, donde probablemente se vea mucho mejor. Partamos de esta estructura HTML:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;grid&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;header&quot;</span><span class="p">&gt;</span>Header<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;sidebar&quot;</span><span class="p">&gt;</span>Sidebar<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;content&quot;</span><span class="p">&gt;</span>Content<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;footer&quot;</span><span class="p">&gt;</span>Footer<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p>Los nombres de las clases ya dan una idea del contenido que tendrán. Ahora, mediante Grid CSS lo que haremos es darle una estructura definida. Para ello, vamos a considerar los siguientes nombres para las lineas de nuestro grid, utilizando <strong>X</strong> para las posiciones en el <strong>eje X</strong> y utilizando <strong>Y</strong> para las posiciones en el <strong>eje Y</strong>:</p>
+<p><img alt="Grid nombrados en CSS (linenames)" src="../img/grid-linenames.svg" /></p>
+<p>Teniendo esto en cuenta, lo único que tenemos que hacer es indicar estos nombres entre corchetes, justo antes de la medida que establecimos como vimos en apartados anteriores. Obsérvese que también se coloca una nombre de línea final sin medida a continuación, que representa la línea final:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">grid</span> <span class="p">{</span>
+      <span class="k">display</span><span class="p">:</span> <span class="k">grid</span><span class="p">;</span>
+      <span class="k">grid-template-columns</span><span class="p">:</span> <span class="p">[</span><span class="n">x0</span><span class="p">]</span> <span class="mi">1</span><span class="n">fr</span> <span class="p">[</span><span class="n">x1</span><span class="p">]</span> <span class="mi">1</span><span class="n">fr</span> <span class="p">[</span><span class="n">x2</span><span class="p">]</span> <span class="mi">1</span><span class="n">fr</span> <span class="p">[</span><span class="n">x3</span><span class="p">];</span>
+      <span class="k">grid-template-rows</span><span class="p">:</span> <span class="p">[</span><span class="n">y0</span><span class="p">]</span> <span class="mi">1</span><span class="n">fr</span> <span class="p">[</span><span class="n">y1</span><span class="p">]</span> <span class="mi">1</span><span class="n">fr</span> <span class="p">[</span><span class="n">y2</span><span class="p">]</span> <span class="mi">1</span><span class="n">fr</span> <span class="p">[</span><span class="n">y3</span><span class="p">];</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>En este caso, los nombres utilizados son tan sólo un ejemplo didáctico. Si se considera más adecuado, se podrían utilizar otros nombres quizás más amigables como <code>top-line</code>, <code>top-medium-line</code>, <code>bottom-medium-line</code> y <code>bottom-line</code>, por ejemplo, en lugar de <code>y0</code>, <code>y1</code>, <code>y2</code> y <code>y3</code> respectivamente.</p>
+<p>Ahora, teniendo los nombres, sólo quedaría delimitar que zonas del grid queremos que ocupe cada uno de nuestros bloques <code>&lt;div&gt;</code> del grid. Para ello utilizaremos las propiedades <code>grid-column-start</code>, <code>grid-column-end</code> y <code>grid-row-start</code>, <code>grid-row-end</code>. También podriamos utilizar sus propiedades de atajo <code>grid-column</code> y <code>grid-row</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">header</span> <span class="p">{</span>
+      <span class="k">background</span><span class="p">:</span> <span class="kc">darkred</span><span class="p">;</span>
+      <span class="k">grid-column-start</span><span class="p">:</span> <span class="n">x0</span><span class="p">;</span>
+      <span class="k">grid-column-end</span><span class="p">:</span> <span class="n">x3</span><span class="p">;</span>
+
+      <span class="c">/* Equivalente a */</span>
+      <span class="k">grid-column</span><span class="p">:</span> <span class="n">x0</span> <span class="o">/</span> <span class="n">x3</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="p">.</span><span class="nc">sidebar</span> <span class="p">{</span>
+      <span class="k">background</span><span class="p">:</span> <span class="kc">black</span><span class="p">;</span>
+      <span class="k">grid-row</span><span class="p">:</span> <span class="n">y1</span> <span class="o">/</span> <span class="n">y2</span><span class="p">;</span>
+      <span class="k">color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="p">.</span><span class="nc">content</span> <span class="p">{</span>
+      <span class="k">background</span><span class="p">:</span> <span class="kc">orange</span><span class="p">;</span>
+      <span class="k">grid-column</span><span class="p">:</span> <span class="n">x1</span> <span class="o">/</span> <span class="n">x3</span><span class="p">;</span>
+      <span class="k">grid-row</span><span class="p">:</span> <span class="n">y1</span> <span class="o">/</span> <span class="n">y3</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="p">.</span><span class="nc">footer</span> <span class="p">{</span>
+      <span class="k">background</span><span class="p">:</span> <span class="kc">green</span><span class="p">;</span>
+      <span class="k">grid-column</span><span class="p">:</span> <span class="n">x0</span> <span class="o">/</span> <span class="n">x3</span><span class="p">;</span>
+      <span class="k">grid-row</span><span class="p">:</span> <span class="n">y2</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>Hemos aplicado la siguiente estructura:</p>
+<ul>
+<li>Zona <code>.header</code> desde la columna <strong>x0</strong> a <strong>x3</strong>.</li>
+<li>Zona <code>.sidebar</code> desde la fila <strong>y1</strong> a <strong>y2</strong>.</li>
+<li>Zona <code>.content</code> desde la columna <strong>x1</strong> a <strong>x3</strong> y desde la fila <strong>y1</strong> a <strong>y3</strong>.</li>
+<li>Zona <code>.footer</code> desde la columna <strong>x0</strong> a <strong>x3</strong> en la fila <strong>y2</strong>.</li>
+</ul>
+<p>Por lo que nuestra estructura grid quedaría así:</p>
+<p><img alt="Zonas del grid con líneas nombradas (linenames)" src="../img/grid-linenames-zones.svg" /></p>
+<p>Un poco más adelante veremos más detalladamente estas últimas propiedades.</p>
+<blockquote>
+<blockquote>
+<p><strong>Nota:</strong> Ten en cuenta que sería necesario darle un tamaño de alto con <code>height</code> al contenedor padre para que el navegador sepa cuanto ocupará la estructura completa. También podemos modificar las medidas <code>1fr</code> para dar menos proporción, por ejemplo utilizando en <code>grid-template-rows</code> un <code>[y0] 0.5fr</code> y un <code>[y2] 0.25fr</code>.</p>
+</blockquote>
+</blockquote>
+<h3 id="grid-por-areas"><a href="https://lenguajecss.com/css/maquetacion-y-colocacion/grid-css/#grid-por-áreas">Grid por áreas</a><a class="headerlink" href="#grid-por-areas" title="Permanent link">&para;</a></h3>
+<p>Mediante los <strong>grids CSS</strong> es posible indicar el nombre y posición concreta de cada área de una cuadrícula. Para ello utilizaremos la propiedad <code>grid-template-areas</code>, donde debemos especificar el orden de las áreas en la cuadrícula. Posteriormente, en cada ítem hijo, utilizamos la propiedad <code>grid-area</code> para indicar el nombre del área del que se trata:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>grid-template-areas</code></td>
+<td>Indica la disposición de las áreas en el grid. Cada texto entre comillas simboliza una fila.</td>
+</tr>
+<tr>
+<td><code>grid-area</code></td>
+<td>Indica el nombre del área. Se usa sobre ítems hijos del grid.</td>
+</tr>
+</tbody>
+</table>
+<p>De esta forma, es muy sencillo crear una cuadrícula altamente personalizada en apenas unas cuantas líneas de CSS, con mucha flexibilidad en la disposición y posición de cada área:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">grid</span> <span class="p">{</span>
+      <span class="k">display</span><span class="p">:</span> <span class="k">grid</span><span class="p">;</span>
+      <span class="k">grid-template-areas</span><span class="p">:</span> <span class="s2">&quot;head head&quot;</span>
+                           <span class="s2">&quot;menu main&quot;</span>
+                           <span class="s2">&quot;foot foot&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="p">.</span><span class="nc">a</span> <span class="p">{</span> <span class="k">grid-area</span><span class="p">:</span> <span class="n">head</span><span class="p">;</span> <span class="k">background</span><span class="p">:</span> <span class="kc">blue</span> <span class="p">}</span>
+    <span class="p">.</span><span class="nc">b</span> <span class="p">{</span> <span class="k">grid-area</span><span class="p">:</span> <span class="n">menu</span><span class="p">;</span> <span class="k">background</span><span class="p">:</span> <span class="kc">red</span> <span class="p">}</span>
+    <span class="p">.</span><span class="nc">c</span> <span class="p">{</span> <span class="k">grid-area</span><span class="p">:</span> <span class="n">main</span><span class="p">;</span> <span class="k">background</span><span class="p">:</span> <span class="kc">green</span> <span class="p">}</span>
+    <span class="p">.</span><span class="nc">d</span> <span class="p">{</span> <span class="k">grid-area</span><span class="p">:</span> <span class="n">foot</span><span class="p">;</span> <span class="k">background</span><span class="p">:</span> <span class="kc">orange</span> <span class="p">}</span>
+</code></pre></div>
+
+<p>Aplicando este código, conseguiríamos una cuadrícula donde:</p>
+<ul>
+<li>El <strong>Item 1</strong>, la cabecera (<em>head</em>), ocuparía toda la parte superior.</li>
+<li>El <strong>Item 2</strong>, el menú (<em>menu</em>), ocuparía el área izquierda del grid, debajo de la cabecera.</li>
+<li>El <strong>Item 3</strong>, el contenido (<em>main</em>), ocuparía el área derecha del grid, debajo de la cabecera.</li>
+<li>El <strong>Item 4</strong>, el pie de cuadrícula (<em>foot</em>), ocuparía toda la zona inferior del grid.</li>
+</ul>
+<p><img alt="Grid CSS: Cuadrícula por áreas" src="../img/grid-template-areas.png" /></p>
+<blockquote>
+<p><strong>OJO</strong>: Ten en cuenta añadir contenido de texto en cada celda del grid, para que Grid CSS detecte que esa celda no está vacía.</p>
+</blockquote>
+<p>En la propiedad <code>grid-template-areas</code>, en lugar de indicar el nombre del área a colocar, también podemos indicar una palabra clave especial:</p>
+<ul>
+<li>La palabra clave <strong>none</strong>: Indica que no se colocará ninguna celda en esta posición.</li>
+<li>Uno o más puntos (<em>.</em>): Indica que se colocará una celda vacía en esta posición.</li>
+</ul>
+<h3 id="huecos-en-grid"><a href="https://lenguajecss.com/css/maquetacion-y-colocacion/grid-css/#huecos-en-grid">Huecos en grid</a><a class="headerlink" href="#huecos-en-grid" title="Permanent link">&para;</a></h3>
+<p>Por defecto, la cuadrícula tiene todas sus celdas pegadas a sus celdas contiguas. Aunque sería posible darle un <code>margin</code> a las celdas dentro del contenedor, existe una forma más apropiada, que evita los problemas clásicos de los modelos de caja: los huecos (<em>gutters</em>).</p>
+<p>Para especificar los <strong>huecos</strong> (<em>espacio entre celdas</em>) podemos utilizar las propiedades <code>grid-column-gap</code> y/o <code>grid-row-gap</code>. En ellas indicaremos el tamaño de dichos huecos:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>grid-column-gap</code></td>
+<td>Establece el de los huecos entre columnas (<em>líneas verticales</em>).</td>
+</tr>
+<tr>
+<td><code>grid-row-gap</code></td>
+<td>Establece el de los huecos entre filas (<em>líneas horizontales</em>).</td>
+</tr>
+</tbody>
+</table>
+<p>Tomemos el ejemplo anterior como base. En él, le indicamos estas propiedades para colocar <strong>huecos</strong> entre las celdas de la cuadrícula. El código a añadir al ejemplo anterior sería el siguiente:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">grid</span> <span class="p">{</span>
+      <span class="k">grid-column-gap</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+      <span class="k">grid-row-gap</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>Con esto, obtendríamos un resultado como el siguiente, indicando huecos entre columnas de 100px y huecos entre filas de 10px:</p>
+<p><img alt="Huecos en grid CSS (Grid gaps)" src="../img/grid-gap.png" /></p>
+<h4 id="atajo-grid-con-huecos"><a href="https://lenguajecss.com/css/maquetacion-y-colocacion/grid-css/#atajo-grid-con-huecos">Atajo: Grid con huecos</a><a class="headerlink" href="#atajo-grid-con-huecos" title="Permanent link">&para;</a></h4>
+<p>Existe una propiedad de atajo para las propiedades <code>grid-column-gap</code> y <code>grid-row-gap</code>, permitiéndonos la posibilidad de no tener que indicarlas por separado.</p>
+<p>La propiedad en cuestión sería <code>grid-gap</code> y se utilizaría de la siguiente forma:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">grid</span> <span class="p">{</span>
+      <span class="c">/* grid-gap: &lt;row-gap&gt; &lt;column-gap&gt; */</span>
+      <span class="k">grid-gap</span><span class="p">:</span> <span class="mi">20</span><span class="kt">px</span> <span class="mi">80</span><span class="kt">px</span><span class="p">;</span>
+
+      <span class="c">/* Equivalente a grid-gap: 40px 40px; */</span>
+      <span class="c">/* grid-gap: &lt;rowcolumn-gap&gt; */</span>
+      <span class="k">grid-gap</span><span class="p">:</span> <span class="mi">40</span><span class="kt">px</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<h3 id="posicion-en-el-grid"><a href="https://lenguajecss.com/css/maquetacion-y-colocacion/grid-css/#posición-en-el-grid">Posición en el grid</a><a class="headerlink" href="#posicion-en-el-grid" title="Permanent link">&para;</a></h3>
+<p>Existen una serie de propiedades que se pueden utilizar para colocar los ítems dentro de la cuadrícula. Con ellas podemos distribuir los elementos de una forma muy sencilla y cómoda. Dichas propiedades son <code>justify-items</code> y <code>align-items</code>, que ya conocerás del módulo CSS <strong>flexbox</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valores</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>justify-items</code></td>
+<td>start</td>
+<td>end</td>
+</tr>
+<tr>
+<td><code>align-items</code></td>
+<td>start</td>
+<td>end</td>
+</tr>
+</tbody>
+</table>
+<p>Estas propiedades se aplican sobre el elemento contenedor padre, pero afectan a los ítems hijos, por lo que actuan sobre la distribución de cada uno de los hijos. En el caso de que queramos que uno de los ítems hijos tengan una distribución diferente al resto, aplicamos la propiedad <code>justify-self</code> o <code>align-self</code> sobre el ítem hijo en cuestión, sobreescribiendo su distribución.</p>
+<p>Estas propiedades funcionan exactamente igual que sus análogas <code>justify-items</code> o <code>align-items</code>, sólo que en lugar de indicarse en el elemento padre contenedor, se hace sobre un elemento hijo. Las propiedades sobre ítems hijos las veremos más adelante.</p>
+<p>También podemos utilizar las propiedades <code>justify-content</code> o <code>align-content</code> para modificar la distribución de todo el contenido en su conjunto, y no sólo de los ítems por separado:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valores</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>justify-content</code></td>
+<td>start</td>
+</tr>
+<tr>
+<td><code>align-content</code></td>
+<td>start</td>
+</tr>
+</tbody>
+</table>
+<p>De esta forma, podemos controlar prácticamente todos los aspectos de posicionamiento de la cuadrícula directamente desde los estilos CSS de su contenedor padre:</p>
+<p><img alt="Grid CSS: Propiedades de distribución de elementos con justify-* y align-*" src="../img/justify-align-grid-css.gif" /></p>
+<h4 id="atajo-de-posiciones-grid"><a href="https://lenguajecss.com/css/maquetacion-y-colocacion/grid-css/#atajo-de-posiciones-grid">Atajo de posiciones grid</a><a class="headerlink" href="#atajo-de-posiciones-grid" title="Permanent link">&para;</a></h4>
+<p>Si vamos a crear estructuras grid donde necesitamos utilizar las cuatro propiedades anteriores, quizás sería mejor utilizar un atajo donde simplificaríamos mucho el código resultante. Es el caso de las siguientes propiedades:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valores</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>place-items</code></td>
+<td>[<em>align-items</em>] [<em>justify-items</em>]</td>
+<td>Propiedad de atajo para * <strong>-items</strong></td>
+</tr>
+<tr>
+<td><code>place-content</code></td>
+<td>[<em>align-content</em>] [<em>justify-content</em>]</td>
+<td>Propiedad de atajo para * <strong>-content</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Con ellas conseguiremos que nuestro código sea menos verboso.</p>
+<h3 id="ajuste-automatico-de-celdas"><a href="https://lenguajecss.com/css/maquetacion-y-colocacion/grid-css/#ajuste-automático-de-celdas">Ajuste automático de celdas</a><a class="headerlink" href="#ajuste-automatico-de-celdas" title="Permanent link">&para;</a></h3>
+<p>Es posible utilizar las propiedades <code>grid-auto-columns</code> y <code>grid-auto-rows</code> para darle un tamaño automático a las celdas de la cuadrícula. Para ello, sólo hay que especificar el tamaño deseado en cada una de las propiedades. Además, también podemos utilizar <code>grid-auto-flow</code> para indicar el flujo de elementos en la cuadrícula, y especificar por donde se irán añadiendo. Las propiedades son las siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valores</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>grid-auto-columns</code></td>
+<td></td>
+<td>Indica el tamaño automático de ancho que tendrán las columnas.</td>
+</tr>
+<tr>
+<td><code>grid-auto-rows</code></td>
+<td></td>
+<td>Indica el tamaño automático de alto que tendrán las filas.</td>
+</tr>
+<tr>
+<td><code>grid-auto-flow</code></td>
+<td>row</td>
+<td>column</td>
+</tr>
+</tbody>
+</table>
+<p>Un ejemplo de como se insertarían los elementos en una cuadrícula de 2x2 utilizando <code>grid-auto-flow</code> por columnas o por filas:</p>
+<p><img alt="Grid CSS: Auto flow" src="../img/grid-css-auto-flow.png" /></p>
+<h3 id="atajo-grid"><a href="https://lenguajecss.com/css/maquetacion-y-colocacion/grid-css/#atajo-grid">Atajo: Grid</a><a class="headerlink" href="#atajo-grid" title="Permanent link">&para;</a></h3>
+<p>Por último, existe una propiedad <code>grid</code> que sirve de atajo para la mayoría de propiedades CSS relativas a cuadrículas. Su esquema de utilización sería el siguiente, junto a algunos ejemplos:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">grid</span> <span class="p">{</span>
+      <span class="c">/* grid: &lt;grid-template&gt; &lt;grid-auto-flow&gt; &lt;grid-auto-rows&gt; / &lt;grid-auto-columns&gt; */</span>
+
+      <span class="k">grid</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span> <span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+      <span class="k">grid</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span> <span class="nf">repeat</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="kt">px</span><span class="p">)</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+      <span class="k">grid</span><span class="p">:</span> <span class="kc">row</span><span class="p">;</span>
+      <span class="k">grid</span><span class="p">:</span> <span class="kc">column</span> <span class="n">dense</span><span class="p">;</span>
+      <span class="k">grid</span><span class="p">:</span> <span class="kc">row</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+      <span class="k">grid</span><span class="p">:</span> <span class="kc">row</span> <span class="mi">400</span><span class="kt">px</span> <span class="o">/</span> <span class="mi">150</span><span class="kt">px</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<h3 id="propiedades-para-items-hijos"><a href="https://lenguajecss.com/css/maquetacion-y-colocacion/grid-css/#propiedades-para-ítems-hijos">Propiedades para ítems hijos</a><a class="headerlink" href="#propiedades-para-items-hijos" title="Permanent link">&para;</a></h3>
+<p>Hasta ahora, salvo algunas excepciones como <code>justify-self</code>, <code>align-self</code> o <code>grid-area</code>, hemos visto propiedades CSS que se aplican solamente al contenedor padre de una cuadrícula. A continuación, vamos a ver ciertas propiedades que en su lugar, se aplican a cada ítem hijo de la cuadrícula, para alterar o cambiar el comportamiento específico de dicho elemento, que no se comporta como la mayoría.</p>
+<p>Algunas de las propiedades vistas hasta ahora son las siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>justify-self</code></td>
+<td>Altera la justificación del ítem hijo en el eje horizontal.</td>
+</tr>
+<tr>
+<td><code>align-self</code></td>
+<td>Altera la alineación del ítem hijo en el eje vertical.</td>
+</tr>
+<tr>
+<td><code>grid-area</code></td>
+<td>Indica un nombre al área especificada, para su utilización con <code>grid-template-areas</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Sin embargo, existen algunas propiedades más, referentes en este caso, a la posición de los hijos de la cuadrícula donde va a comenzar o terminar una fila o columna. Las propiedades son las siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>grid-column-start</code></td>
+<td>Indica en que columna empezará el ítem de la cuadrícula.</td>
+</tr>
+<tr>
+<td><code>grid-column-end</code></td>
+<td>Indica en que columna terminará el ítem de la cuadrícula.</td>
+</tr>
+<tr>
+<td><code>grid-row-start</code></td>
+<td>Indica en que fila empezará el ítem de la cuadrícula.</td>
+</tr>
+<tr>
+<td><code>grid-row-end</code></td>
+<td>Indica en que fila terminará el ítem de la cuadrícula.</td>
+</tr>
+</tbody>
+</table>
+<p>Con dichas propiedades, podemos indicar el siguiente código CSS sobre el primer ítem de una cuadrícula de 4 ítems:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">grid</span> <span class="p">{</span>
+      <span class="k">display</span><span class="p">:</span><span class="k">grid</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="p">.</span><span class="nc">a</span> <span class="p">{</span>
+      <span class="k">grid-column-start</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+      <span class="k">grid-row-end</span><span class="p">:</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>De esta forma, tenemos una cuadrícula de 4 elementos, en el que indicamos la posición del ítem 1 (<em>elemento con clase <code>.a</code></em>): comenzando en la columna 1 y acabando en el inicio de la columna 2:</p>
+<p><img alt="Grid CSS: grid-column-start y grid-column-end" src="../img/grid-column-start-end.png" /></p>
+<p>Ese sería el funcionamiento normal. Donde se ve la utilidad de estas propiedades, es si variamos los valores de forma que tomen posiciones diferentes, como por ejemplo, si indicamos que el ítem 1 debe comenzar en la columna 1, pero acabar en la columna 3 (<em>ocupando la hipotética primera y segunda celda</em>):</p>
+<p><img alt="Grid CSS: grid-column-start y grid-column-end" src="../img/grid-column-start-end-2.png" /></p>
+<p>En este nuevo ejemplo, comenzamos el primer ítem en la columna 2 y lo acabamos al principio de la columna 3, por lo que la celda permanecerá en la posición de la segunda columna. Además, añadimos la propiedad <code>grid-row-start</code> que hace lo mismo que hasta ahora, pero con las filas. En este caso, le indicamos que comience en la fila 3, por lo que el <strong>ítem 1</strong> se desplaza a una nueva fila de la cuadrícula, dejando en la anterior el <strong>ítem 4</strong>:</p>
+<p><img alt="Grid CSS: grid-column-start y grid-column-end" src="../img/grid-column-start-end-3.png" /></p>
+<p>También es posible utilizar la palabra clave <strong>span</strong> seguida de un número, que indica que abarque hasta esa columna o celda.</p>
+<h4 id="atajo-grid-column-y-grid-row"><a href="https://lenguajecss.com/css/maquetacion-y-colocacion/grid-css/#atajo-grid-column-y-grid-row">Atajo: grid-column y grid-row</a><a class="headerlink" href="#atajo-grid-column-y-grid-row" title="Permanent link">&para;</a></h4>
+<p>El módulo grid de CSS proporciona las propiedades de atajo <code>grid-column</code> y <code>grid-row</code> donde se nos permite escribir en un formato abreviado las propiedades anteriores. Su sintaxis sería la siguiente:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">grid</span> <span class="p">{</span>
+      <span class="k">display</span><span class="p">:</span> <span class="k">grid</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="p">.</span><span class="nc">a</span> <span class="p">{</span>
+      <span class="c">/* grid-column: &lt;grid-column-start&gt; &lt;grid-column-end&gt; */</span>
+      <span class="c">/* grid-row: &lt;grid-row-start&gt; &lt;grid-row-end&gt; */</span>
+      <span class="k">grid-column</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
+      <span class="k">grid-column</span><span class="p">:</span> <span class="mi">4</span> <span class="o">/</span> <span class="mi">6</span><span class="p">;</span>
+      <span class="k">grid-column</span><span class="p">:</span> <span class="n">span</span> <span class="mi">3</span><span class="p">;</span>
+      <span class="k">grid-column</span><span class="p">:</span> <span class="n">span</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">6</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>La especificación de Grid CSS ya tiene buen soporte en la actualidad y puede utilizarse en producción. Eso sí, si requieres soporte para navegadores antiguos, sé cuidadoso. Actualmente, su soporte es el siguiente:</p>
+<p><a href="https://caniuse.com/css-grid">https://caniuse.com/css-grid</a></p>
+<hr />
+<p><strong>Fuente:</strong> <a href="https://lenguajecss.com/">Lenguaje de CSS</a> por <a href="https://manzdev.github.io/">Manz</a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../06-representacion_de_datos/" title="Representación de datos" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Representación de datos
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../08-interacciones/" title="Interacciones" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Interacciones
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/saucedoinfo" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/saucedoinfo" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.instagram.com/saucedo.info/" target="_blank" rel="noopener" title="www.instagram.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.instant', 'navigation.expand', 'tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

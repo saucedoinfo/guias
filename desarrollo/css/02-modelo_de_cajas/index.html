@@ -1,0 +1,2403 @@
+
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Coleccion de Guias de Desarrollo y diseño.">
+      
+      
+        <link rel="canonical" href="https://saucedoinfo.github.io/guias/desarrollo/css/02-modelo_de_cajas/">
+      
+      
+        <meta name="author" content="Fernando S. Saucedo">
+      
+      <link rel="shortcut icon" href="../../../img/favicon-16x16.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.14">
+    
+    
+      
+        <title>Modelo de cajas - Guias de Desarrollo y diseño</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d3202873.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ff0a5ce4.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#000000">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#modelo-de-cajas" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-header-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Guias de Desarrollo y diseño
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Modelo de cajas
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../html/01-introduccion_a_HTML5/" class="md-tabs__link">
+          Desarrollo
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" class="md-tabs__link">
+          Herramientas IT
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    Guias de Desarrollo y diseño
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Desarrollo
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Desarrollo" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Desarrollo
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Html
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Html" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        <span class="md-nav__icon md-icon"></span>
+        Html
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/01-introduccion_a_HTML5/" title="Introduccion a HTML" class="md-nav__link">
+      Introduccion a HTML
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/02-etiquetas_semanticas/" title="Etiquetas semánticas" class="md-nav__link">
+      Etiquetas semánticas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/03-etiquetas_multimedia/" title="Etiquetas multimedias" class="md-nav__link">
+      Etiquetas multimedias
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/04-etiquetas_de_cabecera/" title="Etiquetas de cabecera" class="md-nav__link">
+      Etiquetas de cabecera
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/05-etiquetas_de_formularios/" title="Etiquetas de formularios" class="md-nav__link">
+      Etiquetas de formularios
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/06-etiquetas_de_scripting/" title="Etiquetas de scripting" class="md-nav__link">
+      Etiquetas de scripting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" checked>
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Css
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Css" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        <span class="md-nav__icon md-icon"></span>
+        Css
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01-introduccion_a_CSS/" title="Introducción a CSS" class="md-nav__link">
+      Introducción a CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Modelo de cajas
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Modelo de cajas" class="md-nav__link md-nav__link--active">
+      Modelo de cajas
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#unidades-css" class="md-nav__link">
+    Unidades CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Unidades CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unidades-absolutas" class="md-nav__link">
+    Unidades absolutas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unidades-relativas" class="md-nav__link">
+    Unidades relativas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unidades-flexibles-viewport" class="md-nav__link">
+    Unidades flexibles (viewport)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelo-de-cajas_1" class="md-nav__link">
+    Modelo de cajas
+  </a>
+  
+    <nav class="md-nav" aria-label="Modelo de cajas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dimensiones-ancho-y-alto" class="md-nav__link">
+    Dimensiones (ancho y alto)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zonas-de-un-elemento" class="md-nav__link">
+    Zonas de un elemento
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desbordamiento" class="md-nav__link">
+    Desbordamiento
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#margenes-y-rellenos" class="md-nav__link">
+    Márgenes y rellenos
+  </a>
+  
+    <nav class="md-nav" aria-label="Márgenes y rellenos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#margenes" class="md-nav__link">
+    Márgenes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rellenos" class="md-nav__link">
+    Rellenos
+  </a>
+  
+    <nav class="md-nav" aria-label="Rellenos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atajo-modelo-de-cajas" class="md-nav__link">
+    Atajo: Modelo de cajas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bordes-css" class="md-nav__link">
+    Bordes CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Bordes CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estilos-de-borde" class="md-nav__link">
+    Estilos de borde
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bordes-multiples-diferentes" class="md-nav__link">
+    Bordes múltiples (diferentes)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atajo-bordes" class="md-nav__link">
+    Atajo: Bordes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bordes-especificos" class="md-nav__link">
+    Bordes específicos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#esquinas-redondeadas" class="md-nav__link">
+    Esquinas redondeadas
+  </a>
+  
+    <nav class="md-nav" aria-label="Esquinas redondeadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esquinas-irregulares" class="md-nav__link">
+    Esquinas irregulares
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esquinas-especificas" class="md-nav__link">
+    Esquinas específicas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bordes-con-imagenes" class="md-nav__link">
+    Bordes con imágenes
+  </a>
+  
+    <nav class="md-nav" aria-label="Bordes con imágenes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-tecnica-9-slice" class="md-nav__link">
+    La técnica 9-slice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modo-de-repeticion" class="md-nav__link">
+    Modo de repetición
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atajo-bordes-con-imagenes" class="md-nav__link">
+    Atajo: Bordes con imágenes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funciones-css" class="md-nav__link">
+    Funciones CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Funciones CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#valores-calculados-funcion-calc" class="md-nav__link">
+    Valores calculados: Función calc()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valor-minimo-funcion-min" class="md-nav__link">
+    Valor mínimo: Función min()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valor-maximo-funcion-max" class="md-nav__link">
+    Valor máximo: Función max()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valor-ajustado-funcion-clamp" class="md-nav__link">
+    Valor ajustado: Función clamp()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valor-del-atributo-funcion-attr" class="md-nav__link">
+    Valor del atributo: Función attr()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-colores_y_fondos/" title="Colores y fondos" class="md-nav__link">
+      Colores y fondos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-selectores_CSS/" title="Selectores CSS" class="md-nav__link">
+      Selectores CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-Fuentes_y_tipografias/" title="Fuentes y tipografías" class="md-nav__link">
+      Fuentes y tipografías
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-representacion_de_datos/" title="Representación de datos" class="md-nav__link">
+      Representación de datos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../07_maquetacion_y_colocacion/" title="Maquetación y colocación" class="md-nav__link">
+      Maquetación y colocación
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../08-interacciones/" title="Interacciones" class="md-nav__link">
+      Interacciones
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../09-efectos/" title="Efectos" class="md-nav__link">
+      Efectos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../10-responsive_Web_Design/" title="Responsive Web Design" class="md-nav__link">
+      Responsive Web Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../11-animaciones_CSS/" title="Animaciones CSS" class="md-nav__link">
+      Animaciones CSS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      JavaScript
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="JavaScript" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon"></span>
+        JavaScript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/01-introducci%C3%B3n_a_javascript/" title="Introducción a Javascript" class="md-nav__link">
+      Introducción a Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/02-fundamentos_de_javascript/" title="Fundamentos de Javascript" class="md-nav__link">
+      Fundamentos de Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/03-caracteristicas/" title="Características" class="md-nav__link">
+      Características
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/04-DOM/" title="DOM" class="md-nav__link">
+      DOM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/05-asincronia/" title="Asincronía" class="md-nav__link">
+      Asincronía
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/06-peticiones_HTTP/" title="Peticiones HTTP" class="md-nav__link">
+      Peticiones HTTP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Herramientas IT
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Herramientas IT" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Herramientas IT
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Terminal
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Terminal" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon"></span>
+        Terminal
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" title="Introducción a la terminal" class="md-nav__link">
+      Introducción a la terminal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/02-operaciones_con_ficheros/" title="Operaciones con ficheros" class="md-nav__link">
+      Operaciones con ficheros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/03-administraci%C3%B3n_del_sistema/" title="Administración del sistema" class="md-nav__link">
+      Administración del sistema
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/markdown/" title="Markdown" class="md-nav__link">
+      Markdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/pip/" title="Pip" class="md-nav__link">
+      Pip
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/mkdocs/" title="Mkdocs" class="md-nav__link">
+      Mkdocs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../about/" title="Acerca de" class="md-nav__link">
+      Acerca de
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#unidades-css" class="md-nav__link">
+    Unidades CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Unidades CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unidades-absolutas" class="md-nav__link">
+    Unidades absolutas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unidades-relativas" class="md-nav__link">
+    Unidades relativas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unidades-flexibles-viewport" class="md-nav__link">
+    Unidades flexibles (viewport)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelo-de-cajas_1" class="md-nav__link">
+    Modelo de cajas
+  </a>
+  
+    <nav class="md-nav" aria-label="Modelo de cajas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dimensiones-ancho-y-alto" class="md-nav__link">
+    Dimensiones (ancho y alto)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zonas-de-un-elemento" class="md-nav__link">
+    Zonas de un elemento
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desbordamiento" class="md-nav__link">
+    Desbordamiento
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#margenes-y-rellenos" class="md-nav__link">
+    Márgenes y rellenos
+  </a>
+  
+    <nav class="md-nav" aria-label="Márgenes y rellenos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#margenes" class="md-nav__link">
+    Márgenes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rellenos" class="md-nav__link">
+    Rellenos
+  </a>
+  
+    <nav class="md-nav" aria-label="Rellenos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atajo-modelo-de-cajas" class="md-nav__link">
+    Atajo: Modelo de cajas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bordes-css" class="md-nav__link">
+    Bordes CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Bordes CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estilos-de-borde" class="md-nav__link">
+    Estilos de borde
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bordes-multiples-diferentes" class="md-nav__link">
+    Bordes múltiples (diferentes)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atajo-bordes" class="md-nav__link">
+    Atajo: Bordes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bordes-especificos" class="md-nav__link">
+    Bordes específicos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#esquinas-redondeadas" class="md-nav__link">
+    Esquinas redondeadas
+  </a>
+  
+    <nav class="md-nav" aria-label="Esquinas redondeadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esquinas-irregulares" class="md-nav__link">
+    Esquinas irregulares
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esquinas-especificas" class="md-nav__link">
+    Esquinas específicas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bordes-con-imagenes" class="md-nav__link">
+    Bordes con imágenes
+  </a>
+  
+    <nav class="md-nav" aria-label="Bordes con imágenes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-tecnica-9-slice" class="md-nav__link">
+    La técnica 9-slice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modo-de-repeticion" class="md-nav__link">
+    Modo de repetición
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atajo-bordes-con-imagenes" class="md-nav__link">
+    Atajo: Bordes con imágenes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funciones-css" class="md-nav__link">
+    Funciones CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Funciones CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#valores-calculados-funcion-calc" class="md-nav__link">
+    Valores calculados: Función calc()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valor-minimo-funcion-min" class="md-nav__link">
+    Valor mínimo: Función min()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valor-maximo-funcion-max" class="md-nav__link">
+    Valor máximo: Función max()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valor-ajustado-funcion-clamp" class="md-nav__link">
+    Valor ajustado: Función clamp()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valor-del-atributo-funcion-attr" class="md-nav__link">
+    Valor del atributo: Función attr()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/saucedoinfo/guias/edit/master/docs/desarrollo/css/02-modelo_de_cajas.md" title="Editar esta página" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="modelo-de-cajas">Modelo de cajas<a class="headerlink" href="#modelo-de-cajas" title="Permanent link">&para;</a></h1>
+<h2 id="unidades-css">Unidades CSS<a class="headerlink" href="#unidades-css" title="Permanent link">&para;</a></h2>
+<p>Antes de comenzar a utilizar propiedades que utilicen medidas, como por ejemplo <code>width</code> (<em>propiedad que sirve para establecer un ancho a un elemento concreto</em>), es conveniente conocer los tipos de unidades que pueden utilizarse en CSS para indicar un determinado tamaño . Existen varios tipos de unidades, vamos a desglosarlas en grupos y explicar cada una de ellas. Más adelante veremos las propiedades de CSS que pueden utilizarlas.</p>
+<h3 id="unidades-absolutas">Unidades absolutas<a class="headerlink" href="#unidades-absolutas" title="Permanent link">&para;</a></h3>
+<p>Las <strong>unidades absolutas</strong> son un tipo de medida fija que no cambia, que no depende de ningún otro factor. Son ideales en contextos donde las medidas no varían como pueden ser en medios impresos (documentos, impresiones, etc...), pero son unidades poco flexibles y adecuadas para la web actual, ya que no tienen la capacidad de adaptarse a diferentes resoluciones o pantallas, que es lo que tendemos a hacer hoy en día.</p>
+<p>Sin embargo, el uso de la unidad <code>px</code> es muy recomendable para el desarrollador (<em>al menos en sus primeros pasos en el diseño web</em>) ya que se trata de una unidad fácil de comprender, muy conocida y que nos permitirá afianzar conceptos a la vez que profundizamos en el diseño web.</p>
+<p>Las diferentes <strong>unidades absolutas</strong> que pueden utilizarse en CSS son las siguientes (<em>de mayor a menor tamaño</em>):</p>
+<table>
+<thead>
+<tr>
+<th align="left">Unidad</th>
+<th align="left">Significado</th>
+<th align="left">Medida aproximada</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>in</code></td>
+<td align="left">Pulgadas</td>
+<td align="left">1in = 25.4mm</td>
+</tr>
+<tr>
+<td align="left"><code>cm</code></td>
+<td align="left">Centímetros</td>
+<td align="left">1cm = 10mm</td>
+</tr>
+<tr>
+<td align="left"><code>pc</code></td>
+<td align="left">Picas</td>
+<td align="left">1pc = 4.23mm</td>
+</tr>
+<tr>
+<td align="left"><code>mm</code></td>
+<td align="left">Milímetros</td>
+<td align="left">1mm = 1mm</td>
+</tr>
+<tr>
+<td align="left"><code>pt</code></td>
+<td align="left">Puntos</td>
+<td align="left">1pt = 0.35mm</td>
+</tr>
+<tr>
+<td align="left"><code>px</code></td>
+<td align="left">Píxels</td>
+<td align="left">1px = 0.26mm</td>
+</tr>
+<tr>
+<td align="left"><code>Q</code></td>
+<td align="left">Cuarto de mm</td>
+<td align="left">1Q = 0.248mm</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<blockquote>
+<p><strong>Consejo</strong>: El punto (<strong>pt</strong>) es una medida que puede utilizarse para documentos CSS en los que se fija el tamaño de las fuentes en medios impresos.</p>
+</blockquote>
+</blockquote>
+<h3 id="unidades-relativas">Unidades relativas<a class="headerlink" href="#unidades-relativas" title="Permanent link">&para;</a></h3>
+<p>Las <strong>unidades relativas</strong> son un tipo de medida más potente en CSS. Al contrario que las unidades absolutas, las unidades relativas dependen de algún otro factor (<em>resolución, densidad de pantalla, etc...</em>). Tienen una curva de aprendizaje más compleja, pero son las ideales para trabajar en dispositivos con diferentes tamaños, ya que son muy flexibles y versátiles:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Unidad</th>
+<th align="left">Significado</th>
+<th align="left">Medida aproximada</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>em</code></td>
+<td align="left">«M»</td>
+<td align="left">1em = tamaño de fuente establecida en navegador</td>
+</tr>
+<tr>
+<td align="left"><code>ex</code></td>
+<td align="left">«X» (~0.5em)</td>
+<td align="left">1ex = ~ mitad del tamaño de fuente del navegador</td>
+</tr>
+<tr>
+<td align="left"><code>ch</code></td>
+<td align="left">«zero width»</td>
+<td align="left">1ch = tamaño de ancho del cero ( <code>0</code> )</td>
+</tr>
+<tr>
+<td align="left"><code>rem</code></td>
+<td align="left">«root M»</td>
+<td align="left">1rem = tamaño fuente raíz</td>
+</tr>
+<tr>
+<td align="left"><code>%</code></td>
+<td align="left">Porcentaje</td>
+<td align="left">Relativa a herencia (contenedor padre)</td>
+</tr>
+</tbody>
+</table>
+<p>La unidad <code>em</code> se utiliza para hacer referencia al tamaño actual de la fuente que ha sido establecido en el navegador, que habitualmente es un valor aproximado de <code>16px</code>. De esta forma, una cantidad de <code>1em</code> sería este tamaño establecido por el usuario, mientras que una cantidad de <code>2em</code> sería justo el doble y una cantidad de <code>0.5em</code> sería justo la mitad. Por otro lado, con <code>1ex</code> establecemos la mitad del tamaño de la fuente, ya que <code>1ex = 0.5em</code>.</p>
+<p><img alt="Unidades CSS: em, ex" src="../img/em-ex-normal-font.png" /></p>
+<p>Realmente, la medida <code>ex</code> está basada en la <strong>altura de la x minúscula</strong>, que es aproximadamente un poco más de la mitad de la fuente actual (depende de la tipografía utilizada), o <code>ch</code> , que equivale al tamaño de ancho del 0 de la fuente actual, aunque en la práctica es un tipo de unidad que no suele ser utilizada demasiado.</p>
+<p><img alt="Altura de la x minúscula" src="../img/x-height.png" /></p>
+<p>Una unidad muy interesante y práctica para tipografías es la unidad <code>rem</code> (<em>root em</em>). Esta unidad es muy cómoda, ya que permite establecer un tamaño para el documento en general (<em>utilizando el elemento <code>body</code> o la pseudoclase <code>:root</code></em>):</p>
+<pre><code>body {
+  font-size: 22px;    /* Tamaño general */
+}
+
+h1 {
+  font-size: 2rem;    /* El doble del tamaño general: 44px */
+}
+
+h2 {
+  font-size: 1rem;    /* El mismo tamaño general: 22px */
+}
+</code></pre>
+<p>Posteriormente, podemos ir utilizando la unidad <code>rem</code> en ciertas partes del documento. Con esto, estamos indicando el factor de escala (<em>respecto al tamaño general que indicamos en el body</em>). En el ejemplo anterior, los elementos <code>&lt;h1&gt;</code> tendrán <strong>44 píxels</strong> de tamaño, ya que hemos establecido <code>2rem</code>, que significa «el doble que el tamaño general». Por otro lado, los elementos <code>&lt;h2&gt;</code> tendrían el mismo tamaño: <strong>22 píxels</strong>.</p>
+<p>Esto nos da una ventaja principal considerable: Si queremos cambiar el tamaño del texto en general, sólo tenemos que cambiar el <code>font-size</code> del elemento <code>body</code>, puesto que el resto de unidades son factores de escalado y se modificarán todas en consecuencia al cambio del <code>body</code>. Algo, sin duda, muy práctico y fácil de modificar.</p>
+<p>En general, en diseño web, se recomienda utilizar <strong>unidades relativas</strong> siempre que sea posible, ya que son unidades mucho más flexibles.</p>
+<blockquote>
+<p><strong>Truco</strong>: Cuando se especifican valores de unidades iguales a <code>0</code>, como por ejemplo <code>0px</code>, <code>0em</code> o <code>0%</code>, podemos omitir las unidades y escribir simplemente <code>0</code>, ya que en este caso particular las undidades son redundantes y no aportan valor.</p>
+</blockquote>
+<h3 id="unidades-flexibles-viewport">Unidades flexibles (viewport)<a class="headerlink" href="#unidades-flexibles-viewport" title="Permanent link">&para;</a></h3>
+<p>Existen unas unidades de "nueva generación" que resultan muy útiles, porque dependen del <strong>viewport</strong> (<em>región visible de la página web en el navegador</em>). Con estas unidades podemos hacer referencia a un porcentaje concreto del tamaño específico que tengamos en la ventana del navegador, independientemente de si es redimensionado o no. Las unidades son las siguientes:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Unidad</th>
+<th align="left">Significado</th>
+<th align="left">Medida aproximada</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>vw</code></td>
+<td align="left">viewport width</td>
+<td align="left">1vw = 1% ancho de navegador</td>
+</tr>
+<tr>
+<td align="left"><code>vh</code></td>
+<td align="left">viewport height</td>
+<td align="left">1vh = 1% alto de navegador</td>
+</tr>
+<tr>
+<td align="left"><code>vmin</code></td>
+<td align="left">viewport minimum</td>
+<td align="left">1vmin = 1% de alto o ancho (el mínimo)</td>
+</tr>
+<tr>
+<td align="left"><code>vmax</code></td>
+<td align="left">viewport maximum</td>
+<td align="left">1vmax = 1% de alto o ancho (el máximo)</td>
+</tr>
+</tbody>
+</table>
+<p>La unidad <code>vw</code> hace referencia al ancho del viewport, mientras que <code>vh</code> hace referencia al alto. Por ejemplo, si utilizamos <code>100vw</code> estaremos haciendo referencia al 100% del ancho del navegador, o sea, todo lo que se está viendo de ancho en pantalla, mientras que si indicamos <code>50vw</code> estaremos haciendo referencia a la mitad del ancho del navegador.</p>
+<p>Por último tenemos <code>vmin</code> y <code>vmax</code> , que simplemente se utilizan para utilizar el porcentaje de ancho o alto del viewport, dependiendo cual sea más pequeño o más grande de los dos, lo que puede ser útil en algunas situaciones donde quieres flexibilidad con diseños adaptables.</p>
+<blockquote>
+<p>Es interesante tener en cuenta que existen una serie de funciones para hacer cálculos con unidades CSS. Son las funciones <code>calc()</code>, <code>min()</code>, <code>max()</code> o <code>clamp()</code>, entre otras. Las veremos más adelante, en el capítulo de <a href="/css/modelo-de-cajas/funciones-css">funciones CSS</a>.</p>
+</blockquote>
+<hr />
+<h2 id="modelo-de-cajas_1">Modelo de cajas<a class="headerlink" href="#modelo-de-cajas_1" title="Permanent link">&para;</a></h2>
+<p>Durante varios años, el denominado <strong>modelo de cajas</strong> fue una pesadilla para los desarrolladores web, puesto que se mostraba visualmente de forma diferente en <strong>Internet Explorer</strong> respecto a los demás navegadores. Por fortuna, todos los navegadores actuales ya interpretan de la misma forma el modelo de cajas, pero conviene aprender bien la diferencia para no ser como Internet Explorer.</p>
+<p>La representación básica del <strong>modelo de cajas</strong> es la siguiente, donde podemos observar varios conceptos importantes a diferenciar:</p>
+<ul>
+<li>El <strong>borde</strong> (<em>border</em>). En negro, es el límite que separa el interior del exterior del elemento.</li>
+<li>El <strong>márgen</strong> (<em>margin</em>). En naranja, es la parte exterior del elemento, por fuera del borde.</li>
+<li>El <strong>relleno</strong> (<em>padding</em>). En verde, es la parte interior del elemento, entre el contenido y el borde.</li>
+<li>El <strong>contenido</strong> (<em>en azul</em>). En azul, es la parte interior del elemento, excluyendo el relleno.</li>
+</ul>
+<p><img alt="Márgenes y espaciados" src="../img/modelo-de-cajas.svg" /></p>
+<h3 id="dimensiones-ancho-y-alto">Dimensiones (ancho y alto)<a class="headerlink" href="#dimensiones-ancho-y-alto" title="Permanent link">&para;</a></h3>
+<p>Para dar tamaños específicos a los diferentes elementos de un documento HTML, necesitaremos asignarles valores a las propiedades <code>width</code> (ancho) y <code>height</code> (alto).</p>
+<table>
+<thead>
+<tr>
+<th align="left">Propiedad</th>
+<th align="left">Valor</th>
+<th align="left">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>width</code></td>
+<td align="left"><strong>auto</strong> |size</td>
+<td align="left">Tamaño de ancho de un elemento.</td>
+</tr>
+<tr>
+<td align="left"><code>height</code></td>
+<td align="left"><strong>auto</strong> |size</td>
+<td align="left">Tamaño de alto de un elemento.</td>
+</tr>
+</tbody>
+</table>
+<p>En el caso de utilizar el valor <strong>auto</strong> en las propiedades anteriores (<em>que es lo mismo que no indicarlas, ya que es el valor que tienen por defecto</em>), el navegador se encarga de calcular el ancho o alto necesario, dependiendo del contenido del elemento. Esto es algo que también puede variar, dependiendo del tipo de elemento que estemos usando, y que veremos más adelante, en el apartado de maquetación.</p>
+<p>Hay que ser muy conscientes de que, sin indicar valores de ancho y alto para la caja, el elemento generalmente toma el tamaño que debe respecto a su contenido, mientras que si indicamos un ancho y alto concretos, <strong>estamos obligando a CSS tener un aspecto concreto</strong> y podemos obtener resultados similares al siguiente (<em>conocida broma de CSS</em>) si su contenido es más grande que el tamaño que hemos definido:</p>
+<p><img alt="CSS is awesome" src="../img/css-is-awesome.png" /></p>
+<p>Otra forma de lidiar con esto, es utilizar las propiedades hermanas de <strong>width</strong>: <code>min-width</code> y <code>max-width</code> y las propiedades hermanas de <strong>height</strong>: <code>min-height</code> y <code>max-height</code>. Con estas propiedades, en lugar de establecer un tamaño fijo, establecemos unos máximos y unos mínimos, donde el ancho o alto podría variar entre esos valores.</p>
+<pre><code>div {
+  width: 800px;
+  height: 400px;
+  background: red;
+  max-width: 500px;
+}
+</code></pre>
+<p>En este caso, por ejemplo, a pesar de estar indicando un tamaño de <code>800px</code>, le aplicamos un <code>max-width</code> de <code>500px</code>, por lo que estamos limitando el elemento a un tamaño de ancho de 500 píxeles como máximo y nunca superará ese tamaño.</p>
+<p>Por un lado tenemos las propiedades de mínimos <code>min-width</code> y <code>min-height</code>, que por defecto tienen valor <strong>0</strong>, mientras que por otro lado, tenemos las propiedades de máximos <code>max-width</code> y <code>max-height</code>, que por defecto tienen valor <strong>none</strong>:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Propiedad</th>
+<th align="left">Valor</th>
+<th align="left">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>max-width</code></td>
+<td align="left"><strong>none</strong> |size</td>
+<td align="left">Ancho máximo que puede ocupar un elemento.</td>
+</tr>
+<tr>
+<td align="left"><code>min-width</code></td>
+<td align="left"><strong>0</strong> |size</td>
+<td align="left">Ancho mínimo que puede ocupar un elemento.</td>
+</tr>
+<tr>
+<td align="left"><code>max-height</code></td>
+<td align="left"><strong>none</strong> |size</td>
+<td align="left">Alto máximo que puede ocupar un elemento.</td>
+</tr>
+<tr>
+<td align="left"><code>min-height</code></td>
+<td align="left"><strong>0</strong> |size</td>
+<td align="left">Alto mínimo que puede ocupar un elemento.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="zonas-de-un-elemento">Zonas de un elemento<a class="headerlink" href="#zonas-de-un-elemento" title="Permanent link">&para;</a></h3>
+<p>Antes de continuar, es importante saber que en CSS existen ciertas palabras clave para hacer referencia a una zona u orientación concreta sobre un elemento. Son conceptos muy sencillos y prácticamente lógicos, por lo que no tendrás ningún problema en comprenderlos. Son los siguientes:</p>
+<p><img alt="Zonas del modelo de cajas: left, right, top, bottom y center" src="../img/positions.png" /></p>
+<ul>
+<li><strong>Top</strong>: Se refiere a la parte superior del elemento.</li>
+<li><strong>Left</strong>: Se refiere a la parte izquierda del elemento.</li>
+<li><strong>Right</strong>: Se refiere a la parte derecha del elemento.</li>
+<li><strong>Bottom</strong>: Se refiere a la parte inferior del elemento.</li>
+<li><strong>Center</strong>: En algunos casos se puede especificar el valor <code>center</code> para referirse a la posición central entre los extremos horizontales o verticales.</li>
+</ul>
+<p>Estas palabras clave las utilizaremos muy a menudo en diferentes propiedades CSS para hacer referencia a una zona particular.</p>
+<h3 id="desbordamiento">Desbordamiento<a class="headerlink" href="#desbordamiento" title="Permanent link">&para;</a></h3>
+<p>Volvamos a pensar en la situación de la imagen anterior: Damos un tamaño de ancho y alto a un elemento HTML, pero su contenido de texto es tan grande que no cabe dentro de ese elemento. ¿Qué ocurriría? Probablemente lo que vimos en la imagen: el contenido se desbordaría.</p>
+<p>Podemos modificar ese comportamiento con la propiedad de CSS <code>overflow</code>, o con alguna de sus propiedades específicas <code>overflow-x</code> o <code>overflow-y</code>:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Propiedad</th>
+<th align="left">Valor</th>
+<th align="left">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>overflow</code></td>
+<td align="left"><strong>visible</strong> | hidden | scroll | auto</td>
+<td align="left">Establece el comportamiento de desbordamiento.</td>
+</tr>
+<tr>
+<td align="left"><code>overflow-x</code></td>
+<td align="left"><strong>visible</strong> | hidden | scroll | auto</td>
+<td align="left">Establece el desbordamiento sólo para el eje X (<em>horizontal</em>).</td>
+</tr>
+<tr>
+<td align="left"><code>overflow-y</code></td>
+<td align="left"><strong>visible</strong> | hidden | scroll | auto</td>
+<td align="left">Establece el desbordamiento sólo para el eje Y (<em>vertical</em>).</td>
+</tr>
+</tbody>
+</table>
+<p>Dichas propiedades pueden tomar varios valores, donde <strong>visible</strong> es el valor que tiene por defecto, que permite que haya desbordamiento. Otras opciones son las siguientes, donde <strong>no se permite desbordamiento</strong>:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Valor</th>
+<th align="left">¿Qué ocurre si se desborda el contenedor?</th>
+<th align="left">¿Desbordamiento?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>visible</strong></td>
+<td align="left">Se muestra el contenido que sobresale (<em>comportamiento por defecto</em>)</td>
+<td align="left">Sí</td>
+</tr>
+<tr>
+<td align="left">hidden</td>
+<td align="left">Se oculta el contenido que sobresale.</td>
+<td align="left">No</td>
+</tr>
+<tr>
+<td align="left">scroll</td>
+<td align="left">Se colocan barras de desplazamiento (horizontales y verticales).</td>
+<td align="left">No</td>
+</tr>
+<tr>
+<td align="left">auto</td>
+<td align="left">Se colocan barras de desplazamiento (sólo las necesarias).</td>
+<td align="left">No</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<blockquote>
+<p><strong>Nota</strong>: CSS3 añade las propiedades <code>overflow-x</code> y <code>overflow-y</code> para cada eje individual, que antiguamente solo era posible hacerlo con <code>overflow</code> para ambos ejes. Estas propiedades son útiles cuando no quieres mostrar alguna barra de desplazamiento, habitualmente, la barra de desplazamiento horizontal.</p>
+</blockquote>
+</blockquote>
+<hr />
+<h2 id="margenes-y-rellenos">Márgenes y rellenos<a class="headerlink" href="#margenes-y-rellenos" title="Permanent link">&para;</a></h2>
+<p>En el modelo de cajas, los <strong>márgenes</strong> (<em>margin</em>) son los espacios exteriores de un elemento. El espacio que hay entre el borde de un elemento y el borde de otros elementos adyacentes, es lo que se considera márgen.</p>
+<h3 id="margenes">Márgenes<a class="headerlink" href="#margenes" title="Permanent link">&para;</a></h3>
+<p>Dichos márgenes se pueden considerar en conjunto (<em>de forma general</em>) o de forma concreta en cada una de las zonas del elemento. Veamos primero las propiedades específicas para cada zona:</p>
+<p>Propiedad |ValorSignificado
+:---|:---|:---
+<code>margin-top</code>|<strong>auto</strong> |size|Establece un tamaño de margen superior.
+<code>margin-left</code>|<strong>auto</strong> |size|Establece un tamaño de margen a la izquierda.
+<code>margin-right</code>|<strong>auto</strong> |size|Establece un tamaño de margen a la derecha.
+<code>margin-bottom</code>|<strong>auto</strong> |size|Establece un tamaño de margen inferior.</p>
+<p>Podemos aplicar diferentes márgenes a cada zona de un elemento utilizando cada una de estas propiedades, o dejando al nevegador que lo haga de forma automática indicando el valor <strong>auto</strong>.</p>
+<blockquote>
+<p><strong>Truco</strong>: Existe un truco muy sencillo y práctico para centrar un elemento en pantalla. Basta con aplicar un ancho fijo al contenedor, <code>width:500px</code> (<em>por ejemplo</em>) y luego aplicar un <code>margin:auto</code>. De esta forma, el navegador, al conocer el tamaño del elemento (<em>y por omisión, el resto del tamaño de la ventana</em>) se encarga de repartirlo equitativamente entre el margen izquierdo y el margen derecho, quedando centrado el elemento.</p>
+</blockquote>
+<p>Hay que recordar diferenciar bien los <strong>márgenes</strong> de los <strong>rellenos</strong>, puesto que no son la misma cosa. Los <strong>rellenos</strong> (<em>padding</em>) son los espacios que hay entre los bordes del elemento en cuestión y el contenido del elemento (<em>por la parte interior</em>). Mientras que los márgenes (<em>margin</em>) son los espacios que hay entre los bordes del elemento en cuestión y los bordes de otros elementos (<em>parte exterior</em>).</p>
+<p>Observese también el siguiente ejemplo para ilustrar el <strong>solapamiento de márgenes</strong>. Por defecto, si tenemos dos elementos adyacentes con, por ejemplo, <code>margin: 20px</code> cada uno, ese espacio de margen se solapará y tendremos <code>20px</code> en total, y no <code>40px</code> (<em>la suma de cada uno</em>) como podríamos pensar en un principio.</p>
+<p><img alt="Márgenes CSS solapados" src="../img/margin-overlap.svg" /></p>
+<h3 id="rellenos">Rellenos<a class="headerlink" href="#rellenos" title="Permanent link">&para;</a></h3>
+<p>Al igual que con los márgenes, los rellenos tienen varias propiedades para indicar cada zona:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Propiedad</th>
+<th align="left">Valor</th>
+<th align="left">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>padding-top</code></td>
+<td align="left"><strong>0</strong> |size</td>
+<td align="left">Aplica un relleno interior en el espacio superior de un elemento.</td>
+</tr>
+<tr>
+<td align="left"><code>padding-left</code></td>
+<td align="left"><strong>0</strong> |size</td>
+<td align="left">Aplica un relleno interior en el espacio izquierdo de un elemento.</td>
+</tr>
+<tr>
+<td align="left"><code>padding-right</code></td>
+<td align="left"><strong>0</strong> |size</td>
+<td align="left">Aplica un relleno interior en el espacio derecho de un elemento.</td>
+</tr>
+<tr>
+<td align="left"><code>padding-bottom</code></td>
+<td align="left"><strong>0</strong> |size</td>
+<td align="left">Aplica un relleno interior en el espacio inferior de un elemento.</td>
+</tr>
+</tbody>
+</table>
+<p>Como se puede ver en la tabla, por defecto no hay relleno (<em>el relleno está a cero</em>), aunque puede modificarse tanto con las propiedades anteriores como la propiedad de atajo que veremos a continuación.</p>
+<h4 id="atajo-modelo-de-cajas">Atajo: Modelo de cajas<a class="headerlink" href="#atajo-modelo-de-cajas" title="Permanent link">&para;</a></h4>
+<p>Al igual que en otras propiedades de CSS, también existen atajos para los márgenes y los rellenos:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Propiedad</th>
+<th align="left">Valores</th>
+<th align="left">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>margin</code></td>
+<td align="left">1 parámetro. Aplica el mismo margen a <strong>todos</strong> los lados.</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2 parámetros. Aplica margen <strong>top/bottom</strong> y <strong>left/right</strong>.</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3 parámetros. Aplica margen <strong>top</strong>, <strong>left/right</strong> y <strong>bottom</strong>.</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4 parámetros. Aplica margen <strong>top</strong>, <strong>right</strong>, <strong>bottom</strong> e <strong>left</strong>.</td>
+</tr>
+</tbody>
+</table>
+<p>Con las propiedades <code>padding</code> y <code>border-width</code> pasa exactamente lo mismo, actuando en relación a los <strong>rellenos</strong>, en lugar de los márgenes en el primer caso, y en relación al <strong>grosor del borde</strong> de un elemento en el segundo.</p>
+<p>!!!! Ojo
+    Aunque al principio es muy tentador utilizar márgenes negativos para ajustar posiciones y colocar los elementos como queremos, se aconseja no utilizar dicha estrategia salvo para casos muy particulares, ya que a la larga es una mala práctica que hará que nuestro código sea de peor calidad.</p>
+<hr />
+<h2 id="bordes-css">Bordes CSS<a class="headerlink" href="#bordes-css" title="Permanent link">&para;</a></h2>
+<p>En CSS es posible especificar el aspecto que tendrán los bordes de cualquier elemento, pudiendo incluso, dar valores distintos a las diferentes <strong>zonas</strong> predeterminadas del elemento (zona superior, izquierda, derecha o zona inferior).</p>
+<p>Las propiedades básicas existentes de los bordes en CSS son las siguientes:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Propiedad</th>
+<th align="left">Valor</th>
+<th align="left">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>border-color 1234</code></td>
+<td align="left"></td>
+<td align="left">Especifica el color que se utilizará en el borde.</td>
+</tr>
+<tr>
+<td align="left"><code>border-width</code></td>
+<td align="left">thin | <strong>medium</strong> | thick |size</td>
+<td align="left">Especifica un tamaño predefinido para el grosor del borde.</td>
+</tr>
+<tr>
+<td align="left"><code>border-style 1234</code></td>
+<td align="left"><strong>none</strong> | style</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p>Define el estilo para el borde a utilizar (ver más adelante).</p>
+<p>En primer lugar, <code>border-color</code> establece el color del borde, de la misma forma que lo hicimos en apartados anteriores de colores. En segundo lugar, con <code>border-width</code> podemos establecer la anchura o grosor del borde utilizando tanto <strong>palabras clave</strong> predefinidas como un tamaño concreto con cualquier tipo de las <strong>unidades</strong> ya vistas.</p>
+<h3 id="estilos-de-borde">Estilos de borde<a class="headerlink" href="#estilos-de-borde" title="Permanent link">&para;</a></h3>
+<p>Por último, con <code>border-style</code> podemos aplicar un estilo determinado al borde de un elemento. En <strong>estilo de borde</strong> podemos elegir cualquiera de las siguientes opciones:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Valor</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">hidden</td>
+<td align="left">Oculto. Idéntico al anterior salvo para conflictos con tablas.</td>
+</tr>
+<tr>
+<td align="left">dotted</td>
+<td align="left">Establece un borde basado en puntos.</td>
+</tr>
+<tr>
+<td align="left">dashed</td>
+<td align="left">Establece un borde basado en rayas (línea discontínua).</td>
+</tr>
+<tr>
+<td align="left">solid</td>
+<td align="left">Establece un borde sólido (línea contínua).</td>
+</tr>
+<tr>
+<td align="left">double</td>
+<td align="left">Establece un borde doble (dos líneas contínuas).</td>
+</tr>
+<tr>
+<td align="left">groove</td>
+<td align="left">Establece un borde biselado con luz desde arriba.</td>
+</tr>
+<tr>
+<td align="left">ridge</td>
+<td align="left">Establece un borde biselado con luz desde abajo. Opuesto a <strong>groove</strong>.</td>
+</tr>
+<tr>
+<td align="left">inset</td>
+<td align="left">Establece un borde con profundidad «hacia dentro».</td>
+</tr>
+<tr>
+<td align="left">outset</td>
+<td align="left">Establece un borde con profundidad «hacia fuera». Opuesto a <strong>inset</strong>.</td>
+</tr>
+</tbody>
+</table>
+<p>Veamos un ejemplo sencillo:</p>
+<pre><code>div {
+  border-color: gray;
+  border-width: 1px;
+  border-style: dotted;
+}
+</code></pre>
+<p>Sin embargo, el borde más frecuente suele ser <strong>solid</strong>, que no es más que un borde liso. Pueden utilizarse cualquiera de los estilos indicados en la tabla anterior. Veamos como se verían los diferentes estilos de borde utilizando <strong>10 píxels</strong> de grosor y color <strong>gris</strong>:</p>
+<p><img alt="Estilos" src="../img/border-styles.png" /></p>
+<h3 id="bordes-multiples-diferentes">Bordes múltiples (diferentes)<a class="headerlink" href="#bordes-multiples-diferentes" title="Permanent link">&para;</a></h3>
+<p>Hasta ahora, sólo hemos utilizado un parámetro en cada propiedad, lo que significa que se aplica el mismo valor para cada borde de un elemento (<em>borde superior, borde derecho, borde inferior y borde izquierdo</em>). Sin embargo, podemos especificar uno, dos, tres o cuatro parámetros, dependiendo de lo que queramos hacer:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Propiedad</th>
+<th align="left">Valor</th>
+<th align="left">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>border-color</code></td>
+<td align="left">1 parámetro. Aplica el mismo color a todos los bordes.</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2 parámetros. Aplica al borde <strong>top/bottom</strong>, y al <strong>left/right</strong>.</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3 parámetros. Aplica al <strong>top</strong>, al <strong>left/right</strong> y al <strong>bottom</strong>.</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4 parámetros. Aplica al <strong>top</strong>, <strong>right</strong>, <strong>bottom</strong> y <strong>left</strong>.</td>
+</tr>
+</tbody>
+</table>
+<p>De la misma forma, podemos hacer exactamente lo mismo con las propiedades <code>border-width</code> (<em>respecto al ancho del borde</em>) y <code>border-style</code> (<em>respecto al estilo del borde</em>). Teniendo en cuenta esto, disponemos de mucha flexibilidad a la hora de especificar esquemas de bordes más complejos:</p>
+<pre><code>div {
+  border-color: red blue green;
+  border-width: 2px 10px 5px;
+  border-style: solid dotted solid;
+}
+</code></pre>
+<p>En el ejemplo anterior hemos utilizado 3 parámetros, indicando un elemento con borde superior rojo sólido de 2 píxeles de grosor, con borde izquierdo y derecho punteado azul de 10 píxeles de grosor y con un borde inferior verde sólido de 5 píxeles de grosor.</p>
+<h3 id="atajo-bordes">Atajo: Bordes<a class="headerlink" href="#atajo-bordes" title="Permanent link">&para;</a></h3>
+<p>Pero ya habremos visto que con tantas propiedades, para hacer algo relativamente sencillo, nos pueden quedar varias lineas de código complejas y difíciles de leer. Al igual que con otras propiedades CSS, podemos utilizar la propiedad de atajo <code>border</code>, con la que podemos hacer un resumen y no necesitar utilizar las propiedades individuales por separado, realizando el proceso de forma más corta:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Propiedad</th>
+<th align="left">Valor</th>
+<th align="left">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>border</code></td>
+<td align="left">size - style - color</td>
+<td align="left">Propiedad de atajo para simplificar valores.</td>
+</tr>
+</tbody>
+</table>
+<p>Por ejemplo:</p>
+<pre><code>div {
+  border: 1px solid #000000;
+}
+</code></pre>
+<p>Así pues, estamos aplicando un borde de <strong>1 píxel</strong> de grosor, estilo <strong>sólido</strong> y color <strong>negro</strong> a todos los bordes del elemento, ahorrando mucho espacio y escribiéndolo todo en una sola propiedad.</p>
+<blockquote>
+<p><strong>Consejo</strong>: Intenta organizarte y aplicar siempre los atajos si es posible. Ahorrarás mucho espacio en el documento y simplificarás la creación de diseños. El orden, aunque no es obligatorio, si es recomendable para mantener una cierta coherencia con el estilo de código.</p>
+</blockquote>
+<h3 id="bordes-especificos">Bordes específicos<a class="headerlink" href="#bordes-especificos" title="Permanent link">&para;</a></h3>
+<p>Otra forma, quizás más intuitiva, es la de utilizar las propiedades de bordes específicos (<em>por zonas</em>) y aplicar estilos combinándolos junto a la <a href="/css/introduccion/herencia-css/">herencia de CSS</a>. Para utilizarlas bastaría con indicarle la zona justo después de <code>border-</code>:</p>
+<pre><code>div {
+  border-bottom-width: 2px;
+  border-bottom-style: dotted;
+  border-bottom-color: black;
+}
+</code></pre>
+<p>Esto dibujaría <strong>sólo un borde inferior</strong> negro de 2 píxeles de grosor y con estilo punteado. Ahora imaginemos que queremos un elemento con todos los bordes en rojo a 5 píxeles de grosor, salvo el borde superior, que lo queremos con un borde de 15 píxeles en color naranja. Podríamos hacer lo siguiente:</p>
+<pre><code>div {
+  border: 5px solid red;
+  border-top-width: 15px;
+  border-top-color: orange;
+  border-top-style: solid;  /* Esta propiedad no es necesaria (se hereda) */
+}
+</code></pre>
+<p>El ejemplo anterior conseguiría nuestro objetivo. La primera propiedad establece todos los bordes del elemento, sin embargo, las siguientes propiedades modifican sólo el borde superior, cambiándolo a las características indicadas.</p>
+<p>Recuerda que también existen atajos para estas propiedades de bordes en zonas concretas, lo que nos permite simplificar aún más el ejemplo anterior, haciéndolo más fácil de comprender:</p>
+<pre><code>div {
+  border: 5px solid red;
+  border-top: 15px solid orange;
+}
+</code></pre>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><strong>Ojo</strong>: Es muy importante entender como se está aplicando la herencia en los ejemplos anteriores, puesto que es una de las características más complejas de dominar de CSS junto a la cascada. Por ejemplo, si colocaramos el <code>border-top</code> antes del <code>border</code>, este último sobreescribiría los valores de <code>border-top</code> y no funcionaría de la misma forma.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<hr />
+<h2 id="esquinas-redondeadas">Esquinas redondeadas<a class="headerlink" href="#esquinas-redondeadas" title="Permanent link">&para;</a></h2>
+<p><strong>CSS3</strong> añade interesantes características en materia de bordes, como la posibilidad de crear <strong>bordes con esquinas redondeadas</strong>, característica que en versiones anteriores de CSS era muy complicado de lograr, necesitando recurrir al apoyo de imágenes gráficas. Por su parte, en <strong>CSS3</strong> es realmente sencillo hacerlo mediante código.</p>
+<p>Basta utilizar la propiedad <code>border-radius</code>, con la cual podrás especificar un radio para el borde de las esquinas. Por defecto, este borde es de <strong>tamaño 0</strong>, por lo que no hay borde redondeado. A medida que se aumenta este valor, el borde se redondea más. Una vez llegado a su máximo, no se apreciará ningún cambio.</p>
+<p><img alt="Esquinas redondeadas en CSS" src="../img/corners.svg" /></p>
+<p>Hay varias formas de especificar el <strong>radio</strong> de las esquinas:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Propiedad</th>
+<th align="left">Valor</th>
+<th align="left">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>border-radius</code></td>
+<td align="left">1 parámetro. Aplica el radio a <strong>todas</strong> y cada una de las esquinas.</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2 parámetros: <strong>top-left</strong> + <strong>bottom-right</strong> y a <strong>top-right</strong> + <strong>bottom-left</strong>.</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3 parámetros: <strong>top-left</strong>, a <strong>top-right</strong> y <strong>bottom-left</strong> y a <strong>bottom-right</strong>.</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4 parámetros. Orden de las agujas del reloj, empezando por <strong>top-left</strong>.</td>
+</tr>
+</tbody>
+</table>
+<p>El <strong>primer formato</strong>, un único parámetro, aplica ese tamaño a <strong>todas</strong> las esquinas del borde.</p>
+<p>El <strong>segundo formato</strong>, con dos parámetros, aplica el primer valor, <strong>e1</strong>, a las esquinas superior-izquierda e inferior-derecha, y el segundo valor, <strong>e2</strong>, a las esquinas superior-derecha e inferior-izquierda.</p>
+<p>En el <strong>tercer formato</strong>, se aplica el parámetro <strong>e1</strong> a la esquina superior-izquierda, el parámetro <strong>e2</strong> a las esquinas superior-derecha e inferior-izquierda y el parámetro <strong>e3</strong> a la esquina inferior-derecha.</p>
+<p>Y por último, en el <strong>cuarto formato</strong>, se aplica el tamaño de cada valor a cada esquina por separado, en el sentido de las agujas del reloj. O lo que es lo mismo, <strong>e1</strong> a la esquina superior-izquierda, <strong>e2</strong> a la esquina superior-derecha, <strong>e3</strong> a la esquina inferior-derecha y <strong>e4</strong> a la esquina inferior-izquierda.</p>
+<p>A modo de ejemplo teórico, pueden ver un ejemplo de la aplicación de varios formatos:</p>
+<pre><code>div {
+  border-radius: 25px;              /* Formato con un parámetro */
+  border-radius: 25% 50%;           /* Formato con dos parámetros */
+  border-radius: 50px 25px 10px;    /* Formato con tres parámetros */
+  border-radius: 25px 0 15px 50px;  /* Formato con cuatro parámetros */
+}
+</code></pre>
+<h4 id="esquinas-irregulares">Esquinas irregulares<a class="headerlink" href="#esquinas-irregulares" title="Permanent link">&para;</a></h4>
+<blockquote>
+<blockquote>
+<p><strong>Truco</strong>: Es posible diferenciar el <strong>radio horizontal</strong> del <strong>radio vertical</strong> de una esquina determinada, creando una esquina redondeada irregular.</p>
+</blockquote>
+</blockquote>
+<p>Para conseguirlo, no hay más que añadir una barra (<code>/</code>) y repetir nuevamente el número de parámetros escogido. De esta forma, los parámetros a la izquierda de la barra representan el radio horizontal, mientras que los que están a la derecha, representan el radio vertical.</p>
+<pre><code>div {
+  /* Usando el segundo formato */
+  border-radius: 5px 50px / 50px 15px;
+}
+</code></pre>
+<h4 id="esquinas-especificas">Esquinas específicas<a class="headerlink" href="#esquinas-especificas" title="Permanent link">&para;</a></h4>
+<p>De la misma forma que hemos visto con anterioridad en otras propiedades CSS similares, también es posible especificar los valores de cada esquina mediante propiedades por separado:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Propiedad</th>
+<th align="left">Valor</th>
+<th align="left">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>border-top-left-radius</code></td>
+<td align="left">Indica un radio para redondear la esquina <strong>top-left</strong>.</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>border-top-right-radius</code></td>
+<td align="left">Indica un radio para redondear la esquina <strong>top-right</strong>.</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>border-bottom-left-radius</code></td>
+<td align="left">Indica un radio para redondear la esquina <strong>bottom-left</strong>.</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>border-bottom-right-radius</code></td>
+<td align="left">Indica un radio para redondear la esquina <strong>bottom-right</strong>.</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p>Estas propiedades son ideales para aplicar junto a la herencia de CSS y sobreescribir valores específicos.</p>
+<hr />
+<h2 id="bordes-con-imagenes">Bordes con imágenes<a class="headerlink" href="#bordes-con-imagenes" title="Permanent link">&para;</a></h2>
+<p>Una de las limitaciones que tenía CSS, es que, si en lugar de utilizar los bordes de los que disponemos en CSS (<em>sólidos, punteados, etc...</em>) quisieramos hacer algo un poco más complejo con imágenes, podría volverse una tarea muy complicada. Por esa razón, <strong>CSS3</strong> incorporó en su momento un sistema para crear bordes extensibles basados en una imagen de molde.</p>
+<h3 id="la-tecnica-9-slice">La técnica 9-slice<a class="headerlink" href="#la-tecnica-9-slice" title="Permanent link">&para;</a></h3>
+<p>Dicho sistema se denomina <a href="https://en.wikipedia.org/wiki/9-slice_scaling">9-slice</a> (<em>muy utilizado en videojuegos</em>) y se basa en delimitar una imagen trazando <strong>cuatro líneas</strong> (<em>en rojo</em>). Esto hará que la imagen quede dividida en 9 fragmentos, donde el fragmento central es descartado y el resto es utilizado de molde para los bordes de un elemento:</p>
+<p><img alt="Sistema 9-slice" src="../img/9-slice.svg" /></p>
+<p>De esta forma, los fragmentos <strong>1</strong>, <strong>3</strong>, <strong>7</strong> y <strong>9</strong> se utilizarán para las esquinas y los fragmentos <strong>2</strong>, <strong>4</strong>, <strong>6</strong> y <strong>8</strong> se utilizarán para los bordes laterales, pudiendo expandirlos si se requiere y considera necesario con alguna de las propiedades que veremos a continuación.</p>
+<p>Vamos a utilizar la siguiente imagen expandible (<em>a la izquierda</em>), que simula ser un antiguo carrete fotográfico, como imagen de borde. Las líneas rojas no forman parte de la imagen original, sino que se utilizan en este ejemplo para dejar claro cuáles serían los límites marcados con <code>border-image-slice</code>. Una vez hecho esto, conseguiremos el resultado de la imagen de la derecha, en el cuál podremos ampliar el texto del elemento lo que queramos, que se adaptará solo a su contenido:</p>
+<p><img alt="Ejemplo con border-image en CSS" src="../img/ejemplo-border-image.png" /></p>
+<p>Para ello, utilizaremos el siguiente código CSS, donde antes que nada, establecemos un ancho al elemento con <code>width</code> y un <code>border</code> básico para que, en el caso de navegadores que no soporten <code>border-image</code>, tenga al menos un borde básico y nos sirva también como base a lo que vamos a hacer a continuación:</p>
+<pre><code>.borde {
+  width: 200px;
+  border: 42px solid black;
+  border-image-width: 1;
+  border-image-source: url(https://i.imgur.com/YC5PUl6.png);
+  border-image-slice: 23%;
+  border-image-repeat: round;
+}
+</code></pre>
+<p>Para establecer los límites y poder utilizar imágenes en los bordes, hemos hecho uso de las siguientes propiedades de CSS:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Propiedad</th>
+<th align="left">Valor</th>
+<th align="left">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>border-image-width</code></td>
+<td align="left"><strong>1</strong> | | | auto</td>
+<td align="left">Grosor de la imagen de borde.</td>
+</tr>
+<tr>
+<td align="left"><code>border-image-source</code></td>
+<td align="left"><strong>none</strong> | url(<em>imagen.png</em>)</td>
+<td align="left">Imagen a utilizar de molde para el 9-slice.</td>
+</tr>
+<tr>
+<td align="left"><code>border-image-slice</code></td>
+<td align="left"><strong>100%</strong> | | | fill</td>
+<td align="left">Tamaño de los bordes en la imagen.</td>
+</tr>
+<tr>
+<td align="left"><code>border-image-outset</code></td>
+<td align="left"><strong>0</strong> |</td>
+<td align="left">Tamaño en el que el borde crece hacia fuera.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>La propiedad <code>border-image-width</code> indica el <strong>tamaño</strong> que tendrá el borde de la imagen. El tamaño puede ser indicado con unidades (<em>píxeles o porcentajes, por ejemplo</em>) o sin ellas, lo que lo tomará como múltiplo del tamaño indicado en <code>border-width</code>.</li>
+</ul>
+<p>En nuestro ejemplo, tanto indicarle un valor de <strong>1</strong> como dejarlo sin especificar, sería decirle que el tamaño del borde de la imagen será de <code>42px</code>, pero por ejemplo, si indicamos <code>border-image-width: 2</code>, le estaremos indicando que use un tamaño de <code>84px</code>. Al igual que vimos en el apartado de <code>margin</code> se puede indicar 1, 2, 3 o 4 parámetros .</p>
+<blockquote>
+<p><strong>Consejo:</strong> No olvides que hay que indicar también un <code>border-width</code> y un <code>border-style</code> para que el borde CSS esté definido y se pueda visualizar.</p>
+</blockquote>
+<ul>
+<li>La propiedad <code>border-image-source</code> establece, mediante la expresión <strong>url()</strong>, la imagen que vamos a utilizar para crear nuestro borde con imágenes.</li>
+</ul>
+<blockquote>
+<blockquote>
+<p><strong>Truco</strong>: ¡Como imagen de fondo puedes utilizar un <a href="/css/colores-y-fondos/gradientes-css/">gradiente de CSS</a>, ya que internamente se interpretan como imágenes!</p>
+</blockquote>
+</blockquote>
+<ul>
+<li>La propiedad <code>border-image-slice</code> define la posición de las líneas divisorias de la imagen, o lo que es lo mismo, el tamaño de los bordes. Por defecto, el valor es de <strong>100%</strong> (<em>tamaño de ancho completo de la imagen</em>), pero también podemos usar números sin unidad, que simbolizan píxeles de recorte. Se pueden especificar 1, 2, 3 ó 4 parámetros.</li>
+</ul>
+<p>Por otro lado, el valor opcional <code>fill</code> sirve para indicar que quieres rellenar el elemento con el fondo del fragmento <strong>5</strong>, que por defecto es descartado. Útil en casos que quieras aprovechar el fondo.</p>
+<p>En nuestro caso, nos podría valer tanto con <code>110</code> (<em>110 píxeles de recorte</em>) como con <code>23%</code>, ya que es más o menos la cantidad apropiada para establecer el límite tanto de ancho como de alto.</p>
+<ul>
+<li>La propiedad <code>border-image-outset</code> establece el factor de crecimiento (<em>hacia fuera</em>) de la imagen. Muy útil para compensar la imagen si se extiende hasta el contenido. Usar con cuidado, ya que puede desplazar el contenido. Por defecto no tiene desplazamiento.</li>
+</ul>
+<h3 id="modo-de-repeticion">Modo de repetición<a class="headerlink" href="#modo-de-repeticion" title="Permanent link">&para;</a></h3>
+<p>Habremos comprobado que en algunas ocasiones, el modo en que se repite la imagen de borde no es la apropiada, o al menos, no es la que más se adapta a nuestro caso específico. Este comportamiento se puede variar mediante la propiedad <code>border-image-repeat</code>:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Propiedad</th>
+<th align="left">Valor</th>
+<th align="left">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>border-image-repeat</code></td>
+<td align="left">[<em>repetición en X e Y</em>]</td>
+<td align="left">1 parámetro. Comportamiento de repetición en ambos ejes.</td>
+</tr>
+<tr>
+<td align="left">[<em>rep. en X</em>] [<em>rep. en Y</em>]</td>
+<td align="left">2 parámetros. Comportamiento de repetición por separado.</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p>Con dicha propiedad se establece como deben comportarse los fragmentos del borde y el tipo de repetición que deben efectuar. Se puede usar la modalidad de un parámetro en la que se aplica a todos los bordes, o la modalidad de dos parámetros donde estableces diferente comportamiento para los bordes horizontales y verticales.</p>
+<p>Esta propiedad puede tomar los siguientes valores:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Valor</th>
+<th align="left">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>stretch</strong></td>
+<td align="left">Los bordes se <strong>estiran</strong> hasta rellenar el área. Es el valor por defecto.</td>
+</tr>
+<tr>
+<td align="left"><em>repeat</em></td>
+<td align="left">Los bordes se <strong>repiten</strong> hasta rellenar el área.</td>
+</tr>
+<tr>
+<td align="left"><em>round</em></td>
+<td align="left">Igual que <em>repeat</em>, pero <strong>estira</strong> los fragmentos individualmente hasta rellenar el área completa.</td>
+</tr>
+<tr>
+<td align="left"><em>space</em></td>
+<td align="left">Igual que <em>repeat</em>, pero <strong>añade espacios</strong> hasta rellenar el área completa.</td>
+</tr>
+</tbody>
+</table>
+<p>Para verlo más claramente, echemos un vistazo a esta representación visual del comportamiento de cada uno:</p>
+<p><img alt="Border-image-repeat values" src="../img/border-image-repeat.png" /></p>
+<p>Es importante recalcar los dos últimos valores (<em>round y space</em>) actúan igual que <strong>repeat</strong>, pero con un comportamiento ligeramente diferente que nos puede interesar en el caso de que la zona repetida quede descompensada.</p>
+<p>Utilizando la imagen y código CSS anterior, obtendríamos un resultado similar a este, que se adaptaría sólo al contenido que escribamos dentro del elemento HTML con clase <code>borde</code> :</p>
+<p><img alt="CSS: Border-image en acción" src="../img/border-image-in-action.png" /></p>
+<h3 id="atajo-bordes-con-imagenes">Atajo: Bordes con imágenes<a class="headerlink" href="#atajo-bordes-con-imagenes" title="Permanent link">&para;</a></h3>
+<p>Como suele ser costumbre, este tipo de propiedades tienen una propiedad para ahorrar espacio y escribirlo todo de una sola vez. En este caso, la sintaxis es la siguiente:</p>
+<pre><code>div {
+  /* border-image: &lt;source&gt; &lt;slice&gt; &lt;width&gt; &lt;outset&gt; &lt;repeat&gt; */
+  border-image: url(https://i.imgur.com/YC5PUl6.png) 23% 1 0 round;
+}
+</code></pre>
+<hr />
+<h2 id="funciones-css">Funciones CSS<a class="headerlink" href="#funciones-css" title="Permanent link">&para;</a></h2>
+<p>En CSS, muchas veces necesitaremos un sistema de apoyo para realizar operaciones más cercanas a un lenguaje de programación que a un lenguaje de estilos, como pueden ser <strong>cálculos</strong> o utilizar <strong>valores precalculados</strong>. Por esta razón, con el tiempo, se han ido añadiendo mejoras, como las custom properties, un mecanismo similar a unas <a href="/css/introduccion/css-custom-properties/">variables CSS</a>.</p>
+<p>En este artículo vamos a ver algunas <strong>funciones CSS</strong>, que no son más que funciones de apoyo que podemos utilizar en CSS para realizar cálculos u operaciones sencillas de una forma fácil y sencilla, sin tener que abandonar CSS.</p>
+<p>Un resumen de las <strong>funciones CSS</strong> que veremos:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Función CSS</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>calc()</code></td>
+<td align="left">Permite <strong>calcular operaciones</strong> con unidades CSS como <code>px</code>, <code>%</code>, <code>vw</code>, <code>vh</code> u otras.</td>
+</tr>
+<tr>
+<td align="left"><code>min()</code></td>
+<td align="left">Permite calcular el <strong>valor mínimo</strong> de las unidades indicadas.</td>
+</tr>
+<tr>
+<td align="left"><code>max()</code></td>
+<td align="left">Permite calcular el <strong>valor máximo</strong> de las unidades indicadas.</td>
+</tr>
+<tr>
+<td align="left"><code>clamp()</code></td>
+<td align="left">Permite calcular valores «ajustados». Equivalente a <code>max(</code>MIN<code>, min(</code>VAL<code>,</code> MAX<code>))</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>attr()</code></td>
+<td align="left">Permite obtener el <strong>valor de un atributo</strong> desde CSS.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="valores-calculados-funcion-calc">Valores calculados: Función calc()<a class="headerlink" href="#valores-calculados-funcion-calc" title="Permanent link">&para;</a></h3>
+<p>Es posible que en algunas ocasiones necesitemos indicar <strong>valores precalculados</strong> por el navegador. Por ejemplo, la suma de dos valores que a priori desconocemos o no sabemos exactamente cuanto suman, pero que el navegador si debería conocer.</p>
+<p>Esto es posible hacerlo con la función <code>calc()</code> de CSS, como se muestra a continuación:</p>
+<pre><code>.elemento {
+  width: calc(200px + 1em);
+  height: 300px;
+  background: blue;
+}
+</code></pre>
+<p>Como se puede ver, se pueden usar operaciones como sumas ( <code>+</code> ), restas ( <code>-</code> ), multiplicaciones ( <code>*</code> ) o divisiones ( <code>/</code> ) que utilicen alguna de las unidades soportadas por CSS, como por ejemplo, números, dimensiones, porcentajes, tiempos, ángulos, etc...</p>
+<p>Ten en cuenta que también se pueden anidar funciones <code>calc()</code> una dentro de otra. Resulta especialmente interesante su utilización junto a variables (custom properties CSS).</p>
+<h3 id="valor-minimo-funcion-min">Valor mínimo: Función min()<a class="headerlink" href="#valor-minimo-funcion-min" title="Permanent link">&para;</a></h3>
+<p>En algunas ocasiones, necesitaremos que en una propiedad se aplique un valor de varias posibilidades posibles. De dichas posibilidades, no sabremos exactamente cuál necesitamos, pero si sabremos una de sus cualidades: <strong>es la más pequeña</strong>, es decir, necesitamos el valor mínimo.</p>
+<p>CSS permite realizar esto utilizando la función <code>min()</code> que nos permite elegir el valor más pequeño de 2 o más posibilidades aplicadas por parámetro:</p>
+<pre><code>.elemento {
+  width: min(200px, 25%);
+  height: 200px;
+  background: red;
+}
+</code></pre>
+<p>Esto aplicaría un <code>width</code> de <code>200px</code>, siempre y cuando el <code>25%</code> del elemento padre sea más grande de <code>200px</code>. Todo este cálculo, generalmente realizado en Javascript debido a su cualidad de lógica de cálculo, puede realizarse desde CSS si sólo se utiliza exclusivamente para esta finalidad.</p>
+<h3 id="valor-maximo-funcion-max">Valor máximo: Función max()<a class="headerlink" href="#valor-maximo-funcion-max" title="Permanent link">&para;</a></h3>
+<p>De la misma forma que tenemos una función <code>min()</code>, también tenemos una función <code>max()</code>. Como podemos imaginar, dicha función sirve para lo opuesto de la función <code>min()</code>: obtener el valor máximo entre varias posibilidades.</p>
+<p>Observa el siguiente ejemplo, donde utilizamos <strong>más de 2 parámetros</strong> (<em>ambas funciones permiten múltiples valores, no necesariamente dos</em>):</p>
+<pre><code>.elemento {
+  width: max(200px - 100px, 25%, 14vw);
+  height: 200px;
+  background: red;
+}
+</code></pre>
+<p>Observa que como se ve en el ejemplo en <code>200px - 100px</code>, tanto en <code>min()</code> como en <code>max()</code>, puedes realizar operaciones directamente en su interior sin necesidad de utilizar la función <code>calc()</code>.</p>
+<h3 id="valor-ajustado-funcion-clamp">Valor ajustado: Función clamp()<a class="headerlink" href="#valor-ajustado-funcion-clamp" title="Permanent link">&para;</a></h3>
+<p>Ahora pensemos en un caso que podríamos necesitar y que se puede volver algo poco legible. Imagina que necesitas obtener el valor mínimo</p>
+<p>Con la función <code>clamp()</code> podemos realizar, de forma concisa la operación <code>max(MIN, min(VAL, MAX))</code>. Veamos un ejemplo:</p>
+<pre><code>.elemento {
+  width: max(100px, min(25%, 300px));
+  width: clamp(100px, 25%, 300px);
+  height: 200px;
+  background: red;
+}
+</code></pre>
+<p>Observa que existen dos líneas con un <code>width</code>. Ambas líneas son equivalentes. El primer valor de <code>clamp()</code> sería el <strong>valor mínimo</strong>, mientras que el tercero es el <strong>valor máximo</strong>. De esta forma, el navegador realiza lo siguiente:</p>
+<ul>
+<li>Obtiene el <strong>valor mínimo</strong> entre el segundo y tercer parámetro.</li>
+<li>Obtiene el <strong>valor máximo</strong> entre el primer parámetro y el resultado anterior.</li>
+<li>Utiliza el resultado de la operación anterior en el <code>width</code>.</li>
+</ul>
+<p>El soporte en navegadores de estas 3 últimas funciones es el siguiente:</p>
+<h3 id="valor-del-atributo-funcion-attr">Valor del atributo: Función attr()<a class="headerlink" href="#valor-del-atributo-funcion-attr" title="Permanent link">&para;</a></h3>
+<p>Aunque no es de género matemático como las anteriores, existe la función CSS <code>attr()</code>, que es algo más particular, ya que permite obtener el <strong>valor de un atributo HTML</strong> y utilizarlo desde CSS, generalmente para temas de decoración.</p>
+<p>Por ejemplo, observa el siguiente fragmento de código:</p>
+<pre><code>&lt;div class="element" data-author="Manz"&gt;&lt;/div&gt;
+
+&lt;style&gt;
+.element::before {
+  content: attr(data-author);
+  font-size: 22px;
+  color: #444;
+}
+&lt;/style&gt;
+</code></pre>
+<p>Por medio de una <a href="/css/selectores/pseudoclases/">pseudoclase CSS</a>, utilizando la propiedad <code>content</code>, le pedimos al navegador que utilice el <a href="https://lenguajehtml.com/html/introduccion/atributos-comunes-html/">metadato</a> del atributo <code>data-author</code> del elemento donde se le está aplicando el CSS para mostrarlo como contenido.</p>
+<p>Esta función CSS es la más antigua y la mejor soportada en navegadores:</p>
+<hr />
+<p><strong>Fuente:</strong> <a href="https://lenguajecss.com/">Lenguaje de CSS</a> por <a href="https://manzdev.github.io/">Manz</a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../01-introduccion_a_CSS/" title="Introducción a CSS" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Introducción a CSS
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../03-colores_y_fondos/" title="Colores y fondos" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Colores y fondos
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/saucedoinfo" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/saucedoinfo" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.instagram.com/saucedo.info/" target="_blank" rel="noopener" title="www.instagram.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.instant', 'navigation.expand', 'tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

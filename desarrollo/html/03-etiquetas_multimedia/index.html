@@ -1,0 +1,2096 @@
+
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Coleccion de Guias de Desarrollo y diseño.">
+      
+      
+        <link rel="canonical" href="https://saucedoinfo.github.io/guias/desarrollo/html/03-etiquetas_multimedia/">
+      
+      
+        <meta name="author" content="Fernando S. Saucedo">
+      
+      <link rel="shortcut icon" href="../../../img/favicon-16x16.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.14">
+    
+    
+      
+        <title>Etiquetas multimedias - Guias de Desarrollo y diseño</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d3202873.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ff0a5ce4.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#000000">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#etiquetas-multimedia" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-header-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Guias de Desarrollo y diseño
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Etiquetas multimedias
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../01-introduccion_a_HTML5/" class="md-tabs__link md-tabs__link--active">
+          Desarrollo
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" class="md-tabs__link">
+          Herramientas IT
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    Guias de Desarrollo y diseño
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Desarrollo
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Desarrollo" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Desarrollo
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1" checked>
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Html
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Html" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        <span class="md-nav__icon md-icon"></span>
+        Html
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01-introduccion_a_HTML5/" title="Introduccion a HTML" class="md-nav__link">
+      Introduccion a HTML
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02-etiquetas_semanticas/" title="Etiquetas semánticas" class="md-nav__link">
+      Etiquetas semánticas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Etiquetas multimedias
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Etiquetas multimedias" class="md-nav__link md-nav__link--active">
+      Etiquetas multimedias
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#etiquetas-html-de-imagenes" class="md-nav__link">
+    Etiquetas HTML de imágenes
+  </a>
+  
+    <nav class="md-nav" aria-label="Etiquetas HTML de imágenes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etiquetas-para-imagenes" class="md-nav__link">
+    Etiquetas para imágenes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formatos-de-imagenes" class="md-nav__link">
+    Formatos de imágenes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nuevas-etiquetas-de-imagenes" class="md-nav__link">
+    Nuevas etiquetas de imágenes
+  </a>
+  
+    <nav class="md-nav" aria-label="Nuevas etiquetas de imágenes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#imagenes-alternativas" class="md-nav__link">
+    Imágenes alternativas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imagenes-responsive" class="md-nav__link">
+    Imágenes responsive
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diferentes-densidades" class="md-nav__link">
+    Diferentes densidades
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etiquetas-de-contenido-externo" class="md-nav__link">
+    Etiquetas de contenido externo
+  </a>
+  
+    <nav class="md-nav" aria-label="Etiquetas de contenido externo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#contenido-externo" class="md-nav__link">
+    Contenido externo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marcos-en-linea-iframes" class="md-nav__link">
+    Marcos en línea (iframes)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contenido-incrustado" class="md-nav__link">
+    Contenido incrustado
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etiquetas-html-de-video" class="md-nav__link">
+    Etiquetas HTML de video
+  </a>
+  
+    <nav class="md-nav" aria-label="Etiquetas HTML de video">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#video-modo-basico" class="md-nav__link">
+    Video (modo básico)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formatos-de-video" class="md-nav__link">
+    Formatos de video
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#video-modo-avanzado" class="md-nav__link">
+    Video (modo avanzado)
+  </a>
+  
+    <nav class="md-nav" aria-label="Video (modo avanzado)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#videos-alternativos" class="md-nav__link">
+    Videos alternativos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acceso-a-segundos-concretos" class="md-nav__link">
+    Acceso a segundos concretos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etiquetas-html-de-audio" class="md-nav__link">
+    Etiquetas HTML de audio
+  </a>
+  
+    <nav class="md-nav" aria-label="Etiquetas HTML de audio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#audio-modo-basico" class="md-nav__link">
+    Audio (modo básico)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formatos-de-audio" class="md-nav__link">
+    Formatos de audio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audio-modo-avanzado" class="md-nav__link">
+    Audio (modo avanzado)
+  </a>
+  
+    <nav class="md-nav" aria-label="Audio (modo avanzado)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#audio-alternativo-fallback" class="md-nav__link">
+    Audio alternativo (fallback)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etiquetas-html-de-subtitulos" class="md-nav__link">
+    Etiquetas HTML de subtitulos
+  </a>
+  
+    <nav class="md-nav" aria-label="Etiquetas HTML de subtitulos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#formato-webvtt" class="md-nav__link">
+    Formato WebVTT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etiquetas-para-subtitulos" class="md-nav__link">
+    Etiquetas para subtítulos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-etiquetas_de_cabecera/" title="Etiquetas de cabecera" class="md-nav__link">
+      Etiquetas de cabecera
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-etiquetas_de_formularios/" title="Etiquetas de formularios" class="md-nav__link">
+      Etiquetas de formularios
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-etiquetas_de_scripting/" title="Etiquetas de scripting" class="md-nav__link">
+      Etiquetas de scripting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Css
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Css" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        <span class="md-nav__icon md-icon"></span>
+        Css
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/01-introduccion_a_CSS/" title="Introducción a CSS" class="md-nav__link">
+      Introducción a CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/02-modelo_de_cajas/" title="Modelo de cajas" class="md-nav__link">
+      Modelo de cajas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/03-colores_y_fondos/" title="Colores y fondos" class="md-nav__link">
+      Colores y fondos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/04-selectores_CSS/" title="Selectores CSS" class="md-nav__link">
+      Selectores CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/05-Fuentes_y_tipografias/" title="Fuentes y tipografías" class="md-nav__link">
+      Fuentes y tipografías
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/06-representacion_de_datos/" title="Representación de datos" class="md-nav__link">
+      Representación de datos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/07_maquetacion_y_colocacion/" title="Maquetación y colocación" class="md-nav__link">
+      Maquetación y colocación
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/08-interacciones/" title="Interacciones" class="md-nav__link">
+      Interacciones
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/09-efectos/" title="Efectos" class="md-nav__link">
+      Efectos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/10-responsive_Web_Design/" title="Responsive Web Design" class="md-nav__link">
+      Responsive Web Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/11-animaciones_CSS/" title="Animaciones CSS" class="md-nav__link">
+      Animaciones CSS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      JavaScript
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="JavaScript" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon"></span>
+        JavaScript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/01-introducci%C3%B3n_a_javascript/" title="Introducción a Javascript" class="md-nav__link">
+      Introducción a Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/02-fundamentos_de_javascript/" title="Fundamentos de Javascript" class="md-nav__link">
+      Fundamentos de Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/03-caracteristicas/" title="Características" class="md-nav__link">
+      Características
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/04-DOM/" title="DOM" class="md-nav__link">
+      DOM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/05-asincronia/" title="Asincronía" class="md-nav__link">
+      Asincronía
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/06-peticiones_HTTP/" title="Peticiones HTTP" class="md-nav__link">
+      Peticiones HTTP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Herramientas IT
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Herramientas IT" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Herramientas IT
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Terminal
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Terminal" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon"></span>
+        Terminal
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" title="Introducción a la terminal" class="md-nav__link">
+      Introducción a la terminal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/02-operaciones_con_ficheros/" title="Operaciones con ficheros" class="md-nav__link">
+      Operaciones con ficheros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/03-administraci%C3%B3n_del_sistema/" title="Administración del sistema" class="md-nav__link">
+      Administración del sistema
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/markdown/" title="Markdown" class="md-nav__link">
+      Markdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/pip/" title="Pip" class="md-nav__link">
+      Pip
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/mkdocs/" title="Mkdocs" class="md-nav__link">
+      Mkdocs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../about/" title="Acerca de" class="md-nav__link">
+      Acerca de
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#etiquetas-html-de-imagenes" class="md-nav__link">
+    Etiquetas HTML de imágenes
+  </a>
+  
+    <nav class="md-nav" aria-label="Etiquetas HTML de imágenes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etiquetas-para-imagenes" class="md-nav__link">
+    Etiquetas para imágenes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formatos-de-imagenes" class="md-nav__link">
+    Formatos de imágenes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nuevas-etiquetas-de-imagenes" class="md-nav__link">
+    Nuevas etiquetas de imágenes
+  </a>
+  
+    <nav class="md-nav" aria-label="Nuevas etiquetas de imágenes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#imagenes-alternativas" class="md-nav__link">
+    Imágenes alternativas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imagenes-responsive" class="md-nav__link">
+    Imágenes responsive
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diferentes-densidades" class="md-nav__link">
+    Diferentes densidades
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etiquetas-de-contenido-externo" class="md-nav__link">
+    Etiquetas de contenido externo
+  </a>
+  
+    <nav class="md-nav" aria-label="Etiquetas de contenido externo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#contenido-externo" class="md-nav__link">
+    Contenido externo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marcos-en-linea-iframes" class="md-nav__link">
+    Marcos en línea (iframes)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contenido-incrustado" class="md-nav__link">
+    Contenido incrustado
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etiquetas-html-de-video" class="md-nav__link">
+    Etiquetas HTML de video
+  </a>
+  
+    <nav class="md-nav" aria-label="Etiquetas HTML de video">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#video-modo-basico" class="md-nav__link">
+    Video (modo básico)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formatos-de-video" class="md-nav__link">
+    Formatos de video
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#video-modo-avanzado" class="md-nav__link">
+    Video (modo avanzado)
+  </a>
+  
+    <nav class="md-nav" aria-label="Video (modo avanzado)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#videos-alternativos" class="md-nav__link">
+    Videos alternativos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acceso-a-segundos-concretos" class="md-nav__link">
+    Acceso a segundos concretos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etiquetas-html-de-audio" class="md-nav__link">
+    Etiquetas HTML de audio
+  </a>
+  
+    <nav class="md-nav" aria-label="Etiquetas HTML de audio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#audio-modo-basico" class="md-nav__link">
+    Audio (modo básico)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formatos-de-audio" class="md-nav__link">
+    Formatos de audio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audio-modo-avanzado" class="md-nav__link">
+    Audio (modo avanzado)
+  </a>
+  
+    <nav class="md-nav" aria-label="Audio (modo avanzado)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#audio-alternativo-fallback" class="md-nav__link">
+    Audio alternativo (fallback)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etiquetas-html-de-subtitulos" class="md-nav__link">
+    Etiquetas HTML de subtitulos
+  </a>
+  
+    <nav class="md-nav" aria-label="Etiquetas HTML de subtitulos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#formato-webvtt" class="md-nav__link">
+    Formato WebVTT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etiquetas-para-subtitulos" class="md-nav__link">
+    Etiquetas para subtítulos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/saucedoinfo/guias/edit/master/docs/desarrollo/html/03-etiquetas_multimedia.md" title="Editar esta página" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="etiquetas-multimedia">Etiquetas multimedia<a class="headerlink" href="#etiquetas-multimedia" title="Permanent link">&para;</a></h1>
+<h2 id="etiquetas-html-de-imagenes">Etiquetas HTML de imágenes<a class="headerlink" href="#etiquetas-html-de-imagenes" title="Permanent link">&para;</a></h2>
+<p>Antes de colocar una imagen en una página web debemos tener claro en que clasificación se encuentra. Las imágenes utilizadas en una página web pueden ser de dos tipos: de <strong>contenido</strong> o de <strong>decoración</strong>. En el primer caso, si la imagen pertenece al contenido y tema tratado en esa página, debería incluirse mediante una etiqueta HTML <code>&lt;img&gt;</code>, pero si por el contrario pertenece a la decoración de la página, deberíamos incluirla como un <a href="http://lenguajecss.com/css/propiedades/fondos-css">fondo</a> mediante la propiedad CSS <code>background-image</code>.</p>
+<h3 id="etiquetas-para-imagenes">Etiquetas para imágenes<a class="headerlink" href="#etiquetas-para-imagenes" title="Permanent link">&para;</a></h3>
+<p>Para incluir imágenes en el contenido de una página utilizaremos la etiqueta <code>&lt;img&gt;</code>, que es una etiqueta muy sencilla, que dispone de varios atributos para modificar como se verá la imagen (<em>los atributos src y alt son siempre obligatorios</em>):</p>
+<table>
+<thead>
+<tr>
+<th align="left">Atributo</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>src</code></td>
+<td align="left">Indica el nombre o la URL de la imagen a mostrar. <strong>Atributo obligatorio</strong>.</td>
+</tr>
+<tr>
+<td align="left"><code>alt</code></td>
+<td align="left">Establece un texto alternativo que describa la imagen a mostrar. <strong>Atributo obligatorio</strong>.</td>
+</tr>
+<tr>
+<td align="left"><code>width</code></td>
+<td align="left">Indica el ancho de la imagen. No se debe indicar unidad. Se aconseja hacerlo desde CSS.</td>
+</tr>
+<tr>
+<td align="left"><code>height</code></td>
+<td align="left">Indica el alto de la imagen. No se debe indicar unidad. Se aconseja hacerlo desde CSS.</td>
+</tr>
+</tbody>
+</table>
+<p>Un ejemplo básico para colocar una imagen sería el siguiente:</p>
+<pre><code>&lt;img src="https://lenguajehtml.com/img/logo.png"
+     alt="Logotipo de HTML5"
+     width="400" height="453" /&gt;
+</code></pre>
+<p>Nota que los atributos <strong>width</strong> y <strong>height</strong> redimensionan la imagen al vuelo, esto es, la imagen tendrá unas dimensiones concretas y se descargará siempre a máxima resolución. Con estos atributos redimensionas la imagen al tamaño de ancho y alto indicado, pero la imagen realmente tiene su propio tamaño. Puedes omitir estos atributos siempre que quieras, ya que no son obligatorios, pero se consideran una buena práctica para evitar los molestos cambios repentinos de posición o tamaño en una página.</p>
+<h3 id="formatos-de-imagenes">Formatos de imágenes<a class="headerlink" href="#formatos-de-imagenes" title="Permanent link">&para;</a></h3>
+<p>En el ámbito informático existen múltiples formatos de imágenes (<em>¡muchísimos!</em>) pero no todos son aptos para utilizar en web. Vamos a dar un repaso a los formatos más utilizados y cuales son más apropiados:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Formato</th>
+<th align="left">Características</th>
+<th align="left">¿Se recomienda?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="http://www.libpng.org/pub/png/">PNG</a></td>
+<td align="left">Soporta transparencia. Compresión sin pérdidas. Imágenes «lisas».</td>
+<td align="left">Sí</td>
+</tr>
+<tr>
+<td align="left"><a href="https://jpeg.org/jpeg/">JPG</a></td>
+<td align="left">Compresión con pérdidas. Ideal para imágenes con texturas.</td>
+<td align="left">Sí</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.w3.org/TR/SVG/">SVG</a></td>
+<td align="left">Formato vectorial. Ideal para imágenes escalables.</td>
+<td align="left">Sí</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt">GIF</a></td>
+<td align="left">Formato para imágenes pequeñas y animadas.</td>
+<td align="left">Sí, pero evitar.</td>
+</tr>
+<tr>
+<td align="left"><a href="https://developers.google.com/speed/webp/">WEBP</a></td>
+<td align="left">Alternativa libre de Google al JPEG. Soporta transparencias.</td>
+<td align="left"><a href="https://caniuse.com/#feat=webp">Con precaución</a></td>
+</tr>
+<tr>
+<td align="left"><a href="https://jpeg.org/jpeg2000/">JPEG2000</a></td>
+<td align="left">Evolución del JPEG.</td>
+<td align="left">No, <a href="https://caniuse.com/#feat=jpeg2000">poco soporte</a></td>
+</tr>
+<tr>
+<td align="left"><a href="https://jpeg.org/jpegxr/">JPEG-XR</a></td>
+<td align="left">Alternativa libre de Microsoft al JPEG.</td>
+<td align="left">No, <a href="https://caniuse.com/#feat=jpegxr">poco soporte</a></td>
+</tr>
+<tr>
+<td align="left"><a href="https://wiki.mozilla.org/APNG_Specification">APNG</a></td>
+<td align="left">Alternativa libre a GIF. Compatible con PNG. Soporta animaciones.</td>
+<td align="left"><a href="https://caniuse.com/#feat=apng">Con precaución</a></td>
+</tr>
+<tr>
+<td align="left"><a href="https://aomediacodec.github.io/av1-avif/">AVIF</a></td>
+<td align="left">Formato de imagen basado en AV1. No confundir con videos AVI.</td>
+<td align="left">No, <a href="https://caniuse.com/#feat=avif">poco soporte</a></td>
+</tr>
+</tbody>
+</table>
+<p>Cualquier otro formato no mostrado en esta lista no está recomendado para utilizar en web. Formatos como <code>BMP</code>, <code>TIFF</code>, <code>RAW</code>, <code>NEF</code>, <code>PSD</code>, <code>CDR</code> son formatos muy pesados, propietarios o no orientados para su uso en la web.</p>
+<p>!!! 
+        Si quieres saber más sobre formatos de imágenes y como conseguir reducir su tamaño sin disminuir su calidad, te sugiero leer <a href="http://www.emezeta.com/articulos/formatos-de-imagen-guia-de-optimizacion">Formatos de imagen: Guía de optimización</a>.</p>
+<h3 id="nuevas-etiquetas-de-imagenes">Nuevas etiquetas de imágenes<a class="headerlink" href="#nuevas-etiquetas-de-imagenes" title="Permanent link">&para;</a></h3>
+<p><strong>HTML 5.1</strong> incorporará un nuevo sistema para utilizar imágenes en nuestros documentos HTML de forma mucho más flexible que la antigua etiqueta <code>&lt;img&gt;</code> que nos permitirá mostrar imágenes dependiendo de nuestras necesidades. Para ello, utilizaremos las dos siguientes etiquetas:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Etiqueta</th>
+<th align="left">Atributos</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>&lt;picture&gt;</code></td>
+<td align="left"></td>
+<td align="left">Agrupa una serie de imágenes. Etiqueta contenedora.</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;source&gt;</code></td>
+<td align="left"><code>srcset</code>, <code>sizes</code>, <code>media</code>, <code>type</code>Mostrará la imagen que cumpla una serie de criterios opcionales.</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p>Como podemos ver, lo interesante está en la etiqueta <code>&lt;source&gt;</code>, que tiene una serie de atributos disponibles para utilizar. Vamos a ver para que sirve cada uno:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Atributo</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>srcset</code></td>
+<td align="left">Serie de imágenes (<em>separadas por coma</em>) que se utilizarán. <strong>Atributo obligatorio</strong>.</td>
+</tr>
+<tr>
+<td align="left"><code>sizes</code></td>
+<td align="left">Tamaño específico de la imagen que finalmente se mostrará.</td>
+</tr>
+<tr>
+<td align="left"><code>media</code></td>
+<td align="left">Condición que se debe cumplir para que muestre la imagen. Ver <a href="http://lenguajecss.com/css/propiedades/responsive-design#media-queries">media queries</a>.</td>
+</tr>
+<tr>
+<td align="left"><code>type</code></td>
+<td align="left">Tipo de formato de imagen. Opcional.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="imagenes-alternativas">Imágenes alternativas<a class="headerlink" href="#imagenes-alternativas" title="Permanent link">&para;</a></h4>
+<p>Una de las primeras ventajas que nos ofrecen estas etiquetas es la de utilizar formatos diferentes, dependiendo del soporte del navegador. Así pues, podríamos hacer algo como esto:</p>
+<pre><code>&lt;picture&gt;
+  &lt;source srcset="imagen.webp" /&gt;
+  &lt;!-- Formato WebP --&gt;
+  &lt;source srcset="imagen.jxr" /&gt;
+  &lt;!-- Formato JPEG XR --&gt;
+  &lt;img src="imagen.jpg" alt="Descripción de la imagen" /&gt;
+  &lt;!-- Fallback --&gt;
+&lt;/picture&gt;
+</code></pre>
+<p>En este caso, indicamos que el navegador utilice la imagen con el formato <strong>WebP</strong>. En caso de no soportarlo, lo intentará con el formato <strong>JPEG XR</strong>. Si tampoco lo soporta, mostrará la imagen en formato <strong>JPEG</strong>, que es la que está soportada por todos los navegadores, y si utilizamos algún navegador de texto como Lynx u otro que no pueda mostrar imágenes, mostrará el texto alternativo.</p>
+<h4 id="imagenes-responsive">Imágenes responsive<a class="headerlink" href="#imagenes-responsive" title="Permanent link">&para;</a></h4>
+<p>Otra ventaja interesante es que con <code>&lt;picture&gt;</code> podemos crear imágenes responsive que cambien dependiendo de características de las <strong>media queries</strong> (<em>CSS</em>). Por ejemplo, utilicemos <code>min-width</code> (<em>tamaño mínimo de ancho de la pantalla</em>) en el siguiente ejemplo:</p>
+<pre><code>&lt;picture&gt;
+  &lt;source media="(min-width: 600px)"
+          srcset="html5-logo-xl.png" /&gt;
+  &lt;source media="(min-width: 300px) and (max-width: 600px)"
+          srcset="html5-logo-large.png" /&gt;
+  &lt;source media="(max-width: 50px)"
+          srcset="html5-logo-small.png" /&gt;
+  &lt;img src="html5-logo-medium.png" alt="HTML5 logo" /&gt;
+&lt;/picture&gt;
+</code></pre>
+<p>De esta forma, estamos indicando que se muestren diferentes imágenes dependiendo de la resolución de pantalla (<em>ancho</em>) del dispositivo:</p>
+<ul>
+<li><strong>Dispositivos muy grandes</strong> (más de 600px): Muestra la imagen <code>html5-logo-xl.png</code></li>
+<li><strong>Dispositivos grandes</strong> (entre 300-600px): Muestra la imagen <code>html5-logo-large.png</code></li>
+<li><strong>Dispositivos pequeños</strong> (menos de 50px): Muestra la imagen <code>html5-logo-small.png</code></li>
+<li><strong>Si no cumple las anteriores</strong> (o no soporta HTML5.1): Muestra la imagen <code>html5-logo-medium.png</code></li>
+</ul>
+<p>Nótese que esto sólo hará cambio de imagen efectivo justo en los límites indicados (50, 300, 600). Si se desea que la imagen se adapte proporcionalmente, lo mejor es recurrir a <a href="http://lenguajecss.com/css/propiedades/responsive-design#tamaos-mximos-y-mnimos">tamaños máximos y mínimos de CSS</a>.</p>
+<h4 id="diferentes-densidades">Diferentes densidades<a class="headerlink" href="#diferentes-densidades" title="Permanent link">&para;</a></h4>
+<p>Además, este sistema también permite especificar diferentes imágenes dependiendo de la densidad de pantalla del dispositivo (<em>alto que varía actualmente en las diferentes gamas de smartphones</em>). Para ello, tenemos que usar un descriptor después del nombre de la imagen utilizado en el atributo <strong>srcset</strong> (<em>si no se incluye, por omisión es igual a 1x</em>):</p>
+<pre><code>&lt;picture&gt;
+  &lt;source media="(min-width: 600px)"
+    srcset="html5-logo-xl.png, html5-logo-xl-hd.png 2x, html5-logo-xl-fhd.png 3x" /&gt;
+  &lt;source media="(min-width: 300px) and (max-width: 600px)"
+    srcset="html5-logo-large.png, html5-logo-large-hd.png 2x, html5-logo-large-fhd.png 3x" /&gt;
+  &lt;source media="(max-width: 50px)"
+    srcset="html5-logo-small.png, html5-logo-small-hd.png 2x, html5-logo-small-fhd.png 3x" /&gt;
+  &lt;img srcset="html5-logo-medium.png, html5-logo-medium-hd.png 2x, html5-logo-medium-fhd.png 3x"
+    alt="HTML5 logo" /&gt;
+&lt;/picture&gt;
+</code></pre>
+<p>Nótese que en cada etiqueta <code>&lt;source&gt;</code>, e incluso en la etiqueta <code>&lt;img&gt;</code>, se puede especificar el atributo <strong>srcset</strong> e indicar varias imágenes preparadas para pantallas de alta densidad.</p>
+<p>Por último, recuerda que la etiqueta <code>&lt;picture&gt;</code> y la etiqueta <code>&lt;source&gt;</code> dentro de la anterior son características de HTML5.1 y aún no están soportadas en todos los navegadores. Se recomienda ser cuidadoso con este detalle.</p>
+<hr />
+<h2 id="etiquetas-de-contenido-externo">Etiquetas de contenido externo<a class="headerlink" href="#etiquetas-de-contenido-externo" title="Permanent link">&para;</a></h2>
+<p>Cuando tenemos una página web y queremos colocar contenido en ella, lo conveniente es utilizar formatos libres para garantizar que sean accesibles desde cualquier tipo de dispositivo.</p>
+<p>¿Pero que ocurre si lo que quiero colocar no son formatos de video, de audio o de imagen? Por ejemplo, servicios como Youtube, Vimeo, SoundCloud, SlideShare u otros similares. Se trata de servicios que ofrecen <strong>contenido externo para incrustar</strong> en nuestra página, pero no nos proporcionan directamente imágenes, video o audio en formatos que reconozca el navegador, sino que nos ofrecen un enlace o contenidos que requieren un plugin externo instalado en el navegador. En esas situaciones, lo más probable es que necesites una de las siguientes etiquetas.</p>
+<h3 id="contenido-externo">Contenido externo<a class="headerlink" href="#contenido-externo" title="Permanent link">&para;</a></h3>
+<p>Las siguientes etiquetas sirven para incrustar contenido externo:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Etiqueta</th>
+<th align="left">Atributos</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>&lt;iframe&gt;</code></td>
+<td align="left"><code>src</code>, <code>srcdoc</code>, <code>name</code>, <code>width</code>, <code>height</code></td>
+<td align="left">Permite incrustar contenido externo en «vivo».</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;embed&gt;</code></td>
+<td align="left"><code>src</code>, <code>type</code>, <code>width</code>, <code>height</code></td>
+<td align="left">Permite incrustar contenido interactivo.</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;object&gt;</code></td>
+<td align="left"><code>data</code>, <code>type</code>, <code>name</code>, <code>form</code>, <code>width</code>, <code>height</code></td>
+<td align="left">Permite incrustar contenido externo con fallbacks.</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;param&gt;</code></td>
+<td align="left"><code>name</code>, <code>value</code></td>
+<td align="left">Define parámetros de un elemento <code>&lt;object&gt;</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Veamos ejemplos de cada una de ellas en los siguientes apartados.</p>
+<h3 id="marcos-en-linea-iframes">Marcos en línea (iframes)<a class="headerlink" href="#marcos-en-linea-iframes" title="Permanent link">&para;</a></h3>
+<p>Antiguamente, en versiones anteriores de HTML, existieron unas etiquetas llamadas marcos, mediante las cuales se permitía dividir la pantalla en varias secciones. Actualmente, ese modo de desarrollo ya no se utiliza ya que acarreaba múltiples problemas de accesibilidad, posicionamiento, etc.</p>
+<p>Sin embargo, de toda la familia de etiquetas de marcos, han sobrevivido los <code>&lt;iframe&gt;</code>, que siguen siendo útiles para incrustar contenido externo. Veamos un ejemplo extraído de servicios como <strong>YouTube</strong> o <strong>SoundCloud</strong>:</p>
+<pre><code>&lt;iframe src="https://www.youtube.com/embed/Imeq3GeRttw" width="560" height="315"&gt;
+&lt;/iframe&gt;
+
+
+&lt;a href="http://www.bing.com/" target="marco"&gt;Abrir buscador Bing&lt;/a&gt;
+&lt;iframe name="marco" width="100%" height="450"
+  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/38289724&amp;visual=true"&gt;
+&lt;/iframe&gt;
+</code></pre>
+<p>Esta etiqueta permite incrustar contenido externo anidado en nuestro propio documento. Es decir, podemos crear un recuadro que en su interior va a tener otra dirección URL de otra página web, documento o recurso que queramos cargar en él. Generalmente, es la etiqueta más utilizada para todo tipo de contenido externo.</p>
+<p>También podemos utilizar el atributo <code>name</code> para darle un nombre al marco y cargar direcciones URL diferentes a través de una etiqueta <code>&lt;a&gt;</code>, haciendo referencia al marco a través del atributo <code>target</code>. Por su parte, el atributo <code>srcdoc</code> nos permite indicar directamente el código fuente del iframe en su valor:</p>
+<pre><code>&lt;iframe src="http://pagina.com/apartado/" srcdoc="&lt;p&gt;¡Hola! ¡Soy el &lt;strong&gt;texto del iframe&lt;/strong&gt;!&lt;/p&gt;"&gt;&lt;/iframe&gt;
+</code></pre>
+<p>Como se puede ver, se puede indicar el atributo <code>srcdoc</code> y el atributo <code>src</code> a la misma vez, dando prioridad al atributo <code>srcdoc</code> y manteniendo el atributo <code>src</code> como fallback, para navegadores que no soporten <code>srcdoc</code>.</p>
+<h3 id="contenido-incrustado">Contenido incrustado<a class="headerlink" href="#contenido-incrustado" title="Permanent link">&para;</a></h3>
+<p>La etiqueta <code>&lt;embed&gt;</code> se ideó antiguamente como una etiqueta no estándar para incluir contenido que requería el uso de un <strong>plugin externo</strong> para funcionar, ya que se trataba de tecnologías propietarias y los navegadores no las soportan. La etiqueta fue retirada en HTML4, pero en HTML5 fue incluída de nuevo. Se puede utilizar, por ejemplo, para incrustar contenido flash en una página web:</p>
+<pre><code>&lt;embed src="catgame.swf" width="400" height="250" /&gt;
+</code></pre>
+<p>Tradicionalmente, también se empezó a utilizar la etiqueta <code>&lt;object&gt;</code> para incrustar contenido flash, pudiendo especificar parámetros en su interior. El siguiente fragmento de código es equivalente al anterior:</p>
+<pre><code>&lt;object data="catgame.swf"&gt;
+  &lt;param name="quality" value="high" /&gt;
+&lt;/object&gt;
+</code></pre>
+<p>Así pues, la etiqueta <code>&lt;object&gt;</code> se ofrecía como una alternativa más apropiada para cargar todo tipo de contenidos. Y no sólo eso, sino que ofrece la posibilidad de especificar el <strong>tipo de formato</strong> del que se trata, así como añadir <strong>múltiples parámetros</strong> o la opción de añadir en su interior etiquetas HTML o texto que funcionen a modo de <strong>fallback</strong> (<em>plan B</em>), o lo que es lo mismo, en el caso de que el navegador no pueda cargar ese formato, cargará la imagen, video, texto o la etiqueta que se incluya en su interior. Algunos ejemplos:</p>
+<pre><code>&lt;object data="clock.html"&gt;&lt;/object&gt;
+
+
+&lt;object type="application/x-shockwave-flash"&gt;
+  &lt;param name="movie" value="http://video.example.com/library/watch.swf" /&gt;
+  &lt;param name="allowfullscreen" value="true" /&gt;
+  &lt;param name="flashvars" value="http://video.example.com/vids/315981" /&gt;
+  Contenido multimedia no soportado.
+&lt;/object&gt;
+</code></pre>
+<hr />
+<h2 id="etiquetas-html-de-video">Etiquetas HTML de video<a class="headerlink" href="#etiquetas-html-de-video" title="Permanent link">&para;</a></h2>
+<p>En HTML5 se introduce la interesante posibilidad de <strong>mostrar videos directamente</strong> desde nuestro navegador. De hecho, si arrastramos un video a la ventana del navegador, veremos que comienza a reproducirse en él. Para poder insertar videos en nuestras páginas HTML tenemos que utilizar la etiqueta <code>&lt;video&gt;</code>, que junto a la etiqueta <code>&lt;source&gt;</code> podremos utilizar estas capacidades multimedia de HTML5.</p>
+<div class="admonition ojo">
+<p class="admonition-title">Ojo<p>Si lo que quieres es insertar videos desde Youtube, Vimeo u otro servicio alternativa, debes utilizar la <a href="/html/multimedia/etiquetas-html-de-contenido-externo">etiqueta HTML iframe</a> en lugar de la etiqueta <code>&lt;video&gt;</code>.</p>
+</p>
+</div>
+<h3 id="video-modo-basico">Video (modo básico)<a class="headerlink" href="#video-modo-basico" title="Permanent link">&para;</a></h3>
+<p>La etiqueta <code>&lt;video&gt;</code> tiene varios atributos a nuestra disposición:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Atributo</th>
+<th align="left">Valor</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>src</code></td>
+<td align="left"><em>Dirección URL</em></td>
+<td align="left">Video a reproducir. Obligatoria si actua como etiqueta contenedora.</td>
+</tr>
+<tr>
+<td align="left"><code>poster</code></td>
+<td align="left"><em>Dirección URL</em></td>
+<td align="left">Muestra una imagen a modo de presentación.</td>
+</tr>
+<tr>
+<td align="left"><code>preload</code></td>
+<td align="left"><strong>auto</strong> | <code>metadata</code> | <code>none</code></td>
+<td align="left">Indica como realizar la precarga del video.</td>
+</tr>
+<tr>
+<td align="left"><code>mediagroup</code></td>
+<td align="left"><em>nombre</em></td>
+<td align="left">Establece un nombre para un grupo de contenidos multimedia.</td>
+</tr>
+<tr>
+<td align="left"><code>autoplay</code></td>
+<td align="left">Boolean</td>
+<td align="left">Comienza a reproducir el video automáticamente.</td>
+</tr>
+<tr>
+<td align="left"><code>loop</code></td>
+<td align="left">Boolean</td>
+<td align="left">Vuelve a iniciar el video cuando finaliza su reproducción (bucle).</td>
+</tr>
+<tr>
+<td align="left"><code>muted</code></td>
+<td align="left">Boolean</td>
+<td align="left">Establece el video sin sonido (silenciado).</td>
+</tr>
+<tr>
+<td align="left"><code>controls</code></td>
+<td align="left">Boolean</td>
+<td align="left">Muestra los controles de reproducción. Por defecto no se muestran.</td>
+</tr>
+<tr>
+<td align="left"><code>width</code></td>
+<td align="left"><em>tamaño</em></td>
+<td align="left">Indica el tamaño de ancho del video.</td>
+</tr>
+<tr>
+<td align="left"><code>height</code></td>
+<td align="left"><em>tamaño</em></td>
+<td align="left">Indica el tamaño de alto del video.</td>
+</tr>
+</tbody>
+</table>
+<p>Un primer ejemplo muy básico para colocar un video en nuestra página web:</p>
+<pre><code>&lt;video src="video.mp4" width="640" height="480"&gt;&lt;/video&gt;
+</code></pre>
+<p>Sin embargo, esto mostrará el primer fotograma del video, con un tamaño de 640x480, pero se verá como una imagen, ya que no muestra los controles del video y tampoco tiene la autoreproducción activada. Podríamos solucionarlo indicando los atributos <strong>controls</strong> o <strong>autoplay</strong>.</p>
+<p>Otro ejemplos básicos para colocar videos en nuestra página:</p>
+<pre><code>&lt;!-- Ejemplo 1 --&gt;
+&lt;video src="video.webm" poster="presentacion.jpg" controls&gt;&lt;/video&gt;
+&lt;!-- Ejemplo 2 --&gt;
+&lt;video src="video.mp4" autoplay muted loop&gt;&lt;/video&gt;
+</code></pre>
+<p>En este caso cargamos un video, pero que no se mostrará porque se ha indicado que se utilice una imagen de presentación que se mostrará hasta que el usuario pulse en el botón de reproducir de los controles. En el segundo ejemplo, tenemos un video que se reproduce automáticamente al cargar la página, en silencio y en bucle, iniciándose una y otra vez.</p>
+<h3 id="formatos-de-video">Formatos de video<a class="headerlink" href="#formatos-de-video" title="Permanent link">&para;</a></h3>
+<p>Antes de continuar con el modo avanzado de etiquetas de video, debemos conocer una serie de conceptos básicos y los diferentes formatos de video que existen actualmente. En primer lugar, debemos saber que un archivo de video tiene dos partes principales: el <strong>formato contenedor</strong>, que es el formato del video en sí, mientras que en su interior puede tener múltiples componentes codificados con diferentes <strong>codecs</strong>.</p>
+<p><img alt="Formato contenedor de video" src="../img/formato-contenedor-video.png" /></p>
+<p>De hecho, un video básico suele tener, como mínimo, un componente de video y otro de audio, pero puede tener muchos más (<em>subtítulos, imágenes, etc...</em>). Estos detalles son muy importantes, ya que dependiendo del formato y/o codec de un video, puede que sea factible utilizarlo para web o no, así que hay que conocer un poco sobre estos conceptos.</p>
+<p>A continuación tenemos un listado de los formatos/codecs más conocidos y utilizados:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Formato</th>
+<th align="left">Codec utilizado</th>
+<th align="left">Características</th>
+<th align="left">¿Recomendado?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="https://mpeg.chiariglione.org/standards/mpeg-4/mpeg-4.htm">MP4</a></td>
+<td align="left"><a href="https://www.videolan.org/developers/x264.html">x264</a>, <a href="https://www.divx.com/en/software/technologies/h264/">DivX H264</a></td>
+<td align="left">Alta calidad. Codec x264 libre.</td>
+<td align="left">Sí, <a href="https://caniuse.com/#feat=mpeg4">buen soporte</a></td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.webmproject.org/">WebM</a></td>
+<td align="left">VP8, VP9</td>
+<td align="left">Alternativa libre a MP4 de Google.</td>
+<td align="left">Sí, <a href="https://caniuse.com/#feat=webm">soporte medio</a></td>
+</tr>
+<tr>
+<td align="left"><a href="https://aomedia.org/">AV1</a></td>
+<td align="left">Basado en VP10, Daala y Thor</td>
+<td align="left">Compite con HEVC/H.265</td>
+<td align="left">No, <a href="https://caniuse.com/#feat=av1">soporte bajo</a></td>
+</tr>
+<tr>
+<td align="left">HEVC</td>
+<td align="left"><a href="http://x265.org/">x265</a>, <a href="https://www.divx.com/en/software/technologies/hevc/">DivX HEVC</a></td>
+<td align="left">Futura evolución de MP4.</td>
+<td align="left">No, <a href="https://caniuse.com/#feat=hevc">poco soporte</a></td>
+</tr>
+<tr>
+<td align="left"><a href="https://caniuse.com/#feat=ogv">OGV</a></td>
+<td align="left"><a href="https://www.theora.org/">Theora</a></td>
+<td align="left">Alternativa libre a MP4.</td>
+<td align="left"><a href="https://caniuse.com/#feat=ogv">Con precaución</a></td>
+</tr>
+<tr>
+<td align="left">MKV</td>
+<td align="left"><a href="https://www.matroska.org/">Matroska</a></td>
+<td align="left">Buena compresión. Potente.</td>
+<td align="left">No, alto consumo CPU</td>
+</tr>
+<tr>
+<td align="left">AVI</td>
+<td align="left"><a href="https://www.xvid.com/">XviD</a>, <a href="https://www.divx.com/">DivX &#8535;</a></td>
+<td align="left">Menor compresión que MP4.</td>
+<td align="left">No, anticuado</td>
+</tr>
+</tbody>
+</table>
+<p>Otros formatos como <code>MOV</code>, <code>FLV</code>, <code>3GP</code>, <code>MPG</code>, <code>RMVB</code> o <code>ASF</code>/<code>WMV</code> no se recomiendan para su utilización en web ya que son anticuados, propietarios o poco eficientes. Si te interesa saber más sobre estos temas, aconsejo la lectura del artículo <a href="https://www.emezeta.com/articulos/formatos-de-video-todo-lo-que-deberias-saber">Formatos de video: Todo lo que deberías saber</a>.</p>
+<h3 id="video-modo-avanzado">Video (modo avanzado)<a class="headerlink" href="#video-modo-avanzado" title="Permanent link">&para;</a></h3>
+<p>Sin embargo, aún con toda esta información, no hemos visto ni la mitad de posibilidades multimedia que tenemos con HTML5. La etiqueta <code>&lt;video&gt;</code> también puede actuar como etiqueta contenedora e incluir varias etiquetas HTML para dotar de mayor compatibilidad, o capacidades adicionales.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Etiqueta</th>
+<th align="left">Atributos</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>&lt;source&gt;</code></td>
+<td align="left"><code>src</code>, <code>type</code></td>
+<td align="left">Establece un archivo de video o lo añade como alternativa.</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;track&gt;</code></td>
+<td align="left"><code>src</code>, <code>srclang</code>, <code>label</code>, <code>kind</code>, <code>default</code></td>
+<td align="left">Establece un archivo de subtítulos o lo añade como alternativa.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="videos-alternativos">Videos alternativos<a class="headerlink" href="#videos-alternativos" title="Permanent link">&para;</a></h4>
+<p>Si utilizamos la etiqueta <code>&lt;video&gt;</code> como etiqueta contenedora, podemos incluir etiquetas <code>&lt;source&gt;</code> en su interior para proporcionar formatos alternativos y tener mayor compatibilidad con otros navegadores y navegadores antiguos que no soporten HTML5:</p>
+<pre><code>&lt;video width="640" height="480"&gt;
+  &lt;source src="video.mp4" type="video/mp4" /&gt;
+  &lt;source src="video.webm" type="video/webm" /&gt;
+  &lt;source src="video.ogv" type="video/ogg" /&gt;
+  &lt;img src="imagen.png" alt="Video no soportado" /&gt;
+  Su navegador no soporta contenido multimedia.
+&lt;/video&gt;
+</code></pre>
+<p>En este ejemplo, los navegadores no mostrarán todos los contenidos a la vez, sino que seguirán el siguiente procedimiento:</p>
+<ul>
+<li>Intenta mostrar el primer formato (MP4). Si el navegador no soporta este formato, salta al siguiente.</li>
+<li>Intenta mostrar el segundo formato (WEBM). Si el navegador no soporta este formato, salta al siguiente.</li>
+<li>Intenta mostrar el tercer formato (OGV). Si el navegador no soporta este formato, salta al siguiente.</li>
+<li>Si se trata de un navegador que no soporta HTML5, intentará mostrar la imagen.</li>
+<li>Si se trata de un navegador de terminal de texto (<em>o sin capacidades gráficas</em>), mostrará el texto "Su navegador no soporta contenido multimedia".</li>
+</ul>
+<p>De esta forma tenemos soporte completo para todo tipo de dispositivos.</p>
+<h4 id="acceso-a-segundos-concretos">Acceso a segundos concretos<a class="headerlink" href="#acceso-a-segundos-concretos" title="Permanent link">&para;</a></h4>
+<p>Utilizando los <a href="https://www.w3.org/TR/media-frags/">fragmentos multimedia</a> se pueden conseguir algunas acciones interesantes, como por ejemplo especificar el momento concreto del video (<em>o audio</em>) en el que se quiere empezar a reproducir o terminar de reproducir. Veamos unos ejemplos:</p>
+<pre><code>&lt;!-- Ejemplo 1 --&gt;
+&lt;video autoplay controls src="video.mp4#t=15"&gt;&lt;/video&gt;
+
+&lt;!-- Ejemplo 2 --&gt;
+&lt;video autoplay controls src="video.mp4#t=25,45"&gt;&lt;/video&gt;
+</code></pre>
+<p>En el primer caso, reproducimos el video a partir del segundo <strong>15</strong> del mismo, mientras que en el segundo caso, reproducimos el video a partir del segundo <strong>25</strong> y terminará de reproducirse en el segundo <strong>45</strong>.</p>
+<hr />
+<h2 id="etiquetas-html-de-audio">Etiquetas HTML de audio<a class="headerlink" href="#etiquetas-html-de-audio" title="Permanent link">&para;</a></h2>
+<p>Al igual que vimos en el tema anterior con los videos, es posible añadir archivos de audio a nuestras páginas web para colocar música, sonidos o simplemente usar música como ambientación. En versiones anteriores de HTML se usaba una <a href="/html/semantica/etiquetas-html-obsoletas">etiqueta HTML obsoleta</a> denominada <code>&lt;bgsound&gt;</code> que realizaba algo similar.</p>
+<p>En este caso, utilizaremos la etiqueta <code>&lt;audio&gt;</code> que funciona exactamente igual que <code>&lt;video&gt;</code>, pero con relación a archivos de audio.</p>
+<h3 id="audio-modo-basico">Audio (modo básico)<a class="headerlink" href="#audio-modo-basico" title="Permanent link">&para;</a></h3>
+<p>La etiqueta <code>&lt;audio&gt;</code> tiene varios atributos a nuestra disposición:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Atributo</th>
+<th align="left">Valor</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>src</code></td>
+<td align="left"><em>Dirección URL</em></td>
+<td align="left">Audio a reproducir. Obligatoria si actua como etiqueta contenedora.</td>
+</tr>
+<tr>
+<td align="left"><code>preload</code></td>
+<td align="left"><strong>auto</strong> | <code>metadata</code> | <code>none</code></td>
+<td align="left">Indica como realizar la precarga del audio.</td>
+</tr>
+<tr>
+<td align="left"><code>mediagroup</code></td>
+<td align="left"><em>nombre</em></td>
+<td align="left">Establece un nombre para un grupo de contenidos multimedia.</td>
+</tr>
+<tr>
+<td align="left"><code>autoplay</code></td>
+<td align="left">Boolean</td>
+<td align="left">Comienza a reproducir el audio automáticamente.</td>
+</tr>
+<tr>
+<td align="left"><code>loop</code></td>
+<td align="left">Boolean</td>
+<td align="left">Vuelve a iniciar el audio cuando finaliza su reproducción (bucle).</td>
+</tr>
+<tr>
+<td align="left"><code>muted</code></td>
+<td align="left">Boolean</td>
+<td align="left">Establece el audio sin sonido (silenciado).</td>
+</tr>
+<tr>
+<td align="left"><code>controls</code></td>
+<td align="left">Boolean</td>
+<td align="left">Muestra los controles de reproducción. Por defecto no se muestran.</td>
+</tr>
+</tbody>
+</table>
+<p>Un primer ejemplo muy básico para colocar un audio en nuestra página web:</p>
+<pre><code>&lt;audio src="audio.mp3"&gt;&lt;/audio&gt;
+</code></pre>
+<p>Sin embargo esto no mostrará nada visualmente, ni reproducirá ningún sonido. Realmente, el audio está ahí, pero no le hemos indicado el atributo <code>controls</code> para que muestre los controles y que el usuario pueda pulsar el botón «<strong>play</strong>». Tampoco le hemos colocado el atributo <code>autoplay</code>, en cuyo caso tampoco mostraría nada visualmente, pero si que se empezaría a escuchar el sonido o pista de música.</p>
+<p>Otro ejemplos básicos para colocar audios en nuestra página:</p>
+<pre><code>&lt;audio src="audio.mp3" preload="none" controls&gt;&lt;/audio&gt;
+&lt;audio src="audio.ogg" autoplay loop&gt;&lt;/audio&gt;
+</code></pre>
+<p>En el primer ejemplo, cargamos un audio en formato MP3, pero indicamos que no precargue nada. Empezará a descargarse sólo cuando el usuario pulse en los controles de reproducción. Este escenario puede ser interesante para evitar consumo de ancho de banda de archivos que es probable que el usuario no escuche o en dispositivos móviles donde las tarifas de datos son costosas.</p>
+<p>Por otro lado, el segundo ejemplo, carga un archivo de audio en formato OGG y lo reproduce automáticamente y en bucle, de modo que vuelve a empezar cuando termina.</p>
+<p>!!!OJO: 
+        Los navegadores han cambiado la política de <strong>autoreproducción</strong> con <code>autoplay</code>. Para evitar el uso abusivo de audio en una página sin permiso del usuario, los navegadores exigen que el usuario haya interactuado con la página con anterioridad (<em>y posterior a la carga inicial</em>). Lo aconsejable sería utilizar botones o areas pulsables para activar el sonido mediante JS.</p>
+<h3 id="formatos-de-audio">Formatos de audio<a class="headerlink" href="#formatos-de-audio" title="Permanent link">&para;</a></h3>
+<p>Los archivos de audio estan codificados mediante un <strong>codec</strong> específico, y es importante conocer estos detalles para saber que formatos están soportados por los diferentes navegadores.</p>
+<p>A continuación tenemos un listado de los formatos/codecs de audio más conocidos y utilizados:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Formato</th>
+<th align="left">Codec utilizado</th>
+<th align="left">Características</th>
+<th align="left">¿Recomendado?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="http://www.iis.fraunhofer.de/en/ff/amm/prod/audiocodec/audiocodecs/mp3.html">MP3</a></td>
+<td align="left">MPEG Layer-3</td>
+<td align="left">Buena calidad.</td>
+<td align="left">Sí, <a href="https://caniuse.com/#feat=mp3">buen soporte</a></td>
+</tr>
+<tr>
+<td align="left"><a href="http://www.iis.fraunhofer.de/en/ff/amm/prod/audiocodec/audiocodecs/aaclc.html">AAC</a></td>
+<td align="left">Advanced Audio Coding</td>
+<td align="left">Mejora el MP3. Usado como audio en MP4.</td>
+<td align="left">Sí, <a href="https://caniuse.com/#feat=aac">buen soporte</a></td>
+</tr>
+<tr>
+<td align="left"><a href="http://www.vorbis.com/">OGG</a></td>
+<td align="left">Ogg Vorbis</td>
+<td align="left">Buena calidad. Alternativa libre a MP3.</td>
+<td align="left">Sí, <a href="https://caniuse.com/#feat=ogg-vorbis">soporte medio</a></td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.opus-codec.org/">Opus</a></td>
+<td align="left">Opus</td>
+<td align="left">Buena calidad. Alternativa libre a MP3.</td>
+<td align="left">Sí, <a href="https://caniuse.com/#feat=opus">soporte medio</a></td>
+</tr>
+<tr>
+<td align="left"><a href="https://xiph.org/flac/">FLAC</a></td>
+<td align="left">FLAC Audio Lossless</td>
+<td align="left">Compresión sin pérdidas. Alto tamaño.</td>
+<td align="left">Sí, <a href="https://caniuse.com/#feat=flac">buen soporte</a>.</td>
+</tr>
+<tr>
+<td align="left">WAV</td>
+<td align="left">Wave sound</td>
+<td align="left">Formato de Microsoft. <a href="https://caniuse.com/#feat=wav">Está soportado</a>.</td>
+<td align="left">No, muy pesado</td>
+</tr>
+</tbody>
+</table>
+<p>Otros formatos como <code>ASF</code>/<code>WMA</code>, <code>RA</code> u otros no son apropiados para web. Si te interesa saber más sobre estos temas, aconsejo la lectura del artículo <a href="http://www.emezeta.com/articulos/formatos-de-audio-todo-lo-que-deberias-saber">Formatos de audio: Todo lo que deberías saber</a>.</p>
+<h3 id="audio-modo-avanzado">Audio (modo avanzado)<a class="headerlink" href="#audio-modo-avanzado" title="Permanent link">&para;</a></h3>
+<p>La etiqueta <code>&lt;audio&gt;</code> también puede actuar como etiqueta contenedora e incluir varias etiquetas HTML para dotar de mayor compatibilidad, o capacidades adicionales.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Etiqueta</th>
+<th align="left">Atributos</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>&lt;source&gt;</code></td>
+<td align="left"><code>src</code>, <code>type</code></td>
+<td align="left">Establece un archivo de audio o lo añade como alternativa.</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;track&gt;</code></td>
+<td align="left"><code>src</code>, <code>srclang</code>, <code>label</code>, <code>kind</code>, <code>default</code></td>
+<td align="left">Establece un archivo de subtítulos o lo añade como alternativa.</td>
+</tr>
+</tbody>
+</table>
+<p>De esta forma, pasamos de un esquema donde solo usabamos una etiqueta <code>&lt;audio&gt;</code> a otro un poco más avanzado, donde <code>&lt;audio&gt;</code> contiene múltiples etiquetas que actúan sobre ese audio en cuestión. Dichas etiquetas pueden ser <code>&lt;source&gt;</code> o <code>&lt;track&gt;</code>:</p>
+<pre><code>&lt;audio&gt;
+  &lt;!-- Aquí etiquetas para añadir funcionalidad extra --&gt;
+&lt;/audio&gt;
+</code></pre>
+<p>La etiqueta de subtítulos <code>&lt;track&gt;</code> la veremos un poco más adelante, en el capítulo de <a href="/html/multimedia/etiquetas-html-de-subtitulos/">etiquetas HTML de subtítulos</a>.</p>
+<h4 id="audio-alternativo-fallback"><a href="https://lenguajehtml.com/html/multimedia/etiquetas-html-de-audio/#audio-alternativo-fallback">Audio alternativo (fallback)</a><a class="headerlink" href="#audio-alternativo-fallback" title="Permanent link">&para;</a></h4>
+<p>Si utilizamos la etiqueta <code>&lt;audio&gt;</code> como etiqueta contenedora, podemos incluir etiquetas <code>&lt;source&gt;</code> en su interior para proporcionar formatos alternativos y tener mayor compatibilidad con otros navegadores y navegadores antiguos que no soporten HTML5:</p>
+<pre><code>&lt;audio&gt;
+  &lt;source src="audio.opus" /&gt;
+  &lt;source src="audio.ogg" /&gt;
+  &lt;source src="audio.mp3" /&gt;
+&lt;/audio&gt;
+</code></pre>
+<p>En este ejemplo, el navegador intentará reproducir el archivo de audio en formato Opus, en caso de no estar soportado por el navegador, intentará reproducir el formato Ogg Vorbis, y en caso de tampoco soportarlo, reproducirá el formato MP3.</p>
+<hr />
+<h2 id="etiquetas-html-de-subtitulos">Etiquetas HTML de subtitulos<a class="headerlink" href="#etiquetas-html-de-subtitulos" title="Permanent link">&para;</a></h2>
+<p>Con la llegada de HTML5 se introduce <a href="https://w3c.github.io/webvtt/">WebVTT</a>, un formato abierto orientado a utilizarse en web para la creación de subtítulos, que proviene del extendido formato SRT.</p>
+<h3 id="formato-webvtt">Formato WebVTT<a class="headerlink" href="#formato-webvtt" title="Permanent link">&para;</a></h3>
+<p>La sintaxis del formato de texto <strong>WebVTT</strong> es bastante legible:</p>
+<pre><code>WEBVTT
+00:04.000 --&gt; 00:07.000
+&lt;v Capitán América&gt;Hola &lt;i&gt;Tony&lt;/i&gt;.
+
+00:09.000 --&gt; 00:11.000
+&lt;v Ironman&gt;¿Me echabas de menos?
+
+00:12.000 --&gt; 00:14.000 align:end size:50%
+*ruido*
+</code></pre>
+<p>Como se puede ver, el archivo empieza con el texto <code>WEBVTT</code> y continua con una línea que indica el inicio y final que permanecerá visible la frase de la siguiente línea. En la frase, se puede indicar el personaje que está hablando (<em>para posteriormente aplicar estilos</em>) e incluso incluir etiquetas simples para dar formato al texto. También se pueden alinear textos, modificar su tamaño o cambiar la posición, entre otras cosas.</p>
+<h3 id="etiquetas-para-subtitulos">Etiquetas para subtítulos<a class="headerlink" href="#etiquetas-para-subtitulos" title="Permanent link">&para;</a></h3>
+<p>Este formato se puede utilizar mediante la etiqueta <code>&lt;track&gt;</code> dentro de una etiqueta contenedora <code>&lt;video&gt;</code> y después de las etiquetas <code>&lt;source&gt;</code>. La etiqueta <code>&lt;track&gt;</code> soporta varios atributos:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Atributo</th>
+<th align="left">Valor</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>src</code></td>
+<td align="left"><em>Dirección URL</em></td>
+<td align="left">Archivo o ruta del archivo de subtítulos WebVTT. <strong>Atributo obligatorio</strong>.</td>
+</tr>
+<tr>
+<td align="left"><code>srclang</code></td>
+<td align="left"><em>idioma</em></td>
+<td align="left">Código ISO 639-1 del idioma de los subtítulos.</td>
+</tr>
+<tr>
+<td align="left"><code>label</code></td>
+<td align="left"><em>nombre</em></td>
+<td align="left">Título que verá el usuario para elegir el canal de subtítulos.</td>
+</tr>
+<tr>
+<td align="left"><code>kind</code></td>
+<td align="left"><strong>subtitles</strong> | <code>captions</code> - <code>descriptions</code> - <code>chapters</code> | <code>metadata</code></td>
+<td align="left">Indica el tipo o género de subtítulos enlazados.</td>
+</tr>
+<tr>
+<td align="left"><code>default</code></td>
+<td align="left">Boolean</td>
+<td align="left">Utiliza este canal de subtítulos por defecto.</td>
+</tr>
+</tbody>
+</table>
+<p>En el siguiente fragmento de código vemos un ejemplo de uso, en el cuál, en la barra de los controles de reproducción, se nos mostrará un icono <code>CC</code> donde el usuario puede elegir uno de los canales de subtítulos indicados, que por defecto utiliza el primero que encuentra o el que tenga el atributo <strong>default</strong>:</p>
+<pre><code>&lt;video controls&gt;
+  &lt;source src="video.mp4" /&gt;
+  &lt;source src="video.webm" /&gt;
+  &lt;track src="subs-es.vtt" srclang="es" label="Español" default /&gt;
+  &lt;track src="subs-en.vtt" srclang="en" label="English" /&gt;
+  &lt;track src="subs-fr.vtt" srclang="fr" label="Français" /&gt;
+&lt;/video&gt;
+</code></pre>
+<p>De la misma forma también es posible utilizar subtítulos en etiquetas <code>&lt;audio&gt;</code> contenedoras, algo que puede ser muy útil por ejemplo para podcasts o reproducciones de audio donde se cuentan detalles y se quiere subtitular o describir de forma textual.</p>
+<hr />
+<p><strong>Fuente:</strong> <a href="https://lenguajehtml.com/">Lenguaje de Html</a> por <a href="https://manzdev.github.io/">Manz</a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../02-etiquetas_semanticas/" title="Etiquetas semánticas" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Etiquetas semánticas
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../04-etiquetas_de_cabecera/" title="Etiquetas de cabecera" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Etiquetas de cabecera
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/saucedoinfo" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/saucedoinfo" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.instagram.com/saucedo.info/" target="_blank" rel="noopener" title="www.instagram.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.instant', 'navigation.expand', 'tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

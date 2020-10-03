@@ -1,0 +1,2593 @@
+
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Coleccion de Guias de Desarrollo y diseño.">
+      
+      
+        <link rel="canonical" href="https://saucedoinfo.github.io/guias/desarrollo/css/01-introduccion_a_CSS/">
+      
+      
+        <meta name="author" content="Fernando S. Saucedo">
+      
+      <link rel="shortcut icon" href="../../../img/favicon-16x16.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.14">
+    
+    
+      
+        <title>Introducción a CSS - Guias de Desarrollo y diseño</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d3202873.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ff0a5ce4.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#000000">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduccion-a-css" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-header-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Guias de Desarrollo y diseño
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Introducción a CSS
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../html/01-introduccion_a_HTML5/" class="md-tabs__link">
+          Desarrollo
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" class="md-tabs__link">
+          Herramientas IT
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    Guias de Desarrollo y diseño
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Desarrollo
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Desarrollo" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Desarrollo
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Html
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Html" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        <span class="md-nav__icon md-icon"></span>
+        Html
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/01-introduccion_a_HTML5/" title="Introduccion a HTML" class="md-nav__link">
+      Introduccion a HTML
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/02-etiquetas_semanticas/" title="Etiquetas semánticas" class="md-nav__link">
+      Etiquetas semánticas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/03-etiquetas_multimedia/" title="Etiquetas multimedias" class="md-nav__link">
+      Etiquetas multimedias
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/04-etiquetas_de_cabecera/" title="Etiquetas de cabecera" class="md-nav__link">
+      Etiquetas de cabecera
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/05-etiquetas_de_formularios/" title="Etiquetas de formularios" class="md-nav__link">
+      Etiquetas de formularios
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/06-etiquetas_de_scripting/" title="Etiquetas de scripting" class="md-nav__link">
+      Etiquetas de scripting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" checked>
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Css
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Css" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        <span class="md-nav__icon md-icon"></span>
+        Css
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Introducción a CSS
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Introducción a CSS" class="md-nav__link md-nav__link--active">
+      Introducción a CSS
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-css" class="md-nav__link">
+    ¿Qué es CSS?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué es CSS?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-realmente-css" class="md-nav__link">
+    ¿Qué es realmente CSS?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-usar-css" class="md-nav__link">
+    ¿Cómo usar CSS?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Cómo usar CSS?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enlace-a-css-externo-link" class="md-nav__link">
+    Enlace a CSS externo (link)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#incluir-css-en-el-html-style" class="md-nav__link">
+    Incluir CSS en el HTML (style)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estilos-en-linea-atributo-style" class="md-nav__link">
+    Estilos en línea (atributo style)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-de-css" class="md-nav__link">
+    Estructura de CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Estructura de CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sintaxis-basica" class="md-nav__link">
+    Sintaxis básica
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minificar-css" class="md-nav__link">
+    Minificar CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Minificar CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-la-minificacion" class="md-nav__link">
+    ¿Qué es la minificación?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué es la minificación?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#herramientas-de-minificacion" class="md-nav__link">
+    Herramientas de minificación
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navegadores-web" class="md-nav__link">
+    Navegadores web
+  </a>
+  
+    <nav class="md-nav" aria-label="Navegadores web">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ecosistema-de-navegadores" class="md-nav__link">
+    Ecosistema de navegadores
+  </a>
+  
+    <nav class="md-nav" aria-label="Ecosistema de navegadores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#historia-de-los-navegadores" class="md-nav__link">
+    Historia de los navegadores
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navegadores-actuales" class="md-nav__link">
+    Navegadores actuales
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versiones-de-los-navegadores" class="md-nav__link">
+    Versiones de los navegadores
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otros-navegadores" class="md-nav__link">
+    Otros navegadores
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#niveles-de-css-y-prefijos" class="md-nav__link">
+    Niveles de CSS y prefijos
+  </a>
+  
+    <nav class="md-nav" aria-label="Niveles de CSS y prefijos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#niveles-css" class="md-nav__link">
+    Niveles CSS]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefijos" class="md-nav__link">
+    Prefijos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#herencia-en-css" class="md-nav__link">
+    Herencia en CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Herencia en CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#concepto-de-herencia" class="md-nav__link">
+    Concepto de herencia
+  </a>
+  
+    <nav class="md-nav" aria-label="Concepto de herencia">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#valores-especiales" class="md-nav__link">
+    Valores especiales
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cascada-en-css" class="md-nav__link">
+    Cascada en CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Cascada en CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cascada-css" class="md-nav__link">
+    Cascada CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Cascada CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#importancia" class="md-nav__link">
+    Importancia
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#especificidad" class="md-nav__link">
+    Especificidad
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orden" class="md-nav__link">
+    Orden
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables-css" class="md-nav__link">
+    Variables CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Variables CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#css-custom-properties" class="md-nav__link">
+    CSS Custom Properties
+  </a>
+  
+    <nav class="md-nav" aria-label="CSS Custom Properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definir-una-variable-css" class="md-nav__link">
+    Definir una variable CSS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilizar-una-variable-css" class="md-nav__link">
+    Utilizar una variable CSS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ambito-de-las-custom-properties" class="md-nav__link">
+    Ámbito de las custom properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diferencia-con-sassless" class="md-nav__link">
+    Diferencia con Sass/LESS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables-css-desde-javascript" class="md-nav__link">
+    Variables CSS desde Javascript
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02-modelo_de_cajas/" title="Modelo de cajas" class="md-nav__link">
+      Modelo de cajas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-colores_y_fondos/" title="Colores y fondos" class="md-nav__link">
+      Colores y fondos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-selectores_CSS/" title="Selectores CSS" class="md-nav__link">
+      Selectores CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-Fuentes_y_tipografias/" title="Fuentes y tipografías" class="md-nav__link">
+      Fuentes y tipografías
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-representacion_de_datos/" title="Representación de datos" class="md-nav__link">
+      Representación de datos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../07_maquetacion_y_colocacion/" title="Maquetación y colocación" class="md-nav__link">
+      Maquetación y colocación
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../08-interacciones/" title="Interacciones" class="md-nav__link">
+      Interacciones
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../09-efectos/" title="Efectos" class="md-nav__link">
+      Efectos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../10-responsive_Web_Design/" title="Responsive Web Design" class="md-nav__link">
+      Responsive Web Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../11-animaciones_CSS/" title="Animaciones CSS" class="md-nav__link">
+      Animaciones CSS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      JavaScript
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="JavaScript" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon"></span>
+        JavaScript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/01-introducci%C3%B3n_a_javascript/" title="Introducción a Javascript" class="md-nav__link">
+      Introducción a Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/02-fundamentos_de_javascript/" title="Fundamentos de Javascript" class="md-nav__link">
+      Fundamentos de Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/03-caracteristicas/" title="Características" class="md-nav__link">
+      Características
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/04-DOM/" title="DOM" class="md-nav__link">
+      DOM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/05-asincronia/" title="Asincronía" class="md-nav__link">
+      Asincronía
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/06-peticiones_HTTP/" title="Peticiones HTTP" class="md-nav__link">
+      Peticiones HTTP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Herramientas IT
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Herramientas IT" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Herramientas IT
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Terminal
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Terminal" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon"></span>
+        Terminal
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" title="Introducción a la terminal" class="md-nav__link">
+      Introducción a la terminal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/02-operaciones_con_ficheros/" title="Operaciones con ficheros" class="md-nav__link">
+      Operaciones con ficheros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/03-administraci%C3%B3n_del_sistema/" title="Administración del sistema" class="md-nav__link">
+      Administración del sistema
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/markdown/" title="Markdown" class="md-nav__link">
+      Markdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/pip/" title="Pip" class="md-nav__link">
+      Pip
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/mkdocs/" title="Mkdocs" class="md-nav__link">
+      Mkdocs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../about/" title="Acerca de" class="md-nav__link">
+      Acerca de
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-css" class="md-nav__link">
+    ¿Qué es CSS?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué es CSS?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-realmente-css" class="md-nav__link">
+    ¿Qué es realmente CSS?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-usar-css" class="md-nav__link">
+    ¿Cómo usar CSS?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Cómo usar CSS?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enlace-a-css-externo-link" class="md-nav__link">
+    Enlace a CSS externo (link)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#incluir-css-en-el-html-style" class="md-nav__link">
+    Incluir CSS en el HTML (style)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estilos-en-linea-atributo-style" class="md-nav__link">
+    Estilos en línea (atributo style)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-de-css" class="md-nav__link">
+    Estructura de CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Estructura de CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sintaxis-basica" class="md-nav__link">
+    Sintaxis básica
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minificar-css" class="md-nav__link">
+    Minificar CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Minificar CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-la-minificacion" class="md-nav__link">
+    ¿Qué es la minificación?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué es la minificación?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#herramientas-de-minificacion" class="md-nav__link">
+    Herramientas de minificación
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navegadores-web" class="md-nav__link">
+    Navegadores web
+  </a>
+  
+    <nav class="md-nav" aria-label="Navegadores web">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ecosistema-de-navegadores" class="md-nav__link">
+    Ecosistema de navegadores
+  </a>
+  
+    <nav class="md-nav" aria-label="Ecosistema de navegadores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#historia-de-los-navegadores" class="md-nav__link">
+    Historia de los navegadores
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navegadores-actuales" class="md-nav__link">
+    Navegadores actuales
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versiones-de-los-navegadores" class="md-nav__link">
+    Versiones de los navegadores
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otros-navegadores" class="md-nav__link">
+    Otros navegadores
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#niveles-de-css-y-prefijos" class="md-nav__link">
+    Niveles de CSS y prefijos
+  </a>
+  
+    <nav class="md-nav" aria-label="Niveles de CSS y prefijos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#niveles-css" class="md-nav__link">
+    Niveles CSS]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefijos" class="md-nav__link">
+    Prefijos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#herencia-en-css" class="md-nav__link">
+    Herencia en CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Herencia en CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#concepto-de-herencia" class="md-nav__link">
+    Concepto de herencia
+  </a>
+  
+    <nav class="md-nav" aria-label="Concepto de herencia">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#valores-especiales" class="md-nav__link">
+    Valores especiales
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cascada-en-css" class="md-nav__link">
+    Cascada en CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Cascada en CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cascada-css" class="md-nav__link">
+    Cascada CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Cascada CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#importancia" class="md-nav__link">
+    Importancia
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#especificidad" class="md-nav__link">
+    Especificidad
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orden" class="md-nav__link">
+    Orden
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables-css" class="md-nav__link">
+    Variables CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Variables CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#css-custom-properties" class="md-nav__link">
+    CSS Custom Properties
+  </a>
+  
+    <nav class="md-nav" aria-label="CSS Custom Properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definir-una-variable-css" class="md-nav__link">
+    Definir una variable CSS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilizar-una-variable-css" class="md-nav__link">
+    Utilizar una variable CSS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ambito-de-las-custom-properties" class="md-nav__link">
+    Ámbito de las custom properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diferencia-con-sassless" class="md-nav__link">
+    Diferencia con Sass/LESS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables-css-desde-javascript" class="md-nav__link">
+    Variables CSS desde Javascript
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/saucedoinfo/guias/edit/master/docs/desarrollo/css/01-introduccion_a_CSS.md" title="Editar esta página" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="introduccion-a-css">Introducción a CSS<a class="headerlink" href="#introduccion-a-css" title="Permanent link">&para;</a></h1>
+<p align="center">
+<img src="/img/css.svg"  width="250" height="250" /> 
+</p>
+
+<h2 id="que-es-css">¿Qué es CSS?<a class="headerlink" href="#que-es-css" title="Permanent link">&para;</a></h2>
+<p>Si te gusta el mundo del diseño web o tienes curiosidad por empezar en este ámbito, probablemente ya habrás escuchado el término <strong>CSS</strong>. Se trata de una tecnología utilizada para dotar de <strong>cualidades visuales y estéticas</strong> a una página web. Si nunca has tocado esta materia, comprobarás que se trata de una forma analítica, lógica y casi matemática de crear páginas web, pero gracias a ella podemos simplificar la creación de páginas y conseguir exactamente lo que buscamos.</p>
+<p>La <strong>curva de aprendizaje</strong> de CSS suele ser sencilla (<em>puede ser algo compleja si nunca has programado o eres totalmente ajeno a estas temáticas</em>), pero a medida que cometes errores y vas practicando, tu capacidad para escribir código CSS mejora de forma exponencial, permitiéndonos avanzar a un ritmo cada vez más veloz.</p>
+<h3 id="que-es-realmente-css">¿Qué es realmente CSS?<a class="headerlink" href="#que-es-realmente-css" title="Permanent link">&para;</a></h3>
+<p>Antes de comenzar, debes tener claro un concepto clave: una página web es realmente <strong>un documento de texto</strong>. En dicho documento se escribe <strong>código HTML</strong>, con el que se que crea el contenido de una web. Por otro lado, existe el <strong>código CSS</strong>, que unido al código HTML permite darle forma, color, posición (<em>y otras características visuales</em>) a una página.</p>
+<p>En resumen, se trata de un idioma como podría ser el inglés o el alemán, que los navegadores web como <strong>Chrome</strong> o <strong>Firefox</strong> conocen y pueden entender. Nuestro objetivo como diseñadores y programadores web es precisamente ese: aprender el idioma.</p>
+<p><img alt="Los navegadores entienden los idiomas HTML y CSS" src="../img/html-css-navegador.png" /></p>
+<p>Las siglas <strong>CSS</strong> (<em>Cascading Style Sheets</em>) significan «Hojas de estilo en cascada» y parten de un concepto simple pero muy potente: aplicar <strong>estilos</strong> (colores, formas, márgenes, etc...) a uno o varios documentos (<em>generalmente documentos HTML, páginas webs</em>) de forma masiva.</p>
+<p>Se le denomina estilos <strong>en cascada</strong> porque se aplican de arriba a abajo (<em>siguiendo un patrón denominado <strong>herencia</strong> que trataremos más adelante</em>) y en el caso de existir ambigüedad, se siguen una serie de normas para resolverla.</p>
+<p>La idea de CSS es la de utilizar el concepto de <strong>separación de presentación y contenido</strong>, intentando que los documentos HTML incluyan sólo información y datos, relativos al significado de la información a transmitir (<em>el contenido</em>), y todos los aspectos relacionados con el estilo (diseño, colores, formas, etc...) se encuentren en un documento CSS independiente (<em>la presentación</em>).</p>
+<p><img alt="¿Qué es CSS?" src="../img/que-es-css.png" /></p>
+<p>De esta forma, se puede unificar todo lo relativo al diseño visual en <strong>un solo documento CSS</strong>, y con ello, varias ventajas:</p>
+<ul>
+<li>
+<p>Si necesitamos hacer modificaciones visuales lo hacemos en un sólo lugar y no tenemos que editar todos los documentos HTML en cuestión por separado.</p>
+</li>
+<li>
+<p>Se reduce la duplicación de estilos en diferentes lugares, por lo que es más fácil de organizar y hacer cambios. Además, al final la información a transmitir es considerablemente menor (las páginas se descargan más rápido).</p>
+</li>
+<li>
+<p>Es más fácil crear versiones diferentes de presentación para otros tipos de dispositivos: tablets, smartphones o dispositivos móviles, etc...</p>
+</li>
+</ul>
+<hr />
+<h2 id="como-usar-css">¿Cómo usar CSS?<a class="headerlink" href="#como-usar-css" title="Permanent link">&para;</a></h2>
+<p>Antes de comenzar a trabajar con <strong>CSS</strong> hay que conocer las diferentes formas para incluir estilos en nuestros <strong>documentos HTML</strong>, ya que hay varias, cada una con sus particularidades y diferencias.</p>
+<p>En principio, tenemos <strong>tres</strong> formas diferentes de hacerlo, siendo la primera la más común y la última la menos habitual:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Nombre</th>
+<th align="left">Método</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>CSS Externo</strong></td>
+<td align="left">Etiqueta <code>&lt;link&gt;</code></td>
+<td align="left">El código se escribe en un archivo <code>.css</code> a parte. <strong>Método más habitual</strong>.</td>
+</tr>
+<tr>
+<td align="left"><strong>CSS Interno</strong></td>
+<td align="left">Etiqueta <code>&lt;style&gt;</code></td>
+<td align="left">El código se escribe en una etiqueta <code>&lt;style&gt;</code> en el documento HTML.</td>
+</tr>
+<tr>
+<td align="left"><strong>Estilos en línea</strong></td>
+<td align="left">Atributo <code>style="..."</code></td>
+<td align="left">El código se escribe en un atributo HTML de una etiqueta.</td>
+</tr>
+</tbody>
+</table>
+<p>Veamos cada una de ellas detalladamente:</p>
+<h3 id="enlace-a-css-externo-link">Enlace a CSS externo (link)<a class="headerlink" href="#enlace-a-css-externo-link" title="Permanent link">&para;</a></h3>
+<p>En la cabecera de nuestro documento HTML, más concretamente en el bloque <code>&lt;head&gt;&lt;/head&gt;</code>, podemos incluir una etiqueta <code>&lt;link&gt;</code> con la que establecemos una relación entre el documento actual y el archivo CSS que indicamos en el atributo <code>href</code>:</p>
+<pre><code>&lt;link rel="stylesheet" href="index.css" /&gt;
+</code></pre>
+<p>De esta forma, los navegadores sabrán que deben aplicar los estilos que se encuentren en el archivo <code>index.css</code>. Se aconseja escribir esta línea lo antes posible (<em>sobre todo, antes de los scripts</em>), obligando así al navegador a aplicar los estilos cuanto antes y eliminar la <strong>falsa percepción visual</strong> de que la página está en blanco y no ha sido cargada por completo.</p>
+<blockquote>
+<p>Esta es la manera recomendada de utilizar <strong>estilos CSS</strong> en nuestros documentos.</p>
+</blockquote>
+<h3 id="incluir-css-en-el-html-style">Incluir CSS en el HTML (style)<a class="headerlink" href="#incluir-css-en-el-html-style" title="Permanent link">&para;</a></h3>
+<p>Otra de las formas habituales que existen para incluir estilos CSS en nuestra página es la de añadirlos directamente en el documento HTML, a través de una etiqueta <code>&lt;style&gt;</code> que contendrá el código CSS:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Título de la página&lt;/title&gt;
+    &lt;style&gt;
+      div {
+        background: hotpink;
+        color: white;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  ...
+&lt;/html&gt;
+</code></pre>
+<p>Este sistema puede servirnos en ciertos casos particulares, pero hay que darle prioridad al método anterior (<em>CSS externo</em>), ya que incluyendo el código CSS en el interior del archivo HTML arruinamos la posibilidad de tener el código CSS en un documento a parte, pudiendo <strong>reutilizarlo y enlazarlo</strong> desde otros documentos HTML mediante la etiqueta <code>&lt;link&gt;</code>.</p>
+<blockquote>
+<p>Aunque no es obligatorio, es muy común que las etiquetas <code>&lt;style&gt;</code> se encuentren en la cabecera <code>&lt;head&gt;</code> del documento HTML, ya que antiguamente era la única forma de hacerlo.</p>
+</blockquote>
+<h3 id="estilos-en-linea-atributo-style">Estilos en línea (atributo style)<a class="headerlink" href="#estilos-en-linea-atributo-style" title="Permanent link">&para;</a></h3>
+<p>Por último, la tercera forma de aplicar estilos en un documento HTML es hacerlo directamente, a través del atributo <code>style</code> de la propia etiqueta donde queramos aplicar el estilo:</p>
+<pre><code>&lt;p&gt;¡Hola &lt;span style="color:red"&gt;amigo lector&lt;/span&gt;!&lt;/p&gt;
+</code></pre>
+<p>De la misma forma que en el método anterior, se recomienda no utilizarse salvo casos muy específicos, ya que los estilos se asocian a la etiqueta en cuestión y no pueden reutilizarse. Sin embargo, es una opción que puede venir bien en algunos casos.</p>
+<blockquote>
+<blockquote>
+<p><strong>Consejo</strong>: Si quieres comenzar a hacer pruebas rápidas con HTML, CSS y Javascript puedes utilizar <a href="https://codepen.io/pen">CodePen</a>, una plataforma web que te permite crear contenido HTML, CSS y Javascript, previsualizando al vuelo el resultado del documento final, sin necesidad editores.</p>
+</blockquote>
+</blockquote>
+<hr />
+<h2 id="estructura-de-css">Estructura de CSS<a class="headerlink" href="#estructura-de-css" title="Permanent link">&para;</a></h2>
+<p>Al igual que los documentos HTML, los documentos CSS son archivos de texto donde se escribe una serie de órdenes y el cliente (navegador) las interpreta y aplica a los documentos HTML asociados.</p>
+<h3 id="sintaxis-basica">Sintaxis básica<a class="headerlink" href="#sintaxis-basica" title="Permanent link">&para;</a></h3>
+<p>La <strong>estructura CSS</strong> se basa en reglas que tienen el siguiente formato:</p>
+<p><img alt="Sintaxis simple" src="../img/sintaxis-simple.png" /></p>
+<ul>
+<li>
+<p><strong>Selector</strong>: El selector es el elemento HTML que vamos a seleccionar del documento para aplicarle un estilo concreto. <em>Por ejemplo, el elemento <strong>p</strong>.</em> Realmente, esto es mucho más complejo, pero ya dedicaremos una serie de capítulos exclusivamente a este tema.</p>
+</li>
+<li>
+<p><strong>Propiedad</strong>: La propiedad es una de las diferentes características que brinda el lenguaje CSS e iremos aprendiendo.</p>
+</li>
+<li>
+<p><strong>Valor</strong>: Cada propiedad CSS tiene una serie de valores concretos, con los que tendrá uno u otro comportamiento.</p>
+</li>
+</ul>
+<p>Con todo esto le iremos indicamos al navegador que, para cada etiqueta (selector especificado) debe aplicar las reglas (propiedad y valor) indicadas.</p>
+<p>Vamos a verlo con un ejemplo para afianzar conceptos. Supongamos que este es el código HTML:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Título de página&lt;/title&gt;
+    &lt;link rel="stylesheet" href="index.css" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id="first"&gt;
+      &lt;p&gt;Párrafo&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div id="second"&gt;
+      &lt;span&gt;Capa&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>Y además, por otro lado, este sería el código CSS del archivo <code>index.css</code>:</p>
+<pre><code>p {
+  color: red; /* Color de texto rojo */
+}
+</code></pre>
+<p>De esta forma, a todas las etiquetas <code>&lt;p&gt;</code> se le aplicará el estilo especificado: <strong>el color rojo</strong>.</p>
+<blockquote>
+<p><strong>Truco</strong>: Se pueden incluir comentarios entre los caracteres <code>/*</code> y <code>*/</code>, los cuales serán ignorados por el navegador y pueden ser utilizados por legibilidad y para documentar nuestros documentos CSS.</p>
+</blockquote>
+<p>Sin embargo, esto es sólo un ejemplo muy sencillo. Se pueden aplicar muchas más reglas (<em>no sólo el color del ejemplo</em>), consiguiendo así un conjunto de estilos para la etiqueta indicada en el selector. Cada una de estas reglas se terminará con el carácter <strong>punto y coma</strong> (<code>;</code>).</p>
+<p>En el siguiente esquema se puede ver las diferentes partes del código CSS con sus respectivos nombres:</p>
+<p><img alt="Sintaxis múltiple" src="../img/sintaxis-multiples-valores.png" /></p>
+<blockquote>
+<p><strong>Truco</strong>: El último <code>;</code> de un selector (<em>en naranja</em>) no es obligatorio y se puede omitir.</p>
+</blockquote>
+<p>Además, también se pueden especificar agrupaciones de etiquetas, clases de etiquetas o cosas más complejas, pero eso lo veremos más adelante. De momento, vamos a centrarnos en las diferentes reglas que podemos utilizar.</p>
+<p>Un buen consejo, para hacer más legible nuestro código CSS, es utilizar la siguiente estructura visual (<em>indentar el código mediante espacios, con una propiedad por línea</em>). Es una buena práctica, indispensable a la larga, que nos facilitará la lectura del código:</p>
+<p><img alt="Sintaxis visual" src="../img/sintaxis-visual.png" /></p>
+<p>Esto mejora sustancialmente la legibilidad del código y se considera un convenio a utilizar para evitar la complejidad de entender el código que no se encuentre correctamente indentado.</p>
+<p>Más adelante, en un capítulo dedicado expresamente a ello, veremos que la estructura CSS puede ser más compleja, pero de momento trabajaremos con el esquema simplificado.</p>
+<hr />
+<h2 id="minificar-css">Minificar CSS<a class="headerlink" href="#minificar-css" title="Permanent link">&para;</a></h2>
+<p>Normalmente, cuando el desarrollador escribe <strong>código</strong> (<em>y no sólo CSS, sino también HTML o Javascript</em>), lucha en todo momento con varios factores clave, que podríamos delimitar en los siguientes:</p>
+<ul>
+<li>
+<p><strong>Funcionamiento</strong>: El código debe estar bien escrito para funcionar correctamente. Además, se debe garantizar el correcto funcionamiento en diferentes navegadores, diferentes sistemas operativos (<em>incluyendo dispositivos de escritorio, móviles y/o tablets</em>), los cuales suelen/pueden tener algunas diferencias entre ellos.</p>
+</li>
+<li>
+<p><strong>Legibilidad</strong>: Correcta indentación o colocación de las diferentes partes del código, facilitando la legibilidad por humanos, favoreciendo la velocidad de modificación e introducción de cambios (<em>mantenibilidad</em>).</p>
+</li>
+<li>
+<p><strong>Tamaño</strong>: Cuanto más texto tenga un archivo <strong>CSS</strong>, <strong>HTML</strong> o <strong>Javascript</strong> (<em>espacios, líneas en blanco, comentarios, código no usado...</em>), más grande será el tamaño final del archivo, por lo que más tiempo tardará en descargarse y procesarse por el navegador.</p>
+</li>
+<li>
+<p><strong>Rendimiento</strong>: Cuanto más costosas sean las operaciones que vamos a obligar a hacer al navegador, más tardará en procesarse y por lo tanto, más tiempo tardará en pintar y renderizar (<em>dibujar</em>) la página.</p>
+</li>
+</ul>
+<h3 id="que-es-la-minificacion">¿Qué es la minificación?<a class="headerlink" href="#que-es-la-minificacion" title="Permanent link">&para;</a></h3>
+<p>La <strong>minificación</strong> (<em>en inglés, Uglify o Minification</em>) es la acción de eliminar carácteres o comentarios de nuestro código, con el objetivo de reducir su tamaño total, y por lo tanto, descargarlos más rápido. En archivos CSS muy grandes esto suele influir de forma considerable, por lo que es una <strong>buena práctica</strong> utilizar herramientas de minificación y reducir el tamaño del archivo CSS condensando toda su información, eliminando espacios, retornos de carro, etc...</p>
+<p>Haciendo esto, conseguiremos que el archivo ocupe menos, pero a cambio, perderemos legibilidad. Por esta razón, es habitual conservar los archivos CSS originales (<em>sin minificar</em>) para trabajar con ellos, y generar los archivos reducidos con herramientas automaticas. Hay que tener en cuenta que el proceso de minification es un paso totalmente opcional, por lo que no es obligado realizarlo, pero se considera una buena práctica de optimización.</p>
+<p>Veamos un ejemplo de un mismo archivo CSS con su contenido sin minificar y minificado:</p>
+<p><strong>Ejemplo de código CSS legible (index.css)</strong>: 96 bytes</p>
+<pre><code>#main {
+  background-color: black;
+  color: white;
+  padding: 16px;
+  border: 2px solid blue;
+}
+</code></pre>
+<p><strong>Ejemplo de código CSS minificado (index.min.css)</strong>: 75 bytes</p>
+<pre><code>#main{background-color:#000;color:#fff;padding:16px;border:2px solid #00f;}
+</code></pre>
+<p>Como se puede ver, el <strong>tamaño</strong> y la <strong>legibilidad</strong> del archivo CSS se reduce considerablemente. Sería perjudicial trabajar con código del segundo ejemplo, por lo que se suele mantener un archivo legible (<em>el primero</em>) para realizar modificaciones y trabajar con él, y luego, de forma opcional, un archivo con la información minificada (<em>el segundo</em>) que será el que se utilice finalmente en nuestro proyecto cuando esté terminado.</p>
+<blockquote>
+<p>En resumen, el primer archivo es el <strong>código para humanos</strong>, el que debemos mantener y trabajar con él. El segundo archivo es el <strong>código para el navegador</strong>, que no se debe modificar directamente por humanos y que se debe generar a partir del primero.</p>
+</blockquote>
+<h4 id="herramientas-de-minificacion">Herramientas de minificación<a class="headerlink" href="#herramientas-de-minificacion" title="Permanent link">&para;</a></h4>
+<p>Existen múltiples herramientas para minificar código CSS. Algunas de ellas, incluso se encargan de analizar el código y, no sólo minificarlo, sino además suprimir propiedades repetidas, eliminar propiedades o valores inútiles, etc. Veamos algunas de las más populares:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Herramienta</th>
+<th align="left">Modalidad</th>
+<th align="left">Características</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="https://cssnano.co/">CSS Nano</a></td>
+<td align="left">PostCSS</td>
+<td align="left">Para automatizar desde terminal o desde PostCSS.</td>
+</tr>
+<tr>
+<td align="left"><a href="https://github.com/jakubpawlowicz/clean-css">Clean CSS</a></td>
+<td align="left">NodeJS/NPM</td>
+<td align="left">Para automatizar desde terminal.</td>
+</tr>
+<tr>
+<td align="left"><a href="http://csscompressor.com/">CSS Compressor</a></td>
+<td align="left">Online</td>
+<td align="left">Opciones variadas: grado de compresión, optimizaciones...</td>
+</tr>
+<tr>
+<td align="left"><a href="https://github.com/css/csso">CSSO</a></td>
+<td align="left">NodeJS/NPM</td>
+<td align="left">Optimizador de CSS (clean, compress and restructuring)</td>
+</tr>
+<tr>
+<td align="left"><a href="https://github.com/ded/sqwish">Sqwish</a></td>
+<td align="left">NodeJS/NPM</td>
+<td align="left">Compresor de CSS basado en Node</td>
+</tr>
+<tr>
+<td align="left"><a href="https://yui.github.io/yuicompressor/">YUI Compressor</a></td>
+<td align="left">Java</td>
+<td align="left">Compresor CSS histórico de Yahoo</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="navegadores-web">Navegadores web<a class="headerlink" href="#navegadores-web" title="Permanent link">&para;</a></h2>
+<p>Los <strong>navegadores web</strong> (<em>también llamados clientes</em>) son esos programas que utilizamos para acceder a Internet y visualizar páginas en nuestros dispositivos. Todos los usuarios conocen al menos uno o varios navegadores web, aunque sea los más populares como <strong>Google Chrome</strong> o <strong>Mozilla Firefox</strong>. Sin embargo, existen muchos más. Para ser un buen diseñador o desarrollador web es recomendable conocer bien el ecosistema de navegadores existente y sus características, que no son pocas.</p>
+<h3 id="ecosistema-de-navegadores">Ecosistema de navegadores<a class="headerlink" href="#ecosistema-de-navegadores" title="Permanent link">&para;</a></h3>
+<p>En un mundo ideal, todas las páginas webs se verían correctamente y de la misma forma en todos los navegadores web disponibles, sin embargo, y una de las cosas que más llama la atención del diseño web cuando estamos empezando, es que no sólo debemos construir una web correctamente, sino que además <strong>debemos ser conscientes de los navegadores más utilizados</strong>, así como de sus carencias y virtudes.</p>
+<p>En un principio, el consorcio <strong>W3C</strong> se encarga de definir unas especificaciones y «normas» de recomendación, para que posteriormente, las compañías desarrolladoras de navegadores web las sigan y puedan crear un navegador correctamente. Pero como no estamos en un mundo perfecto (<em>y el tiempo es un recurso limitado</em>), dichas compañías establecen prioridades, desarrollan características antes que otras, e incluso algunas características deciden no implementarlas por razones específicas o internas.</p>
+<p><img alt="Mozilla Firefox Status Platform" src="../img/platform-status.png" /></p>
+<p>Las compañías más comprometidas con sus navegadores web, tienen a disposición de los diseñadores, programadores y entusiastas, una especie de diario cronológico, donde mencionan su hoja de ruta con las características que van implementando, descartando o sus planes de futuro, así como información adicional sobre el tema en cuestión:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Responsables</th>
+<th align="left">Producto</th>
+<th align="left">Página de estado de desarrollo del navegador</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Microsoft</td>
+<td align="left">Navegador Microsoft Edge</td>
+<td align="left"><a href="https://developer.microsoft.com/en-us/microsoft-edge/status/">Edge Platform Status</a></td>
+</tr>
+<tr>
+<td align="left">(Proyecto open source)</td>
+<td align="left">Motor Webkit</td>
+<td align="left"><a href="https://webkit.org/status/">Webkit Feature Status</a></td>
+</tr>
+<tr>
+<td align="left">Fundación Mozilla</td>
+<td align="left">Navegador Mozilla Firefox</td>
+<td align="left"><a href="https://platform-status.mozilla.org/">Firefox Platform Status</a></td>
+</tr>
+<tr>
+<td align="left">Google</td>
+<td align="left">Navegador Google Chrome</td>
+<td align="left"><a href="https://www.chromestatus.com/features">Chrome Platform Status</a></td>
+</tr>
+</tbody>
+</table>
+<p>Además, existe una sección donde podemos <a href="https://caniuse.com/#comparison">comparar características respecto a navegadores en CanIUse</a>.</p>
+<h4 id="historia-de-los-navegadores">Historia de los navegadores<a class="headerlink" href="#historia-de-los-navegadores" title="Permanent link">&para;</a></h4>
+<p>Si echamos un vistazo atrás, la historia de los navegadores ha variado muchísimo. Quizás, el cambio más importante en los últimos 10 años ha sido el reemplazo de <strong>Internet Explorer</strong>, como navegador más popular, a <strong>Google Chrome</strong>. Antiguamente, <strong>Internet Explorer</strong> fue un navegador que se había estancado y no implementaba nuevas características y funcionalidades, al contrario que sus competidores. Pero además, para empeorar la situación, era el navegador más utilizado por los usuarios, debido al liderazgo de Windows como sistema operativo. Esto impedía que las nuevas tecnologías webs se adoptaran y frenaba su avance. Por suerte, esto ha ido cambiando a lo largo de los años y la situación hoy en día es bastante diferente.</p>
+<p>A continuación se puede ver la evolución de los navegadores más populares durante esta última década (<em>desde 2009 hasta 2016</em>). Vemos que los navegadores más perjudicados son Internet Explorer y Mozilla Firefox, mientras que Chrome ha experimentado un incremento muy grande. Safari también ha experimentado un ligero incremento, probablemente debido al éxito de dispositivos como iPhone o iPad.</p>
+<p><a href="http://gs.statcounter.com/#browser-ww-monthly-200903-201603"><img alt="Global Statcounter (de 2009 a 2016)" src="../img/statcounter-2009-2016.png" /></a></p>
+<p>Como toda estadística, debe ser tomada con precaución porque existen sesgos en sus datos. Esta estadística ha sido extraída de <a href="https://gs.statcounter.com">Global StatCounter</a>. También puedes echar un vistazo a algunas estadísticas más en <a href="https://www.w3counter.com/trends">w3counter</a>, aunque quizás la más interesante y adecuada sea <a href="https://caniuse.com/usage-table">CanIUse: Usage table</a>, donde podemos encontrar los navegadores más utilizados, separado por versiones y mostrado con porcentajes.</p>
+<h4 id="navegadores-actuales">Navegadores actuales<a class="headerlink" href="#navegadores-actuales" title="Permanent link">&para;</a></h4>
+<p>A continuación, tenemos una lista de la rama de los <strong>5 navegadores más populares</strong>, que son aquellos que tienen una cuota de mercado considerable. Algunos de estos navegadores tienen varias versiones diferentes, como por ejemplo, versiones beta (<em>con funcionalidades aún no existentes en la versión oficial</em>) o versiones de desarrollador (<em>orientadas para el uso de programadores o diseñadores</em>).</p>
+<table>
+<thead>
+<tr>
+<th align="left">Responsables</th>
+<th align="left">Navegador web</th>
+<th align="left">Propósito</th>
+<th align="left">Motor</th>
+<th align="left">Notas</th>
+<th align="left">URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Google</td>
+<td align="left">Chrome</td>
+<td align="left">Uso habitual</td>
+<td align="left">Blink</td>
+<td align="left"></td>
+<td align="left"><a href="https://www.google.com/chrome/browser/">URL</a></td>
+</tr>
+<tr>
+<td align="left">Google</td>
+<td align="left">Chrome beta</td>
+<td align="left">Early-adopters</td>
+<td align="left">Blink</td>
+<td align="left"></td>
+<td align="left"><a href="https://www.google.com/chrome/browser/beta.html">URL</a></td>
+</tr>
+<tr>
+<td align="left">Google</td>
+<td align="left">Canary Chrome</td>
+<td align="left">Desarrollador</td>
+<td align="left">Blink</td>
+<td align="left"></td>
+<td align="left"><a href="https://www.google.com/chrome/browser/canary.html">URL</a></td>
+</tr>
+<tr>
+<td align="left">Google</td>
+<td align="left">Chromium</td>
+<td align="left">Open Source</td>
+<td align="left">Blink</td>
+<td align="left"></td>
+<td align="left"><a href="https://chromium.woolyss.com/">URL</a></td>
+</tr>
+<tr>
+<td align="left">Mozilla</td>
+<td align="left">Firefox</td>
+<td align="left">Uso habitual</td>
+<td align="left">Quantum</td>
+<td align="left"></td>
+<td align="left"><a href="https://www.mozilla.org/es-ES/firefox/">URL</a></td>
+</tr>
+<tr>
+<td align="left">Mozilla</td>
+<td align="left">Firefox beta</td>
+<td align="left">Early-adopters</td>
+<td align="left">Quantum</td>
+<td align="left"></td>
+<td align="left"><a href="https://www.mozilla.org/es-ES/firefox/channel/#beta">URL</a></td>
+</tr>
+<tr>
+<td align="left">Mozilla</td>
+<td align="left">Firefox Dev Edition</td>
+<td align="left">Desarrollador</td>
+<td align="left">Quantum</td>
+<td align="left"></td>
+<td align="left"><a href="https://www.mozilla.org/es-ES/firefox/channel/#developer">URL</a></td>
+</tr>
+<tr>
+<td align="left">Mozilla</td>
+<td align="left">Firefox Nightly</td>
+<td align="left">Desarrollador</td>
+<td align="left">Quantum</td>
+<td align="left"></td>
+<td align="left"><a href="https://www.mozilla.org/es-ES/firefox/channel/desktop/#nightly">URL</a></td>
+</tr>
+<tr>
+<td align="left">Microsoft</td>
+<td align="left">Edge</td>
+<td align="left">Uso habitual</td>
+<td align="left">Blink</td>
+<td align="left"></td>
+<td align="left"><a href="https://www.microsoft.com/en-us/windows/microsoft-edge">URL</a></td>
+</tr>
+<tr>
+<td align="left">Microsoft</td>
+<td align="left">Internet Explorer</td>
+<td align="left">Uso habitual</td>
+<td align="left">Trident</td>
+<td align="left">Sólo Windows</td>
+<td align="left"><a href="https://www.microsoft.com/en-us/download/internet-explorer.aspx">URL</a></td>
+</tr>
+<tr>
+<td align="left">Opera</td>
+<td align="left">Opera</td>
+<td align="left">Uso habitual</td>
+<td align="left">Blink</td>
+<td align="left"></td>
+<td align="left"><a href="https://www.opera.com/es/computer">URL</a></td>
+</tr>
+<tr>
+<td align="left">Opera</td>
+<td align="left">Opera beta</td>
+<td align="left">Early-adopters</td>
+<td align="left">Blink</td>
+<td align="left"></td>
+<td align="left"><a href="https://www.opera.com/es/computer/beta">URL</a></td>
+</tr>
+<tr>
+<td align="left">Opera</td>
+<td align="left">Opera developer</td>
+<td align="left">Desarrollador</td>
+<td align="left">Blink</td>
+<td align="left"></td>
+<td align="left"><a href="https://www.opera.com/es/developer">URL</a></td>
+</tr>
+<tr>
+<td align="left">Opera</td>
+<td align="left">Opera Neon</td>
+<td align="left">Early-adopters</td>
+<td align="left">Blink</td>
+<td align="left"></td>
+<td align="left"><a href="https://www.opera.com/es/computer/neon">URL</a></td>
+</tr>
+<tr>
+<td align="left">Apple</td>
+<td align="left">Safari</td>
+<td align="left">Uso habitual</td>
+<td align="left">Webkit</td>
+<td align="left">Sólo Apple</td>
+<td align="left"><a href="https://www.apple.com/safari/">URL</a></td>
+</tr>
+<tr>
+<td align="left">Apple</td>
+<td align="left">Safari Tech Preview</td>
+<td align="left">Desarrollador</td>
+<td align="left">Webkit</td>
+<td align="left">Sólo Apple</td>
+<td align="left"><a href="https://developer.apple.com/safari/technology-preview/">URL</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="versiones-de-los-navegadores">Versiones de los navegadores<a class="headerlink" href="#versiones-de-los-navegadores" title="Permanent link">&para;</a></h4>
+<p>Es también muy importante conocer la versión del navegador que utiliza la mayoría de nuestro público (<em>datos que se pueden obtener con herramientas como Google Analytics, por ejemplo</em>), ya que de una versión a otra se añaden nuevas características y funcionalidades, de las cuales los usuarios de las versiones anteriores no podrán disfrutar. En la herramienta <a href="https://caniuse.com/">CanIUse</a> se muestra, a lo largo de las columnas de cada navegador, si las funcionalidades están implementadas en la versión concreta del mismo, o cuando empezarán a funcionar:</p>
+<p>Es por tanto, lógico pensar, que si tenemos un alto porcentaje de usuarios que utilizan una versión de un navegador que no soporta la funcionalidad que queremos utilizar, haya que buscar alternativas o abstenerse a utilizarla hasta que ese porcentaje se reduzca.</p>
+<p>Por suerte, desde hace ya bastante tiempo los navegadores han comenzado a implementar una estrategia de <strong>actualización silenciosa</strong> (<em>en inglés los denominan evergreen browser</em>), con la cuál consigues que el usuario tenga siempre el navegador actualizado a la última versión (<em>si tiene acceso a Internet, claro</em>), ya que el grueso de los usuarios no suele actualizar manualmente la versión de su navegador, y esto hacía que existiera una gran cuota de usuarios con navegadores sin actualizar.</p>
+<h4 id="otros-navegadores">Otros navegadores<a class="headerlink" href="#otros-navegadores" title="Permanent link">&para;</a></h4>
+<p>A continuación, tenemos una lista de otros navegadores menores, que no superan una cuota de mercado a nivel global de un 1%, pero que pueden ser interesantes en el futuro, para casos particulares o podrían experimentar un aumento de su cuota en los próximos años:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Responsables</th>
+<th align="left">Navegador web</th>
+<th align="left">Propósito</th>
+<th align="left">Motor</th>
+<th align="left">Basado en</th>
+<th align="left">URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Tor Project</td>
+<td align="left">Tor</td>
+<td align="left">Navegación anónima</td>
+<td align="left">Gecko</td>
+<td align="left">Firefox</td>
+<td align="left"><a href="https://www.torproject.org/">URL</a></td>
+</tr>
+<tr>
+<td align="left">Vivaldi Tech</td>
+<td align="left">Vivaldi</td>
+<td align="left">Early-adopters</td>
+<td align="left">Blink</td>
+<td align="left"></td>
+<td align="left"><a href="https://vivaldi.com/">URL</a></td>
+</tr>
+<tr>
+<td align="left">Brave Soft</td>
+<td align="left">Brave</td>
+<td align="left">Privacidad</td>
+<td align="left">Blink</td>
+<td align="left"></td>
+<td align="left"><a href="https://www.brave.com/">URL</a></td>
+</tr>
+<tr>
+<td align="left">Yandex</td>
+<td align="left">Yandex Browser</td>
+<td align="left">Uso habitual</td>
+<td align="left">Blink</td>
+<td align="left"></td>
+<td align="left"><a href="https://browser.yandex.com/">URL</a></td>
+</tr>
+<tr>
+<td align="left">David Rosca</td>
+<td align="left">QupZilla</td>
+<td align="left">Uso habitual</td>
+<td align="left">Qt WebEngine</td>
+<td align="left"></td>
+<td align="left"><a href="http://www.qupzilla.com/">URL</a></td>
+</tr>
+<tr>
+<td align="left">Maxthon Int</td>
+<td align="left">Maxthon</td>
+<td align="left">Uso habitual</td>
+<td align="left">Trident/Webkit</td>
+<td align="left"></td>
+<td align="left"><a href="http://es.maxthon.com/">URL</a></td>
+</tr>
+<tr>
+<td align="left">Fenrir Inc</td>
+<td align="left">Sleipnir</td>
+<td align="left">Uso habitual</td>
+<td align="left">Blink</td>
+<td align="left"></td>
+<td align="left"><a href="http://www.fenrir-inc.com/">URL</a></td>
+</tr>
+<tr>
+<td align="left">SM Project</td>
+<td align="left">SeaMonkey</td>
+<td align="left">Uso habitual</td>
+<td align="left">Gecko</td>
+<td align="left">Mozilla AS</td>
+<td align="left"><a href="https://www.seamonkey-project.org/">URL</a></td>
+</tr>
+<tr>
+<td align="left">Chris Dywan</td>
+<td align="left">Midori</td>
+<td align="left">Uso habitual</td>
+<td align="left">Webkit</td>
+<td align="left"></td>
+<td align="left"><a href="http://www.midori-browser.org/">URL</a></td>
+</tr>
+<tr>
+<td align="left">Comodo Grou</td>
+<td align="left">Comodo Dragon</td>
+<td align="left">Uso habitual</td>
+<td align="left">Blink</td>
+<td align="left">Chromium</td>
+<td align="left"><a href="https://browser.comodo.com/">URL</a></td>
+</tr>
+<tr>
+<td align="left">Avant Force</td>
+<td align="left">Avant</td>
+<td align="left">Uso habitual</td>
+<td align="left">Trident/Gecko</td>
+<td align="left"></td>
+<td align="left"><a href="http://avantbrowser.com/">URL</a></td>
+</tr>
+<tr>
+<td align="left">M. Patocka</td>
+<td align="left">Links</td>
+<td align="left">Navegador de texto</td>
+<td align="left">-</td>
+<td align="left"></td>
+<td align="left"><a href="http://links.twibright.com/">URL</a></td>
+</tr>
+<tr>
+<td align="left">Thomas Dickey</td>
+<td align="left">Lynx</td>
+<td align="left">Navegador de texto</td>
+<td align="left">-</td>
+<td align="left"></td>
+<td align="left"><a href="http://lynx.invisible-island.net/">URL</a></td>
+</tr>
+<tr>
+<td align="left">Akinori Ito</td>
+<td align="left">w3m</td>
+<td align="left">Navegador de texto</td>
+<td align="left">-</td>
+<td align="left"></td>
+<td align="left"><a href="http://w3m.sourceforge.net/">URL</a></td>
+</tr>
+<tr>
+<td align="left">P. Baudis</td>
+<td align="left">Elinks</td>
+<td align="left">Navegador de texto</td>
+<td align="left">-</td>
+<td align="left"></td>
+<td align="left"><a href="http://www.elinks.cz/">URL</a></td>
+</tr>
+</tbody>
+</table>
+<p>Existen muchos más navegadores, esto sólo es una lista de los que he considerado más relevantes.</p>
+<hr />
+<h2 id="niveles-de-css-y-prefijos">Niveles de CSS y prefijos<a class="headerlink" href="#niveles-de-css-y-prefijos" title="Permanent link">&para;</a></h2>
+<p>El <strong>lenguaje CSS</strong> es una especificación desarrollada y mantenida por el World Wide Web Consortium (W3C), una comunidad internacional que se encarga de desarrollar estándares para asegurar el crecimiento y la neutralidad de la web, independizándolo de tecnologías propietarias e intentando aunar esfuerzos para satisfacer la demanda de características útiles e interesantes.</p>
+<p>En el consorcio participan y colaboran prácticamente casi todas las empresas relacionadas con Internet, como por ejemplo Apple, Adobe, Akamai, Cisco, Google, Facebook, HP, Intel, LG, Microsoft, Nokia, Twitter, Yahoo, entre <a href="https://www.w3.org/Consortium/Member/List">muchos otros</a>.</p>
+<blockquote>
+<p>Desde hace algunos años, la comunidad <a href="https://whatwg.org/">WHATWG</a> participa también en el desarrollo y evolución de especificaciones como las de <a href="https://lenguajehtml.com/">HTML</a>, <a href="https://lenguajejs.com/javascript/dom/que-es/">DOM</a> u otras tecnologías relacionadas.</p>
+</blockquote>
+<h3 id="niveles-css">Niveles CSS]<a class="headerlink" href="#niveles-css" title="Permanent link">&para;</a></h3>
+<p>A lo largo de su historia, <strong>CSS</strong> ha ido evolucionado en diferentes versiones denominados <strong>niveles</strong>:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Nivel</th>
+<th align="left">Año</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>CSS1</strong></td>
+<td align="left">1996</td>
+<td align="left">Propiedades de fuente, colores, alineación, etc...</td>
+</tr>
+<tr>
+<td align="left"><strong>CSS2</strong></td>
+<td align="left">1998</td>
+<td align="left">Propiedades de posicionamiento, tipos de medios, etc...</td>
+</tr>
+<tr>
+<td align="left"><strong>CSS2.1</strong></td>
+<td align="left">2005</td>
+<td align="left">Corrige errores de CSS2 y modifica ciertas propiedades</td>
+</tr>
+<tr>
+<td align="left"><strong>CSS3</strong></td>
+<td align="left">2011</td>
+<td align="left">Inicio de características de CSS como módulos separados</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Desde 2011, la <strong>especificación CSS</strong> comienza a evolucionar separando sus nuevas funcionalidades en pequeños <strong>módulos</strong>, favoreciendo su implementación en navegadores. Si se desea información más técnica, se puede consultar la evolución de los diferentes <a href="https://www.w3.org/standards/techs/css">módulos relacionados con CSS</a> en la página web del consorcio W3C.</p>
+</blockquote>
+<h3 id="prefijos">Prefijos<a class="headerlink" href="#prefijos" title="Permanent link">&para;</a></h3>
+<p>Algunas de las propiedades que veremos no están definidas por completo, sólo son borradores o pueden variar en la especificación definitiva, por lo que los navegadores las implementan utilizando una serie de <strong>vendor prefixes</strong> (<em>prefijos por navegador</em>), que facilitan la segmentación de funcionalidades.</p>
+<p>De esta forma, podemos utilizar varios prefijos para asegurarnos que aunque dichas funcionalidades tengan un comportamiento o sintaxis diferente en cada navegador, podemos hacer referencia a cada una de ellas por separado:</p>
+<pre><code>div {
+            transform: ... /* Navegadores que implementan especificación oficial */
+    -webkit-transform: ... /* Versiones antiguas de Chrome (Motor WebKit) */
+       -moz-transform: ... /* Versiones antiguas de Firefox (Motor Gecko) */
+        -ms-transform: ... /* Versiones antiguas de IE (Motor Trident) */
+         -o-transform: ... /* Versiones antiguas de Opera (Motor Presto) */
+}
+</code></pre>
+<p>En el ejemplo anterior, la propiedad <code>transform</code> se refiere a los navegadores que tengan implementada la especificación definitiva por completo e ignorará el resto de propiedades. Por otro lado, otro navegador (<em>o el mismo en una versión más antigua</em>) puede tener implementada una versión anterior a la definitiva, por lo que hará caso a las propiedades con un prefijo concreto.</p>
+<p>Debido al ritmo y la rápida velocidad de Internet en estas cuestiones, es muy complicado obtener una lista de funcionalidades implementadas en cada navegador, algo que puede variar incluso en cuestión de semanas. Aconsejo utilizar la página <a href="https://www.caniuse.com/">Can I Use</a>, una web colaborativa para saber el estado actual, previo e incluso futuro de las propiedades CSS o elementos HTML en cada navegador.</p>
+<p><img alt="Can I Use: Soporte de la propiedad CSS filter" src="../img/caniuse.png" /></p>
+<p>En esta página se puede buscar, a través de un buscador y de forma rápida y cómoda, el estado de ciertas características por parte de las diferentes versiones de los navegadores.</p>
+<blockquote>
+<blockquote>
+<p>Actualmente, los <strong>vendor prefixes</strong> están en proceso de desaparecer. Las principales compañías de navegadores han optado por favorecer el uso de flags en el navegador del usuario para activar o desactivar opciones experimentales o crear especificaciones más pequeñas y breves que puedan ser estables mucho más rápido. Por esta razón, se aconseja utilizar vendor prefixes solo cuando necesitas soporte específico en navegadores muy antiguos.</p>
+</blockquote>
+</blockquote>
+<p>En el caso de querer utilizar <em>vendor prefixes</em>*, recomiendo encarecidamente utilizar sistemas como <a href="https://github.com/postcss/autoprefixer">autoprefixer</a> (<em>el más popular, que forma parte de PostCSS</em>) o <a href="https://leaverou.github.io/prefixfree/">prefix-free</a> que añaden de forma automática y transparente los prefijos, basándose en información de herramientas como <a href="https://caniuse.com/">Can I Use</a>. Busca extensiones en el <strong>editor</strong> que utilices o la opción para activarlas, ya que te ahorrará mucho tiempo y te permitirá tener un código más legible y modular al no tener que repetir código.</p>
+<hr />
+<h2 id="herencia-en-css">Herencia en CSS<a class="headerlink" href="#herencia-en-css" title="Permanent link">&para;</a></h2>
+<p>Otro detalle que hay que dejar claro antes de empezar es el concepto de <strong>herencia</strong> (<em>y el concepto de <strong>cascada</strong>, que veremos más adelante</em>), pues son los que más problemas suelen dar y los que, sin lugar a dudas, mayor frustración acarrean cuando no comprendemos lo que está pasando.</p>
+<h3 id="concepto-de-herencia">Concepto de herencia<a class="headerlink" href="#concepto-de-herencia" title="Permanent link">&para;</a></h3>
+<p>En primer lugar, debemos saber que algunas propiedades CSS se <strong>heredan</strong> desde los elementos padres a los elementos hijos, modificando el valor que tienen por defecto:</p>
+<pre><code>body {
+  color: green;    /* Color de texto verde */
+}
+</code></pre>
+<p>En el ejemplo anterior, aplicamos a la etiqueta HTML <code>&lt;body&gt;</code> el <strong>color de texto verde</strong>. En principio, esta propiedad aplicará dicho color a los textos que estén dentro de dicha etiqueta <code>&lt;body&gt;</code>.</p>
+<p>Sin embargo, si tenemos más etiquetas dentro, como por ejemplo una etiqueta <code>&lt;div&gt;</code> con texto en su interior, si no tenemos aplicada una propiedad <code>color</code> a dicho elemento, veremos que también aparece en color verde. Esto ocurre porque la propiedad <strong>color</strong> es una de las propiedades CSS que, en el caso de no tener valor específico, <strong>hereda el valor de su elemento padre</strong>.</p>
+<p>Ojo, porque esto no ocurre si lo hacemos con otras propiedades CSS, como por ejemplo, con <strong>los bordes</strong> de un elemento HTML:</p>
+<pre><code>body {
+  border-width: 2px;
+  border-style: solid;
+  border-color: red;
+}
+</code></pre>
+<p>Si esta propiedad aplicara herencia, todos los elementos HTML situados en el interior de <code>&lt;body&gt;</code> tendrían un borde rojo, comportamiento que no suele ser el deseado. Por esa razón, la herencia no ocurre con todas las propiedades CSS, sino sólo con algunas propiedades como <strong>color</strong> o <strong>font</strong>, donde si suele ser deseable.</p>
+<h4 id="valores-especiales">Valores especiales<a class="headerlink" href="#valores-especiales" title="Permanent link">&para;</a></h4>
+<p>Además de los valores habituales de cada propiedad CSS, también podemos aplicar ciertos <strong>valores especiales</strong> que son <strong>comunes</strong> a todas las propiedades existentes. Con estos valores modificamos el comportamiento de la herencia en dicha propiedad:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Valor</th>
+<th align="left">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>inherit</strong></td>
+<td align="left">Hereda el valor de la propiedad del elemento padre.</td>
+</tr>
+<tr>
+<td align="left"><strong>initial</strong></td>
+<td align="left">Establece el valor que tenía la propiedad inicialmente.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>unset</strong></p>
+<p>Combinación de las dos anteriores: Hereda el valor de la propiedad del elemento padre, y en caso de no existir, su valor inicial.</p>
+<p>Veamos, por ejemplo, el siguiente ejemplo para forzar la herencia en una propiedad que no la aplica por defecto:</p>
+<pre><code>body {
+  border-width: 2px;
+  border-style: solid;
+  border-color: red;
+}
+
+div {
+  border: inherit;
+}
+</code></pre>
+<p>Si tenemos un elemento <code>&lt;div&gt;</code> dentro del <code>&lt;body&gt;</code>, el primero heredará los estilos del elemento <code>&lt;body&gt;</code>, ya que le hemos especificado el valor <strong>inherit</strong> en la propiedad <strong>border</strong>.</p>
+<hr />
+<h2 id="cascada-en-css">Cascada en CSS<a class="headerlink" href="#cascada-en-css" title="Permanent link">&para;</a></h2>
+<p>Además de la herencia, otro de los conceptos más importantes de CSS es el concepto de <strong>cascada</strong>. Este concepto es un poco más avanzado, por lo que se debe conocer bien el tema de <strong>selectores CSS</strong> y dominar algo de CSS para comprenderlo en su totalidad, por lo que si no es el caso se puede posponer para una lectura posterior.</p>
+<p>Antes de continuar, supongamos que nos encontramos ante el siguiente escenario:</p>
+<p>.sandbox pre { margin: 0; overflow: auto; max-height: var(--height, auto); }</p>
+<pre><code>&lt;div&gt;Texto del elemento&lt;/div&gt;
+
+&lt;style&gt;
+div {
+  color: red;
+  padding: 8px
+}
+
+div {
+  color: blue;
+  background-color: grey
+}
+&lt;/style&gt;
+</code></pre>
+<p>En este caso, ¿cuál de las dos reglas prevalece, si tenemos en cuenta que se refieren al mismo elemento y están al mismo nivel? La respuesta es muy fácil: Prevalece siempre la última regla definida, la cuál <strong>mezcla</strong> y <strong>sobreescribe</strong> las propiedades anteriores.</p>
+<p>En el caso anterior, el resultado final (<em>computado</em>) sería el siguiente:</p>
+<pre><code>div {
+  color: blue; /* Se sobreescribe la última */
+  padding: 8px;
+  background-color: grey;
+}
+</code></pre>
+<p>Sin embargo, puede ocurrir que en determinados casos no esté tan claro cuál es el estilo que debería sobreescribir a los anteriores. Ahí es cuando entra en juego el concepto de <strong>cascada en CSS</strong>, que es el que se encarga de eliminar la ambigüedad y determinar el que tiene prioridad. Supongamos el siguiente caso:</p>
+<p>.sandbox pre { margin: 0; overflow: auto; max-height: var(--height, auto); }</p>
+<pre><code>&lt;div id="nombre" class="clase"&gt;Texto del elemento&lt;/div&gt;
+
+&lt;style&gt;
+div {
+  color: red;
+}
+
+#nombre {
+  color: blue;
+}
+
+.clase {
+  color: green;
+}
+&lt;/style&gt;
+</code></pre>
+<p>Tenemos un elemento HTML <code>&lt;div id="nombre" class="clase"&gt;</code> que encaja con los tres bloques del ejemplo anterior. ¿Cómo sabe CSS que estilo aplicar? ¿Cuál tiene prioridad sobre los demás? Aquí es donde entra en acción el concepto de <strong>cascada en CSS</strong>.</p>
+<h3 id="cascada-css">Cascada CSS<a class="headerlink" href="#cascada-css" title="Permanent link">&para;</a></h3>
+<p>Para saber que bloque de estilos tiene prioridad, CSS analiza (<em>por orden</em>) tres conceptos clave del código CSS: su <strong>importancia</strong>, la <strong>especificidad</strong> y su <strong>orden</strong>. Veamos en que se basa cada uno de ellos.</p>
+<h4 id="importancia">Importancia<a class="headerlink" href="#importancia" title="Permanent link">&para;</a></h4>
+<p>La <strong>importancia</strong> de un código CSS se determina dependiendo de las hojas de estilo donde está colocado. Generalmente, no necesitaremos preocuparnos de este factor, pero siempre es una buena idea conocer como funciona. Existen varios tipos de hojas de estilo, de menor a mayor importancia:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Tipo de CSS</th>
+<th align="left">Descripción</th>
+<th align="left">Definido por</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Agente de usuario</td>
+<td align="left">Son los estilos CSS que aplica el navegador por defecto.</td>
+<td align="left">Navegador</td>
+</tr>
+<tr>
+<td align="left">CSS de usuario</td>
+<td align="left">Son los estilos CSS que añade el usuario, por razones específicas.</td>
+<td align="left">Usuario</td>
+</tr>
+<tr>
+<td align="left">CSS de autor</td>
+<td align="left">Son los estilos CSS que coloca el autor de la página.</td>
+<td align="left">Desarrollador</td>
+</tr>
+</tbody>
+</table>
+<p>Aunque no es recomendable utilizarlo frecuentemente (<em>puede convertirse en una mala costumbre</em>), se puede añadir al final de cada regla el texto <strong>!important</strong>, consiguiendo que la regla en cuestión tenga prioridad sobre las demás, independientemente del nivel o la altura a la que estén:</p>
+<p>.sandbox pre { margin: 0; overflow: auto; max-height: var(--height, auto); }</p>
+<pre><code>&lt;div&gt;Texto del elemento&lt;/div&gt;
+
+&lt;style&gt;
+div {
+  color: red !important;
+  padding: 8px
+}
+
+div {
+  color: blue;
+  background-color: grey
+}
+&lt;/style&gt;
+</code></pre>
+<p>El resultado final de este código CSS sería:</p>
+<pre><code>div {
+  color: red;
+  padding: 8px;
+  background-color: grey
+}
+</code></pre>
+<blockquote>
+<blockquote>
+<p><strong>Nota</strong>: En el caso de que una misma propiedad del CSS de usuario y una propiedad del CSS de autor tuvieran <strong>!important</strong>, como caso excepcional tendría prioridad la del CSS de usuario sobre la del CSS de autor.</p>
+</blockquote>
+</blockquote>
+<h4 id="especificidad">Especificidad<a class="headerlink" href="#especificidad" title="Permanent link">&para;</a></h4>
+<p>En segundo caso, y si la importancia no elimina la ambigüedad, se pasa a determinar la especificidad de los selectores CSS. Para ello, se sigue un cálculo matemático basado en 4 componentes: <strong>A</strong>, <strong>B</strong>, <strong>C</strong>, <strong>D</strong>.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Componente</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Componente A</td>
+<td align="left">Número de estilos aplicados mediante un atributo <code>style</code> .</td>
+</tr>
+<tr>
+<td align="left">Componente B</td>
+<td align="left">Número de veces que aparece un <code>id</code> en el selector.</td>
+</tr>
+<tr>
+<td align="left">Componente C</td>
+<td align="left">Número de veces que aparece una <code>clase</code> , <code>pseudoclase</code> o <code>atributo</code> en el selector.</td>
+</tr>
+<tr>
+<td align="left">Componente D</td>
+<td align="left">Número de veces que aparece un <code>elemento</code> o un <code>pseudoelementos</code> en el selector.</td>
+</tr>
+</tbody>
+</table>
+<p>Para saber si un bloque de CSS es más específico que otro (<em>y por lo tanto, tiene prioridad</em>) sólo hay que calcular sus componentes. Se ordenan teniendo en cuenta los valores de cada componente, de izquierda a derecha.</p>
+<p>Veamos algunos ejemplos, ordenados de <strong>menor a mayor especificidad</strong>:</p>
+<pre><code>div { ... }                       /* Especificidad: 0,0,0,1 */
+div div { ... }                   /* Especificidad: 0,0,0,2 */
+#pagina div { ... }               /* Especificidad: 0,1,0,1 */
+#pagina div:hover { ... }         /* Especificidad: 0,1,1,1 */
+#pagina div:hover a { ... }       /* Especificidad: 0,1,1,2 */
+#pagina .sel:hover&gt;a { ... }      /* Especificidad: 0,1,2,1 */
+</code></pre>
+<blockquote>
+<p>En <strong>keegan.st</strong> tienes una excelente <a href="https://specificity.keegan.st/">calculadora de especificidad CSS</a> donde podrás calcular la especificidad de un selector CSS rápida y cómodamente.</p>
+</blockquote>
+<h4 id="orden">Orden<a class="headerlink" href="#orden" title="Permanent link">&para;</a></h4>
+<p>En CSS, es posible crear múltiples reglas CSS para definir un mismo concepto. En este caso, la que prevalece ante todas las demás depende de ciertos factores, como es la <em>«altura»</em> a la que está colocada la regla:</p>
+<ul>
+<li>
+<p>El <strong>CSS embebido</strong> en un elemento HTML es el que tiene mayor precedencia, por lo que siempre será el que tenga prioridad sobre otras reglas CSS.</p>
+</li>
+<li>
+<p>En segundo lugar, el <strong>CSS interno</strong> definido a través de bloques <code>style</code> en el propio documento HTML será el siguiente a tener en cuenta en orden de prioridad.</p>
+</li>
+<li>
+<p>Por último, los documentos <strong>CSS externos</strong> son la tercera opción de prioridad a la hora de tomar en cuenta las reglas CSS.</p>
+</li>
+</ul>
+<p>Teniendo esto en cuenta, hay que recordar que las propiedades que prevalecerán serán las que estén en último lugar, siempre respetando la prioridad de la lista anterior.</p>
+<hr />
+<h2 id="variables-css">Variables CSS<a class="headerlink" href="#variables-css" title="Permanent link">&para;</a></h2>
+<p>Quizás lo desconozcas, ya que es una característica moderna que no estaba presente en las primeras versiones de CSS, pero existe una forma nativa de guardar valores a través de «<strong>variables CSS</strong>». Estas variables CSS no existían hace años, y de hecho, fue una de las razones por las que se popularizaron preprocesadores como <strong>LESS</strong> o <strong>Sass</strong>, que sí las incorporaban.</p>
+<p><img alt="CSS Custom Properties - Variables CSS" src="../img/custom-properties-variables-css.png" /></p>
+<p>Sin embargo, las denominadas <strong>variables CSS</strong> realmente no son variables, sino que solemos denominarlas así por su parecido con la programación y porque es más fácil comprender rápidamente lo que son, pero tienen sus diferencias. La forma oficial de llamarlas es <strong>custom properties</strong> (<em>propiedades personalizadas</em>).</p>
+<h3 id="css-custom-properties">CSS Custom Properties<a class="headerlink" href="#css-custom-properties" title="Permanent link">&para;</a></h3>
+<p>Las <strong>CSS Custom Properties</strong> (<em>muchas veces conocidas por variables CSS</em>) son un mecanismo de CSS que permite dar <strong>un valor personalizado</strong> a las propiedades. El objetivo principal suele ser evitar escribir múltiples veces ese valor, y en su lugar, ponerle un nombre más lógico y fácil de recordar, que hará referencia al valor real.</p>
+<p>De esta forma, si necesitamos cambiar el valor en algún momento, podemos hacerlo en esa <strong>propiedad personalizada</strong> y no en múltiples partes del documento, donde nos podríamos equivocar al añadir el mismo valor o incluso hacer mucho más difícil de mantener el código.</p>
+<h4 id="definir-una-variable-css">Definir una variable CSS<a class="headerlink" href="#definir-una-variable-css" title="Permanent link">&para;</a></h4>
+<p>Para definir una <strong>custom property</strong> haremos uso de los dos guiones <code>--</code> previos al nombre que queramos utilizar. Además, debemos fijarnos en el elemento que definimos la variable, en este ejemplo la pseudoclase <code>:root</code>:</p>
+<pre><code>:root {
+  --background-color: black;
+}
+</code></pre>
+<p>Hay varios detalles que comentar sobre este fragmento de código:</p>
+<p>En primer lugar, la pseudoclase <code>:root</code> hace referencia al elemento raíz del documento, o lo que es lo mismo, al elemento <code>&lt;html&gt;</code>. La diferencia de utilizar <code>html</code> o <code>:root</code> como selector es que este último tiene algo más de <a href="/css/introduccion/cascada-css/#especificidad">especificidad CSS</a>. Mientras que <code>html</code> tiene <strong>001</strong>, <code>:root</code> tendría <strong>010</strong>.</p>
+<p>Al colocarla en <code>:root</code> estamos definiendo que la <strong>custom property</strong> estará definida para el <strong>ámbito</strong> de esa etiqueta <code>&lt;html&gt;</code> (<em>o cualquier elemento hijo</em>), es decir, a todo el documento. Sin embargo, ya veremos que podemos aplicar estas variables sólo a partes concretas del DOM de nuestra página.</p>
+<blockquote>
+<blockquote>
+<p><strong>Nota</strong>: Las <strong>custom properties</strong> se suelen agrupar en las primeras líneas de un bloque CSS, separándolas por un espacio de otras propiedades estándar. Esto facilita la lectura del código.</p>
+</blockquote>
+</blockquote>
+<h4 id="utilizar-una-variable-css">Utilizar una variable CSS<a class="headerlink" href="#utilizar-una-variable-css" title="Permanent link">&para;</a></h4>
+<p>A la hora de utilizar una <strong>custom property</strong>, hay que utilizarla dentro de la expresión <code>var()</code>:</p>
+<pre><code>.element {
+  background: var(--background-color);
+}
+</code></pre>
+<p>En este caso estamos aplicando a la propiedad <code>background</code> el valor que contiene <code>--background-color</code> para el elemento <code>.element</code>. Esto último es muy importante entenderlo, ya que una <strong>custom property</strong> puede tener diferentes valores dependiendo del ámbito en el que se encuentra.</p>
+<p>Además, es muy recomendable que la expresión <code>var()</code> tenga <strong>dos parámetros</strong>. El primero de ellos, la <strong>custom property</strong> en cuestión, el segundo de ellos, el valor por defecto en el caso de que esa propiedad no esté definida en el ámbito actual:</p>
+<pre><code>.element {
+  background: var(--background-color, blue);
+}
+</code></pre>
+<p>En nuestro caso, el elemento con clase <code>element</code> tendrá siempre el color de fondo negro, pero podría adoptar el color azul si la <strong>custom property</strong> no se hubiera declarado.</p>
+<h3 id="ambito-de-las-custom-properties">Ámbito de las custom properties<a class="headerlink" href="#ambito-de-las-custom-properties" title="Permanent link">&para;</a></h3>
+<p>El ejemplo anterior es muy básico y puede que no se aprecie el detalle de los <strong>ámbitos</strong> con las <strong>custom properties</strong>, así que vamos a verlo con un ejemplo más específico.</p>
+<p>Observa el marcado HTML del siguiente ejemplo, donde tenemos tres elementos con clase <code>child</code>, los dos primeros dentro de <code>parent</code> y el tercero fuera:</p>
+<p>.sandbox pre { margin: 0; overflow: auto; max-height: var(--height, auto); }</p>
+<pre><code>&lt;div class="parent"&gt;
+  &lt;div class="first child"&gt;First child&lt;/div&gt;
+  &lt;div class="second child"&gt;Second child&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="third child"&gt;Third child&lt;/div&gt;
+
+&lt;style&gt;
+.parent {
+  --background-color: black;
+
+  color: white;
+}
+
+.first {
+  --background-color: purple;
+}
+
+.child {
+  background: var(--background-color, blue);
+}
+&lt;/style&gt;
+</code></pre>
+<p>Sin embargo, ahora estamos definiendo la variable <code>--background-color</code> en diferentes ámbitos:</p>
+<ul>
+<li>Los dos primeros elementos <code>.child</code> tomarán color negro, ya que se le aplica a <code>.parent</code> (<em>e hijos</em>).</li>
+<li>El primer elemento <code>.child</code> se sobreescribe con color púrpura, ya que se le aplica a <code>.first</code>.</li>
+<li>El tercer elemento no tendrá ninguna variable definida, por lo que tomará color azul.</li>
+</ul>
+<p>Esto nos permite mucha flexibilidad y potencia a la hora de utilizar <strong>custom properties</strong> en CSS, ya que son tremendamente útiles y versátiles, permitiéndonos utilizar incluso la cascada de CSS a nuestro favor.</p>
+<p>Las <strong>custom properties</strong> tienen un buen soporte en navegadores en la actualidad, a excepción, como siempre, de Internet Explorer. Si necesitaras soporte para IE11, quizás podría venirte bien el polifyll <a href="https://github.com/nuxodin/ie11CustomProperties">ie11CustomProperties</a>.</p>
+<h3 id="diferencia-con-sassless">Diferencia con Sass/LESS<a class="headerlink" href="#diferencia-con-sassless" title="Permanent link">&para;</a></h3>
+<p>También es importante mencionar que las <strong>variables CSS</strong> no funcionan exactamente igual que las <strong>variables Sass</strong> o las <strong>variables LESS</strong> (<em>en general, las variables de preprocesadores</em>).</p>
+<p><em>Sass</em>* y <strong>LESS</strong>, al igual que muchos otros preprocesadores de CSS, no trabajan directamente en el navegador, sino en una capa previa (<em>capa de preprocesamiento</em>). Por lo tanto, muchas tareas se realizan antes de llegar al navegador.</p>
+<p>Es el caso de las <strong>variables Sass/LESS</strong>, por ejemplo. Dichas variables son leídas por <strong>Sass</strong> o <strong>LESS</strong> y convertidas a CSS «plano» (<em>sin variables</em>):</p>
+<pre><code>/* En Sass/LESS las variables se declaran en el top */
+$var: #fff;
+
+.parent {
+  background: $var;   /* Será #fff */
+}
+
+.parent .element {
+  $var: #888;
+}
+
+.element {
+  background: $var;   /* Será #fff */
+}
+</code></pre>
+<p>Es por eso que no deben tomarse las <strong>custom properties</strong> como equivalente de las <strong>variables SCSS</strong> o <strong>variables LESS</strong>, ya que tienen matices diferentes.</p>
+<h3 id="variables-css-desde-javascript">Variables CSS desde Javascript<a class="headerlink" href="#variables-css-desde-javascript" title="Permanent link">&para;</a></h3>
+<p>Existen varias formas de manipular estilos CSS desde Javascript, ya sea directamente a través de la propiedad <code>.style</code> del elemento en cuestión, o utilizando la función global de cada página <code>.getComputedStyle()</code>, que devuelve los estilos computados por el navegador.</p>
+<p>Sin embargo, en esta ocasión nos centraremos en una serie de métodos de ayuda que nos hacen la vida más fácil, ya que podemos establecer, obtener y/o eliminar <strong>propiedades CSS</strong> (<em>custom properties incluídas</em>) de un elemento de forma muy sencilla.</p>
+<p>Observen el siguiente método mediante el cuál añadimos (<em>o modificamos</em>) la propiedad <code>border</code> de un elemento del DOM de nuestro HTML:</p>
+<pre><code>const element = document.querySelector(".element");
+element.style.setProperty("border", "2px solid red");
+</code></pre>
+<p>Al igual que lo hacemos con una propiedad CSS, lo podríamos hacer con una <strong>custom property</strong>, la cuál quedaría añadida en el atributo HTML <code>style</code> del elemento.</p>
+<p>Los métodos de ayuda que tenemos para modificar propiedades son los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Método</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>.setProperty(``name,``value,``priority)</code></td>
+<td align="left">Añade/cambia el <strong>valor</strong> de una propiedad CSS.</td>
+</tr>
+<tr>
+<td align="left"><code>.getPropertyValue(``name)</code></td>
+<td align="left">Obtiene el valor de una propiedad CSS.</td>
+</tr>
+<tr>
+<td align="left"><code>.getPropertyPriority(``name)</code></td>
+<td align="left">Devuelve <code>important</code> si tiene prioridad.</td>
+</tr>
+<tr>
+<td align="left"><code>.removeProperty(``name)</code></td>
+<td align="left">Elimina una propiedad CSS de un elemento.</td>
+</tr>
+</tbody>
+</table>
+<p>El método que hemos visto anteriormente es <code>.style.setProperty()</code>, con el cuál podemos añadir (<em>o modificar</em>) un valor a una propiedad. Además, si establecemos el tercer parámetro con el <code>important</code>, sería equivalente a añadirle el <code>!important</code> al valor de la propiedad.</p>
+<p>Por otro lado, tenemos el método opuesto <code>.style.getPropertyValue()</code> mediante el cuál podemos obtener el valor de una propiedad concreta o el método <code>.style.getPropertyPriority()</code>, con el cuál te devuelve el string <code>important</code> si lo tiene definido. Por último, el método <code>.style.removeProperty()</code> como su propio nombre indica, elimina una propiedad de un elemento.</p>
+<blockquote>
+<p><strong>Nota</strong>: Ten en cuenta que estas propiedades solo funcionan si los estilos CSS o custom properties han sido definidas a través del atributo <code>style</code> de CSS o con estos mismos métodos (<em>que lo hacen por la misma vía</em>).</p>
+</blockquote>
+<hr />
+<p><strong>Fuente:</strong> <a href="https://lenguajecss.com/">Lenguaje de CSS por Manz</a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../../html/06-etiquetas_de_scripting/" title="Etiquetas de scripting" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Etiquetas de scripting
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../02-modelo_de_cajas/" title="Modelo de cajas" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Modelo de cajas
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/saucedoinfo" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/saucedoinfo" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.instagram.com/saucedo.info/" target="_blank" rel="noopener" title="www.instagram.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.instant', 'navigation.expand', 'tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

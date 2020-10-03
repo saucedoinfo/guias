@@ -1,0 +1,4419 @@
+
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Coleccion de Guias de Desarrollo y diseño.">
+      
+      
+        <link rel="canonical" href="https://saucedoinfo.github.io/guias/desarrollo/javascript/02-fundamentos_de_javascript/">
+      
+      
+        <meta name="author" content="Fernando S. Saucedo">
+      
+      <link rel="shortcut icon" href="../../../img/favicon-16x16.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.14">
+    
+    
+      
+        <title>Fundamentos de Javascript - Guias de Desarrollo y diseño</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d3202873.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ff0a5ce4.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#000000">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fundamentos-de-javascript" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-header-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Guias de Desarrollo y diseño
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Fundamentos de Javascript
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../html/01-introduccion_a_HTML5/" class="md-tabs__link">
+          Desarrollo
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" class="md-tabs__link">
+          Herramientas IT
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    Guias de Desarrollo y diseño
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Desarrollo
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Desarrollo" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Desarrollo
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Html
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Html" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        <span class="md-nav__icon md-icon"></span>
+        Html
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/01-introduccion_a_HTML5/" title="Introduccion a HTML" class="md-nav__link">
+      Introduccion a HTML
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/02-etiquetas_semanticas/" title="Etiquetas semánticas" class="md-nav__link">
+      Etiquetas semánticas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/03-etiquetas_multimedia/" title="Etiquetas multimedias" class="md-nav__link">
+      Etiquetas multimedias
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/04-etiquetas_de_cabecera/" title="Etiquetas de cabecera" class="md-nav__link">
+      Etiquetas de cabecera
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/05-etiquetas_de_formularios/" title="Etiquetas de formularios" class="md-nav__link">
+      Etiquetas de formularios
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/06-etiquetas_de_scripting/" title="Etiquetas de scripting" class="md-nav__link">
+      Etiquetas de scripting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Css
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Css" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        <span class="md-nav__icon md-icon"></span>
+        Css
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/01-introduccion_a_CSS/" title="Introducción a CSS" class="md-nav__link">
+      Introducción a CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/02-modelo_de_cajas/" title="Modelo de cajas" class="md-nav__link">
+      Modelo de cajas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/03-colores_y_fondos/" title="Colores y fondos" class="md-nav__link">
+      Colores y fondos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/04-selectores_CSS/" title="Selectores CSS" class="md-nav__link">
+      Selectores CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/05-Fuentes_y_tipografias/" title="Fuentes y tipografías" class="md-nav__link">
+      Fuentes y tipografías
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/06-representacion_de_datos/" title="Representación de datos" class="md-nav__link">
+      Representación de datos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/07_maquetacion_y_colocacion/" title="Maquetación y colocación" class="md-nav__link">
+      Maquetación y colocación
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/08-interacciones/" title="Interacciones" class="md-nav__link">
+      Interacciones
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/09-efectos/" title="Efectos" class="md-nav__link">
+      Efectos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/10-responsive_Web_Design/" title="Responsive Web Design" class="md-nav__link">
+      Responsive Web Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/11-animaciones_CSS/" title="Animaciones CSS" class="md-nav__link">
+      Animaciones CSS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3" checked>
+    
+    <label class="md-nav__link" for="nav-2-3">
+      JavaScript
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="JavaScript" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon"></span>
+        JavaScript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01-introducci%C3%B3n_a_javascript/" title="Introducción a Javascript" class="md-nav__link">
+      Introducción a Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Fundamentos de Javascript
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Fundamentos de Javascript" class="md-nav__link md-nav__link--active">
+      Fundamentos de Javascript
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-datos" class="md-nav__link">
+    Tipos de datos
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-tipos-de-lenguajes-existen" class="md-nav__link">
+    ¿Qué tipos de lenguajes existen?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-son-los-tipos-de-datos" class="md-nav__link">
+    ¿Qué son los tipos de datos?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-tipo-de-dato-tiene-una-variable" class="md-nav__link">
+    ¿Qué tipo de dato tiene una variable?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué tipo de dato tiene una variable?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#utilizando-typeof" class="md-nav__link">
+    Utilizando typeof()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilizando-constructorname" class="md-nav__link">
+    Utilizando constructor.name
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables-y-constantes" class="md-nav__link">
+    Variables y constantes
+  </a>
+  
+    <nav class="md-nav" aria-label="Variables y constantes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+    <nav class="md-nav" aria-label="Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ambitos-de-variables-var" class="md-nav__link">
+    Ámbitos de variables: var
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ambitos-de-variables-let" class="md-nav__link">
+    Ámbitos de variables: let
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constantes" class="md-nav__link">
+    Constantes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetos-basicos" class="md-nav__link">
+    Objetos básicos
+  </a>
+  
+    <nav class="md-nav" aria-label="Objetos básicos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-son-los-objetos" class="md-nav__link">
+    ¿Qué son los objetos?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué son los objetos?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#declaracion-de-un-objeto" class="md-nav__link">
+    Declaración de un objeto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acceso-a-sus-propiedades" class="md-nav__link">
+    Acceso a sus propiedades
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anadir-propiedades" class="md-nav__link">
+    Añadir propiedades
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-objetos" class="md-nav__link">
+    Tipos de objetos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables-numericas-number" class="md-nav__link">
+    Variables numéricas (Number)
+  </a>
+  
+    <nav class="md-nav" aria-label="Variables numéricas (Number)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-una-variable-numerica" class="md-nav__link">
+    ¿Qué es una variable numérica?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constantes-numericas" class="md-nav__link">
+    Constantes numéricas
+  </a>
+  
+    <nav class="md-nav" aria-label="Constantes numéricas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nan-not-a-number" class="md-nav__link">
+    NaN (Not A Number)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comprobaciones-numericas" class="md-nav__link">
+    Comprobaciones numéricas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conversion-numerica" class="md-nav__link">
+    Conversión numérica
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#representacion-numerica" class="md-nav__link">
+    Representación numérica
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operaciones-matematicas-math" class="md-nav__link">
+    Operaciones matemáticas (Math)
+  </a>
+  
+    <nav class="md-nav" aria-label="Operaciones matemáticas (Math)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constantes-de-math" class="md-nav__link">
+    Constantes de Math
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-matematicos" class="md-nav__link">
+    Métodos matemáticos
+  </a>
+  
+    <nav class="md-nav" aria-label="Métodos matemáticos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metodo-mathrandom" class="md-nav__link">
+    Método Math.random()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-de-logaritmos" class="md-nav__link">
+    Métodos de logaritmos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-de-redondeo" class="md-nav__link">
+    Métodos de redondeo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-trigonometricos" class="md-nav__link">
+    Métodos trigonométricos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otras-librerias-matematicas" class="md-nav__link">
+    Otras librerías matemáticas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables-de-texto-string" class="md-nav__link">
+    Variables de texto (String)
+  </a>
+  
+    <nav class="md-nav" aria-label="Variables de texto (String)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-un-string" class="md-nav__link">
+    ¿Qué es un string?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué es un string?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#propiedades" class="md-nav__link">
+    Propiedades
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-de-posiciones" class="md-nav__link">
+    Métodos de posiciones
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-para-busquedas" class="md-nav__link">
+    Métodos para búsquedas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-para-transformar" class="md-nav__link">
+    Métodos para transformar
+  </a>
+  
+    <nav class="md-nav" aria-label="Métodos para transformar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reemplazar-textos" class="md-nav__link">
+    Reemplazar textos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraer-subtextos" class="md-nav__link">
+    Extraer subtextos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crear-arrays-a-partir-de-textos" class="md-nav__link">
+    Crear Arrays a partir de textos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relleno-de-cadenas" class="md-nav__link">
+    Relleno de cadenas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-unicode" class="md-nav__link">
+    Métodos Unicode
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interpolacion-de-variables" class="md-nav__link">
+    Interpolación de variables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fechas-nativas-date" class="md-nav__link">
+    Fechas nativas (Date)
+  </a>
+  
+    <nav class="md-nav" aria-label="Fechas nativas (Date)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-el-tipo-de-dato-date" class="md-nav__link">
+    ¿Qué es el tipo de dato Date?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué es el tipo de dato Date?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tiempo-unix" class="md-nav__link">
+    Tiempo UNIX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getters-obtener-fechas" class="md-nav__link">
+    Getters: Obtener fechas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setters-cambiar-fechas" class="md-nav__link">
+    Setters: Cambiar fechas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#representacion-de-fechas" class="md-nav__link">
+    Representación de fechas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utc-y-zonas-horarias" class="md-nav__link">
+    UTC y zonas horarias
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#librerias-para-fechas" class="md-nav__link">
+    Librerías para fechas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funciones" class="md-nav__link">
+    Funciones
+  </a>
+  
+    <nav class="md-nav" aria-label="Funciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-funciones" class="md-nav__link">
+    Creación de funciones
+  </a>
+  
+    <nav class="md-nav" aria-label="Creación de funciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funciones-por-declaracion" class="md-nav__link">
+    Funciones por declaración
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funciones-por-expresion" class="md-nav__link">
+    Funciones por expresión
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funciones-como-objetos" class="md-nav__link">
+    Funciones como objetos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funciones-anonimas" class="md-nav__link">
+    Funciones anónimas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callbacks" class="md-nav__link">
+    Callbacks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funciones-autoejecutables" class="md-nav__link">
+    Funciones autoejecutables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clausuras" class="md-nav__link">
+    Clausuras
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrow-functions" class="md-nav__link">
+    Arrow functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Arrow functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ambito-lexico-de-this" class="md-nav__link">
+    Ámbito léxico de this
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrays" class="md-nav__link">
+    Arrays
+  </a>
+  
+    <nav class="md-nav" aria-label="Arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-un-array" class="md-nav__link">
+    ¿Qué es un array?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué es un array?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#acceso-a-elementos" class="md-nav__link">
+    Acceso a elementos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anadir-o-eliminar-elementos" class="md-nav__link">
+    Añadir o eliminar elementos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-arrays" class="md-nav__link">
+    Creación de arrays
+  </a>
+  
+    <nav class="md-nav" aria-label="Creación de arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#busqueda-y-comprobacion" class="md-nav__link">
+    Búsqueda y comprobación
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modificacion-de-arrays" class="md-nav__link">
+    Modificación de arrays
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ordenaciones" class="md-nav__link">
+    Ordenaciones
+  </a>
+  
+    <nav class="md-nav" aria-label="Ordenaciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcion-de-comparacion" class="md-nav__link">
+    Función de comparación
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array-functions" class="md-nav__link">
+    Array functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-caracteristicas/" title="Características" class="md-nav__link">
+      Características
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-DOM/" title="DOM" class="md-nav__link">
+      DOM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-asincronia/" title="Asincronía" class="md-nav__link">
+      Asincronía
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-peticiones_HTTP/" title="Peticiones HTTP" class="md-nav__link">
+      Peticiones HTTP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Herramientas IT
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Herramientas IT" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Herramientas IT
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Terminal
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Terminal" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon"></span>
+        Terminal
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" title="Introducción a la terminal" class="md-nav__link">
+      Introducción a la terminal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/02-operaciones_con_ficheros/" title="Operaciones con ficheros" class="md-nav__link">
+      Operaciones con ficheros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/03-administraci%C3%B3n_del_sistema/" title="Administración del sistema" class="md-nav__link">
+      Administración del sistema
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/markdown/" title="Markdown" class="md-nav__link">
+      Markdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/pip/" title="Pip" class="md-nav__link">
+      Pip
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/mkdocs/" title="Mkdocs" class="md-nav__link">
+      Mkdocs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../about/" title="Acerca de" class="md-nav__link">
+      Acerca de
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-datos" class="md-nav__link">
+    Tipos de datos
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-tipos-de-lenguajes-existen" class="md-nav__link">
+    ¿Qué tipos de lenguajes existen?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-son-los-tipos-de-datos" class="md-nav__link">
+    ¿Qué son los tipos de datos?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-tipo-de-dato-tiene-una-variable" class="md-nav__link">
+    ¿Qué tipo de dato tiene una variable?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué tipo de dato tiene una variable?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#utilizando-typeof" class="md-nav__link">
+    Utilizando typeof()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilizando-constructorname" class="md-nav__link">
+    Utilizando constructor.name
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables-y-constantes" class="md-nav__link">
+    Variables y constantes
+  </a>
+  
+    <nav class="md-nav" aria-label="Variables y constantes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+    <nav class="md-nav" aria-label="Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ambitos-de-variables-var" class="md-nav__link">
+    Ámbitos de variables: var
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ambitos-de-variables-let" class="md-nav__link">
+    Ámbitos de variables: let
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constantes" class="md-nav__link">
+    Constantes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetos-basicos" class="md-nav__link">
+    Objetos básicos
+  </a>
+  
+    <nav class="md-nav" aria-label="Objetos básicos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-son-los-objetos" class="md-nav__link">
+    ¿Qué son los objetos?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué son los objetos?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#declaracion-de-un-objeto" class="md-nav__link">
+    Declaración de un objeto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acceso-a-sus-propiedades" class="md-nav__link">
+    Acceso a sus propiedades
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anadir-propiedades" class="md-nav__link">
+    Añadir propiedades
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-objetos" class="md-nav__link">
+    Tipos de objetos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables-numericas-number" class="md-nav__link">
+    Variables numéricas (Number)
+  </a>
+  
+    <nav class="md-nav" aria-label="Variables numéricas (Number)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-una-variable-numerica" class="md-nav__link">
+    ¿Qué es una variable numérica?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constantes-numericas" class="md-nav__link">
+    Constantes numéricas
+  </a>
+  
+    <nav class="md-nav" aria-label="Constantes numéricas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nan-not-a-number" class="md-nav__link">
+    NaN (Not A Number)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comprobaciones-numericas" class="md-nav__link">
+    Comprobaciones numéricas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conversion-numerica" class="md-nav__link">
+    Conversión numérica
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#representacion-numerica" class="md-nav__link">
+    Representación numérica
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operaciones-matematicas-math" class="md-nav__link">
+    Operaciones matemáticas (Math)
+  </a>
+  
+    <nav class="md-nav" aria-label="Operaciones matemáticas (Math)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constantes-de-math" class="md-nav__link">
+    Constantes de Math
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-matematicos" class="md-nav__link">
+    Métodos matemáticos
+  </a>
+  
+    <nav class="md-nav" aria-label="Métodos matemáticos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metodo-mathrandom" class="md-nav__link">
+    Método Math.random()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-de-logaritmos" class="md-nav__link">
+    Métodos de logaritmos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-de-redondeo" class="md-nav__link">
+    Métodos de redondeo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-trigonometricos" class="md-nav__link">
+    Métodos trigonométricos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otras-librerias-matematicas" class="md-nav__link">
+    Otras librerías matemáticas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables-de-texto-string" class="md-nav__link">
+    Variables de texto (String)
+  </a>
+  
+    <nav class="md-nav" aria-label="Variables de texto (String)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-un-string" class="md-nav__link">
+    ¿Qué es un string?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué es un string?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#propiedades" class="md-nav__link">
+    Propiedades
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-de-posiciones" class="md-nav__link">
+    Métodos de posiciones
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-para-busquedas" class="md-nav__link">
+    Métodos para búsquedas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-para-transformar" class="md-nav__link">
+    Métodos para transformar
+  </a>
+  
+    <nav class="md-nav" aria-label="Métodos para transformar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reemplazar-textos" class="md-nav__link">
+    Reemplazar textos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraer-subtextos" class="md-nav__link">
+    Extraer subtextos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crear-arrays-a-partir-de-textos" class="md-nav__link">
+    Crear Arrays a partir de textos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relleno-de-cadenas" class="md-nav__link">
+    Relleno de cadenas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-unicode" class="md-nav__link">
+    Métodos Unicode
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interpolacion-de-variables" class="md-nav__link">
+    Interpolación de variables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fechas-nativas-date" class="md-nav__link">
+    Fechas nativas (Date)
+  </a>
+  
+    <nav class="md-nav" aria-label="Fechas nativas (Date)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-el-tipo-de-dato-date" class="md-nav__link">
+    ¿Qué es el tipo de dato Date?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué es el tipo de dato Date?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tiempo-unix" class="md-nav__link">
+    Tiempo UNIX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getters-obtener-fechas" class="md-nav__link">
+    Getters: Obtener fechas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setters-cambiar-fechas" class="md-nav__link">
+    Setters: Cambiar fechas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#representacion-de-fechas" class="md-nav__link">
+    Representación de fechas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utc-y-zonas-horarias" class="md-nav__link">
+    UTC y zonas horarias
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#librerias-para-fechas" class="md-nav__link">
+    Librerías para fechas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funciones" class="md-nav__link">
+    Funciones
+  </a>
+  
+    <nav class="md-nav" aria-label="Funciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-funciones" class="md-nav__link">
+    Creación de funciones
+  </a>
+  
+    <nav class="md-nav" aria-label="Creación de funciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funciones-por-declaracion" class="md-nav__link">
+    Funciones por declaración
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funciones-por-expresion" class="md-nav__link">
+    Funciones por expresión
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funciones-como-objetos" class="md-nav__link">
+    Funciones como objetos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funciones-anonimas" class="md-nav__link">
+    Funciones anónimas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callbacks" class="md-nav__link">
+    Callbacks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funciones-autoejecutables" class="md-nav__link">
+    Funciones autoejecutables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clausuras" class="md-nav__link">
+    Clausuras
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrow-functions" class="md-nav__link">
+    Arrow functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Arrow functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ambito-lexico-de-this" class="md-nav__link">
+    Ámbito léxico de this
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrays" class="md-nav__link">
+    Arrays
+  </a>
+  
+    <nav class="md-nav" aria-label="Arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-un-array" class="md-nav__link">
+    ¿Qué es un array?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué es un array?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#acceso-a-elementos" class="md-nav__link">
+    Acceso a elementos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anadir-o-eliminar-elementos" class="md-nav__link">
+    Añadir o eliminar elementos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-arrays" class="md-nav__link">
+    Creación de arrays
+  </a>
+  
+    <nav class="md-nav" aria-label="Creación de arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#busqueda-y-comprobacion" class="md-nav__link">
+    Búsqueda y comprobación
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modificacion-de-arrays" class="md-nav__link">
+    Modificación de arrays
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ordenaciones" class="md-nav__link">
+    Ordenaciones
+  </a>
+  
+    <nav class="md-nav" aria-label="Ordenaciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcion-de-comparacion" class="md-nav__link">
+    Función de comparación
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array-functions" class="md-nav__link">
+    Array functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/saucedoinfo/guias/edit/master/docs/desarrollo/javascript/02-fundamentos_de_javascript.md" title="Editar esta página" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="fundamentos-de-javascript">Fundamentos de Javascript<a class="headerlink" href="#fundamentos-de-javascript" title="Permanent link">&para;</a></h1>
+<h2 id="tipos-de-datos">Tipos de datos<a class="headerlink" href="#tipos-de-datos" title="Permanent link">&para;</a></h2>
+<p>En Javascript, al igual que en la mayoría de los lenguajes de programación, al declarar una variable y guardar su contenido, también le estamos asignando un <strong>tipo de dato</strong>, ya sea de forma implícita o explícita. El <strong>tipo de dato</strong> no es más que la naturaleza de su contenido: contenido numérico, contenido de texto, etc...</p>
+<h3 id="que-tipos-de-lenguajes-existen">¿Qué tipos de lenguajes existen?<a class="headerlink" href="#que-tipos-de-lenguajes-existen" title="Permanent link">&para;</a></h3>
+<p>A grandes rasgos, nos podemos encontrar con dos tipos de lenguajes de programación:</p>
+<ul>
+<li>
+<p><strong>Lenguajes estáticos</strong>: Cuando creamos una variable, debemos indicar el <strong>tipo de dato</strong> del valor que va a contener. En consecuencia, el valor asignado finalmente, siempre deberá ser del tipo de dato que hemos indicado (<em>si definimos que es un número debe ser un número, si definimos que es un texto debe ser un texto, etc...</em>).</p>
+</li>
+<li>
+<p><strong>Lenguajes dinámicos</strong>: Cuando creamos una variable, no es necesario indicarle el tipo de dato que va a contener. El lenguaje de programación se encargará de deducir el tipo de dato (<em>dependiendo del valor que le hayamos asignado</em>).</p>
+</li>
+</ul>
+<blockquote>
+<blockquote>
+<p>En el caso de los <strong>lenguajes dinámicos</strong>, realmente el tipo de dato se asocia al valor (<em>en lugar de a la variable</em>). De esta forma, es mucho más fácil entender que a lo largo del programa, dicha variable puede «cambiar» a tipos de datos diferentes, ya que la restricción del tipo de dato está asociada al valor y no a la variable en sí. No obstante, para simplificar, en los primeros temas siempre hablaremos de variables y sus tipos de datos respectivos.</p>
+</blockquote>
+</blockquote>
+<p>Javascript pertenece a los <strong>lenguajes dinámicos</strong>, ya que automáticamente detecta de que tipo de dato se trata en cada caso, dependiendo del contenido que le hemos asignado a la variable.</p>
+<p>Para algunos desarrolladores —<em>sobre todo, nóveles</em>— esto les resulta una ventaja, ya que es mucho más sencillo declarar variables sin tener que preocuparte del tipo de dato que necesitan. Sin embargo, para muchos otros desarrolladores —<em>generalmente, avanzados</em>— es una desventaja, ya que pierdes el control de la información almacenada y esto en muchas ocasiones puede desembocar en problemas o situaciones inesperadas.</p>
+<p>En Javascript existen mecanismos para convertir o forzar los tipos de datos de las variables, sin embargo, muchos programadores prefieren declarar explícitamente los tipos de datos, ya que les aporta cierta confianza y seguridad. Este grupo de desarrolladores suelen optar por utilizar lenguajes como <a href="https://www.typescriptlang.org/">Typescript</a>, que no es más que «varias capas de características añadidas» a Javascript.</p>
+<blockquote>
+<p>En muchas ocasiones (<em>y de manera informal</em>) también se suele hacer referencia a <strong>lenguajes tipados</strong> (<em>tipado fuerte, o fuertemente tipado</em>) o <strong>lenguajes no tipados</strong> (<em>tipado débil, debilmente tipado</em>), para indicar si el lenguaje requiere indicar manualmente el tipo de dato de las variables o no, respectivamente.</p>
+</blockquote>
+<h3 id="que-son-los-tipos-de-datos">¿Qué son los tipos de datos?<a class="headerlink" href="#que-son-los-tipos-de-datos" title="Permanent link">&para;</a></h3>
+<p>En Javascript disponemos de los siguientes tipos de datos:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Tipo de dato</th>
+<th align="left">Descripción</th>
+<th align="left">Ejemplo básico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>number</strong></td>
+<td align="left">Valor numérico (enteros, decimales, etc...)</td>
+<td align="left"><code>42</code></td>
+</tr>
+<tr>
+<td align="left"><strong>string</strong></td>
+<td align="left">Valor de texto (cadenas de texto, carácteres, etc...)</td>
+<td align="left"><code>'MZ'</code></td>
+</tr>
+<tr>
+<td align="left"><strong>boolean</strong></td>
+<td align="left">Valor booleano (valores verdadero o falso)</td>
+<td align="left"><code>true</code></td>
+</tr>
+<tr>
+<td align="left"><strong>undefined</strong></td>
+<td align="left">Valor sin definir (variable sin inicializar)</td>
+<td align="left"><code>undefined</code></td>
+</tr>
+<tr>
+<td align="left"><strong>function</strong></td>
+<td align="left">Función (función guardada en una variable)</td>
+<td align="left"><code>function() {}</code></td>
+</tr>
+<tr>
+<td align="left"><strong>object</strong></td>
+<td align="left">Objeto (estructura más compleja)</td>
+<td align="left"><code>{}</code></td>
+</tr>
+</tbody>
+</table>
+<p>Para empezar, nos centraremos en los tres primeros, denominados <strong>tipos de datos primitivos</strong>, y en los temas siguientes veremos detalles sobre los siguientes.</p>
+<p>Para saber que tipo de dato tiene una variable, debemos observar que valor le hemos dado. Si es un valor numérico, será de tipo <strong>number</strong>. Si es un valor de texto, será de tipo <strong>string</strong>, si es verdadero o falso, será de tipo <strong>booleano</strong>. Veamos un ejemplo en el que identificaremos que tipo de dato tiene cada variable:</p>
+<pre><code>var s = "Hola, me llamo Manz"; // s, de string
+var n = 42; // n, de número
+var b = true; // b, de booleano
+var u; // u, de undefined
+</code></pre>
+<p>Como se puede ver, en este ejemplo, es muy sencillo saber que tipos de datos tienen cada variable.</p>
+<h3 id="que-tipo-de-dato-tiene-una-variable">¿Qué tipo de dato tiene una variable?<a class="headerlink" href="#que-tipo-de-dato-tiene-una-variable" title="Permanent link">&para;</a></h3>
+<p>Nos encontraremos que muchas veces no resulta tan sencillo saber que tipo de dato tiene una variable, o simplemente viene oculto porque el valor lo devuelve una función o alguna otra razón similar. Hay varias formas de saber que tipo de dato tiene una variable en Javascript:</p>
+<h4 id="utilizando-typeof">Utilizando typeof()<a class="headerlink" href="#utilizando-typeof" title="Permanent link">&para;</a></h4>
+<p>Si tenemos dudas, podemos utilizar la función <code>typeof</code>, que nos devuelve el tipo de dato de la variable que le pasemos por parámetro. Veamos que nos devuelve <code>typeof()</code> sobre las variables del ejemplo anterior:</p>
+<pre><code>console.log(typeof s); // "string"
+console.log(typeof n); // "number"
+console.log(typeof b); // "boolean"
+console.log(typeof u); // "undefined"
+</code></pre>
+<p>Como se puede ver, mediante la función <strong>typeof</strong> podremos determinar que tipo de dato se esconde en una variable. Observa también que la variable <code>u</code>, al haber sido declarada sin valor, Javascript le da un tipo de dato especial: <strong>undefined</strong> (<em>sin definir</em>).</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>La función <code>typeof()</code> solo sirve para variables con <strong>tipos de datos</strong> básicos o primitivos.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h4 id="utilizando-constructorname">Utilizando constructor.name<a class="headerlink" href="#utilizando-constructorname" title="Permanent link">&para;</a></h4>
+<p>Más adelante, nos encontraremos que en muchos casos, <code>typeof()</code> resulta insuficiente porque en tipos de datos más avanzados simplemente nos indica que son <strong>objetos</strong>. Con <code>constructor.name</code> podemos obtener el tipo de constructor que se utiliza, un concepto que veremos más adelante dentro del tema de clases. De momento, si lo necesitamos, podemos comprobarlo así:</p>
+<pre><code>console.log(s.constructor.name); // String
+console.log(n.constructor.name); // Number
+console.log(b.constructor.name); // Boolean
+console.log(u.constructor.name); // ERROR, sólo funciona con variables definidas
+</code></pre>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><strong>OJO</strong>: Sólo funciona en variables definidas (<em>no undefined</em>) y sólo en ECMAScript 6.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Que Javascript determine los <strong>tipos de datos automáticamente</strong> no quiere decir que debamos despreocuparnos por ello. En muchos casos, debemos conocer el tipo de dato de una variable e incluso necesitaremos convertirla a otros tipos de datos antes de usarla. Más adelante veremos formas de convertir entre tipos de datos.</p>
+<hr />
+<h2 id="variables-y-constantes">Variables y constantes<a class="headerlink" href="#variables-y-constantes" title="Permanent link">&para;</a></h2>
+<p>En javascript es muy sencillo declarar y utilizar variables, pero aunque sea un procedimiento simple, hay que tener una serie de conceptos previos muy claros antes de continuar para evitar futuras confusiones, sobre todo si estamos acostumbrados a otros lenguajes más tradicionales.</p>
+<h3 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">&para;</a></h3>
+<p>En programación, las <strong>variables</strong> son espacios donde se puede guardar información y asociarla a un determinado nombre. De esta forma, cada vez que se consulte ese nombre posteriormente, te devolverá la información que contiene. La primera vez que se realiza este paso se suele llamar <strong>inicializar una variable</strong>.</p>
+<p>En Javascript, si una variable no está inicializada, contendrá un valor especial: <strong>undefined</strong>, que significa que su valor no está definido aún, o lo que es lo mismo, que no contiene información:</p>
+<pre><code>var a; // Declaramos una variable "a", pero no le asociamos ningún contenido.
+var b = 0; // Declaramos una variable de nombre "b", y le asociamos el número 0.
+
+console.log(b); // Muestra 0 (el valor guardado en la variable "b")
+console.log(a); // Muestra "undefined" (no hay valor guardado en la variable "a")
+</code></pre>
+<p>Como se puede observar, hemos utilizado <strong>console.log()</strong> para consultar la información que contienen las variables indicadas.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><strong>OJO</strong>: Las mayúsculas y minúsculas en los nombres de las variables de Javascript <strong>importan</strong>. No es lo mismo una variable llamada <strong>precio</strong> que una variable llamada <strong>Precio</strong>, pueden contener valores diferentes.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Si tenemos que declarar muchas variables consecutivas, una buena práctica suele ser escribir sólo el primer <strong>var</strong> y separar por comas las diferentes variables con sus respectivos contenidos (<em>método 3</em>). Aunque se podría escribir todo en una misma línea (<em>método 2</em>), con el último método el código es mucho más fácil de leer:</p>
+<pre><code>// Método 1: Declaración de variables de forma independiente
+var a = 3;
+var c = 1;
+var d = 2;
+
+// Método 2: Declaración masiva de variables con el mismo var
+var a = 3,
+  c = 1,
+  d = 2;
+
+// Método 3: Igual al anterior, pero mejorando la legibilidad del código
+var a = 3,
+  c = 1,
+  d = 2;
+</code></pre>
+<p>Como su propio nombre indica, una <strong>variable</strong> puede variar su contenido, ya que aunque contenga una cierta información, se puede volver a cambiar. A esta acción ya no se le llama inicializar una variable, sino <strong>declarar una variable</strong> (<em>o más concretamente, redeclarar</em>). En el código se puede diferenciar porque se omite el <strong>var</strong>:</p>
+<pre><code>var a = 40; // Inicializamos la variable "a" al valor 40.
+a = 50; // Ahora, hemos declarado que pasa a contener 50 en lugar de 40.
+</code></pre>
+<h4 id="ambitos-de-variables-var">Ámbitos de variables: var<a class="headerlink" href="#ambitos-de-variables-var" title="Permanent link">&para;</a></h4>
+<p>Cuando inicializamos una variable al principio de nuestro programa y le asignamos un valor, ese valor generalmente está disponible a lo largo de todo el programa. Sin embargo, esto puede variar dependiendo de múltiples factores. Se conoce como <strong>ámbito de una variable</strong> a la zona donde esa variable sigue existiendo.</p>
+<p>Por ejemplo, si consultamos el valor de una variable antes de inicializarla, no existe:</p>
+<pre><code>console.log(e); // Muestra "undefined", en este punto la variable "e" no existe
+var e = 40;
+console.log(e); // Aquí muestra 40, existe porque ya se ha inicializado anteriormente
+</code></pre>
+<p>En el ejemplo anterior, el ámbito de la variable <strong>e</strong> comienza a partir de su inicialización y "vive" hasta el final del programa. A esto se le llama <strong>ámbito global</strong> y es el ejemplo más sencillo. Más adelante veremos que se va complicando y a veces no resulta tan obvio saber en que ámbito se encuentra.</p>
+<p>En el enfoque tradicional de Javascript, es decir, cuando se utiliza la palabra clave <strong>var</strong> para declarar variables, existen dos ámbitos principales: <strong>ámbito global</strong> y <strong>ámbito a nivel de función</strong>.</p>
+<p>Observemos el siguiente ejemplo:</p>
+<pre><code>var a = 1;
+console.log(a); // Aquí accedemos a la "a" global, que vale 1
+
+function x() {
+  console.log(a); // En esta línea el valor de "a" es undefined
+  var a = 5; // Aquí creamos una variable "a" a nivel de función
+
+  console.log(a); // Aquí el valor de "a" es 5 (a nivel de función)
+  console.log(window.a); // Aquí el valor de "a" es 1 (ámbito global)
+}
+
+x(); // Aquí se ejecuta el código de la función x()
+console.log(a); // En esta línea el valor de "a" es 1
+</code></pre>
+<p>En el ejemplo anterior vemos que el valor de <strong>a</strong> dentro de una función no es el <code>1</code> inicial, sino que estamos en otro ámbito diferente donde la variable <strong>a</strong> anterior no existe: un <strong>ámbito a nivel de función</strong>. Mientras estemos dentro de una función, las variables inicializadas en ella estarán en el <strong>ámbito</strong> de la propia función.</p>
+<blockquote>
+<p><strong>OJO</strong>: Podemos utilizar el objeto especial <strong>window</strong> para acceder directamente al ámbito global independientemente de donde nos encontremos. Esto ocurre así porque las variables globales se almacenan dentro del objeto <strong>window</strong> (<em>la pestaña actual del navegador web</em>).</p>
+</blockquote>
+<pre><code>var a = 1;
+console.log(a); // Aquí accedemos a la "a" global, que vale 1
+
+function x() {
+  console.log(a); // En esta línea el valor de "a" es 1
+  a = 5; // Aquí creamos una variable "a" en el ámbito anterior
+
+  console.log(a); // Aquí el valor de "a" es 5 (a nivel de función)
+  console.log(window.a); // Aquí el valor de "a" es 5 (ámbito global)
+}
+
+x(); // Aquí se ejecuta el código de la función x()
+console.log(a); // En esta línea el valor de "a" es 5
+</code></pre>
+<p>En este ejemplo se omite el <strong>var</strong> dentro de la función, y vemos que en lugar de crear una variable en el ámbito de la función, se modifica el valor de la variable <strong>a</strong> a nivel global. Dependiendo de donde y como accedamos a la <strong>variable a</strong>, obtendremos un valor u otro.</p>
+<blockquote>
+<blockquote>
+<p>Siempre que sea posible se debería utilizar <strong>let</strong> y <strong>const</strong> (<em>ver a continuación</em>), en lugar de <strong>var</strong>. Declarar variables mediante <strong>var</strong> se recomienda en fases de aprendizaje o en el caso de que se quiera mantener compatibilidad con navegadores muy antiguos utilizando ECMAScript 5, sin embargo, hay estrategias mejores a seguir que utilizar <strong>var</strong> en la actualidad.</p>
+</blockquote>
+</blockquote>
+<h4 id="ambitos-de-variables-let">Ámbitos de variables: let<a class="headerlink" href="#ambitos-de-variables-let" title="Permanent link">&para;</a></h4>
+<p>En las versiones modernas de Javascript (<em>ES6 o ECMAScript 2015</em>) o posteriores, se introduce la palabra clave <strong>let</strong> en sustitución de <strong>var</strong>. Con ella, en lugar de utilizar los <strong>ámbitos globales y a nivel de función</strong> (<em>var</em>), utilizamos los ámbitos clásicos de programación: <strong>ámbito global y ámbito local</strong>.</p>
+<p>La diferencia se puede ver claramente en el uso de un <strong>bucle for</strong> con <strong>var</strong> y con <strong>let</strong>:</p>
+<pre><code>/** Opción 1: Bucle con let **/
+
+console.log("Antes: ", p);    // Antes: undefined
+for (let p = 0; p &lt; 3; p++)
+  console.log("- ", p);       // Durante: 0, 1, 2
+console.log("Después: ", p);  // Después: undefined
+
+/** Opción 2: Bucle con var **/
+
+console.log("Antes: ", p);    // Antes: undefined
+for (var p = 0; p &lt; 3; p++)
+  console.log("- ", p);       // Durante: 0, 1, 2
+console.log("Después: ", p);  // Después: 3 (WTF!)
+</code></pre>
+<p>Vemos que utilizando <strong>let</strong> la variable <strong>p</strong> sólo existe dentro del bucle, ámbito local, mientras que utilizando <strong>var</strong> la variable <strong>p</strong> sigue existiendo fuera del bucle, ya que debe tener un ámbito global o a nivel de función.</p>
+<h3 id="constantes">Constantes<a class="headerlink" href="#constantes" title="Permanent link">&para;</a></h3>
+<p>De forma tradicional, Javascript no incorporaba constantes. Sin embargo, en ECMAScript 2015 (<em>ES6</em>) se añade la palabra clave <strong>const</strong>, que inicializada con un valor concreto, permite crear variables con valores que no pueden ser cambiados.</p>
+<pre><code>const NAME = "Manz";
+console.log(NAME);
+</code></pre>
+<p>En el ejemplo anterior vemos un ejemplo de <strong>const</strong>, que funciona de forma parecida a <strong>let</strong>. Una buena práctica es escribir el nombre de la constante en mayúsculas, para identificar rápidamente que se trata de una constante y no una variable, cuando leemos código ajeno.</p>
+<blockquote>
+<p>Realmente, las <strong>constantes</strong> de Javascript son variables inicializadas a un valor específico y que no pueden redeclararse. No confundir con valores inmutables, ya que como veremos posteriormente, los objetos si pueden ser modificados aún siendo constantes.</p>
+</blockquote>
+<hr />
+<h2 id="objetos-basicos">Objetos básicos<a class="headerlink" href="#objetos-basicos" title="Permanent link">&para;</a></h2>
+<p>Uno de los aspectos más importantes del lenguaje Javascript es el concepto de <strong>objeto</strong>, puesto que prácticamente todo lo que utilizamos en Javascript, son objetos. Sin embargo, tiene ligeras diferencias con los objetos de otros lenguajes de programación, así que vamos a comenzar con una explicación sencilla y más adelante ampliaremos este tema en profundidad.</p>
+<h3 id="que-son-los-objetos">¿Qué son los objetos?<a class="headerlink" href="#que-son-los-objetos" title="Permanent link">&para;</a></h3>
+<p>En Javascript, existe un tipo de dato llamado <strong>objeto</strong>. No es más que una variable especial que puede contener más variables en su interior. De esta forma, tenemos la posibilidad de organizar múltiples variables de la misma temática dentro de un objeto. Veamos algunos ejemplos:</p>
+<p>En muchos lenguajes de programación, para crear un objeto se utiliza la palabra clave <code>new</code>. En Javascript también se puede hacer:</p>
+<pre><code>const objeto = new Object(); // Esto es un objeto «genérico» vacío
+</code></pre>
+<p>Sin embargo, siempre que podamos, en Javascript se prefiere utilizar lo que se llaman los <strong>literales</strong>, un método abreviado para crear objetos directamente, sin necesidad de utilizar la palabra <code>new</code>.</p>
+<h4 id="declaracion-de-un-objeto">Declaración de un objeto<a class="headerlink" href="#declaracion-de-un-objeto" title="Permanent link">&para;</a></h4>
+<p>Los literales de los objetos en Javascript son las llaves <code>{}</code>. Este ejemplo es equivalente al anterior, pero es más corto, rápido y cómodo, por lo que se aconseja declararlos así:</p>
+<pre><code>const objeto = {}; // Esto es un objeto vacío
+</code></pre>
+<p>Pero hasta ahora, solo hemos creado un objeto vacío. Vamos a crear un nuevo objeto, que contenga variables con información en su interior:</p>
+<pre><code>// Declaración del objeto
+const player = {
+  name: "Manz",
+  life: 99,
+  strength: 10,
+};
+</code></pre>
+<p>Estas variables dentro de los objetos se suelen denominar <strong>propiedades</strong>. Como se puede ver, un objeto en Javascript nos permite encapsular en su interior información relacionada, para posteriormente poder acceder a ella de forma más sencilla e intuitiva.</p>
+<h4 id="acceso-a-sus-propiedades">Acceso a sus propiedades<a class="headerlink" href="#acceso-a-sus-propiedades" title="Permanent link">&para;</a></h4>
+<p>Una vez tengamos un objeto, podemos acceder a sus propiedades de dos formas diferentes: a través de la notación con <strong>puntos</strong> o a través de la notación con <strong>corchetes</strong>.</p>
+<pre><code>// Notación con puntos
+console.log(player.name); // Muestra "Manz"
+console.log(player.life); // Muestra 99
+
+// Notación con corchetes
+console.log(player["name"]); // Muestra "Manz"
+console.log(player["life"]); // Muestra 99
+</code></pre>
+<p>El programador puede utilizar la notación que más le guste. La más utilizada en Javascript suele ser la <strong>notación con puntos</strong>, mientras que la notación con corchetes se suele conocer en otros lenguajes como «arrays asociativos».</p>
+<p>A algunos programadores puede resultarles confuso utilizar objetos con la notación de corchetes, ya que en otros lenguajes de programación los objetos y los arrays asociativos son cosas diferentes, y en Javascript ambos conceptos se mezclan.</p>
+<blockquote>
+<blockquote>
+<p>Hay ciertos casos en los que sólo se puede utilizar la <strong>notación con corchetes</strong>, como por ejemplo cuando se utilizan espacios en el nombre de la propiedad. Es imposible hacerlo con la notación con puntos.</p>
+</blockquote>
+</blockquote>
+<h4 id="anadir-propiedades">Añadir propiedades<a class="headerlink" href="#anadir-propiedades" title="Permanent link">&para;</a></h4>
+<p>También podemos añadir <strong>propiedades</strong> al <strong>objeto</strong> después de haberlo creado, aunque la sintaxis cambia ligeramente. Veamos un ejemplo equivalente al anterior:</p>
+<pre><code>// Declaración del objeto
+const player = {};
+
+// Añadimos mediante notación con puntos
+player.name = "Manz";
+player.life = 99;
+player.strength = 10;
+
+// Añadimos mediante notación con corchetes
+player["name"] = "Manz";
+player["life"] = 99;
+player["strength"] = 10;
+</code></pre>
+<p>Las <strong>propiedades</strong> del objeto pueden ser utilizadas como variables. De hecho, utilizar los objetos como elementos para organizar múltiples variables suele ser una buena práctica en Javascript.</p>
+<h3 id="tipos-de-objetos">Tipos de objetos<a class="headerlink" href="#tipos-de-objetos" title="Permanent link">&para;</a></h3>
+<p>Hasta ahora, solo hemos visto los objetos «genéricos», en Javascript conocidos como tipo , declarándolos con un <code>new Object()</code> o con un literal <code>{}</code>, dos formas equivalentes de hacer lo mismo. Al generar una variable de tipo , esa variable «hereda» una serie de métodos (<em>del objeto <code>Object</code> en este caso</em>).</p>
+<pre><code>const o = {};
+o.toString(); // Devuelve '[object Object]' (Un objeto de tipo Object)
+</code></pre>
+<p>En este ejemplo, <code>toString()</code> es uno de esos métodos que tienen todas las variables de tipo . Sin embargo, hasta ahora y sin saberlo, cuando creamos una variable de un determinado tipo de dato (<em>sea primitivo o no</em>), es también de tipo , ya que todas las variables heredan de este tipo de dato. Por lo tanto, nuestra variable tendrá no sólo los métodos de su tipo de dato, sino también los métodos heredados de :</p>
+<pre><code>const s = "hola";
+s.toString(); // Devuelve 'hola'
+</code></pre>
+<p>Más adelante, veremos los métodos que heredan las variables de tipo y comprobaremos que los objetos tienen detrás de si muchos más conceptos que los que hemos visto hasta ahora y que su definición es mucho más amplia.</p>
+<hr />
+<h2 id="variables-numericas-number">Variables numéricas (Number)<a class="headerlink" href="#variables-numericas-number" title="Permanent link">&para;</a></h2>
+<p>En Javascript crear variables numéricas es muy sencillo, pero hay que conocer bien como trabajar con ellas y los diferentes métodos de los que dispone.</p>
+<h3 id="que-es-una-variable-numerica">¿Qué es una variable numérica?<a class="headerlink" href="#que-es-una-variable-numerica" title="Permanent link">&para;</a></h3>
+<p>En Javascript, los <strong>números</strong> son uno de los tipos de datos básicos (<em>tipos primitivos</em>) que para crearlos, simplemente basta con escribirlos. No obstante, en Javascript todo son objetos, como veremos más adelante, y también se pueden declarar como si fueran un objeto:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Constructor</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>new Number(n)</code></td>
+<td align="left">Crea un objeto numérico a partir del número <code>n</code> pasado por parámetro.</td>
+</tr>
+<tr>
+<td align="left"><code>n</code></td>
+<td align="left">Simplemente, el número en cuestión. <strong>Notación preferida</strong>.</td>
+</tr>
+</tbody>
+</table>
+<p>Sin embargo, aunque existan varias formas de declararlos, no se suele utilizar la notación <code>new</code> con objetos primitivos ya que es bastante más tedioso y complicado que utilizar la notación de literales:</p>
+<pre><code>// Literales
+const n1 = 4;
+const n2 = 15.8;
+
+// Objetos
+const n1 = new Number(4);
+const n2 = new Number(15.8);
+</code></pre>
+<p>Cualquier parámetro pasado al <code>new Number()</code> que no sea un número, dará como resultado un valor <code>NaN</code> (<em>ver más adelante</em>).</p>
+<h3 id="constantes-numericas">Constantes numéricas<a class="headerlink" href="#constantes-numericas" title="Permanent link">&para;</a></h3>
+<p>Existe una serie de constantes definidas en relación a las variables numéricas. La mayoría de ellas establecen límites máximos y mínimos, veamos su significado:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Constante</th>
+<th align="left">Valor en Javascript</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>Number.POSITIVE_INFINITY</strong></td>
+<td align="left"><code>Infinity</code></td>
+<td align="left">Infinito positivo: <code>+∞</code></td>
+</tr>
+<tr>
+<td align="left"><strong>Number.NEGATIVE_INFINITY</strong></td>
+<td align="left"><code>-Infinity</code></td>
+<td align="left">Infinito negativo: <code>-∞</code></td>
+</tr>
+<tr>
+<td align="left"><strong>Number.MAX_VALUE</strong></td>
+<td align="left"><code>1.7976931348623157e+308</code></td>
+<td align="left">Valor más grande</td>
+</tr>
+<tr>
+<td align="left"><strong>Number.MIN_VALUE</strong></td>
+<td align="left"><code>5e-324</code></td>
+<td align="left">Valor más pequeño</td>
+</tr>
+<tr>
+<td align="left"><strong>Number.MAX_SAFE_INTEGER</strong></td>
+<td align="left"><code>9007199254740991</code></td>
+<td align="left">Valor seguro más grande</td>
+</tr>
+<tr>
+<td align="left"><strong>Number.MIN_SAFE_INTEGER</strong></td>
+<td align="left"><code>-9007199254740991</code></td>
+<td align="left">Valor seguro más pequeño</td>
+</tr>
+<tr>
+<td align="left"><strong>Number.EPSILON</strong></td>
+<td align="left"><code>2``-52</code></td>
+<td align="left">Número muy pequeño: <code>ε</code></td>
+</tr>
+<tr>
+<td align="left"><strong>Number.NaN</strong></td>
+<td align="left"><code>NaN</code></td>
+<td align="left">Not A Number</td>
+</tr>
+</tbody>
+</table>
+<p>La diferencia entre <code>Number.MAX_VALUE</code> y <code>Number.MAX_SAFE_INTEGER</code> es que, el primero es el <strong>valor máximo</strong> que es posible representar en Javascript. Por otro lado, el segundo es el <strong>valor máximo</strong> para realizar cálculos con seguridad en Javascript.</p>
+<blockquote>
+<p>Los lenguajes de programación están sujetos a la <a href="https://es.wikipedia.org/wiki/Precisi%C3%B3n">precisión numérica</a> debido a la forma interna en la que guardan valores numéricos. Si necesitamos realizar operaciones con muy alta precisión numérica en Javascript, se recomienda utilizar librerías como <a href="https://mikemcl.github.io/decimal.js/">decimal.js</a> o <a href="https://mikemcl.github.io/bignumber.js/">bigNumber.js</a>.</p>
+</blockquote>
+<h4 id="nan-not-a-number">NaN (Not A Number)<a class="headerlink" href="#nan-not-a-number" title="Permanent link">&para;</a></h4>
+<p>El acrónimo <code>NaN</code> es un valor especial de Javascript que significa <strong>Not A Number</strong> (<em>No es un número</em>). Este valor se usa para representar valores imposibles o indeterminados, como por ejemplo, resultados matemáticos de operaciones como:</p>
+<ul>
+<li><code>0 / 0</code> (Indeterminaciones)</li>
+<li><code>4 - 'a'</code> (Valores imposibles)</li>
+<li><code>NaN + 4</code> (Operaciones con <code>NaN</code> como operando)</li>
+</ul>
+<p>Este valor se utiliza habitualmente para detectar si una operación ha fallado o ha dado un valor no representable. Sin embargo, no podemos compararlo literalmente con <code>NaN</code>, sino que tenemos que usar la función <code>Number.isNaN()</code>:</p>
+<pre><code>let num = NaN;
+
+// La siguiente operación, contra toda lógica, es falsa
+num == NaN; // false
+
+// Se debe usar Number.isNaN() para comprobar si el valor es NaN
+Number.isNaN(num); // true
+
+// Si comprobamos el tipo de dato de NaN, nos dirá que es numérico
+typeof num; // number
+</code></pre>
+<p>Como se puede ver en la última línea del ejemplo anterior, mencionar que en Javascript, si comprobamos el tipo de dato de <code>NaN</code> con <strong>typeof</strong> nos dirá que es un número. Puede parecer ilógico que <strong>Not A Number</strong> sea un número, esto ocurre porque <code>NaN</code> está en un contexto numérico.</p>
+<blockquote>
+<p>En otras palabras, dentro de los tipos de datos numéricos, <code>NaN</code> es un conjunto de números que no se pueden representar.</p>
+</blockquote>
+<h3 id="comprobaciones-numericas">Comprobaciones numéricas<a class="headerlink" href="#comprobaciones-numericas" title="Permanent link">&para;</a></h3>
+<p>En Javascript tenemos varias funciones para conocer la naturaleza de una variable numérica (número finito, número entero, número seguro o si no es representable como un número). Las podemos ver a continuación en la siguiente tabla:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Método</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>Number.isFinite(<code>n</code>)</strong></td>
+<td align="left">Comprueba si <code>n</code> es un número finito.</td>
+</tr>
+<tr>
+<td align="left"><strong>Number.isInteger(<code>n</code>)</strong></td>
+<td align="left">Comprueba si <code>n</code> es un número entero.</td>
+</tr>
+<tr>
+<td align="left"><strong>Number.isSafeInteger(<code>n</code>)</strong></td>
+<td align="left">Comprueba si <code>n</code> es un número seguro.</td>
+</tr>
+<tr>
+<td align="left"><strong>Number.isNaN(<code>n</code>)</strong></td>
+<td align="left">Comprueba si <code>n</code> no es un número.</td>
+</tr>
+</tbody>
+</table>
+<p>Ten en cuenta que estas funciones devuelven un booleano (<em>valor de verdadero o falso</em>), lo que lo hace ideales para usarlas como condiciones en bucles o condicionales. A continuación veamos dos ejemplos para cada una de estas funciones:</p>
+<pre><code>// ¿Número finito?
+Number.isFinite(42); // true
+Number.isFinite(Infinity); // false, es infinito
+
+// ¿Número entero?
+Number.isInteger(5); // true
+Number.isInteger(4.6); // false, es decimal
+
+// ¿Número seguro?
+Number.isSafeInteger(1e15); // true
+Number.isSafeInteger(1e16); // false, es un valor no seguro
+
+// ¿No es un número?
+Number.isNaN(NaN); // true
+Number.isNaN(5); // false, es un número
+</code></pre>
+<p>Recuerda no hacer comprobaciones directas con NaN, sino utilizar la función <code>Number.isNaN()</code>.</p>
+<h3 id="conversion-numerica">Conversión numérica<a class="headerlink" href="#conversion-numerica" title="Permanent link">&para;</a></h3>
+<p>En muchos casos tendremos variables de texto que nos interesa convertir a número, para realizar operaciones posteriormente con ellas. Para ello, lo ideal es utilizar las funciones de parseo numérico, <code>parseInt()</code> y <code>parseFloat()</code>. Veamos cuales son y cómo se pueden utilizar:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Método</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>Number.parseInt(<code>s</code>)</strong></td>
+<td align="left">Convierte una cadena de texto <code>s</code> en un número entero.</td>
+</tr>
+<tr>
+<td align="left"><strong>Number.parseInt(<code>s</code>, <code>radix</code>)</strong></td>
+<td align="left">Idem al anterior, pero desde una base <code>radix</code>.</td>
+</tr>
+<tr>
+<td align="left"><strong>Number.parseFloat(<code>s</code>)</strong></td>
+<td align="left">Convierte una cadena de texto <code>s</code> en un número decimal.</td>
+</tr>
+<tr>
+<td align="left"><strong>Number.parseFloat(<code>s</code>, <code>radix</code>)</strong></td>
+<td align="left">Idem al anterior, pero desde una base <code>radix</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Para ilustrar esto, veamos un ejemplo con <code>parseInt()</code> cuando solo le pasamos un parámetro (<em>un texto</em>) que queremos convertir a número:</p>
+<pre><code>Number.parseInt("42"); // 42
+Number.parseInt("42€"); // 42
+Number.parseInt("Núm. 42"); // NaN
+Number.parseInt("A"); // NaN
+</code></pre>
+<p>Nota que la función <code>parseInt()</code> funciona perfectamente para variables de texto que contienen números o que empiezan por números. Esto es muy útil para eliminar unidades de variables de texto. Sin embargo, si la variable de texto comienza por un valor que no es numérico, <code>parseInt()</code> devolverá un <code>NaN</code>.</p>
+<blockquote>
+<p>Si lo que queremos es quedarnos con el número que aparece más adelante en la variable de texto, habrá que manipular ese texto con alguna de las funciones que veremos en el apartado de variables de texto.</p>
+</blockquote>
+<p>Veamos ahora que ocurre si utilizamos <code>parseInt()</code> con dos parámetros, donde el primero es el <strong>texto con el número</strong> y el segundo es la <strong>base numérica</strong> del número:</p>
+<pre><code>Number.parseInt("11101", 2); // 29 en binario
+Number.parseInt("31", 8); // 25 en octal
+Number.parseInt("FF", 16); // 255 en hexadecimal
+</code></pre>
+<p>Esta modalidad de <code>parseInt()</code> se suele utilizar cuando queremos pasar a base decimal un número que se encuentra en otra base (<em>binaria, octal, hexadecimal...</em>).</p>
+<blockquote>
+<p>Al igual que con <code>parseInt()</code> tenemos otra función llamada <code>parseFloat()</code>. Funciona exactamente igual a la primera, sólo que la primera está específicamente diseñada para utilizar con números enteros y la segunda para números decimales. Si utilizamos <code>parseInt()</code> con un número decimal, nos quedaremos sólo con la parte entera, mientras que <code>parseFloat()</code> la conservará.</p>
+</blockquote>
+<h3 id="representacion-numerica">Representación numérica<a class="headerlink" href="#representacion-numerica" title="Permanent link">&para;</a></h3>
+<p>Por último, en el caso de querer cambiar el tipo de representación numérica, podemos utilizar las siguientes funciones para alternar entre <strong>exponencial</strong> y <strong>punto fijo</strong>:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Método</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>.toExponential(<code>n</code>)</strong></td>
+<td align="left">Convierte el número a notación exponencial con <code>n</code> decimales.</td>
+</tr>
+<tr>
+<td align="left"><strong>.toFixed(<code>n</code>)</strong></td>
+<td align="left">Convierte el número a notación de punto fijo con <code>n</code> decimales.</td>
+</tr>
+<tr>
+<td align="left"><strong>.toPrecision(<code>p</code>)</strong></td>
+<td align="left">Utiliza <code>p</code> dígitos de precisión en el número.</td>
+</tr>
+</tbody>
+</table>
+<p>Observemos el siguiente ejemplo aplicando las funciones anteriores al número decimal <code>1.5</code>:</p>
+<pre><code>(1.5).toExponential(2); // "1.50e+0" en exponencial
+(1.5).toFixed(2); // "1.50" en punto fijo
+(1.5).toPrecision(1); // "2"
+</code></pre>
+<hr />
+<h2 id="operaciones-matematicas-math">Operaciones matemáticas (Math)<a class="headerlink" href="#operaciones-matematicas-math" title="Permanent link">&para;</a></h2>
+<p>Cuando trabajamos con Javascript, es posible realizar gran cantidad de <strong>operaciones matemáticas</strong> de forma nativa, sin necesidad de librerías externas. Para ello, haremos uso del objeto <code>Math</code>, un objeto interno de Javascript que tiene incorporadas ciertas constantes y métodos (<em>funciones</em>) para trabajar matemáticamente.</p>
+<h3 id="constantes-de-math">Constantes de Math<a class="headerlink" href="#constantes-de-math" title="Permanent link">&para;</a></h3>
+<p>El objeto <code>Math</code> de Javascript incorpora varias constantes que podemos necesitar en algunas operaciones matemáticas. Veamos su significado y valor aproximado:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Constante</th>
+<th align="left">Descripción</th>
+<th align="left">Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>Math.E</code></td>
+<td align="left"><a href="https://es.wikipedia.org/wiki/N%C3%BAmero_e">Número de Euler</a></td>
+<td align="left"><code>2.718281828459045</code></td>
+</tr>
+<tr>
+<td align="left"><code>Math.LN2</code></td>
+<td align="left"><a href="https://es.wikipedia.org/wiki/Logaritmo_natural">Logaritmo natural en base 2</a></td>
+<td align="left"><code>0.6931471805599453</code></td>
+</tr>
+<tr>
+<td align="left"><code>Math.LN10</code></td>
+<td align="left"><a href="https://es.wikipedia.org/wiki/Logaritmo_decimal">Logaritmo decimal</a></td>
+<td align="left"><code>2.302585092994046</code></td>
+</tr>
+<tr>
+<td align="left"><code>Math.LOG2E</code></td>
+<td align="left">Logaritmo base 2 de E</td>
+<td align="left"><code>1.4426950408889634</code></td>
+</tr>
+<tr>
+<td align="left"><code>Math.LOG10E</code></td>
+<td align="left">Logaritmo base 10 de E</td>
+<td align="left"><code>0.4342944819032518</code></td>
+</tr>
+<tr>
+<td align="left"><code>Math.PI</code></td>
+<td align="left"><a href="https://es.wikipedia.org/wiki/N%C3%BAmero_%CF%80">Número PI</a> o <code>Π</code></td>
+<td align="left"><code>3.141592653589793</code></td>
+</tr>
+<tr>
+<td align="left"><code>Math.SQRT1_2</code></td>
+<td align="left">Raíz cuadrada de &frac12;</td>
+<td align="left"><code>0.7071067811865476</code></td>
+</tr>
+<tr>
+<td align="left"><code>Math.SQRT2</code></td>
+<td align="left">Raíz cuadrada de 2</td>
+<td align="left"><code>1.4142135623730951</code></td>
+</tr>
+</tbody>
+</table>
+<p>Además de estas constantes, el objeto <code>Math</code> también nos proporciona gran cantidad de métodos o funciones para trabajar con números. Vamos a analizarlos.</p>
+<h3 id="metodos-matematicos">Métodos matemáticos<a class="headerlink" href="#metodos-matematicos" title="Permanent link">&para;</a></h3>
+<p>Los siguientes métodos matemáticos están disponibles en Javascript a través del objeto <code>Math</code>. Observa que algunos de ellos sólo están disponibles en <strong>ECMAScript 6</strong>:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Método</th>
+<th align="left">Descripción</th>
+<th align="left">Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>Math.abs(x)</code></td>
+<td align="left">Devuelve el <a href="https://es.wikipedia.org/wiki/Valor_absoluto">valor absoluto</a> de <code>x</code>.</td>
+<td align="left"><code>|x|</code></td>
+</tr>
+<tr>
+<td align="left"><code>Math.sign(x)</code></td>
+<td align="left">Devuelve el signo del número: <code>1</code> positivo, <code>-1</code> negativo</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>Math.exp(x)</code></td>
+<td align="left"><a href="https://es.wikipedia.org/wiki/Exponenciaci%C3%B3n">Exponenciación</a>. Devuelve el número <code>e</code> elevado a <code>x</code>.</td>
+<td align="left"><code>e``x</code></td>
+</tr>
+<tr>
+<td align="left"><code>Math.expm1(x)</code></td>
+<td align="left">Equivalente a <code>Math.exp(x) - 1</code>.</td>
+<td align="left"><code>e``x``-1</code></td>
+</tr>
+<tr>
+<td align="left"><code>Math.max(a, b, c...)</code></td>
+<td align="left">Devuelve el número más grande de los indicados por parámetro.</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>Math.min(a, b, c...)</code></td>
+<td align="left">Devuelve el número más pequeño de los indicados por parámetro.</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>Math.pow(base, exp)</code></td>
+<td align="left"><a href="https://es.wikipedia.org/wiki/Potenciaci%C3%B3n">Potenciación</a>. Devuelve el número <code>base</code> elevado a <code>exp</code>.</td>
+<td align="left"><code>base``exp</code></td>
+</tr>
+<tr>
+<td align="left"><code>Math.sqrt(x)</code></td>
+<td align="left">Devuelve la <a href="https://es.wikipedia.org/wiki/Ra%C3%ADz_cuadrada">raíz cuadrada</a> de <code>x</code>.</td>
+<td align="left"><code>√x</code></td>
+</tr>
+<tr>
+<td align="left"><code>Math.cbrt(x)</code></td>
+<td align="left">Devuelve la <a href="https://es.wikipedia.org/wiki/Ra%C3%ADz_c%C3%BAbica">raíz cúbica</a> de <code>x</code>.</td>
+<td align="left"><code>√``3``x</code></td>
+</tr>
+<tr>
+<td align="left"><code>Math.imul(a, b)</code></td>
+<td align="left">Equivalente a <code>a * b</code>, pero a nivel de bits.</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>Math.clz32(x)</code></td>
+<td align="left">Devuelve el número de ceros a la izquierda de <code>x</code> en binario (32 bits).</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p>Veamos algunos ejemplos aplicados a las mencionadas funciones anteriormente:</p>
+<pre><code>Math.abs(-5); // 5
+Math.sign(-5); // -1
+Math.exp(1); // e, o sea, 2.718281828459045
+Math.expm1(1); // 1.718281828459045
+Math.max(1, 40, 5, 15); // 40
+Math.min(5, 10, -2, 0); // -2
+Math.pow(2, 10); // 1024
+Math.sqrt(2); // 1.4142135623730951
+Math.cbrt(2); // 1.2599210498948732
+Math.imul(0xffffffff, 7); // -7
+
+// Ejemplo de clz32 (count leading zeros)
+const x = 1;
+"0".repeat(Math.clz32(x)) + x.toString(2);
+// Devuelve "00000000000000000000000000000001"
+</code></pre>
+<p>Existe uno más, <code>Math.random()</code> que merece una explicación más detallada, por lo que lo explicamos en el apartado siguiente.</p>
+<h4 id="metodo-mathrandom">Método Math.random()<a class="headerlink" href="#metodo-mathrandom" title="Permanent link">&para;</a></h4>
+<p>Uno de los métodos más útiles e interesantes del objeto <code>Math</code> es <code>Math.random()</code>.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Método</th>
+<th align="left">Descripción</th>
+<th align="left">Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>Math.random()</code></td>
+<td align="left">Devuelve un número al azar entre <code>0</code> y <code>1</code> con 16 decimales.</td>
+<td align="left">Este método nos da un número al azar entre los valores <code>0</code> y <code>1</code>, con 16 decimales. Normalmente, cuando queremos trabajar con números aleatorios, lo que buscamos es obtener un número entero al azar entre <code>a</code> y <code>b</code>. Para ello, se suele hacer lo siguiente:</td>
+</tr>
+</tbody>
+</table>
+<pre><code>// Obtenemos un número al azar entre [0, 1) con 16 decimales
+let x = Math.random();
+
+// Multiplicamos dicho número por el valor máximo que buscamos (5)
+x = x * 5;
+
+// Redondeamos inferiormente, quedándonos sólo con la parte entera
+x = Math.floor(x);
+</code></pre>
+<p>Este ejemplo nos dará en <code>x</code> un valor al azar entre <code>0</code> y <code>5</code> (<em>5 no incluido</em>). Lo hemos realizado por pasos para entenderlo mejor, pero podemos realizarlo directamente como se ve en el siguiente ejemplo:</p>
+<pre><code>// Número al azar entre 0 y 5 (no incluido)
+const x = Math.floor(Math.random() * 5);
+
+// Equivalente al anterior
+const x = ~~(Math.random() * 5);
+</code></pre>
+<p>Como se puede ver en el segundo ejemplo anterior, utilizamos el <a href="https://es.wikipedia.org/wiki/Operador_a_nivel_de_bits">operador a nivel de bits</a> <code>~~</code> (<em>doble negación</em>) como reemplazo rápido de <code>Math.floor()</code>, una función que realiza un redondeo inferior, y que veremos al final de este tema.</p>
+<blockquote>
+<p>Si lo deseas, puedes utilizar librerías específicas para generar números aleatorios como <a href="https://github.com/ckknight/random-js">random.js</a> o <a href="https://chancejs.com/">chance.js</a>, esta última permitiendo incluso generar otros tipos de datos aleatorios como textos, GUIDs o colores hexadecimales.</p>
+</blockquote>
+<h4 id="metodos-de-logaritmos">Métodos de logaritmos<a class="headerlink" href="#metodos-de-logaritmos" title="Permanent link">&para;</a></h4>
+<p>Javascript incorpora varios métodos en el objeto <code>Math</code> para trabajar con logaritmos. Desde <strong>logaritmos neperianos</strong> hasta <strong>logaritmos binarios</strong> a través de las siguientes funciones:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Método</th>
+<th align="left">Descripción y Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>Math.log(x)</code></td>
+<td align="left">Devuelve el <a href="https://es.wikipedia.org/wiki/Logaritmo_natural">logaritmo natural</a> en base <code>e</code> de <code>x</code>. <strong>Ej:</strong> <code>log``e</code> <code>x</code> o <code>ln x</code></td>
+</tr>
+<tr>
+<td align="left"><code>Math.log10(x)</code></td>
+<td align="left">Devuelve el <a href="https://es.wikipedia.org/wiki/Logaritmo_decimal">logaritmo decimal</a> (en base 10) de <code>x</code>. <strong>Ej:</strong> <code>log``10</code> <code>x</code> ó <code>log x</code></td>
+</tr>
+<tr>
+<td align="left"><code>Math.log2(x)</code></td>
+<td align="left">Devuelve el <a href="https://es.wikipedia.org/wiki/Logaritmo_binario">logaritmo binario</a> (en base 2) de <code>x</code>. <strong>Ej:</strong> <code>log``2</code> <code>x</code></td>
+</tr>
+<tr>
+<td align="left"><code>Math.log1p(x)</code></td>
+<td align="left">Devuelve el logaritmo natural de <code>(1+x)</code>. <strong>Ej:</strong> <code>log``e</code> <code>(1+x)</code> o <code>ln (1+x)</code></td>
+</tr>
+</tbody>
+</table>
+<p>A continuación, unos ejemplos de estas funciones aplicadas:</p>
+<pre><code>Math.log(2); // 0.6931471805599453
+Math.log10(2); // 0.3010299956639812
+Math.log2(2); // 1
+Math.log1p(2); // 1.0986122886681096
+</code></pre>
+<h4 id="metodos-de-redondeo">Métodos de redondeo<a class="headerlink" href="#metodos-de-redondeo" title="Permanent link">&para;</a></h4>
+<p>Como hemos visto anteriormente, es muy común necesitar métodos para <strong>redondear números</strong> y reducir el número de decimales o aproximar a una cifra concreta. Para ello, de forma nativa, Javascript proporciona los siguientes métodos de redondeo:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Método</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>Math.round(x)</code></td>
+<td align="left">Devuelve el redondeo de <code>x</code> (<em>el entero más cercano</em>)</td>
+</tr>
+<tr>
+<td align="left"><code>Math.ceil(x)</code></td>
+<td align="left">Devuelve el redondeo superior de <code>x</code>. (<em>el entero más alto</em>)</td>
+</tr>
+<tr>
+<td align="left"><code>Math.floor(x)</code></td>
+<td align="left">Devuelve el redondeo inferior de <code>x</code>. (<em>el entero más bajo</em>)</td>
+</tr>
+<tr>
+<td align="left"><code>Math.fround(x)</code></td>
+<td align="left">Devuelve el redondeo de <code>x</code> (<em>flotante con precisión simple</em>)</td>
+</tr>
+<tr>
+<td align="left"><code>Math.trunc(x)</code></td>
+<td align="left">Trunca el número <code>x</code> (<em>devuelve sólo la parte entera</em>)</td>
+</tr>
+</tbody>
+</table>
+<p>Veamos las diferencias de utilizar los diferentes <strong>métodos</strong> anteriores para redondear un número decimal y los resultados obtenidos:</p>
+<pre><code>// Redondeo natural, el más cercano
+Math.round(3.75); // 4
+Math.round(3.25); // 3
+
+// Redondeo superior (el más alto)
+Math.ceil(3.75); // 4
+Math.ceil(3.25); // 4
+
+// Redondeo inferior (el más bajo)
+Math.floor(3.75); // 3
+Math.floor(3.25); // 3
+
+// Redondeo con precisión
+Math.round(3.123456789); // 3
+Math.fround(3.123456789); // 3.1234567165374756
+
+// Truncado (sólo parte entera)
+Math.trunc(3.75); // 3
+Math.round(-3.75); // -4
+Math.trunc(-3.75); // -3
+</code></pre>
+<h4 id="metodos-trigonometricos">Métodos trigonométricos<a class="headerlink" href="#metodos-trigonometricos" title="Permanent link">&para;</a></h4>
+<p>Por último, y no por ello menos importante, el objeto <code>Math</code> nos proporciona de forma nativa una serie de métodos trigonométricos, que nos permiten hacer cálculos con operaciones como <strong>seno</strong>, <strong>coseno</strong>, <strong>tangente</strong> y relacionados:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Método</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>Math.sin(x)</code></td>
+<td align="left"><a href="https://es.wikipedia.org/wiki/Seno_(trigonometr%C3%ADa)">Seno</a> de <code>x</code></td>
+</tr>
+<tr>
+<td align="left"><code>Math.asin(x)</code></td>
+<td align="left"><a href="https://es.wikipedia.org/wiki/Arcoseno">Arcoseno</a> de <code>x</code></td>
+</tr>
+<tr>
+<td align="left"><code>Math.sinh(x)</code></td>
+<td align="left"><a href="https://es.wikipedia.org/wiki/Seno_hiperb%C3%B3lico">Seno hiperbólico</a> de <code>x</code></td>
+</tr>
+<tr>
+<td align="left"><code>Math.asinh(x)</code></td>
+<td align="left">Arcoseno hiperbólico de <code>x</code></td>
+</tr>
+<tr>
+<td align="left"><code>Math.cos(x)</code></td>
+<td align="left"><a href="https://es.wikipedia.org/wiki/Coseno">Coseno</a> de <code>x</code></td>
+</tr>
+<tr>
+<td align="left"><code>Math.acos(x)</code></td>
+<td align="left"><a href="https://es.wikipedia.org/wiki/Arcocoseno">Arcocoseno</a> de <code>x</code></td>
+</tr>
+<tr>
+<td align="left"><code>Math.cosh(x)</code></td>
+<td align="left"><a href="https://es.wikipedia.org/wiki/Coseno_hiperb%C3%B3lico">Coseno hiperbólico</a> de <code>x</code></td>
+</tr>
+<tr>
+<td align="left"><code>Math.acosh(x)</code></td>
+<td align="left">Arcocoseno hiperbólico de <code>x</code></td>
+</tr>
+<tr>
+<td align="left"><code>Math.tan(x)</code></td>
+<td align="left"><a href="https://es.wikipedia.org/wiki/Tangente_(trigonometr%C3%ADa)">Tangente</a> de <code>x</code></td>
+</tr>
+<tr>
+<td align="left"><code>Math.atan(x)</code></td>
+<td align="left"><a href="https://es.wikipedia.org/wiki/Arcotangente">Arcotangente</a> de <code>x</code></td>
+</tr>
+<tr>
+<td align="left"><code>Math.tanh(x)</code></td>
+<td align="left"><a href="https://es.wikipedia.org/wiki/Tangente_hiperb%C3%B3lica">Tangente hiperbólica</a> de <code>x</code></td>
+</tr>
+<tr>
+<td align="left"><code>Math.atanh(x)</code></td>
+<td align="left">Arcotangente hiperbólica de <code>x</code></td>
+</tr>
+<tr>
+<td align="left"><code>Math.atan2(x, y)</code></td>
+<td align="left">Arcotangente del conciente de <code>x/y</code></td>
+</tr>
+<tr>
+<td align="left"><code>Math.hypot(a, b..)</code></td>
+<td align="left">Devuelve la raíz cuadrada de <code>a``2</code> + <code>b``2</code> + ...</td>
+</tr>
+</tbody>
+</table>
+<h3 id="otras-librerias-matematicas">Otras librerías matemáticas<a class="headerlink" href="#otras-librerias-matematicas" title="Permanent link">&para;</a></h3>
+<p>Si de forma nativa no encuentras una forma sencilla de resolver el problema matemático que tienes entre manos, no olvides que existen una serie de <strong>librerías de terceros</strong> que pueden hacernos la vida más fácil a la hora de trabajar con otros valores matemáticos.</p>
+<p>A continuación, detallamos algunas de ellas:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Librería</th>
+<th align="left">Descripción</th>
+<th align="left">GitHub</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="http://mathjs.org/">Math.js</a></td>
+<td align="left">Librería matemática de propósito general.</td>
+<td align="left"><a href="https://github.com/josdejong/mathjs">josdejong/mathjs</a></td>
+</tr>
+<tr>
+<td align="left">Fraction.js</td>
+<td align="left">Librería matemática para trabajar con fracciones.</td>
+<td align="left"><a href="https://github.com/infusion/Fraction.js">infusion/Fraction.js</a></td>
+</tr>
+<tr>
+<td align="left">Polynomial.js</td>
+<td align="left">Librería matemática para trabajar con polinomios.</td>
+<td align="left"><a href="https://github.com/infusion/Polynomial.js">infusion/Polynomial.js</a></td>
+</tr>
+<tr>
+<td align="left">Complex.js</td>
+<td align="left">Librería matemática para trabajar con números complejos.</td>
+<td align="left"><a href="https://github.com/infusion/Complex.js/">infusion/Complex.js</a></td>
+</tr>
+<tr>
+<td align="left">Angles.js</td>
+<td align="left">Librería matemática para trabajar con ángulos.</td>
+<td align="left"><a href="https://github.com/infusion/Angles.js">infusion/Angles.js</a></td>
+</tr>
+<tr>
+<td align="left">BitSet.js</td>
+<td align="left">Librería matemática para trabajar con vectores de bits.</td>
+<td align="left"><a href="https://github.com/infusion/BitSet.js">infusion/BitSet.js</a></td>
+</tr>
+</tbody>
+</table>
+<p>Habrás comprobado que, al contrario que muchos otros objetos de Javascript, en estas ocasiones hemos indicado explícitamente el objeto, por ejemplo <code>Math.round(numero)</code>, en lugar de hacerlo sobre la variable: <code>numero.round()</code>. Esto ocurre porque <strong>Math</strong> es un objeto con métodos y constantes <strong>estáticas</strong>, algo que veremos en profundidad en futuros temas.</p>
+<hr />
+<h2 id="variables-de-texto-string">Variables de texto (String)<a class="headerlink" href="#variables-de-texto-string" title="Permanent link">&para;</a></h2>
+<p>En Javascript y en el mundo del desarrollo web, una de las tareas que más solemos hacer es manejar cadenas de texto y realizando tareas con ellas. Por lo tanto, tenemos que familiarizarnos con el tipo de dato .</p>
+<h3 id="que-es-un-string">¿Qué es un string?<a class="headerlink" href="#que-es-un-string" title="Permanent link">&para;</a></h3>
+<p>En programación, cuando hablamos de una varible que posee información de texto, decimos que su tipo de dato es . En Javascript, es muy sencillo crear una variable de texto, hay dos formas de hacerlo:</p>
+<p>Constructor|Descripción
+:---|:---|
+<code>new String(s)</code>|Crea un objeto de texto a partir del texto <code>s</code> pasado por parámetro.
+<code>'s'</code>|Simplemente, el texto entre comillas. <strong>Notación preferida</strong>.</p>
+<p>Los son tipos de datos primitivos, y como tal, es más sencillo utilizar los literales que la notación con <code>new</code>. Para englobar los textos, se pueden utilizar <strong>comillas simples</strong> <code>'</code>, <strong>comillas dobles</strong> <code>"</code> o <strong>backticks</strong> <code>`</code> (<em>ver más adelante</em>).</p>
+<blockquote>
+<p>Aunque es posible utilizar comillas simples o comillas dobles en los , se recomienda decantarse por uno de los dos estilos y no mezclarlos. Muchas empresas o equipos de desarrollo tienen guías de estilos para delimitar cuál utilizar.</p>
+</blockquote>
+<p>A continuación, un ejemplo de declaración de variables de texto en Javascript:</p>
+<pre><code>// Literales
+const texto1 = "¡Hola a todos!";
+const texto2 = "Otro mensaje de texto";
+
+// Objeto
+const texto1 = new String("¡Hola a todos!");
+const texto2 = new String("Otro mensaje de texto");
+</code></pre>
+<p>A diferencia de otros lenguajes de programación, que separan el tipo de dato (<em>cadena de texto</em>) del tipo de dato <strong>char</strong> (<em>un solo carácter</em>), Javascript los mantiene a ambos dentro del tipo de dato , por lo que una variable, aunque sólo contenga un carácter, sigue siendo un .</p>
+<h4 id="propiedades">Propiedades<a class="headerlink" href="#propiedades" title="Permanent link">&para;</a></h4>
+<p>Al crear una variable con contenido de texto, o sea un , automáticamente, esa variable pasa a tener a su disposición todas las propiedades y métodos disponibles para este tipo de dato, por lo que podemos utilizarlos en nuestro código como iremos viendo a continuación.</p>
+<p>Propiedad|Descripción
+:---|:---|
+<code>.length</code>|Devuelve el número de carácteres de la variable de tipo string en cuestión.</p>
+<p>En el caso de los strings, solo tenemos una propiedad, <code>.length</code>, que devuelve el tamaño de la variable de texto en cuestión. Nótese en los siguientes ejemplos que se han utilizado directamente, sin necesidad de guardarlos en una variable antes:</p>
+<pre><code>"Hola".length; // 4
+"Adiós".length; // 5
+"".length; // 0
+"¡Yeah!".length; // 6
+</code></pre>
+<p>Pero las características más interesantes de los strings se encuentran en los métodos de dicho tipo de dato. Ten en cuenta que, en las variables de texto, los métodos se ejecutan sobre el propio texto del , devolviendo información modificada a partir de este. Vamos a dar un repaso a los métodos que existen.</p>
+<h4 id="metodos-de-posiciones">Métodos de posiciones<a class="headerlink" href="#metodos-de-posiciones" title="Permanent link">&para;</a></h4>
+<p>En primer lugar existen varios métodos que permiten darnos información sobre la <strong>posición</strong> o <strong>ubicación</strong> que ocupa un determinado carácter o texto. Esta posición también suele denominarse <strong>índice</strong>. Veamos detalladamente dicho métodos:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Método</th>
+<th align="left">Descripción</th>
+<th align="left">Oper.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>.charAt(pos)</code></td>
+<td align="left">Devuelve el carácter en la posición <code>pos</code> de la variable.</td>
+<td align="left"><code>[]</code></td>
+</tr>
+<tr>
+<td align="left"><code>.concat(str1, str2...)</code></td>
+<td align="left">Devuelve el texto de la variable unido a <code>str1</code>, a <code>str2</code>...</td>
+<td align="left"><code>+</code></td>
+</tr>
+<tr>
+<td align="left"><code>.indexOf(str)</code></td>
+<td align="left">Devuelve la primera posición del texto <code>str</code>.</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>.indexOf(str, from)</code></td>
+<td align="left">Idem al anterior, partiendo desde la posición <code>from</code>.</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>.lastIndexOf(str, from)</code></td>
+<td align="left">Idem al anterior, pero devuelve la última posición.</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p>El método <code>.charAt(pos)</code> nos permite comprobar que carácter se encuentra en la posición <code>pos</code> del texto. Este método devolverá un con dicho carácter. En caso de pasarle una posición que no existe o imposible (<em>negativa</em>), simplemente nos devolverá un <strong>vacío</strong>. El valor por defecto de <code>pos</code> es <code>0</code>.</p>
+<p>No obstante, es preferible utilizar el operador <code>[]</code> para obtener el carácter que ocupa una posición, ya que es más corto y rápido de utilizar y mucho más claro. La diferencia respecto a <code>charAt()</code> es que el operador <code>[]</code> devuelve si en esa posición no existe ningún carácter.</p>
+<pre><code>"Manz".charAt(0); // 'M'
+"Manz".charAt(1); // 'a'
+"Manz".charAt(10); // ''
+"Manz"[0]; // 'M'
+"Manz"[1]; // 'a'
+"Manz"[10]; // undefined
+</code></pre>
+<p>El método <code>.concat(str1, str2...)</code> permite concatenar (<em>unir</em>) los textos pasados por parámetros al de la propia variable. Al igual que el método anterior, es preferible utilizar el operador <code>+</code>, ya que es mucho más rápido y legible. Mucho cuidado con utilizar el operador <code>+</code>, ya que depende de los tipos de datos con los que se usen puede producir un efecto diferente. El operador <code>+</code> usado con realiza concatenaciones, mientras que usado con realiza sumas.</p>
+<pre><code>"Manz".concat("i", "to"); // 'Manzito'
+"Manz" + "i" + "to"; // 'Manzito'
+"Manz" + 4 + 5; // 'Manz45'
+10 + 5 + 4 + 5; // 24
+</code></pre>
+<p>Por último, nos queda el método <code>indexOf(str, from)</code>, que es la función opuesta a <code>charAt()</code>. La función <code>indexOf(str)</code> buscará el subtexto <code>str</code> en nuestra variable y nos devolverá un con la <strong>posición</strong> de la primera aparición de dicho subtexto. En caso de no encontrarlo, devolverá <code>-1</code>. El parámetro <code>from</code> es opcional, y es la posición en la que empezará a buscar, que por defecto (<em>si no se suministra</em>) es <code>0</code>.</p>
+<pre><code>"LenguajeJS, página de Javascript".indexOf("n"); // 2
+"LenguajeJS, página de Javascript".indexOf("n", 3); // 16
+"LenguajeJS, página de Javascript".indexOf("n", 17); // -1
+"LenguajeJS, página de Javascript".lastIndexOf("n"); // 16
+"LenguajeJS, página de Javascript".lastIndexOf("n", 3); // 2
+</code></pre>
+<p>El método <code>lastIndexOf(str, from)</code> funciona exactamente igual que el anterior, sólo que realiza la búsqueda de la <strong>última aparición</strong> en lugar de la primera aparición.</p>
+<h4 id="metodos-para-busquedas">Métodos para búsquedas<a class="headerlink" href="#metodos-para-busquedas" title="Permanent link">&para;</a></h4>
+<p>Los siguientes métodos se utilizan para realizar búsquedas o comprobaciones de subtextos en el texto de un :</p>
+<table>
+<thead>
+<tr>
+<th align="left">Método</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>.startsWith(s, from)</code></td>
+<td align="left">Comprueba si el texto comienza por <code>s</code> desde la posición <code>from</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.endsWith(s, to)</code></td>
+<td align="left">Comprueba si el texto hasta la posición <code>to</code>, termina por <code>s</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.includes(s, from)</code></td>
+<td align="left">Comprueba si el texto contiene el subtexto <code>s</code> desde la posición <code>from</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.search(regex)</code></td>
+<td align="left">Busca si hay un patrón que encaje con <code>regex</code> y devuelve la posición.</td>
+</tr>
+<tr>
+<td align="left"><code>.match(regex)</code></td>
+<td align="left">Idem a la anterior, pero devuelve las coincidencias encontradas.</td>
+</tr>
+</tbody>
+</table>
+<p>Por ejemplo, el método <code>startsWith(str, from)</code> devolverá <code>true</code> si la variable comienza por el texto proporcionado en <code>str</code>. Si además se indica el parámetro opcional <code>from</code>, empezará en la posición <code>from</code> del . De la misma forma, el método <code>endsWith()</code> comprueba cuando un acaba en <code>str</code>, y el método <code>includes()</code> comprueba si el subtexto dado está incluído en el .</p>
+<p>Algunos ejemplos:</p>
+<pre><code>"Manz".startsWith("M"); // true ('Manz' empieza por 'M')
+"Manz".startsWith("a", 1); // true ('anz' empieza por 'a')
+"Manz".endsWith("o"); // false ('Manz' no acaba en 'o')
+"Manz".endsWith("n", 3); // true ('Man' acaba en 'n')
+"Manz".includes("an"); // true ('Manz' incluye 'an')
+"Manz".includes("M", 1); // false ('anz' no incluye 'M')
+</code></pre>
+<p>Por otro lado, los métodos <code>search()</code> y <code>match()</code> realizan búsquedas más potentes y flexibles con . La diferencia de cada una es que, mientras el método <code>search()</code> devuelve la posición, <code>matches()</code> devuelve un con las coincidencias.</p>
+<pre><code>// La expresión regular /o/g busca globalmente las "o" en el texto
+
+"Hola a todos".search(/o/g); // 1, porque la primera "o" está en la posición 1
+"Hola a todos".match(/o/g); // ['o', 'o', 'o'], las 3 "o" que encuentra
+</code></pre>
+<p>Las <strong>expresiones regulares</strong> permiten realizar cosas mucho más avanzadas que las que se muestran en este ejemplo, por lo tanto, las abordaremos en temas posteriores.</p>
+<h4 id="metodos-para-transformar">Métodos para transformar<a class="headerlink" href="#metodos-para-transformar" title="Permanent link">&para;</a></h4>
+<p>En Javascript podemos utilizar algunos métodos para modificar un realizando alguna operación de transformación. En esta tabla tenemos dichos métodos:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Método</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>.repeat(n)</code></td>
+<td align="left">Devuelve el texto de la variable repetido <code>n</code> veces.</td>
+</tr>
+<tr>
+<td align="left"><code>.toLowerCase()</code></td>
+<td align="left">Devuelve el texto de la variable en minúsculas.</td>
+</tr>
+<tr>
+<td align="left"><code>.toUpperCase()</code></td>
+<td align="left">Devuelve el texto de la variable en mayúsculas.</td>
+</tr>
+<tr>
+<td align="left"><code>.trim()</code></td>
+<td align="left">Devuelve el texto sin espacios a la izquierda y derecha.</td>
+</tr>
+<tr>
+<td align="left"><code>.trimStart()</code></td>
+<td align="left">Devuelve el texto sin espacios a la izquierda.</td>
+</tr>
+<tr>
+<td align="left"><code>.trimEnd()</code></td>
+<td align="left">Devuelve el texto sin espacios a la derecha.</td>
+</tr>
+<tr>
+<td align="left"><code>.replace(str|regex, newstr)</code></td>
+<td align="left">Reemplaza la primera aparición del texto <code>str</code> por <code>newstr</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.replaceAll(str|regex, newstr)</code></td>
+<td align="left">Reemplaza todas las apariciones del texto <code>str</code> por <code>newstr</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.replace(str|regex, func)</code></td>
+<td align="left">Idem a <code>.replace()</code>, pero reemplazando por la devolución de <code>func</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.substr(ini, len)</code></td>
+<td align="left">Devuelve el subtexto desde la posición <code>ini</code> hasta <code>ini+len</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.substring(ini, end)</code></td>
+<td align="left">Devuelve el subtexto desde la posición <code>ini</code> hasta <code>end</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.slice(ini, end)</code></td>
+<td align="left">Idem a <code>.substr()</code> con <a href="https://stackoverflow.com/a/2243835">leves diferencias</a>.</td>
+</tr>
+<tr>
+<td align="left"><code>.split(sep|regex, limit)</code></td>
+<td align="left">Separa el texto usando <code>sep</code> como separador, en <code>limit</code> fragmentos.</td>
+</tr>
+<tr>
+<td align="left"><code>.padStart(len, str)</code></td>
+<td align="left">Rellena el principio de la cadena con <code>str</code> hasta llegar al tamaño <code>len</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.padEnd(len, str)</code></td>
+<td align="left">Rellena el final de la cadena con <code>str</code> hasta llegar al tamaño <code>len</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>El método <code>repeat(n)</code> devuelve como el texto repetido <code>n</code> veces. Por otro lado, los métodos <code>toLowerCase()</code> y <code>toUpperCase()</code> devuelven el texto convertido todo a minúsculas o todo a mayúsculas respectivamente:</p>
+<pre><code>"Na".repeat(5); // 'NaNaNaNaNa'
+"MANZ".toLowerCase(); // 'manz'
+"manz".toUpperCase(); // 'MANZ'
+"    Hola  ".trim(); // 'Hola'
+</code></pre>
+<p>Por último, el método <code>trim()</code>, informalmente traducido como «afeitar» se encarga de devolver el texto eliminando los espacios sobrantes que hay a la izquierda o a la derecha del texto (<em>y sólo esos, nunca los que hay entre palabras</em>). De la misma forma, <code>trimStart()</code> y <code>trimEnd()</code> realizan la misma tarea sólo a la izquierda y sólo a la derecha respectivamente.</p>
+<h5 id="reemplazar-textos">Reemplazar textos<a class="headerlink" href="#reemplazar-textos" title="Permanent link">&para;</a></h5>
+<p>Uno de los métodos más interesantes de transformación de es el <code>replace(str, newstr)</code>. Su funcionalidad más básica, como se ve en el primer ejemplo, se trata de devolver el texto en cuestión, reemplazando el texto <code>str</code> por <code>newstr</code> (<em>¡y solo la primera aparición!</em>):</p>
+<pre><code>"Amigo".replace("A", "Ene"); // 'Enemigo'
+"Dispara".replace("a", "i"); // 'Dispira' (sólo reemplaza la primera aparición)
+"Dispara".replace(/a/g, "i"); // 'Dispiri' (reemplaza todas las ocurrencias)
+</code></pre>
+<p>Si lo que nos interesa es reemplazar todas las apariciones, tendremos que hacer uso de las <strong>expresiones regulares</strong>, que veremos en temas posteriores a este. A grandes rasgos, en el tercer ejemplo anterior, en lugar de indicar el string <code>'a'</code> indicamos la expresión regular <code>/a/g</code> que buscará todas las apariciones de <code>a</code> de forma global (<em>todas las ocurrencias</em>).</p>
+<blockquote>
+<p>Desde <strong>ECMAScript</strong> {.es2021} es posible utilizar <code>replaceAll()</code> para reemplazar <strong>todas</strong> las ocurrencias de un texto o de una expresión regular. Funciona exactamente igual que <code>replace()</code>, sólo que reemplaza todas las ocurrencias en vez de solamente la primera.</p>
+</blockquote>
+<p>Además, el método <code>replace()</code> nos permite indicar, como segundo parámetro una en lugar de un , permitiendo utilizar dicha función para realizar un proceso más complejo al reemplazar, en lugar de simplemente reemplazar por un . Sin embargo, para aprender a utilizar esta funcionalidad, antes tendremos que aprender los <strong>callbacks</strong>, que veremos también más adelante.</p>
+<h5 id="extraer-subtextos">Extraer subtextos<a class="headerlink" href="#extraer-subtextos" title="Permanent link">&para;</a></h5>
+<p>Otras de las operaciones fundamentales de los es la posibilidad de extraer pequeños fragmentos de texto de textos más grandes. Para ello tenemos dos aproximaciones para realizarlo: con el método <code>substr()</code> o con el método <code>substring()</code>.</p>
+<p>En el primer caso, el método <code>substr(ini, len)</code> nos solicita dos parámetros, <code>ini</code>, que es la posición inicial del subtexto, y <code>len</code>, que es el tamaño o longitud que tendrá el texto. De esta forma, <code>substr(2, 4)</code> extrae el fragmento de texto desde la posición <code>2</code> y desde esa posición <code>4</code> posiciones más. En el caso de omitirse el parámetro <code>len</code>, se devuelve el subtexto hasta el final del texto original:</p>
+<pre><code>"Submarino".substr(3); // 'marino' (desde el 3 en adelante)
+"Submarino".substr(3, 1); // 'm'      (desde el 3, hasta el 3+1)
+"Submarino".substring(3); // 'marino' (desde el 3 en adelante)
+"Submarino".substring(3, 6); // 'mar'    (desde el 3, hasta el 6)
+</code></pre>
+<p>Por otro lado, el método <code>substring(ini, end)</code> extrae el fragmento de texto desde la posición <code>ini</code> hasta la posición <code>end</code>. De igual forma al anterior, si se omite el parámetro <code>end</code>, el subtexto abarcará hasta el final del texto original.</p>
+<h5 id="crear-arrays-a-partir-de-textos">Crear Arrays a partir de textos<a class="headerlink" href="#crear-arrays-a-partir-de-textos" title="Permanent link">&para;</a></h5>
+<p>Otro método muy útil es <code>split(sep)</code>, un método que permite <strong>dividir</strong> un por el substring <code>sep</code> como separador, devolviendo un array con cada una de las partes divididas. Es muy útil para <strong>crear arrays</strong>, o dividir en diferentes secciones textos que tienen <strong>separadores</strong> repetidos como podrían ser comas, puntos o pipes:</p>
+<pre><code>"1.2.3.4.5".split("."); // ['1', '2', '3', '4', '5'] (5 elementos)
+"Hola a todos".split(" "); // ['Hola', 'a', 'todos'] (3 elementos)
+"Código".split(""); // ['C', 'ó', 'd', 'i', 'g', 'o'] (6 elementos)
+</code></pre>
+<p>En el último ejemplo, el separador es una <strong>cadena vacía</strong>, es decir, «ningún carácter». Si le indicamos a <code>split()</code> que separe por «ningún carácter», lo que hace es hacer una división en su unidad mínima, carácter por carácter.</p>
+<blockquote>
+<blockquote>
+<p>En el tema de los arrays veremos un método llamado <code>join()</code> que es justo el opuesto de <code>split()</code>. Si <strong>split</strong> separa un string en varios y los mete en un array, <strong>join</strong> une varios elementos de un array añadiéndole un separador y lo convierte en string.</p>
+</blockquote>
+</blockquote>
+<h5 id="relleno-de-cadenas">Relleno de cadenas<a class="headerlink" href="#relleno-de-cadenas" title="Permanent link">&para;</a></h5>
+<p>Otra transformación interesante con los es la resultante de utilizar métodos como <code>padStart(len, str)</code> o <code>padEnd(len, str)</code>. Ambos métodos toman dos parámetros: <code>len</code> la longitud deseada del resultante y <code>str</code> el carácter a utilizar como relleno.</p>
+<p>El objetivo de ambas funciones es devolver un nuevo con la información original existente, pero ampliando su tamaño a <code>len</code> y rellenando el resto con <code>str</code>, al principio si se usa <code>padStart()</code> o al final si se usa <code>padEnd()</code>:</p>
+<pre><code>"5".padStart(6, "0"); // '000005'
+"A".padEnd(5, "·"); // 'A····'
+</code></pre>
+<blockquote>
+<p>Estos métodos resultan especialmente interesantes para formatear horas, como por ejemplo en el caso que queremos que las cifras menores a 10 aparezcan en formato <code>00</code> en lugar de <code>0</code>.</p>
+</blockquote>
+<h4 id="metodos-unicode">Métodos Unicode<a class="headerlink" href="#metodos-unicode" title="Permanent link">&para;</a></h4>
+<p><strong>Unicode</strong> es el nombre por el que se conoce al sistema moderno de codificación de carácteres que se usa en informática. A grandes rasgos, cada carácter como podría ser la <code>A</code>, la <code>B</code> o cualquier otro, tiene su representación <strong>Unicode</strong>, que se basa en un código o <strong>code point</strong>.</p>
+<p>Por ejemplo, el carácter <strong>A</strong> corresponde al código Unicode <code>U+0041</code>. Este <code>0041</code> realmente está en hexadecimal, por lo que <code>0x0041</code> en decimal sería igual a <code>65</code>. Existen muchísimos códigos, ya que cualquier carácter existente, tiene su propio código Unicode. En Javascript, tenemos dos métodos interesantes relacionado con este tema:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Método</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>String.fromCharCode(num)</code></td>
+<td align="left">Devuelve el carácter del valor <strong>unicode</strong> indicado en <code>num</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.charCodeAt(pos)</code></td>
+<td align="left">Devuelve el valor <strong>unicode</strong> del carácter de la posición <code>pos</code> del texto.</td>
+</tr>
+</tbody>
+</table>
+<p>El primero de ellos es un método estático, por lo que hay que escribir directamente <code>String.fromCharCode()</code> y no utilizarlo desde una variable. Para usar este método, le pasamos un <code>num</code> por parámetro, que indicará el número o código Unicode al que queremos hacer referencia, y el método nos devolverá un con el carácter Unicode en cuestión:</p>
+<pre><code>String.fromCharCode(65); // 'A' (65 es el código U+0041 en decimal)
+String.fromCharCode(0x0041); // 'A' (0x0041 es el código U+0041 en hexadecimal)
+"A".charCodeAt(0); // 65
+"A".charCodeAt(0).toString(16); // 41
+</code></pre>
+<p>Por otro lado, el método <code>charCodeAt()</code> es la operación inversa a <code>String.fromCharCode()</code> con algún extra. A <code>charCodeAt(pos)</code> le pasamos una posición con <code>pos</code> por parámetro. Esto buscará el carácter de la posición <code>pos</code> del y nos devolverá su código Unicode (<em>por defecto, en decimal</em>). Si queremos pasarlo a otra base numérica, podemos hacer uso del método <code>toString(base)</code> indicando <code>16</code> como <code>base</code>.</p>
+<p>Observa a continuación que, los famosos <strong>emojis</strong> (<em>por ejemplo</em>), son realmente una combinación de 2 códigos Unicode:</p>
+<pre><code>// El valor unicode del emoji 🐦 es (55357, 56358)
+emoji = "🐦";
+codigos = [];
+
+for (let i = 0; i &lt; emoji.length; i++) {
+  codigos.push(emoji.charCodeAt(i));
+}
+
+String.fromCharCode(...codigos); // '🐦' (Usamos desestructuración, ver más adelante)
+</code></pre>
+<p>Observa que modificando el último código Unicode, podemos obtener diferentes <strong>emojis</strong>:</p>
+<pre><code>String.fromCharCode(55357, 56358); // '🐦'
+String.fromCharCode(55357, 56359); // '🐧'
+String.fromCharCode(55357, 56360); // '🐨'
+("\u0041"); // 'A'
+("\ud83d\udc28"); // '🐨'
+</code></pre>
+<p>Una forma rápida de escribir <strong>carácteres Unicode</strong> es utilizando la secuencia de escape <code>\u</code> seguida del código Unicode en hexadecimal del caracter en cuestión, como se ve en los dos últimos ejemplos anteriores.</p>
+<h3 id="interpolacion-de-variables">Interpolación de variables<a class="headerlink" href="#interpolacion-de-variables" title="Permanent link">&para;</a></h3>
+<p>En <strong>ECMAScript</strong> se introduce una interesante mejora en la manipulación general de , sobre todo respecto a la legibilidad de código.</p>
+<p>Hasta ahora, si queríamos concatenar el valor de algunas variables con textos predefinidos por nosotros, teníamos que hacer algo parecido a esto:</p>
+<pre><code>const sujeto = "frase";
+const adjetivo = "concatenada";
+"Una " + sujeto + " bien " + adjetivo; // 'Una frase bien concatenada'
+</code></pre>
+<p>A medida que añadimos más variables, el código se hace bastante menos claro y más complejo de leer, especialmente si tenemos que añadir arrays, introducir comillas simples que habría que escapar con <code>\'</code> o combinar comillas simples con dobles, etc...</p>
+<p>Para evitarlo, se introducen las <strong>backticks</strong> (<em>comillas hacia atrás</em>), que nos permiten <strong>interpolar</strong> el valor de las variables sin tener que cerrar, concatenar y abrir la cadena de texto continuamente:</p>
+<pre><code>const sujeto = "frase";
+const adjetivo = "concatenada";
+`Una ${sujeto} mejor ${adjetivo}`; // 'Una frase mejor concatenada'
+</code></pre>
+<p>Esto es una funcionalidad muy simple, pero que mejora sustancialmente la calidad de código generado. Eso sí, recuerda que se introduce en <strong>ECMAScript 6</strong>, con todo lo que ello conlleva.</p>
+<hr />
+<h2 id="fechas-nativas-date">Fechas nativas (Date)<a class="headerlink" href="#fechas-nativas-date" title="Permanent link">&para;</a></h2>
+<p>En muchas ocasiones necesitaremos guardar o trabajar con fechas en nuestros programas. Una fecha tiene datos mixtos: día, mes y año, pero también puede ser más precisa y tener hora, minutos y/o segundos. Además, la hora puede estar en varios formatos.</p>
+<p>Toda esta información no se podría guardar en una sola variable numérica, y tampoco es apropiado guardar en formato de texto, porque luego no podríamos hacer cálculos de fechas con ella. Para ello, tenemos un objeto llamado <strong>Date</strong> que nos vendrá perfecto para estos casos.</p>
+<h3 id="que-es-el-tipo-de-dato-date">¿Qué es el tipo de dato Date?<a class="headerlink" href="#que-es-el-tipo-de-dato-date" title="Permanent link">&para;</a></h3>
+<p>Javascript nos provee de un tipo de dato llamado <strong>Date</strong>, con el que podemos trabajar facilmente con fechas de forma nativa y práctica. Sin embargo, trabajar con fechas no es fácil y la primera vez que tenemos que hacerlo es muy fácil equivocarse si no tenemos claros algunos conceptos.</p>
+<p>Lo primero es ver los constructores para saber como podemos construir una variable de tipo <strong>Date</strong>:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Constructor</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>new Date()</code></td>
+<td align="left">Obtiene la fecha del momento actual.</td>
+</tr>
+<tr>
+<td align="left"><code>new Date(str)</code></td>
+<td align="left">Convierte el texto con formato <code>YYYY/MM/DD HH:MM:SS</code> a fecha.</td>
+</tr>
+<tr>
+<td align="left"><code>new Date(num)</code></td>
+<td align="left">Convierte el número <code>num</code>, en formato <strong>Tiempo UNIX</strong>, a fecha UTC.</td>
+</tr>
+<tr>
+<td align="left"><code>new Date(y, m, d, h, min, s, ms)</code></td>
+<td align="left">Crea una fecha UTC a partir de componentes numéricos<code>*</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Podemos utilizar estas cuatro formas para crear fechas en Javascript. Observa que en algunos casos se menciona <strong>fecha UTC</strong>. De momento, vamos a obviar esta parte y más adelante profundizaremos en ella. Veamos algunos ejemplos para crear fechas con estos 4 constructores:</p>
+<pre><code>// Obtenemos la fecha actual y la guardamos en la variable f
+const f = new Date();
+
+// Obtenemos la fecha 30 de Enero de 2018, a las 23h 30m 14seg
+const f = new Date("2018/01/30 23:30:14");
+
+// Obtenemos la fecha del juicio final a partir de un timestamp o Tiempo UNIX
+new Date(872817240000);
+
+// Creamos una fecha pasando cada uno de sus componentes numéricos*
+new Date(y, m, d, h, min, s, ms);
+</code></pre>
+<blockquote>
+<blockquote>
+<p><strong>OJO</strong>: Mucho cuidado con los <strong>«componentes numéricos»</strong> mencionados en el último ejemplo. Si utilizamos el formato <code>new Date(y, m, d, h, min, s, ms)</code>, hay que saber que, como mínimo, los parámetros <code>y</code> (<em>año</em>) y <code>m</code> (<em>mes</em>) son <strong>obligatorios</strong>, el resto son parámetros opcionales.</p>
+</blockquote>
+</blockquote>
+<p>Además, si utilizamos este esquema, hay que tener en cuenta que hay ciertas características especiales:</p>
+<ul>
+<li>
+<p>El parámetro <code>m</code> (<em>mes</em>) se proporciona con valores no reales que se recalcularán. Es decir, si indicamos un <code>1</code> nos referimos a <strong>febrero</strong> y no a <strong>enero</strong>. Si queremos referirnos a <strong>enero</strong> tenemos que indicar un <code>0</code>.</p>
+</li>
+<li>
+<p>Si indicamos <strong>valores negativos</strong> contabilizamos hacia atrás. Por ejemplo, con <code>2018, -1</code> estaríamos indicando <strong>diciembre de 2017</strong>. De la misma forma, <code>2018, 12</code> haría referencia a <strong>enero de 2019</strong>. Lo mismo ocurre con otros parámetros; <code>2018, 0, 32</code> haría referencia al 1 de febrero de 2018.</p>
+</li>
+</ul>
+<h4 id="tiempo-unix">Tiempo UNIX<a class="headerlink" href="#tiempo-unix" title="Permanent link">&para;</a></h4>
+<p>El <strong>Tiempo UNIX</strong> (<em>o UNIX timestamp</em>) es un formato numérico utilizado para calcular una fecha en UNIX. Es una forma poco práctica y legible para humanos, pero muy eficiente en términos informáticos. Se trata de un número que representa la cantidad de <strong>segundos</strong> transcurridos desde la fecha <code>1/1/1970, a las 00:00:00</code>.</p>
+<p>Así pues, siendo números, resulta muy fácil trabajar y operar con ellos. Una fecha <code>A</code> y una fecha posterior <code>B</code>, si hacemos <code>B - A</code> nos devuelve el número de segundos transcurridos entre ambas fechas, con lo que se podría sacar la diferencia de tiempo.</p>
+<blockquote>
+<p>No obstante, el <strong>Tiempo UNIX</strong> sirve para trabajar con fechas a bajo nivel. Si lo deseas, al final del tema encontrarás una tabla con librerías más cómodas y prácticas para trabajar con fechas en Javascript.</p>
+</blockquote>
+<p>Existen dos métodos que se pueden utilizar para crear fechas, al margen de los constructores anteriores, sólo que estos devuelven directamente el <code>Tiempo UNIX</code> de la fecha especificada:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Método</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>Date.now()</code></td>
+<td align="left">Devuelve el <code>Tiempo UNIX</code> de la fecha actual. Equivalente a <code>+new Date()</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>Date.parse(str)</code></td>
+<td align="left">Convierte un de fecha a <code>Tiempo UNIX</code>. Equivalente a <code>+new Date(str)</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Veamos algunos ejemplos aplicados para entenderlos:</p>
+<pre><code>// Estas tres operaciones son equivalentes
+const f = Date.now();
+const f = +new Date();
+const f = new Date().getTime();
+
+// Estas tres operaciones son equivalentes
+const f = Date.parse("2018/10/30");
+const f = +new Date("2018/10/30");
+const f = new Date("2018/10/30").getTime();
+</code></pre>
+<ul>
+<li>
+<p>En el primer caso, utilizamos directamente los métodos estáticos <code>now()</code> y <code>parse()</code> para obtener el número con el <strong>tiempo Unix</strong>.</p>
+</li>
+<li>
+<p>En el segundo caso, creamos un objeto Date con <code>new Date()</code>, lo que devuelve una fecha. Sin embargo, en Javascript, podemos preceder a esa fecha con el símbolo <code>+</code>, obligándolo a evaluarlo de forma numérica, lo que hace que obtenga el <strong>tiempo Unix</strong> a partir de la fecha.</p>
+</li>
+<li>
+<p>En el tercer caso, escribimos en una línea dos acciones: crear la variable de fecha con <code>new Date()</code> y posteriormente, sobre esa fecha, hacemos un <code>getTime()</code>, que nos devuelve el <strong>tiempo Unix</strong> de un Date, como veremos más adelante.</p>
+</li>
+</ul>
+<h4 id="getters-obtener-fechas">Getters: Obtener fechas<a class="headerlink" href="#getters-obtener-fechas" title="Permanent link">&para;</a></h4>
+<p>Una vez hemos creado una fecha y tenemos el objeto , podemos trabajar muy facilmente con estas variables a través de sus sencillos métodos. Los siguientes son una lista de <strong>getters</strong>, funciones para obtener información, sobre la fecha almacenada:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Método</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>.getDay()</code></td>
+<td align="left">Devuelve el día de la semana: <strong>OJO:</strong> <code>0</code> Domingo, <code>6</code> Sábado.</td>
+</tr>
+<tr>
+<td align="left"><code>.getFullYear()</code></td>
+<td align="left">Devuelve el año con 4 cifras.</td>
+</tr>
+<tr>
+<td align="left"><code>.getMonth()</code></td>
+<td align="left">Devuelve la representación interna del mes. <strong>OJO:</strong> <code>0</code> Enero - <code>11</code> Diciembre.</td>
+</tr>
+<tr>
+<td align="left"><code>.getDate()</code></td>
+<td align="left">Devuelve el día del mes.</td>
+</tr>
+<tr>
+<td align="left"><code>.getHours()</code></td>
+<td align="left">Devuelve la hora. <strong>OJO:</strong> Formato militar; <code>23</code> en lugar de <code>11</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.getMinutes()</code></td>
+<td align="left">Devuelve los minutos.</td>
+</tr>
+<tr>
+<td align="left"><code>.getSeconds()</code></td>
+<td align="left">Devuelve los segundos.</td>
+</tr>
+<tr>
+<td align="left"><code>.getMilliseconds()</code></td>
+<td align="left">Devuelve los milisegundos.</td>
+</tr>
+<tr>
+<td align="left"><code>.getTime()</code></td>
+<td align="left">Devuelve el <a href="https://es.wikipedia.org/wiki/Tiempo_Unix">UNIX Timestamp</a>: segundos transcurridos desde <code>1/1/1970</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.getTimezoneOffset()</code></td>
+<td align="left">Diferencia horaria (<em>en min</em>) de la hora local respecto a UTC (ver más adelante).</td>
+</tr>
+</tbody>
+</table>
+<p>Algunos ejemplos del uso de estos métodos serían los siguientes:</p>
+<pre><code>const f = new Date("2018/01/30 15:30:10.999");
+
+f.getDay(); // 2 (Martes)
+f.getDate(); // 30
+f.getMonth(); // 0 (Enero)
+f.getFullYear(); // 2018
+f.getHours(); // 15
+f.getMinutes(); // 30
+f.getSeconds(); // 10
+f.getMilliseconds(); // 999
+f.getTimezoneOffset(); // 0
+f.getTime(); // 1517326210999 (Tiempo Unix)
+</code></pre>
+<p>Observa que Javascript no tiene forma de devolver, por ejemplo, el día de la semana o el mes en formato de texto. Sin embargo, ello se puede hacer de forma muy <strong>sencilla</strong> utilizando un array:</p>
+<pre><code>const MESES = [
+  "Enero",
+  "Febrero",
+  "Marzo",
+  "Abril",
+  "Mayo",
+  "Junio",
+  "Julio",
+  "Agosto",
+  "Septiembre",
+  "Octubre",
+  "Noviembre",
+  "Diciembre",
+];
+const f = new Date();
+
+MESES[f.getMonth()]; // Devuelve el mes actual en formato de texto
+</code></pre>
+<blockquote>
+<blockquote>
+<p><strong>Curiosidad</strong>: El método <code>getYear()</code> se utilizaba para devolver la fecha con formato de 2 cifras. Se dejó de usar debido a la llegada del <a href="https://es.wikipedia.org/wiki/Problema_del_a%C3%B1o_2000">efecto 2000</a>, reemplazándose por el método <code>getFullYear()</code> que usa el formato de 4 cifras.</p>
+</blockquote>
+</blockquote>
+<h4 id="setters-cambiar-fechas">Setters: Cambiar fechas<a class="headerlink" href="#setters-cambiar-fechas" title="Permanent link">&para;</a></h4>
+<p>De la misma forma que en el apartado anterior podemos obtener fechas específicas, con los <strong>setters</strong> podemos modificarlas o alterarlas.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Método</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>.setFullYear(year)</code></td>
+<td align="left">Altera el año de la fecha, cambiándolo por <code>year</code>. Formato de 4 dígitos.</td>
+</tr>
+<tr>
+<td align="left"><code>.setMonth(month)</code></td>
+<td align="left">Altera el mes de la fecha, cambiándolo por <code>month</code>. <strong>Ojo</strong>: <code>0-11</code> (Ene-Dic).</td>
+</tr>
+<tr>
+<td align="left"><code>.setDate(day)</code></td>
+<td align="left">Altera el día de la fecha, cambiándolo por <code>day</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.setHour(hour)</code></td>
+<td align="left">Altera la hora de la fecha, cambiándola por <code>hour</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.setMinutes(min)</code></td>
+<td align="left">Altera los minutos de la fecha, cambiándolos por <code>min</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.setSeconds(sec)</code></td>
+<td align="left">Altera los segundos de la fecha, cambiándolos por <code>sec</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.setMilliseconds(ms)</code></td>
+<td align="left">Altera los milisegundos de la fecha, cambiándolos por <code>ms</code>.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><strong>Nota</strong>: Además de cambiar la fecha del objeto en cuestión, estos métodos devuelven un en <strong>tiempo Unix</strong>, con la fecha modificada.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>De la misma forma que mencionamos anteriormente, hay que tener en cuenta que los valores pasados a estos métodos pueden recalcular fechas: <code>setMonth(0)</code> implica <code>Enero</code>, <code>setDate(0)</code> implica último día del mes anterior, <code>setDate(-1)</code> implica penúltimo día del mes anterior, etc...</p>
+<pre><code>const f = new Date("2018/01/30 15:30:10.999");
+
+f.setDate(15); // Cambia a 15/01/2018 15:30:10.999 (Devuelve 1516030210999)
+f.setMonth(1); // Cambia a 15/02/2018 15:30:10.999 (Devuelve 1518708610999)
+f.setFullYear(2020); // Cambia a 15/02/2020 15:30:10.999 (Devuelve 1581780610999)
+f.setHours(21); // Cambia a 15/02/2020 21:30:10.999 (Devuelve 1581802210999)
+f.setMinutes(00); // Cambia a 15/02/2020 21:00:10.999 (Devuelve 1581800410999)
+f.setSeconds(3); // Cambia a 15/02/2020 21:00:03.999 (Devuelve 1581800403999)
+f.setMilliseconds(79); // Cambia a 15/02/2020 21:00:03.079 (Devuelve 1581800403079)
+f.setTime(872817240000); // Cambia a 29/08/1997 02:14:00.000 (Devuelve 872817240000)
+</code></pre>
+<p>Ten en cuenta que los mismos métodos anteriores, soportan varios parámetros, para hacer más cómodo su utilización y no tener que estar usándolos uno por uno. Así por ejemplo, se puede usar <code>setFullYear()</code> para cambiar año, año y mes, o año, mes y día:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Método</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>.setFullYear(y, m, d)</code></td>
+<td align="left">Altera el año, mes y día de una fecha.</td>
+</tr>
+<tr>
+<td align="left"><code>.setMonth(m, d)</code></td>
+<td align="left">Altera el mes y día de una fecha.</td>
+</tr>
+<tr>
+<td align="left"><code>.setHour(h, m, s, ms)</code></td>
+<td align="left">Altera la hora, minutos, segundos y milisegundos.</td>
+</tr>
+<tr>
+<td align="left"><code>.setMinutes(m, s, ms)</code></td>
+<td align="left">Altera los minutos, segundos y milisegundos.</td>
+</tr>
+<tr>
+<td align="left"><code>.setSeconds(s, ms)</code></td>
+<td align="left">Altera los segundos y milisegundos.</td>
+</tr>
+<tr>
+<td align="left"><code>.setTime(ts)</code></td>
+<td align="left">Establece una fecha a partir del <strong>tiempo Unix</strong> <code>ts</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Por último, también tenemos a nuestra disposición el método setter <code>setTime(ts)</code>, que nos permite establecer una fecha a partir de un <strong>tiempo Unix</strong> <code>ts</code>. Es el equivalente a hacer un <code>new Date(ts)</code>.</p>
+<h3 id="representacion-de-fechas">Representación de fechas<a class="headerlink" href="#representacion-de-fechas" title="Permanent link">&para;</a></h3>
+<p>Otro detalle más delicado dentro del trabajo con fechas es a la hora de mostrar una fecha en un formato específico. Podemos utilizar el formato por defecto que nos ofrece Javascript, pero lo más habitual es que queramos hacerlo en otro diferente, utilizando nuestra configuración horaria, abreviaturas u otros detalles. En Javascript tenemos varios métodos (<em>muy limitados, eso sí</em>) para representar las fechas:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Método</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>Formato por defecto</strong></td>
+<td align="left"><code>Fri Aug 24 2018 00:23:31 GMT+0100</code></td>
+</tr>
+<tr>
+<td align="left"><code>.toDateString()</code></td>
+<td align="left">Devuelve formato sólo de fecha: <code>Fri Aug 24 2018</code></td>
+</tr>
+<tr>
+<td align="left"><code>.toLocaleDateString()</code></td>
+<td align="left">Idem al anterior, pero en el formato regional actual: <code>24/8/2018</code></td>
+</tr>
+<tr>
+<td align="left"><code>.toTimeString()</code></td>
+<td align="left">Devuelve formato sólo de hora: <code>00:23:24 GMT+0100</code> ...</td>
+</tr>
+<tr>
+<td align="left"><code>.toLocaleTimeString()</code></td>
+<td align="left">Idem al anterior, pero en el formato regional actual: <code>0:26:37</code></td>
+</tr>
+<tr>
+<td align="left"><code>.toISOString()</code></td>
+<td align="left">Devuelve la fecha en el formato <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>: <code>2018-08-23T23:27:29.380Z</code></td>
+</tr>
+<tr>
+<td align="left"><code>.toJSON()</code></td>
+<td align="left">Idem al anterior, pero asegurándose que será compatible con JSON.</td>
+</tr>
+<tr>
+<td align="left"><code>.toUTCString()</code></td>
+<td align="left">Devuelve la fecha, utilizando UTC (<em>ver más adelante</em>).</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>El método <code>toISOString()</code> devuelve un formato que intenta ser el estándar a la hora de manejar fechas en Internet o documentos en general. Básicamente, una regla mnemotécnica es pensar que se escriben desde magnitudes más altas (<em>año</em>) hasta las magnitudes más bajas (<em>milisegundos</em>). La fecha y la hora se separa con una <code>T</code> y cada componente con un <code>-</code> o un <code>:</code> dependiendo de si es fecha o es hora. Los milisegundos se separan siempre con <code>.</code>. La <code>Z</code> del final indica que es una fecha <code>UTC</code>.</p>
+</blockquote>
+<p>Existen algunas librerías interesantes que permiten trabajar muy fácilmente con la representación de fechas o incluso otros detalles. Lo comentaremos un poco más adelante.</p>
+<h3 id="utc-y-zonas-horarias">UTC y zonas horarias<a class="headerlink" href="#utc-y-zonas-horarias" title="Permanent link">&para;</a></h3>
+<p>Para facilitar las cosas, hasta ahora hemos obviado un tema bastante importante: las <strong>zonas horarias</strong>. Probablemente te habrás percatado de que podría ser necesario trabajar y manejar <strong>diferencias horarias</strong>, porque por ejemplo necesitamos utilizar diferentes horas locales de distintos lugares del planeta. Para manejar esto, Javascript permite indicar también la diferencia horaria respecto al <a href="https://es.wikipedia.org/wiki/Meridiano_de_Greenwich">meridiano Greenwich</a>, indicada como <code>GMT</code>.</p>
+<p>Por ejemplo, podemos tener una fecha A <code>2018/01/01 15:30:00 GMT+0000</code>, y una fecha B <code>2018/01/02 18:30:00 GMT+0200</code>. La fecha A no tiene diferencia horaria (GMT+0000), sin embargo, la fecha B si la tiene (GMT+0200), por lo que en Javascript al hacer un <code>new Date(str)</code> de dicha fecha, se recalcula automáticamente y se guarda la fecha modificada y sin diferencia horaria. En este caso, se le restan 2 horas a la fecha B.</p>
+<p>Es importante darse cuenta que, en Javascript, cuando usamos <code>new Date()</code> sin parámetros, obtendremos una fecha que <strong>puede</strong> incluir diferencias horarias:</p>
+<pre><code>const f = new Date(); // Mon Aug 27 2018 01:39:21 GMT+0100
+f.getTimezoneOffset(); // -60 (1 hora menos)
+</code></pre>
+<p>Sin embargo, si hacemos uso de <code>new Date(str)</code>, pasándole una fecha como parámetro de texto, automáticamente se recalcula la diferencia horaria, sumando/restando las horas, y se obtiene finalmente la fecha con diferencia horaria <strong>cero</strong>:</p>
+<pre><code>const f = new Date("2018/01/30 23:15:30 GMT+0100");
+f; // Tue Jan 30 2018 22:15:30 GMT+0000
+</code></pre>
+<p>En este caso, al recalcular y guardar la fecha/hora sin diferencias horarias, decimos que estamos utilizando el <strong>Tiempo Universal Coordinado</strong> o <a href="https://es.wikipedia.org/wiki/Tiempo_universal_coordinado">UTC</a>. También podemos utilizar el método estático <code>Date.UTC()</code> donde le podemos pasar los parámetros de los componentes numéricos de la fecha, tal cómo lo hacemos en el constructor <code>new Date(y, m, d, h, min, s, ms)</code> anteriormente mencionado.</p>
+<p>Además de lo anterior, recuerda que también tenemos todos los métodos <strong>Getters</strong> y <strong>Setters</strong> mencionados en su versión UTC. Por ejemplo, en el caso de <code>getHours()</code> tenemos una versión <code>getUTCHours()</code> que devuelve las horas de acuerdo al <strong>UTC</strong> (<em>Tiempo Universal Coordinado</em>).</p>
+<h3 id="librerias-para-fechas">Librerías para fechas<a class="headerlink" href="#librerias-para-fechas" title="Permanent link">&para;</a></h3>
+<p>En muchos casos, el objeto de Javascript puede quedarse corto para el usuario, que echa mucho de menos algunas funciones específicas, mayor comodidad al trabajar con fechas, o que simplemente necesita un mayor control.</p>
+<p>Existen múltiples librerías alternativas para trabajar con fechas, citamos algunas de ellas:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Librería</th>
+<th align="left">Descripción</th>
+<th align="left">GitHub</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="https://momentjs.com/">Moment.js</a></td>
+<td align="left">Manejo de fechas y horas en JS.</td>
+<td align="left"><a href="https://github.com/moment/moment/">moment/moment</a></td>
+</tr>
+<tr>
+<td align="left"><a href="https://date-fns.org/">date-fns</a></td>
+<td align="left">Moderna librería de fechas.</td>
+<td align="left"><a href="https://github.com/date-fns/date-fns">date-fns/date-fns</a></td>
+</tr>
+<tr>
+<td align="left">Day.js</td>
+<td align="left">Librería inmutable (2KB) alternativa a Moment.js</td>
+<td align="left"><a href="https://github.com/iamkun/dayjs">iamkun/dayjs</a></td>
+</tr>
+<tr>
+<td align="left"><a href="https://js-joda.github.io/js-joda/">js-joda</a></td>
+<td align="left">Librería inmutable de fechas para JS.</td>
+<td align="left"><a href="https://github.com/js-joda/js-joda">js-joda/js-joda</a></td>
+</tr>
+<tr>
+<td align="left"><a href="http://www.datejs.com/">Datejs</a></td>
+<td align="left">Librería alternativa para trabajar con fechas.</td>
+<td align="left"><a href="https://github.com/datejs/Datejs">datejs/Datejs</a></td>
+</tr>
+<tr>
+<td align="left">fecha</td>
+<td align="left">Librería ligera para formatear y parsear fechas.</td>
+<td align="left"><a href="https://github.com/taylorhakes/fecha">taylorhakes/fecha</a></td>
+</tr>
+</tbody>
+</table>
+<p>Con ellas, podrás trabajar con mayor comodidad o profundidad con fechas y horas en Javascript.</p>
+<hr />
+<h2 id="funciones">Funciones<a class="headerlink" href="#funciones" title="Permanent link">&para;</a></h2>
+<p>Una vez conocemos las bases de las funciones que hemos explicado en el tema de introducción <a href="/javascript/introduccion/funciones-basicas">funciones básicas</a>, podemos continuar avanzando dentro del apartado de las funciones. En Javascript, las <strong>funciones</strong> son uno de los tipos de datos más importantes, ya que estamos continuamente utilizándolas a lo largo de nuestro código.</p>
+<p>Y no, no me he equivocado ni he escrito mal el texto anterior; a continuación veremos que las funciones también pueden ser tipos de datos:</p>
+<pre><code>typeof function () {}; // 'function'
+</code></pre>
+<h3 id="creacion-de-funciones">Creación de funciones<a class="headerlink" href="#creacion-de-funciones" title="Permanent link">&para;</a></h3>
+<p>Hay varias formas de crear funciones en Javascript: por <strong>declaración</strong> (<em>la más usada por principiantes</em>), por <strong>expresión</strong> (<em>la más habitual en programadores con experiencia</em>) o mediante constructor de <strong>objeto</strong> (<em>no recomendada</em>):</p>
+<table>
+<thead>
+<tr>
+<th align="left">Constructor</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>function nombre(p1, p2...) { }</code></td>
+<td align="left">Crea una función mediante <strong>declaración</strong>.</td>
+</tr>
+<tr>
+<td align="left"><code>var nombre = function(p1, p2...) { }</code></td>
+<td align="left">Crea una función mediante <strong>expresión</strong>.</td>
+</tr>
+<tr>
+<td align="left"><code>new Function(p1, p2..., code);</code></td>
+<td align="left">Crea una función mediante un constructor de <strong>objeto</strong>.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="funciones-por-declaracion">Funciones por declaración<a class="headerlink" href="#funciones-por-declaracion" title="Permanent link">&para;</a></h5>
+<p>Probablemente, la forma más popular de estas tres, y a la que estaremos acostumbrados si venimos de otros lenguajes de programación, es la primera, a la <strong>creación de funciones por declaración</strong>. Esta forma permite declarar una función que existirá a lo largo de todo el código:</p>
+<pre><code>function saludar() {
+  return "Hola";
+}
+
+saludar(); // 'Hola'
+typeof saludar; // 'function'
+</code></pre>
+<p>De hecho, podríamos ejecutar la función <code>saludar()</code> incluso antes de haberla creado y funcionaría correctamente, ya que Javascript primero busca las declaraciones de funciones y luego procesa el resto del código.</p>
+<h5 id="funciones-por-expresion">Funciones por expresión<a class="headerlink" href="#funciones-por-expresion" title="Permanent link">&para;</a></h5>
+<p>Sin embargo, en Javascript es muy habitual encontrarse códigos donde los programadores «guardan funciones» dentro de variables, para posteriormente «ejecutar dichas variables». Se trata de un enfoque diferente, creación de funciones por <strong>expresión</strong>, que fundamentalmente, hacen lo mismo con algunas diferencias:</p>
+<pre><code>// El segundo "saludar" (nombre de la función) se suele omitir: es redundante
+const saludo = function saludar() {
+  return "Hola";
+};
+
+saludo(); // 'Hola'
+</code></pre>
+<p>Con este nuevo enfoque, estamos creando una función <strong>en el interior de una variable</strong>, lo que nos permitirá posteriormente ejecutar la variable (<em>como si fuera una función</em>). Observa que el nombre de la función (<em>en este ejemplo: saludar</em>) pasa a ser inútil, ya que si intentamos ejecutar <code>saludar()</code> nos dirá que no existe y si intentamos ejecutar <code>saludo()</code> funciona correctamente.</p>
+<p>¿Qué ha pasado? Ahora el nombre de la función pasa a ser el nombre de la variable, mientras que el nombre de la función desaparece y se omite, dando paso a lo que se llaman las <strong>funciones anónimas</strong> (<em>o funciones lambda</em>).</p>
+<h5 id="funciones-como-objetos">Funciones como objetos<a class="headerlink" href="#funciones-como-objetos" title="Permanent link">&para;</a></h5>
+<p>Como curiosidad, debes saber que se pueden declarar funciones como si fueran <strong>objetos</strong>. Sin embargo, es un enfoque que no se suele utilizar en producción. Simplemente es interesante saberlo para darse cuenta que en Javascript todo pueden ser objetos:</p>
+<pre><code>const saludar = new Function("return 'Hola';");
+
+saludar(); // 'Hola'
+</code></pre>
+<h4 id="funciones-anonimas">Funciones anónimas<a class="headerlink" href="#funciones-anonimas" title="Permanent link">&para;</a></h4>
+<p>Las <strong>funciones anónimas</strong> o funciones lambda son un tipo de funciones que se declaran sin nombre de función y se alojan en el interior de una variable y haciendo referencia a ella cada vez que queramos utilizarla:</p>
+<pre><code>// Función anónima "saludo"
+const saludo = function () {
+  return "Hola";
+};
+
+saludo; // ƒ () { return 'Hola'; }
+saludo(); // 'Hola'
+</code></pre>
+<p>Observa que en la última línea del ejemplo anterior, estamos <strong>ejecutando</strong> la variable, es decir, ejecutando la función que contiene la variable. Sin embargo, en la línea anterior hacemos referencia a la variable (<em>sin ejecutarla, no hay paréntesis</em>) y nos devuelve la función en sí.</p>
+<p>La diferencia fundamental entre las funciones por declaración y las funciones por expresión es que estas últimas sólo están disponibles a partir de la inicialización de la variable. Si «ejecutamos la variable» antes de declararla, nos dará un error.</p>
+<h4 id="callbacks">Callbacks<a class="headerlink" href="#callbacks" title="Permanent link">&para;</a></h4>
+<p>Ahora que conocemos las <strong>funciones anónimas</strong>, podremos comprender más fácilmente como utilizar <strong>callbacks</strong> (<em>también llamadas funciones callback o retrollamadas</em>). A grandes rasgos, un <strong>callback</strong> (<em>llamada hacia atrás</em>) es pasar una <strong>función B por parámetro</strong> a una <strong>función A</strong>, de modo que la función A puede ejecutar esa función B de forma genérica desde su código, y nosotros podemos definirlas desde fuera de dicha función:</p>
+<pre><code>// fB = Función B
+const fB = function () {
+  console.log("Función B ejecutada.");
+};
+
+// fA = Función A
+const fA = function (callback) {
+  callback();
+};
+
+fA(fB);
+</code></pre>
+<p>Esto nos podría permitir crear varias funciones para utilizar a modo de callback y reutilizarlas posteriormente con diferentes propósitos. De hecho, los <strong>callbacks</strong> muchas veces son la primera estrategia que se suele utilizar en Javascript para trabajar la asincronía, uno de los temas que veremos más adelante:</p>
+<pre><code>// fB = Función B (callback)
+const fB = function () {
+  console.log("Función B ejecutada.");
+};
+
+// fError = Función Error (callback)
+const fError = function () {
+  console.error("Error");
+};
+
+// fA = Función A
+const fA = function (callback, callbackError) {
+  const n = ~~(Math.random() * 5);
+  if (n &gt; 2) callback();
+  else callbackError();
+};
+
+fA(fB, fError); // Si ejecutamos varias veces, algunas darán error y otras no
+</code></pre>
+<p>Viendo este ejemplo, podemos planear ejecutar la función <code>fA()</code> cambiando los callbacks según nos interese, sin necesidad de crear funciones con el mismo código repetido una y otra vez. Además, en el caso de que las funciones <strong>callbacks</strong> sean muy cortas, muchas veces utilizamos directamente la función anónima, sin necesidad de guardarla en una variable previamente:</p>
+<pre><code>// fA = Función A
+const fA = function (callback, callbackError) {
+  const n = ~~(Math.random() * 5);
+  if (n &gt; 2) callback();
+  else callbackError();
+};
+
+fA(
+  function () {
+    console.log("Función B ejecutada.");
+  },
+  function () {
+    console.error("Error");
+  }
+);
+</code></pre>
+<p>Aunque, como se puede ver, se suele evitar para facilitar la legibilidad del código, y sólo se utiliza en casos muy específicos donde estás seguro que no vas a reutilizar la función callback o no te interesa guardarla en una variable.</p>
+<h4 id="funciones-autoejecutables">Funciones autoejecutables<a class="headerlink" href="#funciones-autoejecutables" title="Permanent link">&para;</a></h4>
+<p>Pueden existir casos en los que necesites crear una función y ejecutarla sobre la marcha. En Javascript es muy sencillo crear <strong>funciones autoejecutables</strong>. Básicamente, sólo tenemos que envolver entre paréntesis la función anónima en cuestión (<em>no necesitamos que tenga nombre, puesto que no la vamos a guardar</em>) y luego, ejecutarla:</p>
+<pre><code>// Función autoejecutable
+(function () {
+  console.log("Hola!!");
+})();
+
+// Función autoejecutable con parámetros
+(function (name) {
+  console.log(`¡Hola, ${name}!`);
+})("Manz");
+</code></pre>
+<p>De hecho, también podemos utilizar parámetros en dichas funciones autoejecutables. Observa que sólo hay que pasar dichos parámetros al final de la función autoejecutable.</p>
+<p>Ten en cuenta, que si la función autoejecutable devuelve algún valor con <code>return</code>, a diferencia de las <strong>funciones por expresión</strong>, en este caso lo que se almacena en la variable es el valor que devuelve la función autoejecutada:</p>
+<pre><code>const f = (function (name) {
+  return `¡Hola, ${name}!`;
+})("Manz");
+
+f; // '¡Hola, Manz!`
+typeof f; // 'string'
+</code></pre>
+<h4 id="clausuras">Clausuras<a class="headerlink" href="#clausuras" title="Permanent link">&para;</a></h4>
+<p>Las <strong>clausuras</strong> o cierres, es un concepto relacionado con las funciones y los ámbitos que suele costar comprender cuando se empieza en Javascript. Es importante tener las bases de funciones claras hasta este punto, lo que permitirá entender las bases de una clausura.</p>
+<p>A grandes rasgos, en Javascript, una clausura o cierre se define como una función que «encierra» variables en su propio ámbito (<em>y que continúan existiendo aún habiendo terminado la función</em>). Por ejemplo, veamos el siguiente ejemplo:</p>
+<pre><code>// Clausura: Función incr()
+const incr = (function () {
+  let num = 0;
+  return function () {
+    num++;
+    return num;
+  };
+})();
+
+typeof incr; // 'function'
+incr(); // 1
+incr(); // 2
+incr(); // 3
+</code></pre>
+<p>Tenemos una <strong>función anónima</strong> que es también una función autoejecutable. Aunque parece una función por expresión, no lo es, ya que la variable <code>incr</code> está guardando lo que devuelve la función anónima autoejecutable, que a su vez, es otra función diferente.</p>
+<p>La «magia» de las clausuras es que en el interior de la función autoejecutable estamos creando una variable <code>num</code> que se guardará en el ámbito de dicha función, por lo tanto existirá con el valor declarado: <code>0</code>.</p>
+<p>Por lo tanto, en la variable <code>incr</code> tenemos una función por expresión que además conoce el valor de una variable <code>num</code>, que sólo existe dentro de <code>incr</code>. Si nos fijamos en la función que devolvemos, lo que hace es incrementar el valor de <code>num</code> y devolverlo. Como la variable <code>incr</code> es una clausura y mantiene la variable en su propio ámbito, veremos que a medida que ejecutamos <code>incr()</code>, los valores de <code>num</code> (<em>que estamos devolviendo</em>) conservan su valor y se van incrementando.</p>
+<h3 id="arrow-functions">Arrow functions<a class="headerlink" href="#arrow-functions" title="Permanent link">&para;</a></h3>
+<p>Las <strong>Arrow functions</strong>, funciones flecha o «fat arrow» son una forma corta de escribir funciones que aparece en Javascript a partir de <strong>ECMAScript 6</strong>. Básicamente, se trata de reemplazar eliminar la palabra <code>function</code> y añadir <code>=&gt;</code> antes de abrir las llaves:</p>
+<pre><code>const func = function () {
+  return "Función tradicional.";
+};
+
+const func = () =&gt; {
+  return "Función flecha.";
+};
+</code></pre>
+<p>Sin embargo, las <strong>funciones flechas</strong> tienen algunas ventajas a la hora de simplificar código bastante interesantes:</p>
+<ul>
+<li>Si el cuerpo de la función sólo tiene una línea, podemos omitir las llaves (<em>{}</em>).</li>
+<li>Además, en ese caso, automáticamente se hace un <code>return</code> de esa única línea, por lo que podemos omitir también el <code>return</code>.</li>
+<li>En el caso de que la función no tenga parámetros, se indica como en el ejemplo anterior: <code>() =&gt;</code>.</li>
+<li>En el caso de que la función tenga un solo parámetro, se puede indicar simplemente el nombre del mismo: <code>e =&gt;</code>.</li>
+<li>En el caso de que la función tenga 2 ó más parámetros, se indican entre paréntesis: <code>(a, b) =&gt;</code>.</li>
+<li>Si queremos devolver un objeto, que coincide con la sintaxis de las llaves, se puede englobar con paréntesis: <code>({name: 'Manz'})</code>.</li>
+</ul>
+<p>Por lo tanto, el ejemplo anterior se puede simplificar aún más:</p>
+<pre><code>const func = () =&gt; "Función flecha."; // 0 parámetros: Devuelve "Función flecha"
+const func = (e) =&gt; e + 1; // 1 parámetro: Devuelve el valor de e + 1
+const func = (a, b) =&gt; a + b; // 2 parámetros: Devuelve el valor de a + b
+</code></pre>
+<p>Las <strong>funciones flecha</strong> hacen que el código sea mucho más legible y claro de escribir, mejorando la productividad y la claridad a la hora de escribir código.</p>
+<h4 id="ambito-lexico-de-this">Ámbito léxico de this<a class="headerlink" href="#ambito-lexico-de-this" title="Permanent link">&para;</a></h4>
+<p>Aunque aún no la hemos utilizado, una de las principales diferencias de las <strong>funciones flecha</strong> respecto a las funciones tradicionales, es el valor de la palabra clave <code>this</code>, que no siempre es la misma.</p>
+<p>Por ejemplo, si utilizamos una función de forma global en nuestro programa, no notaremos ninguna diferencia:</p>
+<pre><code>// Si son funciones globales
+const a = function () {
+  console.log(this);
+};
+const b = () =&gt; {
+  console.log(this);
+};
+
+a(); // Window
+b(); // Window
+</code></pre>
+<p>Sin embargo, si utilizamos una función en el interior de un objeto, como suele ser el caso más habitual, si encontraremos diferencias. Observa que en la primera función, donde se utiliza una función tradicional, el <code>this</code> devuelve el objeto padre de la función.</p>
+<p>Por otro lado, en la segunda función, donde se utiliza una función flecha, el <code>this</code> no devuelve el objeto padre de la función, sino que devuelve <code>Window</code>.</p>
+<pre><code>padre = {
+  a: function () {
+    console.log(this);
+  },
+  b: () =&gt; {
+    console.log(this);
+  },
+};
+
+padre.a(); // padre
+padre.b(); // Window
+</code></pre>
+<p>Esta es una diferencia clave que hay que tener bien en cuenta a la hora de trabajar con las <strong>funciones flecha</strong>. Una buena práctica es utilizar funciones tradicionales como las funciones de primer nivel y, luego, en su interior o en callbacks, utilizar funciones flecha.</p>
+<hr />
+<h2 id="arrays">Arrays<a class="headerlink" href="#arrays" title="Permanent link">&para;</a></h2>
+<p>A medida que trabajamos en nuestro código, se hace necesario agrupar valores en una misma variable, para representar conjuntos de datos con cierta relación entre sí. Para ello, tenemos la opción de crear <strong>objetos</strong>, o unas variables más sencillas llamadas <strong>arrays</strong>.</p>
+<h3 id="que-es-un-array">¿Qué es un array?<a class="headerlink" href="#que-es-un-array" title="Permanent link">&para;</a></h3>
+<p>Un es una colección o agrupación de elementos en una misma variable, cada uno de ellos ubicado por la posición que ocupa en el array. En Javascript, se pueden definir de varias formas:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Constructor</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>new Array(len)</code></td>
+<td align="left">Crea un array de <code>len</code> elementos .</td>
+</tr>
+<tr>
+<td align="left"><code>new Array(e1, e2...)</code></td>
+<td align="left">Crea un array con ninguno o varios elementos.</td>
+</tr>
+<tr>
+<td align="left"><code>[e1, e2...]</code></td>
+<td align="left">Simplemente, los elementos dentro de corchetes: <code>[]</code>. <strong>Notación preferida</strong>.</td>
+</tr>
+</tbody>
+</table>
+<p>Por ejemplo, podríamos tener un array que en su primera posición tenemos el 'a', en la segunda el 'b' y en la tercera el 'c'. En Javascript, esto se crearía de esta forma:</p>
+<pre><code>// Forma tradicional
+const array = new Array("a", "b", "c");
+
+// Mediante literales (preferida)
+const array = ["a", "b", "c"]; // Array con 3 elementos
+const empty = []; // Array vacío (0 elementos)
+const mixto = ["a", 5, true]; // Array mixto (string, number, boolean)
+</code></pre>
+<p>Al contrario que muchos otros lenguajes de programación, Javascript permite que se puedan realizar arrays de <strong>tipo mixto</strong>, no siendo obligatorio que todos los elementos sean del mismo tipo de dato (<em>en el ejemplo anterior,</em> ).</p>
+<blockquote>
+<blockquote>
+<p><strong>OJO</strong>: Al crear un array con <code>new Array(num)</code>, si solo indicamos un parámetro y <code>num</code> es un número, Javascript creará un array de <code>num</code> elementos sin definir. Es decir, <code>a = new Array(3)</code> sería equivalente a <code>a = [undefined, undefined, undefined]</code>. Esto no ocurre con su equivalente, <code>a = [3]</code>, donde estamos creando un array con un único elemento: <code>3</code>.</p>
+</blockquote>
+</blockquote>
+<h4 id="acceso-a-elementos">Acceso a elementos<a class="headerlink" href="#acceso-a-elementos" title="Permanent link">&para;</a></h4>
+<p>Al igual que los , saber el número elementos que tiene un array es muy sencillo. Sólo hay que acceder a la propiedad <code>.length</code>, que nos devolverá el número de elementos existentes en un array:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Método</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>.length</code></td>
+<td align="left">Devuelve el número de elementos del array.</td>
+</tr>
+<tr>
+<td align="left"><code>[pos]</code></td>
+<td align="left">Operador que devuelve el elemento número <code>pos</code> del array.</td>
+</tr>
+</tbody>
+</table>
+<p>Por otro lado, si lo que queremos es acceder a un elemento específico del array, no hay más que utilizar el operador <code>[]</code>, al igual que hacemos con los para acceder a un carácter concreto. En este caso, accedemos a la posición del elemento que queremos recuperar sobre el array:</p>
+<pre><code>const array = ["a", "b", "c"];
+
+array[0]; // 'a'
+array[2]; // 'c'
+array[5]; // undefined
+</code></pre>
+<p>Recuerda que las posiciones empiezan a contar desde <code>0</code> y que si intentamos acceder a una posición que no existe (<em>mayor del tamaño del array</em>), nos devolverá un .</p>
+<h4 id="anadir-o-eliminar-elementos">Añadir o eliminar elementos<a class="headerlink" href="#anadir-o-eliminar-elementos" title="Permanent link">&para;</a></h4>
+<p>Existen varias formas de añadir elementos a un array existente. Veamos los métodos que podemos usar para ello:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Método</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>.push(obj1, obj2...)</code></td>
+<td align="left">Añade uno o varios elementos al final del array. Devuelve tamaño del array.</td>
+</tr>
+<tr>
+<td align="left"><code>.pop()</code></td>
+<td align="left">Elimina y devuelve el último elemento del array.</td>
+</tr>
+<tr>
+<td align="left"><code>.unshift(obj1, obj2...)</code></td>
+<td align="left">Añade uno o varios elementos al inicio del array. Devuelve tamaño del array.</td>
+</tr>
+<tr>
+<td align="left"><code>.shift()</code></td>
+<td align="left">Elimina y devuelve el primer elemento del array.</td>
+</tr>
+<tr>
+<td align="left"><code>.concat(obj1, obj2...)</code></td>
+<td align="left">Concatena los elementos (o elementos de los arrays) pasados por parámetro.</td>
+</tr>
+</tbody>
+</table>
+<p>En los arrays, Javascript proporciona métodos tanto para insertar o eliminar elementos <strong>por el final</strong> del array: <code>push()</code> y <code>pop()</code>, como para insertar o eliminar elementos <strong>por el principio</strong> del array: <code>unshift()</code> y <code>shift()</code>. Salvo por esto, funcionan exactamente igual.</p>
+<p>El método de inserción, <code>push()</code> o <code>unshift()</code> inserta los elementos pasados por parámetro en el array y devuelve el tamaño actual que tiene el array después de la inserción. Por otro lado, los métodos de extracción, <code>pop()</code> o <code>shift()</code>, extraen y devuelven el elemento.</p>
+<pre><code>const array = ["a", "b", "c"]; // Array inicial
+
+array.push("d"); // Devuelve 4. Ahora array = ['a', 'b', 'c', 'd']
+array.pop(); // Devuelve 'd'. Ahora array = ['a', 'b', 'c']
+
+array.unshift("Z"); // Devuelve 4. Ahora array = ['Z', 'a', 'b', 'c']
+array.shift(); // Devuelve 'Z'. Ahora array = ['a', 'b', 'c']
+</code></pre>
+<p>Además, al igual que en los , tenemos el método <code>concat()</code>, que nos permite concatenar los elementos pasados por parámetro en un array. Se podría pensar que los métodos <code>.push()</code> y <code>concat()</code> funcionan de la misma forma, pero no es exactamente así. Veamos un ejemplo:</p>
+<pre><code>const array = [1, 2, 3];
+array.push(4, 5, 6); // Devuelve 6. Ahora array = [1, 2, 3, 4, 5, 6]
+array.push([7, 8, 9]); // Devuelve 7. Ahora array = [1, 2, 3, 4, 5, 6, [7, 8, 9]]
+
+const array = [1, 2, 3];
+array = array.concat(4, 5, 6); // Devuelve 6. Ahora array = [1, 2, 3, 4, 5, 6]
+array = array.concat([7, 8, 9]); // Devuelve 9. Ahora array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+</code></pre>
+<p>Observa un detalle muy importante. El método <code>concat()</code>, a diferencia de <code>push()</code>, no modifica el array sobre el cuál trabajamos y al que le añadimos los elementos, sino que simplemente lo devuelve. Al margen de esto, observa que en el caso de pasar un array por parámetro, <code>push()</code> lo inserta como un array, mientras que <code>concat()</code> inserta cada uno de sus elementos.</p>
+<blockquote>
+<blockquote>
+<p>También hay que tener cuidado al utilizar el operador <code>+</code> con los arrays. A diferencia de lo que quizás puede parecer intuitivo, utilizando este operador no se añaden los elementos al array, sino que se convierten los arrays en string y luego se concatenan. Veremos más sobre estas <strong>conversiones implícitas</strong> en temas posteriores.</p>
+</blockquote>
+</blockquote>
+<h3 id="creacion-de-arrays">Creación de arrays<a class="headerlink" href="#creacion-de-arrays" title="Permanent link">&para;</a></h3>
+<p>Existen métodos para crear pequeños arrays derivados de otras variables u objetos. Es el caso de los métodos <code>slice()</code> y <code>splice()</code>. Luego, también hablaremos del método <code>join()</code> y el método estático <code>Array.from()</code>:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Método</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>.slice(ini, end)</code></td>
+<td align="left">Devuelve los elementos desde posición <code>ini</code> hasta <code>end</code> (excluído).</td>
+</tr>
+<tr>
+<td align="left"><code>.splice(ini, num)</code></td>
+<td align="left">Elimina y devuelve <code>num</code> elementos desde posición <code>ini</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.splice(ini, num, o1, o2...)</code></td>
+<td align="left">Idem. Además inserta <code>o1</code>, <code>o2</code>... en la posición <code>ini</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.join(sep)</code></td>
+<td align="left">Une los elementos del array por <code>sep</code> en un .</td>
+</tr>
+<tr>
+<td align="left"><code>Array.from(o, f, thisVal)</code></td>
+<td align="left">Crea un array a partir de <code>o</code> (algo similar a un array).</td>
+</tr>
+</tbody>
+</table>
+<p>El método <code>slice()</code> devuelve los elementos del array desde la posición <code>ini</code> hasta la posición <code>end</code>, permitiendo crear un nuevo array más pequeño con ese grupo de elementos. Recuerda que las posiciones empiezan a contar desde <code>0</code>. En el caso de que no se proporcione el parámetro <code>end</code>, se devuelven todos los elementos desde la posición <code>ini</code> hasta el final del array.</p>
+<p>Por otro lado, ten en cuenta que el array sobre el que realizamos el método <code>slice()</code> no sufre ninguna modificación, sólo se devuelve por parámetro el array creado. Diferente es el caso del método <code>splice()</code>, el cuál realiza algo parecido a <code>slice()</code> pero con una gran diferencia: <strong>modifica el array original</strong>. En el método <code>splice()</code> el segundo parámetro <code>num</code> no es la posición final del subarray, sino el tamaño del array final, es decir, el número de elementos que se van a obtener desde la posición <code>ini</code>.</p>
+<p>Por lo tanto, con el método <code>splice()</code>, devolvemos un array con los elementos desde la posición <code>ini</code> hasta la posición <code>ini</code>+<code>num</code>. El array original es modificado, ya que se eliminan los elementos desde la posición <code>ini</code> hasta la posición <code>ini</code>+<code>num</code>. Es posible también indicar una serie de parámetros opcionales después de los mencionados, que permitirán además de la extracción de elementos, <strong>insertar dichos elementos</strong> justo donde hicimos la extracción.</p>
+<p>Veamos un ejemplo ilustrativo:</p>
+<pre><code>const array = ["a", "b", "c", "d", "e"];
+
+// .slice() no modifica el array
+array.slice(2, 4); // Devuelve ['c', 'd']. El array no se modifica.
+
+// .splice() si modifica el array
+array.splice(2, 2); // Devuelve ['c', 'd']. Ahora array = ['a', 'b', 'e']
+array.splice(1, 0, "z", "x"); // Devuelve []. Ahora array = ['a', 'z', 'x', 'b', 'e']
+</code></pre>
+<p>A raíz de este último ejemplo, también podemos insertar elementos en una posición concreta del array de estas dos formas alternativas: utilizando <code>slice()</code> y <code>concat()</code> o utilizando <code>splice()</code> y una característica que veremos más adelante llamada <strong>desestructuración</strong>:</p>
+<pre><code>const a = [1, 2, 3, 8, 9, 10];
+a.slice(0, 3).concat([4, 5, 6, 7], a.slice(3, 6)); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+const a = [1, 2, 3, 8, 9, 10];
+a.splice(3, 0, ...[4, 5, 6, 7]); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+</code></pre>
+<blockquote>
+<p>En ciertos casos, nos podría interesar reducir el tamaño de un array para quedarnos con sus primeros elementos y descartar el resto. Hay una forma muy sencilla y eficiente que es modificar directamente el tamaño del array mediante <code>.length</code>.</p>
+</blockquote>
+<p>Por ejemplo, hacer un <code>a.length = 4</code> en un array de 8 elementos, reducirá el array a los primeros 4 elementos de una forma eficiente, ya que no crea un nuevo array, sino que reduce el tamaño del actual y descarta el resto de elementos.</p>
+<p>Además, también tenemos otro método con el que es posible crear un a partir de un . Se trata del método <code>split()</code> que vimos en el tema de los . En este caso, el método <code>join()</code> es su contrapartida. Con <code>join()</code> podemos crear un con todos los elementos del array, separándolo por el texto que le pasemos por parámetro:</p>
+<pre><code>const array = ["a", "b", "c"];
+
+array.join("-&gt;"); // Devuelve 'a-&gt;b-&gt;c'
+array.join("."); // Devuelve 'a.b.c'
+"a.b.c".split("."); // Devuelve ['a', 'b', 'c']
+"5.4.3.2.1".split("."); // Devuelve ['5', '4', '3', '2', '1']
+</code></pre>
+<p>Ten en cuenta que, como se puede ver en el último ejemplo, <code>split()</code> siempre devolverá los elementos como .</p>
+<p>Por último, mencionar también el método estático <code>Array.from()</code>. Aunque ahora no le encontraremos mucha utilidad, nos resultará muy interesante más adelante. Este método se suele utilizar para convertir variables «parecidas» a los arrays (<em>pero que no son arrays</em>) en arrays reales. Este el caso de variables como (<em>que pueden actuar como array de strings</em>) o de nodos de un documento (<em>elementos del DOM, como veremos en temas posteriores</em>):</p>
+<pre><code>Array.from("hola"); // ['h', 'o', 'l', 'a']
+Array.from(document.querySelector("body")); // [body.document]
+</code></pre>
+<p>De forma opcional, <code>Array.from(obj)</code> puede recibir dos parámetros más, al margen de <code>obj</code>: una función <code>f</code> y un parámetro <code>thisVal</code>. El funcionamiento de estos parámetros es similar al del método <code>.map()</code> que veremos en un tema posterior de <strong>Array functions</strong>.</p>
+<h4 id="busqueda-y-comprobacion">Búsqueda y comprobación<a class="headerlink" href="#busqueda-y-comprobacion" title="Permanent link">&para;</a></h4>
+<p>Existen varios métodos para realizar ciertas comprobaciones con arrays:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Método</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>Array.isArray(obj)</code></td>
+<td align="left">Comprueba si <code>obj</code> es un array. Devuelve <code>true</code> o <code>false</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.includes(obj, from)</code></td>
+<td align="left">Comprueba si <code>obj</code> es uno de los elementos incluidos en el array.</td>
+</tr>
+<tr>
+<td align="left"><code>.indexOf(obj, from)</code></td>
+<td align="left">Devuelve la posición de la primera aparición de <code>obj</code> desde <code>from</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.lastIndexOf(obj, from)</code></td>
+<td align="left">Devuelve la posición de la última aparición de <code>obj</code> desde <code>from</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>El primero de ellos, <code>Array.isArray(obj)</code> se utiliza para comprobar si <code>obj</code> es un array o no, devolviendo un booleano. Los otros tres métodos funcionan exactamente igual que sus equivalentes en los . El método <code>includes()</code> comprueba si el elemento <code>obj</code> pasado por parámetro es uno de los elementos que incluye el array, partiendo desde la posición <code>from</code>. Si se omite <code>from</code>, se parte desde <code>0</code>.</p>
+<pre><code>const array = [5, 10, 15, 20, 25];
+
+Array.isArray(array); // true
+array.includes(10); // true
+array.includes(10, 2); // false
+array.indexOf(25); // 4
+array.lastIndexOf(10, 0); // -1
+</code></pre>
+<p>Por otro lado, tenemos <code>indexOf()</code> y <code>lastIndexOf()</code> dos funciones que se utilizan para devolver la posición del elemento <code>obj</code> pasado por parámetro, empezando a buscar en la posición <code>from</code> (<em>o <code>0</code> si se omite</em>). El primer método, devuelve la primera aparición, mientras que el segundo método devuelve la última aparición.</p>
+<h4 id="modificacion-de-arrays">Modificación de arrays<a class="headerlink" href="#modificacion-de-arrays" title="Permanent link">&para;</a></h4>
+<p>Es posible que tengamos un array específico al que queremos hacer ciertas modificaciones donde <code>slice()</code> y <code>splice()</code> se quedan cortos (<em>o resulta más cómodo utilizar los siguientes métodos</em>). Existen algunos métodos introducidos en <strong>ECMAScript 6</strong> que nos permiten crear una versión modificada de un array, mediante métodos como <code>copyWithin()</code> o <code>fill()</code>:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Método</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>.copyWithin(pos, ini, end)</code></td>
+<td align="left">Devuelve , copiando en <code>pos</code> los ítems desde <code>ini</code> a <code>end</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.fill(obj, ini, end)</code></td>
+<td align="left">Devuelve un relleno de <code>obj</code> desde <code>ini</code> hasta <code>end</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>El primero de ellos, <code>copyWithin(pos, ini, end)</code> nos permite crear una copia del array que alteraremos de la siguiente forma: en la posición <code>pos</code> copiaremos los elementos del propio array que aparecen desde la posición <code>ini</code> hasta la posición <code>end</code>. Es decir, desde la posición <code>0</code> hasta <code>pos</code> será exactamente igual, y de ahí en adelante, será una copia de los valores de la posición <code>ini</code> a la posición <code>end</code>. Veamos algunos ejemplos:</p>
+<pre><code>const array = ["a", "b", "c", "d", "e", "f"];
+
+// Estos métodos modifican el array original
+array.copyWithin(5, 0, 1); // Devuelve ['a', 'b', 'c', 'd', 'e', 'a']
+array.copyWithin(3, 0, 3); // Devuelve ['a', 'b', 'c', 'a', 'b', 'c']
+array.fill("Z", 0, 5); // Devuelve ['Z', 'Z', 'Z', 'Z', 'Z', 'c']
+</code></pre>
+<p>Por otro lado, el método <code>fill(obj, ini, end)</code> es mucho más sencillo. Se encarga de devolver una versión del array, rellenando con el elemento <code>obj</code> desde la posición <code>ini</code> hasta la posición <code>end</code>.</p>
+<h3 id="ordenaciones">Ordenaciones<a class="headerlink" href="#ordenaciones" title="Permanent link">&para;</a></h3>
+<p>En Javascript, es muy habitual que tengamos arrays y queramos ordenar su contenido por diferentes criterios. En este apartado, vamos a ver los métodos <code>reverse()</code> y <code>sort()</code>, utiles para ordenar un array:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Método</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>.reverse()</code></td>
+<td align="left">Invierte el orden de elementos del array.</td>
+</tr>
+<tr>
+<td align="left"><code>.sort()</code></td>
+<td align="left">Ordena los elementos del array bajo un criterio de <strong>ordenación alfabética.</strong></td>
+</tr>
+<tr>
+<td align="left"><code>.sort(func)</code></td>
+<td align="left">Ordena los elementos del array bajo un criterio de ordenación <code>func</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>En primer lugar, el método <code>reverse()</code> cambia los elementos del array en orden inverso, es decir, si tenemos <code>[5, 4, 3]</code> lo modifica de modo que ahora tenemos <code>[3, 4, 5]</code>. Por otro lado, el método <code>sort()</code> realiza una ordenación (<em>por orden alfabético</em>) de los elementos del array:</p>
+<pre><code>const array = ["Alberto", "Ana", "Mauricio", "Bernardo", "Zoe"];
+
+// Ojo, cada línea está modificando el array original
+array.sort(); // ['Alberto', 'Ana', 'Bernardo', 'Mauricio', 'Zoe']
+array.reverse(); // ['Zoe', 'Mauricio', 'Bernardo', 'Ana', 'Alberto']
+</code></pre>
+<p>Un detalle muy importante es que estos dos métodos <strong>modifican el array original</strong>, además de devolver el array modificado. Si no quieres que el array original cambie, asegurate de crear primero una copia del array, para así realizar la ordenación sobre esa copia y no sobre el original.</p>
+<p>Sin embargo, la ordenación anterior se realizó sobre y todo fue bien. Veamos que ocurre si intentamos ordenar un array de números:</p>
+<pre><code>const array = [1, 8, 2, 32, 9, 7, 4];
+
+array.sort(); // Devuelve [1, 2, 32, 4, 7, 8, 9], que NO es el resultado deseado
+</code></pre>
+<p>Esto ocurre porque, al igual que en el ejemplo anterior, el tipo de ordenación que realiza <code>sort()</code> por defecto es una ordenación alfabética, mientras que en esta ocasión buscamos una <strong>ordenación natural</strong>, que es la que se suele utilizar con números. Esto se puede hacer en Javascript, pero requiere pasarle por parámetro al <code>sort()</code> lo que se llama una <strong>función de comparación</strong>.</p>
+<h4 id="funcion-de-comparacion">Función de comparación<a class="headerlink" href="#funcion-de-comparacion" title="Permanent link">&para;</a></h4>
+<p>Como hemos visto, la ordenación que realiza <code>sort()</code> por defecto es siempre una ordenación alfabética. Sin embargo, podemos pasarle por parámetro lo que se conoce con los nombres de <strong>función de ordenación</strong> o <strong>función de comparación</strong>. Dicha función, lo que hace es establecer otro criterio de ordenación, en lugar del que tiene por defecto:</p>
+<pre><code>const array = [1, 8, 2, 32, 9, 7, 4];
+
+// Función de comparación para ordenación natural
+const fc = function (a, b) {
+  return a &gt; b;
+};
+
+array.sort(fc); // Devuelve [1, 2, 4, 7, 8, 9, 32], que SÍ es el resultado deseado
+</code></pre>
+<p>Como se puede ver en el ejemplo anterior, creando la función de ordenación <code>fc</code> y pasándola por parámetro a <code>sort()</code>, le indicamos como debe hacer la ordenación y ahora si la realiza correctamente.</p>
+<p>Si profundizamos en la tarea que realiza el <code>sort()</code>, lo que hace concretamente es analizar pares de elementos del array en cuestión. El primer elemento es <code>a</code> y el segundo elemento es <code>b</code>. Por lo tanto, al pasarle la función de comparación <code>fc</code>, dicha función se encargará de, si devuelve <code>true</code> cambia el orden de <code>a</code> y <code>b</code>, si devuelve <code>false</code> los mantiene igual. Esto es lo que se conoce como el <a href="https://es.wikipedia.org/wiki/Ordenamiento_de_burbuja">método de la burbuja</a>, uno de los sistemas de ordenación más sencillos.</p>
+<blockquote>
+<p>Obviamente, el usuario puede crear sus propias <strong>funciones de comparación</strong> con criterios específicos y personalizados, no sólo el que se muestra como ejemplo.</p>
+</blockquote>
+<h3 id="array-functions">Array functions<a class="headerlink" href="#array-functions" title="Permanent link">&para;</a></h3>
+<p>En un tema posterior, veremos como desde Javascript es posible realizar bucles mediante las <strong>array functions</strong>, unos métodos especiales de los que permiten realizar bucles de una forma más legible, utilizando callbacks.</p>
+<hr />
+<p><strong>Fuente:</strong> <a href="https://lenguajejs.com/">Lenguaje Javascript</a> por <a href="https://manzdev.github.io/">Manz</a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../01-introducci%C3%B3n_a_javascript/" title="Introducción a Javascript" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Introducción a Javascript
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../03-caracteristicas/" title="Características" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Características
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/saucedoinfo" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/saucedoinfo" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.instagram.com/saucedo.info/" target="_blank" rel="noopener" title="www.instagram.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.instant', 'navigation.expand', 'tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

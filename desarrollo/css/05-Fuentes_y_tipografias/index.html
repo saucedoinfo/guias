@@ -1,0 +1,2418 @@
+
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Coleccion de Guias de Desarrollo y diseño.">
+      
+      
+        <link rel="canonical" href="https://saucedoinfo.github.io/guias/desarrollo/css/05-Fuentes_y_tipografias/">
+      
+      
+        <meta name="author" content="Fernando S. Saucedo">
+      
+      <link rel="shortcut icon" href="../../../img/favicon-16x16.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.14">
+    
+    
+      
+        <title>Fuentes y tipografías - Guias de Desarrollo y diseño</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d3202873.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ff0a5ce4.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#000000">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fuentes-y-tipografias" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-header-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Guias de Desarrollo y diseño
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Fuentes y tipografías
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../html/01-introduccion_a_HTML5/" class="md-tabs__link">
+          Desarrollo
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" class="md-tabs__link">
+          Herramientas IT
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    Guias de Desarrollo y diseño
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Desarrollo
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Desarrollo" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Desarrollo
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Html
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Html" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        <span class="md-nav__icon md-icon"></span>
+        Html
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/01-introduccion_a_HTML5/" title="Introduccion a HTML" class="md-nav__link">
+      Introduccion a HTML
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/02-etiquetas_semanticas/" title="Etiquetas semánticas" class="md-nav__link">
+      Etiquetas semánticas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/03-etiquetas_multimedia/" title="Etiquetas multimedias" class="md-nav__link">
+      Etiquetas multimedias
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/04-etiquetas_de_cabecera/" title="Etiquetas de cabecera" class="md-nav__link">
+      Etiquetas de cabecera
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/05-etiquetas_de_formularios/" title="Etiquetas de formularios" class="md-nav__link">
+      Etiquetas de formularios
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/06-etiquetas_de_scripting/" title="Etiquetas de scripting" class="md-nav__link">
+      Etiquetas de scripting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" checked>
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Css
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Css" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        <span class="md-nav__icon md-icon"></span>
+        Css
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01-introduccion_a_CSS/" title="Introducción a CSS" class="md-nav__link">
+      Introducción a CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02-modelo_de_cajas/" title="Modelo de cajas" class="md-nav__link">
+      Modelo de cajas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-colores_y_fondos/" title="Colores y fondos" class="md-nav__link">
+      Colores y fondos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-selectores_CSS/" title="Selectores CSS" class="md-nav__link">
+      Selectores CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Fuentes y tipografías
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Fuentes y tipografías" class="md-nav__link md-nav__link--active">
+      Fuentes y tipografías
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tipografias-css" class="md-nav__link">
+    Tipografías CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipografías CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detalles-de-una-tipografia" class="md-nav__link">
+    Detalles de una tipografía
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#propiedades-basicas" class="md-nav__link">
+    Propiedades básicas
+  </a>
+  
+    <nav class="md-nav" aria-label="Propiedades básicas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#familia-tipografica" class="md-nav__link">
+    Familia tipográfica
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tamano-de-la-tipografia" class="md-nav__link">
+    Tamaño de la tipografía
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estilo-de-la-tipografia" class="md-nav__link">
+    Estilo de la tipografía
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#peso-de-la-tipografia" class="md-nav__link">
+    Peso de la tipografía
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipografias-externas" class="md-nav__link">
+    Tipografías externas
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipografías externas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-regla-font-face" class="md-nav__link">
+    La regla @font-face
+  </a>
+  
+    <nav class="md-nav" aria-label="La regla @font-face">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#google-fonts" class="md-nav__link">
+    Google Fonts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atajo-para-tipografias" class="md-nav__link">
+    Atajo para tipografías
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#textos-y-alineaciones" class="md-nav__link">
+    Textos y alineaciones
+  </a>
+  
+    <nav class="md-nav" aria-label="Textos y alineaciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alineaciones" class="md-nav__link">
+    Alineaciones
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variaciones" class="md-nav__link">
+    Variaciones
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#propiedades-avanzadas" class="md-nav__link">
+    Propiedades avanzadas
+  </a>
+  
+    <nav class="md-nav" aria-label="Propiedades avanzadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compactacion-de-la-tipografia" class="md-nav__link">
+    Compactación de la tipografía
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajuste-de-tamano" class="md-nav__link">
+    Ajuste de tamaño
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modo-de-aparicion" class="md-nav__link">
+    Modo de aparición
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caracteristicas-personalizadas" class="md-nav__link">
+    Características personalizadas
+  </a>
+  
+    <nav class="md-nav" aria-label="Características personalizadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variaciones-en-tipografias" class="md-nav__link">
+    Variaciones en tipografías
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas-a-bajo-nivel" class="md-nav__link">
+    Características a bajo nivel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atajo-de-caracteristicas" class="md-nav__link">
+    Atajo de características
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-representacion_de_datos/" title="Representación de datos" class="md-nav__link">
+      Representación de datos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../07_maquetacion_y_colocacion/" title="Maquetación y colocación" class="md-nav__link">
+      Maquetación y colocación
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../08-interacciones/" title="Interacciones" class="md-nav__link">
+      Interacciones
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../09-efectos/" title="Efectos" class="md-nav__link">
+      Efectos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../10-responsive_Web_Design/" title="Responsive Web Design" class="md-nav__link">
+      Responsive Web Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../11-animaciones_CSS/" title="Animaciones CSS" class="md-nav__link">
+      Animaciones CSS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      JavaScript
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="JavaScript" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon"></span>
+        JavaScript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/01-introducci%C3%B3n_a_javascript/" title="Introducción a Javascript" class="md-nav__link">
+      Introducción a Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/02-fundamentos_de_javascript/" title="Fundamentos de Javascript" class="md-nav__link">
+      Fundamentos de Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/03-caracteristicas/" title="Características" class="md-nav__link">
+      Características
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/04-DOM/" title="DOM" class="md-nav__link">
+      DOM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/05-asincronia/" title="Asincronía" class="md-nav__link">
+      Asincronía
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/06-peticiones_HTTP/" title="Peticiones HTTP" class="md-nav__link">
+      Peticiones HTTP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Herramientas IT
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Herramientas IT" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Herramientas IT
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Terminal
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Terminal" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon"></span>
+        Terminal
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" title="Introducción a la terminal" class="md-nav__link">
+      Introducción a la terminal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/02-operaciones_con_ficheros/" title="Operaciones con ficheros" class="md-nav__link">
+      Operaciones con ficheros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/03-administraci%C3%B3n_del_sistema/" title="Administración del sistema" class="md-nav__link">
+      Administración del sistema
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/markdown/" title="Markdown" class="md-nav__link">
+      Markdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/pip/" title="Pip" class="md-nav__link">
+      Pip
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/mkdocs/" title="Mkdocs" class="md-nav__link">
+      Mkdocs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../about/" title="Acerca de" class="md-nav__link">
+      Acerca de
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tipografias-css" class="md-nav__link">
+    Tipografías CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipografías CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detalles-de-una-tipografia" class="md-nav__link">
+    Detalles de una tipografía
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#propiedades-basicas" class="md-nav__link">
+    Propiedades básicas
+  </a>
+  
+    <nav class="md-nav" aria-label="Propiedades básicas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#familia-tipografica" class="md-nav__link">
+    Familia tipográfica
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tamano-de-la-tipografia" class="md-nav__link">
+    Tamaño de la tipografía
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estilo-de-la-tipografia" class="md-nav__link">
+    Estilo de la tipografía
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#peso-de-la-tipografia" class="md-nav__link">
+    Peso de la tipografía
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipografias-externas" class="md-nav__link">
+    Tipografías externas
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipografías externas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-regla-font-face" class="md-nav__link">
+    La regla @font-face
+  </a>
+  
+    <nav class="md-nav" aria-label="La regla @font-face">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#google-fonts" class="md-nav__link">
+    Google Fonts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atajo-para-tipografias" class="md-nav__link">
+    Atajo para tipografías
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#textos-y-alineaciones" class="md-nav__link">
+    Textos y alineaciones
+  </a>
+  
+    <nav class="md-nav" aria-label="Textos y alineaciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alineaciones" class="md-nav__link">
+    Alineaciones
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variaciones" class="md-nav__link">
+    Variaciones
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#propiedades-avanzadas" class="md-nav__link">
+    Propiedades avanzadas
+  </a>
+  
+    <nav class="md-nav" aria-label="Propiedades avanzadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compactacion-de-la-tipografia" class="md-nav__link">
+    Compactación de la tipografía
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajuste-de-tamano" class="md-nav__link">
+    Ajuste de tamaño
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modo-de-aparicion" class="md-nav__link">
+    Modo de aparición
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caracteristicas-personalizadas" class="md-nav__link">
+    Características personalizadas
+  </a>
+  
+    <nav class="md-nav" aria-label="Características personalizadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variaciones-en-tipografias" class="md-nav__link">
+    Variaciones en tipografías
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas-a-bajo-nivel" class="md-nav__link">
+    Características a bajo nivel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atajo-de-caracteristicas" class="md-nav__link">
+    Atajo de características
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/saucedoinfo/guias/edit/master/docs/desarrollo/css/05-Fuentes_y_tipografias.md" title="Editar esta página" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="fuentes-y-tipografias">Fuentes y tipografías<a class="headerlink" href="#fuentes-y-tipografias" title="Permanent link">&para;</a></h1>
+<h2 id="tipografias-css">Tipografías CSS<a class="headerlink" href="#tipografias-css" title="Permanent link">&para;</a></h2>
+<p>Las <strong>tipografías</strong> (<em>también denominadas fuentes</em>) son una parte muy importante del mundo de CSS. De hecho, son uno de los pilares del diseño web. La elección de una <strong>tipografía adecuada</strong>, su tamaño, color, espacio entre letras, interlineado y otras características pueden variar mucho, de forma consciente o inconsciente, la percepción en la que una persona interpreta o accede a los contenidos de una página.</p>
+<h3 id="detalles-de-una-tipografia"><a href="https://lenguajecss.com/css/fuentes-y-tipografias/tipografias/#detalles-de-una-tipografía">Detalles de una tipografía</a><a class="headerlink" href="#detalles-de-una-tipografia" title="Permanent link">&para;</a></h3>
+<p>Existen multitud de características en las tipografías que convendría conocer antes de continuar, por lo que vamos a ver algunas de ellas:</p>
+<p><img alt="Tipografías con serifa y sin serifa" src="../img/serifa.png" /></p>
+<p>*
+<strong>Serifa</strong>: Las fuentes o tipografías que utilizan <strong>serifa</strong> o <strong>gracia</strong>, son aquellas que incorporan unos pequeños adornos o remates en los extremos de los bordes de las letras. Muchas de estas tipografías suelen terminar su nombre en &lt;<Serif>&gt; (<em>con serifa</em>).
+*
+<strong>Paloseco</strong>: Las fuentes o tipografías de paloseco son las opuestas a la anterior: unas tipografías lisas, sin adornos o remates en los extremos de los bordes de las letras. Muchas de estas tipografías suelen terminar su nombre en &lt;<Sans Serif>&gt; (<em>sin serifa</em>).</p>
+<blockquote>
+<p>Tradicionalmente, se han utilizado tipografías con <strong>serifa</strong> en <strong>medios impresos</strong> argumentando que dichos bordes ofrecen una mayor legibilidad que las tipografías de paloseco, ya que ayudan a reconocer más rápidamente las letras. En <strong>medios digitales</strong>, las tipografías de <strong>paloseco</strong> suelen ser más comunes puesto que dan un aspecto más limpio y ayudan a que se canse menos la vista del usuario. No obstante, todo esto puede ser muy subjetivo y está sujeto a diferentes interpretaciones.</p>
+</blockquote>
+<ul>
+<li><strong>Monoespaciada</strong>: Por otro lado, existe un tipo de tipografía denominada fuente monoespaciada, que se basa en que cada una de sus letras tienen exactamente el mismo ancho. Son muy útiles para tareas de programación o emuladores de <a href="https://terminaldelinux.com/">terminal</a>, donde se leen mejor líneas con estas características, ya que no queremos que una línea sea más corta dependiendo de su contenido.</li>
+</ul>
+<p><img alt="Fuente monoespaciada" src="../img/monospaced.png" /></p>
+<h3 id="propiedades-basicas"><a href="https://lenguajecss.com/css/fuentes-y-tipografias/tipografias/#propiedades-básicas">Propiedades básicas</a><a class="headerlink" href="#propiedades-basicas" title="Permanent link">&para;</a></h3>
+<p>Existe un amplio abanico de propiedades CSS para modificar las características básicas de las tipografías a utilizar. Aunque existen muchas más, a continuación, veremos las propiedades CSS más básicas para aplicar a cualquier tipo de tipografía:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>font-family</code></td>
+<td><em>fuente</em></td>
+<td>Indica el nombre de la fuente (tipografía) a utilizar.</td>
+</tr>
+<tr>
+<td><code>font-size</code></td>
+<td></td>
+<td>Indica el tamaño de la fuente.</td>
+</tr>
+<tr>
+<td><code>font-style</code></td>
+<td><strong>normal</strong></td>
+<td>italic</td>
+</tr>
+<tr>
+<td><code>font-weight</code></td>
+<td><em>peso</em></td>
+<td>Indica el peso (grosor) de la fuente (100-800).</td>
+</tr>
+</tbody>
+</table>
+<p>Con ellas podemos seleccionar tipografías concretas, específicar su tamaño, estilo o grosor.</p>
+<h4 id="familia-tipografica"><a href="https://lenguajecss.com/css/fuentes-y-tipografias/tipografias/#familia-tipográfica">Familia tipográfica</a><a class="headerlink" href="#familia-tipografica" title="Permanent link">&para;</a></h4>
+<p>Empezaremos por la más lógica, la propiedad CSS para seleccionar una <strong>familia tipográfica</strong> concreta. Con esta propiedad, denominada <code>font-family</code> , podemos seleccionar seleccionar cualquier tipografía simplemente escribiendo su nombre.</p>
+<p>Si dicho nombre está compuesto por varias palabras separadas por un espacio, se aconseja utilizar comillas simples para indicarla (<em>como se ve en el segundo ejemplo</em>):</p>
+<div class="highlight"><pre><span></span><code><span class="nt">body</span> <span class="p">{</span>
+        <span class="k">font-family</span><span class="p">:</span> <span class="n">Verdana</span><span class="p">;</span>
+        <span class="k">font-family</span><span class="p">:</span> <span class="s1">&#39;PT Sans&#39;</span><span class="p">;</span> <span class="c">/* Otro ejemplo */</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>Esta es la forma más básica de indicar una tipografía. Sin embargo, hay que tener en cuenta un detalle muy importante: estas fuentes <strong>sólo se visualizarán si el usuario las tiene instaladas en su sistema o dispositivo</strong>. En caso contrario, se observarán los textos con otra tipografía &lt;<suplente>&gt; que esté disponible en el sistema, pero que puede ser visualmente muy diferente.</p>
+<p>Esto convierte una tarea a priori simple, en algo muy complejo, puesto que los sistemas operativos (<em>Windows, Mac, GNU/Linux</em>) tienen diferentes tipografías instaladas. Si además entramos en temas de licencias y tipografías propietarias, la cosa se se vuelve aún más compleja.</p>
+<blockquote>
+<blockquote>
+<p><strong>Consejo</strong>: La página <a href="http://fontfamily.io/">FontFamily.io</a> incorpora un sencillo formulario para mostrar información sobre determinadas tipografías y como se mostrarían en diferentes sistemas (<em>Windows, Mac OS, GNU/Linux, Android, iOS, Windows Phone, etc...</em>). Más adelante, veremos la regla <code>@font-face</code> de <strong>CSS3</strong>, que permite solucionar este problema y la usan sistemas como <strong>Google Fonts</strong>.</p>
+</blockquote>
+</blockquote>
+<p>Un primer y sencillo paso para paliar (<em>en parte</em>) este problema, es añadir varias tipografías alternativas, separadas por comas, lo que además se considera una buena práctica de CSS:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">div</span> <span class="p">{</span>
+        <span class="k">font-family</span><span class="p">:</span> <span class="n">Vegur</span><span class="p">,</span> <span class="s1">&#39;PT Sans&#39;</span><span class="p">,</span> <span class="n">Verdana</span><span class="p">,</span> <span class="kc">sans-serif</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>De esta forma, el navegador busca la fuente <strong>Vegur</strong> en nuestro sistema, y en el caso de no estar instalada, pasa a buscar la siguiente (<em>PT Sans</em>), y así sucesivamente. Se recomienda especificar al menos 2 ó 3 tipografías diferentes.</p>
+<blockquote>
+<p><strong>Consejo</strong>: Como última opción de <code>font-family</code> se recomienda utilizar una palabra clave denominada &lt;<web-safe fonts>&gt; (<em>fuente segura</em>). Esta fuente segura no es una tipografía específica, sino una <strong>palabra clave</strong> con la que se denomina una categoría. Esto indica al navegador que debe buscar una tipografía instalada en el sistema que entre dentro de la misma categoría.</p>
+</blockquote>
+<p>Las palabras clave de <strong>fuentes seguras</strong> son las siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Fuente</th>
+<th>Significado</th>
+<th>Fuentes de ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>serif</code></td>
+<td>Tipografía con serifa</td>
+<td>Times New Roman, Georgia...</td>
+</tr>
+<tr>
+<td><code>sans-serif</code></td>
+<td>Tipografía sin serifa</td>
+<td>Arial, Verdana, Tahoma...</td>
+</tr>
+<tr>
+<td><code>cursive</code></td>
+<td>Tipografía en cursiva</td>
+<td>Sanvito, Corsiva...</td>
+</tr>
+<tr>
+<td><code>fantasy</code></td>
+<td>Tipografía decorativa</td>
+<td>Critter, Cottonwood...</td>
+</tr>
+<tr>
+<td><code>monospace</code></td>
+<td>Tipografía monoespaciada</td>
+<td>Courier, Courier New...</td>
+</tr>
+</tbody>
+</table>
+<h4 id="tamano-de-la-tipografia"><a href="https://lenguajecss.com/css/fuentes-y-tipografias/tipografias/#tamaño-de-la-tipografía">Tamaño de la tipografía</a><a class="headerlink" href="#tamano-de-la-tipografia" title="Permanent link">&para;</a></h4>
+<p>Otra de las propiedades más utilizadas con las tipografías es <code>font-size</code> , una tipografía que permite especificar el tamaño que tendrá la fuente que vamos a utilizar:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Tipo de medida</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>font-size</code></td>
+<td>xx-small</td>
+<td>x-small</td>
+</tr>
+<tr>
+<td><code>font-size</code></td>
+<td>smaller</td>
+<td>larger</td>
+</tr>
+<tr>
+<td><code>font-size</code></td>
+<td></td>
+<td>Específica (tamaño exacto)</td>
+</tr>
+</tbody>
+</table>
+<p>Se pueden indicar tres tipos de valores:</p>
+<p>*
+<strong>Medidas absolutas</strong>: Palabras clave como <strong>medium</strong> que representan un tamaño medio (<em>por defecto</em>), <strong>small</strong>: tamaño pequeño, <strong>x-small</strong>: tamaño muy pequeño, etc...
+*
+<strong>Medidas relativas</strong>: Palabras clave como <strong>smaller</strong> que representan un tamaño un poco más pequeño que el actual, o <strong>larger</strong> que representa un tamaño un poco más grande que el actual.
+*
+<strong>Medida específica</strong>: Simplemente, indicar píxeles, porcentajes u otra unidad para especificar el tamaño concreto de la tipografía. Para tipografías se recomienda empezar por píxeles (<em>más fácil</em>) o utilizar estrategias con <a href="/css/modelo-de-cajas/unidades-css/">unidades rem</a> (<em>mejor, pero más avanzado</em>).</p>
+<h4 id="estilo-de-la-tipografia"><a href="https://lenguajecss.com/css/fuentes-y-tipografias/tipografias/#estilo-de-la-tipografía">Estilo de la tipografía</a><a class="headerlink" href="#estilo-de-la-tipografia" title="Permanent link">&para;</a></h4>
+<p>A las tipografías elegidas se les puede aplicar ciertos estilos, muy útil para maquetar los textos, como por ejemplo <strong>negrita</strong> o <strong>cursiva</strong> (<em>italic</em>). La propiedad que utilizamos es <code>font-style</code> y puede tomar los siguientes valores:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>normal</strong></td>
+<td>Estilo normal, por defecto. Sin cambios aparentes.</td>
+</tr>
+<tr>
+<td>italic</td>
+<td>Cursiva. Estilo caracterizado por una ligera inclinación de las letras hacia la derecha.</td>
+</tr>
+<tr>
+<td>oblique</td>
+<td>Oblícua. Idem al anterior, salvo que esta inclinación se realiza de forma artificial.</td>
+</tr>
+</tbody>
+</table>
+<p>Con la propiedad <code>font-style</code> podemos aplicarle estos estilos. En la mayoría de los casos, se aprecia el mismo efecto con los valores <code>italic</code> y <code>oblique</code> , no obstante, <code>italic</code> muestra la versión cursiva de la fuente, específicamente creada por el diseñador de la tipografía, mientras que <code>oblique</code> es una representación forzosa artificial de una tipografía cursiva.</p>
+<h4 id="peso-de-la-tipografia"><a href="https://lenguajecss.com/css/fuentes-y-tipografias/tipografias/#peso-de-la-tipografía">Peso de la tipografía</a><a class="headerlink" href="#peso-de-la-tipografia" title="Permanent link">&para;</a></h4>
+<p>Por otro lado, tenemos el <strong>peso</strong> de la fuente, que no es más que el grosor de la misma. También depende de la fuente elegida, ya que no todas soportan todos los tipos de grosor. De forma similar a como hemos visto hasta ahora, se puede especificar el peso de una fuente mediante tres formas diferentes:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>font-weight</code></td>
+<td><strong>normal</strong></td>
+<td>bold</td>
+</tr>
+<tr>
+<td><code>font-weight</code></td>
+<td>bolder</td>
+<td>lighter</td>
+</tr>
+<tr>
+<td><code>font-weight</code></td>
+<td><em>peso</em></td>
+<td>Medida específica (número del peso concreto)</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Peso de la fuente: font-weight" src="../img/font-weight.png" /></p>
+<ul>
+<li><strong>Valores absolutos</strong>: Palabras claves para indicar el peso de la fuente: <em>normal</em> y <em>bold</em>. <strong>Normal</strong> es el valor por defecto.</li>
+<li><strong>Valores relativos</strong>: <em>Bolder</em> (más gruesa) o <em>Ligther</em> (más delgada).</li>
+<li><strong>Valor numérico</strong>: Un número del <strong>100</strong> (menos gruesa) al <strong>900</strong> (mas gruesa). Generalmente, se incrementan en valores de 100 en 100.</li>
+</ul>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><strong>OJO</strong>: Ten en cuenta que los diferentes pesos de una tipografía son diseñados por el creador de la tipografía. Algunas tipografías carecen de diferentes pesos y sólo tienen uno específico. Esto es algo muy sencillo de ver en Google Fonts (<em>al seleccionar una tipografía</em>).</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<hr />
+<h2 id="tipografias-externas">Tipografías externas<a class="headerlink" href="#tipografias-externas" title="Permanent link">&para;</a></h2>
+<p>Antiguamente, utilizar tipografías en CSS tenía una gran limitación. Usando la propiedad <code>font-family</code> y especificando el nombre de la tipografía a utilizar, en principio deberían visualizarse. Pero fundamentalmente, existían dos problemas:</p>
+<blockquote>
+<blockquote>
+<p>Las tipografías especificadas mediante <code>font-family</code> <strong>debían estar instaladas en el sistema</strong> donde se visualiza la página web.</p>
+</blockquote>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="nt">p</span> <span class="p">{</span>
+        <span class="k">font-family</span><span class="p">:</span> <span class="n">Vegur</span><span class="p">,</span> <span class="n">Georgia</span><span class="p">,</span> <span class="s2">&quot;Times New Roman&quot;</span><span class="p">,</span> <span class="kc">sans-serif</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>En el ejemplo superior, se han indicado las tipografías <a href="https://www.fontsquirrel.com/fonts/vegur">Vegur</a> (<em>tipografía personalizada</em>), <strong>Georgia</strong> y <strong>Times New Roman</strong> (<em>tipografías de Microsoft Windows</em>) y la categoría segura <strong>sans-serif</strong>. Un usuario con la tipografía <strong>Vegur</strong> instalada, vería sin problema el diseño con dicha tipografía, mientras que un usuario de Windows la vería con Georgia (<em>o si no la tiene, con Times New Roman</em>), mientras que un usuario de Linux o Mac, la vería con otra tipografía diferente (<em>una tipografía sans-serif del sistema</em>).</p>
+<p>Esto es un problema ya que no permite hacer diseños consistentes, pero hay formas de solucionarlo, como veremos a continuación.</p>
+<blockquote>
+<blockquote>
+<p>Por otro lado, muchas tipografías genéricas tienen <strong>derechos de autor</strong> y puede que algunos sistemas no tengan permiso para tenerlas instaladas.</p>
+</blockquote>
+</blockquote>
+<p>Mientras que las tipografías que vienen en sistemas como Microsoft Windows de serie (<em>Times New Roman, Verdana, Tahoma, Trebuchet MS...</em>) se verían correctamente en navegadores con dicho sistema operativo, no ocurriría lo mismo en dispositivos con GNU/Linux o Mac. Y lo mismo con tablets o dispositivos móviles, o viceversa. Esto ocurre porque muchas tipografías son propietarias y tienen licencias que permiten usarse sólo en dispositivos de dicha compañía.</p>
+<p>En definitiva, aunque teníamos los mecanismos, vivimos en un mundo complicado en el que no es tan sencillo establecer una fuente específica para obtener el mismo resultado de diseño en todos los navegadores y sistemas disponibles.... al menos hasta que llegó <code>@font-face</code>.</p>
+<h3 id="la-regla-font-face"><a href="https://lenguajecss.com/css/fuentes-y-tipografias/tipografias-externas/#la-regla-font-face">La regla @font-face</a><a class="headerlink" href="#la-regla-font-face" title="Permanent link">&para;</a></h3>
+<p>La regla <code>@font-face</code> permite descargar una fuente o tipografía, cargarla en el navegador y utilizarla en nuestras páginas. Todo ello de forma transparente al usuario sin que deba instalar o realizar ninguna acción.</p>
+<p>Veamos un ejemplo de como se puede utilizar:</p>
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">font-face</span> <span class="p">{</span>
+        <span class="nt">font-family</span><span class="o">:</span> <span class="s1">&#39;Open Sans&#39;</span><span class="o">;</span>
+        <span class="nt">font-style</span><span class="o">:</span> <span class="nt">normal</span><span class="o">;</span>
+        <span class="nt">font-weight</span><span class="o">:</span> <span class="nt">400</span><span class="o">;</span>
+        <span class="nt">src</span><span class="o">:</span> <span class="nt">local</span><span class="o">(</span><span class="s1">&#39;Open Sans&#39;</span><span class="o">),</span>
+            <span class="nt">url</span><span class="o">(/</span><span class="nt">fonts</span><span class="o">/</span><span class="nt">opensans</span><span class="p">.</span><span class="nc">woff2</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;woff2&#39;</span><span class="o">),</span>
+            <span class="nt">url</span><span class="o">(/</span><span class="nt">fonts</span><span class="o">/</span><span class="nt">opensans</span><span class="p">.</span><span class="nc">woff</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;woff&#39;</span><span class="o">),</span>
+            <span class="nt">url</span><span class="o">(/</span><span class="nt">fonts</span><span class="o">/</span><span class="nt">opensans</span><span class="p">.</span><span class="nc">ttf</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;truetype&#39;</span><span class="o">),</span>
+            <span class="nt">url</span><span class="o">(/</span><span class="nt">fonts</span><span class="o">/</span><span class="nt">opensans</span><span class="p">.</span><span class="nc">otf</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;opentype&#39;</span><span class="o">),</span>
+            <span class="nt">url</span><span class="o">(/</span><span class="nt">fonts</span><span class="o">/</span><span class="nt">opensans</span><span class="p">.</span><span class="nc">eot</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;embedded-opentype&#39;</span><span class="o">);</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>La regla <code>@font-face</code> suele colocarse al principio del fichero CSS para preparar el navegador para descargar la tipografía en el caso de no disponer de ella. En el ejemplo superior lo hemos hecho con la fuente <a href="https://www.google.com/fonts/specimen/Open+Sans">Open Sans</a>, una tipografía libre creada por <strong>Steve Matteson</strong> para Google y disponible en Google Fonts.</p>
+<p>Basicamente, abrimos un bloque <code>@font-face</code> , establecemos su nombre mediante <code>font-family</code> y definimos sus características mediante propiedades como <code>font-style</code> o <code>font-weight</code> . El factor clave viene a la hora de <strong>indicar</strong> la tipografía, que se hace mediante la propiedad <code>src</code> (<em>source</em>) con los siguientes valores:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Significado</th>
+<th>Soporte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>local('Nombre')</code></td>
+<td>¿Está la fuente 'Nombre' instalada? Si es así, no hace falta descargarla.</td>
+<td>Todos</td>
+</tr>
+<tr>
+<td><code>url(file.woff2)</code></td>
+<td>Formato <a href="https://www.w3.org/TR/WOFF2/">Web Open Font Format 2</a>. Mejora de <code>WOFF</code> con <a href="https://github.com/google/brotli">Brotli</a>.</td>
+<td><a href="https://caniuse.com/#feat=woff2">No IE</a></td>
+</tr>
+<tr>
+<td><code>url(file.woff)</code></td>
+<td>Formato <a href="https://es.wikipedia.org/wiki/Web_Open_Font_Format">Web Open Font Format</a>. Es un <code>TTF</code> comprimido, ideal para web.</td>
+<td><a href="https://caniuse.com/#feat=woff">Bueno</a></td>
+</tr>
+<tr>
+<td><code>url(file.ttf)</code></td>
+<td>Formato <a href="https://en.wikipedia.org/wiki/TrueType">True Type</a>. Uno de los formatos más conocidos.</td>
+<td><a href="https://caniuse.com/#feat=ttf">Bueno</a></td>
+</tr>
+<tr>
+<td><code>url(file.otf)</code></td>
+<td>Formato <a href="https://en.wikipedia.org/wiki/OpenType">Open Type</a>. Mejora del formato <code>TTF</code>.</td>
+<td><a href="https://caniuse.com/#feat=ttf">Bueno</a></td>
+</tr>
+<tr>
+<td><code>url(file.eot)</code></td>
+<td>Formato <a href="https://en.wikipedia.org/wiki/Embedded_OpenType">Embedded OpenType</a>. Mejora de <code>OTF</code>, propietaria de Microsoft.</td>
+<td><a href="https://caniuse.com/#feat=eot">Sólo IE</a></td>
+</tr>
+<tr>
+<td><code>url(file.svg)</code></td>
+<td>Tipografías creadas como formas SVG. <strong>No usar</strong>, considerada <strong>obsoleta</strong>.</td>
+<td><a href="https://caniuse.com/#feat=svg-fonts">Malo</a></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<blockquote>
+<p><strong>Consejo</strong>: Actualmente, una buena práctica es utilizar la expresión <strong>local()</strong> seguida de la expresión <strong>url()</strong> con los formatos <code>WOFF2</code> , <code>WOFF</code> y <code>TTF</code> (<em>en dicho orden</em>), dando así soporte a la mayoría de navegadores. Para dar soporte a versiones antiguas de Internet Explorer, podría ser adecuado incluir también el formato <code>EOT</code> .</p>
+</blockquote>
+</blockquote>
+<h4 id="google-fonts"><a href="https://lenguajecss.com/css/fuentes-y-tipografias/tipografias-externas/#google-fonts">Google Fonts</a><a class="headerlink" href="#google-fonts" title="Permanent link">&para;</a></h4>
+<p>En la actualidad, es muy común utilizar <a href="http://fonts.google.com/">Google Fonts</a> como repositorio proveedor de tipografías para utilizar en nuestros sitios web por varias razones:</p>
+<ul>
+<li><strong>Gratuitas</strong>: Disponen de un amplio catálogo de fuentes y tipografías libres y/o gratuitas.</li>
+<li><strong>Cómodo</strong>: Resulta muy sencillo su uso: Google nos proporciona un código y el resto lo hace él.</li>
+<li><strong>Rápido</strong>: El servicio está muy extendido y utiliza un CDN, que brinda ventajas de velocidad.</li>
+</ul>
+<p>En la propia página de <strong>Google Fonts</strong> podemos seleccionar las fuentes con las características deseadas y generar un código HTML con la tipografía (<em>o colección de tipografías</em>) que vamos a utilizar.</p>
+<p><img alt="Select fonts in Google Fonts" src="../img/google-fonts-select.png" /></p>
+<p>Todo esto nos generará el siguiente código, que aparece en la zona derecha de la web (<em>en la zona &lt;<embed>&gt;</em>), y que será el fragmento de código que tendremos que insertar en nuestro documento HTML, concretamente, antes de finalizar la sección <code>&lt;head&gt;</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span>
+      <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&amp;display=swap&quot;</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p>Cómo se puede ver el ejemplo anterior, al añadir este código estamos enlazando nuestro documento HTML con un documento CSS del repositorio de Google, que incluye los <code>@font-face</code> correspondientes. Esto hará que incluyamos automáticamente todo ese código CSS necesario para las tipografías escogidas, en este caso la tipografía <code>Open Sans</code> con los pesos <strong>300</strong> y <strong>400</strong>.</p>
+<p>Si además, añadimos también la familia de tipografías <strong>Roboto</strong> (<em>con grosor 400</em>) y <strong>Lato</strong> (<em>con grosor 300 y 400</em>), el código necesario sería el siguiente:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span>
+      <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://fonts.googleapis.com/css2?family=Lato:wght@300;400&amp;family=Open+Sans:wght@300;400;600&amp;family=Roboto&amp;display=swap&quot;</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p>De esta forma conseguimos cargar varias tipografías desde el repositorio de Google <strong>de una sola vez</strong>, sin la necesidad de varias líneas de código diferentes, que realizarían varias peticiones diferentes a <strong>Google Fonts</strong>.</p>
+<p>Nota que en este nuevo ejemplo, en caso de no tener instaladas ningunas de las tipografías anteriores, estaríamos realizando <strong>6 descargas</strong>: (<em>el css de Google Fonts</em>), (<em>las 2 tipografías con los diferentes pesos de Open Sans</em>), (<em>la de Roboto</em>), (<em>y las 2 tipografías con los diferentes pesos de Lato</em>).</p>
+<p>Por último y para terminar, sólo necesitaremos añadir la propiedad <code>font-family: "Open Sans"</code> , <code>font-family: "Lato"</code> o <code>font-family: "Roboto"</code> a los textos que queramos dar formato con dichas tipografías. No te olvides de añadir tipografías alternativas y fuente segura para mejorar la compatibilidad con navegadores antiguos.</p>
+<p>El parámetro <code>display</code> con valor <code>swap</code> que aparece en la última versión de Google Fonts, lo explicamos aquí <a href="/css/fuentes-y-tipografias/propiedades-avanzadas/">Propiedades avanzadas de tipografías</a>.</p>
+<blockquote>
+<blockquote>
+<p>No hay que dejar de tener en cuenta que <strong>cuantas más tipografías</strong> (<em>y/o más pesos</em>) incluyamos en nuestra página, <strong>más lenta será la experiencia del usuario</strong>, ya que más contenido tendrá que descargar. Salvo excepciones particulares, lo habitual suele ser elegir entre <strong>2-3 tipografías como máximo</strong>, cada una con una finalidad concreta: encabezados o titulares, tipografía de lectura normal y tipografía secundaria, por ejemplo.</p>
+</blockquote>
+</blockquote>
+<h3 id="atajo-para-tipografias"><a href="https://lenguajecss.com/css/fuentes-y-tipografias/tipografias-externas/#atajo-para-tipografías">Atajo para tipografías</a><a class="headerlink" href="#atajo-para-tipografias" title="Permanent link">&para;</a></h3>
+<p>Finalmente, algunas de las propiedades más utilizadas de tipografías y fuentes se pueden resumir en una propiedad de atajo, como viene siendo habitual. El esquema es el siguiente:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">div</span> <span class="p">{</span>
+        <span class="k">font</span><span class="p">:</span> <span class="o">&lt;</span><span class="kc">style</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">variant</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="kc">weight</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="k">size</span><span class="o">/</span><span class="k">line-height</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">family</span><span class="o">&gt;</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>Por ejemplo, utilizar la tipografía <code>Arial</code> , con la fuente alternativa <code>Verdana</code> o una fuente segura sin serifa, a un tamaño de 16 píxeles, con un interlineado de 22 píxeles, un peso de 400, sin utilizar versalitas y con estilo cursiva:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">div</span> <span class="p">{</span>
+        <span class="k">font</span><span class="p">:</span> <span class="kc">italic</span> <span class="kc">normal</span> <span class="mi">400</span> <span class="mi">16</span><span class="kt">px</span><span class="o">/</span><span class="mi">22</span><span class="kt">px</span> <span class="n">Arial</span><span class="p">,</span> <span class="n">Verdana</span><span class="p">,</span> <span class="n">Sans-serif</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2 id="textos-y-alineaciones">Textos y alineaciones<a class="headerlink" href="#textos-y-alineaciones" title="Permanent link">&para;</a></h2>
+<p>CSS dispone de ciertas propiedades relacionadas con el texto de una página, pero alejándose de criterios de tipografías, y centrándose más en objetivos de alineación o tratamiento de espaciados. Veamos algunas de estas propiedades:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>letter-spacing</code></td>
+<td><strong>normal</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>word-spacing</code></td>
+<td><strong>normal</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>line-height</code></td>
+<td><strong>normal</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>text-indent</code></td>
+<td></td>
+<td>Indentación de texto (sangría)</td>
+</tr>
+<tr>
+<td><code>white-space</code></td>
+<td><strong>normal</strong></td>
+<td>nowrap</td>
+</tr>
+<tr>
+<td><code>tab-size</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>direction</code></td>
+<td><strong>ltr</strong></td>
+<td>rtl</td>
+</tr>
+</tbody>
+</table>
+<p>Las tres primeras propiedades, determinan el espacio en diferentes zonas del texto. Por ejemplo la primera de ellas, <code>letter-spacing</code> , especifica el espacio de separación que hay entre cada letra de un texto, denominado comúnmente <strong>interletraje</strong> o <strong>tracking</strong>. Con números negativos tendremos más unidas las letras y con números positivos, las tendremos más separadas unas de otras.</p>
+<p><img alt="Alineaciones de texto" src="../img/text-aligns.png" /></p>
+<p>La propiedad <code>line-height</code> especifica la <strong>altura</strong> que tendrá cada línea de texto, una característica que puede facilitar muchísimo la lectura, puesto que un interlineado excesivo puede desorientar al lector, mientras que uno insuficiente puede hacer perder al visitante el foco en el texto.</p>
+<p>La propiedad <code>word-spacing</code> permite establecer el espacio que hay entre una palabra y otra en un texto determinado, lo que puede facilitar la legibilidad de los textos de una página web y da flexibilidad y control sobre ciertas tipografías.</p>
+<p>La propiedad <code>text-indent</code> establece un tamaño de indentación (<em>por defecto, <strong>0</strong></em>), o lo que es lo mismo, hace un sangrado, desplazando el texto la longitud especificada hacia la derecha (<em>o izquierda en cantidades negativas</em>).</p>
+<p>Al utilizar <code>white-space</code> podemos indicar el comportamiento que tendrán los espacios en blanco en una página web. Por defecto, el valor es <code>normal</code> (<em>transforma múltiples espacios en blanco en un solo espacio consecutivo</em>), pero tiene otras opciones posibles:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Espacios en blanco consecutivos</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>normal</strong></td>
+<td>Los espacios se transforman en uno solo.</td>
+<td>Se ajusta al contenedor.</td>
+</tr>
+<tr>
+<td>nowrap</td>
+<td>Los espacios se transforman en uno solo.</td>
+<td>Ignora saltos de línea.</td>
+</tr>
+<tr>
+<td>pre</td>
+<td>Respeta literalmente los espacios.</td>
+<td>Ignora saltos de línea.</td>
+</tr>
+<tr>
+<td>pre-wrap</td>
+<td>Respeta literalmente los espacios.</td>
+<td>Se ajusta al contenedor.</td>
+</tr>
+<tr>
+<td>pre-line</td>
+<td>Respeta literalmente los espacios y suprime los espacios del final.</td>
+<td>Se ajusta al contenedor.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><strong>Nota</strong>: La diferencia entre <code>pre-wrap</code> y <code>pre-line</code> es que este último respeta literalmente los espacios que están antes del texto, mientras que si sobran después del texto, los suprime.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Probablemente, a medida que realices diferentes diseños, te encontrarás con la desagradable situación en la que un texto concreto (<em>por ejemplo, un enlace demasiado largo</em>) no cabe dentro de un contenedor, por lo que el texto se desborda y provoca efectos no deseados como salirse de su lugar.</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hyphens</code></td>
+<td><strong>manual</strong></td>
+<td>none</td>
+</tr>
+<tr>
+<td><code>overflow-wrap</code></td>
+<td><strong>normal</strong></td>
+<td>break-word</td>
+</tr>
+<tr>
+<td><code>line-break</code></td>
+<td><strong>auto</strong></td>
+<td>loose</td>
+</tr>
+<tr>
+<td><code>word-break</code></td>
+<td><strong>normal</strong></td>
+<td>keep-all</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<blockquote>
+<p><strong>OJO</strong>: La propiedad <code>overflow-wrap</code> sólo funciona cuando <code>white-space</code> está establecida a valores que respeten espacios. Además, la propiedad <code>word-wrap</code> es un alias de <code>overflow-wrap</code> por temas de retrocompatibilidad.</p>
+</blockquote>
+</blockquote>
+<p>Existen formas de mitigar este problema, como la propiedad <code>word-break</code> , <code>word-wrap</code> o la propiedad <code>hyphens</code> , sin embargo, aún están en fase de desarrollo y su soporte está poco extendido en la actualidad. Aún así, si quieres probar una combinación de varias propiedades que suele dar resultado para paliar este comportamiento, puedes probar lo siguiente:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+        <span class="k">hyphens</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
+        <span class="k">word-wrap</span><span class="p">:</span> <span class="kc">break-word</span><span class="p">;</span>
+        <span class="k">word-break</span><span class="p">:</span> <span class="kc">break-word</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>Por otra parte, la propiedad <code>tab-size</code> permite establecer el número de espacios que se mostrarán en el cliente o navegador al representar el carácter de un <kbd>TAB</kbd> (<em>tabulador</em>), que generalmente se convierten a un espacio en blanco, pero sin embargo son visibles en elementos HTML como <code>&lt;textarea&gt;</code> o <code>&lt;pre&gt;</code> .</p>
+<p>Por último, la propiedad <code>direction</code> permite establecer la dirección del texto: de izquierda a derecha (<em>ltr, left to right</em>) o de derecha a izquierda (<em>rtl, right to left</em>).</p>
+<h3 id="alineaciones"><a href="https://lenguajecss.com/css/fuentes-y-tipografias/textos-y-alineaciones/#alineaciones">Alineaciones</a><a class="headerlink" href="#alineaciones" title="Permanent link">&para;</a></h3>
+<p>También existen varias propiedades CSS que permiten modificar las diferentes alineaciones de los textos en su conjunto. Veamos un resumen de ellas:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text-align</code></td>
+<td><strong>left</strong></td>
+<td>center</td>
+</tr>
+<tr>
+<td><code>text-justify</code></td>
+<td><strong>auto</strong></td>
+<td>inter-word</td>
+</tr>
+<tr>
+<td><code>text-overflow</code></td>
+<td><strong>clip</strong></td>
+<td>ellipsis</td>
+</tr>
+</tbody>
+</table>
+<p>En el primer caso, se puede establecer los valores <code>left</code> , <code>right</code> , <code>center</code> o <code>justify</code> a la propiedad <code>text-align</code> para alinear horizontalmente el texto a la izquierda, a la derecha, en el centro o justificar el texto, respectivamente, de la misma forma que lo hacemos en un procesador de texto.</p>
+<p>En la propiedad <code>text-justify</code> indicamos el tipo de justificación de texto que el navegador realizará: automática (<em>el navegador elige</em>), ajustar el espacio entre palabras (<em>el resultado de ajustar con la propiedad word-spacing</em>), ajustar el espacio entre par de carácteres (<em>el resultado de ajustar con la propiedad letter-spacing</em>) y justificación desactivada.</p>
+<p>Por su parte, la propiedad <code>text-overflow</code> cambia el comportamiento del navegador cuando detecta que un texto no cabe y se desborda. En ella podemos utilizar los valores <code>clip</code> , desbordar el contenedor (<em>comportamiento por defecto</em>), <code>ellipsis</code> , que muestra el texto &lt;&lt;...&gt;&gt; cuando no cabe más texto y por último indicar el texto que queremos utilizar en lugar de &lt;&lt;...&gt;&gt;.</p>
+<p>Al igual que existe <code>text-align</code> para alinear horizontalmente, también existe la propiedad <code>vertical-align</code> , que se encarga de la alineación vertical de un elemento, pudiendo establecer como valor las siguientes opciones:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>¿Cómo hace la alineación?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>baseline</strong></td>
+<td>La base del elemento con la base del elemento padre.</td>
+</tr>
+<tr>
+<td>sub</td>
+<td>El elemento como un subíndice.</td>
+</tr>
+<tr>
+<td>super</td>
+<td>El elemento como un superíndice.</td>
+</tr>
+<tr>
+<td>top</td>
+<td>La parte superior del elemento con la parte superior del elemento más alto de la línea.</td>
+</tr>
+<tr>
+<td>middle</td>
+<td>El elemento en la mitad del elemento padre.</td>
+</tr>
+<tr>
+<td>bottom</td>
+<td>La parte inferior del elemento con la parte inferior del elemento más bajo de esa línea.</td>
+</tr>
+<tr>
+<td>text-top</td>
+<td>La parte superior del elemento con la parte superior del texto padre.</td>
+</tr>
+<tr>
+<td>text-bottom</td>
+<td>La parte inferior del elemento con la parte inferior del texto padre.</td>
+</tr>
+<tr>
+<td><em>tamaño</em></td>
+<td>Sube o baja un elemento el tamaño o porcentaje  especificado.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<blockquote>
+<p><strong>Consejo</strong>: Cuidado con <code>vertical-align</code> . Esta propiedad puede querer utilizarse para centrar verticalmente un elemento, sin embargo, su utilización es un poco menos intuitiva de lo que en un principio se cree, ya que se debe utilizar para alinear textos respecto a elementos. Para alinear bloques de contenido o crear estructuras de diseño, véase <a href="/css/propiedades/flexbox">Flexbox</a>.</p>
+</blockquote>
+</blockquote>
+<h3 id="variaciones"><a href="https://lenguajecss.com/css/fuentes-y-tipografias/textos-y-alineaciones/#variaciones">Variaciones</a><a class="headerlink" href="#variaciones" title="Permanent link">&para;</a></h3>
+<p>Por último, existen varias propiedades aplicables a los textos para variar su naturaleza. Echemos un vistazo:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text-decoration</code></td>
+<td><strong>none</strong></td>
+<td>underline</td>
+</tr>
+<tr>
+<td><code>text-transform</code></td>
+<td><strong>none</strong></td>
+<td>capitalize</td>
+</tr>
+</tbody>
+</table>
+<p>La propiedad <code>text-decoration</code> permite establecer <strong>subrayados</strong> (<em>underline</em>), subrayados por encima del texto (<em>overline</em>) y tachados (<em>line-through</em>). Indicando el valor <code>none</code> se puede eliminar cualquiera de los formatos anteriores. Es muy utilizado, por ejemplo, para eliminar el subrayado de los textos que tienen un enlace o hipervínculo.</p>
+<p>Por último, la propiedad <code>text-transform</code> es muy útil para convertir textos a mayúsculas (<em>uppercase</em>) o minúsculas (<em>lowercase</em>), o incluso capitalizar el texto (<em>capitalize</em>), es decir, poner sólo la primera letra en mayúscula, independientemente de como esté escrito en el documento HTML.</p>
+<hr />
+<h2 id="propiedades-avanzadas">Propiedades avanzadas<a class="headerlink" href="#propiedades-avanzadas" title="Permanent link">&para;</a></h2>
+<p>En CSS existen múltiples propiedades relacionadas con las tipografías. Las que veremos en esta sección se trata de algunas propiedades específicas para controlar la forma en la que se ven o aparecen las tipografías en la página.</p>
+<h4 id="compactacion-de-la-tipografia"><a href="https://lenguajecss.com/css/fuentes-y-tipografias/propiedades-avanzadas/#compactación-de-la-tipografía">Compactación de la tipografía</a><a class="headerlink" href="#compactacion-de-la-tipografia" title="Permanent link">&para;</a></h4>
+<p>Con la propiedad <code>font-stretch</code> podemos definir el grado de compactación o expansión de los carácteres de la tipografía, desde valores muy condensados (<em>para ocupar menos espacio</em>) a valores muy expandidos (<em>para ocupar más espacio</em>):</p>
+<p><img alt="Compactación de la tipografía: font-stretch" src="../img/font-stretch.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>font-stretch</code></td>
+<td>ultra-condensed</td>
+</tr>
+<tr>
+<td><code>font-stretch</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>También se puede especificar el tamaño, por ejemplo en porcentajes. Recuerda que para que la propiedad <strong>font-stretch</strong> funcione correctamente, la tipografía seleccionada debe poseer una versión &lt;<condensada>&gt; o &lt;<expandida>&gt; para así poderla aplicar.</p>
+<h4 id="ajuste-de-tamano"><a href="https://lenguajecss.com/css/fuentes-y-tipografias/propiedades-avanzadas/#ajuste-de-tamaño">Ajuste de tamaño</a><a class="headerlink" href="#ajuste-de-tamano" title="Permanent link">&para;</a></h4>
+<p>Con la propiedad <code>font-size-adjust</code> podemos ajustar el tamaño de la tipografía indicando la diferencia de tamaño entre la <code>x</code> minúscula y la <code>X</code> mayúscula. Con esta característica, podemos conseguir reducir la proporción de tamaño entre mayúsculas y minúsculas de nuestros textos, si consideramos que no es adecuada:</p>
+<p><img alt="La propiedad de ajuste de texto: font-size-adjust" src="../img/font-size-adjust.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>font-size-adjust</code></td>
+<td><strong>none</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Por defecto, el valor de esta propiedad es <strong>none</strong>, que establece el tamaño indicado por el diseñador de la tipografía. Ojo a la compatibilidad, ya que es una característica que aún está en fase experimental:</p>
+<h4 id="modo-de-aparicion"><a href="https://lenguajecss.com/css/fuentes-y-tipografias/propiedades-avanzadas/#modo-de-aparición">Modo de aparición</a><a class="headerlink" href="#modo-de-aparicion" title="Permanent link">&para;</a></h4>
+<p>La propiedad <code>font-display</code> nos brinda un mecanismo muy interesante para determinar como queremos que se comporte la tipografía al cargar la página. Cuando cargamos una página con una tipografía que no se encuentra instalada, el navegador debe descargar la tipografía y activarla, tarea que no ocurre instantáneamente, ya que depende de nuestra conexión, del tamaño de la fuente y del sistema utilizado.</p>
+<p>En el instante anterior a descargar la tipografía pueden ocurrir varias cosas:</p>
+<ul>
+<li><strong>FOIT</strong> (<em>Flash of Invisible Text</em>): El texto permanece <strong>oculto</strong> (invisible) al usuario hasta que la tipografía deseada se ha descargado y puede visualizarse.</li>
+<li><strong>FOUT</strong> (<em>Flash of Unstyled Text</em>): El texto permanece <strong>sin estilo</strong> (con otra tipografía diferente) hasta que la tipografía deseada se ha descargado y puede visualizarse.</li>
+</ul>
+<p>Dependiendo del valor de la propiedad <code>font-display</code> podemos modificar dicho comportamiento:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>font-display</code></td>
+<td><strong>auto</strong></td>
+<td>block</td>
+</tr>
+</tbody>
+</table>
+<p>Veamos que ocurre con cada uno de los valores indicados (<em>si la tipografía no está descargada</em>):</p>
+<p>*
+<strong>auto</strong>: El valor por defecto de la propiedad. El navegador decide que comportamiento aplicar, que suele ser FOIT. Cómo desventaja, en algunos navegadores o situaciones, el tiempo de FOIT puede llegar a ser considerablemente alto.
+*
+<strong>block</strong>: El navegador mantiene el texto invisible (FOIT) un corto periodo de tiempo, cambiando a modo <code>swap</code> desde que la tipografía deseada está cargada. Se aconseja usar especialmente en pequeños fragmentos de texto como titulares.
+*
+<strong>swap</strong>: El navegador muestra inmediatamente el texto con la siguiente tipografía de la lista <code>font-family</code> durante un cortísimo periodo de tiempo, mostrando la tipografía deseada desde que está cargada. Se aconseja usar especialmente en pequeños fragmentos de texto como titulares.
+*
+<strong>fallback</strong>: El navegador muestra el texto con la siguiente tipografía de la lista <code>font-family</code> durante un cortísimo periodo de tiempo, mostrando la tipografía deseada desde que está cargada. La diferencia respecto al modo anterior es que si pasa demasiado tiempo sin que la tipografía se cargue, se utiliza de forma definitiva la alternativa que se estaba usando. Apropiada para usar en fragmentos largos de texto.
+*
+<strong>optional</strong>: El navegador considera opcional el uso de la tipografía deseada si tarda demasiado o cree que hay algún problema en la descarga, utilizando la siguiente tipografía de la lista <code>font-family</code>.</p>
+<hr />
+<h2 id="caracteristicas-personalizadas">Características personalizadas<a class="headerlink" href="#caracteristicas-personalizadas" title="Permanent link">&para;</a></h2>
+<p>Ciertas tipografías tienen una serie de <strong>características avanzadas</strong> que pueden existir o no, dependiendo de la tipografía. Dichas características permiten realizar variaciones en las tipografías como las siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Característica</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ligadura</td>
+<td>Unión visual de 2 carácteres. Muy usada en programación, matemáticas e idiomas.</td>
+</tr>
+<tr>
+<td>Posicionamiento</td>
+<td>Colocación de carácteres de forma similar a los subíndices o superíndices.</td>
+</tr>
+<tr>
+<td>Mayúsculas/Minúsculas</td>
+<td>Variaciones relacionadas con las mayúsculas y minúsculas.</td>
+</tr>
+<tr>
+<td>Variaciones</td>
+<td>Se trata de grupos de variaciones visuales con un propósito concreto.</td>
+</tr>
+</tbody>
+</table>
+<p>Veamos detalladamente cada una de estas características:</p>
+<p>*
+<strong>Ligaduras</strong>: Es posible activar una características llamada <strong>ligadura</strong> que no es más que la unión de ciertos carácteres cambiando su aspecto visual. Esto se puede hacer con la propiedad <code>font-variant-ligatures</code> , y dependiendo del valor específico, activaremos uno u otro tipo de ligadura. Existen las siguientes:</p>
+<ul>
+<li><strong>Ligaduras normales</strong>: Se indica con el valor <code>common-ligatures</code> . Se suele observar en valores como <code>fi</code> , <code>fl</code> , <code>ff</code> ...</li>
+<li><strong>Ligaduras discrecionales</strong>: Se indica con el valor <code>discretionary-ligatures</code> . Se suele observar en valores como <code>ch</code> , <code>sp</code> , <code>st</code> ...</li>
+<li>
+<p><strong>Ligaduras históricas</strong>: Se indica con el valor <code>historical-ligatures</code> . Se aplican para mostrar ligaduras heredadas de escritura manual.
+*
+<strong>Posicionamiento de carácteres</strong>: Es posible activar una variación para indicar texto como subíndice o superíndice, similar a como se hace con las etiquetas HTML <code>&lt;sub&gt;</code> y <code>&lt;super&gt;</code> .
+*
+<strong>Mayúsculas y minúsculas</strong>: Es posible realizar ciertas variaciones como versalitas o similares, aplicadas sólo a minúsculas, sólo a mayúsculas o a ambas.
+*
+<strong>Variaciones numéricas</strong>: Con la propiedad <code>font-variant-numeric</code> podemos establecer ciertas variaciones como representar números con estilo antiguo, diferentes proporciones, como fracciones "gráficas" o incluso indicar que el cero tenga una raya o no.
+*
+<strong>Variaciones alternativas</strong>: Con la propiedad <code>font-variant-alternates</code> se pueden indicar una o múltiples variaciones visuales, donde se pueden mencionar las siguientes:</p>
+</li>
+<li>
+<p><strong>historical-forms</strong>: Muestra glifos históricos (<em>heredados de épocas pasadas</em>)</p>
+</li>
+<li><strong>stylistic(<em>id</em>)</strong>: Muesta características de estilo alternativas de forma individual.</li>
+<li><strong>styleset(<em>id</em>)</strong>: Muestra un conjunto de características de estilo alternativas (<em>creados para trabajar juntos</em>).</li>
+<li><strong>character-variant(<em>id</em>)</strong>: Muestra ciertas variaciones en carácteres concretos.</li>
+<li><strong>swash(<em>id</em>)</strong>: Muestra decoraciones artísticas en los carácteres como adornos tipográficos.</li>
+<li><strong>ornaments(<em>id</em>)</strong>: Muestra glifos con adornos en lugar del caracter predeterminado.</li>
+<li><strong>anotation(<em>id</em>)</strong>: Muestra formas notacionales de glifos (glifos abiertos, cajas redondeadas, etc...)</li>
+</ul>
+<h3 id="variaciones-en-tipografias"><a href="https://lenguajecss.com/css/fuentes-y-tipografias/caracteristicas-personalizadas/#variaciones-en-tipografías">Variaciones en tipografías</a><a class="headerlink" href="#variaciones-en-tipografias" title="Permanent link">&para;</a></h3>
+<p>Estas características pueden ser activadas o desactivadas desde CSS, por medio de una de las siguientes propiedades (<em>o de forma alternativa, utilizando una propiedad a bajo nivel que veremos más adelante</em>):</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad/Valores</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>font-variant-ligatures</code></td>
+<td>Establece un estilo de ligadura</td>
+</tr>
+<tr>
+<td><strong>normal</strong></td>
+<td>none</td>
+</tr>
+<tr>
+<td><code>font-variant-position</code></td>
+<td>Establece estilo subscript (<em>subíndice</em>) o superscript (<em>superíndice</em>)</td>
+</tr>
+<tr>
+<td><strong>normal</strong></td>
+<td>sub</td>
+</tr>
+<tr>
+<td><code>font-variant-caps</code></td>
+<td>Establece una variación de versalitas</td>
+</tr>
+<tr>
+<td><strong>normal</strong></td>
+<td>small-caps</td>
+</tr>
+<tr>
+<td><code>font-variant-numeric</code></td>
+<td>Establece variaciones numéricas</td>
+</tr>
+<tr>
+<td><strong>normal</strong></td>
+<td>lining-nums</td>
+</tr>
+<tr>
+<td><code>font-variant-alternates</code></td>
+<td>Establece variaciones visuales</td>
+</tr>
+<tr>
+<td><strong>normal</strong></td>
+<td>historical-forms</td>
+</tr>
+<tr>
+<td><code>font-variant-east-asian</code></td>
+<td>Permite controlar los glifos de textos orientales</td>
+</tr>
+<tr>
+<td><strong>normal</strong></td>
+<td>jis78</td>
+</tr>
+<tr>
+<td><code>font-kerning</code></td>
+<td>Indica quién debe ajustar el kerning</td>
+</tr>
+<tr>
+<td><strong>auto</strong></td>
+<td>normal</td>
+</tr>
+</tbody>
+</table>
+<p>Ten en cuenta que en la mayoría de ellas, se puede utilizar la regla <code>@font-feature-values</code> para personalizar como utilizar la característica en cuestión (<em>la cuál debe existir y estar definida en la tipografía</em>). Veamos un ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">font-feature-values</span> <span class="s1">&#39;bookmania&#39;</span> <span class="p">{</span>
+        <span class="p">@</span><span class="k">swash</span> <span class="p">{</span>
+            <span class="nt">flourish</span><span class="o">:</span> <span class="nt">1</span><span class="o">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="p">.</span><span class="nc">texto-alternativo</span> <span class="p">{</span>
+        <span class="k">font-variant-alternates</span><span class="p">:</span> <span class="nf">swash</span><span class="p">(</span><span class="n">flourish</span><span class="p">);</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<h3 id="caracteristicas-a-bajo-nivel"><a href="https://lenguajecss.com/css/fuentes-y-tipografias/caracteristicas-personalizadas/#características-a-bajo-nivel">Características a bajo nivel</a><a class="headerlink" href="#caracteristicas-a-bajo-nivel" title="Permanent link">&para;</a></h3>
+<p>La propiedad <code>font-feature-settings</code> es una propiedad a bajo nivel para indicar como debe comportarse una tipografía respecto a sus <strong>características especiales</strong>. Sólo debe usarse cuando no nos sirva otra propiedad con la que modificar dicha característica, la cuál normalmente se encuentra en la lista del apartado anterior.</p>
+<p>La sintaxis de esta propiedad es la que podemos ver a continuación (<em>se pueden combinar varias características separando por comas</em>):</p>
+<div class="highlight"><pre><span></span><code><span class="nt">p</span> <span class="p">{</span>
+        <span class="c">/* La característica &quot;feat&quot; está activada. */</span>
+        <span class="k">font-feature-settings</span><span class="p">:</span> <span class="s2">&quot;feat&quot;</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="c">/* Otra opción equivalente a la anterior. */</span>
+        <span class="k">font-feature-settings</span><span class="p">:</span> <span class="s2">&quot;feat&quot;</span> <span class="kc">on</span><span class="p">;</span>
+        <span class="c">/* La característica &quot;feat&quot; está desactivada. */</span>
+        <span class="k">font-feature-settings</span><span class="p">:</span> <span class="s2">&quot;feat&quot;</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="c">/* Otra opción equivalente a la anterior. */</span>
+        <span class="k">font-feature-settings</span><span class="p">:</span> <span class="s2">&quot;feat&quot;</span> <span class="kc">off</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>Sin embargo, la característica &lt;<feat>&gt; no existe, es sólo un ejemplo teórico. Cada tipografía tiene un cierto número de características especiales (<em>hay tipografías que tienen varias, y tipografías que no tienen ninguna</em>). Veamos una lista de las características que existen:</p>
+<table>
+<thead>
+<tr>
+<th>Valor OTF</th>
+<th>Significado</th>
+<th>Propiedad equivalente</th>
+<th>Valor concreto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>"liga" 1</code></td>
+<td>Ligaduras estándar (también <code>clig</code>)</td>
+<td><code>font-variant-ligatures</code></td>
+<td><code>common-ligatures</code></td>
+</tr>
+<tr>
+<td><code>"dlig" 1</code></td>
+<td>Ligaduras discrecionales</td>
+<td><code>font-variant-ligatures</code></td>
+<td><code>discretionary-ligatures</code></td>
+</tr>
+<tr>
+<td><code>"hlig" 1</code></td>
+<td>Ligaduras históricas</td>
+<td><code>font-variant-ligatures</code></td>
+<td><code>historical-ligatures</code></td>
+</tr>
+<tr>
+<td><code>"calt" 1</code></td>
+<td>Ligaduras contextuales alternativas</td>
+<td><code>font-variant-ligatures</code></td>
+<td><code>contextual</code></td>
+</tr>
+<tr>
+<td><code>"ordn" 1</code></td>
+<td>Marcas ordinales</td>
+<td><code>font-variant-numeric</code></td>
+<td><code>ordinal</code></td>
+</tr>
+<tr>
+<td><code>"zero" 1</code></td>
+<td>Raya del cero</td>
+<td><code>font-variant-numeric</code></td>
+<td><code>slashed-zero</code></td>
+</tr>
+<tr>
+<td><code>"onum" 1</code></td>
+<td>Figuras de estilo antiguo</td>
+<td><code>font-variant-numeric</code></td>
+<td><code>oldstyle-nums</code></td>
+</tr>
+<tr>
+<td><code>"lnum" 1</code></td>
+<td>Números alineados</td>
+<td><code>font-variant-numeric</code></td>
+<td><code>lining-nums</code></td>
+</tr>
+<tr>
+<td><code>"pnum" 1</code></td>
+<td>Números proporcionales</td>
+<td><code>font-variant-numeric</code></td>
+<td><code>proportional-nums</code></td>
+</tr>
+<tr>
+<td><code>"tnum" 1</code></td>
+<td>Figuras tabulares (mismo tamaño)</td>
+<td><code>font-variant-numeric</code></td>
+<td><code>tabular-nums</code></td>
+</tr>
+<tr>
+<td><code>"frac" 1</code></td>
+<td>Fracciones diagonales</td>
+<td><code>font-variant-numeric</code></td>
+<td><code>diagonal-fractions</code></td>
+</tr>
+<tr>
+<td><code>"afrc" 1</code></td>
+<td>Fracciones apiladas</td>
+<td><code>font-variant-numeric</code></td>
+<td><code>stacked-fractions</code></td>
+</tr>
+<tr>
+<td><code>"sups" 1</code></td>
+<td>Superíndices</td>
+<td><code>font-variant-position</code></td>
+<td><code>super</code></td>
+</tr>
+<tr>
+<td><code>"subs" 1</code></td>
+<td>Subíndices</td>
+<td><code>font-variant-position</code></td>
+<td><code>sub</code></td>
+</tr>
+<tr>
+<td><code>"smcp" 1</code></td>
+<td>Versalitas en minúsculas</td>
+<td><code>font-variant-caps</code></td>
+<td><code>small-caps</code></td>
+</tr>
+<tr>
+<td><code>"c2sc" 1</code></td>
+<td>Versalitas en mayúsculas y minúsculas</td>
+<td><code>font-variant-caps</code></td>
+<td><code>all-small-caps</code></td>
+</tr>
+<tr>
+<td><code>"pcap" 1</code></td>
+<td>Capitaliza minúsculas</td>
+<td><code>font-variant-caps</code></td>
+<td><code>petite-caps</code></td>
+</tr>
+<tr>
+<td><code>"c2pc" 1</code></td>
+<td>Capitaliza mayúsculas y minúsculas</td>
+<td><code>font-variant-caps</code></td>
+<td><code>all-petite-caps</code></td>
+</tr>
+<tr>
+<td><code>"unic" 1</code></td>
+<td>Versalitas en mayúsculas</td>
+<td><code>font-variant-caps</code></td>
+<td><code>unicase</code></td>
+</tr>
+<tr>
+<td><code>"titl" 1</code></td>
+<td>Mayúsculas para <a href="https://en.wikipedia.org/wiki/Titling_capitals">titulares</a></td>
+<td><code>font-variant-caps</code></td>
+<td><code>titling-caps</code></td>
+</tr>
+<tr>
+<td><code>"swsh" 1</code></td>
+<td>Decoraciones <a href="https://en.wikipedia.org/wiki/Swash_%28typography%29">swash</a></td>
+<td><code>font-variant-alternates</code></td>
+<td><code>swash()</code></td>
+</tr>
+<tr>
+<td><code>"hist" 1</code></td>
+<td>Glifos históricos</td>
+<td><code>font-variant-alternates</code></td>
+<td><code>historical-forms</code></td>
+</tr>
+<tr>
+<td><code>"salt" 1</code></td>
+<td>Carácteres con estilos alternativos</td>
+<td><code>font-variant-alternates</code></td>
+<td><code>stylistic()</code></td>
+</tr>
+<tr>
+<td><code>"ss01" 1</code></td>
+<td>Conjunto de estilos alternativos</td>
+<td><code>font-variant-alternates</code></td>
+<td><code>styleset(01)</code></td>
+</tr>
+<tr>
+<td><code>"ss02" 1</code></td>
+<td>Segundo conjunto de estilos alternativos</td>
+<td><code>font-variant-alternates</code></td>
+<td><code>styleset(02)</code></td>
+</tr>
+<tr>
+<td><code>"ss03" 1</code></td>
+<td>Tercer conjunto de estilos alternativos</td>
+<td><code>font-variant-alternates</code></td>
+<td><code>styleset(03)</code></td>
+</tr>
+<tr>
+<td><code>"cv01" 1</code></td>
+<td>Estilo alternativo para carácteres</td>
+<td><code>font-variant-alternates</code></td>
+<td><code>character-variant(01)</code></td>
+</tr>
+<tr>
+<td><code>"ornm" 1</code></td>
+<td>Adornos como fleurons o dingbats</td>
+<td><code>font-variant-alternates</code></td>
+<td><code>ornaments()</code></td>
+</tr>
+<tr>
+<td><code>"nalt" 1</code></td>
+<td>Dígitos circulares, carácteres invertidos...</td>
+<td><code>font-variant-alternates</code></td>
+<td><code>annotation()</code></td>
+</tr>
+<tr>
+<td><code>"kern" 1</code></td>
+<td>Kerning de tipografías</td>
+<td><code>font-kerning</code></td>
+<td><code>normal</code></td>
+</tr>
+</tbody>
+</table>
+<p>Para saber si la tipografía que estamos utilizando posee alguna de estas <strong>características especiales</strong>, podemos utilizar el comando de terminal <a href="https://github.com/ConradIrwin/font">font</a>, que lee dicha información de formatos WOFF2, WOFF, TTF u OTF. Dicho comando está programado en el lenguaje de programación <strong>Go</strong>, por lo que instalarlo es tan fácil como escribir desde una terminal lo siguiente:</p>
+<div class="highlight"><pre><span></span><code>go get -u github.com/ConradIrwin/font/cmd/font    <span class="c1"># Instalamos &quot;font&quot; (necesitamos Go)</span>
+    font feature fichero.ttf                          <span class="c1"># Leemos las características</span>
+</code></pre></div>
+
+<p>Este comando nos mostrará los metadatos de la tipografía, incluyendo los flags de las features (<em>liga, tnum, frac, etc...</em>) que existen y están definidas en la tipografía en cuestión. El soporte actual de dicha propiedad es el siguiente:</p>
+<h3 id="atajo-de-caracteristicas"><a href="https://lenguajecss.com/css/fuentes-y-tipografias/caracteristicas-personalizadas/#atajo-de-características">Atajo de características</a><a class="headerlink" href="#atajo-de-caracteristicas" title="Permanent link">&para;</a></h3>
+<p>Tradicionalmente, la propiedad <code>font-variant</code> sólo permitía los valores <code>normal</code> o <code>small-caps</code> . Sin embargo, las nuevas propuestas de CSS permiten utilizar esta propiedad como propiedad de atajo para todas las características que hemos visto en el apartado anterior. Por lo tanto, pasamos de este esquema antiguo (<em>soportado en la mayoría de los navegadores</em>):</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>font-variant</code></td>
+<td><strong>normal</strong></td>
+<td>small-caps</td>
+</tr>
+</tbody>
+</table>
+<p>Al esquema moderno, que es el siguiente:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">p</span> <span class="p">{</span>
+        <span class="c">/* font-variant: &lt;ligatures&gt; &lt;caps&gt; &lt;numeric&gt; &lt;east-asian&gt; &lt;position&gt; */</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>En él podemos utilizar los valores de cada propiedad individual: <code>font-variant-ligatures</code> , <code>font-variant-caps</code> , etc... en forma de atajo.</p>
+<hr />
+<p><strong>Fuente:</strong> <a href="https://lenguajecss.com/">Lenguaje de CSS</a> por <a href="https://manzdev.github.io/">Manz</a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../04-selectores_CSS/" title="Selectores CSS" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Selectores CSS
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../06-representacion_de_datos/" title="Representación de datos" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Representación de datos
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/saucedoinfo" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/saucedoinfo" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.instagram.com/saucedo.info/" target="_blank" rel="noopener" title="www.instagram.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.instant', 'navigation.expand', 'tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

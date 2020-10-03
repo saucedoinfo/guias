@@ -1,0 +1,2906 @@
+
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Coleccion de Guias de Desarrollo y diseño.">
+      
+      
+        <link rel="canonical" href="https://saucedoinfo.github.io/guias/desarrollo/javascript/01-introducci%C3%B3n_a_javascript/">
+      
+      
+        <meta name="author" content="Fernando S. Saucedo">
+      
+      <link rel="shortcut icon" href="../../../img/favicon-16x16.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.14">
+    
+    
+      
+        <title>Introducción a Javascript - Guias de Desarrollo y diseño</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d3202873.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ff0a5ce4.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#000000">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduccion-a-javascript" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-header-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Guias de Desarrollo y diseño
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Introducción a Javascript
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../html/01-introduccion_a_HTML5/" class="md-tabs__link">
+          Desarrollo
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" class="md-tabs__link">
+          Herramientas IT
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    Guias de Desarrollo y diseño
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Desarrollo
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Desarrollo" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Desarrollo
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Html
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Html" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        <span class="md-nav__icon md-icon"></span>
+        Html
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/01-introduccion_a_HTML5/" title="Introduccion a HTML" class="md-nav__link">
+      Introduccion a HTML
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/02-etiquetas_semanticas/" title="Etiquetas semánticas" class="md-nav__link">
+      Etiquetas semánticas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/03-etiquetas_multimedia/" title="Etiquetas multimedias" class="md-nav__link">
+      Etiquetas multimedias
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/04-etiquetas_de_cabecera/" title="Etiquetas de cabecera" class="md-nav__link">
+      Etiquetas de cabecera
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/05-etiquetas_de_formularios/" title="Etiquetas de formularios" class="md-nav__link">
+      Etiquetas de formularios
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/06-etiquetas_de_scripting/" title="Etiquetas de scripting" class="md-nav__link">
+      Etiquetas de scripting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Css
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Css" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        <span class="md-nav__icon md-icon"></span>
+        Css
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/01-introduccion_a_CSS/" title="Introducción a CSS" class="md-nav__link">
+      Introducción a CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/02-modelo_de_cajas/" title="Modelo de cajas" class="md-nav__link">
+      Modelo de cajas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/03-colores_y_fondos/" title="Colores y fondos" class="md-nav__link">
+      Colores y fondos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/04-selectores_CSS/" title="Selectores CSS" class="md-nav__link">
+      Selectores CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/05-Fuentes_y_tipografias/" title="Fuentes y tipografías" class="md-nav__link">
+      Fuentes y tipografías
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/06-representacion_de_datos/" title="Representación de datos" class="md-nav__link">
+      Representación de datos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/07_maquetacion_y_colocacion/" title="Maquetación y colocación" class="md-nav__link">
+      Maquetación y colocación
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/08-interacciones/" title="Interacciones" class="md-nav__link">
+      Interacciones
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/09-efectos/" title="Efectos" class="md-nav__link">
+      Efectos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/10-responsive_Web_Design/" title="Responsive Web Design" class="md-nav__link">
+      Responsive Web Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/11-animaciones_CSS/" title="Animaciones CSS" class="md-nav__link">
+      Animaciones CSS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3" checked>
+    
+    <label class="md-nav__link" for="nav-2-3">
+      JavaScript
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="JavaScript" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon"></span>
+        JavaScript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Introducción a Javascript
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Introducción a Javascript" class="md-nav__link md-nav__link--active">
+      Introducción a Javascript
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-javascript" class="md-nav__link">
+    ¿Qué es Javascript?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué es Javascript?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-javascript_1" class="md-nav__link">
+    ¿Qué es Javascript?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué es Javascript?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dificultad" class="md-nav__link">
+    Dificultad
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-consola-javascript" class="md-nav__link">
+    La consola Javascript
+  </a>
+  
+    <nav class="md-nav" aria-label="La consola Javascript">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-consola" class="md-nav__link">
+    La consola
+  </a>
+  
+    <nav class="md-nav" aria-label="La consola">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aplicar-varios-datos" class="md-nav__link">
+    Aplicar varios datos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicar-estilos-en-la-consola" class="md-nav__link">
+    Aplicar estilos en la consola
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-funciona-javascript" class="md-nav__link">
+    ¿Cómo funciona Javascript?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Cómo funciona Javascript?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-de-script-en-linea" class="md-nav__link">
+    Ejemplo de script en línea
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-de-script-externo" class="md-nav__link">
+    Ejemplo de script externo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubicacion-de-la-etiqueta-script" class="md-nav__link">
+    Ubicación de la etiqueta script
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conceptos-basicos" class="md-nav__link">
+    Conceptos básicos
+  </a>
+  
+    <nav class="md-nav" aria-label="Conceptos básicos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#glosario-general" class="md-nav__link">
+    Glosario general
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-especificacion-ecmascript" class="md-nav__link">
+    La especificación ECMAScript
+  </a>
+  
+    <nav class="md-nav" aria-label="La especificación ECMAScript">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#versiones-de-ecmascript" class="md-nav__link">
+    Versiones de ECMAScript
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estrategia-crossbrowser" class="md-nav__link">
+    Estrategia «crossbrowser»
+  </a>
+  
+    <nav class="md-nav" aria-label="Estrategia «crossbrowser»">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enfoque-conservador" class="md-nav__link">
+    Enfoque conservador
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enfoque-delegador" class="md-nav__link">
+    Enfoque delegador
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enfoque-evergreen" class="md-nav__link">
+    Enfoque evergreen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enfoque-transpilador" class="md-nav__link">
+    Enfoque transpilador
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comentarios-de-codigo" class="md-nav__link">
+    Comentarios de código
+  </a>
+  
+    <nav class="md-nav" aria-label="Comentarios de código">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-comentarios" class="md-nav__link">
+    Tipos de comentarios
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de comentarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos" class="md-nav__link">
+    Ejemplos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructuras-de-control" class="md-nav__link">
+    Estructuras de control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#condicionales" class="md-nav__link">
+    Condicionales
+  </a>
+  
+    <nav class="md-nav" aria-label="Condicionales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#condicional-if" class="md-nav__link">
+    Condicional If
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#condicional-if-else" class="md-nav__link">
+    Condicional If / else
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operador-ternario" class="md-nav__link">
+    Operador ternario
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#condicional-if-multiple" class="md-nav__link">
+    Condicional If múltiple
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#condicional-switch" class="md-nav__link">
+    Condicional Switch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bucles-e-iteraciones" class="md-nav__link">
+    Bucles e iteraciones
+  </a>
+  
+    <nav class="md-nav" aria-label="Bucles e iteraciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bucle-while" class="md-nav__link">
+    Bucle while
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bucle-for" class="md-nav__link">
+    Bucle for
+  </a>
+  
+    <nav class="md-nav" aria-label="Bucle for">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#incremento-multiple" class="md-nav__link">
+    Incremento múltiple
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bucles-sobre-arrays" class="md-nav__link">
+    Bucles sobre arrays
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indentacion-de-codigo" class="md-nav__link">
+    Indentación de código
+  </a>
+  
+    <nav class="md-nav" aria-label="Indentación de código">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-la-indentacion" class="md-nav__link">
+    ¿Qué es la indentación?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué es la indentación?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tabuladores-o-espacios" class="md-nav__link">
+    ¿Tabuladores o espacios?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convenciones-de-nombres" class="md-nav__link">
+    Convenciones de nombres
+  </a>
+  
+    <nav class="md-nav" aria-label="Convenciones de nombres">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nombres-descriptivos" class="md-nav__link">
+    Nombres descriptivos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indices-y-contadores" class="md-nav__link">
+    Índices y contadores
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constantes-clases-y-variables" class="md-nav__link">
+    Constantes, clases y variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estilo-de-nombrado" class="md-nav__link">
+    Estilo de nombrado
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funciones-basicas" class="md-nav__link">
+    Funciones básicas
+  </a>
+  
+    <nav class="md-nav" aria-label="Funciones básicas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-una-funcion" class="md-nav__link">
+    ¿Qué es una función?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué es una función?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#declaracion" class="md-nav__link">
+    Declaración
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejecucion" class="md-nav__link">
+    Ejecución
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo" class="md-nav__link">
+    Ejemplo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-son-los-parametros" class="md-nav__link">
+    ¿Qué son los parámetros?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué son los parámetros?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parametros-multiples" class="md-nav__link">
+    Parámetros múltiples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parametros-por-defecto" class="md-nav__link">
+    Parámetros por defecto
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#devolucion-de-valores" class="md-nav__link">
+    Devolución de valores
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02-fundamentos_de_javascript/" title="Fundamentos de Javascript" class="md-nav__link">
+      Fundamentos de Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-caracteristicas/" title="Características" class="md-nav__link">
+      Características
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-DOM/" title="DOM" class="md-nav__link">
+      DOM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-asincronia/" title="Asincronía" class="md-nav__link">
+      Asincronía
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-peticiones_HTTP/" title="Peticiones HTTP" class="md-nav__link">
+      Peticiones HTTP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Herramientas IT
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Herramientas IT" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Herramientas IT
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Terminal
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Terminal" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon"></span>
+        Terminal
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" title="Introducción a la terminal" class="md-nav__link">
+      Introducción a la terminal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/02-operaciones_con_ficheros/" title="Operaciones con ficheros" class="md-nav__link">
+      Operaciones con ficheros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/03-administraci%C3%B3n_del_sistema/" title="Administración del sistema" class="md-nav__link">
+      Administración del sistema
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/markdown/" title="Markdown" class="md-nav__link">
+      Markdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/pip/" title="Pip" class="md-nav__link">
+      Pip
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/mkdocs/" title="Mkdocs" class="md-nav__link">
+      Mkdocs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../about/" title="Acerca de" class="md-nav__link">
+      Acerca de
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-javascript" class="md-nav__link">
+    ¿Qué es Javascript?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué es Javascript?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-javascript_1" class="md-nav__link">
+    ¿Qué es Javascript?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué es Javascript?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dificultad" class="md-nav__link">
+    Dificultad
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-consola-javascript" class="md-nav__link">
+    La consola Javascript
+  </a>
+  
+    <nav class="md-nav" aria-label="La consola Javascript">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-consola" class="md-nav__link">
+    La consola
+  </a>
+  
+    <nav class="md-nav" aria-label="La consola">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aplicar-varios-datos" class="md-nav__link">
+    Aplicar varios datos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicar-estilos-en-la-consola" class="md-nav__link">
+    Aplicar estilos en la consola
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-funciona-javascript" class="md-nav__link">
+    ¿Cómo funciona Javascript?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Cómo funciona Javascript?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-de-script-en-linea" class="md-nav__link">
+    Ejemplo de script en línea
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-de-script-externo" class="md-nav__link">
+    Ejemplo de script externo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubicacion-de-la-etiqueta-script" class="md-nav__link">
+    Ubicación de la etiqueta script
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conceptos-basicos" class="md-nav__link">
+    Conceptos básicos
+  </a>
+  
+    <nav class="md-nav" aria-label="Conceptos básicos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#glosario-general" class="md-nav__link">
+    Glosario general
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-especificacion-ecmascript" class="md-nav__link">
+    La especificación ECMAScript
+  </a>
+  
+    <nav class="md-nav" aria-label="La especificación ECMAScript">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#versiones-de-ecmascript" class="md-nav__link">
+    Versiones de ECMAScript
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estrategia-crossbrowser" class="md-nav__link">
+    Estrategia «crossbrowser»
+  </a>
+  
+    <nav class="md-nav" aria-label="Estrategia «crossbrowser»">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enfoque-conservador" class="md-nav__link">
+    Enfoque conservador
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enfoque-delegador" class="md-nav__link">
+    Enfoque delegador
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enfoque-evergreen" class="md-nav__link">
+    Enfoque evergreen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enfoque-transpilador" class="md-nav__link">
+    Enfoque transpilador
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comentarios-de-codigo" class="md-nav__link">
+    Comentarios de código
+  </a>
+  
+    <nav class="md-nav" aria-label="Comentarios de código">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-comentarios" class="md-nav__link">
+    Tipos de comentarios
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de comentarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos" class="md-nav__link">
+    Ejemplos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructuras-de-control" class="md-nav__link">
+    Estructuras de control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#condicionales" class="md-nav__link">
+    Condicionales
+  </a>
+  
+    <nav class="md-nav" aria-label="Condicionales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#condicional-if" class="md-nav__link">
+    Condicional If
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#condicional-if-else" class="md-nav__link">
+    Condicional If / else
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operador-ternario" class="md-nav__link">
+    Operador ternario
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#condicional-if-multiple" class="md-nav__link">
+    Condicional If múltiple
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#condicional-switch" class="md-nav__link">
+    Condicional Switch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bucles-e-iteraciones" class="md-nav__link">
+    Bucles e iteraciones
+  </a>
+  
+    <nav class="md-nav" aria-label="Bucles e iteraciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bucle-while" class="md-nav__link">
+    Bucle while
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bucle-for" class="md-nav__link">
+    Bucle for
+  </a>
+  
+    <nav class="md-nav" aria-label="Bucle for">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#incremento-multiple" class="md-nav__link">
+    Incremento múltiple
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bucles-sobre-arrays" class="md-nav__link">
+    Bucles sobre arrays
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indentacion-de-codigo" class="md-nav__link">
+    Indentación de código
+  </a>
+  
+    <nav class="md-nav" aria-label="Indentación de código">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-la-indentacion" class="md-nav__link">
+    ¿Qué es la indentación?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué es la indentación?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tabuladores-o-espacios" class="md-nav__link">
+    ¿Tabuladores o espacios?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convenciones-de-nombres" class="md-nav__link">
+    Convenciones de nombres
+  </a>
+  
+    <nav class="md-nav" aria-label="Convenciones de nombres">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nombres-descriptivos" class="md-nav__link">
+    Nombres descriptivos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indices-y-contadores" class="md-nav__link">
+    Índices y contadores
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constantes-clases-y-variables" class="md-nav__link">
+    Constantes, clases y variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estilo-de-nombrado" class="md-nav__link">
+    Estilo de nombrado
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funciones-basicas" class="md-nav__link">
+    Funciones básicas
+  </a>
+  
+    <nav class="md-nav" aria-label="Funciones básicas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-una-funcion" class="md-nav__link">
+    ¿Qué es una función?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué es una función?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#declaracion" class="md-nav__link">
+    Declaración
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejecucion" class="md-nav__link">
+    Ejecución
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo" class="md-nav__link">
+    Ejemplo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-son-los-parametros" class="md-nav__link">
+    ¿Qué son los parámetros?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué son los parámetros?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parametros-multiples" class="md-nav__link">
+    Parámetros múltiples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parametros-por-defecto" class="md-nav__link">
+    Parámetros por defecto
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#devolucion-de-valores" class="md-nav__link">
+    Devolución de valores
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/saucedoinfo/guias/edit/master/docs/desarrollo/javascript/01-introducción_a_javascript.md" title="Editar esta página" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="introduccion-a-javascript">Introducción a Javascript<a class="headerlink" href="#introduccion-a-javascript" title="Permanent link">&para;</a></h1>
+<p align="center">
+<img src="/img/js.png"  width="250" height="250" /> 
+</p>
+
+<h2 id="que-es-javascript">¿Qué es Javascript?<a class="headerlink" href="#que-es-javascript" title="Permanent link">&para;</a></h2>
+<p>Cualquier página web de Internet está construída, como mínimo, por <strong>HTML</strong> (<em>un lenguaje de marcas</em>) y <strong>CSS</strong> (<em>un lenguaje de estilos</em>). El primero de ellos permite construir todo el marcado de la página (<em>contenido e información</em>) mediante etiquetas HTML y dotándo de semántica a la información mediante la naturaleza de dichas etiquetas. Posteriormente, el segundo de ellos permite darle estilo a la página y construir una interfaz visual más agradable para el usuario.</p>
+<blockquote>
+<p>La separación bien marcada de estos dos pilares permite que si en algún momento necesitamos modificar la información (<em>o el diseño</em>) de la página, no tengamos también que lidiar con modificaciones en el otro.</p>
+</blockquote>
+<p>Sin embargo, utilizar sólo y exclusivamente <strong>HTML</strong> y <strong>CSS</strong> en una página nos limita considerablemente. Si bien es cierto que con estos dos lenguajes podemos hacer un gran abanico de cosas, hay otras que serían totalmente imposibles, o al menos, mucho más fáciles de realizar si tuvieramos un <strong>lenguaje de programación</strong> a nuestra disposición. Y en este punto es donde aparece <strong>Javascript</strong>.</p>
+<h3 id="que-es-javascript_1">¿Qué es Javascript?<a class="headerlink" href="#que-es-javascript_1" title="Permanent link">&para;</a></h3>
+<p>Javascript es un <strong>lenguaje de programación</strong>, o lo que es lo mismo, un mecanismo con el que podemos decirle a nuestro navegador que tareas debe realizar, en que orden y cuantas veces (<em>por ejemplo</em>).</p>
+<p>Muchas de las tareas que realizamos con HTML y CSS se podrían realizar con Javascript. De hecho, es muy probable que al principio nos parezca que es mucho más complicado hacerlo con Javascript, y que por lo tanto no merece la pena. Sin embargo, con el tiempo veremos que Javascript nos ofrece una mayor flexibilidad y un abanico de posibilidades más grande, y que bien usadas, pueden ahorrarnos bastante tiempo.</p>
+<p>Para comprenderlo, un ejemplo muy sencillo sería el siguiente:</p>
+<pre><code>&lt;div class="item"&gt;
+  &lt;p&gt;Número: &lt;span class="numero"&gt;1&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt;Número: &lt;span class="numero"&gt;2&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt;Número: &lt;span class="numero"&gt;3&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt;Número: &lt;span class="numero"&gt;4&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt;Número: &lt;span class="numero"&gt;5&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Imaginemos que tenemos que crear una lista de números desde el <strong>1</strong> hasta el <strong>500</strong>. Hacerlo solamente con HTML sería muy tedioso, ya que tendríamos que copiar y pegar esas filas varias veces hasta llegar a 500. Sin embargo, mediante Javascript, podemos decirle al navegador que escriba el primer párrafo <code>&lt;p&gt;</code>, que luego escriba el mismo pero sumándole uno al número. Y que esto lo repita hasta llegar a 500.</p>
+<p>De esta forma y con este sencillo ejemplo, con HTML habría que escribir <strong>500 líneas</strong> mientras que con Javascript no serían más de <strong>10 líneas</strong>.</p>
+<h4 id="dificultad">Dificultad<a class="headerlink" href="#dificultad" title="Permanent link">&para;</a></h4>
+<p>Aunque Javascript es ideal para muchos casos, es mucho más complicado aprender Javascript (<em>o un lenguaje de programación en general</em>) que aprender HTML o CSS, los cuales son mucho más sencillos de comprender. Antes debemos conocer varias cosas:</p>
+<ul>
+<li>
+<p>Para <strong>aprender Javascript</strong> debemos conocer el lenguaje <strong>Javascript</strong>, pero no podremos hacerlo si no sabemos programar. Se puede aprender a programar con Javascript, pero es recomendable tener una serie de fundamentos básicos de programación antes para que no nos resulte muy duro.</p>
+</li>
+<li>
+<p>Para <strong>aprender a programar</strong> antes debemos saber como «trabaja un ordenador». Programar no es más que decirle a una máquina que cosas debe hacer y como debe hacerlas. Eso significa que no podemos pasar por alto nada.</p>
+</li>
+<li>
+<p>Para <strong>darle órdenes a una máquina</strong> debemos tener claro que esas órdenes son correctas y harán lo que se supone que deben hacer. Si le indicamos a una máquina los pasos para resolver un problema, pero dichos pasos son erróneos, la máquina también hará mal el trabajo.</p>
+</li>
+</ul>
+<p>Dicho esto, es necesario tener presente que <strong>aprender a programar</strong> es una tarea que no ocurre de un día para otro. Requiere tiempo, esfuerzo, acostumbrarse a cambiar la forma de pensar y practicar mucho.</p>
+<ul>
+<li>Puedes <strong>copiar un programa</strong> en segundos, pero eso no significa que lo entiendas.</li>
+<li>Puedes <strong>comprender un programa</strong> en minutos, pero eso no significa que lo puedas crear.</li>
+<li>Puedes <strong>crear un programa</strong> en horas, pero eso no significa que sepas programar.</li>
+<li>Puedes <strong>aprender a programar</strong> en semanas, pero eso no significa que no cometas errores.</li>
+<li>Puedes <strong>aprender a programar bien y sin demasiados errores</strong> en meses.</li>
+</ul>
+<p>Pero <strong>dominar la programación</strong> es una tarea que requiere años.</p>
+<hr />
+<h2 id="la-consola-javascript">La consola Javascript<a class="headerlink" href="#la-consola-javascript" title="Permanent link">&para;</a></h2>
+<p>Para acceder a la consola Javascript del navegador, podemos pulsar CTRL+SHIFT+I sobre la pestaña de la página web en cuestión, lo que nos llevará al <strong>Inspector de elementos</strong> del navegador. Este inspector es un panel de control general donde podemos ver varios aspectos de la página en la que nos encontramos: su etiquetado HTML, sus estilos CSS, etc...</p>
+<p>Concretamente, a nosotros nos interesa una sección particular del inspector de elementos. Para ello, nos moveremos a la pestaña <strong>Console</strong> y ya nos encontraremos en la <strong>consola Javascript</strong> de la página.</p>
+<blockquote>
+<p>También se puede utilizar directamente el atajo de teclado CTRL+SHIFT+J, que en algunos navegadores nos lleva directamente a la consola.</p>
+</blockquote>
+<p>En esta consola, podemos escribir funciones o sentencias de Javascript que estarán actuando en la página que se encuentra en la pestaña actual del navegador. De esta forma podremos observar los resultados que nos devuelve en la consola al realizar diferentes acciones. Para ello, vamos a ver algunas bases:</p>
+<h3 id="la-consola">La consola<a class="headerlink" href="#la-consola" title="Permanent link">&para;</a></h3>
+<p>El clásico primer ejemplo cuando se comienza a programar, es crear un programa que muestre por pantalla un texto, generalmente el texto «<strong>Hola Mundo</strong>». También podemos realizar, por ejemplo, <strong>operaciones numéricas</strong>. En la consola Javascript podemos hacer esto de forma muy sencilla:</p>
+<pre><code>console.log("Hola Mundo");
+console.log(2 + 2);
+</code></pre>
+<p>En la primera línea, veremos que al pulsar enter nos muestra el texto «<strong>Hola Mundo</strong>». En la segunda línea, sin embargo, procesa la operación y nos devuelve <strong>4</strong>. Para mostrar estos textos en la consola Javascript hemos utilizado la función <code>console.log</code>, pero existen varias más:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Función</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">console.log()</td>
+<td align="left">Muestra la información proporcionada en la consola Javascript.</td>
+</tr>
+<tr>
+<td align="left">console.info()</td>
+<td align="left">Equivalente al anterior. Se utiliza para mensajes de información.</td>
+</tr>
+<tr>
+<td align="left">console.warn()</td>
+<td align="left">Muestra información de advertencia. Aparece en amarillo.</td>
+</tr>
+<tr>
+<td align="left">console.error()</td>
+<td align="left">Muestra información de error. Aparece en rojo.</td>
+</tr>
+<tr>
+<td align="left">console.clear()</td>
+<td align="left">Limpia la consola. Equivalente a pulsar CTRL+L o escribir <code>clear()</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>La idea es utilizar en nuestro código la función que más se adapte a nuestra situación en cada caso (<em>errores graves con console.error(), errores leves con console.warn(), etc...</em>).</p>
+<h4 id="aplicar-varios-datos">Aplicar varios datos<a class="headerlink" href="#aplicar-varios-datos" title="Permanent link">&para;</a></h4>
+<p>En el ejemplo anterior, solo hemos aportado un dato por cada línea (<em>un texto o una operación numérica</em>), pero <code>console.log()</code> y sus funciones hermanas permiten añadir varios datos en una misma línea, separándolo por comas:</p>
+<pre><code>console.log("¡Hola a todos! Observen este número: ", 5 + 18);
+</code></pre>
+<p>De momento nos puede parecer algo inútil, pero cuando empecemos a trabajar con variables y objetos, será muy necesario.</p>
+<h4 id="aplicar-estilos-en-la-consola">Aplicar estilos en la consola<a class="headerlink" href="#aplicar-estilos-en-la-consola" title="Permanent link">&para;</a></h4>
+<p>Aunque no es muy práctico y sólo se trata de puro divertimento, se pueden aplicar estilos CSS en la consola Javascript haciendo uso de <code>%c</code>, que se reemplazará por los estilos indicados:</p>
+<pre><code>console.log("%c¡Hola Manz!",
+            "background:linear-gradient(#000, #555); color:#fff; padding: 5px 10px;");
+</code></pre>
+<blockquote>
+<p>Es importante recalcar que cuando escribimos en la consola podemos obviar el <code>console.log()</code> y escribir directamente la información, pero si queremos mostrar algo por consola desde nuestra página web o aplicación Javascript, es absolutamente necesario escribir <code>console.log()</code> (<em>o cualquiera de las funciones de su familia</em>) en nuestro código.</p>
+</blockquote>
+<hr />
+<h2 id="como-funciona-javascript">¿Cómo funciona Javascript?<a class="headerlink" href="#como-funciona-javascript" title="Permanent link">&para;</a></h2>
+<p>El <strong>esquema general</strong> de una página web es un <strong>documento HTML</strong> donde están todas las etiquetas HTML de la página. A lo largo de ese documento, pueden existir <strong>referencias o relaciones</strong> a otros documentos, como archivos CSS o archivos Javascript.</p>
+<p>Por ejemplo, si dentro del documento HTML se encuentra una referencia a un <strong>archivo CSS</strong>, el navegador lo descarga y lo aplica al documento HTML, cambiando su apariencia visual. De la misma forma, si encuentra una referencia a un <strong>archivo Javascript</strong>, el navegador lo descarga y ejecuta las órdenes o acciones que allí se indican.</p>
+<h3 id="ejemplo-de-script-en-linea">Ejemplo de script en línea<a class="headerlink" href="#ejemplo-de-script-en-linea" title="Permanent link">&para;</a></h3>
+<p>En este primer y sencillo ejemplo, sólo tenemos un documento: el <strong>archivo HTML</strong>. En él, existe una etiqueta <code>&lt;script&gt;</code> que contiene las órdenes o líneas de Javascript que le indican al navegador que tiene que hacer (<em>en este caso, mostrar un "¡Hola!" en la consola</em>):</p>
+<pre><code>&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Título de la página&lt;/title&gt;
+    &lt;script&gt;
+      console.log("¡Hola!");
+    &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;Ejemplo de texto.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>Este método de escribir scripts se denomina <strong>Javascript en línea</strong> (<em>inline</em>), y significa que el Javascript está escrito directamente en el código HTML. Nos puede servir como ejemplo inicial, pero no es la forma recomendable de escribirlo, ya que lo ideal es separar el código HTML del código Javascript (<em>en archivos diferentes</em>) para organizarnos mejor.</p>
+<h3 id="ejemplo-de-script-externo">Ejemplo de script externo<a class="headerlink" href="#ejemplo-de-script-externo" title="Permanent link">&para;</a></h3>
+<p>Esta otra forma de incluir Javascript en una página tiene la ventaja de, en el caso de necesitar incluir el código Javascript desde varios documentos HTML, no tendremos que volver a escribir dicho código, sino simplemente referenciar el nombre del mismo archivo Javascript a incluir en todas las páginas HTML.</p>
+<p>Para relacionar un <strong>documento Javascript</strong> desde una página web, igual que antes, utilizaremos la etiqueta <code>&lt;script&gt;</code>, sólo que en este caso, haremos referencia al archivo <strong>Javascript</strong> con un atributo <code>src</code> (<em>source</em>), como se ve en el siguiente ejemplo:</p>
+<pre><code>&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Título de la página&lt;/title&gt;
+    &lt;script src="js/index.js"&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;Ejemplo de texto.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>El texto <code>js/index.js</code> no es más que una referencia a un archivo <strong>index.js</strong> que se encuentra dentro de una carpeta <strong>js</strong>, situada en la misma carpeta que el documento HTML del ejemplo. Si en este archivo Javascript, incluímos el <code>console.log()</code> de mensaje de bienvenida, ese mensaje debería aparecer en la consola Javascript al cargar esta página.</p>
+<h3 id="ubicacion-de-la-etiqueta-script">Ubicación de la etiqueta script<a class="headerlink" href="#ubicacion-de-la-etiqueta-script" title="Permanent link">&para;</a></h3>
+<p>Si te fijas, en el ejemplo anterior, la etiqueta <code>&lt;script&gt;</code> está situada dentro de la etiqueta <code>&lt;head&gt;</code> de la página, es decir, en la cabecera de metadatos. Esto significa que la página web descargará el archivo Javascript antes de empezar a dibujar el contenido de la página (<em>etiqueta <code>&lt;body&gt;</code></em>).</p>
+<p>Es posible que te hayas encontrado ejemplos donde dicha etiqueta esté ubicada en otra parte del documento HTML. Veamos las posibilidades:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Ubicación</th>
+<th align="left">¿Cómo descarga el archivo Javascript?</th>
+<th align="left">Estado de la página</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">En <code>&lt;head&gt;</code></td>
+<td align="left"><strong>ANTES</strong> de empezar a dibujar la página.</td>
+<td align="left">Página aún no dibujada.</td>
+</tr>
+<tr>
+<td align="left">En <code>&lt;body&gt;</code></td>
+<td align="left"><strong>DURANTE</strong> el dibujado de la página.</td>
+<td align="left">Dibujada hasta donde está la etiqueta <code>&lt;script&gt;</code>.</td>
+</tr>
+<tr>
+<td align="left">Antes de <code>&lt;/body&gt;</code></td>
+<td align="left"><strong>DESPUÉS</strong> de dibujar la página.</td>
+<td align="left">Dibujada al 100%.</td>
+</tr>
+</tbody>
+</table>
+<p>Ten en cuenta que el navegador puede descargar un documento Javascript en cualquier momento de la carga de la página y necesitamos saber cuál es el más oportuno para nosotros.</p>
+<ul>
+<li>
+<p>Si queremos que un documento Javascript actúe antes que se muestre la página, la opción de colocarlo en el <code>&lt;head&gt;</code> es la más adecuada.</p>
+</li>
+<li>
+<p>Si por el contrario, queremos que actúe una vez se haya terminado de cargar la página, la opción de colocarlo justo antes del <code>&lt;/body&gt;</code> es la más adecuada. Esta opción es equivalente a usar el atributo <code>defer</code> en la etiqueta <code>&lt;script&gt;</code>, sin embargo, esta opción es además compatible con navegadores muy antiguos (<em><a href="https://caniuse.com/#search=defer">IE9 o anteriores</a></em>) que no soportan <strong>defer</strong>.</p>
+</li>
+</ul>
+<div class="admonition nota">
+<p class="admonition-title">Nota<p>Tienes más información sobre <a href="https://lenguajehtml.com/html/scripting/etiquetas-html-scripts">etiquetas script</a> en la página de <strong>LenguajeHTML</strong>.</p>
+</p>
+</div>
+<hr />
+<h2 id="conceptos-basicos">Conceptos básicos<a class="headerlink" href="#conceptos-basicos" title="Permanent link">&para;</a></h2>
+<p>Si no has programado hasta ahora, debes conocer una serie de conceptos básicos que tendrás que trabajar y dominar dentro del campo de la programación.</p>
+<h3 id="glosario-general">Glosario general<a class="headerlink" href="#glosario-general" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Programa</strong>: En programación se suele llamar «programa» a el conjunto total de código que desarrollas. En Javascript, quizás el término más utilizado es <strong>aplicación web</strong> (<em>cuando es un desarrollo con mucha cantidad de Javascript</em>). También se suelen generalizar utilizando términos como «script» o «código Javascript».</p>
+</li>
+<li>
+<p><strong>Algoritmo</strong>: Un algoritmo es un conjunto de pasos conocidos, en un determinado orden, para conseguir realizar una tarea satisfactoriamente y lograr un objetivo.</p>
+</li>
+<li>
+<p><strong>Comentarios</strong>: Los comentarios en nuestro código son fragmentos de texto o anotaciones que el navegador ignora y no repercuten en el programa. Sirven para dejar por escrito detalles importantes para el programador. De esta forma cuando volvamos al código, nos será más rápido comprenderlo. Es una buena costumbre comentar en la medida de lo posible nuestro código.</p>
+</li>
+<li>
+<p><strong>Indentación</strong>: Se llama <strong>indentar</strong> a la acción de colocar espacios o tabuladores antes del código, para indicar si nos encontramos dentro de un <strong>if</strong>, de un <strong>bucle</strong>, etc... Esta práctica es muy importante y necesaria, y más adelante profundizaremos en ella.</p>
+</li>
+<li>
+<p><strong>Variables</strong>: Es el nombre genérico que se le da a pequeños espacios de memoria donde guardas una información determinada, de forma muy similar a las incógnitas en matemáticas. Un programa puede tener muchas variables, y cada una de ellas tendrá un <strong>nombre</strong>, un <strong>valor</strong> y un <strong>tipo de dato</strong>. El nombre se utiliza para diferenciarlas unas de otras y hacer referencia a ellas, el valor es la información que contienen y el tipo de dato es la naturaleza de ese valor. Se llaman variables porque podemos cambiarle su valor a lo largo del programa, según necesitemos.</p>
+<p>x = 5; // nombre: x, valor: 5, tipo de dato: número
+y = "Hola"; // nombre: y, valor: Hola, tipo de dato: texto
+Manz = "me"; // nombre: Manz, valor: me, tipo de dato: texto</p>
+</li>
+<li>
+<p><strong>Constantes</strong>: Es el mismo concepto de una variable, salvo que en este caso, la información que contiene es siempre la misma (<em>no puede variar</em>).</p>
+</li>
+<li>
+<p><strong>Funciones</strong>: Cuando comenzamos a programar, nuestro código se va haciendo cada vez más y más grande, por lo que hay que buscar formas de organizarlo y mantenerlo lo más simple posible. Las funciones son <strong>agrupaciones</strong> de código que, entre otras cosas, evitan que tengamos que escribir varias veces lo mismo en nuestro código. Una función contendrá una o mas acciones a realizar y cada vez que ejecutemos una función, se realizarán todas ellas.</p>
+</li>
+<li>
+<p><strong>Parámetros</strong>: Es el nombre que reciben las variables que se le pasan a las funciones. Muchas veces también se les denomina <strong>argumentos</strong>.</p>
+</li>
+<li>
+<p><strong>Bucles</strong>: Cuando estamos programando, muchas veces necesitaremos realizar tareas repetitivas. Una de las ventajas de la programación es que permite automatizar acciones y no es necesario hacerlas varias veces. Los bucles permiten indicar el número de veces que se repetirá una acción. De esta forma, sólo la escribimos una vez en nuestro código, y simplemente indicamos el número de veces que queremos que se repita.</p>
+</li>
+<li>
+<p><strong>Iteración</strong>: Cuando el programa está en un bucle repitiendo varias veces la misma tarea, cada una de esas repeticiones se denomina <strong>iteración</strong>.</p>
+</li>
+<li>
+<p><strong>Librería</strong>: Muchas veces, desarrollamos código que resuelve tareas o problemas que, posteriormente, querremos reutilizar en otros programas. Cuando eso ocurre, en Javascript se suele empaquetar el código en lo que se llaman <strong>librerías</strong>, que no es más que código listo para que otros programadores puedan utilizarlo fácilmente en sus programas y beneficiarse de las tareas que resuelven de forma muy sencilla.</p>
+</li>
+</ul>
+<hr />
+<h2 id="la-especificacion-ecmascript">La especificación ECMAScript<a class="headerlink" href="#la-especificacion-ecmascript" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.ecma-international.org/ecma-262/9.0/index.html"><strong>ECMAScript</strong></a> es la especificación donde se mencionan todos los detalles de <strong>cómo debe funcionar y comportarse Javascript</strong> en un navegador. De esta forma, los diferentes navegadores (<em>Chrome, Firefox, Opera, Edge, Safari...</em>) saben como deben desarrollar los motores de Javascript para que cualquier código o programa funcione exactamente igual, independientemente del navegador que se utilice.</p>
+<blockquote>
+<p>ECMAScript suele venir acompañado de un número que indica la <strong>versión o revisión</strong> de la que hablamos (<em>algo similar a las versiones de un programa</em>). En cada nueva versión de ECMAScript, se modifican detalles sobre Javascript y/o se añaden nuevas funcionalidades, manteniendo Javascript vivo y con novedades que lo hacen un lenguaje de programación moderno y cada vez mejor preparado para utilizar en el día a día.</p>
+</blockquote>
+<p>Teniendo esto en cuenta, debemos saber que los navegadores web intentan cumplir la especificación ECMAScript al máximo nivel, pero no todos ellos lo consiguen. Por lo tanto, pueden existir ciertas discrepancias. Por ejemplo, pueden existir navegadores que cumplan la especificación ECMAScript 6 al 80% y otros que sólo la cumplan al 60%. Esto significa que pueden haber características que no funcionen en un navegador específico (<em>y en otros sí</em>).</p>
+<p>Además, todo esto va cambiando a medida que se van lanzando nuevas versiones de los navegadores web, donde su compatibilidad ECMAScript suele aumentar.</p>
+<h3 id="versiones-de-ecmascript">Versiones de ECMAScript<a class="headerlink" href="#versiones-de-ecmascript" title="Permanent link">&para;</a></h3>
+<p>A lo largo de los años, Javascript ha ido sufriendo modificaciones que los navegadores han ido implementando para acomodarse a la última versión de <strong>ECMAScript</strong> cuanto antes. La lista de versiones de ECMAScript aparecidas hasta el momento son las siguientes, donde encontramos las versiones enmarcadas en lo que podemos considerar <strong>el pasado de Javascript</strong>:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Ed.</th>
+<th align="left">Fecha</th>
+<th align="left">Nombre formal / informal</th>
+<th align="left">Cambios significativos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">JUN/1997</td>
+<td align="left">ECMAScript 1997 (ES1)</td>
+<td align="left">Primera edición</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">JUN/1998</td>
+<td align="left">ECMAScript 1998 (ES2)</td>
+<td align="left">Cambios leves</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">DIC/1999</td>
+<td align="left">ECMAScript 1999 (ES3)</td>
+<td align="left">RegExp, try/catch, etc...</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">AGO/2008</td>
+<td align="left">ECMAScript 2008 (ES4)</td>
+<td align="left">Versión abandonada.</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">DIC/2009</td>
+<td align="left">ECMAScript 2009 (ES5)</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">5.1</td>
+<td align="left">DIC/2011</td>
+<td align="left">ECMAScript 2011 (ES5.1)</td>
+<td align="left">Cambios leves</td>
+</tr>
+</tbody>
+</table>
+<p>A partir del año 2015, se marcó un antes y un después en el mundo de Javascript, estableciendo una serie de cambios que lo transformarían en un lenguaje moderno, partiendo desde la específicación de dicho año, hasta la actualidad:</p>
+<p>Ed.|Fecha|Nombre formal / informal|Cambios significativos
+6|JUN/2015|ECMAScript 2015 (ES6)|Clases, módulos, generadores, hashmaps, sets, for of, proxies...
+7|JUN/2016|ECMAScript 2016|Array includes(), Exponenciación **
+8|JUN/2017|ECMAScript 2017|Async/await
+9|JUN/2018|ECMAScript 2018|Rest/Spread operator, Promise.finally()...
+10|JUN/2019|ECMAScript 2019|Flat functions, trimStart(), errores opcionales en catch...
+11|JUN/2020|ECMAScript 2020|Dynamic imports, BigInt, Promise.allSettled</p>
+<p>En ocasiones, algunos navegadores deciden implementar pequeñas funcionalidades de versiones posteriores de ECMAScript antes que otras, para ir testeando y probando características, por lo que no es raro que algunas características de futuras especificaciones puedan estar implementadas en algunos navegadores.</p>
+<p>Una buena forma de conocer en que estado se encuentra un navegador concreto en su especificación de ECMAScript es consultando la <a href="https://kangax.github.io/compat-table/es6/">tabla de compatibilidad Kangax</a>. En dicha tabla, encontramos una columna «Desktop browsers» donde podemos ver el porcentaje de compatibilidad con las diferentes características de determinadas especificaciones de ECMAScript.</p>
+<blockquote>
+<p>Nota que de ECMAScript 6 en adelante, se toma como regla nombrar a las diferentes especificaciones por su año, en lugar de por su número de edición. Aunque en los primeros temas los mencionaremos indiferentemente, ten en cuenta que se recomienda utilizar <strong>ECMAScript 2015</strong> en lugar de <strong>ECMAScript 6</strong>.</p>
+</blockquote>
+<h3 id="estrategia-crossbrowser">Estrategia «crossbrowser»<a class="headerlink" href="#estrategia-crossbrowser" title="Permanent link">&para;</a></h3>
+<p>Dicho esto, y teniendo en cuenta todos estos detalles, es muy habitual que el programador esté confuso en como empezar a programar y que versión ECMAScript adoptar como preferencia.</p>
+<p>Generalmente, el programador suele tomar una de las siguientes estrategias «crossbrowser» para asegurarse que el código funcionará en todos los navegadores:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Enfoque</th>
+<th align="left">Código escrito</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>Conservador</strong></td>
+<td align="left">ECMAScript 5</td>
+<td align="left">Incómodo de escribir. Anticuado. Compatible con navegadores nativamente.</td>
+</tr>
+<tr>
+<td align="left"><strong>Delegador</strong></td>
+<td align="left"><em>Depende</em></td>
+<td align="left">Cómodo. Rápido. Genera dependencia al framework/librería.</td>
+</tr>
+<tr>
+<td align="left"><strong>Evergreen</strong></td>
+<td align="left">ECMAScript 6+</td>
+<td align="left">Cómodo. Moderno. No garantiza la compatibilidad en navegadores antiguos.</td>
+</tr>
+<tr>
+<td align="left"><strong>Transpilador</strong></td>
+<td align="left">ECMAScript 6+</td>
+<td align="left">Cómodo. Moderno. Preparado para el futuro. Requiere preprocesado.</td>
+</tr>
+</tbody>
+</table>
+<p>Vamos a explicar cada una de estas estrategias para intentar comprenderlas mejor.</p>
+<h4 id="enfoque-conservador">Enfoque conservador<a class="headerlink" href="#enfoque-conservador" title="Permanent link">&para;</a></h4>
+<p>El programador decide crear código <strong>ECMAScript 5</strong>, una versión «segura» que actualmente una gran mayoría de navegadores (<em>incluído Internet Explorer soporta</em>). Este enfoque permite asegurarse de que el código funcionará sin problemas en cualquier navegador, pero por otro lado, implica que para muchas tareas deberá escribir mucho código, código extra o no podrá disfrutar de las últimas novedades de Javascript.</p>
+<blockquote>
+<p>Uno de los principales motivos por los que se suele elegir esta estrategia es porque se necesita compatibilidad con navegadores, sistemas antiguos y/o Internet Explorer. También se suele elegir porque es más sencilla o porque funciona nativamente sin necesidad de herramientas externas.</p>
+</blockquote>
+<h4 id="enfoque-delegador">Enfoque delegador<a class="headerlink" href="#enfoque-delegador" title="Permanent link">&para;</a></h4>
+<p>El programador decide delegar la responsabilidad «crossbrowser» a un framework o librería que se encargará de ello. Este enfoque tiene como ventaja que es mucho más cómodo para el programador y ahorra mucho tiempo de desarrollo. Hay que tener en cuenta que se heredan todas las ventajas y desventajas de dicho framework/librería, así como que se adopta como <strong>dependencia</strong> (<em>sin dicho framework/librería, nuestro código no funcionará</em>). Además, también se suele perder algo de rendimiento y control sobre el código, aunque en la mayoría de los casos es prácticamente inapreciable.</p>
+<blockquote>
+<p>Hoy en día, salvo para proyectos pequeños, es muy común escoger un framework Javascript para trabajar. Un framework te ayuda a organizar tu código, a escribir menos código y a ser más productivo a la larga. Como desventaja, genera dependencia al framework.</p>
+</blockquote>
+<h4 id="enfoque-evergreen">Enfoque evergreen<a class="headerlink" href="#enfoque-evergreen" title="Permanent link">&para;</a></h4>
+<p>El programador decide no preocuparse de la compatibilidad con navegadores antiguos, sino dar soporte sólo a las últimas versiones de los navegadores (<em>evergreen browsers</em>), o incluso sólo a determinados navegadores como <strong>Google Chrome</strong> o <strong>Mozilla Firefox</strong>. Este enfoque suele ser habitual en programadores novatos, empresas que desarrollan aplicaciones <strong>SPA</strong> o proyectos que van dirigidos a un público muy concreto y no están abiertas a un público mayoritario.</p>
+<h4 id="enfoque-transpilador">Enfoque transpilador<a class="headerlink" href="#enfoque-transpilador" title="Permanent link">&para;</a></h4>
+<p>El programador decide crear código de la última versión de <strong>ECMAScript</strong>. Para asegurarse de que funcione en todos los navegadores, utiliza un <strong>transpilador</strong>, que no es más que un sistema que revisa el código y lo traduce de la versión actual de ECMAScript a <strong>ECMAScript 5</strong>, que es la que leerá el navegador.</p>
+<p>La ventaja de este método es que se puede escribir código Javascript moderno y actualizado (<em>con sus ventajas y novedades</em>) y cuando los navegadores soporten completamente esa versión de ECMAScript, sólo tendremos que retirar el <strong>transpilador</strong> (<em>porque no lo necesitaremos</em>). La desventaja es que hay que preprocesar el código (<em>cada vez que cambie</em>) para hacer la traducción.</p>
+<blockquote>
+<p>Quizás, el enfoque más moderno de los mencionados es utilizar <strong>transpiladores</strong>. Sistemas como <a href="https://babeljs.io/">Babel</a> son muy utilizados y se encargan de traducir de ECMAScript 6 a ECMAScript 5.</p>
+</blockquote>
+<p>En estos primeros temas, tomaremos un <strong>enfoque conservador</strong> para hacer más fácil el inicio con Javascript. A medida que avancemos, iremos migrando a un enfoque <strong>transpilador</strong>.</p>
+<p>Independientemente del enfoque que se decida utilizar, el programador también puede utilizar <strong>polyfills</strong> o <strong>fallbacks</strong> para asegurarse de que ciertas características funcionarán en navegadores antiguos. También puede utilizar enfoques mixtos.</p>
+<ul>
+<li>
+<p>Un <strong>polyfill</strong> no es más que una librería o código Javascript que actúa de «parche» o «relleno» para dotar de una característica que el navegador aún no posee, hasta que una actualización del navegador la implemente.</p>
+</li>
+<li>
+<p>Un <strong>fallback</strong> es algo también muy similar: un fragmento de código que el programador prepara para que en el caso de que algo no entre en funcionamiento, se ofrezca una alternativa.</p>
+</li>
+</ul>
+<hr />
+<h2 id="comentarios-de-codigo">Comentarios de código<a class="headerlink" href="#comentarios-de-codigo" title="Permanent link">&para;</a></h2>
+<p>Cuando comenzamos a programar, por lo general, se nos suele decir que es una buena práctica mantener <strong>comentado</strong> nuestro código con anotaciones que faciliten la comprensión de las tareas que realizamos y los problemas que pretendemos solucionar, ya que el código que creamos no suele ser muy bueno, ni mucho menos descriptivo, ya que estamos en fase de aprendizaje.</p>
+<p>A medida que conseguimos destreza programando, notaremos que los comentarios son cada vez más prescindibles, sin embargo, conviene no dejar de comentar, sino en su lugar, <strong>aprender a comentar mejor</strong>.</p>
+<p>Una serie de consejos a tener presentes a la hora de dejar comentarios en nuestro código:</p>
+<ul>
+<li>No comentes detalles <strong>redundantes</strong>. No escribas lo que haces, escribe <strong>por qué</strong> lo haces.</li>
+<li>Mejor nombres de variables/funciones/clases descriptivas que comentarios descriptivos.</li>
+<li>Sé <strong>conciso y concreto</strong>. Resume. No escribas párrafos si no es absolutamente necesario.</li>
+<li>Intenta usar siempre el mismo <strong>idioma</strong> y <strong>estilo</strong> de comentarios.</li>
+<li>Con el tiempo, los comentarios no se suelen mantener (<em>modificar</em>), el código sí.</li>
+</ul>
+<h3 id="tipos-de-comentarios">Tipos de comentarios<a class="headerlink" href="#tipos-de-comentarios" title="Permanent link">&para;</a></h3>
+<p>En Javascript existen dos tipos de comentarios: los <strong>comentarios de una sola línea</strong> y los <strong>comentarios de múltiples líneas</strong>.</p>
+<ul>
+<li>El primero de ellos se caracteriza porque comienza con <code>//</code> y sólo comenta la <strong>linea actual</strong> desde donde se escribe.</li>
+<li>El segundo tipo se utiliza para hacer comentarios extensos que ocuparán <strong>varias líneas</strong>. Comienza por <code>/*</code> y comentará todo el texto que escribamos hasta que cerremos el comentario con un <code>*/</code>.</li>
+</ul>
+<p>Veamos un ejemplo:</p>
+<pre><code>// Comentarios cortos de una sola línea. Suelen explicar la línea siguiente.
+var a = 1;
+
+var x = 45; // También se utilizan al final de una línea.
+
+/* Por otro lado, existen los comentarios múltiples de varias líneas consecutivas.
+   Suelen utilizarse para explicaciones largas que requieren bastante
+   espacio porque se mencionan gran cantidad de cosas :-) */
+</code></pre>
+<h4 id="ejemplos">Ejemplos<a class="headerlink" href="#ejemplos" title="Permanent link">&para;</a></h4>
+<p>Comentar código también es un arte que debe ser aprendido, ya que al principio es muy fácil <strong>cometer errores</strong> y comentar en exceso o no ser concreto al comentar. No suele ser grave porque los comentarios no afectan al funcionamiento del programa, pero en equipos de trabajo donde hay varios programadores suele ser molesto para los programadores con más experiencia.</p>
+<p>Un ejemplo de comentario que suele ser contraproducente es aquel que se limita a decir lo que hacemos en la línea siguiente:</p>
+<pre><code>// Declaramos una variable llamada x
+var x = 50;
+
+// La mostramos por consola
+console.log(x);
+
+// Cambiamos su valor multiplicando por 0,5
+x = x * 0.5;
+</code></pre>
+<p>Estos comentarios pueden ser útiles para el <strong>programador novato</strong> que comienza a programar y necesita recordar lo que hace porque aún no conoce bien la sintaxis de programación, de hecho muchos de los comentarios del tema de introducción son así (<em>para ayudar al programador que recién empieza a programar</em>), pero el objetivo real de un comentario <strong>no debe ser recordar que hace una línea de código</strong>, sino conocer porque lo estamos realizando o que representa lo que estamos haciendo:</p>
+<pre><code>var x = 50; // Establecemos el precio del producto
+
+console.log(x);
+
+x = x * 0.5; // Lo rebajamos al 50%
+</code></pre>
+<p>Sin embargo, hay una opción todavía mejor que conecta con uno de los temas que veremos más adelante. Poner <strong>nombres descriptivos</strong> a las variables debería ser algo obligatorio a lo que acostumbrarnos, puesto que puede ahorrarnos muchos comentarios y tiempo, simplificar el código considerablemente y hacerlo mucho más legible y con menos ambigüedades:</p>
+<pre><code>var precio = 50;
+
+console.log(precio);
+
+var oferta = precio * 0.5;
+</code></pre>
+<p>En este fragmento de código, no utilizamos comentarios porque el nombre de las variables ya ayuda a entender el código y lo hace <strong>autoexplicativo</strong>. De esta forma, generamos menos código (<em>e incluso comentarios</em>) y se entiende igualmente. En los siguientes temas, veremos una serie de consejos a la hora de nombrar variables, funciones u otros elementos dentro de la programación.</p>
+<hr />
+<h2 id="estructuras-de-control">Estructuras de control<a class="headerlink" href="#estructuras-de-control" title="Permanent link">&para;</a></h2>
+<p>Cuando escribimos código Javascript, por defecto, el navegador leerá el script de forma <strong>secuencial</strong>, es decir, una línea detrás de otra, desde arriba hacia abajo. Por lo tanto, una acción que realicemos en la línea 5 nunca ocurrirá antes que una que aparece en la línea 3. Ya veremos que más adelante esto se complica, pero en principio partimos de esa base.</p>
+<h2 id="condicionales">Condicionales<a class="headerlink" href="#condicionales" title="Permanent link">&para;</a></h2>
+<p>Al hacer un programa necesitaremos establecer <strong>condiciones</strong> o <strong>decisiones</strong>, donde buscamos que el navegador realice una <strong>acción A</strong> si se <strong>cumple</strong> una condición o una <strong>acción B</strong> si <strong>no se cumple</strong>. Este es el primer tipo de estructuras de control que encontraremos. Para ello existen varias estructuras de control:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Estructura de control</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>If</code></td>
+<td align="left"><strong>Condición simple</strong>: Si ocurre algo, haz lo siguiente...</td>
+</tr>
+<tr>
+<td align="left"><code>If/else</code></td>
+<td align="left"><strong>Condición con alternativa</strong>: Si ocurre algo, haz esto, sino, haz lo esto otro...</td>
+</tr>
+<tr>
+<td align="left"><code>?:</code></td>
+<td align="left"><strong>Operador ternario</strong>: Equivalente a <code>If/else</code>, método abreviado.</td>
+</tr>
+<tr>
+<td align="left"><code>Switch</code></td>
+<td align="left"><strong>Estructura para casos específicos</strong>: Similar a varios <code>If/else</code> anidados.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="condicional-if">Condicional If<a class="headerlink" href="#condicional-if" title="Permanent link">&para;</a></h3>
+<p>Quizás, el más conocido de estos mecanismos de estructura de control es el <code>if</code> (<em>condicional</em>). Con él podemos indicar en el programa que se tome un camino sólo si se cumple la <strong>condición</strong> que establezcamos:</p>
+<pre><code>var nota = 7;
+console.log("He realizado mi examen.");
+
+// Condición (si nota es mayor o igual a 5)
+if (nota &gt;= 5) {
+  console.log("¡Estoy aprobado!");
+}
+</code></pre>
+<p>En este caso, como el valor de <code>nota</code> es superior a 5, nos aparecerá en la consola el mensaje «¡Estoy aprobado!». Sin embargo, si modificamos en la primera línea el valor de <code>nota</code> a un valor inferior a 5, no nos aparecerá ese mensaje.</p>
+<blockquote>
+<p>Cuando dentro de las llaves (<em>{ }</em>) sólo tenemos una línea, se pueden omitir dichas llaves. Aún así, es recomendable ponerlas siempre si tenemos dudas o no estamos seguros.</p>
+</blockquote>
+<h3 id="condicional-if-else">Condicional If / else<a class="headerlink" href="#condicional-if-else" title="Permanent link">&para;</a></h3>
+<p>Pero se puede dar el caso que queramos establecer una alternativa a una condición. Para eso utilizamos el <code>if</code> seguido de un <code>else</code>. Con esto podemos establecer una acción A si se cumple la condición, y una acción B si no se cumple.</p>
+<p>Vamos a modificar el ejemplo anterior para mostrar también un mensaje cuando estamos suspendidos, pero en este caso, en lugar de mostrar el mensaje directamente con un <code>console.log</code> vamos a guardar ese texto en una nueva variable <code>calificacion</code>:</p>
+<pre><code>var nota = 7;
+console.log("He realizado mi examen. Mi resultado es el siguiente:");
+
+// Condición
+if (nota &lt; 5) {
+  // Acción A (nota es menor que 5)
+  calificacion = "suspendido";
+} else {
+  // Acción B: Cualquier otro caso a A (nota es mayor o igual que 5)
+  calificacion = "aprobado";
+}
+
+console.log("Estoy", calificacion);
+</code></pre>
+<p>Nuevamente, en este ejemplo comprobaremos que podemos conseguir que se muestre el mensaje <strong>Estoy aprobado</strong> o <strong>Estoy suspendido</strong> dependiendo del valor que tenga la variable <code>nota</code>. La diferencia con el ejemplo anterior es que creamos una nueva variable que contendrá un valor determinado dependiendo de la condición del <code>If</code>.</p>
+<p>Por último, el <code>console.log</code> del final, muestra el contenido de la variable <code>calificacion</code>, independientemente de que sea el primer caso o el segundo.</p>
+<pre><code>var nota = 7;
+console.log("He realizado mi examen. Mi resultado es el siguiente:");
+
+// Condición
+if (nota &lt; 5) {
+  // Acción A (nota es menor que 5)
+  calificacion = "suspendido";
+}
+if (nota &gt;= 5) {
+  // Acción B (nota es mayor o igual que 5)
+  calificacion = "aprobado";
+}
+
+console.log("Estoy", calificacion);
+</code></pre>
+<p>Este nuevo ejemplo, es equivalente al ejemplo anterior. Si nos fijamos bien, la única diferencia respecto al anterior es que estamos realizando dos <code>if</code> independientes: uno para comprobar si está suspendido y otro para comprobar si está aprobado.</p>
+<p>Pero aunque son equivalentes, no son exactamente iguales, ya que en el ejemplo que vimos anteriormente sólo existe <strong>un if</strong>, y por lo tanto, sólo se realiza una comprobación. En este ejemplo que vemos ahora, se realizan <strong>dos if</strong>, y por lo tanto, dos comprobaciones.</p>
+<blockquote>
+<p>En este caso se trata de algo insignificante, pero es importante darse cuenta de que el primer ejemplo estaría realizando menos tareas para conseguir un mismo resultado, ergo, el primer ejemplo sería más eficiente.</p>
+</blockquote>
+<h3 id="operador-ternario">Operador ternario<a class="headerlink" href="#operador-ternario" title="Permanent link">&para;</a></h3>
+<p>El <strong>operador ternario</strong> es una alternativa de condicional <strong>if/else</strong> de una forma mucho más corta y, en muchos casos, más legible. Vamos a reescribir el ejemplo anterior utilizando este operador:</p>
+<pre><code>var nota = 7;
+console.log("He realizado mi examen. Mi resultado es el siguiente:");
+
+// Operador ternario: (condición ? verdadero : falso)
+var calificacion = nota &lt; 5 ? "suspendido" : "aprobado";
+
+console.log("Estoy", calificacion);
+</code></pre>
+<p>Este ejemplo hace exactamente lo mismo que el ejemplo anterior. La idea del operador ternario es que podemos condensar mucho código y tener un if en una sola línea. Obviamente, es una opción que sólo se recomienda utilizar cuando son <code>if</code> muy pequeños.</p>
+<h3 id="condicional-if-multiple">Condicional If múltiple<a class="headerlink" href="#condicional-if-multiple" title="Permanent link">&para;</a></h3>
+<p>Es posible que necesitemos crear un condicional múltiple con más de 2 condiciones, por ejemplo, para establecer la calificación específica. Para ello, podemos anidar varios <code>if/else</code> uno dentro de otro, de la siguiente forma:</p>
+<pre><code>var nota = 7;
+console.log("He realizado mi examen.");
+
+// Condición
+if (nota &lt; 5) {
+  calificacion = "Insuficiente";
+} else if (nota &lt; 6) {
+  calificación = "Suficiente";
+} else if (nota &lt; 8) {
+  calificacion = "Bien";
+} else if (nota &lt;= 9) {
+  calificacion = "Notable";
+} else {
+  calificacion = "Sobresaliente";
+}
+
+console.log("He obtenido un", calificacion);
+</code></pre>
+<p>Sin embargo, anidar de esta forma varios <code>if</code> suele ser muy poco legible y produce un código algo feo. En <strong>algunos casos</strong> se podría utilizar otra estructura de control llamada <code>switch</code>, que puede ser útil en ciertos casos.</p>
+<h3 id="condicional-switch">Condicional Switch<a class="headerlink" href="#condicional-switch" title="Permanent link">&para;</a></h3>
+<p>La estructura de control <code>switch</code> permite definir casos específicos a realizar en el caso de que la variable expuesta como condición sea igual a los valores que se especifican a continuación mediante los <code>case</code>. No obstante, hay varias puntualizaciones que aclarar sobre este ejemplo:</p>
+<pre><code>var nota = 7;
+console.log("He realizado mi examen. Mi resultado es el siguiente:");
+
+// Nota: Este ejemplo NO es equivalente al ejemplo anterior (leer abajo)
+switch (nota) {
+  case 10:
+    calificacion = "Insuficiente";
+    break;
+  case 9:
+  case 8:
+    calificacion = "Notable";
+    break;
+  case 7:
+  case 6:
+    calificacion = "Bien";
+    break;
+  case 5:
+    calificacion = "Suficiente";
+    break;
+  case 4:
+  case 3:
+  case 2:
+  case 1:
+  case 0:
+    calificacion = "Insuficiente";
+    break;
+  default:
+    // Cualquier otro caso
+    calificacion = "Nota errónea";
+    break;
+}
+
+console.log("He obtenido un", calificacion);
+</code></pre>
+<p>En primer lugar, el ejemplo anterior <strong>no es exactamente equivalente al anterior</strong>. Este ejemplo funcionaría si sólo permitimos notas que sean <strong>números enteros</strong>, es decir, números del 0 al 10, sin decimales. En el caso de que nota tuviera por ejemplo, el valor <code>7.5</code>, mostraría <code>Nota errónea</code>.</p>
+<blockquote>
+<p>El ejemplo de los <code>if múltiples</code> si controla casos de números decimales porque establecemos comparaciones de rangos con mayor o menor, cosa que con el <strong>switch</strong> no se puede hacer. El <strong>switch</strong> está indicado para utilizar sólo con <strong>casos con valores concretos y específicos</strong>.</p>
+</blockquote>
+<p>En segundo lugar, observa que al final de cada caso es necesario indicar un <code>break</code> para salir del <code>switch</code>. En el caso que no sea haga, el programa saltará al siguiente caso, aunque no se cumpla la condición específica.</p>
+<hr />
+<h2 id="bucles-e-iteraciones">Bucles e iteraciones<a class="headerlink" href="#bucles-e-iteraciones" title="Permanent link">&para;</a></h2>
+<p>Una de las principales ventajas de la programación es la posibilidad de crear <strong>bucles y repeticiones</strong> para tareas específicas, y que no tengamos que realizarlas varias veces de forma manual. Existen muchas formas de realizar bucles, vamos a ver los más basicos, similares en otros lenguajes de programación:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Tipo de bucle</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>while</code></td>
+<td align="left">Bucles simples.</td>
+</tr>
+<tr>
+<td align="left"><code>for</code></td>
+<td align="left">Bucles clásicos por excelencia.</td>
+</tr>
+<tr>
+<td align="left"><code>do..while</code></td>
+<td align="left">Bucles simples que se realizan siempre como mínimo una vez.</td>
+</tr>
+<tr>
+<td align="left"><code>for..in</code></td>
+<td align="left">Bucles sobre posiciones de un array. Los veremos más adelante.</td>
+</tr>
+<tr>
+<td align="left"><code>for..of</code></td>
+<td align="left">Bucles sobre elementos de un array. Los veremos más adelante.</td>
+</tr>
+</tbody>
+</table>
+<p><a href="/javascript/caracteristicas/array-functions/">Array functions</a></p>
+<p>Bucles específicos sobre arrays. Los veremos más adelante.</p>
+<p>Antes de comenzar a ver que tipos de bucles existen en Javascript, es necesario conocer algunos conceptos básicos de los bucles:</p>
+<ul>
+<li>
+<p><strong>Condición</strong>: Al igual que en los <code>if</code>, en los bucles se va a evaluar una condición para saber si se debe repetir el bucle o finalizarlo. Generalmente, si la condición es verdadera, se repite. Si es falsa, se finaliza.</p>
+</li>
+<li>
+<p><strong>Iteración</strong>: Cada repetición de un bucle se denomina iteración. Por ejemplo, si un bucle repite una acción 10 veces, se dice que tiene 10 iteraciones.</p>
+</li>
+<li>
+<p><strong>Contador</strong>: Muchas veces, los bucles tienen una variable que se denomina contador, porque cuenta el número de repeticiones que ha hecho, para finalizar desde que llegue a un número concreto. Dicha variable hay que inicializarla (<em>crearla y darle un valor</em>) antes de comenzar el bucle.</p>
+</li>
+<li>
+<p><strong>Incremento</strong>: Cada vez que terminemos un bucle se suele realizar el incremento (<em>o decremento</em>) de una variable, generalmente la denominada variable contador.</p>
+</li>
+<li>
+<p><strong>Bucle infinito</strong>: Es lo que ocurre si en un bucle se nos olvida incrementar la variable contador o escribimos una condición que nunca se puede dar. El bucle se queda eternamente repitiéndose y el programa se queda «colgado».</p>
+</li>
+</ul>
+<h3 id="bucle-while">Bucle while<a class="headerlink" href="#bucle-while" title="Permanent link">&para;</a></h3>
+<p>El bucle <strong>while</strong> es uno de los bucles más simples que podemos crear. Vamos a repasar el siguiente ejemplo y todas sus partes, para luego repasar que ocurre en cada iteración del bucle:</p>
+<pre><code>i = 0; // Inicialización de la variable contador
+
+// Condición: Mientras la variable contador sea menor de 5
+while (i &lt; 5) {
+  console.log("Valor de i:", i);
+
+  i = i + 1; // Incrementamos el valor de i
+}
+</code></pre>
+<p>Veamos que es lo que ocurre a la hora de hacer funcionar ese código:</p>
+<ul>
+<li>Antes de entrar en el bucle <strong>while</strong>, se inicializa la variable <code>i</code> a <code>0</code>.</li>
+<li>Antes de realizar la primera <strong>iteración</strong> del bucle, comprobamos la <strong>condición</strong>.</li>
+<li>Si la condición es <strong>verdadera</strong>, hacemos lo que está dentro del bucle.</li>
+<li>Mostramos por pantalla el valor de <code>i</code> y luego incrementamos el valor actual de <code>i</code> en <code>1</code>.</li>
+<li>Volvemos al inicio del bucle para hacer una <strong>nueva iteración</strong>. Comprobamos de nuevo la <strong>condición</strong> del bucle.</li>
+<li>Cuando la condición sea <strong>falsa</strong>, salimos del bucle y continuamos el programa.</li>
+</ul>
+<p>Una muestra paso a paso de las iteraciones de este primer ejemplo:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Iteración del bucle</th>
+<th align="left">Valor de i</th>
+<th align="left">Descripción</th>
+<th align="left">Incremento</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>Antes del bucle</strong></td>
+<td align="left">i = undefined</td>
+<td align="left">Antes de comenzar el programa.</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><strong>Iteración #1</strong></td>
+<td align="left">i = 0</td>
+<td align="left">¿(0 &lt; 5)? Verdadero. Mostramos 0 por pantalla.</td>
+<td align="left">i = 0 + 1</td>
+</tr>
+<tr>
+<td align="left"><strong>Iteración #2</strong></td>
+<td align="left">i = 1</td>
+<td align="left">¿(1 &lt; 5)? Verdadero. Mostramos 1 por pantalla.</td>
+<td align="left">i = 1 + 1</td>
+</tr>
+<tr>
+<td align="left"><strong>Iteración #3</strong></td>
+<td align="left">i = 2</td>
+<td align="left">¿(2 &lt; 5)? Verdadero. Mostramos 2 por pantalla.</td>
+<td align="left">i = 2 + 1</td>
+</tr>
+<tr>
+<td align="left"><strong>Iteración #4</strong></td>
+<td align="left">i = 3</td>
+<td align="left">¿(3 &lt; 5)? Verdadero. Mostramos 3 por pantalla.</td>
+<td align="left">i = 3 + 1</td>
+</tr>
+<tr>
+<td align="left"><strong>Iteración #5</strong></td>
+<td align="left">i = 4</td>
+<td align="left">¿(4 &lt; 5)? Verdadero. Mostramos 4 por pantalla.</td>
+<td align="left">i = 4 + 1</td>
+</tr>
+<tr>
+<td align="left"><strong>Iteración #6</strong></td>
+<td align="left">i = 5</td>
+<td align="left">¿(5 &lt; 5)? Falso. Salimos del bucle.</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p>El bucle <strong>while</strong> es muy simple, pero requiere no olvidarse accidentalmente de la inicialización y el incremento (<em>además de la condición</em>), por lo que el bucle <strong>for</strong> resulta más interesante, ya que para hacer un bucle de este tipo hay que escribir previamente siempre estos tres factores.</p>
+<blockquote>
+<p>La operación <code>i = i + 1</code> es lo que se suele llamar un incremento de una variable. Es muy común simplificarla como <code>i++</code>, que hace exactamente lo mismo: aumenta en 1 su valor.</p>
+</blockquote>
+<h3 id="bucle-for">Bucle for<a class="headerlink" href="#bucle-for" title="Permanent link">&para;</a></h3>
+<p>El bucle <strong>for</strong> es quizás uno de los más utilizados en el mundo de la programación. En Javascript se utiliza exactamente igual que en otros lenguajes como Java o C/C++. Veamos el ejemplo anterior utilizando un bucle for:</p>
+<pre><code>// for (inicialización; condición; incremento)
+for (i = 0; i &lt; 5; i++) {
+  console.log("Valor de i:", i);
+}
+</code></pre>
+<p>Como vemos, la sintaxis de un <strong>bucle for</strong> es mucho más compacta y rápida de escribir que la de un <strong>bucle while</strong>. La primera vez puede parecer algo confusa, pero es mucho más práctica porque te obliga a escribir la <strong>inicialización</strong>, la <strong>condición</strong> y el <strong>incremento</strong> antes del propio bucle, y eso hace que no te olvides de estos tres puntos fundamentales.</p>
+<blockquote>
+<p>En programación es muy habitual empezar a contar desde <strong>cero</strong>. Mientras que en la vida real se contaría <strong>desde 1 hasta 10</strong>, en programación se contaría <strong>desde 0 hasta 9</strong>.</p>
+</blockquote>
+<h4 id="incremento-multiple">Incremento múltiple<a class="headerlink" href="#incremento-multiple" title="Permanent link">&para;</a></h4>
+<p>Aunque no suele ser habitual, es posible añadir varias inicializaciones o incrementos en un bucle for separando por comas. En el siguiente ejemplo además de aumentar el valor de una variable <code>i</code>, inicializamos una variable con el valor <code>5</code> y lo vamos decrementando:</p>
+<pre><code>for (i = 0, j = 5; i &lt; 5; i++, j--) {
+  console.log("Valor de i y j:", i, j);
+}
+</code></pre>
+<p>Si <code>i++</code> aumenta en 1 el valor de <code>i</code> en cada iteración, lo que hace <code>j--</code> es disminuir en 1 el valor de <code>j</code> en cada iteración.</p>
+<h3 id="bucles-sobre-arrays">Bucles sobre arrays<a class="headerlink" href="#bucles-sobre-arrays" title="Permanent link">&para;</a></h3>
+<p>Más adelante hablaremos de los <a href="/javascript/fundamentos/arrays">arrays</a> y veremos varias formas que tiene Javascript de realizar bucles adaptados a ese tipo de variables.</p>
+<hr />
+<h2 id="indentacion-de-codigo">Indentación de código<a class="headerlink" href="#indentacion-de-codigo" title="Permanent link">&para;</a></h2>
+<p>A medida que escribimos líneas de código en nuestro programa, se irá complicando y nos tomará más tiempo leer lo que hemos hecho y comprobar si hay errores o como solucionarlos. Sin embargo, para mejorar la rapidez con la que leemos (<em>y entendemos</em>) nuestro código, una buena práctica es usar la <strong>indentación</strong>.</p>
+<h3 id="que-es-la-indentacion">¿Qué es la indentación?<a class="headerlink" href="#que-es-la-indentacion" title="Permanent link">&para;</a></h3>
+<p>Se llama <strong>indentación de código</strong> al hecho de utilizar sangrado (<em>mover ligeramente hacia la derecha</em>) en las líneas de código para facilitar la lectura, e indicar visualmente si nos encontramos en el interior de una función, bucle, condicional, etc...</p>
+<p>Observemos el siguiente ejemplo:</p>
+<pre><code>function bucle() {
+  for (i = 0; i &lt; 10; i++) {
+    console.log("Iteración #", i);
+
+    if (i == 9) {
+      console.log("Estoy en la última iteración");
+    } // if
+  } // for
+} // function
+</code></pre>
+<p>En el ejemplo anterior se puede observar que al utilizar estructuras de control, bucles o funciones, los programadores indentamos el código que hay en su interior. De esta forma, es muy sencillo saber a que nivel está actuando la línea de código en cuestión.</p>
+<p>Observemos este otro código (<em>mal indentado</em>):</p>
+<pre><code>function bucle() { for (i = 0; i &lt; 10; i++) {
+  console.log("Iteración #", i);
+  if (i == 9) console.log("Estoy en la última iteración"); }
+}
+</code></pre>
+<p>En principio, puede parecer que este código aprovecha mejor el espacio, porque ocupa menos, pero es mucho menos legible que el ejemplo anterior debido a su falta de indentación.</p>
+<blockquote>
+<p>En algunos lenguajes de programación, como <strong>Python</strong>, la <strong>indentación</strong> es una característica obligatoria, que acostumbra al programador a indentar correctamente. Es por esta razón, que Python se indica como un lenguaje ideal para adquirir buenos hábitos de programación.</p>
+</blockquote>
+<p>Una buena práctica de programación es <strong>indentar correctamente</strong> las líneas de código que escribamos, no obstante, la mayoría de los editores están configurados para que al pulsar ENTER se indenten automáticamente.</p>
+<h4 id="tabuladores-o-espacios">¿Tabuladores o espacios?<a class="headerlink" href="#tabuladores-o-espacios" title="Permanent link">&para;</a></h4>
+<p>A la hora de indentar código hay dos aproximaciones: usar <strong>espacios</strong> o usar <strong>tabuladores</strong>. Utilizar una u otra estrategia de tabulación depende del programador, pero lo importante es ser coherente y <strong>siempre utilizar la misma</strong>.</p>
+<ul>
+<li>
+<p><strong>Espacios</strong>: Si decidimos utilizar espacios, ten en cuenta que puedes elegir indentar con <strong>2</strong>, <strong>3</strong> ó <strong>4</strong> espacios (<em>por ejemplo</em>). En los ejemplos de esta página suelo utilizar indentación a 2 espacios.</p>
+</li>
+<li>
+<p><strong>Tabuladores</strong>: Si decidimos utilizar tabuladores, debes saber que el carácter utilizado por la tecla TAB no es el mismo que el de los espacios. Por ejemplo, un tabulador puede ser visualmente equivalente a 3 espacios, pero sólo ocupará un carácter. Muchos editores convierten automáticamente un tabulador a un número de espacios concreto.</p>
+</li>
+</ul>
+<blockquote>
+<p>Una buena práctica a la hora de programar es ayudarnos de un <strong>linter</strong> como <a href="https://lenguajejs.com/javascript/caracteristicas/eslint/">ESLint</a>, una herramienta que analiza nuestro código (<em>generalmente en tiempo real</em>) y nos alerta de posibles errores de escritura, no centrándose en el propio funcionamiento del código, sino en la coherencia y escritura correcta. Más adelante abordaremos este tema.</p>
+</blockquote>
+<hr />
+<h2 id="convenciones-de-nombres">Convenciones de nombres<a class="headerlink" href="#convenciones-de-nombres" title="Permanent link">&para;</a></h2>
+<p>Una de las tareas a priori más sencilla, pero a la misma vez de las más complejas, es la de ponerle un <strong>buen</strong> nombre a una variable (<em>o a cualquier otro elemento de programación que necesite un nombre</em>). Los programadores necesitan utilizar variables en sus códigos, y además que estas variables tengan nombres que representen claramente la información que contienen.</p>
+<p>Dejar nombres bien claros es muy importante para nosotros, ya que si necesitamos volver a trabajar con dicho código (<em>o hacer modificaciones</em>) nos resultará mucho más fácil. Sin embargo, esto cobra aún mayor importancia si otras personas tienen que revisar o modificar nuestro código, ya que ellos no están tan familiarizados con nuestro código y les ayudará mucho a tardar menos tiempo en comprenderlo.</p>
+<p><a href="https://www.commitstrip.com/en/2015/10/27/one-of-the-coders-hardest-problems/"><img alt="Ponerle nombre a una variable" src="../img/hardest-problem.jpg" /></a> <em>Viñeta de <a href="https://www.commitstrip.com/">Commit Strip</a> sobre el nombrado de variables.</em></p>
+<p>Veamos una serie de consejos y recomendaciones a la hora de establecer nombres en nuestro código. La mayoría de ellas son simplemente <strong>convenciones</strong>, no son obligatorias para que el código funcione, pero son altamente recomendables para mejorar la calidad de nuestro código:</p>
+<h3 id="nombres-descriptivos">Nombres descriptivos<a class="headerlink" href="#nombres-descriptivos" title="Permanent link">&para;</a></h3>
+<p>Una mala costumbre habitual cuando se empieza en la programación, es darle un nombre <strong>muy poco descriptivo</strong> de la información que contiene, simplemente porque es más corto y manejable. Al principio, cuando tenemos pocas variables esto no importa demasiado, pero a medida que el código crece, se vuelve insostenible.</p>
+<p>Es muy común tener que volver hacia atrás en nuestro código a cambiar nombres de variables porque hemos cambiado de parecer o porque se nos ha ocurrido un nombre mejor. Esto seguirá ocurriendo hasta que adquirimos cierta experiencia.</p>
+<blockquote>
+<p>Evita nombres poco claros o inconsistentes como <code>tmp</code>, <code>a</code>, <code>b2</code>, <code>variable2</code>, etc...</p>
+</blockquote>
+<h3 id="indices-y-contadores">Índices y contadores<a class="headerlink" href="#indices-y-contadores" title="Permanent link">&para;</a></h3>
+<p>A lo anterior, hay una pequeña excepción. Cuando trabajamos en bucles <code>for</code> (<em>o bucles en general</em>), donde el ámbito de una variable que actúa como contador (<em>índice</em>) es muy reducido (<em>esa variable solo existe y afecta al interior del bucle</em>), se suelen utilizar nombres de variables cortos para ser más productivo y claro.</p>
+<blockquote>
+<p>Las variables que actúan como contador suelen nombrarse con una letra minúscula empezando desde <strong>i</strong> (<em>de índice</em>): <code>i</code>, <code>j</code>, <code>k</code>... A veces, también se usan letras como <code>a</code>, <code>b</code>, <code>c</code>... o la inicial minúscula de lo que representan: <code>c</code> para un contador, <code>p</code> para una posición, etc...</p>
+</blockquote>
+<h3 id="constantes-clases-y-variables">Constantes, clases y variables<a class="headerlink" href="#constantes-clases-y-variables" title="Permanent link">&para;</a></h3>
+<p>Las <strong>constantes</strong> son variables especiales que no varian su valor a lo largo del programa y permanecen como su propio nombre indica: constantes. La convención adoptada con las constantes es que deben ir <strong>siempre en MAYÚSCULAS</strong>.</p>
+<p>Las <strong>clases</strong> son estructuras de código más complejas que veremos más adelante. Cuando necesites nombrarlas, es importante recordar que los nombres de las clases se escriben siempre capitalizadas: mayúsculas la primera letra y el resto en minúsculas.</p>
+<p>Las <strong>variables</strong>, por último, siempre deben empezar por letra minúscula.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Independientemente de que sea variable, constante o clase, su nombre <strong>nunca</strong> podrá empezar por un número, sino que debe empezar por una letra o carácter. Si lo compruebas, verás que es imposible nombrar una variable que empiece por número.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="estilo-de-nombrado">Estilo de nombrado<a class="headerlink" href="#estilo-de-nombrado" title="Permanent link">&para;</a></h3>
+<p>Al margen del nombre que utilicemos para nombrar una variable, función u otro elemento, tenemos el <strong>estilo</strong> o convención que utilizaremos para escribir nombres compuestos por varias palabras.</p>
+<p>Existen varias convenciones a utilizar:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Nombre</th>
+<th align="left">Descripción</th>
+<th align="left">Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>camelCase</strong></td>
+<td align="left">Primera palabra, minúsculas. El resto en minúsculas, salvo la primera letra. La más utilizada en Javascript.</td>
+<td align="left"><code>precioProducto</code></td>
+</tr>
+<tr>
+<td align="left"><strong>PascalCase</strong></td>
+<td align="left">Idem a la anterior, pero todas las palabras empiezan con la primera letra mayúscula. Se utiliza en las Clases.</td>
+<td align="left"><code>PrecioProducto</code></td>
+</tr>
+<tr>
+<td align="left"><strong>snake_case</strong></td>
+<td align="left">Las palabras se separan con un guión bajo y se escriben siempre en minúsculas.</td>
+<td align="left"><code>precio_producto</code></td>
+</tr>
+<tr>
+<td align="left"><strong>kebab-case</strong></td>
+<td align="left">Las palabras se separan con un guión normal y se escriben siempre en minúsculas.</td>
+<td align="left"><code>precio-producto</code></td>
+</tr>
+<tr>
+<td align="left"><strong>dot.case</strong></td>
+<td align="left">Las palabras van en minúsculas separadas por puntos. En Javascript <strong>no</strong> se puede usar.</td>
+<td align="left"><code>precio.producto</code></td>
+</tr>
+<tr>
+<td align="left"><strong>Húngara</strong></td>
+<td align="left">Prefijo en minúsculas que indica el tipo de dato seguido de las palabras (n = número, t = texto...). Esta notación fue muy utilizada por Microsoft.</td>
+<td align="left"><code>nPrecioProducto</code></td>
+</tr>
+</tbody>
+</table>
+<p>Una buena costumbre es decidirse por uno de estos estilos y <strong>no mezclarlos</strong>. Si te decantas por uno de ellos, utiliza siempre el mismo. Personalmente, aconsejo utilizar el primero en Javascript, ya que es uno de los más utilizados y extendidos para este lenguaje.</p>
+<hr />
+<h2 id="funciones-basicas">Funciones básicas<a class="headerlink" href="#funciones-basicas" title="Permanent link">&para;</a></h2>
+<p>En programación, cuando nuestro código se va haciendo cada vez más grande, necesitaremos buscar una forma de organizarlo y prepararnos para reutilizarlo y no repetir innecesariamente las mismas tareas. Para ello, un primer recurso muy útil son las <strong>funciones</strong>.</p>
+<h3 id="que-es-una-funcion">¿Qué es una función?<a class="headerlink" href="#que-es-una-funcion" title="Permanent link">&para;</a></h3>
+<p>Las <strong>funciones</strong> nos permiten agrupar líneas de código en tareas con un nombre, para que, posteriormente, podamos hacer referencia a ese nombre para realizar todo lo que se agrupe en dicha tarea. Para usar funciones hay que hacer 2 cosas:</p>
+<ul>
+<li><strong>Declarar la función</strong>: Preparar la función, darle un nombre y decirle las tareas que realizará.</li>
+<li><strong>Ejecutar la función</strong>: «Llamar» a la función para que realice las tareas de su contenido.</li>
+</ul>
+<h4 id="declaracion">Declaración<a class="headerlink" href="#declaracion" title="Permanent link">&para;</a></h4>
+<p>En el siguiente ejemplo veremos la <strong>declaración de una función</strong> llamada <code>saludar</code>:</p>
+<pre><code>// Declaración de la función "saludar"
+function saludar() {
+  // Contenido de la función
+  console.log("Hola, soy una función");
+}
+</code></pre>
+<p>El contenido de la función es una línea que mostrará por consola un saludo. Sin embargo, si escribimos estas 4-5 líneas de código en nuestro programa, no mostrará nada por pantalla. Esto ocurre así porque solo hemos declarado la función (<em>le hemos dicho que existe</em>), pero aún nos falta el segundo paso, <strong>ejecutarla</strong>, que es realmente cuando se realizan las tareas de su contenido.</p>
+<h4 id="ejecucion">Ejecución<a class="headerlink" href="#ejecucion" title="Permanent link">&para;</a></h4>
+<p>Veamos, ahora sí, el ejemplo completo con declaración y ejecución:</p>
+<pre><code>// Declaración de la función "saludar"
+function saludar() {
+  // Contenido de la función
+  console.log("Hola, soy una función");
+}
+
+// Ejecución de la función
+saludar();
+</code></pre>
+<p>En este ejemplo hemos <strong>declarado la función</strong> y además, hemos <strong>ejecutado</strong> la función (<em>en la última línea</em>) llamándola por su nombre y seguida de ambos paréntesis, que nos indican que es una función. En este ejemplo, si se nos mostraría en la consola Javascript el mensaje de saludo.</p>
+<h4 id="ejemplo">Ejemplo<a class="headerlink" href="#ejemplo" title="Permanent link">&para;</a></h4>
+<p>Veamos un primer ejemplo que muestre en la consola Javascript la <strong>tabla de multiplicar del 1</strong>:</p>
+<pre><code>// Tabla de multiplicar del 1
+console.log("1 x 0 = ", 1 * 0);
+console.log("1 x 1 = ", 1 * 1);
+console.log("1 x 2 = ", 1 * 2);
+console.log("1 x 3 = ", 1 * 3);
+console.log("1 x 4 = ", 1 * 4);
+console.log("1 x 5 = ", 1 * 5);
+console.log("1 x 6 = ", 1 * 6);
+console.log("1 x 7 = ", 1 * 7);
+console.log("1 x 8 = ", 1 * 8);
+console.log("1 x 9 = ", 1 * 9);
+console.log("1 x 10 = ", 1 * 10);
+</code></pre>
+<p>Este primer ejemplo funciona perfectamente, sin embargo, no estamos aprovechando las ventajas de la programación, sino que hemos hecho todo el trabajo escribiendo <strong>10 líneas de código</strong>.</p>
+<p>Vamos a utilizar un <strong>bucle for</strong> para ahorrarnos tantas líneas de código:</p>
+<pre><code>for (i = 0; i &lt; 11; i++) {
+  console.log("1 x", i, "=", 1 * i);
+}
+</code></pre>
+<p>Esto está mucho mejor. Hemos resumido 11 líneas de código en prácticamente 2 líneas utilizando un bucle for que va de <strong>0 a 10</strong> incrementando de 1 en 1. Incluso, recuerda que cuando las llaves sólo contienen una línea, se pueden omitir.</p>
+<blockquote>
+<p>Otro detalle importante a mencionar es que, en muchos casos, a los programadores les resulta más intuitivo establecer la condición del bucle a <code>i &lt;= 10</code> que establecerla a <code>i &lt; 11</code>. Son exactamente equivalentes, pero en el caso actual, la primera parece más «lógica», ya que vemos visualmente el número de la última iteración.</p>
+</blockquote>
+<p>Pero aún no hemos utilizado funciones, así que vamos a modificar nuestro ejemplo para usar una. Imaginemos que ahora nuestro objetivo es mostrar la tabla de multiplicar del 1 varias veces: 3 veces para ser exactos. La primera aproximación para hacer eso que se nos ocurriría sería hacer lo siguiente:</p>
+<pre><code>// Primera vez
+for (i = 0; i &lt;= 10; i++) console.log("1 x", i, "=", 1 * i);
+
+// Segunda vez
+for (i = 0; i &lt;= 10; i++) console.log("1 x", i, "=", 1 * i);
+
+// Tercera vez
+for (i = 0; i &lt;= 10; i++) console.log("1 x", i, "=", 1 * i);
+</code></pre>
+<p>Pero volvemos a tener el mismo problema del primer ejemplo. Estamos repitiendo el mismo código varias veces, complicándolo y volviéndolo más «feo». Además, si tuvieramos que hacer modificaciones en uno de los bucles habría también que repetir el trabajo 2 veces más, por cada uno de los otros bucles.</p>
+<p>Veamos ahora como obtener el mismo resultado pero utilizando bucles y funciones, sin repetir varias veces las mismas tareas:</p>
+<pre><code>// Declaración de la función tablaDelUno()
+function tablaDelUno() {
+  for (i = 0; i &lt;= 10; i++) console.log("1 x", i, "=", 1 * i);
+}
+
+// Bucle que ejecuta 3 veces la función tablaDelUno()
+for (i = 0; i &lt; 3; i++) tablaDelUno();
+</code></pre>
+<p>En este ejemplo se declara la función, que mostrará la tabla de multiplicar del uno. Posteriormente, realizamos un bucle de <strong>0 a 2</strong> (<em>3 repeticiones</em>) para llamar la función 3 veces, y mostrar así la tabla de multiplicar cada vez.</p>
+<h3 id="que-son-los-parametros">¿Qué son los parámetros?<a class="headerlink" href="#que-son-los-parametros" title="Permanent link">&para;</a></h3>
+<p>Pero las funciones no sirven sólo para esto. Tienen mucha más flexibilidad de la que hemos visto hasta ahora. A las funciones se les pueden pasar <strong>parámetros</strong>, que no son más que variables que existirán sólo dentro de dicha función, con el valor pasado desde la ejecución.</p>
+<p>Veamos el siguiente ejemplo, utilizando el parámetro <code>hasta</code>:</p>
+<pre><code>// Declaración
+function tablaDelUno(hasta) {
+  for (i = 0; i &lt;= hasta; i++) console.log("1 x", i, "=", 1 * i);
+}
+
+// Ejecución
+tablaDelUno(10);
+tablaDelUno(5);
+</code></pre>
+<p>Como podemos ver, en el interior de los paréntesis de la función se ha indicado una variable llamada <code>hasta</code>. Esa variable contiene el valor que se le da a la hora de ejecutar la función, que en este ejemplo, si nos fijamos bien, se ejecuta dos veces: una con valor <strong>10</strong> y otra con valor <strong>5</strong>.</p>
+<p>Si analizamos el código de la declaración de la función, vemos que utilizamos la variable <code>hasta</code> en la condición del bucle, para que el bucle llegue hasta ese número (<em>de ahí su nombre</em>). Por lo tanto, en la primera ejecución se nos mostrará la tabla de multiplicar del 1 hasta llegar al <strong>1 x 10</strong> y en la segunda ejecución se nos mostrará la tabla de multiplicar del 1 hasta llegar al <strong>1 x 5</strong>.</p>
+<blockquote>
+<p>La idea de las funciones es enfocarnos en el código de la declaración, y una vez lo tengamos funcionando, nos podemos olvidar de él porque está <strong>encapsulado</strong> dentro de la función. Simplemente tendremos que recordar el nombre de la función y los parámetros que hay que pasarle. Esto hace que sea mucho más fácil trabajar con el código.</p>
+</blockquote>
+<h4 id="parametros-multiples">Parámetros múltiples<a class="headerlink" href="#parametros-multiples" title="Permanent link">&para;</a></h4>
+<p>Hasta ahora sólo hemos creado una función con <strong>1 parámetro</strong>, pero una función de Javascript puede tener muchos más parámetros. Vamos a crear otro ejemplo, mucho más útil donde convertimos nuestra función en algo más práctico y útil:</p>
+<pre><code>// Declaración
+function tablaMultiplicar(tabla, hasta) {
+  for (i = 0; i &lt;= hasta; i++) console.log(tabla, "x", i, "=", tabla * i);
+}
+
+// Ejecución
+tablaMultiplicar(1, 10); // Tabla del 1
+tablaMultiplicar(5, 10); // Tabla del 5
+</code></pre>
+<p>En este ejemplo, hemos modificado nuestra función <code>tablaDelUno()</code> por esta nueva versión que hemos cambiado de nombre a <code>tablaMultiplicar()</code>. Esta función necesita que le pasemos dos parámetros: <strong>tabla</strong> (<em>la tabla de multiplicar en cuestión</em>) y <strong>hasta</strong> (<em>el número hasta donde llegará la tabla de multiplicar</em>).</p>
+<p>De esta forma, las dos llamadas para ejecutar la función mostrarán por la consola la tabla de multiplicar del 1 y del 5.</p>
+<blockquote>
+<p>Podemos añadir <strong>más parámetros</strong> a la función según nuestras necesidades. Es importante recordar que el orden de los parámetros es importante y que los nombres de cada parámetro no se pueden repetir en una misma función.</p>
+</blockquote>
+<h4 id="parametros-por-defecto">Parámetros por defecto<a class="headerlink" href="#parametros-por-defecto" title="Permanent link">&para;</a></h4>
+<p>Es posible que en algunos casos queramos que ciertos parámetros tengan un valor sin necesidad de escribirlos en la ejecución. Es lo que se llama un <strong>valor por defecto</strong>.</p>
+<p>En nuestro ejemplo anterior, nos podría interesar que la tabla de multiplicar llegue siempre hasta el 10, ya que es el comportamiento por defecto. Si queremos que llegue hasta otro número, lo indicamos explicitamente, pero si lo omitimos, queremos que llegue hasta 10. Esto se haría de la siguiente forma:</p>
+<pre><code>function tablaMultiplicar(tabla, hasta = 10) {
+  for (i = 0; i &lt;= hasta; i++) console.log(tabla, "x", i, "=", tabla * i);
+}
+
+// Ejecución
+tablaMultiplicar(2); // Esta tabla llegará hasta el número 10
+tablaMultiplicar(2, 15); // Esta tabla llegará hasta el número 15
+</code></pre>
+<p>De esta forma nos ahorramos tener que escribir los valores en la ejecución de la función, si en la mayoría de los casos va a tomar ese valor.</p>
+<blockquote>
+<p>Hay que remarcar que esta característica se añade en <strong>ECMAScript 6</strong>, por lo que en navegadores sin soporte podría no funcionar correctamente.</p>
+</blockquote>
+<p>En versiones anteriores de ECMAScript se podía realizar de formas similares a la siguiente:</p>
+<pre><code>function tablaMultiplicar(tabla, hasta) {
+  if (hasta == undefined) hasta = 10;
+
+  for (i = 0; i &lt;= hasta; i++) console.log(tabla, "x", i, "=", tabla * i);
+}
+</code></pre>
+<p>En el caso de que el parámetro <code>hasta</code> no tenga valor (<em>es undefined</em>), le asignamos el valor por defecto. En caso contrario (<em>ya tiene valor</em>) continuamos normalmente.</p>
+<h3 id="devolucion-de-valores">Devolución de valores<a class="headerlink" href="#devolucion-de-valores" title="Permanent link">&para;</a></h3>
+<p>Hasta ahora hemos utilizado funciones simples que realizan acciones o tareas (<em>en nuestro caso, mostrar por consola</em>), pero habitualmente, lo que buscamos es que esa función realice una tarea y nos devuelva la información al exterior de la función, para así utilizarla o guardarla en una variable, que utilizaremos posteriormente para nuestros objetivos.</p>
+<p>Para ello, se utiliza la palabra clave <strong>return</strong>, que suele colocarse al final de la función, ya que con dicha devolución terminamos la ejecución de la función (<em>si existe código después, nunca será ejecutado</em>).</p>
+<p>Veamos un ejemplo con una operación muy sencilla, para verlo claramente:</p>
+<pre><code>// Declaración
+function sumar(a, b) {
+  return a + b; // Devolvemos la suma de a y b al exterior de la función
+  console.log("Ya he realizado la suma."); // Este código nunca se ejecutará
+}
+
+// Ejecución
+var resultado = sumar(5, 5); // Se guarda 10 en la variable resultado
+</code></pre>
+<p>Como podemos ver, esto nos permite crear funciones más modulares y reutilizables que podremos utilizar en multitud de casos, ya que la información se puede enviar al exterior de la función y utilizarla junto a otras funciones o para otros objetivos.</p>
+<hr />
+<p><strong>Fuente:</strong> <a href="https://lenguajejs.com/">Lenguaje Javascript</a> por <a href="https://manzdev.github.io/">Manz</a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../../css/11-animaciones_CSS/" title="Animaciones CSS" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Animaciones CSS
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../02-fundamentos_de_javascript/" title="Fundamentos de Javascript" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Fundamentos de Javascript
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/saucedoinfo" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/saucedoinfo" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.instagram.com/saucedo.info/" target="_blank" rel="noopener" title="www.instagram.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.instant', 'navigation.expand', 'tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,3048 @@
+
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Coleccion de Guias de Desarrollo y diseño.">
+      
+      
+        <link rel="canonical" href="https://saucedoinfo.github.io/guias/desarrollo/css/03-colores_y_fondos/">
+      
+      
+        <meta name="author" content="Fernando S. Saucedo">
+      
+      <link rel="shortcut icon" href="../../../img/favicon-16x16.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.14">
+    
+    
+      
+        <title>Colores y fondos - Guias de Desarrollo y diseño</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d3202873.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ff0a5ce4.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#000000">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#colores-y-fondos" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-header-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Guias de Desarrollo y diseño
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Colores y fondos
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../html/01-introduccion_a_HTML5/" class="md-tabs__link">
+          Desarrollo
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" class="md-tabs__link">
+          Herramientas IT
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    Guias de Desarrollo y diseño
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Desarrollo
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Desarrollo" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Desarrollo
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Html
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Html" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        <span class="md-nav__icon md-icon"></span>
+        Html
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/01-introduccion_a_HTML5/" title="Introduccion a HTML" class="md-nav__link">
+      Introduccion a HTML
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/02-etiquetas_semanticas/" title="Etiquetas semánticas" class="md-nav__link">
+      Etiquetas semánticas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/03-etiquetas_multimedia/" title="Etiquetas multimedias" class="md-nav__link">
+      Etiquetas multimedias
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/04-etiquetas_de_cabecera/" title="Etiquetas de cabecera" class="md-nav__link">
+      Etiquetas de cabecera
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/05-etiquetas_de_formularios/" title="Etiquetas de formularios" class="md-nav__link">
+      Etiquetas de formularios
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/06-etiquetas_de_scripting/" title="Etiquetas de scripting" class="md-nav__link">
+      Etiquetas de scripting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" checked>
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Css
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Css" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        <span class="md-nav__icon md-icon"></span>
+        Css
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01-introduccion_a_CSS/" title="Introducción a CSS" class="md-nav__link">
+      Introducción a CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02-modelo_de_cajas/" title="Modelo de cajas" class="md-nav__link">
+      Modelo de cajas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Colores y fondos
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Colores y fondos" class="md-nav__link md-nav__link--active">
+      Colores y fondos
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#colores-css" class="md-nav__link">
+    Colores CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Colores CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#palabras-clave-de-color" class="md-nav__link">
+    Palabras clave de color
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formato-rgb" class="md-nav__link">
+    Formato RGB
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formato-hexadecimal" class="md-nav__link">
+    Formato hexadecimal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formato-hsl" class="md-nav__link">
+    Formato HSL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#canales-alfa" class="md-nav__link">
+    Canales Alfa
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fondos-de-css" class="md-nav__link">
+    Fondos de CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Fondos de CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#imagenes-de-fondo" class="md-nav__link">
+    Imágenes de fondo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atajo-clasico-fondos" class="md-nav__link">
+    Atajo clásico: Fondos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opacidad" class="md-nav__link">
+    Opacidad
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fondos-multiples" class="md-nav__link">
+    Fondos múltiples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tamano-de-fondos" class="md-nav__link">
+    Tamaño de fondos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atajo-moderno-fondos" class="md-nav__link">
+    Atajo moderno: Fondos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gradientes-css" class="md-nav__link">
+    Gradientes CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Gradientes CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gradientes-lineales" class="md-nav__link">
+    Gradientes lineales
+  </a>
+  
+    <nav class="md-nav" aria-label="Gradientes lineales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#direccion-del-gradiente" class="md-nav__link">
+    Dirección del gradiente
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colores-del-gradiente" class="md-nav__link">
+    Colores del gradiente
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradiente-radial" class="md-nav__link">
+    Gradiente radial
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradiente-conico" class="md-nav__link">
+    Gradiente cónico
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradientes-repetitivos" class="md-nav__link">
+    Gradientes repetitivos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-selectores_CSS/" title="Selectores CSS" class="md-nav__link">
+      Selectores CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-Fuentes_y_tipografias/" title="Fuentes y tipografías" class="md-nav__link">
+      Fuentes y tipografías
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-representacion_de_datos/" title="Representación de datos" class="md-nav__link">
+      Representación de datos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../07_maquetacion_y_colocacion/" title="Maquetación y colocación" class="md-nav__link">
+      Maquetación y colocación
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../08-interacciones/" title="Interacciones" class="md-nav__link">
+      Interacciones
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../09-efectos/" title="Efectos" class="md-nav__link">
+      Efectos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../10-responsive_Web_Design/" title="Responsive Web Design" class="md-nav__link">
+      Responsive Web Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../11-animaciones_CSS/" title="Animaciones CSS" class="md-nav__link">
+      Animaciones CSS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      JavaScript
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="JavaScript" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon"></span>
+        JavaScript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/01-introducci%C3%B3n_a_javascript/" title="Introducción a Javascript" class="md-nav__link">
+      Introducción a Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/02-fundamentos_de_javascript/" title="Fundamentos de Javascript" class="md-nav__link">
+      Fundamentos de Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/03-caracteristicas/" title="Características" class="md-nav__link">
+      Características
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/04-DOM/" title="DOM" class="md-nav__link">
+      DOM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/05-asincronia/" title="Asincronía" class="md-nav__link">
+      Asincronía
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/06-peticiones_HTTP/" title="Peticiones HTTP" class="md-nav__link">
+      Peticiones HTTP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Herramientas IT
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Herramientas IT" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Herramientas IT
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Terminal
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Terminal" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon"></span>
+        Terminal
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" title="Introducción a la terminal" class="md-nav__link">
+      Introducción a la terminal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/02-operaciones_con_ficheros/" title="Operaciones con ficheros" class="md-nav__link">
+      Operaciones con ficheros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/03-administraci%C3%B3n_del_sistema/" title="Administración del sistema" class="md-nav__link">
+      Administración del sistema
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/markdown/" title="Markdown" class="md-nav__link">
+      Markdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/pip/" title="Pip" class="md-nav__link">
+      Pip
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/mkdocs/" title="Mkdocs" class="md-nav__link">
+      Mkdocs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../about/" title="Acerca de" class="md-nav__link">
+      Acerca de
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#colores-css" class="md-nav__link">
+    Colores CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Colores CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#palabras-clave-de-color" class="md-nav__link">
+    Palabras clave de color
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formato-rgb" class="md-nav__link">
+    Formato RGB
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formato-hexadecimal" class="md-nav__link">
+    Formato hexadecimal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formato-hsl" class="md-nav__link">
+    Formato HSL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#canales-alfa" class="md-nav__link">
+    Canales Alfa
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fondos-de-css" class="md-nav__link">
+    Fondos de CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Fondos de CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#imagenes-de-fondo" class="md-nav__link">
+    Imágenes de fondo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atajo-clasico-fondos" class="md-nav__link">
+    Atajo clásico: Fondos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opacidad" class="md-nav__link">
+    Opacidad
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fondos-multiples" class="md-nav__link">
+    Fondos múltiples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tamano-de-fondos" class="md-nav__link">
+    Tamaño de fondos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atajo-moderno-fondos" class="md-nav__link">
+    Atajo moderno: Fondos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gradientes-css" class="md-nav__link">
+    Gradientes CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Gradientes CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gradientes-lineales" class="md-nav__link">
+    Gradientes lineales
+  </a>
+  
+    <nav class="md-nav" aria-label="Gradientes lineales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#direccion-del-gradiente" class="md-nav__link">
+    Dirección del gradiente
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colores-del-gradiente" class="md-nav__link">
+    Colores del gradiente
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradiente-radial" class="md-nav__link">
+    Gradiente radial
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradiente-conico" class="md-nav__link">
+    Gradiente cónico
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradientes-repetitivos" class="md-nav__link">
+    Gradientes repetitivos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/saucedoinfo/guias/edit/master/docs/desarrollo/css/03-colores_y_fondos.md" title="Editar esta página" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="colores-y-fondos">Colores y fondos<a class="headerlink" href="#colores-y-fondos" title="Permanent link">&para;</a></h1>
+<h2 id="colores-css">Colores CSS<a class="headerlink" href="#colores-css" title="Permanent link">&para;</a></h2>
+<p>Uno de los primeros cambios de estilo que podemos pensar realizar en un documento HTML es hacer variaciones en los colores de primer plano y de fondo. Esto es posible con las primeras dos propiedades que veremos a continuación:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Propiedad</th>
+<th align="left">Valor</th>
+<th align="left">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>color</code></td>
+<td align="left">color</td>
+<td align="left">Cambia el <strong>color del texto</strong> que está en el interior de un elemento.</td>
+</tr>
+<tr>
+<td align="left"><code>background-color</code></td>
+<td align="left">color</td>
+<td align="left">Cambia el <strong>color de fondo</strong> de un elemento.</td>
+</tr>
+</tbody>
+</table>
+<p>La propiedad <code>color</code> establece el color del texto, mientras que la propiedad <code>background-color</code> establece el color de fondo del elemento.</p>
+<p>Todas las propiedades CSS donde existen valores , establecen la posibilidad de indicar <strong>4 formas alternativas</strong> (<em>con algunos derivados</em>) para especificar el color deseado:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Nombre</th>
+<th align="left">Formato</th>
+<th align="left">Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Palabra clave predefinida</td>
+<td align="left"><em>[palabra clave]</em></td>
+<td align="left">red</td>
+</tr>
+<tr>
+<td align="left">Esquema RGB</td>
+<td align="left">rgb(<em>rojo</em>, <em>verde</em>, <em>azul</em>)</td>
+<td align="left">rgb(255, 0, 0)</td>
+</tr>
+<tr>
+<td align="left">Esquema RGB con canal alfa</td>
+<td align="left">rgba(<em>rojo</em>, <em>verde</em>, <em>azul</em>, <em>alfa</em>)</td>
+<td align="left">rgba(255, 0, 0, 0.25)</td>
+</tr>
+<tr>
+<td align="left">Esquema RGB hexadecimal</td>
+<td align="left">#<em>RRGGBB</em></td>
+<td align="left">#ff0000</td>
+</tr>
+<tr>
+<td align="left">Esquema RGB hexadecimal con canal alfa</td>
+<td align="left">#<em>RGBBBAA</em></td>
+<td align="left">#ff000040</td>
+</tr>
+<tr>
+<td align="left">Esquema HSL</td>
+<td align="left">hsl(<em>color</em>, <em>saturación</em>, <em>brillo</em>)</td>
+<td align="left">hsl(0, 100%, 100%)</td>
+</tr>
+<tr>
+<td align="left">Esquema HSL con canal alfa</td>
+<td align="left">hsla(<em>color</em>, <em>saturación</em>, <em>brillo</em>, <em>alfa</em>)</td>
+<td align="left">hsla(0, 100%, 100%, 0.25)</td>
+</tr>
+</tbody>
+</table>
+<p>A continuación iremos explicando cada uno de estos formatos para entender como se especifican los colores en CSS y utilizar el método que más se adapte a nuestras necesidades.</p>
+<blockquote>
+<blockquote>
+<p><strong>Consejo</strong>: Si lo que buscamos es un sistema para extraer colores (<em>eye dropper</em>) de una página web, podemos utilizar la extensión para Chrome de <a href="http://www.colorzilla.com/chrome/">ColorZilla</a> o el propio <strong>Chrome Developer Tools</strong>, que integra dicha funcionalidad.</p>
+</blockquote>
+</blockquote>
+<h3 id="palabras-clave-de-color">Palabras clave de color<a class="headerlink" href="#palabras-clave-de-color" title="Permanent link">&para;</a></h3>
+<p>El primer caso (<em>y más limitado</em>) permite establecer el color utilizando palabras reservadas de colores, como <strong>red</strong>, <strong>blue</strong>, <strong>orange</strong>, <strong>white</strong>, <strong>navy</strong>, <strong>yellow</strong> u otras. Existen más de 140 palabras clave para indicar colores:</p>
+<table>
+<thead>
+<tr>
+<th>Nombre del color</th>
+<th>Valor hexadecimal</th>
+<th>Valores RGB</th>
+<th>Color</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alice azul</td>
+<td># F0F8FF</td>
+<td>rgb (240,248,255)</td>
+<td><a href="https://i.stack.imgur.com/dVsBW.png"><img alt="Alice azul" src="https://i.stack.imgur.com/dVsBW.png" /></a></td>
+</tr>
+<tr>
+<td>Blanco antiguo</td>
+<td># FAEBD7</td>
+<td>rgb (250,235,215)</td>
+<td><a href="https://i.stack.imgur.com/jvOLr.png"><img alt="Blanco antiguo" src="https://i.stack.imgur.com/jvOLr.png" /></a></td>
+</tr>
+<tr>
+<td>Agua</td>
+<td># 00FFFF</td>
+<td>rgb (0,255,255)</td>
+<td><a href="https://i.stack.imgur.com/vvCsT.png"><img alt="Agua" src="https://i.stack.imgur.com/vvCsT.png" /></a></td>
+</tr>
+<tr>
+<td>Aguamarina</td>
+<td># 7FFFD4</td>
+<td>rgb (127,255,212)</td>
+<td><a href="https://i.stack.imgur.com/3grSN.png"><img alt="Aguamarina" src="https://i.stack.imgur.com/3grSN.png" /></a></td>
+</tr>
+<tr>
+<td>Azur</td>
+<td># F0FFFF</td>
+<td>rgb (240,255,255)</td>
+<td><a href="https://i.stack.imgur.com/bH1ms.png"><img alt="Azur" src="https://i.stack.imgur.com/bH1ms.png" /></a></td>
+</tr>
+<tr>
+<td>Beige</td>
+<td># F5F5DC</td>
+<td>rgb (245,245,220)</td>
+<td><a href="https://i.stack.imgur.com/fUpj6.png"><img alt="Beige" src="https://i.stack.imgur.com/fUpj6.png" /></a></td>
+</tr>
+<tr>
+<td>Sopa de mariscos</td>
+<td># FFE4C4</td>
+<td>rgb (255,228,196)</td>
+<td><a href="https://i.stack.imgur.com/brQkJ.png"><img alt="Sopa de mariscos" src="https://i.stack.imgur.com/brQkJ.png" /></a></td>
+</tr>
+<tr>
+<td>Negro</td>
+<td># 000000</td>
+<td>rgb (0,0,0)</td>
+<td><a href="https://i.stack.imgur.com/cr64Z.png"><img alt="Negro" src="https://i.stack.imgur.com/cr64Z.png" /></a></td>
+</tr>
+<tr>
+<td>BlanchedAlmond</td>
+<td>#FFEBCD</td>
+<td>rgb (255,235,205)</td>
+<td><a href="https://i.stack.imgur.com/WwRQg.png"><img alt="BlanchedAlmond" src="https://i.stack.imgur.com/WwRQg.png" /></a></td>
+</tr>
+<tr>
+<td>Azul</td>
+<td># 0000FF</td>
+<td>rgb (0,0,255)</td>
+<td><a href="https://i.stack.imgur.com/Pn17o.png"><img alt="Azul" src="https://i.stack.imgur.com/Pn17o.png" /></a></td>
+</tr>
+<tr>
+<td>Violeta Azul</td>
+<td># 8A2BE2</td>
+<td>rgb (138,43,226)</td>
+<td><a href="https://i.stack.imgur.com/X7cq0.png"><img alt="Violeta Azul" src="https://i.stack.imgur.com/X7cq0.png" /></a></td>
+</tr>
+<tr>
+<td>marrón</td>
+<td># A52A2A</td>
+<td>rgb (165,42,42)</td>
+<td><a href="https://i.stack.imgur.com/pgKFN.png"><img alt="marrón" src="https://i.stack.imgur.com/pgKFN.png" /></a></td>
+</tr>
+<tr>
+<td>BurlyWood</td>
+<td># DEB887</td>
+<td>rgb (222,184,135)</td>
+<td><a href="https://i.stack.imgur.com/GGAHU.png"><img alt="BurlyWood" src="https://i.stack.imgur.com/GGAHU.png" /></a></td>
+</tr>
+<tr>
+<td>CadetBlue</td>
+<td># 5F9EA0</td>
+<td>rgb (95,158,160)</td>
+<td><a href="https://i.stack.imgur.com/Fx9ga.png"><img alt="CadetBlue" src="https://i.stack.imgur.com/Fx9ga.png" /></a></td>
+</tr>
+<tr>
+<td>Monasterio</td>
+<td># 7FFF00</td>
+<td>rgb (127,255,0)</td>
+<td><a href="https://i.stack.imgur.com/dVCUd.png"><img alt="Monasterio" src="https://i.stack.imgur.com/dVCUd.png" /></a></td>
+</tr>
+<tr>
+<td>Chocolate</td>
+<td># D2691E</td>
+<td>rgb (210,105,30)</td>
+<td><a href="https://i.stack.imgur.com/U0eMw.png"><img alt="Chocolate" src="https://i.stack.imgur.com/U0eMw.png" /></a></td>
+</tr>
+<tr>
+<td>Coral</td>
+<td># FF7F50</td>
+<td>rgb (255,127,80)</td>
+<td><a href="https://i.stack.imgur.com/QEETt.png"><img alt="Coral" src="https://i.stack.imgur.com/QEETt.png" /></a></td>
+</tr>
+<tr>
+<td>Aciano Azul</td>
+<td># 6495ED</td>
+<td>rgb (100,149,237)</td>
+<td><a href="https://i.stack.imgur.com/gI2Wv.png"><img alt="Aciano Azul" src="https://i.stack.imgur.com/gI2Wv.png" /></a></td>
+</tr>
+<tr>
+<td>Seda de maiz</td>
+<td># FFF8DC</td>
+<td>rgb (255,248,220)</td>
+<td><a href="https://i.stack.imgur.com/9U0uV.png"><img alt="Seda de maiz" src="https://i.stack.imgur.com/9U0uV.png" /></a></td>
+</tr>
+<tr>
+<td>carmesí</td>
+<td># DC143C</td>
+<td>rgb (220,20,60)</td>
+<td><a href="https://i.stack.imgur.com/ub3mh.png"><img alt="carmesí" src="https://i.stack.imgur.com/ub3mh.png" /></a></td>
+</tr>
+<tr>
+<td>Cian</td>
+<td># 00FFFF</td>
+<td>rgb (0,255,255)</td>
+<td><a href="https://i.stack.imgur.com/MM0cY.png"><img alt="Cian" src="https://i.stack.imgur.com/MM0cY.png" /></a></td>
+</tr>
+<tr>
+<td>Azul oscuro</td>
+<td># 00008B</td>
+<td>rgb (0,0,139)</td>
+<td><a href="https://i.stack.imgur.com/YtKOx.png"><img alt="Azul oscuro" src="https://i.stack.imgur.com/YtKOx.png" /></a></td>
+</tr>
+<tr>
+<td>DarkCyan</td>
+<td># 008B8B</td>
+<td>rgb (0,139,139)</td>
+<td><a href="https://i.stack.imgur.com/qzL44.png"><img alt="DarkCyan" src="https://i.stack.imgur.com/qzL44.png" /></a></td>
+</tr>
+<tr>
+<td>DarkGoldenRod</td>
+<td># B8860B</td>
+<td>rgb (184,134,11)</td>
+<td><a href="https://i.stack.imgur.com/Cuf10.png"><img alt="DarkGoldenRod" src="https://i.stack.imgur.com/Cuf10.png" /></a></td>
+</tr>
+<tr>
+<td>Gris oscuro</td>
+<td># A9A9A9</td>
+<td>rgb (169,169,169)</td>
+<td><a href="https://i.stack.imgur.com/W83Ip.png"><img alt="Gris oscuro" src="https://i.stack.imgur.com/W83Ip.png" /></a></td>
+</tr>
+<tr>
+<td>Gris oscuro</td>
+<td># A9A9A9</td>
+<td>rgb (169,169,169)</td>
+<td><a href="https://i.stack.imgur.com/wfBJS.png"><img alt="Gris oscuro" src="https://i.stack.imgur.com/wfBJS.png" /></a></td>
+</tr>
+<tr>
+<td>Verde oscuro</td>
+<td># 006400</td>
+<td>rgb (0,100,0)</td>
+<td><a href="https://i.stack.imgur.com/jfMqO.png"><img alt="Verde oscuro" src="https://i.stack.imgur.com/jfMqO.png" /></a></td>
+</tr>
+<tr>
+<td>DarkKhaki</td>
+<td># BDB76B</td>
+<td>rgb (189,183,107)</td>
+<td><a href="https://i.stack.imgur.com/ZdZMD.png"><img alt="DarkKhaki" src="https://i.stack.imgur.com/ZdZMD.png" /></a></td>
+</tr>
+<tr>
+<td>DarkMagenta</td>
+<td># 8B008B</td>
+<td>rgb (139,0,139)</td>
+<td><a href="https://i.stack.imgur.com/oxUBA.png"><img alt="DarkMagenta" src="https://i.stack.imgur.com/oxUBA.png" /></a></td>
+</tr>
+<tr>
+<td>DarkOliveGreen</td>
+<td># 556B2F</td>
+<td>rgb (85,107,47)</td>
+<td><a href="https://i.stack.imgur.com/zuMtq.png"><img alt="DarkOliveGreen" src="https://i.stack.imgur.com/zuMtq.png" /></a></td>
+</tr>
+<tr>
+<td>Naranja oscuro</td>
+<td># FF8C00</td>
+<td>rgb (255,140,0)</td>
+<td><a href="https://i.stack.imgur.com/HL4wv.png"><img alt="Naranja oscuro" src="https://i.stack.imgur.com/HL4wv.png" /></a></td>
+</tr>
+<tr>
+<td>Orquídea Oscura</td>
+<td># 9932CC</td>
+<td>rgb (153,50,204)</td>
+<td><a href="https://i.stack.imgur.com/DEL6o.png"><img alt="Orquídea Oscura" src="https://i.stack.imgur.com/DEL6o.png" /></a></td>
+</tr>
+<tr>
+<td>Rojo oscuro</td>
+<td># 8B0000</td>
+<td>rgb (139,0,0)</td>
+<td><a href="https://i.stack.imgur.com/kB7Ws.png"><img alt="Rojo oscuro" src="https://i.stack.imgur.com/kB7Ws.png" /></a></td>
+</tr>
+<tr>
+<td>Salmón oscuro</td>
+<td># E9967A</td>
+<td>rgb (233,150,122)</td>
+<td><a href="https://i.stack.imgur.com/1ANMl.png"><img alt="Salmón oscuro" src="https://i.stack.imgur.com/1ANMl.png" /></a></td>
+</tr>
+<tr>
+<td>DarkSeaGreen</td>
+<td># 8FBC8F</td>
+<td>rgb (143,188,143)</td>
+<td><a href="https://i.stack.imgur.com/YnJo6.png"><img alt="DarkSeaGreen" src="https://i.stack.imgur.com/YnJo6.png" /></a></td>
+</tr>
+<tr>
+<td>DarkSlateBlue</td>
+<td># 483D8B</td>
+<td>rgb (72,61,139)</td>
+<td><a href="https://i.stack.imgur.com/Ui2ao.png"><img alt="DarkSlateBlue" src="https://i.stack.imgur.com/Ui2ao.png" /></a></td>
+</tr>
+<tr>
+<td>DarkSlateGray</td>
+<td># 2F4F4F</td>
+<td>rgb (47,79,79)</td>
+<td><a href="https://i.stack.imgur.com/RQKDI.png"><img alt="DarkSlateGray" src="https://i.stack.imgur.com/RQKDI.png" /></a></td>
+</tr>
+<tr>
+<td>DarkSlateGrey</td>
+<td># 2F4F4F</td>
+<td>rgb (47,79,79)</td>
+<td><a href="https://i.stack.imgur.com/dnrhi.png"><img alt="DarkSlateGrey" src="https://i.stack.imgur.com/dnrhi.png" /></a></td>
+</tr>
+<tr>
+<td>DarkTurquoise</td>
+<td># 00CED1</td>
+<td>rgb (0,206,209)</td>
+<td><a href="https://i.stack.imgur.com/5hFAA.png"><img alt="DarkTurquoise" src="https://i.stack.imgur.com/5hFAA.png" /></a></td>
+</tr>
+<tr>
+<td>Violeta oscuro</td>
+<td># 9400D3</td>
+<td>rgb (148,0,211)</td>
+<td><a href="https://i.stack.imgur.com/Mz1e8.png"><img alt="Violeta oscuro" src="https://i.stack.imgur.com/Mz1e8.png" /></a></td>
+</tr>
+<tr>
+<td>Rosa profundo</td>
+<td># FF1493</td>
+<td>rgb (255,20,147)</td>
+<td><a href="https://i.stack.imgur.com/dsQkM.png"><img alt="Rosa profundo" src="https://i.stack.imgur.com/dsQkM.png" /></a></td>
+</tr>
+<tr>
+<td>DeepSkyBlue</td>
+<td># 00BFFF</td>
+<td>rgb (0,191,255)</td>
+<td><a href="https://i.stack.imgur.com/St8cI.png"><img alt="DeepSkyBlue" src="https://i.stack.imgur.com/St8cI.png" /></a></td>
+</tr>
+<tr>
+<td>DimGray</td>
+<td># 696969</td>
+<td>rgb (105,105,105)</td>
+<td><a href="https://i.stack.imgur.com/Q0jnZ.png"><img alt="DimGray" src="https://i.stack.imgur.com/Q0jnZ.png" /></a></td>
+</tr>
+<tr>
+<td>DimGrey</td>
+<td># 696969</td>
+<td>rgb (105,105,105)</td>
+<td><a href="https://i.stack.imgur.com/YVu2z.png"><img alt="DimGrey" src="https://i.stack.imgur.com/YVu2z.png" /></a></td>
+</tr>
+<tr>
+<td>DodgerBlue</td>
+<td># 1E90FF</td>
+<td>rgb (30,144,255)</td>
+<td><a href="https://i.stack.imgur.com/woYd8.png"><img alt="DodgerBlue" src="https://i.stack.imgur.com/woYd8.png" /></a></td>
+</tr>
+<tr>
+<td>Ladrillo refractario</td>
+<td># B22222</td>
+<td>rgb (178,34,34)</td>
+<td><a href="https://i.stack.imgur.com/UauLn.png"><img alt="Ladrillo refractario" src="https://i.stack.imgur.com/UauLn.png" /></a></td>
+</tr>
+<tr>
+<td>FloralWhite</td>
+<td># FFFAF0</td>
+<td>rgb (255,250,240)</td>
+<td><a href="https://i.stack.imgur.com/TZoP1.png"><img alt="FloralWhite" src="https://i.stack.imgur.com/TZoP1.png" /></a></td>
+</tr>
+<tr>
+<td>Bosque verde</td>
+<td># 228B22</td>
+<td>rgb (34,139,34)</td>
+<td><a href="https://i.stack.imgur.com/mU5Ao.png"><img alt="Bosque verde" src="https://i.stack.imgur.com/mU5Ao.png" /></a></td>
+</tr>
+<tr>
+<td>Fucsia</td>
+<td># FF00FF</td>
+<td>rgb (255,0,255)</td>
+<td><a href="https://i.stack.imgur.com/kUZUE.png"><img alt="Fucsia" src="https://i.stack.imgur.com/kUZUE.png" /></a></td>
+</tr>
+<tr>
+<td>Gainsboro</td>
+<td>#DCDCDC</td>
+<td>rgb (220,220,220)</td>
+<td><a href="https://i.stack.imgur.com/oAq7U.png"><img alt="Gainsboro" src="https://i.stack.imgur.com/oAq7U.png" /></a></td>
+</tr>
+<tr>
+<td>Fantasma blanco</td>
+<td># F8F8FF</td>
+<td>rgb (248,248,255)</td>
+<td><a href="https://i.stack.imgur.com/t3EEP.png"><img alt="Fantasma blanco" src="https://i.stack.imgur.com/t3EEP.png" /></a></td>
+</tr>
+<tr>
+<td>Oro</td>
+<td># FFD700</td>
+<td>rgb (255,215,0)</td>
+<td><a href="https://i.stack.imgur.com/T2jzS.png"><img alt="Oro" src="https://i.stack.imgur.com/T2jzS.png" /></a></td>
+</tr>
+<tr>
+<td>Vara de oro</td>
+<td># DAA520</td>
+<td>rgb (218,165,32)</td>
+<td><a href="https://i.stack.imgur.com/XSTBL.png"><img alt="Vara de oro" src="https://i.stack.imgur.com/XSTBL.png" /></a></td>
+</tr>
+<tr>
+<td>gris</td>
+<td># 808080</td>
+<td>rgb (128,128,128)</td>
+<td><a href="https://i.stack.imgur.com/67NpE.png"><img alt="gris" src="https://i.stack.imgur.com/67NpE.png" /></a></td>
+</tr>
+<tr>
+<td>Gris</td>
+<td># 808080</td>
+<td>rgb (128,128,128)</td>
+<td><a href="https://i.stack.imgur.com/mj8Uh.png"><img alt="Gris" src="https://i.stack.imgur.com/mj8Uh.png" /></a></td>
+</tr>
+<tr>
+<td>Verde</td>
+<td># 008000</td>
+<td>rgb (0,128,0)</td>
+<td><a href="https://i.stack.imgur.com/U0T5D.png"><img alt="Verde" src="https://i.stack.imgur.com/U0T5D.png" /></a></td>
+</tr>
+<tr>
+<td>Verde amarillo</td>
+<td># ADFF2F</td>
+<td>rgb (173,255,47)</td>
+<td><a href="https://i.stack.imgur.com/BtLwR.png"><img alt="Verde amarillo" src="https://i.stack.imgur.com/BtLwR.png" /></a></td>
+</tr>
+<tr>
+<td>Gotas de miel</td>
+<td># F0FFF0</td>
+<td>rgb (240,255,240)</td>
+<td><a href="https://i.stack.imgur.com/rvbJk.png"><img alt="Gotas de miel" src="https://i.stack.imgur.com/rvbJk.png" /></a></td>
+</tr>
+<tr>
+<td>Rosa caliente</td>
+<td># FF69B4</td>
+<td>rgb (255,105,180)</td>
+<td><a href="https://i.stack.imgur.com/fIn2e.png"><img alt="Rosa caliente" src="https://i.stack.imgur.com/fIn2e.png" /></a></td>
+</tr>
+<tr>
+<td>IndianRed</td>
+<td># CD5C5C</td>
+<td>rgb (205,92,92)</td>
+<td><a href="https://i.stack.imgur.com/xZV1l.png"><img alt="IndianRed" src="https://i.stack.imgur.com/xZV1l.png" /></a></td>
+</tr>
+<tr>
+<td>Índigo</td>
+<td># 4B0082</td>
+<td>rgb (75,0,130)</td>
+<td><a href="https://i.stack.imgur.com/Y9Sn4.png"><img alt="Índigo" src="https://i.stack.imgur.com/Y9Sn4.png" /></a></td>
+</tr>
+<tr>
+<td>Marfil</td>
+<td># FFFFF0</td>
+<td>rgb (255,255,240)</td>
+<td><a href="https://i.stack.imgur.com/prMC1.png"><img alt="Marfil" src="https://i.stack.imgur.com/prMC1.png" /></a></td>
+</tr>
+<tr>
+<td>Caqui</td>
+<td># F0E68C</td>
+<td>rgb (240,230,140)</td>
+<td><a href="https://i.stack.imgur.com/YPrh0.png"><img alt="Caqui" src="https://i.stack.imgur.com/YPrh0.png" /></a></td>
+</tr>
+<tr>
+<td>Lavanda</td>
+<td># E6E6FA</td>
+<td>rgb (230,230,250)</td>
+<td><a href="https://i.stack.imgur.com/giHoF.png"><img alt="Lavanda" src="https://i.stack.imgur.com/giHoF.png" /></a></td>
+</tr>
+<tr>
+<td>LavenderBlush</td>
+<td># FFF0F5</td>
+<td>rgb (255,240,245)</td>
+<td><a href="https://i.stack.imgur.com/aZGQE.png"><img alt="LavenderBlush" src="https://i.stack.imgur.com/aZGQE.png" /></a></td>
+</tr>
+<tr>
+<td>Césped verde</td>
+<td># 7CFC00</td>
+<td>rgb (124,252,0)</td>
+<td><a href="https://i.stack.imgur.com/adxCj.png"><img alt="Césped verde" src="https://i.stack.imgur.com/adxCj.png" /></a></td>
+</tr>
+<tr>
+<td>Limón chiffon</td>
+<td>#FFFACD</td>
+<td>rgb (255,250,205)</td>
+<td><a href="https://i.stack.imgur.com/38Fr3.png"><img alt="Limón chiffon" src="https://i.stack.imgur.com/38Fr3.png" /></a></td>
+</tr>
+<tr>
+<td>Azul claro</td>
+<td># ADD8E6</td>
+<td>rgb (173,216,230)</td>
+<td><a href="https://i.stack.imgur.com/TWZb7.png"><img alt="Azul claro" src="https://i.stack.imgur.com/TWZb7.png" /></a></td>
+</tr>
+<tr>
+<td>LightCoral</td>
+<td># F08080</td>
+<td>rgb (240,128,128)</td>
+<td><a href="https://i.stack.imgur.com/8Yun8.png"><img alt="LightCoral" src="https://i.stack.imgur.com/8Yun8.png" /></a></td>
+</tr>
+<tr>
+<td>Cian claro</td>
+<td># E0FFFF</td>
+<td>rgb (224,255,255)</td>
+<td><a href="https://i.stack.imgur.com/hC4eY.png"><img alt="Cian claro" src="https://i.stack.imgur.com/hC4eY.png" /></a></td>
+</tr>
+<tr>
+<td>LightGoldenRodYellow</td>
+<td># FAFAD2</td>
+<td>rgb (250,250,210)</td>
+<td><a href="https://i.stack.imgur.com/D3scU.png"><img alt="LightGoldenRodYellow" src="https://i.stack.imgur.com/D3scU.png" /></a></td>
+</tr>
+<tr>
+<td>Gris claro</td>
+<td># D3D3D3</td>
+<td>rgb (211,211,211)</td>
+<td><a href="https://i.stack.imgur.com/5A6Ef.png"><img alt="Gris claro" src="https://i.stack.imgur.com/5A6Ef.png" /></a></td>
+</tr>
+<tr>
+<td>Gris claro</td>
+<td># D3D3D3</td>
+<td>rgb (211,211,211)</td>
+<td><a href="https://i.stack.imgur.com/gLPoR.png"><img alt="Gris claro" src="https://i.stack.imgur.com/gLPoR.png" /></a></td>
+</tr>
+<tr>
+<td>Verde claro</td>
+<td># 90EE90</td>
+<td>rgb (144,238,144)</td>
+<td><a href="https://i.stack.imgur.com/2VvNK.png"><img alt="Verde claro" src="https://i.stack.imgur.com/2VvNK.png" /></a></td>
+</tr>
+<tr>
+<td>Rosa claro</td>
+<td># FFB6C1</td>
+<td>rgb (255,182,193)</td>
+<td><a href="https://i.stack.imgur.com/Ekikz.png"><img alt="Rosa claro" src="https://i.stack.imgur.com/Ekikz.png" /></a></td>
+</tr>
+<tr>
+<td>Salmón de luz</td>
+<td># FFA07A</td>
+<td>rgb (255,160,122)</td>
+<td><a href="https://i.stack.imgur.com/JxzwJ.png"><img alt="Salmón de luz" src="https://i.stack.imgur.com/JxzwJ.png" /></a></td>
+</tr>
+<tr>
+<td>LightSeaGreen</td>
+<td># 20B2AA</td>
+<td>rgb (32,178,170)</td>
+<td><a href="https://i.stack.imgur.com/XsjW4.png"><img alt="LightSeaGreen" src="https://i.stack.imgur.com/XsjW4.png" /></a></td>
+</tr>
+<tr>
+<td>LightSkyBlue</td>
+<td># 87CEFA</td>
+<td>rgb (135,206,250)</td>
+<td><a href="https://i.stack.imgur.com/txw7K.png"><img alt="LightSkyBlue" src="https://i.stack.imgur.com/txw7K.png" /></a></td>
+</tr>
+<tr>
+<td>LightSlateGray</td>
+<td># 778899</td>
+<td>rgb (119,136,153)</td>
+<td><a href="https://i.stack.imgur.com/x2SLs.png"><img alt="LightSlateGray" src="https://i.stack.imgur.com/x2SLs.png" /></a></td>
+</tr>
+<tr>
+<td>LightSlateGrey</td>
+<td># 778899</td>
+<td>rgb (119,136,153)</td>
+<td><a href="https://i.stack.imgur.com/k8Y23.png"><img alt="LightSlateGrey" src="https://i.stack.imgur.com/k8Y23.png" /></a></td>
+</tr>
+<tr>
+<td>LightSteelBlue</td>
+<td># B0C4DE</td>
+<td>rgb (176,196,222)</td>
+<td><a href="https://i.stack.imgur.com/8wsSt.png"><img alt="LightSteelBlue" src="https://i.stack.imgur.com/8wsSt.png" /></a></td>
+</tr>
+<tr>
+<td>Amarillo claro</td>
+<td># FFFFE0</td>
+<td>rgb (255,255,224)</td>
+<td><a href="https://i.stack.imgur.com/QGEjh.png"><img alt="Amarillo claro" src="https://i.stack.imgur.com/QGEjh.png" /></a></td>
+</tr>
+<tr>
+<td>Lima</td>
+<td># 00FF00</td>
+<td>rgb (0,255,0)</td>
+<td><a href="https://i.stack.imgur.com/etPK7.png"><img alt="Lima" src="https://i.stack.imgur.com/etPK7.png" /></a></td>
+</tr>
+<tr>
+<td>Verde lima</td>
+<td># 32CD32</td>
+<td>rgb (50,205,50)</td>
+<td><a href="https://i.stack.imgur.com/IIA3t.png"><img alt="Verde lima" src="https://i.stack.imgur.com/IIA3t.png" /></a></td>
+</tr>
+<tr>
+<td>Lino</td>
+<td># FAF0E6</td>
+<td>rgb (250,240,230)</td>
+<td><a href="https://i.stack.imgur.com/OSEq5.png"><img alt="Lino" src="https://i.stack.imgur.com/OSEq5.png" /></a></td>
+</tr>
+<tr>
+<td>Magenta</td>
+<td># FF00FF</td>
+<td>rgb (255,0,255)</td>
+<td><a href="https://i.stack.imgur.com/UL5lW.png"><img alt="Magenta" src="https://i.stack.imgur.com/UL5lW.png" /></a></td>
+</tr>
+<tr>
+<td>Granate</td>
+<td># 800000</td>
+<td>rgb (128,0,0)</td>
+<td><a href="https://i.stack.imgur.com/hMH8V.png"><img alt="Granate" src="https://i.stack.imgur.com/hMH8V.png" /></a></td>
+</tr>
+<tr>
+<td>MedioAquaMarine</td>
+<td># 66CDAA</td>
+<td>rgb (102,205,170)</td>
+<td><a href="https://i.stack.imgur.com/6WAqo.png"><img alt="MedioAquaMarine" src="https://i.stack.imgur.com/6WAqo.png" /></a></td>
+</tr>
+<tr>
+<td>Azul medio</td>
+<td># 0000CD</td>
+<td>rgb (0,0,205)</td>
+<td><a href="https://i.stack.imgur.com/6PWeI.png"><img alt="Azul medio" src="https://i.stack.imgur.com/6PWeI.png" /></a></td>
+</tr>
+<tr>
+<td>MediumOrchid</td>
+<td># BA55D3</td>
+<td>rgb (186,85,211)</td>
+<td><a href="https://i.stack.imgur.com/op66E.png"><img alt="MediumOrchid" src="https://i.stack.imgur.com/op66E.png" /></a></td>
+</tr>
+<tr>
+<td>Mediano</td>
+<td># 9370DB</td>
+<td>rgb (147,112,219)</td>
+<td><a href="https://i.stack.imgur.com/IKsEM.png"><img alt="Mediano" src="https://i.stack.imgur.com/IKsEM.png" /></a></td>
+</tr>
+<tr>
+<td>MediumSeaGreen</td>
+<td># 3CB371</td>
+<td>rgb (60,179,113)</td>
+<td><a href="https://i.stack.imgur.com/jweG4.png"><img alt="MediumSeaGreen" src="https://i.stack.imgur.com/jweG4.png" /></a></td>
+</tr>
+<tr>
+<td>MediumSlateBlue</td>
+<td># 7B68EE</td>
+<td>rgb (123,104,238)</td>
+<td><a href="https://i.stack.imgur.com/OX3RE.png"><img alt="MediumSlateBlue" src="https://i.stack.imgur.com/OX3RE.png" /></a></td>
+</tr>
+<tr>
+<td>MediumSpringGreen</td>
+<td># 00FA9A</td>
+<td>rgb (0,250,154)</td>
+<td><a href="https://i.stack.imgur.com/3B3P5.png"><img alt="MediumSpringGreen" src="https://i.stack.imgur.com/3B3P5.png" /></a></td>
+</tr>
+<tr>
+<td>MediumTurquoise</td>
+<td># 48D1CC</td>
+<td>rgb (72,209,204)</td>
+<td><a href="https://i.stack.imgur.com/Eymkn.png"><img alt="MediumTurquoise" src="https://i.stack.imgur.com/Eymkn.png" /></a></td>
+</tr>
+<tr>
+<td>MediumVioletRed</td>
+<td># C71585</td>
+<td>rgb (199,21,133)</td>
+<td><a href="https://i.stack.imgur.com/llyIE.png"><img alt="MediumTurquoise" src="https://i.stack.imgur.com/llyIE.png" /></a></td>
+</tr>
+<tr>
+<td>MidnightBlue</td>
+<td># 191970</td>
+<td>rgb (25,25,112)</td>
+<td><a href="https://i.stack.imgur.com/2DJyF.png"><img alt="MidnightBlue" src="https://i.stack.imgur.com/2DJyF.png" /></a></td>
+</tr>
+<tr>
+<td>MintCream</td>
+<td># F5FFFA</td>
+<td>rgb (245,255,250)</td>
+<td><a href="https://i.stack.imgur.com/kdsyq.png"><img alt="MintCream" src="https://i.stack.imgur.com/kdsyq.png" /></a></td>
+</tr>
+<tr>
+<td>MistyRose</td>
+<td># FFE4E1</td>
+<td>rgb (255,228,225)</td>
+<td><a href="https://i.stack.imgur.com/74kMX.png"><img alt="MistyRose" src="https://i.stack.imgur.com/74kMX.png" /></a></td>
+</tr>
+<tr>
+<td>Mocasín</td>
+<td># FFE4B5</td>
+<td>rgb (255,228,181)</td>
+<td><a href="https://i.stack.imgur.com/rN1Vt.png"><img alt="Mocasín" src="https://i.stack.imgur.com/rN1Vt.png" /></a></td>
+</tr>
+<tr>
+<td>Navajoblanco</td>
+<td>#FFDEAD</td>
+<td>rgb (255,222,173)</td>
+<td><a href="https://i.stack.imgur.com/YPIiR.png"><img alt="Navajoblanco" src="https://i.stack.imgur.com/YPIiR.png" /></a></td>
+</tr>
+<tr>
+<td>Armada</td>
+<td># 000080</td>
+<td>rgb (0,0,128)</td>
+<td><a href="https://i.stack.imgur.com/crswN.png"><img alt="Armada" src="https://i.stack.imgur.com/crswN.png" /></a></td>
+</tr>
+<tr>
+<td>Antiguo lace</td>
+<td># FDF5E6</td>
+<td>rgb (253,245,230)</td>
+<td><a href="https://i.stack.imgur.com/6KGAc.png"><img alt="Antiguo lace" src="https://i.stack.imgur.com/6KGAc.png" /></a></td>
+</tr>
+<tr>
+<td>Aceituna</td>
+<td># 808000</td>
+<td>rgb (128,128,0)</td>
+<td><a href="https://i.stack.imgur.com/iC0zi.png"><img alt="Aceituna" src="https://i.stack.imgur.com/iC0zi.png" /></a></td>
+</tr>
+<tr>
+<td>Verde oliva</td>
+<td># 6B8E23</td>
+<td>rgb (107,142,35)</td>
+<td><a href="https://i.stack.imgur.com/QWYbj.png"><img alt="Verde oliva" src="https://i.stack.imgur.com/QWYbj.png" /></a></td>
+</tr>
+<tr>
+<td>naranja</td>
+<td># FFA500</td>
+<td>rgb (255,165,0)</td>
+<td><a href="https://i.stack.imgur.com/PLSrS.png"><img alt="naranja" src="https://i.stack.imgur.com/PLSrS.png" /></a></td>
+</tr>
+<tr>
+<td>Rojo naranja</td>
+<td># FF4500</td>
+<td>rgb (255,69,0)</td>
+<td><a href="https://i.stack.imgur.com/CpUCV.png"><img alt="Rojo naranja" src="https://i.stack.imgur.com/CpUCV.png" /></a></td>
+</tr>
+<tr>
+<td>Orquídea</td>
+<td># DA70D6</td>
+<td>rgb (218,112,214)</td>
+<td><a href="https://i.stack.imgur.com/BtICR.png"><img alt="Orquídea" src="https://i.stack.imgur.com/BtICR.png" /></a></td>
+</tr>
+<tr>
+<td>PaleGoldenRod</td>
+<td># EEE8AA</td>
+<td>rgb (238,232,170)</td>
+<td><a href="https://i.stack.imgur.com/B7grq.png"><img alt="PaleGoldenRod" src="https://i.stack.imgur.com/B7grq.png" /></a></td>
+</tr>
+<tr>
+<td>Verde pálido</td>
+<td># 98FB98</td>
+<td>rgb (152,251,152)</td>
+<td><a href="https://i.stack.imgur.com/MywLd.png"><img alt="Verde pálido" src="https://i.stack.imgur.com/MywLd.png" /></a></td>
+</tr>
+<tr>
+<td>PaleTurquoise</td>
+<td>#AFEEEE</td>
+<td>rgb (175,238,238)</td>
+<td><a href="https://i.stack.imgur.com/0IYp9.png"><img alt="PaleTurquoise" src="https://i.stack.imgur.com/0IYp9.png" /></a></td>
+</tr>
+<tr>
+<td>PaleVioletRed</td>
+<td># DB7093</td>
+<td>rgb (219,112,147)</td>
+<td><a href="https://i.stack.imgur.com/NTY24.png"><img alt="PaleVioletRed" src="https://i.stack.imgur.com/NTY24.png" /></a></td>
+</tr>
+<tr>
+<td>PapayaWhip</td>
+<td># FFEFD5</td>
+<td>rgb (255,239,213)</td>
+<td><a href="https://i.stack.imgur.com/3dl4v.png"><img alt="PapayaWhip" src="https://i.stack.imgur.com/3dl4v.png" /></a></td>
+</tr>
+<tr>
+<td>Peachpuff</td>
+<td># FFDAB9</td>
+<td>rgb (255,218,185)</td>
+<td><a href="https://i.stack.imgur.com/cYrOX.png"><img alt="Peachpuff" src="https://i.stack.imgur.com/cYrOX.png" /></a></td>
+</tr>
+<tr>
+<td>Perú</td>
+<td># CD853F</td>
+<td>rgb (205,133,63)</td>
+<td><a href="https://i.stack.imgur.com/0TaRO.png"><img alt="Perú" src="https://i.stack.imgur.com/0TaRO.png" /></a></td>
+</tr>
+<tr>
+<td>Rosado</td>
+<td># FFC0CB</td>
+<td>rgb (255,192,203)</td>
+<td><a href="https://i.stack.imgur.com/2sr8O.png"><img alt="Rosado" src="https://i.stack.imgur.com/2sr8O.png" /></a></td>
+</tr>
+<tr>
+<td>ciruela</td>
+<td># DDA0DD</td>
+<td>rgb (221,160,221)</td>
+<td><a href="https://i.stack.imgur.com/NNjmo.png"><img alt="ciruela" src="https://i.stack.imgur.com/NNjmo.png" /></a></td>
+</tr>
+<tr>
+<td>Azul pálido</td>
+<td># B0E0E6</td>
+<td>rgb (176,224,230)</td>
+<td><a href="https://i.stack.imgur.com/2v6DK.png"><img alt="Azul pálido" src="https://i.stack.imgur.com/2v6DK.png" /></a></td>
+</tr>
+<tr>
+<td>Púrpura</td>
+<td># 800080</td>
+<td>rgb (128,0,128)</td>
+<td><a href="https://i.stack.imgur.com/qD3Ou.png"><img alt="Púrpura" src="https://i.stack.imgur.com/qD3Ou.png" /></a></td>
+</tr>
+<tr>
+<td>RebeccaPurple</td>
+<td># 663399</td>
+<td>rgb (102,51,153)</td>
+<td><a href="https://i.stack.imgur.com/lBOwr.png"><img alt="RebeccaPurple" src="https://i.stack.imgur.com/lBOwr.png" /></a></td>
+</tr>
+<tr>
+<td>rojo</td>
+<td># FF0000</td>
+<td>rgb (255,0,0)</td>
+<td><a href="https://i.stack.imgur.com/uiBYF.png"><img alt="rojo" src="https://i.stack.imgur.com/uiBYF.png" /></a></td>
+</tr>
+<tr>
+<td>RosyBrown</td>
+<td># BC8F8F</td>
+<td>rgb (188,143,143)</td>
+<td><a href="https://i.stack.imgur.com/PJFid.png"><img alt="RosyBrown" src="https://i.stack.imgur.com/PJFid.png" /></a></td>
+</tr>
+<tr>
+<td>Azul real</td>
+<td># 4169E1</td>
+<td>rgb (65,105,225)</td>
+<td><a href="https://i.stack.imgur.com/nt8Is.png"><img alt="Azul real" src="https://i.stack.imgur.com/nt8Is.png" /></a></td>
+</tr>
+<tr>
+<td>SaddleBrown</td>
+<td># 8B4513</td>
+<td>rgb (139,69,19)</td>
+<td><a href="https://i.stack.imgur.com/wOUue.png"><img alt="SaddleBrown" src="https://i.stack.imgur.com/wOUue.png" /></a></td>
+</tr>
+<tr>
+<td>Salmón</td>
+<td># FA8072</td>
+<td>rgb (250,128,114)</td>
+<td><a href="https://i.stack.imgur.com/eJ0bG.png"><img alt="Salmón" src="https://i.stack.imgur.com/eJ0bG.png" /></a></td>
+</tr>
+<tr>
+<td>SandyBrown</td>
+<td># F4A460</td>
+<td>rgb (244,164,96)</td>
+<td><a href="https://i.stack.imgur.com/75qiD.png"><img alt="SandyBrown" src="https://i.stack.imgur.com/75qiD.png" /></a></td>
+</tr>
+<tr>
+<td>Mar verde</td>
+<td># 2E8B57</td>
+<td>rgb (46,139,87)</td>
+<td><a href="https://i.stack.imgur.com/xZIev.png"><img alt="Mar verde" src="https://i.stack.imgur.com/xZIev.png" /></a></td>
+</tr>
+<tr>
+<td>Concha</td>
+<td># FFF5EE</td>
+<td>rgb (255,245,238)</td>
+<td><a href="https://i.stack.imgur.com/TyMam.png"><img alt="Concha" src="https://i.stack.imgur.com/TyMam.png" /></a></td>
+</tr>
+<tr>
+<td>Tierra de siena</td>
+<td># A0522D</td>
+<td>rgb (160,82,45)</td>
+<td><a href="https://i.stack.imgur.com/x8Jrq.png"><img alt="Tierra de siena" src="https://i.stack.imgur.com/x8Jrq.png" /></a></td>
+</tr>
+<tr>
+<td>Plata</td>
+<td># C0C0C0</td>
+<td>rgb (192,192,192)</td>
+<td><a href="https://i.stack.imgur.com/hh4eT.png"><img alt="Plata" src="https://i.stack.imgur.com/hh4eT.png" /></a></td>
+</tr>
+<tr>
+<td>Cielo azul</td>
+<td># 87CEEB</td>
+<td>rgb (135,206,235)</td>
+<td><a href="https://i.stack.imgur.com/tnrm5.png"><img alt="Cielo azul" src="https://i.stack.imgur.com/tnrm5.png" /></a></td>
+</tr>
+<tr>
+<td>SlateBlue</td>
+<td># 6A5ACD</td>
+<td>rgb (106,90,205)</td>
+<td><a href="https://i.stack.imgur.com/ubuww.png"><img alt="SlateBlue" src="https://i.stack.imgur.com/ubuww.png" /></a></td>
+</tr>
+<tr>
+<td>SlateGray</td>
+<td># 708090</td>
+<td>rgb (112,128,144)</td>
+<td><a href="https://i.stack.imgur.com/pHN1B.png"><img alt="SlateGray" src="https://i.stack.imgur.com/pHN1B.png" /></a></td>
+</tr>
+<tr>
+<td>Pizarra gris</td>
+<td># 708090</td>
+<td>rgb (112,128,144)</td>
+<td><a href="https://i.stack.imgur.com/uGW3Z.png"><img alt="Pizarra gris" src="https://i.stack.imgur.com/uGW3Z.png" /></a></td>
+</tr>
+<tr>
+<td>Nieve</td>
+<td>#FFAFA</td>
+<td>rgb (255,250,250)</td>
+<td><a href="https://i.stack.imgur.com/ls53F.png"><img alt="Nieve" src="https://i.stack.imgur.com/ls53F.png" /></a></td>
+</tr>
+<tr>
+<td>Primavera verde</td>
+<td># 00FF7F</td>
+<td>rgb (0,255,127)</td>
+<td><a href="https://i.stack.imgur.com/SWuAT.png"><img alt="Primavera verde" src="https://i.stack.imgur.com/SWuAT.png" /></a></td>
+</tr>
+<tr>
+<td>Azul acero</td>
+<td># 4682B4</td>
+<td>rgb (70,130,180)</td>
+<td><a href="https://i.stack.imgur.com/gK6oL.png"><img alt="Azul acero" src="https://i.stack.imgur.com/gK6oL.png" /></a></td>
+</tr>
+<tr>
+<td>Bronceado</td>
+<td># D2B48C</td>
+<td>rgb (210,180,140)</td>
+<td><a href="https://i.stack.imgur.com/UOatT.png"><img alt="bronceado" src="https://i.stack.imgur.com/UOatT.png" /></a></td>
+</tr>
+<tr>
+<td>Teal</td>
+<td># 008080</td>
+<td>rgb (0,128,128)</td>
+<td><a href="https://i.stack.imgur.com/jIYOb.png"><img alt="Teal" src="https://i.stack.imgur.com/jIYOb.png" /></a></td>
+</tr>
+<tr>
+<td>Cardo</td>
+<td># D8BFD8</td>
+<td>rgb (216,191,216)</td>
+<td><a href="https://i.stack.imgur.com/5EamN.png"><img alt="Cardo" src="https://i.stack.imgur.com/5EamN.png" /></a></td>
+</tr>
+<tr>
+<td>Tomate</td>
+<td># FF6347</td>
+<td>rgb (255,99,71)</td>
+<td><a href="https://i.stack.imgur.com/IChJO.png"><img alt="Tomate" src="https://i.stack.imgur.com/IChJO.png" /></a></td>
+</tr>
+<tr>
+<td>Turquesa</td>
+<td># 40E0D0</td>
+<td>rgb (64,224,208)</td>
+<td><a href="https://i.stack.imgur.com/vPdms.png"><img alt="Turquesa" src="https://i.stack.imgur.com/vPdms.png" /></a></td>
+</tr>
+<tr>
+<td>Violeta</td>
+<td># EE82EE</td>
+<td>rgb (238,130,238)</td>
+<td><a href="https://i.stack.imgur.com/eWWnU.png"><img alt="Violeta" src="https://i.stack.imgur.com/eWWnU.png" /></a></td>
+</tr>
+<tr>
+<td>Trigo</td>
+<td># F5DEB3</td>
+<td>rgb (245,222,179)</td>
+<td><a href="https://i.stack.imgur.com/XN0kJ.png"><img alt="Trigo" src="https://i.stack.imgur.com/XN0kJ.png" /></a></td>
+</tr>
+<tr>
+<td>Blanco</td>
+<td>#FFFFFF</td>
+<td>rgb (255,255,255)</td>
+<td><a href="https://i.stack.imgur.com/hpQVN.png"><img alt="Blanco" src="https://i.stack.imgur.com/hpQVN.png" /></a></td>
+</tr>
+<tr>
+<td>Humo blanco</td>
+<td># F5F5F5</td>
+<td>rgb (245,245,245)</td>
+<td><a href="https://i.stack.imgur.com/cAQ4D.png"><img alt="Humo blanco" src="https://i.stack.imgur.com/cAQ4D.png" /></a></td>
+</tr>
+<tr>
+<td>Amarillo</td>
+<td># FFFF00</td>
+<td>rgb (255,255,0)</td>
+<td><a href="https://i.stack.imgur.com/3fAnQ.png"><img alt="Amarillo" src="https://i.stack.imgur.com/3fAnQ.png" /></a></td>
+</tr>
+<tr>
+<td>Amarillo verde</td>
+<td># 9ACD32</td>
+<td>rgb (154,205,50)</td>
+<td><a href="https://i.stack.imgur.com/q7mKa.png"><img alt="Amarillo verde" src="https://i.stack.imgur.com/q7mKa.png" /></a></td>
+</tr>
+</tbody>
+</table>
+<p>Además, existen algunos valores especiales que puedes utilizar cuando quieras especificar un color, como colores <strong>transparentes</strong> o el <strong>color actual del texto</strong>, muy útil para SVG, por ejemplo:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Valor</th>
+<th align="left">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>transparent</strong></td>
+<td align="left">Establece un color completamente transparente (valor por defecto de <code>background-color</code>)</td>
+</tr>
+<tr>
+<td align="left">currentColor</td>
+<td align="left">Establece el mismo color que se está utilizando para el texto (CSS3 y SVG)</td>
+</tr>
+</tbody>
+</table>
+<p>Veamos algunos ejemplos de palabras clave de color:</p>
+<pre><code>div {
+  background-color: blue;
+  background-color: transparent;
+  background-color: lightpink;
+  background-color: rebeccapurple;  /* En honor a Rebeca, la hija de Eric Meyer */
+}
+</code></pre>
+<h3 id="formato-rgb">Formato RGB<a class="headerlink" href="#formato-rgb" title="Permanent link">&para;</a></h3>
+<p>Uno de los métodos más conocidos por los diseñadores gráficos es utilizar el <strong>formato RGB</strong>. Las siglas RGB significan <strong>rojo</strong>, <strong>verde</strong> y <strong>azul</strong>, por lo que cada cifra (<em>del 0 al 255</em>) representa la intensidad de cada componente de color. Como se puede ver en la siguiente imagen, si utilizamos una cantidad (0, 0, 0) de cada canal, obtenemos el <strong>color negro</strong>. En cambio, si utilizamos una cantidad (255, 0, 0), obtendremos el <strong>color rojo</strong>.</p>
+<p><img alt="Colores RGB (rojo, verde y azul)" src="../img/colores-rgb.png" /></p>
+<p>De esta forma, mezclando las cantidades de cada canal, se puede obtener prácticamente cualquier color. Existen muchos esquemas de colores, pero en diseño web nos interesa particularmente el esquema RGB (<em>junto al HSL</em>).</p>
+<p><img alt="Colores RGB" src="../img/rgb-colors.png" /></p>
+<p>La mayoría de los editores tienen los denominados <strong>ColorPicker</strong>, que no son más que un sistema cómodo y rápido para elegir un color a base de clics por una paleta o circulo visual. También podemos hacerlo directamente en buscadores como <a href="https://duckduckgo.com/?q=colorpicker">Duck Duck Go</a> o <a href="https://google.com/search?q=colorpicker">Google</a>.</p>
+<p>Veamos algunos ejemplos de colores en formato RGB:</p>
+<pre><code>div {
+  background-color: rgb(125, 80, 10);
+  background-color: rgb(0, 0, 34);
+  color: rgb(255, 255, 0)
+}
+</code></pre>
+<h3 id="formato-hexadecimal">Formato hexadecimal<a class="headerlink" href="#formato-hexadecimal" title="Permanent link">&para;</a></h3>
+<p>El <strong>formato hexadecimal</strong> es el más utilizado por los desarrolladores web, aunque en principio puede parecer algo extraño y complicado, sobre todo si no has oído hablar nunca del sistema hexadecimal (<em>sistema en base 16 en lugar del que utilizamos normalmente, en base 10</em>).</p>
+<p>Cada par de letras simboliza el valor del RGB en el sistema de numeración hexadecimal, así pues, el color <strong>#FF0000</strong>, o sea HEX(FF,00,00), es equivalente al RGB(255,0,0), que es también equivalente al HSL(0, 100%, 100%). Veamos algunos ejemplos para clarificarlo:</p>
+<table>
+<thead>
+<tr>
+<th>Hexadecimal</th>
+<th>Hex. abreviado</th>
+<th>Color RGB</th>
+<th>Palabra clave</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#FF0000</td>
+<td>#F00</td>
+<td>255,0,0</td>
+<td>red (rojo)</td>
+</tr>
+<tr>
+<td>#000000</td>
+<td>#000</td>
+<td>0,0,0</td>
+<td>black (negro)</td>
+</tr>
+<tr>
+<td>#00FFFF</td>
+<td>#0FF</td>
+<td>0, 255, 255</td>
+<td>cyan (azul claro)</td>
+</tr>
+<tr>
+<td>#9370DB</td>
+<td>#97D</td>
+<td>147,112,219</td>
+<td>mediumpurple (lila)</td>
+</tr>
+</tbody>
+</table>
+<p><a href="http://color.hailpixel.com/">HailPixel</a> nos proporciona una manera muy sencilla y rápida de seleccionar tonalidades de color en <strong>formato hexadecimal</strong> con sólo mover el ratón. Por otro lado, en <a href="http://www.colorspire.com/">ColorSpire</a> puedes seleccionar el color deseado y observar como varían tanto los valores hexadecimales como los valores RGB o HSL (<em>ver a continuación</em>).</p>
+<blockquote>
+<p><strong>Truco</strong>: Como se puede ver en la segunda columna, para ahorrar espacio puedes utilizar el <strong>formato hexadecimal abreviado</strong>, especificando sólo las primeras tres cifras de cada par. Por ejemplo, <code>#9933AA</code> como <code>#93A</code>. El color abreviado sólo será fiel cuando los pares de cifras sean idénticos (o al menos, aproximados).</p>
+</blockquote>
+<p>Veamos algunos ejemplos del formato hexadecimal (RGB abreviado):</p>
+<pre><code>div {
+  background-color: #512592;
+  background-color: #000000;
+  background-color: #451;       /* Equivalente a #445511; */
+}
+</code></pre>
+<h3 id="formato-hsl">Formato HSL<a class="headerlink" href="#formato-hsl" title="Permanent link">&para;</a></h3>
+<p>Las siglas HSL significan <strong>color</strong> (<em>o matiz</em>), <strong>saturación</strong> y <strong>brillo</strong>. La primera cifra selecciona el matiz de color (<em>una cifra de 0 a 360 grados</em>), seleccionando el color del círculo exterior de la imagen. Por su parte, las dos siguientes, son el porcentaje de saturación y el brillo del color, respectivamente (<em>ambos, porcentajes de 0% a 100%</em>).</p>
+<p><img alt="Rueda de color HSL" src="../img/hsl.png" /></p>
+<p>Veamos algunos ejemplos del formato HSL:</p>
+<pre><code>div {
+  background-color: hsl(35deg, 0%, 100%);
+  background-color: hsl(120deg, 25%, 75%);
+  background-color: hsl(5deg, 20%, 20%);
+}
+</code></pre>
+<h3 id="canales-alfa">Canales Alfa<a class="headerlink" href="#canales-alfa" title="Permanent link">&para;</a></h3>
+<p>Es posible que deseemos indicar un color que tenga cierto grado de transparencia, y de esta forma, refleje el contenido, color o imágenes que se encuentren detrás. Hasta ahora solo conocemos la palabra clave <code>transparent</code>, que es un color de transparencia total (<em>totalmente transparente</em>).</p>
+<p>Sin embargo, existe la posibilidad de utilizar los denominados <strong>canales alfa</strong>, que permiten establecer una <strong>transparencia parcial</strong> en determinados colores. Estos se pueden establecer en cualquier formato, salvo en los colores con palabras clave. Vamos a ver como hacerlo en cada caso:</p>
+<ul>
+<li>
+<p><strong>Formato RGB</strong>: En lugar de <code>rgb()</code> indicamos <code>rgba()</code> para establecer que usaremos un canal alfa. Posteriormente, en lugar de establecer 3 parámetros (<em>rojo, verde, azul</em>), añadiremos uno más, que será el canal alfa. Dicho canal alfa será un valor (<em>del 0 al 1 con decimales</em>) o un porcentaje (<em>del 0% al 100%</em>).</p>
+</li>
+<li>
+<p><strong>Formato HSL</strong>: Prácticamente idéntico al anterior. En lugar de <code>hsl()</code> indicamos <code>hsla()</code>. Añadimos un nuevo valor como canal alfa (<em>valor o porcentaje</em>).</p>
+</li>
+<li>
+<p><strong>Formato Hexadecimal</strong>: Es posible indicar (<em>al final</em>) un par adicional que indique el grado de transparencia. Por ejemplo, el color <code>#FF0000</code> reescrito como <code>#FF000077</code> se trataría de dicho color, con un grado de transparencia casi del 50% (<code>00</code> es 0%, <code>80</code> es 50%, <code>FF</code> es 100%).</p>
+</li>
+</ul>
+<p>Veamos algunos ejemplos de cada caso:</p>
+<pre><code>div {
+  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 50%);
+  background-color: hsla(180deg, 50%, 25%, 0.75);
+  background-color: hsla(180deg, 50%, 25%, 75%);
+  background-color: #aa44ba80;
+}
+</code></pre>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><strong>¡OJO!</strong>: El formato de <a href="https://drafts.csswg.org/css-color/#hex-notation">transparencia en formato hexadecimal</a> se encuentra actualmente bien soportado, pero puede no ser compatible en versiones más antiguas u otros navegadores.</p>
+</blockquote>
+<p><strong>Consejo:</strong> Una herramienta genial para seleccionar varios colores en nuestros proyectos es <a href="https://color.adobe.com/es/">Adobe Color CC</a>. Nos permite escoger entre colores análogos, monocromáticos, tríadas, colores complementarios, compuestos o tonos similares. Muy visual e intuitiva. Otra herramienta, más simple pero muy práctica es <a href="http://hslpicker.com/">HSL Picker</a>, donde puedes elegir el color deseado utilizando el <strong>formato de colores HSL</strong> y pudiendo seleccionar incluso los canales alfa.</p>
+</blockquote>
+</blockquote>
+<hr />
+<h2 id="fondos-de-css">Fondos de CSS<a class="headerlink" href="#fondos-de-css" title="Permanent link">&para;</a></h2>
+<p>Es posible que, buscando hacer un diseño más avanzado, en lugar de utilizar un color de fondo quieras utilizar imágenes. Para ello, CSS te proporciona la propiedad <code>background-image</code>, con la cuál puedes indicar imágenes de fondo o, como veremos más adelante, incluso degradados de varios colores.</p>
+<h3 id="imagenes-de-fondo"><a href="https://lenguajecss.com/css/colores-y-fondos/fondos-css/#imágenes-de-fondo">Imágenes de fondo</a><a class="headerlink" href="#imagenes-de-fondo" title="Permanent link">&para;</a></h3>
+<p>En el caso de querer utilizar una imagen de fondo, como ya hemos dicho, utilizaremos la propiedad <code>background-image</code> y en el valor, el nombre de la imagen (<em>o la dirección donde está alojada</em>), siempre rodeada del texto <code>url()</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>background-image</code></td>
+<td><strong>none</strong></td>
+<td>No utiliza ninguna imagen de fondo.</td>
+</tr>
+<tr>
+<td><code>background-image</code></td>
+<td>url(<em>imagen.jpg</em>)</td>
+<td>Usa la imagen de nombre <strong>imagen.jpg</strong> como fondo.</td>
+</tr>
+</tbody>
+</table>
+<p>En el caso de que sólo se coloque el nombre de la imagen (<em>por ejemplo, <code>imagen.jpg</code></em>), el navegador buscará la imagen en la misma carpeta donde está el archivo CSS. Esto es lo que se llama una <strong>ruta relativa</strong>. En el caso de que se coloque la ruta completa, por ejemplo <code>https://i.emezeta.com/img/logo.png</code>, se accederá a la imagen alojada en esa dirección web. Esto es lo que se llama <strong>ruta absoluta</strong>.</p>
+<blockquote>
+<blockquote>
+<p><strong>NOTA</strong>: En el caso de que no se encuentre la imagen o el valor de <strong>background-image</strong> se haya establecido a <strong>none</strong>, no se utilizará ninguna imagen de fondo, y en su lugar se mostrará el color establecido con <strong>background-color</strong>.</p>
+</blockquote>
+</blockquote>
+<p>Una vez establecida una imagen de fondo con <code>background-image</code>, se puede personalizar la forma en la que se mostrará dicha imagen mediante propiedades como <code>background-repeat</code>, <code>background-attachment</code> o <code>background-position</code>, entre otras:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>background-repeat</code></td>
+<td><strong>repeat</strong></td>
+<td>Repite la imagen de fondo horizontal y verticalmente.</td>
+</tr>
+<tr>
+<td></td>
+<td>repeat-x</td>
+<td>Repite la imagen de fondo sólo horizontalmente (eje x).</td>
+</tr>
+<tr>
+<td></td>
+<td>repeat-y</td>
+<td>Repite la imagen de fondo sólo verticalmente (eje y).</td>
+</tr>
+<tr>
+<td></td>
+<td>space</td>
+<td>Repite la imagen y rellena con espacio los huecos.</td>
+</tr>
+<tr>
+<td></td>
+<td>round</td>
+<td>Repite la imagen y amplia cada repetición para ajustar.</td>
+</tr>
+<tr>
+<td></td>
+<td>no-repeat</td>
+<td>La imagen de fondo no se repite.</td>
+</tr>
+<tr>
+<td><code>background-attachment</code></td>
+<td><strong>scroll</strong></td>
+<td>Cuando hacemos scroll la imagen de fondo se desplaza.</td>
+</tr>
+<tr>
+<td></td>
+<td>fixed</td>
+<td>Cuando hacemos scroll, la imagen de fondo permanece fija.</td>
+</tr>
+<tr>
+<td><code>background-position</code></td>
+<td></td>
+<td>1 parámetro. Desplaza la imagen de fondo al punto (x, 50%).</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>2 parámetros. Desplaza la imagen de fondo al punto (x, y).</td>
+</tr>
+</tbody>
+</table>
+<p>La propiedad <code>background-repeat</code> especifica si la imagen se repetirá horizontalmente (<em>repeat-x</em>), si se repetirá verticalmente (<em>repeat-y</em>), si lo hará en ambas direcciones (<em>repeat</em>) o en ninguna (<em>no-repeat</em>). Por defecto, si no se indica nada, esta propiedad está ajustada en <strong>repeat</strong>.</p>
+<p>Existen también dos valores interesantes, <strong>space</strong> y <strong>round</strong>, los cuales asumen implícitamente que se repite el fondo. En el caso de que tengamos una imagen de fondo que se repita varias veces en mosaico, <code>space</code> evita que se corte la imagen, introduciendo un espacio entre las repeticiones individuales.</p>
+<p>Por su parte, <code>round</code> lo que hace es ajustar la imagen individual, de modo que la expande o contrae para ajustarla al espacio disponible. En ambos casos la repetición de los fondos nunca se mostrará cortada.</p>
+<p><img alt="space y round en Background-repeat CSS" src="../img/background-repeat.png" /></p>
+<p>Siempre se podrá combinar en cada eje, con valores mixtos, por ejemplo, utilizando <code>background-repeat: space round</code>, lo que aplicará <code>space</code> al eje X y <code>round</code> al eje Y. Si sólo se especifica uno, se aplicará a ambos ejes.</p>
+<p>La propiedad <code>background-attachment</code> especificará si la imagen de fondo seguirá el desplazamiento del usuario (<em>scroll, el comportamiento por defecto</em>) o por el contrario, se quedará fijado y no se moverá (<em>fixed</em>), mientras el usuario se desplaza por la página.</p>
+<p>Por último, <code>background-position</code> coloca la imagen en la zona especificada por y por . Por defecto, esos valores son <strong>0% 0%</strong>, pero pueden especificarse con unidades (<em>porcentajes, píxels, etc...</em>) o mediante palabras clave que representan zonas predefinidas (<em>top, left, right, bottom y center</em>).</p>
+<p>Si sólo se especifica un valor, se tomará para el eje x, mientras que el valor del eje Y será automáticamente establecido a <strong>center</strong> (<em>o 50%</em>).</p>
+<h3 id="atajo-clasico-fondos"><a href="https://lenguajecss.com/css/colores-y-fondos/fondos-css/#atajo-clásico-fondos">Atajo clásico: Fondos</a><a class="headerlink" href="#atajo-clasico-fondos" title="Permanent link">&para;</a></h3>
+<p>Es posible establecer todas estas propiedades anteriores en una sola regla de CSS a modo de atajo, y así ahorrar mucho espacio en escribir las propiedades anteriores por separado. Aunque no es estrictamente obligatorio, se aconseja respetar el siguiente orden (<em>acostumbrarse a usar el mismo orden es una buena práctica</em>):</p>
+<div class="highlight"><pre><span></span><code><span class="nt">div</span> <span class="p">{</span>
+      <span class="c">/* background: &lt;color&gt; &lt;image&gt; &lt;repeat&gt; &lt;attachment&gt; &lt;position&gt; */</span>
+      <span class="k">background</span><span class="p">:</span> <span class="mh">#FFF</span> <span class="nb">url</span><span class="p">(</span><span class="sx">imagen.jpg</span><span class="p">)</span> <span class="kc">repeat-x</span> <span class="kc">scroll</span> <span class="kc">top</span> <span class="kc">left</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>Y con esto, ya conocemos las ventajas básicas de CSS a través de propiedades tan interesantes como <code>background-color</code> o <code>background-image</code> . Sin embargo, la llegada de CSS3 incorporó novedades muy interesantes en nuestros navegadores, que mediante versiones anteriores a CSS3 no era posible realizar (<em>o era algo bastante complejo</em>).</p>
+<h3 id="opacidad"><a href="https://lenguajecss.com/css/colores-y-fondos/fondos-css/#opacidad">Opacidad</a><a class="headerlink" href="#opacidad" title="Permanent link">&para;</a></h3>
+<p>Es posible utilizar la propiedad <em>CSS3</em> <code>opacity</code> para establecer una transparencia total sobre el elemento indicado. Cuando decimos &lt;&lt; <strong>transparencia total</strong>&gt;&gt; nos referimos a que la transparencia se aplicará al elemento en cuestión y a todos los elementos HTML que estén en su interior.</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>opacity</code></td>
+<td></td>
+<td>Establece una transparencia (<code>0</code> = 100% transparente, a <code>1</code> = 100% opaco)</td>
+</tr>
+</tbody>
+</table>
+<p>El valor a indicar es un número entre <code>0</code> (<em>completamente transparente</em>) y <code>1</code> (<em>completamente visible</em>), pudiendo establecer decimales para valores intermedios:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">div</span> <span class="p">{</span>
+      <span class="k">background-color</span><span class="p">:</span> <span class="mh">#FF0000</span><span class="p">;</span>
+      <span class="k">color</span><span class="p">:</span> <span class="mh">#FFFFFF</span><span class="p">;</span>
+      <span class="k">opacity</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p><img alt="Grumpy cat con div transparente" src="../img/grumpy-cat.jpg" /></p>
+<p>Como se puede ver en la imagen, esto hará que la capa <code>div</code> (<em>el recuadro rojo</em>) se muestre al <strong>50% de opacidad</strong>, con color de texto blanco (<em>en el caso de existir texto</em>) y fondo de color rojo. Si buscamos una transparencia parcial (<em>color de fondo transparente que no afecte al texto</em>) debemos utilizar los valores <strong>RGBA</strong> o <strong>HSLA</strong> (<em>canales alfa</em>) en la propiedad <strong>background-color</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">div</span> <span class="p">{</span>
+      <span class="k">color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
+      <span class="k">background-color</span><span class="p">:</span> <span class="nf">RGBA</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">);</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>De este modo, sólo aplicamos la transparencia al color de fondo, mientras que con <strong>opacity</strong> se aplica a toda la capa en sí, por lo que afecta a todos los elementos que están dentro de la capa.</p>
+<h3 id="fondos-multiples"><a href="https://lenguajecss.com/css/colores-y-fondos/fondos-css/#fondos-múltiples">Fondos múltiples</a><a class="headerlink" href="#fondos-multiples" title="Permanent link">&para;</a></h3>
+<p><strong>CSS3</strong> ofrece nuevas características a la hora de utilizar imágenes de fondo, como por ejemplo la posibilidad de establecer <strong>múltiples imágenes de fondo</strong> de forma simultánea:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">div</span> <span class="p">{</span>
+      <span class="k">background-image</span><span class="p">:</span> <span class="nb">url</span><span class="p">(</span><span class="sx">manz.png</span><span class="p">),</span> <span class="nb">url</span><span class="p">(</span><span class="sx">fondo2.jpg</span><span class="p">),</span> <span class="nb">url</span><span class="p">(</span><span class="sx">fondo3.jpg</span><span class="p">);</span>
+      <span class="k">background-repeat</span><span class="p">:</span> <span class="kc">no-repeat</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>De esta forma, se pueden utilizar varias imágenes y superponerlas una sobre la otra, algo especialmente interesante si la primera imagen de fondo está en formato PNG (<em>la cuál soporta transparencias</em>). Al establecer imágenes de fondo múltiples, las propiedades complementarias a los fondos como <code>background-repeat</code>, <code>background-position</code> y otras, pueden actuar de forma personalizada para cada fondo.</p>
+<p>Mientras que en el fragmento de código anterior, el navegador le indica a cada una de las tres imágenes que no debe repetirse, en el siguiente fragmento de código veremos que es posible indicar individualmente el comportamiento de cada una, separando por comas:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">div</span> <span class="p">{</span>
+      <span class="k">background-image</span><span class="p">:</span> <span class="nb">url</span><span class="p">(</span><span class="sx">manz.png</span><span class="p">),</span> <span class="nb">url</span><span class="p">(</span><span class="sx">fondo2.jpg</span><span class="p">),</span> <span class="nb">url</span><span class="p">(</span><span class="sx">fondo3.jpg</span><span class="p">);</span>
+      <span class="k">background-repeat</span><span class="p">:</span> <span class="kc">no-repeat</span><span class="p">,</span> <span class="kc">repeat-x</span><span class="p">,</span> <span class="kc">repeat</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>Además, <strong>CSS3</strong> también añade nuevas propiedades para especificar como cubrirá la imagen de fondo al elemento en cuestión:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>background-clip</code></td>
+<td><strong>border-box</strong></td>
+<td>padding-box</td>
+</tr>
+<tr>
+<td><code>background-origin</code></td>
+<td>border-box</td>
+<td><strong>padding-box</strong></td>
+</tr>
+</tbody>
+</table>
+<p>La propiedad <code>background-clip</code> establece la forma en la que el color o la imagen de fondo cubrirá el elemento, mientras que la propiedad <code>background-origin</code> intenta posicionar el comienzo de la imagen de fondo, útil con imágenes. La primera utiliza <strong>border-box</strong> como valor por defecto, mientras que la segunda utiliza <strong>padding-box</strong>.</p>
+<p>Ambas propiedades pueden tomar uno de los siguientes valores:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>padding-box</code></td>
+<td>La imagen o color de fondo cubrirá la zona del espaciado y contenido.</td>
+</tr>
+<tr>
+<td><code>border-box</code></td>
+<td>La imagen o color de fondo cubrirá la zona del borde, espaciado y contenido.</td>
+</tr>
+<tr>
+<td><code>content-box</code></td>
+<td>La imagen o color de fondo cubrirá sólo la zona del contenido.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<blockquote>
+<p><strong>Consejo</strong>: Una buena forma de darse cuenta del funcionamiento de estas propiedades es establecer un borde grueso punteado. Usando <code>border-box</code> la imagen de fondo se extenderá en todo el elemento, incluyendo borde, espaciado y contenido. El valor <code>padding-box</code> extenderá la imagen de fondo sólo mediante el padding y el contenido, y por último, la propiedad <code>content-box</code> extenderá la imagen de fondo sólo en la zona del contenido.</p>
+</blockquote>
+</blockquote>
+<h3 id="tamano-de-fondos"><a href="https://lenguajecss.com/css/colores-y-fondos/fondos-css/#tamaño-de-fondos">Tamaño de fondos</a><a class="headerlink" href="#tamano-de-fondos" title="Permanent link">&para;</a></h3>
+<p>Una de las últimas incorporaciones a la familia de propiedades de fondos de imagen es la propiedad <code>background-size</code>, la cuál ajusta el tamaño (<em>ancho y alto</em>) de la imagen de fondo, por si deseamos escalarla a un tamaño diferente. Por defecto, una imagen de fondo toma automáticamente el tamaño de la imagen (<em>que podría ser demasiado grande, por ejemplo</em>). Para no tener que modificar la imagen original de forma manual con un editor de imágenes, podemos utilizar esta propiedad y ajustarla a nuestro agrado mediante CSS:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>background-size</code></td>
+<td></td>
+<td>1 parámetro. Aplica un de (<em>ancho</em> × <strong>auto</strong>) a la imagen de fondo.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>2 parámetros. Aplica un de (<em>ancho</em> × <em>alto</em>) a la imagen de fondo.</td>
+</tr>
+</tbody>
+</table>
+<p>Los valores de tamaño que podemos utilizar, son los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>auto</strong></td>
+<td>No escala la imagen. Utiliza el tamaño original. Es el valor por defecto.</td>
+</tr>
+<tr>
+<td><em>unidad</em></td>
+<td>Indicamos el tamaño específico que queremos usar (<em>píxels o porcentaje, por ej.</em>).</td>
+</tr>
+<tr>
+<td><code>cover</code></td>
+<td>Escala el ancho de la imagen de fondo al ancho del elemento.</td>
+</tr>
+<tr>
+<td><code>contain</code></td>
+<td>Escala el alto de la imagen de fondo al alto del elemento.</td>
+</tr>
+</tbody>
+</table>
+<p>Los dos últimos valores (<em>cover y contain</em>) sólo pueden utilizarse en el caso de que se especifique un sólo parámetro como valor en la propiedad <code>background-size</code>.</p>
+<h3 id="atajo-moderno-fondos"><a href="https://lenguajecss.com/css/colores-y-fondos/fondos-css/#atajo-moderno-fondos">Atajo moderno: Fondos</a><a class="headerlink" href="#atajo-moderno-fondos" title="Permanent link">&para;</a></h3>
+<p>Los navegadores modernos, incluyen una nueva propiedad de atajo <code>background</code> que permite incluir los valores de propiedades CSS3 como <code>background-clip</code> , <code>background-origin</code> o <code>background-size</code>, que fueron incorporados más tarde que los demás. Es por ello, que el orden aconsejado para adquirir buenas prácticas es el siguiente y varía un poco respecto a la otra propiedad de atajo tradicional:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">div</span> <span class="p">{</span>
+      <span class="c">/* background: &lt;color&gt; &lt;position&gt; &lt;size&gt; &lt;repeat&gt; &lt;origin&gt; &lt;clip&gt; &lt;attachment&gt; &lt;image&gt; */</span>
+      <span class="k">background</span><span class="p">:</span> <span class="mh">#FFF</span> <span class="kc">top</span> <span class="kc">left</span> <span class="kc">cover</span> <span class="kc">repeat-x</span> <span class="kc">padding-box</span> <span class="kc">border-box</span> <span class="kc">scroll</span> <span class="nb">url</span><span class="p">(</span><span class="sx">imagen.jpg</span><span class="p">);</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2 id="gradientes-css">Gradientes CSS<a class="headerlink" href="#gradientes-css" title="Permanent link">&para;</a></h2>
+<p>Otra funcionalidad que se echaba mucho de menos en versiones anteriores de CSS era la de utilizar fondos con <strong>gradientes</strong>, o lo que es lo mismo, un color inicial que se transforma poco a poco en uno o varios colores sucesivamente. Sin embargo, en versiones anteriores a CSS3 no era posible hacerlo desde código. Por suerte, hoy en día hemos superado esa limitación.</p>
+<p>En CSS3 se introducen algunas expresiones relacionadas que harán esta tarea algo muy sencillo, pudiendo utilizarlas fácilmente mediante la propiedad <code>background-image</code> e indicando el tipo de gradiente deseado:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Función de gradiente</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>background-image</code></td>
+<td>linear-gradient(...)</td>
+<td>Define un gradiente lineal, en una dirección específica.</td>
+</tr>
+<tr>
+<td></td>
+<td>radial-gradient(...)</td>
+<td>Define un gradiente radial, en forma de círculo o elipse.</td>
+</tr>
+<tr>
+<td></td>
+<td>conic-gradient(...)</td>
+<td>Define un gradiente cónico, desde un punto de vista superior.</td>
+</tr>
+</tbody>
+</table>
+<p>Veamos cada uno de estos gradientes por separado para entender como funcionan.</p>
+<h3 id="gradientes-lineales"><a href="https://lenguajecss.com/css/colores-y-fondos/gradientes-css/#gradientes-lineales">Gradientes lineales</a><a class="headerlink" href="#gradientes-lineales" title="Permanent link">&para;</a></h3>
+<p>El primer tipo de gradiente es el <strong>gradiente lineal</strong>, que permite crear fondos degradados que van en una cierta dirección y cambian de un color a otro, dependiendo de la lista de colores indicada por parámetro.</p>
+<p>La sintaxis a utilizar debe ser una de las siguientes (<em>es la misma, pero con menor o mayor cantidad opcional de información</em>):</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>linear-gradient(,, ...)</td>
+<td>Gradiente básico entre colores.</td>
+</tr>
+<tr>
+<td>linear-gradient(</td>
+<td>,,, ...)</td>
+</tr>
+<tr>
+<td>linear-gradient(</td>
+<td>,,, ...)</td>
+</tr>
+</tbody>
+</table>
+<p>El ejemplo más básico de los anteriores es el primero, donde simplemente indicaremos los colores del gradiente (<em>para que se aprecie el degradado, como mínimo deben ser 2 colores</em>):</p>
+<div class="highlight"><pre><span></span><code><span class="nt">div</span> <span class="p">{</span>
+      <span class="k">background-image</span><span class="p">:</span> <span class="nb">linear-gradient</span><span class="p">(</span><span class="kc">blue</span><span class="p">,</span> <span class="kc">red</span><span class="p">);</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>Esto dibujará un degradado con los colores indicados en dirección desde <strong>arriba hacia abajo</strong>, que es la dirección por defecto. Se pueden ir añadiendo más colores al gradiente si se desea, o cambiar la dirección del degradado, como veremos a continuación:</p>
+<p><img alt="Gradiente lineal" src="../img/linear-gradient.png" /></p>
+<p>Pero los parámetros que se pueden utilizar son los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Parámetros</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>Dirección del gradiente lineal (<em>ver valores posibles más adelante</em>). El valor por defecto es <strong>to bottom</strong>.</td>
+</tr>
+<tr>
+<td></td>
+<td>Número de ángulos de la dirección del gradiente lineal. Alternativa a la opción anterior.</td>
+</tr>
+<tr>
+<td></td>
+<td>El primer color del gradiente</td>
+</tr>
+<tr>
+<td></td>
+<td>El siguiente color del gradiente</td>
+</tr>
+<tr>
+<td></td>
+<td>De forma opcional, se puede indicar a que altura comienza a cambiar el gradiente.</td>
+</tr>
+<tr>
+<td>...</td>
+<td>(Se pueden seguir añadiendo colores)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="direccion-del-gradiente"><a href="https://lenguajecss.com/css/colores-y-fondos/gradientes-css/#dirección-del-gradiente">Dirección del gradiente</a><a class="headerlink" href="#direccion-del-gradiente" title="Permanent link">&para;</a></h4>
+<p>En el ejemplo visual anterior, la dirección del gradiente es <em>horizontal</em> (hacia la derecha). El primer ejemplo tiene sólo 2 colores (azul y rojo), mientras que el segundo tiene 3 colores (azul, amarillo y rojo). Ambos tienen como dirección una orientación hacia la derecha:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">div</span> <span class="p">{</span>
+      <span class="k">background-image</span><span class="p">:</span> <span class="nb">linear-gradient</span><span class="p">(</span><span class="kc">to</span> <span class="kc">right</span><span class="p">,</span> <span class="kc">blue</span><span class="p">,</span> <span class="kc">red</span><span class="p">);</span>           <span class="c">/* Primer ejemplo */</span>
+      <span class="k">background-image</span><span class="p">:</span> <span class="nb">linear-gradient</span><span class="p">(</span><span class="kc">to</span> <span class="kc">right</span><span class="p">,</span> <span class="kc">blue</span><span class="p">,</span> <span class="kc">yellow</span><span class="p">,</span> <span class="kc">red</span><span class="p">);</span>   <span class="c">/* Segundo ejemplo */</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>Como vemos, el primer parámetro utilizado fue <code>to right</code>, que es lo que indica la orientación del gradiente. En este parámetro se puede indicar tanto una <strong>palabra clave</strong> como un número de grados que represente la dirección:</p>
+<p><img alt="Orientación de dirección" src="../img/circle-orientation.png" /></p>
+<p>Para que quede aún más claro, veamos una tabla de equivalencias:</p>
+<table>
+<thead>
+<tr>
+<th>Dirección</th>
+<th>Grados</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>to top</td>
+<td>0 ó 360deg</td>
+<td>Gradiente lineal hacia arriba.</td>
+</tr>
+<tr>
+<td>to top right</td>
+<td>35deg</td>
+<td>Gradiente diagonal hacia derecha-arriba.</td>
+</tr>
+<tr>
+<td>to right</td>
+<td>90deg</td>
+<td>Gradiente lineal hacia derecha.</td>
+</tr>
+<tr>
+<td>to bottom right</td>
+<td>145deg</td>
+<td>Gradiente diagonal hacia abajo-derecha.</td>
+</tr>
+<tr>
+<td>to bottom</td>
+<td>180deg</td>
+<td>Gradiente lineal hacia abajo.</td>
+</tr>
+<tr>
+<td>to bottom left</td>
+<td>215deg</td>
+<td>Gradiente diagonal hacia abajo-izquierda.</td>
+</tr>
+<tr>
+<td>to left</td>
+<td>270deg</td>
+<td>Gradiente lineal hacia izquierda.</td>
+</tr>
+<tr>
+<td>to top left</td>
+<td>325deg</td>
+<td>Gradiente diagonal hacia izquierda-arriba.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<blockquote>
+<p><strong>Nota</strong>: Si utilizas los <strong>grados</strong> en lugar de las <strong>palabras clave</strong> puedes usar valores intermedios (<em>por ejemplo, 280deg o 58deg</em>) y ser más preciso con la dirección si lo necesitas.</p>
+</blockquote>
+</blockquote>
+<h4 id="colores-del-gradiente"><a href="https://lenguajecss.com/css/colores-y-fondos/gradientes-css/#colores-del-gradiente">Colores del gradiente</a><a class="headerlink" href="#colores-del-gradiente" title="Permanent link">&para;</a></h4>
+<p>Por defecto, las distancias entre colores se ajustan automáticamente con proporciones equivalentes, salvo que especifiquemos un tamaño (<em>porcentaje o píxeles, por ejemplo</em>) justo después del color en cuestión, que se puede indicar de forma opcional:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">div</span> <span class="p">{</span>
+      <span class="k">background</span><span class="p">:</span> <span class="nb">linear-gradient</span><span class="p">(</span><span class="kc">to</span> <span class="kc">right</span><span class="p">,</span> <span class="kc">blue</span> <span class="mi">50</span><span class="kt">%</span><span class="p">,</span> <span class="kc">red</span> <span class="mi">55</span><span class="kt">%</span><span class="p">,</span> <span class="kc">green</span> <span class="mi">75</span><span class="kt">%</span><span class="p">);</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>Este tamaño representa el momento en el que el gradiente comienza a cambiar el color, respecto al tamaño del gradiente completo. En este fragmento de código, a diferencia del anterior, nos mostraría un gradiente similar al que vemos a continuación, donde se aprecia que los tamaños o distancias entre colores no son equivalentes, sino que corresponden <strong>azul</strong> (<em>0-50%</em>), <strong>rojo</strong> (<em>50%-55%</em>) y <strong>verde</strong> (<em>55%-75%</em>), el cuál permanece hasta el final al no haber ningún color más:</p>
+<p><img alt="Gradiente CSS con tamaño" src="../img/gradiente-css-con-tamano.svg" /></p>
+<h4 id="gradiente-radial"><a href="https://lenguajecss.com/css/colores-y-fondos/gradientes-css/#gradiente-radial">Gradiente radial</a><a class="headerlink" href="#gradiente-radial" title="Permanent link">&para;</a></h4>
+<p>Como vimos al principio, a parte de gradientes lineales, también podemos crear otros tipos de gradientes, como por ejemplo, los <strong>gradientes radiales</strong>, que permite crear degradados con formas circulares. Para ello, sólo tenemos que utilizar la expresión <code>radial-gradient</code> en lugar de <code>linear-gradient</code>:</p>
+<p><img alt="Gradiente radial" src="../img/radial-gradient.png" /></p>
+<p>De la misma forma, también tenemos diferentes modalidades para crear <strong>gradientes radiales</strong>, desde una muy básica donde le indicamos sólo los colores, hasta otra más avanzada donde le damos forma, tamaño e incluso ubicación:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>radial-gradient(,, ...)</td>
+<td>Gradiente básico entre colores.</td>
+</tr>
+<tr>
+<td>radial-gradient(<em>forma</em>,,, ...)</td>
+<td>Gradiente con forma circular o elíptica.</td>
+</tr>
+<tr>
+<td>radial-gradient(<em>forma</em>,,, ...)</td>
+<td>Gradiente con tamaño o dimensión.</td>
+</tr>
+<tr>
+<td>radial-gradient(<em>forma</em> at <em>ubicación</em>,,, ...)</td>
+<td>Gradiente con colocación inicial.</td>
+</tr>
+<tr>
+<td>radial-gradient(<em>forma</em> at <em>ubicación</em>,,, ...)</td>
+<td>Gradiente con tamaños entre colores.</td>
+</tr>
+</tbody>
+</table>
+<p>Algunos ejemplos aplicando estos parámetros:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">div</span> <span class="p">{</span>
+      <span class="k">background</span><span class="p">:</span> <span class="nb">radial-gradient</span><span class="p">(</span><span class="kc">gold</span><span class="p">,</span> <span class="kc">red</span><span class="p">,</span> <span class="kc">black</span><span class="p">);</span>
+      <span class="k">background</span><span class="p">:</span> <span class="nb">radial-gradient</span><span class="p">(</span><span class="n">ellipse</span><span class="p">,</span> <span class="kc">gold</span> <span class="mi">50</span><span class="kt">%</span><span class="p">,</span> <span class="kc">red</span> <span class="mi">55</span><span class="kt">%</span><span class="p">,</span> <span class="kc">black</span> <span class="mi">75</span><span class="kt">%</span><span class="p">);</span>
+      <span class="k">background</span><span class="p">:</span> <span class="nb">radial-gradient</span><span class="p">(</span><span class="kc">circle</span> <span class="mi">200</span><span class="kt">px</span><span class="p">,</span> <span class="kc">gold</span> <span class="mi">50</span><span class="kt">%</span><span class="p">,</span> <span class="kc">red</span> <span class="mi">55</span><span class="kt">%</span><span class="p">,</span> <span class="kc">black</span> <span class="mi">75</span><span class="kt">%</span><span class="p">);</span>
+      <span class="k">background</span><span class="p">:</span> <span class="nb">radial-gradient</span><span class="p">(</span><span class="kc">circle</span> <span class="mi">400</span><span class="kt">px</span> <span class="n">at</span> <span class="kc">left</span><span class="p">,</span> <span class="kc">gold</span> <span class="mi">50</span><span class="kt">%</span><span class="p">,</span> <span class="kc">red</span> <span class="mi">55</span><span class="kt">%</span><span class="p">,</span> <span class="kc">black</span> <span class="mi">75</span><span class="kt">%</span><span class="p">);</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>Donde:</p>
+<table>
+<thead>
+<tr>
+<th>Parámetros</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>[forma]</em></td>
+<td><strong>ellipse</strong></td>
+</tr>
+<tr>
+<td></td>
+<td><strong>farthest-corner</strong></td>
+</tr>
+<tr>
+<td><em>[ubicación]</em></td>
+<td><strong>center</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>El primer color del gradiente</td>
+</tr>
+<tr>
+<td></td>
+<td>El siguiente color del gradiente</td>
+</tr>
+<tr>
+<td></td>
+<td>De forma opcional, se puede indicar a que altura comienza a cambiar el gradiente.</td>
+</tr>
+<tr>
+<td>...</td>
+<td>(Se pueden seguir añadiendo colores)</td>
+</tr>
+</tbody>
+</table>
+<p>En el caso de la <strong>forma</strong> podemos elegir <code>circle</code> o <code>ellipse</code>, dependiendo de si queremos un gradiente con forma circular o uno con forma de elipse (<em>que se adapta a la forma del elemento</em>). En el caso del <strong>tamaño</strong> del elipse o círculo, tenemos varias opciones para indicar el tamaño que tendrá nuestro gradiente:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>farthest-corner</strong></td>
+<td>Intenta cubrir hasta la esquina más lejana (<em>expande hacia ambos lados</em>).</td>
+</tr>
+<tr>
+<td>farthest-side</td>
+<td>Intenta cubrir hasta el lado más lejano (<em>expande hacia un sólo lado</em>).</td>
+</tr>
+<tr>
+<td>closest-corner</td>
+<td>Intenta cubrir hasta la esquina más cercana.</td>
+</tr>
+<tr>
+<td>closest-side</td>
+<td>Intenta cubrir hasta el lado más cercano.</td>
+</tr>
+<tr>
+<td></td>
+<td>Le da un tamaño específico al gradiente (<em>píxeles, porcentajes, etc...</em>). Sólo usable en <code>circle</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>En el caso de la <strong>ubicación</strong>, simplemente especificamos la posición en la que queremos que esté colocado el centro del gradiente.</p>
+<h3 id="gradiente-conico"><a href="https://lenguajecss.com/css/colores-y-fondos/gradientes-css/#gradiente-cónico">Gradiente cónico</a><a class="headerlink" href="#gradiente-conico" title="Permanent link">&para;</a></h3>
+<p>Recientemente, se ha incorporado un nuevo tipo de gradiente muy interesante en CSS, visualmente muy similar al <strong>gradiente radial</strong>, pero tratándose de una visualización de un cono desde un plano superior, incluyendo sus sombras.</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>conic-gradient(,, ...)</td>
+<td>Gradiente básico entre colores.</td>
+</tr>
+<tr>
+<td>conic-gradient(from,,, ...)</td>
+<td>Gradiente indicando punto de inicio.</td>
+</tr>
+<tr>
+<td>conic-gradient(from at <em>ubicación</em>,,, ...)</td>
+<td>Gradiente indicando ubicación del inicio.</td>
+</tr>
+</tbody>
+</table>
+<p>Donde:</p>
+<table>
+<thead>
+<tr>
+<th>Parámetros</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>from</td>
+<td>Ángulo desde donde comienza el gradiente cónico. Por defecto <strong>from 0deg</strong>.</td>
+</tr>
+<tr>
+<td>at <em>[ubicación]</em></td>
+<td><strong>center</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>El primer color del gradiente</td>
+</tr>
+<tr>
+<td></td>
+<td>El siguiente color del gradiente</td>
+</tr>
+<tr>
+<td></td>
+<td>De forma opcional, se puede indicar a que altura comienza a cambiar el gradiente.</td>
+</tr>
+<tr>
+<td>...</td>
+<td>(Se pueden seguir añadiendo colores)</td>
+</tr>
+</tbody>
+</table>
+<p>A continuación podemos ver la diferencia de un gradiente <code>linear-gradient</code>, un <code>radial-gradient</code> y un <code>conic-gradient</code>:</p>
+<p><img alt="linear-gradient vs radial-gradient vs conic-gradient" src="../img/linear-radial-conic-gradient.png" /></p>
+<p>Poco hay que añadir en este tipo de gradiente, ya que funciona muy similar a los anteriores. La única diferencia mencionable es el uso de la palabra clave <strong>from</strong> antes de indicar los ángulos de dirección, si se requiere.</p>
+<h3 id="gradientes-repetitivos"><a href="https://lenguajecss.com/css/colores-y-fondos/gradientes-css/#gradientes-repetitivos">Gradientes repetitivos</a><a class="headerlink" href="#gradientes-repetitivos" title="Permanent link">&para;</a></h3>
+<p>Por último, todos los gradientes que hemos visto permiten la posibilidad de añadir el prefijo <code>repeating-</code> para conseguir que el efecto del gradiente, en lugar de adaptarse a la región completa, realice una repetición constantemente. Comprueba los siguientes ejemplos de forma individual:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">div</span> <span class="p">{</span>
+      <span class="k">background</span><span class="p">:</span> <span class="nb">repeating-linear-gradient</span><span class="p">(</span><span class="kc">blue</span> <span class="mi">10</span><span class="kt">%</span><span class="p">,</span> <span class="kc">yellow</span> <span class="mi">20</span><span class="kt">%</span><span class="p">,</span> <span class="kc">red</span> <span class="mi">30</span><span class="kt">%</span><span class="p">);</span>   <span class="c">/* Ejemplo 1 */</span>
+      <span class="k">background</span><span class="p">:</span> <span class="nb">repeating-radial-gradient</span><span class="p">(</span><span class="kc">blue</span> <span class="mi">10</span><span class="kt">%</span><span class="p">,</span> <span class="kc">yellow</span> <span class="mi">20</span><span class="kt">%</span><span class="p">,</span> <span class="kc">red</span> <span class="mi">30</span><span class="kt">%</span><span class="p">);</span>   <span class="c">/* Ejemplo 2 */</span>
+      <span class="k">background</span><span class="p">:</span> <span class="nf">repeating-conic-gradient</span><span class="p">(</span><span class="kc">blue</span> <span class="mi">10</span><span class="kt">%</span><span class="p">,</span> <span class="kc">yellow</span> <span class="mi">20</span><span class="kt">%</span><span class="p">,</span> <span class="kc">red</span> <span class="mi">30</span><span class="kt">%</span><span class="p">);</span>    <span class="c">/* Ejemplo 3 */</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>Es importante que al usar el prefijo <code>repeating-</code> se especifiquen tamaños a los colores, puesto que se necesita saber cuando comenzará a repetirse. En los ejemplos anteriores, los colores seguirían el patrón hasta el último color y volverían a repetirse sucesivamente, de forma que tendríamos:</p>
+<ul>
+<li>Primera repetición: <strong>blue</strong> 10%, <strong>yellow</strong> 20%, <strong>red</strong> 30%</li>
+<li>Segunda repetición: <strong>blue</strong> 40%, <strong>yellow</strong> 50%, <strong>red</strong> 60%</li>
+<li>Tercera repetición: <strong>blue</strong> 70%, <strong>yellow</strong> 80%, <strong>red</strong> 90%</li>
+<li>Cuarta repetición: <strong>blue</strong> 100%</li>
+</ul>
+<hr />
+<p><strong>Fuente:</strong> <a href="https://lenguajecss.com/">Lenguaje de CSS</a> por <a href="https://manzdev.github.io/">Manz</a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../02-modelo_de_cajas/" title="Modelo de cajas" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Modelo de cajas
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../04-selectores_CSS/" title="Selectores CSS" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Selectores CSS
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/saucedoinfo" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/saucedoinfo" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.instagram.com/saucedo.info/" target="_blank" rel="noopener" title="www.instagram.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.instant', 'navigation.expand', 'tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

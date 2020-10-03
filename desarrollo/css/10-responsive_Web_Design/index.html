@@ -1,0 +1,2110 @@
+
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Coleccion de Guias de Desarrollo y diseño.">
+      
+      
+        <link rel="canonical" href="https://saucedoinfo.github.io/guias/desarrollo/css/10-responsive_Web_Design/">
+      
+      
+        <meta name="author" content="Fernando S. Saucedo">
+      
+      <link rel="shortcut icon" href="../../../img/favicon-16x16.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.14">
+    
+    
+      
+        <title>Responsive Web Design - Guias de Desarrollo y diseño</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d3202873.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ff0a5ce4.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#000000">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#responsive-web-design" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-header-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Guias de Desarrollo y diseño
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Responsive Web Design
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../html/01-introduccion_a_HTML5/" class="md-tabs__link">
+          Desarrollo
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" class="md-tabs__link">
+          Herramientas IT
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    Guias de Desarrollo y diseño
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Desarrollo
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Desarrollo" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Desarrollo
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Html
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Html" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        <span class="md-nav__icon md-icon"></span>
+        Html
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/01-introduccion_a_HTML5/" title="Introduccion a HTML" class="md-nav__link">
+      Introduccion a HTML
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/02-etiquetas_semanticas/" title="Etiquetas semánticas" class="md-nav__link">
+      Etiquetas semánticas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/03-etiquetas_multimedia/" title="Etiquetas multimedias" class="md-nav__link">
+      Etiquetas multimedias
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/04-etiquetas_de_cabecera/" title="Etiquetas de cabecera" class="md-nav__link">
+      Etiquetas de cabecera
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/05-etiquetas_de_formularios/" title="Etiquetas de formularios" class="md-nav__link">
+      Etiquetas de formularios
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/06-etiquetas_de_scripting/" title="Etiquetas de scripting" class="md-nav__link">
+      Etiquetas de scripting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" checked>
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Css
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Css" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        <span class="md-nav__icon md-icon"></span>
+        Css
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01-introduccion_a_CSS/" title="Introducción a CSS" class="md-nav__link">
+      Introducción a CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02-modelo_de_cajas/" title="Modelo de cajas" class="md-nav__link">
+      Modelo de cajas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-colores_y_fondos/" title="Colores y fondos" class="md-nav__link">
+      Colores y fondos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-selectores_CSS/" title="Selectores CSS" class="md-nav__link">
+      Selectores CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-Fuentes_y_tipografias/" title="Fuentes y tipografías" class="md-nav__link">
+      Fuentes y tipografías
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-representacion_de_datos/" title="Representación de datos" class="md-nav__link">
+      Representación de datos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../07_maquetacion_y_colocacion/" title="Maquetación y colocación" class="md-nav__link">
+      Maquetación y colocación
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../08-interacciones/" title="Interacciones" class="md-nav__link">
+      Interacciones
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../09-efectos/" title="Efectos" class="md-nav__link">
+      Efectos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Responsive Web Design
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Responsive Web Design" class="md-nav__link md-nav__link--active">
+      Responsive Web Design
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-responsive-design" class="md-nav__link">
+    ¿Qué es Responsive Design?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué es Responsive Design?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conceptos-basicos" class="md-nav__link">
+    Conceptos básicos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preparacion-previa" class="md-nav__link">
+    Preparación previa
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estrategias-de-diseno" class="md-nav__link">
+    Estrategias de diseño
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bases-del-responsive-design" class="md-nav__link">
+    Bases del Responsive Design
+  </a>
+  
+    <nav class="md-nav" aria-label="Bases del Responsive Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diseno-con-porcentajes" class="md-nav__link">
+    Diseño con porcentajes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tamanos-maximos-y-minimos" class="md-nav__link">
+    Tamaños máximos y mínimos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-viewport" class="md-nav__link">
+    El viewport
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#media-queries" class="md-nav__link">
+    Media Queries
+  </a>
+  
+    <nav class="md-nav" aria-label="Media Queries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-son-las-media-queries" class="md-nav__link">
+    ¿Qué son las media queries?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-de-media-queries" class="md-nav__link">
+    Ejemplos de media queries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-caracteristicas" class="md-nav__link">
+    Tipos de características
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#condicionales-css" class="md-nav__link">
+    Condicionales CSS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#medios-impresos" class="md-nav__link">
+    Medios impresos
+  </a>
+  
+    <nav class="md-nav" aria-label="Medios impresos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-son-los-medios-impresos" class="md-nav__link">
+    ¿Qué son los medios impresos?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-de-medios-impresos" class="md-nav__link">
+    Ejemplo de medios impresos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#medios-paginados" class="md-nav__link">
+    Medios paginados
+  </a>
+  
+    <nav class="md-nav" aria-label="Medios paginados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-regla-page" class="md-nav__link">
+    La regla @page
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orphans-widows" class="md-nav__link">
+    Orphans &amp; Widows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saltos-de-pagina" class="md-nav__link">
+    Saltos de página
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pseudoclases-de-pagina" class="md-nav__link">
+    Pseudoclases de página
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preferencias-de-usuario" class="md-nav__link">
+    Preferencias de usuario
+  </a>
+  
+    <nav class="md-nav" aria-label="Preferencias de usuario">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dark-mode-light-mode" class="md-nav__link">
+    Dark mode / Light mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#movimiento-reducido" class="md-nav__link">
+    Movimiento reducido
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ancho-de-banda-reducido" class="md-nav__link">
+    Ancho de banda reducido
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../11-animaciones_CSS/" title="Animaciones CSS" class="md-nav__link">
+      Animaciones CSS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      JavaScript
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="JavaScript" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon"></span>
+        JavaScript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/01-introducci%C3%B3n_a_javascript/" title="Introducción a Javascript" class="md-nav__link">
+      Introducción a Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/02-fundamentos_de_javascript/" title="Fundamentos de Javascript" class="md-nav__link">
+      Fundamentos de Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/03-caracteristicas/" title="Características" class="md-nav__link">
+      Características
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/04-DOM/" title="DOM" class="md-nav__link">
+      DOM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/05-asincronia/" title="Asincronía" class="md-nav__link">
+      Asincronía
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/06-peticiones_HTTP/" title="Peticiones HTTP" class="md-nav__link">
+      Peticiones HTTP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Herramientas IT
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Herramientas IT" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Herramientas IT
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Terminal
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Terminal" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon"></span>
+        Terminal
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" title="Introducción a la terminal" class="md-nav__link">
+      Introducción a la terminal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/02-operaciones_con_ficheros/" title="Operaciones con ficheros" class="md-nav__link">
+      Operaciones con ficheros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/03-administraci%C3%B3n_del_sistema/" title="Administración del sistema" class="md-nav__link">
+      Administración del sistema
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/markdown/" title="Markdown" class="md-nav__link">
+      Markdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/pip/" title="Pip" class="md-nav__link">
+      Pip
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/mkdocs/" title="Mkdocs" class="md-nav__link">
+      Mkdocs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../about/" title="Acerca de" class="md-nav__link">
+      Acerca de
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-responsive-design" class="md-nav__link">
+    ¿Qué es Responsive Design?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué es Responsive Design?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conceptos-basicos" class="md-nav__link">
+    Conceptos básicos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preparacion-previa" class="md-nav__link">
+    Preparación previa
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estrategias-de-diseno" class="md-nav__link">
+    Estrategias de diseño
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bases-del-responsive-design" class="md-nav__link">
+    Bases del Responsive Design
+  </a>
+  
+    <nav class="md-nav" aria-label="Bases del Responsive Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diseno-con-porcentajes" class="md-nav__link">
+    Diseño con porcentajes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tamanos-maximos-y-minimos" class="md-nav__link">
+    Tamaños máximos y mínimos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-viewport" class="md-nav__link">
+    El viewport
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#media-queries" class="md-nav__link">
+    Media Queries
+  </a>
+  
+    <nav class="md-nav" aria-label="Media Queries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-son-las-media-queries" class="md-nav__link">
+    ¿Qué son las media queries?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-de-media-queries" class="md-nav__link">
+    Ejemplos de media queries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-caracteristicas" class="md-nav__link">
+    Tipos de características
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#condicionales-css" class="md-nav__link">
+    Condicionales CSS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#medios-impresos" class="md-nav__link">
+    Medios impresos
+  </a>
+  
+    <nav class="md-nav" aria-label="Medios impresos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-son-los-medios-impresos" class="md-nav__link">
+    ¿Qué son los medios impresos?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-de-medios-impresos" class="md-nav__link">
+    Ejemplo de medios impresos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#medios-paginados" class="md-nav__link">
+    Medios paginados
+  </a>
+  
+    <nav class="md-nav" aria-label="Medios paginados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-regla-page" class="md-nav__link">
+    La regla @page
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orphans-widows" class="md-nav__link">
+    Orphans &amp; Widows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saltos-de-pagina" class="md-nav__link">
+    Saltos de página
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pseudoclases-de-pagina" class="md-nav__link">
+    Pseudoclases de página
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preferencias-de-usuario" class="md-nav__link">
+    Preferencias de usuario
+  </a>
+  
+    <nav class="md-nav" aria-label="Preferencias de usuario">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dark-mode-light-mode" class="md-nav__link">
+    Dark mode / Light mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#movimiento-reducido" class="md-nav__link">
+    Movimiento reducido
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ancho-de-banda-reducido" class="md-nav__link">
+    Ancho de banda reducido
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/saucedoinfo/guias/edit/master/docs/desarrollo/css/10-responsive_Web_Design.md" title="Editar esta página" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="responsive-web-design">Responsive Web Design<a class="headerlink" href="#responsive-web-design" title="Permanent link">&para;</a></h1>
+<h2 id="que-es-responsive-design">¿Qué es Responsive Design?<a class="headerlink" href="#que-es-responsive-design" title="Permanent link">&para;</a></h2>
+<p>En la actualidad, el uso de todo tipo de <strong>dispositivos móviles</strong> se ha disparado, no sólo de &lt;<smartphones>&gt;, sino también de tablets, &lt;<smartwatchs>&gt;, lectores de ebooks y múltiples tipos de dispositivos con capacidad de conexión a Internet.</p>
+<p>Cada vez es más frecuente acceder a Internet con diferentes tipos de dispositivos, que a su vez tienen <strong>diferentes pantallas y resoluciones</strong>, con distintos tamaños y formas, que hacen que se consuman las páginas webs de formas diferentes, apareciendo por el camino también diferentes necesidades, problemas y soluciones.</p>
+<p><img alt="Responsive web design" src="../img/responsive-web-design.png" /></p>
+<p>Por lo tanto, en la actualidad, cuando diseñamos una web, esta debe estar preparada para verse correctamente en diferentes resoluciones, cosa que, a priori no es sencilla. Antiguamente, se llegó al punto de preparar una web diferente dependiendo del dispositivo o navegador que utilizaba el usuario, pero era algo que se terminó descartando, ya que no era práctico.</p>
+<p>Por suerte, esos tiempos han quedado atrás, y la máxima que se sigue hoy es <strong>diseñar una sola web, que se adapte visualmente al dispositivo utilizado</strong>.</p>
+<p>Hoy en día se le denomina <strong>Responsive Web Design</strong> (<em>o RWD</em>) a los diseños web que tienen la capacidad de adaptarse al tamaño y formato de la pantalla en la que se visualiza el contenido, respecto a los diseños tradicionales en los que las páginas web estaban diseñadas sólo para un tamaño o formato específico, y no tenían esa capacidad de adaptación.</p>
+<p><img alt="Web responsive" src="../img/web-responsive.jpg" /></p>
+<p>Aunque en principio el concepto de <strong>web adaptativa</strong> es muy sencillo de comprender, aplicarlo puede ser todo un quebradero de cabeza si no se conocen bien las bases y se adquiere experiencia. En <a href="http://mediaqueri.es/">MediaQueri.es</a> puedes encontrar algunos ejemplos de páginas que utilizan Responsive Web Design para tener clara la idea.</p>
+<h3 id="conceptos-basicos"><a href="https://lenguajecss.com/css/responsive-web-design/que-es/#conceptos-básicos">Conceptos básicos</a><a class="headerlink" href="#conceptos-basicos" title="Permanent link">&para;</a></h3>
+<p>En el excelente artículo <a href="https://blog.froont.com/9-basic-principles-of-responsive-web-design/">9 basic principles of responsive web design, de Froont</a>, hay una estupenda explicación visual de algunos conceptos básicos necesarios para entender correctamente el <strong>Responsive Web Design</strong>. Son los siguientes:</p>
+<p>El primero de ellos es la diferencia entre <strong>diseño responsivo</strong> y <strong>diseño adaptativo</strong>. Como se puede ver en la imagen a continuación, un diseño <strong>responsive</strong> responde (<em>valga la rebuznancia</em>) en todo momento a las dimensiones del dispositivo, mientras que un diseño adaptable es aquel que se adapta, pero no necesariamente responde en todo momento:</p>
+<p><img alt="Responsive vs Adaptative" src="../img/responsive-vs-adaptative.gif" /></p>
+<blockquote>
+<blockquote>
+<p>Veremos que esto puede ser la diferencia entre aplicar correctamente conceptos como media queries, porcentajes y propiedades de ancho máximo y mínimo, que veremos más adelante.</p>
+</blockquote>
+</blockquote>
+<p>Por otro lado, para trabajar correctamente en diseños <strong>responsive</strong> hay que tener en cuenta que debemos trabajar con unidades relativas e intentar evitar las unidades fijas o estáticas, las cuales no responden a la adaptación de nuestros diseños flexibles:</p>
+<p><img alt="Unidades relativas vs Unidades estáticas" src="../img/relative-units-vs-static-units.gif" /></p>
+<p>Otra forma interesante de trabajar esa respuesta de los diseños <strong>responsive</strong> es utilizar propiedades como <code>min-width</code> o <code>max-width</code>, donde definimos tamaños mínimos o máximos, para que los elementos de nuestra página puedan ampliar o reducirse según sea necesario dependiendo de la pantalla del dispositivo utilizado.</p>
+<p>Con estas propiedades podemos crear diseños que aprovechen al máximo toda la pantalla de dispositivos pequeños (<em>como móviles o tablets</em>), mientras que establecemos unos máximos en pantallas de dispositivos grandes, para crear unos espacios visuales que hacen que el diseño sea más agradable:</p>
+<p><img alt="Max-width vs no max-width" src="../img/max-width-vs-no-max-width.gif" /></p>
+<p>Otro concepto, que a la misma vez es una característica muy atractiva en nuestros diseños responsive es la de mantener el flujo de los elementos cuando cambian de tamaño y evitar que estos se solapen unos con otros.</p>
+<p>Si estamos habituados a trabajar en diseños más estáticos que no están preparados para móviles, suele ser duro hacer ese cambio. Sin embargo, una vez lo conseguimos, todo resulta mucho más fácil y conseguiremos transmitir una buena respuesta y fluidez visual:</p>
+<p><img alt="Flujo vs diseño estático" src="../img/flow-vs-static.gif" /></p>
+<p>Esto último va muy de la mano del sistema habitual de recolocación de elementos que se suele seguir en los diseños <strong>Responsive Design</strong>. Como se puede ver en la siguiente imagen, en un diseño responsive se utilizan ciertos &lt;<puntos de control>&gt;.</p>
+<p>Por ejemplo, se suele pensar que en una resolución de escritorio queremos mostrar la información dentro de una cuadrícula (<em>grid</em>) de 4 ó 5 celdas de ancho, mientras que en la versión de tablet será sólo de 3 celdas de ancho (<em>el resto se desplazará a la siguiente fila</em>) y en móviles será una sola celda de ancho, mostrándose el resto de celdas haciendo scroll hacia abajo:</p>
+<p><img alt="Puntos de control vs sin puntos de control" src="../img/breakpoints-vs-non-breakpoints.gif" /></p>
+<p>Esta forma de trabajar nos proporciona múltiples ventajas:</p>
+<ul>
+<li>Es mucho más sencillo mostrar la misma información desde diseños de pantalla grande.</li>
+<li>Ayuda a evitar la mala práctica de ocultar bloques de información en dispositivos móviles.</li>
+<li>Incentiva a diseñar siguiendo buenas prácticas para facilitar la creación responsive.</li>
+</ul>
+<h3 id="preparacion-previa"><a href="https://lenguajecss.com/css/responsive-web-design/que-es/#preparación-previa">Preparación previa</a><a class="headerlink" href="#preparacion-previa" title="Permanent link">&para;</a></h3>
+<p>Antes de comenzar a crear un diseño web preparado para móviles, es importante tener claro ciertos detalles:</p>
+<ul>
+<li>A priori, ¿Cuál es tu público objetivo? ¿móvil o escritorio? ¿ambos?</li>
+<li>Debes conocer las resoluciones más utilizadas por tu público potencial</li>
+<li>Debes elegir una estrategia acorde a los datos anteriores</li>
+</ul>
+<p>En primer lugar, es importante <strong>conocer los formatos</strong> de pantalla más comunes con los cuales nos vamos a encontrar. Podemos consultar páginas como <a href="https://www.mydevice.io/">MyDevices</a>, la cuál tiene un apartado de <a href="https://www.mydevice.io/#compare-devices">comparación de dispositivos</a>, donde se nos muestra un listado de dispositivos categorizados en smartphones, tablets u otros dispositivos con las características de cada uno: dimensiones de ancho, alto, radio de píxels, etc...</p>
+<p>Una vez estés familiarizado con estos detalles, es importante <strong>conocer el público de tu sitio web</strong>. ¿Acceden más usuarios desde móvil o desde escritorio? ¿Predominan las tablets o los móviles? ¿Tu objetivo es tener más usuarios de móvil o de escritorio?</p>
+<p>Consulta con algún sistema de estadísticas como <a href="https://marketingplatform.google.com/about/analytics/">Google Analytics</a> para comprobar que tipo de público tienes actualmente. También es aconsejable echar un vistazo a información externa como las que nos proporcionan estadísticas globales anónimas de <a href="https://gs.statcounter.com/screen-resolution-stats">Global StatCounter</a>, para hacernos una idea de los atributos más comunes.</p>
+<h3 id="estrategias-de-diseno"><a href="https://lenguajecss.com/css/responsive-web-design/que-es/#estrategias-de-diseño">Estrategias de diseño</a><a class="headerlink" href="#estrategias-de-diseno" title="Permanent link">&para;</a></h3>
+<p>Por último, es aconsejable decidirse por una estrategia de diseño antes de comenzar. Aunque existen otras estrategias, las dos vertientes principales más populares son las siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Estrategia</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mobile first</strong></td>
+<td>Primero nos enfocamos en dispositivos móviles y luego pensamos en otros.</td>
+</tr>
+<tr>
+<td><strong>Desktop first</strong></td>
+<td>Primero nos enfocamos en dispositivos de escritorio, y luego pensamos en otros.</td>
+</tr>
+</tbody>
+</table>
+<p>La estrategia <strong>Mobile-first</strong> es la que utilizan los diseñadores de sitios webs en las que su público objetivo es mayoritariamente usuario de móvil. Ejemplos como una web para comprar billetes de transporte, la web de un juego o aplicación móvil o una web para pedir cita en un restaurante podrían ser, a priori, una buena elección para utilizar <strong>Mobile-first</strong>.</p>
+<p>Esta estrategia hace que el desarrollo en escritorio sea muy sencillo, ya que se reduce a tener un diseño de móvil en escritorio e ir añadiendo nuevas secciones o partes para &lt;<completar>&gt; el diseño en resoluciones grandes.</p>
+<p>Por otro lado, la estrategia <strong>Desktop-first</strong> suele interesar más a los diseñadores de sitios webs en las que el público objetivo son usuarios de escritorio. Por ejemplo, una página de una aplicación para PC/Mac o similares, podría ser una buena opción para la estrategia <strong>Desktop-first</strong>. En ella, hacemos justo lo contrario que en la anterior, lo primero que diseñamos es la versión de escritorio, y luego vamos descargando detalles o recolocando información hasta tener la versión para dispositivos móviles.</p>
+<hr />
+<h2 id="bases-del-responsive-design">Bases del Responsive Design<a class="headerlink" href="#bases-del-responsive-design" title="Permanent link">&para;</a></h2>
+<p>Como explicamos en el capítulo anterior, hay ciertos conceptos que hay que tener claros antes de comenzar con el <strong>Responsive Design</strong>. En esta sección vamos a ver como llevarlos a la práctica con código.</p>
+<h3 id="diseno-con-porcentajes"><a href="https://lenguajecss.com/css/responsive-web-design/bases-responsive/#diseño-con-porcentajes">Diseño con porcentajes</a><a class="headerlink" href="#diseno-con-porcentajes" title="Permanent link">&para;</a></h3>
+<p>El primer paso para crear un diseño que se adapte correctamente, es comenzar a familiarizarse con un tipo de unidades relativas: <strong>los porcentajes</strong>. Recordemos que los porcentajes son relativos al contenedor padre, por lo que si especificamos un porcentaje a un elemento, el navegador va a tomar dicho porcentaje del contenedor.</p>
+<blockquote>
+<blockquote>
+<p><strong>Nota:</strong> Al comenzar, algunos diseñadores tienen una percepción incorrecta de que los porcentajes toman el tamaño dependiendo de lo que mide la ventana del navegador. Realmente los porcentajes dependen siempre del tamaño del elemento padre que los contiene. Si queremos basarnos en el tamaño del navegador, hay que usar <a href="/css/modelo-de-cajas/unidades-css/#unidades-flexibles-viewport">unidades de viewport</a>.</p>
+</blockquote>
+</blockquote>
+<p>Podemos comenzar usando porcentajes con las propiedades <code>width</code> en un ejemplo sencillo. Si establecemos un ancho de <code>100%</code> (<em>valor por defecto en elementos de tipo block, no hace falta indicarlo</em>) a los elementos grises que vemos a continuación (<em>#header, #page y #footer</em>), un <code>30%</code> al azul (<em>#menu</em>) y un <code>70%</code> al gris claro (<em>#content</em>) podríamos obtener este diseño:</p>
+<p><img alt="RWD: Porcentajes" src="../img/rwd-porcentajes.png" /></p>
+<p>El código utilizado sería algo parecido a lo siguiente:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;header&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;page&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;menu&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;content&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;footer&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p>Nótese que los elementos <code>#menu</code> y <code>#content</code> se encuentran dentro de <code>#page</code>. Tengan en cuenta que, estamos utilizando <strong>id</strong> en este ejemplo, aunque habíamos comentado que lo ideal quizás sería utilizar clases.</p>
+<p>Por su parte, el código CSS tendría esta pinta:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">div</span> <span class="p">{</span>
+      <span class="c">/* Ponemos un alto mínimo, por defecto es 0 */</span>
+      <span class="k">min-height</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+      <span class="c">/* Dibujamos un borde para ver límites */</span>
+      <span class="k">border</span><span class="p">:</span> <span class="mi">2</span><span class="kt">px</span> <span class="kc">solid</span> <span class="kc">black</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="p">#</span><span class="nn">header</span><span class="o">,</span> <span class="p">#</span><span class="nn">page</span><span class="o">,</span> <span class="p">#</span><span class="nn">footer</span> <span class="p">{</span>
+      <span class="k">background</span><span class="p">:</span> <span class="kc">grey</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="p">#</span><span class="nn">menu</span><span class="o">,</span> <span class="p">#</span><span class="nn">content</span> <span class="p">{</span>
+      <span class="c">/* Necesario para que los elementos estén en horizontal */</span>
+      <span class="k">display</span><span class="p">:</span> <span class="kc">inline-block</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="p">#</span><span class="nn">menu</span> <span class="p">{</span>
+      <span class="k">background</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span>
+      <span class="k">width</span><span class="p">:</span> <span class="mi">30</span><span class="kt">%</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="p">#</span><span class="nn">content</span> <span class="p">{</span>
+      <span class="k">background</span><span class="p">:</span> <span class="kc">lightgrey</span><span class="p">;</span>
+      <span class="k">width</span><span class="p">:</span> <span class="mi">70</span><span class="kt">%</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>Sin embargo, utilizar porcentajes no nos garantiza un diseño adaptativo de calidad, hay que comprender otros detalles. El primer problema que encontraremos será que si sumamos el tamaño de los elementos (<em>70% + 30%</em>) junto a los bordes (<em>2px por cada lado</em>), la suma es superior al 100% del contenedor padre, por lo que <strong>no cabe en su interior</strong> y el segundo elemento se desplaza a la zona inferior, descuadrando todo el diseño. Lo mismo puede ocurrir si intentamos añadir <code>margin</code> o <code>padding</code>. Esto es algo muy habitual en CSS. Y frustrante al principio.</p>
+<p>Hay varias formas de solucionar esto:</p>
+<ul>
+<li>Eliminar los bordes y reducir los porcentajes hasta que quepan en el 100% del padre.</li>
+<li>Usar <code>box-sizing: border-box</code> para cambiar el modo en el que se gestionan los tamaños.</li>
+<li>Utilizar un sistema moderno como <a href="/css/maquetacion-y-colocacion/flexbox/">Flexbox</a> o <a href="/css/maquetacion-y-colocacion/grid-css/">Grid</a> (<em>recomendado</em>).</li>
+</ul>
+<p>Una forma simple de solucionar el problema en el ejemplo anterior, es hacer los siguientes cambios en el CSS del documento:</p>
+<div class="highlight"><pre><span></span><code><span class="c">/* Eliminamos este bloque */</span>
+    <span class="p">#</span><span class="nn">menu</span><span class="o">,</span> <span class="p">#</span><span class="nn">content</span> <span class="p">{</span>
+      <span class="k">display</span><span class="p">:</span> <span class="kc">inline-block</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c">/* Añadimos este */</span>
+    <span class="p">#</span><span class="nn">page</span> <span class="p">{</span>
+      <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>De esta forma, conseguimos que nuestro diseño se adapte de forma adecuada a la página, sin necesidad de tener que ajustar los márgenes, rellenos, bordes o tamaño de los contenidos.</p>
+<h3 id="tamanos-maximos-y-minimos"><a href="https://lenguajecss.com/css/responsive-web-design/bases-responsive/#tamaños-máximos-y-mínimos">Tamaños máximos y mínimos</a><a class="headerlink" href="#tamanos-maximos-y-minimos" title="Permanent link">&para;</a></h3>
+<p>Si buscamos un cierto grado de control aún mayor, podríamos recurrir a las propiedades <code>max-width</code> y <code>min-width</code> , con las que podemos indicar el ancho de un elemento como máximo y el ancho de un elemento como mínimo respectivamente, consiguiendo así garantizar cierto control del diseño:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">picture</span> <span class="p">{</span>
+      <span class="k">min-height</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>    <span class="c">/* Por defecto, height es 0 */</span>
+      <span class="k">background</span><span class="p">:</span> <span class="kc">grey</span><span class="p">;</span>     <span class="c">/* Simplemente, para verlo visualmente */</span>
+
+      <span class="k">max-width</span><span class="p">:</span> <span class="mi">1024</span><span class="kt">px</span><span class="p">;</span>
+      <span class="k">min-width</span><span class="p">:</span> <span class="mi">800</span><span class="kt">px</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>En este caso, el elemento tiene un tamaño máximo de 1024 píxeles, y un tamaño mínimo de 800 píxeles, por lo que si ajustamos el ancho de la ventana del navegador, dicho elemento iría variando en un rango de 800 a 1024 píxeles, nunca haciéndose más pequeño de 800 o más grande de 1024.</p>
+<blockquote>
+<p><strong>Nota</strong>: Es importante darse cuenta de que este ejemplo funciona porque no hay definido un <code>width</code> (<em>por omisión, es igual a <code>width: 100%</code></em>). Desde que exista un <code>width</code>, las otras propiedades pierden efecto porque se está obligando a que tenga un tamaño fijo concreto.</p>
+</blockquote>
+<p>Con las imágenes, videos y contenidos multimedia, se puede hacer lo mismo, consiguiendo así que las imágenes se escalen y adapten al formato especificado o incluso al tamaño de pantalla de los diferentes dispositivos utilizados:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">img</span><span class="o">,</span>
+    <span class="nt">video</span><span class="o">,</span>
+    <span class="nt">object</span><span class="o">,</span>
+    <span class="nt">embed</span> <span class="p">{</span>
+        <span class="k">max-width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+        <span class="k">height</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<h3 id="el-viewport"><a href="https://lenguajecss.com/css/responsive-web-design/bases-responsive/#el-viewport">El viewport</a><a class="headerlink" href="#el-viewport" title="Permanent link">&para;</a></h3>
+<p>En muchos casos puede que oigas hablar del <strong>viewport</strong> del navegador. Esa palabra hace referencia a la <strong>región visible del navegador</strong>, o sea, la parte de la página que está visualizándose actualmente en el navegador. Los usuarios podemos redimensionar la ventana del navegador para reducir el tamaño del viewport y simular que se trata de una pantalla y dispositivo más pequeño.</p>
+<p>Si queremos editar ciertos comportamientos del viewport del navegador, podemos editar el documento HTML para especificar el siguiente campo meta, antes de la parte del <code>&lt;/head&gt;</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;initial-scale=1, width=device-width&quot;</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p>Con esta etiqueta <code>&lt;meta&gt;</code>, estamos estableciendo unos parámetros de comportamiento para el <strong>viewport</strong> del navegador. Veamos que significan y cuales más existen:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedades</th>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>width</td>
+<td>device-width</td>
+<td>Indica un ancho para el viewport.</td>
+</tr>
+<tr>
+<td>height</td>
+<td>device-height</td>
+<td>Indica un alto para el viewport.</td>
+</tr>
+<tr>
+<td>initial-scale</td>
+<td>1</td>
+<td>Escala inicial con la que se visualiza la página web.</td>
+</tr>
+<tr>
+<td>minimum-scale</td>
+<td>0.1</td>
+<td>Escala mínima a la que se puede reducir al hacer zoom.</td>
+</tr>
+<tr>
+<td>maximum-scale</td>
+<td>10</td>
+<td>Escala máxima a la que se puede aumentar al hacer zoom.</td>
+</tr>
+<tr>
+<td>user-scalable</td>
+<td>no/fixed</td>
+<td><strong>yes/zoom</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Las propiedades <code>initial-scale</code> , <code>minimum-scale</code> y <code>maximum-scale</code> permiten valores desde el <code>0.1</code> al <code>10</code> , aunque ciertos valores se traducen automáticamente a ciertos números determinados:</p>
+<ul>
+<li>yes = 1</li>
+<li>no = 0.1</li>
+<li>device-width = 10</li>
+<li>device-height = 10</li>
+</ul>
+<p>Por otra parte, <code>user-scalable</code> permite definir si es posible que el usuario pueda &lt;<pellizcar>&gt; la pantalla para ampliar o reducir el zoom.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><strong>Ojo:</strong> Aunque es posible utilizar algunos de estos parámetros, es aconsejable revisar detalladamente las consecuencias de especificar estos parámetros. Lo recomendable es utilizar sólo los que se mencionan en el fragmento de código superior, para evitar problemas de accesibilidad que impidan ciertas acciones.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<hr />
+<h2 id="media-queries">Media Queries<a class="headerlink" href="#media-queries" title="Permanent link">&para;</a></h2>
+<p>Una vez nos adentramos en el mundo del <strong>Responsive Design</strong>, nos damos cuenta en que hay situaciones en las que determinados aspectos o componentes visuales deben aparecer en un tipo de dispositivos, o deben existir ciertas diferencias.</p>
+<p>Por ejemplo, una zona donde se encuentra el buscador de la página puede estar colocada en un sitio concreto en la versión de escritorio, pero en móvil quizás nos interesa que ocupe otra zona (<em>o que tenga otro tamaño o forma</em>) para aprovechar mejor el poco espacio que tenemos en la versión móvil de la página.</p>
+<p>Para ello, utilizaremos un concepto denominado <strong>media queries</strong>, con los que podemos hacer esas excepciones para que sólo se apliquen a un tipo de diseño concreto.</p>
+<h3 id="que-son-las-media-queries"><a href="https://lenguajecss.com/css/responsive-web-design/media-queries/#qué-son-las-media-queries">¿Qué son las media queries?</a><a class="headerlink" href="#que-son-las-media-queries" title="Permanent link">&para;</a></h3>
+<p>Las reglas <strong>media queries</strong> (<em>también denominadas <strong>MQ</strong> a veces</em>) son un tipo de reglas de CSS que permiten crear un bloque de código que sólo se procesará en los dispositivos que cumplan los criterios especificados como condición:</p>
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(*</span><span class="nt">condición</span><span class="o">*)</span> <span class="p">{</span>
+      <span class="c">/* reglas CSS */</span>
+      <span class="c">/* reglas CSS */</span>
+    <span class="p">}</span>
+
+    <span class="p">@</span><span class="k">media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="nt">not</span> <span class="o">(*</span><span class="nt">condición</span><span class="o">*)</span> <span class="p">{</span>
+      <span class="c">/* reglas CSS */</span>
+      <span class="c">/* reglas CSS */</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>Con este método, especificamos que queremos aplicar los estilos CSS para tipos de medios concretos (<em><code>screen</code>: sólo en pantallas, en este caso</em>) que cumplan las condiciones especificadas entre paréntesis. De esta forma, una estrategia aconsejable es crear reglas CSS generales (<em>como hemos hecho hasta ahora</em>) aplicadas a todo el documento: colores, tipo de fuente, etc. y luego, las particularidades que se aplicarían sólo en el dispositivo en cuestión.</p>
+<p>Aunque suele ser menos habitual, también se pueden indicar reglas <code>@media</code> negadas mediante la palabra clave <code>not</code>, que aplicará CSS siempre y cuando no se cumpla una determinada condición. Tambien pueden separarse por comas varias condiciones de media queries.</p>
+<blockquote>
+<p><strong>Truco:</strong> Al igual que <code>not</code>, también existe una palabra clave <code>only</code> que, suele usarse a modo de <strong>hack</strong>. El comportamiento por defecto ya incluye los dispositivos que encajan con la condición, pero con la palabra clave <code>only</code> conseguimos que navegadores antiguos que no la entienden, no procesen la información, dejándola sólo para navegadores modernos.</p>
+</blockquote>
+<p>Existen los siguientes <strong>tipos de medios</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Tipo de medio</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>screen</strong></td>
+<td>Monitores o pantallas de ordenador. Es el más común.</td>
+</tr>
+<tr>
+<td>print</td>
+<td>Documentos de <a href="/css/responsive-web-design/medios-impresos/">medios impresos</a> o pantallas de previsualización de impresión.</td>
+</tr>
+<tr>
+<td>speech</td>
+<td>Lectores de texto para invidentes (Antes <strong>aural</strong>, el cuál ya está obsoleto).</td>
+</tr>
+<tr>
+<td>all</td>
+<td>Todos los dispositivos o medios. El que se utiliza <strong>por defecto</strong>.</td>
+</tr>
+</tbody>
+</table>
+<p>Otros tipos de medios como <code>braille</code>, <code>embossed</code>, <code>handheld</code>, <code>projection</code>, <code>tty</code> o <code>tv</code> aún son válidos, pero están marcados como obsoletos a favor de utilizar tipos de medios de la lista anterior y restringir sus características posteriormente.</p>
+<p>Recordemos que con el siguiente fragmento de código HTML estamos indicando que el nuevo ancho de la pantalla es <strong>el ancho del dispositivo</strong>, por lo que el aspecto del viewport se va a adaptar consecuentemente:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;initial-scale=1, width=device-width&quot;</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p><img alt="Responsive Web Design: La variable device-width" src="../img/device-width.png" /></p>
+<p>Con esto conseguiremos preparar nuestra web para dispositivos móviles y prepararnos para la introducción de reglas <strong>media query</strong> en el documento CSS.</p>
+<h3 id="ejemplos-de-media-queries"><a href="https://lenguajecss.com/css/responsive-web-design/media-queries/#ejemplos-de-media-queries">Ejemplos de media queries</a><a class="headerlink" href="#ejemplos-de-media-queries" title="Permanent link">&para;</a></h3>
+<p>Veamos un ejemplo clásico de <strong>media queries</strong> en el que definimos diferentes estilos dependiendo del dispositivo que estamos utilizando. Observese que en el código existen 3 bloques <code>@media</code> donde se definen estilos CSS para cada uno de esos tipos de dispositivos.</p>
+<p>El código sería el siguiente:</p>
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="o">:</span> <span class="nt">640px</span><span class="o">)</span> <span class="p">{</span>
+      <span class="p">.</span><span class="nc">menu</span> <span class="p">{</span>
+        <span class="k">background</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="p">@</span><span class="k">media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="nt">640px</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="o">:</span> <span class="nt">1280px</span><span class="o">)</span> <span class="p">{</span>
+      <span class="p">.</span><span class="nc">menu</span> <span class="p">{</span>
+        <span class="k">background</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="p">@</span><span class="k">media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="nt">1280px</span><span class="o">)</span> <span class="p">{</span>
+      <span class="p">.</span><span class="nc">menu</span> <span class="p">{</span>
+        <span class="k">background</span><span class="p">:</span> <span class="kc">green</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>El ejemplo anterior muestra un elemento (<em>con clase <code>menu</code></em>) con un color de fondo concreto, dependiendo del tipo de medio con el que se visualice la página:</p>
+<ul>
+<li><strong>Azul</strong> para resoluciones menores a <strong>640 píxeles</strong> de ancho (<em>móviles</em>).</li>
+<li><strong>Rojo</strong> para resoluciones entre <strong>640 píxeles</strong> y <strong>1280 píxeles</strong> de ancho (<em>tablets</em>).</li>
+<li><strong>Verde</strong> para resoluciones mayores a <strong>1280 píxeles</strong> (<em>desktop</em>).</li>
+</ul>
+<p>El número de bloques de reglas <code>@media</code> que se utilicen depende del desarrollador web, ya que no es obligatorio utilizar un número concreto. Se pueden utilizar desde un sólo media query, hasta múltiples de ellos a lo largo de todo el documento CSS.</p>
+<p>Hay que tener en cuenta que los <strong>media queries</strong> también es posible indicarlos desde HTML, utilizando la etiqueta <code>&lt;link&gt;</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;mobile.css&quot;</span>
+          <span class="na">media</span><span class="o">=</span><span class="s">&quot;screen and (max-width: 640px)&quot;</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;tablet.css&quot;</span>
+          <span class="na">media</span><span class="o">=</span><span class="s">&quot;screen and (min-width: 640px) and (max-width: 1280px)&quot;</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;desktop.css&quot;</span>
+          <span class="na">media</span><span class="o">=</span><span class="s">&quot;screen and (min-width: 1280px)&quot;</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p>Estos estilos quedarán separados en varios archivos diferentes. Ten en cuenta que todos serán descargados al cargar la página, sólo que no serán aplicados al documento hasta que cumplan los requisitos indicados en el atributo <code>media</code>.</p>
+<h3 id="tipos-de-caracteristicas"><a href="https://lenguajecss.com/css/responsive-web-design/media-queries/#tipos-de-características">Tipos de características</a><a class="headerlink" href="#tipos-de-caracteristicas" title="Permanent link">&para;</a></h3>
+<p>En los ejemplos anteriores solo hemos utilizado <code>max-width</code> y <code>min-width</code> como tipos de características a utilizar en condiciones de media query. Sin embargo, tenemos una lista de tipos de características que podemos utilizar:</p>
+<table>
+<thead>
+<tr>
+<th>Tipo de característica</th>
+<th>Valores</th>
+<th>¿Cuándo se aplica?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>width</code></td>
+<td></td>
+<td>Si el dispositivo tiene el tamaño indicado exactamente.</td>
+</tr>
+<tr>
+<td><code>min-width</code></td>
+<td></td>
+<td>Si el dispositivo tiene un tamaño de ancho mayor al indicado.</td>
+</tr>
+<tr>
+<td><code>max-width</code></td>
+<td></td>
+<td>Si el dispositivo tiene un tamaño de ancho menor al indicado.</td>
+</tr>
+<tr>
+<td><code>aspect-ratio</code></td>
+<td><em>aspect-ratio</em></td>
+<td>Si el dispositivo encaja con la proporción de aspecto indicada.</td>
+</tr>
+<tr>
+<td><code>orientation</code></td>
+<td>landscape</td>
+<td>portrait</td>
+</tr>
+</tbody>
+</table>
+<p>Existen otras características minoritarias que en algunos casos límite pueden ser interesantes, como por ejemplo <code>scan</code>, <code>resolution</code>, <code>monochrome</code>, <code>grid</code>, <code>color-index</code>, <code>color</code>, etc...</p>
+<h3 id="condicionales-css"><a href="https://lenguajecss.com/css/responsive-web-design/media-queries/#condicionales-css">Condicionales CSS</a><a class="headerlink" href="#condicionales-css" title="Permanent link">&para;</a></h3>
+<p>Aunque no forman parte de las media queries en sí, podemos utilizar la regla <code>@supports</code> para establecer condicionales y crear reglas similares a <code>@media</code> pero dependiendo de si el navegador del usuario soporta una característica concreta.</p>
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">supports</span> <span class="nt">not</span> <span class="o">(</span><span class="nt">display</span><span class="o">:</span> <span class="nt">grid</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">display</span><span class="o">:</span> <span class="nt">flex</span><span class="o">)</span> <span class="p">{</span>
+      <span class="p">.</span><span class="nc">content</span> <span class="p">{</span>
+        <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
+        <span class="k">justify-content</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="p">@</span><span class="k">supports</span> <span class="nt">not</span> <span class="o">(</span><span class="nt">display</span><span class="o">:</span> <span class="nt">flex</span><span class="o">)</span> <span class="p">{</span>
+      <span class="p">.</span><span class="nc">content</span> <span class="p">{</span>
+        <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>Estas reglas son muy interesantes para casos particulares donde queremos dar soporte a navegadores antiguos, pero hay que tener en cuenta que navegadores como <strong>Internet Explorer</strong> (<em>quizás uno de los más interesantes para utilizarlo</em>) no tienen soporte para la regla <code>@supports</code>, aún ni en su versión 11.</p>
+<hr />
+<h2 id="medios-impresos">Medios impresos<a class="headerlink" href="#medios-impresos" title="Permanent link">&para;</a></h2>
+<p>Ahora que ya disponemos de un conocimiento amplio y extenso de CSS, debemos saber que CSS no se limita sólo a páginas webs. Por ejemplo, muy probablemente conozcas uno de los formatos más populares de <strong>ebooks</strong> (<em>libros electronicos</em>): el <strong>formato EPUB</strong>. Este formato no es más que un archivo comprimido en formato <code>.zip</code>, que en su interior contiene HTML (<em>más concretamente, XML</em>) y CSS.</p>
+<p>Algunos programas o aplicaciones, como por ejemplo el editor <a href="https://code.visualstudio.com/">Visual Studio Code</a>, la versión de escritorio de <a href="https://www.whatsapp.com/">WhatsApp</a> o <a href="https://slack.com/intl/es-es/">Slack</a> están hechos con <a href="https://www.electronjs.org/">Electron</a>, que básicamente utilizan HTML y Javascript para crear la interfaz visual que utiliza el usuario y mediante CSS cambian el aspecto visual de la aplicación. Esto sólo son algunos casos en los que CSS forma parte de nuestra vida casi sin darnos cuenta.</p>
+<h3 id="que-son-los-medios-impresos"><a href="https://lenguajecss.com/css/responsive-web-design/medios-impresos/#qué-son-los-medios-impresos">¿Qué son los medios impresos?</a><a class="headerlink" href="#que-son-los-medios-impresos" title="Permanent link">&para;</a></h3>
+<p>Otra de las características de CSS que nos puede interesar es la de para preparar hojas de estilo destinadas a la <strong>impresión de documentos</strong>. Esto es, un documento CSS especialmente diseñado para que se aplique unicamente cuando el usuario desee <strong>imprimir una página</strong>.</p>
+<p>Este sistema no es más que una de las posibilidades de los <a href="/css/responsive-web-design/media-queries/">media queries</a>. En lugar de aplicar una regla <code>@media</code> a <code>screen</code> (<em>pantallas</em>), lo aplicaramos a <code>print</code> (<em>documentos de impresión</em>):</p>
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">media</span> <span class="nt">print</span> <span class="p">{</span>
+      <span class="c">/* Reglas de CSS */</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>También se puede hacer desde el HTML, a través de la etiqueta <code>&lt;link&gt;</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">media</span><span class="o">=</span><span class="s">&quot;print&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;print.css&quot;</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p>La razón es obvia, en una impresión nos pueden interesar ciertos detalles:</p>
+<ul>
+<li><strong>Eliminar</strong> fondos negros o intentar que predomine el texto blanco (<em>gastar menos tinta</em>).</li>
+<li>Usar tipografías <strong>apropiadas para impresión</strong> (<em>cansar menos la vista, reducir gasto de tinta</em>).</li>
+<li><strong>Ocultar</strong> publicidad, menús, navegación, etc... (<em>no tienen sentido en un documento impreso</em>).</li>
+<li><strong>Mostrar</strong> ciertos detalles necesarios (<em>la URL de los enlaces, por ejemplo</em>).</li>
+</ul>
+<h3 id="ejemplo-de-medios-impresos"><a href="https://lenguajecss.com/css/responsive-web-design/medios-impresos/#ejemplo-de-medios-impresos">Ejemplo de medios impresos</a><a class="headerlink" href="#ejemplo-de-medios-impresos" title="Permanent link">&para;</a></h3>
+<p>Quizás, la forma más sencilla de añadir <strong>medios impresos</strong> a un documento CSS ya existente, es simplemente añadir las reglas de impresión <code>@media print</code> al final del documento, para que se apliquen sobre las anteriores que ya existen. De esta forma partimos del diseño actual que ya tenemos, haciendo pequeños cambios en la versión de impresión:</p>
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">media</span> <span class="nt">print</span> <span class="p">{</span>
+      <span class="c">/* Ocultar zonas no relevantes */</span>
+      <span class="p">.</span><span class="nc">navigation</span><span class="o">,</span>
+      <span class="p">.</span><span class="nc">banner</span><span class="o">,</span>
+      <span class="p">.</span><span class="nc">menu</span> <span class="p">{</span>
+        <span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+      <span class="p">}</span>
+
+      <span class="c">/* Cambiar tipografía o alternar colores */</span>
+      <span class="nt">body</span><span class="o">,</span>
+      <span class="p">.</span><span class="nc">content</span> <span class="p">{</span>
+        <span class="k">font-family</span><span class="p">:</span> <span class="n">Ecofont</span><span class="p">,</span> <span class="kc">sans-serif</span><span class="p">;</span>
+        <span class="k">background</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
+        <span class="k">color</span><span class="p">:</span> <span class="kc">black</span><span class="p">;</span>
+      <span class="p">}</span>
+
+      <span class="c">/* Mostrar enlaces */</span>
+      <span class="nt">a</span><span class="p">::</span><span class="nd">after</span> <span class="p">{</span>
+        <span class="k">content</span><span class="p">:</span> <span class="s2">&quot;(&quot;</span> <span class="nb">attr</span><span class="p">(</span><span class="n">href</span><span class="p">)</span> <span class="s2">&quot;)&quot;</span><span class="p">;</span>
+        <span class="k">padding</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>Si imprimes muy a menudo documentos, puedes utilizar <strong>tipografías ecológicas</strong> como <a href="https://www.ecofont.com/">EcoFont</a> o <a href="https://www.dafont.com/es/spranq-eco-sans.font">EcoSans</a>, una <strong>tipografía</strong> que tiene pequeños agujeros en su interior para ahorrar tinta en la impresión de borradores y que mantiene casi el mismo aspecto visual:</p>
+<p><img alt="Ecofont, una tipografía para ahorrar tinta" src="../img/ecofont.png" /></p>
+<p>Obviamente, depende del desarrollador preferir escribir unas reglas <code>@media print</code> al final del documento CSS aplicando herencia con el resto de los estilos de la página, o crear un documento CSS individual a parte, donde colocará todos los estilos de impresión y cargará a través de su elemento <code>&lt;link media="print"&gt;</code> correspondiente.</p>
+<hr />
+<h2 id="medios-paginados">Medios paginados<a class="headerlink" href="#medios-paginados" title="Permanent link">&para;</a></h2>
+<p>Existe una particularidad de CSS denominada <strong>CSS Paged Media</strong>, que no es más que un conjunto de características y propiedades específicas para <strong>medios paginados</strong>, como por ejemplo podrían ser, documentos impresos o la exportación en archivos <code>.pdf</code>.</p>
+<h3 id="la-regla-page"><a href="https://lenguajecss.com/css/responsive-web-design/medios-paginados/#la-regla-page">La regla @page</a><a class="headerlink" href="#la-regla-page" title="Permanent link">&para;</a></h3>
+<p>Existen varias propiedades CSS interesantes para estos medios, que pueden ser utilizadas dentro de un bloque <code>@page</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valores</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>size</code></td>
+<td><strong>auto</strong></td>
+<td><em>tipo documento</em></td>
+</tr>
+<tr>
+<td><code>margin</code></td>
+<td></td>
+<td>Idéntica a la propiedad <code>margin</code> que conocemos.</td>
+</tr>
+</tbody>
+</table>
+<p>Mediante la propiedad <code>size</code> se puede establecer el formato de la página, tanto mediante los valores predefinidos <code>portrait</code> o <code>landscape</code> (<em>vertical o apaisado</em>), como especificando las medidas mediante unidades:</p>
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">page</span> <span class="p">{</span>
+      <span class="nt">size</span><span class="o">:</span> <span class="nt">8</span><span class="p">.</span><span class="nc">27in</span> <span class="nt">11</span><span class="p">.</span><span class="nc">69in</span><span class="o">;</span>  <span class="c">/* DIN A4 */</span>
+      <span class="nt">margin</span><span class="o">:</span> <span class="p">.</span><span class="nc">5in</span> <span class="p">.</span><span class="nc">5in</span> <span class="p">.</span><span class="nc">5in</span> <span class="p">.</span><span class="nc">5in</span><span class="o">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>De forma adicional, también puedes indicar el <strong>tipo de documento</strong> mediante algunas palabras clave como valor de la propiedad <code>size</code> (<em>las cuales se pueden usar junto a <code>landscape</code> o <code>portrait</code> para definir su orientación</em>):</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Medidas</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>A5</code></td>
+<td>148mm×210mm</td>
+<td>Documento de mitad de tamaño de un folio DIN A4.</td>
+</tr>
+<tr>
+<td><code>B5</code></td>
+<td>176mm×250mm</td>
+<td>Documento de tamaño entre A5 y A4.</td>
+</tr>
+<tr>
+<td><code>A4</code></td>
+<td>210mm×297mm</td>
+<td>Documento de exactamente el tamaño folio DIN A4.</td>
+</tr>
+<tr>
+<td><code>B4</code></td>
+<td>250mm×353mm</td>
+<td>Documento de tamaño entre A4 y A3.</td>
+</tr>
+<tr>
+<td><code>A3</code></td>
+<td>297mm×420mm</td>
+<td>Documento del doble de tamaño de un folio DIN A4.</td>
+</tr>
+<tr>
+<td><code>letter</code></td>
+<td>215.9mm×279.4mm</td>
+<td>Documento de tamaño de las cartas americanas.</td>
+</tr>
+<tr>
+<td><code>legal</code></td>
+<td>215.9mm×355.6mm</td>
+<td>Documento de tamaño de notificación legal americana.</td>
+</tr>
+<tr>
+<td><code>ledger</code></td>
+<td>279.4mm×431.8mm</td>
+<td>Documento de tamaño libro americano.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<blockquote>
+<p><strong>Nota</strong>: Cualquier propiedad utilizada dentro de una regla <code>@page</code> que no sea una de las anteriores será ignorada.</p>
+</blockquote>
+</blockquote>
+<p>Una vez tenemos definida la estructura de cada página del documento, pasaremos de una página web que tiene una estructura continua a un documento paginado, donde cada cierto tamaño tiene un <strong>salto de página</strong> que interrumpe el contenido.</p>
+<p><img alt="Paginación de contenidos" src="../img/paginacion.png" /></p>
+<p>Al establecer dichos saltos de página, el contenido se adapta al tamaño de cada página especificado, pero puede ocurrir que debido a los límites impuestos por los saltos de página, un cierto contenido <strong>se corte a la mitad</strong> y se vea continuado en la siguiente página, comportamiento no deseable en prácticamente el 100% de los casos.</p>
+<h3 id="orphans-widows"><a href="https://lenguajecss.com/css/responsive-web-design/medios-paginados/#orphans-widows">Orphans &amp; Widows</a><a class="headerlink" href="#orphans-widows" title="Permanent link">&para;</a></h3>
+<p>Existen casos en los que el comportamiento descrito anteriormente no sea un problema, sin embargo, pueden darse muchos casos en los que sí lo sería:</p>
+<ul>
+<li>Una imagen o una tabla empieza <strong>al final</strong> de una página (<em>se muestra cortada</em>).</li>
+<li>Un párrafo de texto comienza en la <strong>última línea</strong> de una página (<em>es poco atractivo</em>).</li>
+<li>Un nuevo tema comienza a <strong>mitad</strong> de página (<em>lo ideal sería comenzar a principio de página</em>).</li>
+</ul>
+<p>Para evitar estos problemas de paginación se suelen utilizar algunas propiedades interesantes:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valores</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>orphans</code></td>
+<td></td>
+<td>Número de líneas &lt;<huérfanas>&gt; permitidas (<em>antes de salto</em>)</td>
+</tr>
+<tr>
+<td><code>widows</code></td>
+<td></td>
+<td>Número de líneas &lt;<viudas>&gt; permitidas (<em>después de salto</em>)</td>
+</tr>
+</tbody>
+</table>
+<p>Mediante la propiedad <code>orphans</code> (<em>líneas huérfanas</em>) indicamos hasta que número de líneas no vamos a permitir que aparezcan de forma aislada al final de una página.</p>
+<p>Por ejemplo, si especificamos <code>orphans: 3</code>, significa que cualquier párrafo cortado con el salto de página, debe mostrar más de 3 líneas al final de la página. En caso contrario, se moverá el párrafo completo a la siguiente página.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">p</span> <span class="p">{</span>
+      <span class="k">orphans</span><span class="p">:</span> <span class="mi">3</span><span class="p">;</span>
+      <span class="k">widows</span><span class="p">:</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>Por otra parte, la propiedad <code>widows</code> (<em>líneas viudas</em>) es la propiedad opuesta a <code>orphans</code>. Si al principio de una página quedan menos de ese número de líneas indicado en <code>widows</code>, se ajusta para que lo supere.</p>
+<h3 id="saltos-de-pagina"><a href="https://lenguajecss.com/css/responsive-web-design/medios-paginados/#saltos-de-página">Saltos de página</a><a class="headerlink" href="#saltos-de-pagina" title="Permanent link">&para;</a></h3>
+<p>Por último, mencionar las propiedades de salto de página, muy útiles para evitar comportamientos que pueden quedar poco atractivos en un documento paginado:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valores</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>page-break-inside</code></td>
+<td><strong>auto</strong></td>
+<td>avoid</td>
+</tr>
+<tr>
+<td><code>page-break-before</code></td>
+<td><strong>auto</strong></td>
+<td>always</td>
+</tr>
+<tr>
+<td><code>page-break-after</code></td>
+<td><strong>auto</strong></td>
+<td>always</td>
+</tr>
+</tbody>
+</table>
+<p>La propiedad <code>page-break-inside</code> se utiliza para evitar que un cierto elemento pueda ser cortado a la mitad en un salto de página, como por ejemplo imágenes, tablas o fragmentos de código:</p>
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">media</span> <span class="nt">print</span> <span class="p">{</span>
+      <span class="nt">table</span><span class="o">,</span>
+      <span class="nt">img</span><span class="o">,</span>
+      <span class="nt">pre</span><span class="o">,</span>
+      <span class="nt">code</span> <span class="p">{</span>
+        <span class="k">page-break-inside</span><span class="p">:</span> <span class="kc">avoid</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>De forma similar, las propiedades <code>page-break-before</code> y <code>page-break-after</code> se utilizan para evitar o forzar al generar el documento paginado que ciertos elementos se mantengan antes o después del salto de página.</p>
+<h3 id="pseudoclases-de-pagina"><a href="https://lenguajecss.com/css/responsive-web-design/medios-paginados/#pseudoclases-de-página">Pseudoclases de página</a><a class="headerlink" href="#pseudoclases-de-pagina" title="Permanent link">&para;</a></h3>
+<p>También existen algunas <a href="/css/selectores/pseudoclases/">pseudoclases</a> específicas para paginación, que permiten hacer referencia a páginas concretas del documento generado, pudiendo aplicar estilos sólo a este tipo de páginas:</p>
+<table>
+<thead>
+<tr>
+<th>Pseudo-clase</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>:first</code></td>
+<td>Primera página del documento paginado.</td>
+</tr>
+<tr>
+<td><code>:left</code></td>
+<td>Páginas izquierdas del documento paginado.</td>
+</tr>
+<tr>
+<td><code>:right</code></td>
+<td>Páginas derechas del documento paginado.</td>
+</tr>
+<tr>
+<td><code>:blank</code></td>
+<td>Páginas en blanco (generadas por los saltos de página).</td>
+</tr>
+</tbody>
+</table>
+<p>Sólo algunas propiedades CSS como <code>margin</code>, <code>padding</code>, <code>background</code> u otras pueden estar permitidas dentro de estas pseudoclases especiales.</p>
+<hr />
+<h2 id="preferencias-de-usuario">Preferencias de usuario<a class="headerlink" href="#preferencias-de-usuario" title="Permanent link">&para;</a></h2>
+<p>Dentro del apartado de <strong>media queries</strong> disponemos de una mecánica para detectar ciertas <strong>preferencias de usuario</strong>, o lo que es lo mismo, si el usuario ha indicado algunas preferencias por ciertos detalles en su dispositivo, sistema operativo o navegador que utiliza.</p>
+<table>
+<thead>
+<tr>
+<th>Tipo de preferencia</th>
+<th>Valores</th>
+<th>Detecta si el usuario tiene preferencia por...</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>prefers-color-scheme</code></td>
+<td>dark</td>
+<td>light</td>
+</tr>
+<tr>
+<td><code>prefers-reduced-motion</code></td>
+<td>reduce</td>
+<td>no-preference</td>
+</tr>
+<tr>
+<td><code>prefers-reduced-data</code></td>
+<td>reduce</td>
+<td>no-preference</td>
+</tr>
+</tbody>
+</table>
+<p>Echemos un vistazo detenidamente a cada una de ellas:</p>
+<h3 id="dark-mode-light-mode"><a href="https://lenguajecss.com/css/responsive-web-design/preferencias-usuario/#dark-mode-light-mode">Dark mode / Light mode</a><a class="headerlink" href="#dark-mode-light-mode" title="Permanent link">&para;</a></h3>
+<p>Por ejemplo, una de las características más recurrentes en interfaces de usuario es la posibilidad de elegir un <strong>dark mode</strong> o <strong>dark theme</strong>, es decir, un sistema que permita al usuario seleccionar un <strong>tema claro</strong> (<em>generalmente con fondo blanco</em>) o un <strong>tema oscuro</strong> (<em>generalmente con fondo negro</em>).</p>
+<p>Aunque podemos hacer esto de forma <strong>manual</strong>, existe una regla <code>@media</code> especial denominada <code>prefers-color-scheme</code> donde podemos detectar si el usuario tiene preferencia por uno de estos dos valores (<em>establecido en las opciones del sistema operativo</em>) y actuar en consecuencia. Los valores que es posible indicar son <code>light</code> o <code>dark</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">media</span> <span class="o">(</span><span class="nt">prefers-color-scheme</span><span class="o">:</span> <span class="nt">dark</span><span class="o">)</span> <span class="p">{</span>
+      <span class="p">:</span><span class="nd">root</span> <span class="p">{</span>
+        <span class="err">--</span><span class="k">background-color</span><span class="p">:</span> <span class="mh">#333</span><span class="p">;</span>
+        <span class="err">--</span><span class="n">foreground-color</span><span class="p">:</span> <span class="mh">#eee</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="p">@</span><span class="k">media</span> <span class="o">(</span><span class="nt">prefers-color-scheme</span><span class="o">:</span> <span class="nt">light</span><span class="o">)</span> <span class="p">{</span>
+      <span class="p">:</span><span class="nd">root</span> <span class="p">{</span>
+        <span class="err">--</span><span class="k">background-color</span><span class="p">:</span> <span class="mh">#eee</span><span class="p">;</span>
+        <span class="err">--</span><span class="n">foreground-color</span><span class="p">:</span> <span class="mh">#111</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="nt">body</span> <span class="p">{</span>
+      <span class="k">background-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">background</span><span class="o">-</span><span class="kc">color</span><span class="p">);</span>
+      <span class="k">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">foreground</span><span class="o">-</span><span class="kc">color</span><span class="p">);</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>El soporte de dicha propiedad es bastante bueno en la actualidad, incluso en dispositivos móviles, por lo que se puede utilizar con seguridad.</p>
+<h3 id="movimiento-reducido"><a href="https://lenguajecss.com/css/responsive-web-design/preferencias-usuario/#movimiento-reducido">Movimiento reducido</a><a class="headerlink" href="#movimiento-reducido" title="Permanent link">&para;</a></h3>
+<p>Las interfaces modernas en la actualidad suelen apostar por diseños con animaciones y transiciones que hacen más agradables los cambios de estado y acciones específicas en una web. Sin embargo, por cuestiones de accesibilidad estas animaciones también pueden suponer molestias a usuarios que son especialmente sensibles a este tipo de estímulos.</p>
+<p>En CSS tenemos una característica que permite notificar al desarrollador web si un usuario ha elegido en su sistema que prefiere eliminar o desactivar este tipo de animaciones o transiciones, mediante <code>prefers-reduced-motion</code>, la cuál tiene los valores <code>no-preference</code> o <code>reduce</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">media</span> <span class="o">(</span><span class="nt">prefers-reduced-motion</span><span class="o">:</span> <span class="nt">reduce</span><span class="o">)</span> <span class="p">{</span>
+      <span class="p">:</span><span class="nd">root</span> <span class="p">{</span>
+        <span class="err">--</span><span class="n">preferred-animation</span><span class="p">:</span> <span class="kc">soft</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="p">.</span><span class="nc">animated</span> <span class="p">{</span>
+      <span class="k">animation</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">preferred</span><span class="o">-</span><span class="n">animation</span><span class="p">,</span> <span class="n">hard</span><span class="p">)</span> <span class="mi">2</span><span class="kt">s</span> <span class="kc">linear</span> <span class="kc">infinite</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>En el ejemplo anterior, utilizamos la variable <code>--preferred-animation</code> para seleccionar el tipo de animación preferida. Por defecto, se utilizará <code>hard</code>, pero en el caso de tener esta característica activada, la animación utilizada será <code>soft</code>. De la misma forma, también podemos utilizar la propiedad <code>animation-name</code> a <code>none</code>, para desactivar las animaciones por completo.</p>
+<p>El soporte de esta característica también es bastante bueno, por lo que puede ser utilizado de forma segura:</p>
+<h3 id="ancho-de-banda-reducido"><a href="https://lenguajecss.com/css/responsive-web-design/preferencias-usuario/#ancho-de-banda-reducido">Ancho de banda reducido</a><a class="headerlink" href="#ancho-de-banda-reducido" title="Permanent link">&para;</a></h3>
+<p>De la misma forma que en ejemplos anteriores, el usuario puede preferir usar su <strong>ancho de banda disponible</strong> de forma reducida, evitando así descargas que consuman gran cantidad de datos, con su correspondiente gasto que en ciertas situaciones puede ser un ancho de banda límitado.</p>
+<p>La característica <code>prefers-reduced-data</code> nos permite recuperar del sistema o navegador del usuario la opción <code>reduce</code> o <code>no-preference</code> para saber que preferencia tiene seleccionada. De esta forma podemos crear estilos donde se establezcan imágenes de bajo tamaño, o incluso utilizar gradientes o colores sólidos en lugar de imágenes.</p>
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">media</span> <span class="o">(</span><span class="nt">prefers-reduced-data</span><span class="o">:</span> <span class="nt">reduce</span><span class="o">)</span> <span class="p">{</span>
+      <span class="p">:</span><span class="nd">root</span> <span class="p">{</span>
+        <span class="err">--</span><span class="n">preferred-background</span><span class="p">:</span> <span class="nb">linear-gradient</span><span class="p">(</span><span class="mi">120</span><span class="kt">deg</span><span class="p">,</span> <span class="kc">steelblue</span><span class="p">,</span> <span class="kc">blue</span><span class="p">,</span> <span class="kc">black</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="nt">body</span> <span class="p">{</span>
+      <span class="k">background</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">preferred</span><span class="o">-</span><span class="n">background</span><span class="p">,</span> <span class="nb">url</span><span class="p">(</span><span class="sx">/assets/background.png</span><span class="p">));</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<p>Desgraciadamente, esta característica no tiene soporte aún en los navegadores. Habrá que mantenerse a la espera de que los navegadores comiencen a implementarla.</p>
+<hr />
+<p><strong>Fuente:</strong> <a href="https://lenguajecss.com/">Lenguaje de CSS</a> por <a href="https://manzdev.github.io/">Manz</a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../09-efectos/" title="Efectos" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Efectos
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../11-animaciones_CSS/" title="Animaciones CSS" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Animaciones CSS
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/saucedoinfo" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/saucedoinfo" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.instagram.com/saucedo.info/" target="_blank" rel="noopener" title="www.instagram.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.instant', 'navigation.expand', 'tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

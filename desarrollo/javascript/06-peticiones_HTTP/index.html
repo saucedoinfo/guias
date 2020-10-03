@@ -1,0 +1,1961 @@
+
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Coleccion de Guias de Desarrollo y diseño.">
+      
+      
+        <link rel="canonical" href="https://saucedoinfo.github.io/guias/desarrollo/javascript/06-peticiones_HTTP/">
+      
+      
+        <meta name="author" content="Fernando S. Saucedo">
+      
+      <link rel="shortcut icon" href="../../../img/favicon-16x16.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.14">
+    
+    
+      
+        <title>Peticiones HTTP - Guias de Desarrollo y diseño</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d3202873.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ff0a5ce4.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#000000">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#peticiones-http" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-header-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Guias de Desarrollo y diseño
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Peticiones HTTP
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../html/01-introduccion_a_HTML5/" class="md-tabs__link">
+          Desarrollo
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" class="md-tabs__link">
+          Herramientas IT
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    Guias de Desarrollo y diseño
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Desarrollo
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Desarrollo" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Desarrollo
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Html
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Html" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        <span class="md-nav__icon md-icon"></span>
+        Html
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/01-introduccion_a_HTML5/" title="Introduccion a HTML" class="md-nav__link">
+      Introduccion a HTML
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/02-etiquetas_semanticas/" title="Etiquetas semánticas" class="md-nav__link">
+      Etiquetas semánticas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/03-etiquetas_multimedia/" title="Etiquetas multimedias" class="md-nav__link">
+      Etiquetas multimedias
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/04-etiquetas_de_cabecera/" title="Etiquetas de cabecera" class="md-nav__link">
+      Etiquetas de cabecera
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/05-etiquetas_de_formularios/" title="Etiquetas de formularios" class="md-nav__link">
+      Etiquetas de formularios
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/06-etiquetas_de_scripting/" title="Etiquetas de scripting" class="md-nav__link">
+      Etiquetas de scripting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Css
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Css" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        <span class="md-nav__icon md-icon"></span>
+        Css
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/01-introduccion_a_CSS/" title="Introducción a CSS" class="md-nav__link">
+      Introducción a CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/02-modelo_de_cajas/" title="Modelo de cajas" class="md-nav__link">
+      Modelo de cajas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/03-colores_y_fondos/" title="Colores y fondos" class="md-nav__link">
+      Colores y fondos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/04-selectores_CSS/" title="Selectores CSS" class="md-nav__link">
+      Selectores CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/05-Fuentes_y_tipografias/" title="Fuentes y tipografías" class="md-nav__link">
+      Fuentes y tipografías
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/06-representacion_de_datos/" title="Representación de datos" class="md-nav__link">
+      Representación de datos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/07_maquetacion_y_colocacion/" title="Maquetación y colocación" class="md-nav__link">
+      Maquetación y colocación
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/08-interacciones/" title="Interacciones" class="md-nav__link">
+      Interacciones
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/09-efectos/" title="Efectos" class="md-nav__link">
+      Efectos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/10-responsive_Web_Design/" title="Responsive Web Design" class="md-nav__link">
+      Responsive Web Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/11-animaciones_CSS/" title="Animaciones CSS" class="md-nav__link">
+      Animaciones CSS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3" checked>
+    
+    <label class="md-nav__link" for="nav-2-3">
+      JavaScript
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="JavaScript" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon"></span>
+        JavaScript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01-introducci%C3%B3n_a_javascript/" title="Introducción a Javascript" class="md-nav__link">
+      Introducción a Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02-fundamentos_de_javascript/" title="Fundamentos de Javascript" class="md-nav__link">
+      Fundamentos de Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-caracteristicas/" title="Características" class="md-nav__link">
+      Características
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-DOM/" title="DOM" class="md-nav__link">
+      DOM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-asincronia/" title="Asincronía" class="md-nav__link">
+      Asincronía
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Peticiones HTTP
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Peticiones HTTP" class="md-nav__link md-nav__link--active">
+      Peticiones HTTP
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ajax-peticiones-http" class="md-nav__link">
+    AJAX: Peticiones HTTP
+  </a>
+  
+    <nav class="md-nav" aria-label="AJAX: Peticiones HTTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-una-peticion-http" class="md-nav__link">
+    ¿Qué es una petición HTTP?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#peticiones-http-mediante-ajax" class="md-nav__link">
+    Peticiones HTTP mediante AJAX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-de-peticion-ajax" class="md-nav__link">
+    Métodos de petición AJAX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mpa-multiple-page-application" class="md-nav__link">
+    MPA: Multiple Page Application
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spa-single-page-application" class="md-nav__link">
+    SPA: Single Page Application
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xhr-xmlhttprequest" class="md-nav__link">
+    XHR: XMLHttpRequest
+  </a>
+  
+    <nav class="md-nav" aria-label="XHR: XMLHttpRequest">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-xmlhttprequest" class="md-nav__link">
+    ¿Qué es XMLHttpRequest?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#politica-cors" class="md-nav__link">
+    Política CORS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-objeto-xmlhttprequest" class="md-nav__link">
+    El objeto XMLHttpRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-de-xmlhttprequest" class="md-nav__link">
+    Métodos de XMLHttpRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eventos-de-xmlhttprequest" class="md-nav__link">
+    Eventos de XMLHttpRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-ciclo-readystate" class="md-nav__link">
+    El ciclo readyState
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fetch-peticiones-asincronas" class="md-nav__link">
+    Fetch: Peticiones Asíncronas
+  </a>
+  
+    <nav class="md-nav" aria-label="Fetch: Peticiones Asíncronas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#peticiones-http-con-fetch" class="md-nav__link">
+    Peticiones HTTP con fetch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cabeceras-headers" class="md-nav__link">
+    Cabeceras (Headers)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#respuesta-de-la-peticion-http" class="md-nav__link">
+    Respuesta de la petición HTTP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-de-procesamiento" class="md-nav__link">
+    Métodos de procesamiento
+  </a>
+  
+    <nav class="md-nav" aria-label="Métodos de procesamiento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-utilizando-promesas" class="md-nav__link">
+    Ejemplo utilizando promesas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-utilizando-asyncawait" class="md-nav__link">
+    Ejemplo utilizando Async/await
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#politica-cors_1" class="md-nav__link">
+    Política CORS
+  </a>
+  
+    <nav class="md-nav" aria-label="Política CORS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-cors" class="md-nav__link">
+    ¿Qué es CORS?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-control-allow-origin" class="md-nav__link">
+    Access-Control-Allow-Origin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cors-en-entornos-de-desarrollo" class="md-nav__link">
+    CORS en entornos de desarrollo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Herramientas IT
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Herramientas IT" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Herramientas IT
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Terminal
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Terminal" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon"></span>
+        Terminal
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" title="Introducción a la terminal" class="md-nav__link">
+      Introducción a la terminal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/02-operaciones_con_ficheros/" title="Operaciones con ficheros" class="md-nav__link">
+      Operaciones con ficheros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/03-administraci%C3%B3n_del_sistema/" title="Administración del sistema" class="md-nav__link">
+      Administración del sistema
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/markdown/" title="Markdown" class="md-nav__link">
+      Markdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/pip/" title="Pip" class="md-nav__link">
+      Pip
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/mkdocs/" title="Mkdocs" class="md-nav__link">
+      Mkdocs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../about/" title="Acerca de" class="md-nav__link">
+      Acerca de
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ajax-peticiones-http" class="md-nav__link">
+    AJAX: Peticiones HTTP
+  </a>
+  
+    <nav class="md-nav" aria-label="AJAX: Peticiones HTTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-una-peticion-http" class="md-nav__link">
+    ¿Qué es una petición HTTP?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#peticiones-http-mediante-ajax" class="md-nav__link">
+    Peticiones HTTP mediante AJAX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-de-peticion-ajax" class="md-nav__link">
+    Métodos de petición AJAX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mpa-multiple-page-application" class="md-nav__link">
+    MPA: Multiple Page Application
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spa-single-page-application" class="md-nav__link">
+    SPA: Single Page Application
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xhr-xmlhttprequest" class="md-nav__link">
+    XHR: XMLHttpRequest
+  </a>
+  
+    <nav class="md-nav" aria-label="XHR: XMLHttpRequest">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-xmlhttprequest" class="md-nav__link">
+    ¿Qué es XMLHttpRequest?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#politica-cors" class="md-nav__link">
+    Política CORS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-objeto-xmlhttprequest" class="md-nav__link">
+    El objeto XMLHttpRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-de-xmlhttprequest" class="md-nav__link">
+    Métodos de XMLHttpRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eventos-de-xmlhttprequest" class="md-nav__link">
+    Eventos de XMLHttpRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-ciclo-readystate" class="md-nav__link">
+    El ciclo readyState
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fetch-peticiones-asincronas" class="md-nav__link">
+    Fetch: Peticiones Asíncronas
+  </a>
+  
+    <nav class="md-nav" aria-label="Fetch: Peticiones Asíncronas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#peticiones-http-con-fetch" class="md-nav__link">
+    Peticiones HTTP con fetch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cabeceras-headers" class="md-nav__link">
+    Cabeceras (Headers)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#respuesta-de-la-peticion-http" class="md-nav__link">
+    Respuesta de la petición HTTP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-de-procesamiento" class="md-nav__link">
+    Métodos de procesamiento
+  </a>
+  
+    <nav class="md-nav" aria-label="Métodos de procesamiento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-utilizando-promesas" class="md-nav__link">
+    Ejemplo utilizando promesas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-utilizando-asyncawait" class="md-nav__link">
+    Ejemplo utilizando Async/await
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#politica-cors_1" class="md-nav__link">
+    Política CORS
+  </a>
+  
+    <nav class="md-nav" aria-label="Política CORS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-cors" class="md-nav__link">
+    ¿Qué es CORS?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-control-allow-origin" class="md-nav__link">
+    Access-Control-Allow-Origin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cors-en-entornos-de-desarrollo" class="md-nav__link">
+    CORS en entornos de desarrollo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/saucedoinfo/guias/edit/master/docs/desarrollo/javascript/06-peticiones_HTTP.md" title="Editar esta página" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="peticiones-http">Peticiones HTTP<a class="headerlink" href="#peticiones-http" title="Permanent link">&para;</a></h1>
+<h2 id="ajax-peticiones-http">AJAX: Peticiones HTTP<a class="headerlink" href="#ajax-peticiones-http" title="Permanent link">&para;</a></h2>
+<p>Un <strong>navegador</strong>, durante la carga de una página, suele realizar múltiples <strong>peticiones HTTP</strong> a un servidor para solicitar los archivos que necesita renderizar en la página. Es el caso de, en primer lugar, el documento <code>.html</code> de la página (<em>donde se hace referencia a múltiples archivos</em>) y luego todos esos archivos relacionados: los ficheros de estilos <code>.css</code>, las imágenes <code>.jpg</code>, <code>.png</code>, <code>.webp</code> u otras, los scripts <code>.js</code>, las tipografías <code>.ttf</code>, <code>.woff</code> o <code>.woff2</code>, etc.</p>
+<h3 id="que-es-una-peticion-http">¿Qué es una petición HTTP?<a class="headerlink" href="#que-es-una-peticion-http" title="Permanent link">&para;</a></h3>
+<p>Una <strong>petición HTTP</strong> es como suele denominarse a la acción por parte del navegador de solicitar a un servidor web un documento o archivo, ya sea un fichero <code>.html</code>, una imagen, una tipografía, un archivo <code>.js</code>, etc. Gracias a dicha petición, el navegador puede descargar ese archivo, almacenarlo en un <strong>caché temporal de archivos del navegador</strong> y, finalmente, mostrarlo en la página actual que lo ha solicitado.</p>
+<h3 id="peticiones-http-mediante-ajax">Peticiones HTTP mediante AJAX<a class="headerlink" href="#peticiones-http-mediante-ajax" title="Permanent link">&para;</a></h3>
+<p>Con el tiempo, aparece una nueva modalidad de realizar peticiones, denominada <strong>AJAX</strong> (<em>Asynchronous Javascript and XML</em>). Esta modalidad se basa en que la <strong>petición HTTP</strong> se realiza desde Javascript, de forma transparente al usuario, descargando la información y pudiendo tratarla <strong>sin necesidad de mostrarla directamente en la página</strong>.</p>
+<p>Esto produce un interesante cambio en el panorama que había entonces, puesto que podemos hacer actualizaciones de contenidos <strong>de forma parcial</strong>, de modo que se actualice una página «<strong>en vivo</strong>», sin necesidad de recargar toda la página, sino solamente actualizado una pequeña parte de ella, pudiendo utilizar Javascript para crear todo tipo de lógica de apoyo.</p>
+<p><img alt="AJAX: Asynchronous Javascript and XML" src="../img/ajax.png" /></p>
+<p>Originalmente, a este sistema de realización de peticiones HTTP se le llamó <strong>AJAX</strong>, donde la <code>X</code> significa <strong>XML</strong>, el formato ligero de datos que más se utilizaba en aquel entonces. Actualmente, sobre todo en el mundo Javascript, se utiliza más el formato <strong>JSON</strong>, aunque por razones fonéticas evidentes (<em>y evitar confundirlo con una risa</em>) se sigue manteniendo el término <strong>AJAX</strong>.</p>
+<blockquote>
+<p>Posteriormente, y debido a una evolución a mayor escala relacionada con este tema, se ha pasado de crear páginas de tipo <strong>MPA</strong> por defecto, a crear páginas de tipo <strong>SPA</strong>, mucho más frecuentes en entornos empresariales hoy en día.</p>
+</blockquote>
+<h3 id="metodos-de-peticion-ajax">Métodos de petición AJAX<a class="headerlink" href="#metodos-de-peticion-ajax" title="Permanent link">&para;</a></h3>
+<p>Existen varias formas de realizar <strong>peticiones HTTP mediante AJAX</strong>, pero las principales suelen ser <code>XMLHttpRequest</code> y <code>fetch</code> (<em>nativas, incluidas en el navegador por defecto</em>), además de liberías como <code>axios</code> o <code>superagent</code>:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Método</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>XMLHttpRequest</code></td>
+<td align="left">Se suele abreviar como <code>XHR</code>. El más antiguo, y también el más verbose. Nativo.</td>
+</tr>
+<tr>
+<td align="left"><code>fetch</code></td>
+<td align="left">Nuevo sistema nativo de peticiones basado en promesas. Sin soporte en IE.</td>
+</tr>
+<tr>
+<td align="left"><a href="https://github.com/axios/axios">Axios</a></td>
+<td align="left">Librería basada en promesas para realizar peticiones en Node o navegadores.</td>
+</tr>
+<tr>
+<td align="left"><a href="https://github.com/visionmedia/superagent">superagent</a></td>
+<td align="left">Librería para realizar peticiones HTTP tanto en Node como en navegadores.</td>
+</tr>
+<tr>
+<td align="left"><a href="https://github.com/niftylettuce/frisbee">frisbee</a></td>
+<td align="left">Librería basada en fetch. Suele usarse junto a React Native.</td>
+</tr>
+</tbody>
+</table>
+<p>En los siguientes capítulos iremos viendo como funcionan.</p>
+<h3 id="mpa-multiple-page-application">MPA: Multiple Page Application<a class="headerlink" href="#mpa-multiple-page-application" title="Permanent link">&para;</a></h3>
+<p>Tradicionalmente, el sistema que se seguía para crear páginas o aplicaciones web se enmarcaba dentro de la categoría de páginas <strong>MPA</strong> (<em>Multiple Page Application</em>). Bajo este sistema, el navegador se descarga el fichero <code>.html</code>, lo lee y luego realiza las peticiones de los restantes archivos relacionados que encuentra en el documento HTML. Si el usuario pulsa en algún enlace, se descarga el <code>.html</code> de dicho enlace (<em>recargando la página completa</em>) y se repite el proceso.</p>
+<p><img alt="MPA vs SPA" src="../img/mpa-spa.png" /></p>
+<p>Este sistema es el que se observa en páginas en las que vamos navegando mediante enlaces, y al hacer click en ellos, se recarga la página completa. Generalmente, es el que se utiliza frecuentemente en sitios web más tradicionales, los que usan mayoritariamente <strong>backend</strong>.</p>
+<h3 id="spa-single-page-application">SPA: Single Page Application<a class="headerlink" href="#spa-single-page-application" title="Permanent link">&para;</a></h3>
+<p>En el lado opuesto se encuentran las páginas de tipo <strong>SPA</strong> (<em>Single Page Application</em>). Se trata de un enfoque más moderno, donde el navegador se descarga una versión mínima de <code>.html</code> junto a un <code>.js</code> que se encargará de controlar toda la web. Realizará peticiones de los archivos relacionados junto a peticiones a archivos <code>.json</code> o <code>.js</code> con más información o nuevos contenidos, que mostrará en el navegador parcial o completamente, pero sin la necesidad obligatoria de recargar la página completamente.</p>
+<p>Este sistema se utiliza mayoritariamente para construir aplicaciones web como dashboards o sitios de gestión en los que no necesitamos «navegar» a través de una serie de páginas. Por ejemplo, páginas como WhatsApp Web, Twitter o Google Drive podrían ser ejemplos de <strong>SPA</strong>.</p>
+<blockquote>
+<p>Las páginas de tipo <strong>SPA</strong> son las que utilizan en la mayoría de los frameworks de Javascript, como por ejemplo, <strong>React</strong>, <strong>Vue</strong> o <strong>Angular</strong>.</p>
+</blockquote>
+<hr />
+<h2 id="xhr-xmlhttprequest">XHR: XMLHttpRequest<a class="headerlink" href="#xhr-xmlhttprequest" title="Permanent link">&para;</a></h2>
+<p><strong>XMLHttpRequest</strong> (XHR) es un objeto especial de Javascript que permite realizar <a href="/javascript/peticiones-http/ajax/">peticiones HTTP asíncronas (AJAX)</a> de forma nativa desde Javascript. Se trata de la primera implementación que existió en <strong>ECMAScript</strong> antes de surgir <code>fetch</code>, el estándar actual.</p>
+<blockquote>
+<p>Actualmente es más frecuente utilizar <code>fetch</code>, puesto que es una API más actual y moderna que utiliza promesas y nos permite hacer lo mismo (<em>o más</em>) y escribir menos código.</p>
+</blockquote>
+<h3 id="que-es-xmlhttprequest">¿Qué es XMLHttpRequest?<a class="headerlink" href="#que-es-xmlhttprequest" title="Permanent link">&para;</a></h3>
+<p>El objeto <code>XMLHttpRequest</code> se creó originalmente para realizar peticiones HTTP a ficheros <code>.xml</code> externos desde Javascript. Actualmente, se realizan las mismas operaciones pero con ficheros <a href="/javascript/caracteristicas/json/">JSON</a>, ya que son mucho más habituales en el ecosistema Javascript como <strong>almacenamiento ligero de datos</strong>.</p>
+<p>El mecanismo principal de <strong>peticiones HTTP mediante XMLHttpRequest</strong> es muy sencillo, aunque se vuelve un poco más complejo a medida que vamos realizando comprobaciones y detalles relacionados, ya que se realiza todo más a bajo nivel que su equivalente moderno <code>fetch</code>.</p>
+<p>El primer paso es crear un objeto <code>XMLHttpRequest</code> (<em>XHR</em>):</p>
+<pre><code>// Creamos la instancia del objeto XHR
+const client = new XMLHttpRequest();
+</code></pre>
+<p>Mediante esta instancia que acabamos de crear, podremos definir el tipo de petición utilizando el método <code>open(method, url)</code>, indicando el método HTTP y la URL a la que queremos hacer la petición:</p>
+<pre><code>// Preparamos la petición y la enviamos
+client.open("GET", "/robots.txt");
+client.send();
+</code></pre>
+<p>Con el método <code>.open()</code> solo preparamos la petición, pero la haremos finalmente efectiva con el método <code>.send()</code>, el cuál lanzará la petición al servidor. Poco después, si consultamos el contenido de la propiedad <code>.responseText</code> (<em>texto de respuesta</em>) de nuestra instancia, comprobaremos que debería estar el contenido del fichero que hemos pedido:</p>
+<pre><code>// Consultamos la propiedad que almacena el contenido
+console.log(client.responseText);
+</code></pre>
+<p>Este sería el funcionamiento base de las <strong>peticiones XHR</strong>, que como puedes ver, es muy sencillo. Sin embargo, esto es sólo la teoría. A la hora de la práctica hay más detalles que hay que tener en cuenta.</p>
+<p>Por ejemplo, si has ejecutado <strong>línea por línea</strong> en una consola del navegador, habrás comprobado que este código funciona perfectamente. Sin embargo, si intentamos ejecutar <strong>todo el código de golpe</strong>, no funcionará; el valor de <code>client.responseText</code> nos aparecerá vacío.</p>
+<p>Esto ocurre debido a que no estamos dando tiempo suficiente al navegador para realizar la petición del fichero <code>/robots.txt</code> al servidor, y por lo tanto, consultamos el resultado antes de tenerlo. Para solucionar esto, hay que esperar un tiempo para comprobar el valor, o mejor aún, hacerlo de forma <strong>asíncrona</strong>, como veremos más adelante.</p>
+<blockquote>
+<p>El fichero <code>/robots.txt</code> es un fichero de texto que suele existir en prácticamente todas las páginas webs. Se trata de un fichero de texto plano que indica las URL a las que los robots o crawlers (<em>como el de Google</em>) no deben acceder.</p>
+</blockquote>
+<h3 id="politica-cors">Política CORS<a class="headerlink" href="#politica-cors" title="Permanent link">&para;</a></h3>
+<p>Habrás observado que estamos realizando <strong>peticiones relativas</strong>, es decir, al <strong>mismo dominio</strong>. Por defecto, en Javascript, las peticiones al mismo dominio de la web donde nos encontramos se pueden realizar sin ninguna restricción. Sin embargo, si intentamos realizarlas a otro dominio diferente, probablemente nos aparezca un <strong>error de CORS</strong> (<em>Cross-Origin Resource Sharing</em>) similar al siguiente:</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Access to XMLHttpRequest at '<a href="https://domain.com/robots.txt">https://domain.com/robots.txt</a>' from origin '<a href="https://currentdomain.com/">https://currentdomain.com/</a>' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Más adelante, en el capítulo <a href="/javascript/peticiones-http/cors/">CORS</a>, abordaremos este tema y comentaremos los detalles que hay que cumplir para poder hacer peticiones a dominios externos, pero de momento nos limitaremos a realizarlos al propio dominio donde nos encontramos.</p>
+<h3 id="el-objeto-xmlhttprequest">El objeto XMLHttpRequest<a class="headerlink" href="#el-objeto-xmlhttprequest" title="Permanent link">&para;</a></h3>
+<p>Al crear un objeto <code>XMLHttpRequest</code> tenemos acceso a una serie de propiedades que forman parte de nuestra instancia. Entre ellas, se encuentran las siguientes:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Propiedad</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>.responseType</code></td>
+<td align="left">Define el tipo de respuesta de <code>.response</code>: <code>json</code>, <code>Blob</code>, etc. Por defecto, <strong>text</strong>.</td>
+</tr>
+<tr>
+<td align="left"><code>.response</code></td>
+<td align="left">Contenido parseado automáticamente basado en <code>.responseType</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.responseText</code></td>
+<td align="left">Respuesta de la petición como texto plano o si no se ha recibido.</td>
+</tr>
+<tr>
+<td align="left"><code>.responseURL</code></td>
+<td align="left">URL de la petición HTTP a realizar.</td>
+</tr>
+<tr>
+<td align="left"><code>.readyState</code></td>
+<td align="left">Número que indica en que estado se encuentra la petición (ver más adelante).</td>
+</tr>
+<tr>
+<td align="left"><code>.timeout</code></td>
+<td align="left">Milisegundos permitidos para realizar la petición HTTP. Por defecto, <strong>0</strong> (sin límite).</td>
+</tr>
+<tr>
+<td align="left"><code>.status</code></td>
+<td align="left">Código de error HTTP de respuesta de la petición.</td>
+</tr>
+<tr>
+<td align="left"><code>.statusText</code></td>
+<td align="left">Texto con el código de error de respuesta, legible para humanos.</td>
+</tr>
+<tr>
+<td align="left"><code>.withCredentials</code></td>
+<td align="left">Indica si la petición HTTP se está realizando con credenciales.</td>
+</tr>
+</tbody>
+</table>
+<p>En primer lugar, las propiedades <code>.responseType</code> y <code>.response</code> se usan conjuntamente, debido a que si establecemos un valor en <code>.responseType</code> antes de hacer la petición, se procesará automáticamente la respuesta en <code>.response</code>. Por ejemplo, si establecemos el valor <code>json</code> en la propiedad <code>.responseType</code>, en <code>.response</code> obtendremos el objeto <strong>JSON</strong> ya parseado.</p>
+<p>Por otro lado, en la propiedad <code>.responseText</code> siempre obtendremos el <strong>valor de texto puro</strong>, por si ese proceso de parseo queremos hacerlo manualmente. En la propiedad <code>.responseURL</code> tendremos la ruta completa de la petición HTTP.</p>
+<p>Por otro lado, tenemos la propiedad <code>.readyState</code>, en la cuál profundizaremos más adelante. Básicamente nos devuelve un valor que determina <strong>en que punto se encuentra la petición</strong> (<em>iniciada, enviada, procesándose, finalizada</em>). Es muy útil para saber cuando realizar ciertas acciones.</p>
+<p>La propiedad <code>.timeout</code> indica el número de <strong>milisegundos máximo</strong> que permitiremos para realizar la petición. De ser superior a este tiempo, la petición se descartará. Por defecto viene establecido a <code>0</code>, que significa que no hay límite de tiempo para la petición.</p>
+<p>Las propiedades <code>.status</code> y <code>.statusText</code> nos muestran el <strong>código de error HTTP</strong> devuelto por la petición. La propiedad <code>.status</code> de vuelve el número en cuestión (<em>200 = OK, 404 = Not Found, etc...</em>) y la propiedad <code>.statusText</code> nos devuelve un texto un poco más legible donde nos da algo más de información.</p>
+<p>Por último, el booleano <code>.withCredentials</code> nos indica si la petición se ha realizado enviando un usuario y contraseña o simplemente se trata de una petición sin indicar credenciales.</p>
+<h3 id="metodos-de-xmlhttprequest">Métodos de XMLHttpRequest<a class="headerlink" href="#metodos-de-xmlhttprequest" title="Permanent link">&para;</a></h3>
+<p>Lo que vemos a continuación es una lista de los métodos que podemos utilizar en nuestra instancia de <code>XMLHttpRequest</code>, donde tenemos algunos otros métodos a parte de <code>.open()</code> y <code>.send()</code>:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Método</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>.setRequestHeader(``n,</code> <code>v)</code></td>
+<td align="left">Permite añadir la cabecera <code>n</code> con el valor <code>v</code> a la petición HTTP.</td>
+</tr>
+<tr>
+<td align="left"><code>.getAllResponseHeaders()</code></td>
+<td align="left">Obtiene todas las cabeceras HTTP de la respuesta de la petición.</td>
+</tr>
+<tr>
+<td align="left"><code>.getResponseHeader(``name)</code></td>
+<td align="left">Obtiene una cabecera HTTP concreta de la respuesta de la petición.</td>
+</tr>
+<tr>
+<td align="left"><code>.overrideMimeType(``mimetype)</code></td>
+<td align="left">Permite modificar el MIME (tipo de fichero) de la petición.</td>
+</tr>
+<tr>
+<td align="left"><code>.open(``method,</code> <code>url)</code></td>
+<td align="left">Permite preparar una petición HTTP.</td>
+</tr>
+<tr>
+<td align="left"><code>.send()</code></td>
+<td align="left">Envía la petición previamente preparada con <code>.open()</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.send(``body)</code></td>
+<td align="left">Idem a la anterior, enviando datos en la petición.</td>
+</tr>
+<tr>
+<td align="left"><code>.abort()</code></td>
+<td align="left">Cancela la petición enviada.</td>
+</tr>
+</tbody>
+</table>
+<p>Los tres primeros se utilizan para temas relacionados con las <strong>cabeceras de la petición HTTP</strong>. El primero para la petición que enviamos (<em>permite añadir cabeceras</em>) y los dos siguientes para la petición de respuesta que recibimos, tanto obtener todas las cabeceras con <code>.getAllResponseHeaders()</code>, como obtener una específica <code>.getResponseHeader(name)</code>.</p>
+<p>El método <code>.overrideMimeType()</code> nos permite modificar (<em>sobreescribir</em>) el <a href="https://es.wikipedia.org/wiki/Tipo_de_medio">MIME</a> de la petición recibido desde el servidor, muy útil cuando queremos forzarlo a uno diferente.</p>
+<p>Por último, tenemos los métodos <code>.open()</code>, <code>.send()</code> y <code>.abort()</code> utilizados para iniciar, enviar y cancelar la petición respectivamente. En el caso de <code>.send()</code> es posible indicar un parámetro opcional que sea un objeto para enviar junto a la petición.</p>
+<h3 id="eventos-de-xmlhttprequest">Eventos de XMLHttpRequest<a class="headerlink" href="#eventos-de-xmlhttprequest" title="Permanent link">&para;</a></h3>
+<p>El objeto <code>XMLHttpRequest</code> tiene varios eventos disponibles que podemos utilizar:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Evento</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>.onabort</code></td>
+<td align="left">Se dispara cuando una petición es cancelada.</td>
+</tr>
+<tr>
+<td align="left"><code>.onload</code></td>
+<td align="left">Se dispara cuando una petición se ha completado correctamente.</td>
+</tr>
+<tr>
+<td align="left"><code>.onloadstart</code></td>
+<td align="left">Se dispara cuando una petición comienza a cargar datos.</td>
+</tr>
+<tr>
+<td align="left"><code>.onloadend</code></td>
+<td align="left">Se dispara cuando una petición termina (con error o sin ellos).</td>
+</tr>
+<tr>
+<td align="left"><code>.onerror</code></td>
+<td align="left">Se dispara cuando una petición sufre un error.</td>
+</tr>
+<tr>
+<td align="left"><code>.ontimeout</code></td>
+<td align="left">Se dispara cuando una petición agota el tiempo máximo.</td>
+</tr>
+<tr>
+<td align="left"><code>.onprogress</code></td>
+<td align="left">Se dispara (varias veces) cuando una petición recibe datos.</td>
+</tr>
+<tr>
+<td align="left"><code>.onreadystatechange</code></td>
+<td align="left">Se dispara cuando el valor <code>.readyState</code> cambia.</td>
+</tr>
+</tbody>
+</table>
+<p>Los eventos del objeto <code>XMLHttpRequest</code> son bastante autodescriptivos. Quizás, el más complejo sea el evento <code>readystatechange</code>, el cuál tiene relación directa con la propiedad <code>.readyState</code> y explicaremos detalladamente en el siguiente apartado.</p>
+<h3 id="el-ciclo-readystate">El ciclo readyState<a class="headerlink" href="#el-ciclo-readystate" title="Permanent link">&para;</a></h3>
+<p>La propiedad <code>.readyState</code> de nuestra instancia <code>client</code> es un valor numérico (<em>representado por una constante</em>) que indica en el punto de progreso en que se encuentra la petición HTTP.</p>
+<p>Esto es muy fácil de entender si pensamos en los clásicos <strong>spinners</strong> que se suelen utilizar para indicar que se está procediendo a obtener y descargar información. Habitualmente, estos spinners aparecen si la propiedad <code>.readyState</code> se encuentra entre <code>1</code> y <code>3</code>:</p>
+<p>Valor Constante|Descripción
+:---|:---|:---
+<code>0</code>|<code>XMLHttpRequest.UNSENT</code>|Estado inicial. No se ha ejecutado aún <code>.open()</code>.
+<code>1</code>|<code>XMLHttpRequest.OPENED</code>|Se ha ejecutado <code>open()</code>, pero no se ha ejecutado aún <code>.send()</code>.
+<code>2</code>|<code>XMLHttpRequest.HEADERS_RECEIVED</code>|Se ha ejecutado <code>send()</code>. Cabeceras recibidas.
+<code>3</code>|<code>XMLHttpRequest.LOADING</code>|Descarga de información en proceso.
+<code>4</code>|<code>XMLHttpRequest.DONE</code>|Descarga finalizada.</p>
+<p>Para verlo más claramente, podemos observar el siguiente código, donde a través de la escucha del evento <code>readystatechange</code> de la instancia en cuestión, podemos estar pendientes de cuando obtenemos la información (<em>readyState igual a 4 y status 200 OK</em>):</p>
+<pre><code>const client = new XMLHttpRequest();
+
+client.addEventListener("readystatechange", () =&gt; {
+  if (client.readyState === 4 &amp;&amp; client.status === 200)
+    console.log(client.responseText);
+});
+
+client.open("GET", "/robots.txt");
+client.send();
+</code></pre>
+<p>Una vez hemos entendido todos estos apartados, estamos preparados para realizar peticiones HTTP utilizando <strong>XHR</strong>. Sin embargo, es altamente recomendable echar un vistazo a los siguientes capítulos, donde abordamos sistemas más modernos como <code>fetch</code>, que permiten realizar peticiones de una forma mucho más cómoda, utilizando promesas.</p>
+<hr />
+<h2 id="fetch-peticiones-asincronas">Fetch: Peticiones Asíncronas<a class="headerlink" href="#fetch-peticiones-asincronas" title="Permanent link">&para;</a></h2>
+<p>Una vez aprendemos a realizar <a href="/javascript/peticiones-http/xhr/">peticiones HTTP mediante XHR</a> nos damos cuenta que es un mecanismo muy interesante y útil, y que nos abre un mundo de posibilidades trabajando con Javascript. Sin embargo, con el tiempo nos vamos dando cuenta también, que la forma de trabajar con objetos <code>XMLHttpRequest</code>, aunque es muy potente requiere mucho trabajo que hace que el código no sea tan legible y práctico como quizás debería.</p>
+<p>Entonces es cuando surge <code>fetch</code>, un sistema más moderno, basado en promesas de Javascript, para realizar peticiones HTTP asíncronas de una forma más legible y cómoda.</p>
+<h3 id="peticiones-http-con-fetch">Peticiones HTTP con fetch<a class="headerlink" href="#peticiones-http-con-fetch" title="Permanent link">&para;</a></h3>
+<p><strong>Fetch</strong> es el nombre de una nueva API para Javascript con la cuál podemos realizar peticiones HTTP asíncronas utilizando promesas y de forma que el código sea un poco más sencillo y menos verbose. La forma de realizar una petición es muy sencilla, básicamente se trata de llamar a <code>fetch</code> y pasarle por parámetro la URL de la petición a realizar:</p>
+<pre><code>// Realizamos la petición y guardamos la promesa
+const request = fetch("/robots.txt");
+
+// Si es resuelta, entonces...
+request.then(function(response) { ... });
+</code></pre>
+<p>El <code>fetch()</code> devolverá una que será aceptada cuando reciba una respuesta y sólo será rechazada si hay un fallo de red o si por alguna razón no se pudo completar la petición. El modo más habitual de manejar las promesas es utilizando <code>.then()</code>. Esto se suele reescribir de la siguiente forma, que queda mucho más simple:</p>
+<pre><code>fetch("/robots.txt")
+  .then(function(response) {
+    /** Código que procesa la respuesta **/
+  });
+</code></pre>
+<p>Al método <code>.then()</code> se le pasa una función callback donde su parámetro <code>response</code> es el objeto de respuesta de la petición que hemos realizado. En su interior realizaremos la lógica que queramos hacer con la respuesta a nuestra petición. A la función <code>fetch(url, options)</code> se le pasa por parámetro la <code>url</code> de la petición y, de forma opcional, un objeto <code>options</code> con opciones de la petición HTTP.</p>
+<p>Vamos a examinar un código donde veamos un poco mejor como hacer la petición con <code>fetch</code>:</p>
+<pre><code>// Opciones de la petición (valores por defecto)
+const options = {
+  method: "GET"
+};
+
+// Petición HTTP
+fetch("/robots.txt", options)
+  .then(response =&gt; response.text())
+  .then(data =&gt; {
+    /** Procesar los datos **/
+  });
+</code></pre>
+<p>Un poco más adelante, veremos como trabajar con la respuesta <code>response</code>, pero vamos a centrarnos ahora en el parámetro opcional <code>options</code> de la petición HTTP. En este objeto podemos definir varios detalles:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Campo</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>method</code></td>
+<td align="left">Método HTTP de la petición. Por defecto, <code>GET</code>. Otras opciones: <code>HEAD</code>, <code>POST</code>, etc...</td>
+</tr>
+<tr>
+<td align="left"><code>body</code></td>
+<td align="left">Cuerpo de la petición HTTP. Puede ser de varios tipos: <code>String</code>, <code>FormData</code>, <code>Blob</code>, etc...</td>
+</tr>
+<tr>
+<td align="left"><code>headers</code></td>
+<td align="left">Cabeceras HTTP. Por defecto, <code>{}</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>credentials</code></td>
+<td align="left">Modo de credenciales. Por defecto, <code>omit</code>. Otras opciones: <code>same-origin</code> e <code>include</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Lo primero, y más habitual, suele ser indicar el método HTTP a realizar en la petición. Por defecto, se realizará un <code>GET</code>, pero podemos cambiarlos a <code>HEAD</code>, <code>POST</code>, <code>PUT</code> o cualquier otro tipo de método. En segundo lugar, podemos indicar objetos para enviar en el <code>body</code> de la petición, así como modificar las cabeceras en el campo <code>headers</code>:</p>
+<pre><code>const options = {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(jsonData)
+};
+</code></pre>
+<p>Por último, el campo <code>credentials</code> permite modificar el modo en el que se realiza la petición. Por defecto, el valor <code>omit</code> hace que no se incluyan credenciales en la petición, pero es posible indicar los valores <code>same-origin</code>, que incluye las credenciales si estamos sobre el mismo dominio, o <code>include</code> que incluye las credenciales incluso en peticiones a otros dominios.</p>
+<p>Recuerda que estamos realizando peticiones relativas al <strong>mismo dominio</strong>. En el caso de realizar peticiones a dominios diferentes obtendríamos un problema de CORS (<em>Cross-Origin Resource Sharing</em>) similar al siguiente:</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Access to fetch at '<a href="https://otherdomain.com/file.json">https://otherdomain.com/file.json</a>' from origin '<a href="https://domain.com/">https://domain.com/</a>' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Más adelante hablaremos de <a href="/javascript/peticiones-http/cors/">CORS</a> y de como solucionar estos problemas si necesitamos realizar peticiones a otros dominios.</p>
+<h3 id="cabeceras-headers">Cabeceras (Headers)<a class="headerlink" href="#cabeceras-headers" title="Permanent link">&para;</a></h3>
+<p>Aunque en el ejemplo anterior hemos creado las cabeceras como un genérico de Javascript, es posible crear un objeto <code>Headers</code> con el que trabajar:</p>
+<pre><code>const headers = new Headers();
+headers.set("Content-Type", "application/json");
+headers.set("Content-Encoding", "br");
+</code></pre>
+<p>Para ello, a parte del método <code>.set()</code> podemos utilizar varios otros para trabajar con cabeceras, comprobar su existencia, obtener o cambiar los valores o incluso eliminarlos:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Método</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>.has(``name)</code></td>
+<td align="left">Comprueba si la cabecera <code>name</code> está definida.</td>
+</tr>
+<tr>
+<td align="left"><code>.get(``name)</code></td>
+<td align="left">Obtiene el valor de la cabecera <code>name</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.set(``name,</code> <code>value)</code></td>
+<td align="left">Establece o modifica el valor <code>value</code> a la cabecera <code>name</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.append(``name,</code> <code>value)</code></td>
+<td align="left">Añade un nuevo valor <code>value</code> a la cabecera <code>name</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.delete(``name)</code></td>
+<td align="left">Elimina la cabecera <code>name</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Como muchos otros objetos iterables, podemos utilizar los métodos <code>.entries()</code>, <code>.keys()</code> y/o <code>.values()</code> para recorrerlos:</p>
+<pre><code>for ([key, value] of headers.entries()) {
+  console.log("Clave: ", key, "valor: ", value);
+}
+</code></pre>
+<p>Para peticiones con pocas cabeceras no es mayor problema, pero en peticiones más complejas utilizar <code>Headers</code> es una buena práctica.</p>
+<h3 id="respuesta-de-la-peticion-http">Respuesta de la petición HTTP<a class="headerlink" href="#respuesta-de-la-peticion-http" title="Permanent link">&para;</a></h3>
+<p>Si volvemos a nuestro ejemplo de la petición con <code>fetch</code>, observaremos que en el primer <code>.then()</code> tenemos un objeto <code>response</code>. Se trata de la respuesta que nos llega del servidor web al momento de recibir nuestra petición:</p>
+<pre><code>// Petición HTTP
+fetch("/robots.txt", options)
+  .then(response =&gt; response.text())
+  .then(data =&gt; {
+    /** Procesar los datos **/
+  });
+</code></pre>
+<p>Aunque en este ejemplo, simplemente estamos utilizando una <a href="/javascript/fundamentos/funciones/#arrow-functions">arrow function</a> que hace un <code>return</code> implícito de la promesa que devuelve el método <code>.text()</code>, dicho objeto <code>response</code> tiene una serie de propiedades y métodos que pueden resultarnos útiles al implementar nuestro código.</p>
+<p>Por el lado de las <strong>propiedades</strong>, tenemos las siguientes:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Propiedad</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>.status</code></td>
+<td align="left">Código de error HTTP de la respuesta (100-599).</td>
+</tr>
+<tr>
+<td align="left"><code>.statusText</code></td>
+<td align="left">Texto representativo del código de error HTTP anterior.</td>
+</tr>
+<tr>
+<td align="left"><code>.ok</code></td>
+<td align="left">Devuelve <code>true</code> si el código HTTP es <code>200</code> (o empieza por <code>2</code>).</td>
+</tr>
+<tr>
+<td align="left"><code>.headers</code></td>
+<td align="left">Cabeceras de la respuesta.</td>
+</tr>
+<tr>
+<td align="left"><code>.url</code></td>
+<td align="left">URL de la petición HTTP.</td>
+</tr>
+</tbody>
+</table>
+<p>Si venimos de <code>XMLHttpRequest</code>, esto no nos resultará nada extraño. Las propiedades <code>.status</code> y <code>statusText</code> nos devuelven el <strong>código de error HTTP</strong> de la respuesta en formato numérico y cadena de texto respectivamente.</p>
+<p>Sin embargo, existe una novedad respecto a XHR, y es que tenemos una propiedad <code>.ok</code> que nos devuelve <code>true</code> si el código de error de la respuesta es un valor del rango <code>2xx</code>, es decir, que todo ha ido correctamente. Así pues, tenemos una forma práctica y sencilla de comprobar si todo ha ido bien al realizar la petición:</p>
+<pre><code>fetch("/robots.txt")
+  .then(response =&gt; {
+    if (response.ok)
+      return response.text()
+  })
+</code></pre>
+<p>Por último, tenemos la propiedad <code>.headers</code> que nos devuelve las cabeceras de la respuesta y la propiedad <code>.url</code> que nos devuelve la URL completa de la petición que hemos realizado.</p>
+<h3 id="metodos-de-procesamiento">Métodos de procesamiento<a class="headerlink" href="#metodos-de-procesamiento" title="Permanent link">&para;</a></h3>
+<p>Por otra parte, la instancia <code>response</code> también tiene algunos <strong>métodos</strong> interesantes, la mayoría de ellos para procesar mediante una promesa los datos recibidos y facilitar el trabajo con ellos:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Método</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>.text()</code></td>
+<td align="left">Devuelve una promesa con el texto plano de la respuesta.</td>
+</tr>
+<tr>
+<td align="left"><code>.json()</code></td>
+<td align="left">Idem, pero con un objeto <code>json</code>. Equivalente a usar <code>JSON.parse()</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.blob()</code></td>
+<td align="left">Idem, pero con un objeto <code>Blob</code> (binary large object).</td>
+</tr>
+<tr>
+<td align="left"><code>.arrayBuffer()</code></td>
+<td align="left">Idem, pero con un objeto <code>ArrayBuffer</code> (buffer binario puro).</td>
+</tr>
+<tr>
+<td align="left"><code>.formData()</code></td>
+<td align="left">Idem, pero con un objeto <code>FormData</code> (datos de formulario).</td>
+</tr>
+<tr>
+<td align="left"><code>.clone()</code></td>
+<td align="left">Crea y devuelve un clon de la instancia en cuestión.</td>
+</tr>
+<tr>
+<td align="left"><code>Response.error()</code></td>
+<td align="left">Devuelve un nuevo objeto <code>Response</code> con un error de red asociado.</td>
+</tr>
+<tr>
+<td align="left"><code>Response.redirect(url, code)</code></td>
+<td align="left">Redirige a una <code>url</code>, opcionalmente con un <code>code</code> de error.</td>
+</tr>
+</tbody>
+</table>
+<p>Observa que en los ejemplos anteriores hemos utilizado <code>response.text()</code>. Este método indica que queremos procesar la respuesta como datos textuales, por lo que dicho método devolverá una con los datos en texto plano, facilitando trabajar con ellos de forma manual:</p>
+<pre><code>fetch("/robots.txt")
+  .then(response =&gt; response.text())
+  .then(data =&gt; console.log(data));
+</code></pre>
+<p>Observa que en este fragmento de código, tras procesar la respuesta con <code>response.text()</code>, devolvemos una con el contenido en texto plano. Esta se procesa en el segundo <code>.then()</code>, donde gestionamos dicho contenido almacenado en <code>data</code>.</p>
+<p>Ten en cuenta que tenemos varios métodos similares para procesar las respuestas. Por ejemplo, el caso anterior utilizando el método <code>response.json()</code> en lugar de <code>response.text()</code> sería equivalente al siguiente fragmento:</p>
+<pre><code>fetch("/contents.json")
+  .then(response =&gt; response.text())
+  .then(data =&gt; {
+    const json = JSON.parse(data);
+    console.log(json);
+  });
+</code></pre>
+<p>Como se puede ver, con <code>response.json()</code> nos ahorraríamos tener que hacer el <code>JSON.parse()</code> de forma manual, por lo que el código es algo más directo.</p>
+<h4 id="ejemplo-utilizando-promesas">Ejemplo utilizando promesas<a class="headerlink" href="#ejemplo-utilizando-promesas" title="Permanent link">&para;</a></h4>
+<p>Lo que vemos a continuación sería un ejemplo un poco más completo de todo lo que hemos visto hasta ahora:</p>
+<ul>
+<li>Comprobamos que la petición es correcta con <code>response.ok</code></li>
+<li>Utilizamos <code>response.text()</code> para procesarla</li>
+<li>En el caso de producirse algún error, lanzamos excepción con el código de error</li>
+<li>Procesamos los datos y los mostramos en la consola</li>
+<li>
+<p>En el caso de que la sea rechazada, capturamos el error con el <code>catch</code></p>
+<p>// Petición HTTP
+fetch("/robots.txt")
+  .then(response =&gt; {
+    if (response.ok)
+      return response.text()
+    else
+      throw new Error(response.status);
+  })
+  .then(data =&gt; {
+    console.log("Datos: " + data);
+  })
+  .catch(err =&gt; {
+    console.error("ERROR: ", err.message)
+  });</p>
+</li>
+</ul>
+<p>De hecho, podemos refactorizar un poco este ejemplo para hacerlo más legible. Creamos la función <code>isResponseOk()</code> para procesar la respuesta (<em>invirtiendo el condicional para hacerlo más directo</em>). Luego, los <code>.then()</code> y <code>.catch()</code> los utilizamos con una arrow function para simplificarlos:</p>
+<pre><code>const isResponseOk = (response) =&gt; {
+  if (!response.ok)
+    throw new Error(response.status);
+  return response.text()
+}
+
+fetch("/robots.txt")
+  .then(response =&gt; isResponseOk(response))
+  .then(data =&gt; console.log("Datos: ", data))
+  .catch(err =&gt; console.error("ERROR: ", err.message));
+</code></pre>
+<p>Sin embargo, aunque es bastante común trabajar con promesas utilizando <code>.then()</code>, también podemos hacer uso de <code>async/await</code> para manejar promesas, de una forma un poco más directa.</p>
+<h4 id="ejemplo-utilizando-asyncawait">Ejemplo utilizando Async/await<a class="headerlink" href="#ejemplo-utilizando-asyncawait" title="Permanent link">&para;</a></h4>
+<p>Utilizar <code>async/await</code> no es más que lo que se denomina <strong>azúcar sintáctico</strong>, es decir, utilizar algo visualmente más agradable, pero que por debajo realiza la misma tarea. Para ello, lo que debemos tener siempre presente es que un <code>await</code> sólo se puede ejecutar si esta dentro de una función definida como <code>async</code>.</p>
+<p>En este caso, lo que hacemos es lo siguiente:</p>
+<ul>
+<li>Creamos una función <code>request(url)</code> que definimos con <code>async</code></li>
+<li>Llamamos a <code>fetch</code> utilizando <code>await</code> para esperar y resolver la promesa</li>
+<li>Comprobamos si todo ha ido bien usando <code>response.ok</code></li>
+<li>
+<p>Llamamos a <code>response.text()</code> utilizando <code>await</code> y devolvemos el resultado</p>
+<p>const request = async (url) =&gt; {
+  const response = await fetch(url);
+  if (!response.ok)
+    throw new Error("WARN", response.status);
+  const data = await response.text();
+  return data;
+}</p>
+<p>const resultOk = await request("/robots.txt");
+const resultError = await request("/nonExistentFile.txt");</p>
+</li>
+</ul>
+<p>Una vez hecho esto, podemos llamar a nuestra función <code>request</code> y almacenar el resultado, usando nuevamente <code>await</code>. Al final, utilizar <code>.then()</code> o <code>async/await</code> es una cuestión de gustos y puedes utilizar el que más te guste.</p>
+<hr />
+<h2 id="politica-cors_1">Política CORS<a class="headerlink" href="#politica-cors_1" title="Permanent link">&para;</a></h2>
+<p><strong>Cross Origin</strong> (<em>origen cruzado</em>) es la palabra que se utiliza para denominar el tipo de peticiones que se realizan a un dominio diferente del dominio de origen desde donde se realiza la petición. De esta forma, por una parte tenemos las peticiones de <strong>origen cruzado</strong> (<em>cross-origin</em>) y las peticiones del <strong>mismo origen</strong> (<em>same-origin</em>).</p>
+<h3 id="que-es-cors">¿Qué es CORS?<a class="headerlink" href="#que-es-cors" title="Permanent link">&para;</a></h3>
+<p><strong>CORS</strong> (<em>Cross-Origin Resource Sharing</em>) es un mecanismo o política de seguridad que permite controlar las peticiones HTTP asíncronas que se pueden realizar desde un navegador a un servidor con un dominio diferente de la página cargada originalmente. Este tipo de peticiones se llaman <strong>peticiones de origen cruzado</strong> (<em>cross-origin</em>).</p>
+<p>Por defecto, los navegadores permiten enlazar hacia documentos situados en todo tipo de dominios si lo hacemos desde el HTML o desde Javascript utilizando la API DOM (<em>que a su vez está construyendo un HTML</em>). Sin embargo, no ocurre lo mismo cuando se trata de <strong>peticiones HTTP asíncronas</strong> mediante Javascript (<em>AJAX</em>), sea a través de <code>XMLHttpRequest</code>, de <code>fetch</code> o de librerías similares para el mismo propósito.</p>
+<p>Utilizando este tipo de peticiones asíncronas, los recursos situados en dominios diferentes al de la página actual <strong>no están permitidos</strong> por defecto. Es lo que se suele denominar <strong>protección de CORS</strong>. Su finalidad es dificultar la posibilidad de añadir recursos ajenos en un sitio determinado.</p>
+<p><img alt="CORS (Cross-Origin Resource Sharing)" src="../img/cors.png" /></p>
+<p>Si intentamos realizar una petición asíncrona hacia otro dominio diferente, probablemente obtendremos un error de CORS similar al siguiente:</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Access to fetch at '<a href="https://otherdomain.com/file.json">https://otherdomain.com/file.json</a>' from origin '<a href="https://domain.com/">https://domain.com/</a>' has been blocked by <strong>CORS policy</strong>: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="access-control-allow-origin">Access-Control-Allow-Origin<a class="headerlink" href="#access-control-allow-origin" title="Permanent link">&para;</a></h3>
+<p>Como hemos comentado, las peticiones HTTP asíncronas de origen cruzado no están permitidas, pero existen formas de permitirlas. La más básica, probablemente, sea la de incluir una cabecera <code>Access-Control-Allow-Origin</code> en la respuesta de la petición, donde debe indicarse el dominio al que se le quiere dar permiso:</p>
+<pre><code>Access-Control-Allow-Origin: https://domain.com/
+</code></pre>
+<p>De esta forma, el navegador comprobará dichas cabeceras y si coinciden con el dominio de origen que realizó la petición, esta se permitirá. En el ejemplo anterior, la cabecera tiene el valor <code>https://domain.com/</code>, pero en algunos casos puede interesar indicar el valor <code>*</code>.</p>
+<p><img alt="Network / Headers: Chrome Dev Tools" src="../img/network-dev-tools-headers.png" /></p>
+<blockquote>
+<p>El asterisco <code>*</code> indica que se permiten peticiones de origen cruzado <strong>a cualquier dominio</strong>, algo que puede ser interesante cuando se tienen API públicas a las que quieres permitir el acceso al público en general, casos como los de <a href="https://fonts.google.com/">Google Fonts</a> o <a href="https://www.jsdelivr.com/">JSDelivr</a>, por citar un ejemplo.</p>
+</blockquote>
+<p>Estas cabeceras puedes verlas facilmente accediendo a la pestaña <strong>Network</strong> del <strong>Developer Tools</strong> del navegador. En esta sección te aparecerá una lista de peticiones realizadas por el navegador en la página actual. Si seleccionamos una petición y accedemos al apartado de cabeceras (<em>Headers</em>), podremos examinar si existe la cabecera <code>Access-Control-Allow-Origin</code>:</p>
+<h3 id="cors-en-entornos-de-desarrollo">CORS en entornos de desarrollo<a class="headerlink" href="#cors-en-entornos-de-desarrollo" title="Permanent link">&para;</a></h3>
+<p>Otra opción sencilla y rápida para no tener que lidiar con CORS <strong>temporalmente</strong> es la de instalar la <strong>extensión Allow CORS</strong>, disponible tanto <a href="https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf">Allow CORS para Chrome</a> como <a href="https://addons.mozilla.org/es/firefox/addon/access-control-allow-origin/">Allow CORS para Firefox</a>. Esta extensión deshabilita la <strong>política CORS</strong> mientras está instalada y activada.</p>
+<p>Esta elección es equivalente a que todas las respuestas a las peticiones asíncronas realizadas tengan la mencionada cabecera con el valor <code>*</code>. Obviamente, es importante recalcar que es una opción que <strong>sólo nos funcionará en nuestro equipo y navegador</strong>, pero puede ser muy práctica para simplificar el trabajo en desarrollo.</p>
+<hr />
+<p><strong>Fuente:</strong> <a href="https://lenguajejs.com/">Lenguaje Javascript</a> por <a href="https://manzdev.github.io/">Manz</a></p>
+<h2 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../05-asincronia/" title="Asincronía" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Asincronía
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" title="Introducción a la terminal" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Introducción a la terminal
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/saucedoinfo" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/saucedoinfo" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.instagram.com/saucedo.info/" target="_blank" rel="noopener" title="www.instagram.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.instant', 'navigation.expand', 'tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

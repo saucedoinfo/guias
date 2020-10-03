@@ -1,0 +1,1915 @@
+
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Coleccion de Guias de Desarrollo y diseño.">
+      
+      
+        <link rel="canonical" href="https://saucedoinfo.github.io/guias/desarrollo/javascript/05-asincronia/">
+      
+      
+        <meta name="author" content="Fernando S. Saucedo">
+      
+      <link rel="shortcut icon" href="../../../img/favicon-16x16.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.14">
+    
+    
+      
+        <title>Asincronía - Guias de Desarrollo y diseño</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d3202873.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ff0a5ce4.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#000000">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#asincronia" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-header-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Guias de Desarrollo y diseño
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Asincronía
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../html/01-introduccion_a_HTML5/" class="md-tabs__link">
+          Desarrollo
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" class="md-tabs__link">
+          Herramientas IT
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    Guias de Desarrollo y diseño
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Desarrollo
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Desarrollo" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Desarrollo
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Html
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Html" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        <span class="md-nav__icon md-icon"></span>
+        Html
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/01-introduccion_a_HTML5/" title="Introduccion a HTML" class="md-nav__link">
+      Introduccion a HTML
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/02-etiquetas_semanticas/" title="Etiquetas semánticas" class="md-nav__link">
+      Etiquetas semánticas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/03-etiquetas_multimedia/" title="Etiquetas multimedias" class="md-nav__link">
+      Etiquetas multimedias
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/04-etiquetas_de_cabecera/" title="Etiquetas de cabecera" class="md-nav__link">
+      Etiquetas de cabecera
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/05-etiquetas_de_formularios/" title="Etiquetas de formularios" class="md-nav__link">
+      Etiquetas de formularios
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/06-etiquetas_de_scripting/" title="Etiquetas de scripting" class="md-nav__link">
+      Etiquetas de scripting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Css
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Css" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        <span class="md-nav__icon md-icon"></span>
+        Css
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/01-introduccion_a_CSS/" title="Introducción a CSS" class="md-nav__link">
+      Introducción a CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/02-modelo_de_cajas/" title="Modelo de cajas" class="md-nav__link">
+      Modelo de cajas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/03-colores_y_fondos/" title="Colores y fondos" class="md-nav__link">
+      Colores y fondos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/04-selectores_CSS/" title="Selectores CSS" class="md-nav__link">
+      Selectores CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/05-Fuentes_y_tipografias/" title="Fuentes y tipografías" class="md-nav__link">
+      Fuentes y tipografías
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/06-representacion_de_datos/" title="Representación de datos" class="md-nav__link">
+      Representación de datos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/07_maquetacion_y_colocacion/" title="Maquetación y colocación" class="md-nav__link">
+      Maquetación y colocación
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/08-interacciones/" title="Interacciones" class="md-nav__link">
+      Interacciones
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/09-efectos/" title="Efectos" class="md-nav__link">
+      Efectos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/10-responsive_Web_Design/" title="Responsive Web Design" class="md-nav__link">
+      Responsive Web Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/11-animaciones_CSS/" title="Animaciones CSS" class="md-nav__link">
+      Animaciones CSS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3" checked>
+    
+    <label class="md-nav__link" for="nav-2-3">
+      JavaScript
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="JavaScript" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon"></span>
+        JavaScript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01-introducci%C3%B3n_a_javascript/" title="Introducción a Javascript" class="md-nav__link">
+      Introducción a Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02-fundamentos_de_javascript/" title="Fundamentos de Javascript" class="md-nav__link">
+      Fundamentos de Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-caracteristicas/" title="Características" class="md-nav__link">
+      Características
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-DOM/" title="DOM" class="md-nav__link">
+      DOM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Asincronía
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Asincronía" class="md-nav__link md-nav__link--active">
+      Asincronía
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-la-asincronia" class="md-nav__link">
+    ¿Qué es la asincronía?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué es la asincronía?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lenguaje-no-bloqueante" class="md-nav__link">
+    Lenguaje no bloqueante
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-es-la-asincronia_1" class="md-nav__link">
+    ¿Qué es la asincronía?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-de-tareas-asincronas" class="md-nav__link">
+    Ejemplos de tareas asíncronas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-gestionar-la-asincronia" class="md-nav__link">
+    ¿Cómo gestionar la asincronía?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-base" class="md-nav__link">
+    Ejemplo base
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funciones-callbacks" class="md-nav__link">
+    Funciones callbacks
+  </a>
+  
+    <nav class="md-nav" aria-label="Funciones callbacks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-un-callback" class="md-nav__link">
+    ¿Qué es un callback?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callbacks-en-javascript" class="md-nav__link">
+    Callbacks en Javascript
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asincronia-con-callbacks" class="md-nav__link">
+    Asincronía con callbacks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desventajas-de-los-callbacks" class="md-nav__link">
+    Desventajas de los callbacks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-son-las-promesas" class="md-nav__link">
+    ¿Qué son las promesas?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué son las promesas?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#promesas-en-javascript" class="md-nav__link">
+    Promesas en Javascript
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consumir-una-promesa" class="md-nav__link">
+    Consumir una promesa
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asincronia-con-promesas" class="md-nav__link">
+    Asincronía con promesas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#promesas-en-grupo-promise-api" class="md-nav__link">
+    Promesas en grupo (Promise API)
+  </a>
+  
+    <nav class="md-nav" aria-label="Promesas en grupo (Promise API)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-de-las-promesas" class="md-nav__link">
+    API de las promesas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#promiseall" class="md-nav__link">
+    Promise.all()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#promiseallsettled" class="md-nav__link">
+    Promise.allSettled()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#promiseany" class="md-nav__link">
+    Promise.any()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#promiserace" class="md-nav__link">
+    Promise.race()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#promiseresolve-y-promisereject" class="md-nav__link">
+    Promise.resolve() y Promise.reject()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asyncawait" class="md-nav__link">
+    Async/Await
+  </a>
+  
+    <nav class="md-nav" aria-label="Async/Await">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-palabra-clave-async" class="md-nav__link">
+    La palabra clave async
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-palabra-clave-await" class="md-nav__link">
+    La palabra clave await
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asincronia-con-asyncawait" class="md-nav__link">
+    Asincronía con async/await
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-level-await" class="md-nav__link">
+    Top-level await
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-peticiones_HTTP/" title="Peticiones HTTP" class="md-nav__link">
+      Peticiones HTTP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Herramientas IT
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Herramientas IT" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Herramientas IT
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Terminal
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Terminal" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon"></span>
+        Terminal
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/01-introducci%C3%B3n_a_la_terminal/" title="Introducción a la terminal" class="md-nav__link">
+      Introducción a la terminal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/02-operaciones_con_ficheros/" title="Operaciones con ficheros" class="md-nav__link">
+      Operaciones con ficheros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/terminal/03-administraci%C3%B3n_del_sistema/" title="Administración del sistema" class="md-nav__link">
+      Administración del sistema
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/markdown/" title="Markdown" class="md-nav__link">
+      Markdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/pip/" title="Pip" class="md-nav__link">
+      Pip
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../herramientas-it/mkdocs/" title="Mkdocs" class="md-nav__link">
+      Mkdocs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../about/" title="Acerca de" class="md-nav__link">
+      Acerca de
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-la-asincronia" class="md-nav__link">
+    ¿Qué es la asincronía?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué es la asincronía?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lenguaje-no-bloqueante" class="md-nav__link">
+    Lenguaje no bloqueante
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-es-la-asincronia_1" class="md-nav__link">
+    ¿Qué es la asincronía?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-de-tareas-asincronas" class="md-nav__link">
+    Ejemplos de tareas asíncronas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-gestionar-la-asincronia" class="md-nav__link">
+    ¿Cómo gestionar la asincronía?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-base" class="md-nav__link">
+    Ejemplo base
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funciones-callbacks" class="md-nav__link">
+    Funciones callbacks
+  </a>
+  
+    <nav class="md-nav" aria-label="Funciones callbacks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-un-callback" class="md-nav__link">
+    ¿Qué es un callback?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callbacks-en-javascript" class="md-nav__link">
+    Callbacks en Javascript
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asincronia-con-callbacks" class="md-nav__link">
+    Asincronía con callbacks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desventajas-de-los-callbacks" class="md-nav__link">
+    Desventajas de los callbacks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-son-las-promesas" class="md-nav__link">
+    ¿Qué son las promesas?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué son las promesas?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#promesas-en-javascript" class="md-nav__link">
+    Promesas en Javascript
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consumir-una-promesa" class="md-nav__link">
+    Consumir una promesa
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asincronia-con-promesas" class="md-nav__link">
+    Asincronía con promesas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#promesas-en-grupo-promise-api" class="md-nav__link">
+    Promesas en grupo (Promise API)
+  </a>
+  
+    <nav class="md-nav" aria-label="Promesas en grupo (Promise API)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-de-las-promesas" class="md-nav__link">
+    API de las promesas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#promiseall" class="md-nav__link">
+    Promise.all()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#promiseallsettled" class="md-nav__link">
+    Promise.allSettled()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#promiseany" class="md-nav__link">
+    Promise.any()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#promiserace" class="md-nav__link">
+    Promise.race()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#promiseresolve-y-promisereject" class="md-nav__link">
+    Promise.resolve() y Promise.reject()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asyncawait" class="md-nav__link">
+    Async/Await
+  </a>
+  
+    <nav class="md-nav" aria-label="Async/Await">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-palabra-clave-async" class="md-nav__link">
+    La palabra clave async
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-palabra-clave-await" class="md-nav__link">
+    La palabra clave await
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asincronia-con-asyncawait" class="md-nav__link">
+    Asincronía con async/await
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-level-await" class="md-nav__link">
+    Top-level await
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/saucedoinfo/guias/edit/master/docs/desarrollo/javascript/05-asincronia.md" title="Editar esta página" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="asincronia">Asincronía<a class="headerlink" href="#asincronia" title="Permanent link">&para;</a></h1>
+<h2 id="que-es-la-asincronia">¿Qué es la asincronía?<a class="headerlink" href="#que-es-la-asincronia" title="Permanent link">&para;</a></h2>
+<p>La <strong>asincronía</strong> es uno de los conceptos principales que rige el mundo de Javascript. Cuando comenzamos a programar, normalmente realizamos tareas de forma <strong>síncrona</strong>, llevando a cabo tareas secuenciales que se ejecutan una detrás de otra, de modo que el orden o flujo del programa es sencillo y fácil de observar en el código:</p>
+<pre><code>primera_funcion();    // Tarea 1: Se ejecuta primero
+segunda_funcion();    // Tarea 2: Se ejecuta cuando termina primera_funcion()
+tercera_funcion();    // Tarea 3: Se ejecuta cuando termina segunda_funcion()
+</code></pre>
+<p>Sin embargo, en el mundo de la programación, tarde o temprano necesitaremos realizar operaciones <strong>asíncronas</strong>, especialmente en ciertos lenguajes como Javascript, donde tenemos que realizar tareas <strong>que tienen que esperar a que ocurra un determinado suceso</strong> que no depende de nosotros, y reaccionar realizando otra tarea sólo cuando dicho suceso ocurra.</p>
+<h3 id="lenguaje-no-bloqueante">Lenguaje no bloqueante<a class="headerlink" href="#lenguaje-no-bloqueante" title="Permanent link">&para;</a></h3>
+<p>Cuando hablamos de Javascript, habitualmente nos referimos a él como un lenguaje <strong>no bloqueante</strong>. Con esto queremos decir que las tareas que realizamos no se quedan bloqueadas esperando ser finalizadas, y por consiguiente, evitando proseguir con el resto de tareas.</p>
+<p>Imaginemos que la <code>segunda_funcion()</code> del ejemplo anterior realiza una tarea que depende de otro factor, como por ejemplo un click de ratón del usuario. Si hablasemos de un <strong>lenguaje bloqueante</strong>, hasta que el usuario no haga click, Javascript no seguiría ejecutando las demás funciones, sino que se quedaría bloqueado esperando a que se terminase esa segunda tarea:</p>
+<p><img alt="Asincronía en Javascript" src="../img/asincronia-javascript.png" /></p>
+<p>Pero como Javascript es un <strong>lenguaje no bloqueante</strong>, lo que hará es mover esa tarea a una lista de <strong>tareas pendientes</strong> a las que irá «prestándole atención» a medida que lo necesite, pudiendo continuar y retomar el resto de tareas a continuación de la segunda.</p>
+<h3 id="que-es-la-asincronia_1">¿Qué es la asincronía?<a class="headerlink" href="#que-es-la-asincronia_1" title="Permanent link">&para;</a></h3>
+<p>Pero esto no es todo. Ten en cuenta que pueden existir <strong>múltiples</strong> tareas asíncronas, dichas tareas puede que terminen realizandose correctamente (<em>o puede que no</em>) y ciertas tareas pueden depender de otras, por lo que deben respetar un cierto orden. Además, es muy habitual que no sepamos previamente <strong>cuanto tiempo</strong> va a tardar en terminar una tarea, por lo que necesitamos un mecanismo para controlar todos estos factores: las <strong>promesas</strong>, las cuales veremos algunos capítulos más adelante.</p>
+<h3 id="ejemplos-de-tareas-asincronas">Ejemplos de tareas asíncronas<a class="headerlink" href="#ejemplos-de-tareas-asincronas" title="Permanent link">&para;</a></h3>
+<p>En Javascript no todas las tareas son asíncronas, pero hay ciertas tareas que si lo son, y probablemente se entiendan mejor con ejemplos reales:</p>
+<ul>
+<li>Un <code>fetch()</code> a una <strong>URL</strong> para obtener un archivo <code>.json</code>.</li>
+<li>Un <code>new Audio()</code> de una <strong>URL</strong> con un <code>.mp3</code> al que se hace <code>.play()</code> para reproducirlo.</li>
+<li>Una tarea programada con <code>setTimeout()</code> que se ejecutará en el futuro.</li>
+<li>Una comunicación desde Javascript a la API del sintetizador de voz del navegador.</li>
+<li>Una comunicación desde Javascript a la API de un sensor del smartphone.</li>
+</ul>
+<p>Todos estos ejemplos se realizan mediante <strong>tareas asíncronas</strong>, ya que realizan un procedimiento que podría bloquear la ejecución del resto del programa al tardar mucho: la descarga de un fichero grande desde un servidor lento, una conexión a internet muy lenta, un dispositivo saturado a la hora de comunicarse con el sensor del móvil, etc...</p>
+<h3 id="como-gestionar-la-asincronia">¿Cómo gestionar la asincronía?<a class="headerlink" href="#como-gestionar-la-asincronia" title="Permanent link">&para;</a></h3>
+<p>Teniendo en cuenta el punto anterior, debemos aprender a buscar mecanismos para dejar claro en nuestro código Javascript, que ciertas tareas tienen que procesarse de forma asíncrona para quedarse a la espera, y otras deben ejecutarse de forma síncrona.</p>
+<p>En Javascript existen varias formas de gestionar la <strong>asincronía</strong>, donde quizás las más populares son las siguientes (<em>que iremos viendo y profundizando en cada artículo de este tema</em>):</p>
+<table>
+<thead>
+<tr>
+<th align="left">Método</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Mediante <code>callbacks</code></td>
+<td align="left">Probablemente, la forma más clásica de gestionar la asincronía en Javascript.</td>
+</tr>
+<tr>
+<td align="left">Mediante <code>promesas</code></td>
+<td align="left">Una forma más moderna y actual de gestionar la asincronía.</td>
+</tr>
+<tr>
+<td align="left">Mediante <code>async</code>/<code>await</code></td>
+<td align="left">Seguimos con promesas, pero con <code>async</code>/<code>await</code> añadimos más azúcar sintáctico.</td>
+</tr>
+<tr>
+<td align="left">Mediante <code>top-level await</code></td>
+<td align="left">Una variación de la anterior, donde no es necesario usar <code>async</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Iremos viendo la implementación de cada una de ellas en cada capítulo de este tema, utilizando de base un ejemplo sencillo donde <strong>lanzamos un dado</strong> un número concreto de veces, que explicaremos a continuación.</p>
+<h3 id="ejemplo-base">Ejemplo base<a class="headerlink" href="#ejemplo-base" title="Permanent link">&para;</a></h3>
+<p>Tenemos un array <code>numbers</code>, en el cuál insertaremos números. Insertaremos la cantidad de números que figura en <code>iterations</code>. En cada iteración se insertará un <code>number</code>, que habrá sido generado con una simulación del lanzamiento de un dado (<em>un número aleatorio del <code>1</code> al <code>6</code></em>). En el caso de obtener un <code>6</code>, paramos y rompemos el bucle:</p>
+<pre><code>const iterations = 10;
+const numbers = [];
+
+for (let i = 0; i &lt; iterations; i++) {
+  const number = 1 + Math.floor(Math.random() * 6);
+  numbers.push(number);
+  if (number === 6) {
+    console.log("ERROR");
+    break;
+  }
+}
+
+console.log(numbers);
+</code></pre>
+<p>Al terminar este fragmento de código, tendremos un array <code>numbers</code> que contendrá todos los números obtenidos en los lanzamientos de los dados, es decir, <code>10</code> números si no hemos obtenido ningún <code>6</code>. Si hemos obtenido un <code>6</code> puede que tengamos menos números, debido a que se rompe el bucle tras insertarlo.</p>
+<blockquote>
+<p>Ten en cuenta que este ejemplo es una <strong>tarea síncrona</strong> (<em>aún no existe asincronía</em>). Simplemente estamos explicando el ejemplo que usaremos de base en los siguientes capítulos del tema para controlar asincronía. Quizás lo ideal sería que cada lanzamiento del lado tardase un tiempo concreto en dar la respuesta, pero no se ha introducido ese retardo para simplificar los ejemplos de código.</p>
+</blockquote>
+<hr />
+<h2 id="funciones-callbacks">Funciones callbacks<a class="headerlink" href="#funciones-callbacks" title="Permanent link">&para;</a></h2>
+<p>Los <strong>callbacks</strong> (<em>a veces denominados funciones de retrollamada o funciones callback</em>) no son más que un tipo de <strong>funciones</strong> que se pasan por parámetro a otras funciones. El objetivo de esto es tener una forma más legible de escribir funciones, más cómoda y flexible para reutilizarlas, y además entra bastante en consonancia con el concepto de asincronía de Javascript, como veremos más adelante.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Ten en cuenta que actualmente, controlar la asincronía sólo mediante callbacks puede ser una práctica obsoleta. Es preferible utilizar promesas, que generalmente es más adecuado.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="que-es-un-callback">¿Qué es un callback?<a class="headerlink" href="#que-es-un-callback" title="Permanent link">&para;</a></h3>
+<p>Como hemos dicho, las <strong>funciones callback</strong> no son más que un tipo de funciones que se pasan por parámetro a otras funciones. Además, los parámetros de dichas funciones toman un valor especial en el contexto del interior de la función.</p>
+<p>Pero veamos un ejemplo. Imaginemos el siguiente bucle tradicional para recorrer un :</p>
+<pre><code>const list = ["A", "B", "C"];
+
+for (let i = 0; i &lt; list.length; i++) {
+  console.log("i=", i, " list=", list[i]);
+}
+</code></pre>
+<p>En <code>i</code> tenemos la posición del array que estamos recorriendo (<em>va de 0 a 2</em>) y con <code>list[i]</code> accedemos a la posición del array para obtener el elemento, es decir, desde <code>A</code> hasta <code>C</code>. Ahora veamos, como podemos hacer este mismo bucle utilizando el método <code>forEach()</code> del al cuál le pasamos una función callback:</p>
+<pre><code>list.forEach(function(e,i) {
+  console.log("i=", i, "list=", e);
+});
+</code></pre>
+<p>Esto se puede reescribir como:</p>
+<pre><code>["A", "B", "C"].forEach((e,i) =&gt; console.log("i=", i, "list=", e));
+</code></pre>
+<p>Lo importante de este ejemplo es que se vea que la <strong>función callback</strong> que le hemos pasando a <code>forEach()</code> se va a ejecutar por cada uno de los elementos del array, y en cada iteración de dicha <strong>función callback</strong>, los parámetros <code>e</code>, <code>i</code> van a tener un valor especial:</p>
+<ul>
+<li><code>e</code> es el elemento del array</li>
+<li><code>i</code> es el índice (<em>posición</em>) del array</li>
+</ul>
+<h3 id="callbacks-en-javascript">Callbacks en Javascript<a class="headerlink" href="#callbacks-en-javascript" title="Permanent link">&para;</a></h3>
+<p>Una vez entendido esto, vamos a profundizar un poco con las <strong>funciones callbacks</strong> utilizadas para realizar tareas asíncronas. Probablemente, el caso más fácil de entender es utilizar un temporizador mediante la función <code>setTimeout(``callback,</code> <code>time)</code>.</p>
+<p>Dicha función nos exige <strong>dos parámetros</strong>:</p>
+<ul>
+<li>La función <code>callback</code> a ejecutar</li>
+<li>El tiempo <code>time</code> que esperará antes de ejecutarla</li>
+</ul>
+<p>Así pues, el ejemplo sería el siguiente:</p>
+<pre><code>setTimeout(function() {
+  console.log("He ejecutado la función");
+}, 2000);
+</code></pre>
+<p>Simplemente, le decimos a <code>setTimeout()</code> que ejecute la <strong>función callback</strong> que le hemos pasado por primer parámetro cuando transcurran <code>2000</code> milisegundos (<em>es decir, 2 segundos</em>). Utilizando <a href="https://lenguajejs.com/javascript/fundamentos/funciones/#arrow-functions">arrow functions</a> se puede simplificar el callback y hacer mucho más «fancy» y legible:</p>
+<pre><code>setTimeout(() =&gt; console.log("He ejecutado la función"), 2000);
+</code></pre>
+<p>Si lo prefieres y lo ves más claro (<em>no suele ser habitual en código Javascript, pero cuando se empieza suele resultar más fácil entenderlo</em>) podemos guardar el callback en una constante:</p>
+<pre><code>const action = () =&gt; console.log("He ejecutado la función");
+setTimeout(action, 2000);
+</code></pre>
+<p>En cualquiera de los casos, lo importante es darse cuenta que estamos usando una <strong>función callback</strong> para pasársela a <code>setTimeout()</code>, que es otra función. En este caso, se trata de «programar» un suceso que ocurrirá en un momento conocido del futuro, pero muchas veces desconoceremos cuando se producirá (<em>o incluso si se llegará a producir</em>).</p>
+<p>Si probamos el código que verás a continuación, comprobarás que el segundo <code>console.log()</code> se ejecutará <strong>antes</strong> que el primero, dentro del <code>setTimeout()</code>, mostrando primero <code>Código síncrono</code> y luego <code>Código asíncrono</code> en la consola del navegador:</p>
+<pre><code>setTimeout(() =&gt; console.log("Código asíncrono."), 2000);
+console.log("Código síncrono.");
+</code></pre>
+<p>El último <code>console.log</code> del código se ejecuta primero (<em>forma parte del flujo principal de ejecución del programa</em>). El <code>setTimeout()</code> que figura en una línea anterior, aunque se ejecuta antes, pone en espera a la función callback, que se ejecutará cuando se cumpla una cierta condición (<em>transcurran 2 segundos desde ese momento</em>).</p>
+<blockquote>
+<blockquote>
+<p>Esto puede llegar a sorprender a desarrolladores que llegan de otros lenguajes considerados <strong>bloqueantes</strong>; Javascript sin embargo se considera un lenguaje <strong>asíncrono y no bloqueante</strong>. ¿Qué significa esto? Al ejecutar la línea del <code>setTimeout()</code>, el programa no se queda bloqueado esperando a que terminen los 2 segundos y se ejecute la función callback, sino que continúa con el flujo general del programa para volver más adelante cuando sea necesario a ejecutar el <code>callback</code>, aprovechando así mejor el tiempo y <strong>realizando tareas de forma asíncrona</strong>.</p>
+</blockquote>
+</blockquote>
+<h3 id="asincronia-con-callbacks">Asincronía con callbacks<a class="headerlink" href="#asincronia-con-callbacks" title="Permanent link">&para;</a></h3>
+<p>Las <strong>funciones callback</strong> pueden utilizarse como un primer intento de manejar la asincronía en un programa. De hecho, eran muy utilizadas en la época dorada de <a href="https://jquery.com/">jQuery</a>, donde muchas funciones o librerías tenían una estructura similar a esta (<em>en jQuery se usaba algo similar</em>):</p>
+<pre><code>function doTask(number, callback) {
+  /* Código de la función */
+}
+
+doTask(42, function(err, result) {
+  /* Trabajamos con err o result según nos interese */
+});
+</code></pre>
+<p>Observa que <code>doTask()</code> es la función que realiza la tarea en cuestión. Puede tener los parámetros que se consideren adecuados, como cualquier otra función, la diferencia es que establecemos un <code>callback</code> que usaremos para controlar lo que se debe hacer.</p>
+<p>Más adelante, llamamos a la función <code>doTask()</code> y en su parámetro <code>callback</code> pasamos una función con dos parámetros; <code>err</code> y <code>result</code>. El primero de ellos, <code>err</code>, utilizado para controlar un error y el segundo de ellos, <code>result</code>, utilizado para manejar los valores devueltos.</p>
+<p>Vamos a utilizar el ejemplo del <strong>lanzamiento de 10 dados</strong> que explicamos en el primer capítulo de Asincronía, para adaptarlo a funciones callbacks. En primer lugar, veamos la implementación de la función <code>doTask</code>:</p>
+<pre><code>/* Implementación con callbacks */
+const doTask = (iterations, callback) =&gt; {
+  const numbers = [];
+  for (let i = 0; i &lt; iterations; i++) {
+    const number = 1 + Math.floor(Math.random() * 6);
+    numbers.push(number);
+    if (number === 6) {
+      /* Error, se ha sacado un 6 */
+      callback({
+        error: true,
+        message: "Se ha sacado un 6"
+      });
+      return;
+    }
+  }
+  /* Termina bucle y no se ha sacado 6 */
+  return callback(null, {
+    error: false,
+    value: numbers
+  });
+}
+</code></pre>
+<p>Como se puede ver, estamos utilizando <a href="https://lenguajejs.com/javascript/fundamentos/funciones/#arrow-functions">arrow functions</a> para definir la función <code>doTask()</code>. Le pasamos un parámetro <code>iterations</code> que simplemente indica el número de iteraciones que tendrá el bucle (<em>número de lanzamientos del dado</em>). Por otro lado, el segundo parámetro es nuestro <code>callback</code>, que recordemos que es una función, por lo que podremos ejecutarla en momentos concretos de nuestro código. Lo hacemos en dos ocasiones:</p>
+<ul>
+<li>
+<p>En el <code>if</code> cuando <code>number</code> es <code>6</code> (<em>detectamos como error cuando obtenemos un 6</em>). Le pasamos un objeto por parámetro que contiene un <code>error</code> y <code>message</code>, el mensaje de error.</p>
+</li>
+<li>
+<p>Tras el <code>for</code>, con dos parámetros. El primero , ya que en este caso no hay error. El segundo parámetro un objeto que contiene un campo <code>value</code> con el array de resultados.</p>
+</li>
+</ul>
+<p>Teniendo claro esto, veamos la llamada a la función <code>doTask()</code>, donde le pasamos esa función <code>callback</code> e implementamos el funcionamiento, que en nuestro caso serán dos simples <code>console.error()</code> y <code>console.log()</code>:</p>
+<pre><code>doTask(10, function(err, result) {
+  if (err) {
+    console.error("Se ha sacado un ", err.message);
+    return;
+  }
+  console.log("Tiradas correctas: ", result.value);
+});
+</code></pre>
+<p>Esto es una forma clásica donde utilizamos una <strong>función callback</strong> para gestionar la asincronia y facilitar la reutilización, pudiendo reutilizar la función con la lógica, aplicando diferentes <strong>funciones callback</strong> según nos interese.</p>
+<blockquote>
+<p>Observa que aunque en este ejemplo se ha utilizado un parámetro <code>err</code> y otro <code>result</code> en el callback para gestionar un objeto de error y un objeto de resultados, esto puede modificarse a gusto del desarrollador, aunque lo habitual suele ser este esquema.</p>
+</blockquote>
+<h3 id="desventajas-de-los-callbacks">Desventajas de los callbacks<a class="headerlink" href="#desventajas-de-los-callbacks" title="Permanent link">&para;</a></h3>
+<p>A pesar de ser una forma flexible y potente de controlar la asincronía, que permite realizar múltiples posibilidades, las <strong>funciones callbacks</strong> tienen ciertas desventajas evidentes. En primer lugar, el código creado con las funciones es algo caótico y (<em>quizás subjetivamente</em>) algo feo. Por ejemplo, el tener que pasar un por parámetros en algunas funciones, no es demasiado elegante.</p>
+<p>Pero sobre todo, uno de los problemas evidentes viene a la hora de tener que gestionar la asincronía varias veces en una misma función, donde al introducir varias funciones con callbacks en su interior, conseguimos una <strong>estructura anidada</strong> similar a la siguiente:</p>
+<p><img alt="Callback Hell" src="../img/callback-hell.gif" /></p>
+<p>La forma triangular que produce es conocida como <strong>Callback Hell</strong> o <strong>Pyramid of Doom</strong>, debido a su forma, resultando un código muy poco elegante que se puede complicar demasiado de cara a la legibilidad. Es cuando entran en juego <strong>las promesas</strong>, que veremos en el siguiente capítulo.</p>
+<hr />
+<h2 id="que-son-las-promesas">¿Qué son las promesas?<a class="headerlink" href="#que-son-las-promesas" title="Permanent link">&para;</a></h2>
+<p>Las <strong>promesas</strong> son un concepto para resolver el problema de asincronía de una forma mucho más elegante y práctica que, por ejemplo, utilizando <a href="/javascript/asincronia/callbacks/">funciones callbacks</a> directamente.</p>
+<p>Como su propio nombre indica, una <strong>promesa</strong> es algo que, en principio pensamos que se cumplirá, pero en el futuro pueden ocurrir varias cosas:</p>
+<p><img alt="Promises (Promesas Javascript)" src="../img/promises.png" /></p>
+<ul>
+<li>La promesa <strong>se cumple</strong> (<em>promesa resuelta</em>)</li>
+<li>La promesa <strong>no se cumple</strong> (<em>promesa se rechaza</em>)</li>
+<li>La promesa se queda en un <strong>estado incierto</strong> indefinidamente (<em>promesa pendiente</em>)</li>
+</ul>
+<p>Con estas sencillas bases, podemos entender el funcionamiento de una promesa en Javascript. Antes de empezar, también debemos tener claro que existen dos partes importantes de las promesas: <strong>como consumirlas</strong> (<em>utilizar promesas</em>) y <strong>como crearlas</strong> (<em>preparar una función para que use promesas y se puedan consumir</em>).</p>
+<h3 id="promesas-en-javascript">Promesas en Javascript<a class="headerlink" href="#promesas-en-javascript" title="Permanent link">&para;</a></h3>
+<p>Las <strong>promesas</strong> en Javascript se representan a través de un , y cada <strong>promesa</strong> estará en un estado concreto: <code>pendiente</code>, <code>aceptada</code> o <code>rechazada</code>. Además, cada <strong>promesa</strong> tiene los siguientes métodos, que podremos utilizar para utilizarla:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Métodos</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>.then(``resolve)</code></td>
+<td align="left">Ejecuta la función callback <code>resolve</code> cuando la promesa se cumple.</td>
+</tr>
+<tr>
+<td align="left"><code>.catch(``reject)</code></td>
+<td align="left">Ejecuta la función callback <code>reject</code> cuando la promesa se rechaza.</td>
+</tr>
+<tr>
+<td align="left"><code>.then(``resolve,``reject)</code></td>
+<td align="left">Método equivalente a las dos anteriores en el mismo <code>.then()</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>.finally(``end)</code></td>
+<td align="left">Ejecuta la función callback <code>end</code> tanto si se cumple como si se rechaza.</td>
+</tr>
+</tbody>
+</table>
+<p>Más adelante veremos, que a diferencia del apartado anterior donde se utilizaban solamente funciones callback, en este enfoque se tiende a <strong>no anidar promesas</strong>, evitando así el famoso <strong>Callback Hell</strong>, y haciendo el código mucho más legible.</p>
+<h3 id="consumir-una-promesa">Consumir una promesa<a class="headerlink" href="#consumir-una-promesa" title="Permanent link">&para;</a></h3>
+<p>La forma general de consumir una promesa es utilizando el <code>.then()</code> con un sólo parámetro, puesto que muchas veces lo único que nos interesa es realizar una acción cuando la promesa se cumpla:</p>
+<pre><code>fetch("/robots.txt").then(function(response) {
+  /* Código a realizar cuando se cumpla la promesa */
+});
+</code></pre>
+<p>Lo que vemos en el ejemplo anterior es el uso de la función <a href="/javascript/peticiones-http/fetch/">fetch()</a>, la cuál devuelve una promesa que se cumple cuando obtiene respuesta de la petición realizada. De esta forma, estaríamos preparando (<em>de una forma legible</em>) la forma de actuar de nuestro código a la respuesta de la petición realizada, todo ello de forma asíncrona.</p>
+<p>Recuerda que podemos hacer uso del método <code>.catch()</code> para actuar cuando se rechaza una promesa:</p>
+<pre><code>fetch("/robots.txt")
+  .then(function(response) {
+    /* Código a realizar cuando se cumpla la promesa */
+  })
+  .catch(function(error) {
+    /* Código a realizar cuando se rechaza la promesa */
+  });
+</code></pre>
+<p>Observa como hemos indentado los métodos <code>.then()</code> y <code>.catch()</code>, ya que se suele hacer así para que sea mucho más legible para el. Además, se pueden encadenar varios <code>.then()</code> si se siguen generando promesas y se devuelven con un <code>return</code>:</p>
+<pre><code>fetch("/robots.txt")
+  .then(response =&gt; {
+    return response.text(); // Devuelve una promesa
+  })
+  .then(data =&gt; {
+    console.log(data);
+  })
+  .catch(error =&gt; { /* Código a realizar cuando se rechaza la promesa */ });
+</code></pre>
+<blockquote>
+<blockquote>
+<p>No olvides indicar el <code>return</code> para poder encadenar las siguientes promesas con <code>.then()</code>. Tras un <code>.catch()</code> también es posible encadenar <code>.then()</code> para continuar procesando promesas.</p>
+</blockquote>
+</blockquote>
+<p>De hecho, usando <strong>arrow functions</strong> se puede mejorar aún más la legibilidad de este código, recordando que cuando sólo tenemos una sentencia en el cuerpo de la <strong>arrow function</strong> hay un <code>return</code> implícito:</p>
+<pre><code>fetch("/robots.txt")
+  .then(response =&gt; response.text())
+  .then(data =&gt; console.log(data))
+  .finally(() =&gt; console.log("Terminado."))
+  .catch(error =&gt; console.error(data));
+</code></pre>
+<p>Observese además que hemos añadido el método <code>.finally()</code> para añadir una función callback que se ejecutará <strong>tanto si la promesa se cumple o se rechaza</strong>, lo que nos ahorrará tener que repetir la función en el <code>.then()</code> como en el <code>.catch()</code>.</p>
+<blockquote>
+<p>En todo este apartado hemos visto como utilizar o consumir una promesa haciendo uso de <code>.then()</code>, que es lo que en la mayoría de los casos necesitaremos. Sin embargo, vamos a ver en el siguiente apartado como crear o implementar las promesas para su posterior consumo.</p>
+</blockquote>
+<h3 id="asincronia-con-promesas">Asincronía con promesas<a class="headerlink" href="#asincronia-con-promesas" title="Permanent link">&para;</a></h3>
+<p>Vamos a implementar el ejercicio base que hemos comentado en el primer capítulo de este tema utilizando <strong>promesas</strong>. Observa que lo primero que haremos es crear un nuevo objeto que «envuelve» toda la función de la tarea <code>doTask()</code>.</p>
+<p>Al <code>new Promise()</code> se le pasa por parámetro una función con dos callbacks, el primero <code>resolve</code> el que utilizaremos cuando se cumpla la promesa, y el segundo <code>reject</code> cuando se rechace:</p>
+<pre><code>/* Implementación con promesas */
+const doTask = (iterations) =&gt; new Promise((resolve, reject) =&gt; {
+  const numbers = [];
+  for (let i = 0; i &lt; iterations; i++) {
+    const number = 1 + Math.floor(Math.random() * 6);
+    numbers.push(number);
+    if (number === 6) {
+      reject({
+        error: true,
+        message: "Se ha sacado un 6"
+      });
+    }
+  }
+  resolve({
+    error: false,
+    value: numbers
+  });
+});
+</code></pre>
+<p>Como ves, se trata de una implementación muy similar a los callbacks que vimos en el apartado anterior, pero utilizan una nativa para poder luego consumirla cómodamente:</p>
+<pre><code>doTask(10)
+  .then(result =&gt; console.log("Tiradas correctas: ", result.value))
+  .catch(err =&gt; console.error("Se ha sacado un ", err.message));
+</code></pre>
+<p>Imagina el caso de que <strong>cada lanzamiento del dado</strong> (<em>la parte donde genera el número aleatorio</em>) fuera un proceso más costoso que <strong>tardara un tiempo considerable</strong>, quizás de esa forma se vea más clara la necesidad de una tarea asíncrona, controlada con promesas.</p>
+<p>En el siguiente capítulo veremos como trabajar con múltiples promesas y hacer acciones compuestas con varias de ellas.</p>
+<blockquote>
+<p>Si el ejemplo anterior te resulta demasiado críptico por las funciones <code>resolve</code> y <code>reject</code>, es muy probable que echar un vistazo al tema de las <a href="/javascript/asincronia/callbacks/">funciones callback</a> te aclare muchos detalles.</p>
+</blockquote>
+<hr />
+<h2 id="promesas-en-grupo-promise-api">Promesas en grupo (Promise API)<a class="headerlink" href="#promesas-en-grupo-promise-api" title="Permanent link">&para;</a></h2>
+<p>Ahora que sabemos <a href="/javascript/asincronia/promise-api/">¿Qué son las promesas?</a>, para qué y como se usan, podemos profundizar y aprender más sobre la <strong>API Promise</strong> nativa de Javascript, mediante la cuál podemos realizar operaciones con grupos de promesas, tanto independientes como dependientes entre sí.</p>
+<blockquote>
+<p>Por norma general, las tareas asíncronas no sabemos cuanto tardarán en responder y/o procesarse, por lo que muchas veces el orden en que se resuelvan no será el mismo. Esto en algunos casos no nos importará, pero en otros sí, por lo que hay que tenerlo en cuenta.</p>
+</blockquote>
+<h3 id="api-de-las-promesas">API de las promesas<a class="headerlink" href="#api-de-las-promesas" title="Permanent link">&para;</a></h3>
+<p>El objeto <code>Promise</code> de Javascript tiene varios métodos estáticos que podemos utilizar en nuestro código. Todos devuelven una promesa y son los que veremos en la siguiente tabla:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Métodos</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>Promise.all(``list)</code></td>
+<td align="left">Acepta sólo si <strong>todas</strong> las promesas del se cumplen.</td>
+</tr>
+<tr>
+<td align="left"><code>Promise.allSettled(``list)</code></td>
+<td align="left">Acepta sólo si <strong>todas</strong> las promesas del se cumplen o rechazan.</td>
+</tr>
+<tr>
+<td align="left"><code>Promise.any(``list)</code></td>
+<td align="left">Acepta con el valor de la primera promesa del que se cumpla.</td>
+</tr>
+<tr>
+<td align="left"><code>Promise.race(``list)</code></td>
+<td align="left">Acepta o rechaza dependiendo de la primera promesa que se procese.</td>
+</tr>
+<tr>
+<td align="left"><code>Promise.resolve(``value)</code></td>
+<td align="left">Devuelve un valor envuelto en una promesa que se cumple directamente.</td>
+</tr>
+<tr>
+<td align="left"><code>Promise.reject(``value)</code></td>
+<td align="left">Devuelve un valor envuelto en una promesa que se rechaza directamente.</td>
+</tr>
+</tbody>
+</table>
+<p>En los siguientes ejemplos, vamos a utilizar la función <code>fetch()</code> para realizar varias peticiones y descargar varios archivos diferentes que necesitaremos para nuestras tareas.</p>
+<h3 id="promiseall">Promise.all()<a class="headerlink" href="#promiseall" title="Permanent link">&para;</a></h3>
+<p>El método <code>Promises.all()</code> funciona como un «<strong>todo o nada</strong>»: devuelve una promesa que se cumple cuando todas las promesas del se cumplen. Si alguna de ellas se rechaza, <code>Promise.all()</code> también lo hace.</p>
+<p>En nuestro ejemplo, cada uno de los <code>fetch()</code> tendrá su propia promesa y <strong>sólo cuando se hayan descargado los tres archivos de cada petición</strong> se cumplirá la promesa del <code>Promise.all()</code>:</p>
+<pre><code>const p1 = fetch("/robots.txt");
+const p2 = fetch("/index.css");
+const p3 = fetch("/index.js");
+
+Promise.all([p1, p2, p3])
+  .then(responses =&gt; {
+    responses.forEach(response =&gt; {
+      console.log(response.status, response.url);
+    })
+  });
+</code></pre>
+<p>A <code>Promise.all()</code> le pasamos un con las promesas individuales. Cuando <strong>todas y cada una</strong> de esas promesas se cumplan favorablemente, <strong>entonces</strong> se ejecutará la función callback de su <code>.then()</code>. En el caso de que alguna se rechace, no se llegará a ejecutar.</p>
+<h3 id="promiseallsettled">Promise.allSettled()<a class="headerlink" href="#promiseallsettled" title="Permanent link">&para;</a></h3>
+<p>El método <code>Promises.allSettled()</code> funciona como un «<strong>todas procesadas</strong>»: devuelve una promesa que se cumple cuando todas las promesas del se hayan procesado, independientemente de que se hayan cumplido o rechazado.</p>
+<pre><code>const p1 = fetch("/robots.txt");
+const p2 = fetch("https://google.com/index.css");
+const p3 = fetch("/index.js");
+
+Promise.allSettled([p1, p2, p3])
+  .then(responses =&gt; {
+    responses.forEach(response =&gt; {
+      console.log(response.status, response);
+    })
+  });
+</code></pre>
+<p>Esta promesa nos devuelve un campo <code>status</code> donde nos indica si cada promesa individual ha sido cumplida o rechazada, y un campo <code>value</code> con los valores devueltos por la promesa. En este caso, obtendremos que la primera y última promesa se resuelven (<em>fulfilled</em>), mientras que la segunda nos da un <a href="/javascript/peticiones-http/cors/">error de CORS</a> y se rechaza (<em>rejected</em>).</p>
+<h3 id="promiseany">Promise.any()<a class="headerlink" href="#promiseany" title="Permanent link">&para;</a></h3>
+<p>El método <code>Promise.any()</code> funciona como «<strong>la primera que se cumpla</strong>»: Devuelve una promesa con el valor de la primera promesa individual del que se cumpla. Si todas las promesas se rechazan, entonces devuelve una promesa rechazada.</p>
+<pre><code>const p1 = fetch("/robots.txt");
+const p2 = fetch("/index.css");
+const p3 = fetch("/index.js");
+
+Promise.any([p1, p2, p3])
+  .then(response =&gt; console.log(response.status, response.url));
+</code></pre>
+<p>Como vemos, <code>Promise.any()</code> devolverá una respuesta de la primera promesa cumplida.</p>
+<h3 id="promiserace">Promise.race()<a class="headerlink" href="#promiserace" title="Permanent link">&para;</a></h3>
+<p>El método <code>Promise.race()</code> funciona como una «<strong>la primera que se procese</strong>»: la primera promesa del que sea procesada, independientemente de que se haya cumplido o rechazado, determinará la devolución de la promesa del <code>Promise.race()</code>. Si se cumple, devuelve una promesa cumplida, en caso negativo, devuelve una rechazada.</p>
+<pre><code>const p1 = fetch("/robots.txt");
+const p2 = fetch("/index.css");
+const p3 = fetch("/index.js");
+
+Promise.race([p1, p2, p3])
+  .then(response =&gt; console.log(response.status, response.url));
+</code></pre>
+<p>De forma muy similar a la anterior, <code>Promise.race()</code> devolverá la promesa que se resuelva primero, ya sea cumpliéndose o rechazándose.</p>
+<h3 id="promiseresolve-y-promisereject">Promise.resolve() y Promise.reject()<a class="headerlink" href="#promiseresolve-y-promisereject" title="Permanent link">&para;</a></h3>
+<p>Mediante los métodos estáticos <code>Promise.resolve()</code> y <code>Promise.reject()</code> podemos devolver una promesa cumplida o rechazada respectivamente sin necesidad de crear una promesa con <code>new Promise()</code>. Esto puede ser interesante en algunos casos, aunque rara vez solemos utilizarlo hoy en día.</p>
+<pre><code>const doTask = () =&gt; {
+  const number = 1 + Math.floor(Math.random() * 6);
+  return (number % 2 === 0) ? Promise.resolve(number) : Promise.reject(number);
+}
+</code></pre>
+<p>Observa que en este caso devolvemos una promesa que se cumple cuando el número generado es par y se rechaza cuando es impar. Sin embargo, ten en cuenta que en problema en este caso es que la promesa no «envuelve» toda la función, por lo que si la tarea tardase algún tiempo en generar el número, no podríamos utilizar el <code>.then()</code> para consumir la promesa.</p>
+<blockquote>
+<p>Estas funciones estáticas se suelen utilizar en muy pocos casos, para mantener cierta compatibilidad en funciones que se espera que devuelvan una promesa.</p>
+</blockquote>
+<hr />
+<h2 id="asyncawait">Async/Await<a class="headerlink" href="#asyncawait" title="Permanent link">&para;</a></h2>
+<p>En se introducen las palabras clave <code>async</code>/<code>await</code>, que no son más que una forma de <strong>azúcar sintáctico</strong> para gestionar las promesas de una forma más sencilla. Con <code>async</code>/<code>await</code> seguimos utilizando promesas, pero abandonamos el modelo de encadenamiento de <code>.then()</code> para utilizar uno en el que trabajamos de forma más tradicional.</p>
+<h3 id="la-palabra-clave-async">La palabra clave async<a class="headerlink" href="#la-palabra-clave-async" title="Permanent link">&para;</a></h3>
+<p>En primer lugar, tenemos la palabra clave <code>async</code>. Esta palabra clave se colocará previamente a <code>function</code>, para definirla así como una <strong>función asíncrona</strong>, el resto de la función no cambia:</p>
+<pre><code>async function funcion_asincrona() {
+  return 42;
+}
+</code></pre>
+<p>En el caso de que utilicemos <strong>arrow function</strong>, se definiría como vemos a continuación, colocando el <code>async</code> justo antes de los parámetros de la arrow function:</p>
+<pre><code>const funcion_asincrona = async () =&gt; 42;
+</code></pre>
+<p>Al ejecutar la función veremos que ya nos devuelve una que ha sido cumplida, con el valor devuelto en la función (<em>en este caso, 42</em>). De hecho, podríamos utilizar un <code>.then()</code> para manejar la promesa:</p>
+<pre><code>funcion_asincrona().then(value =&gt; {
+  console.log("El resultado devuelto es: ", value);
+});
+</code></pre>
+<p>Sin embargo, veremos que lo que se suele hacer junto a <code>async</code> es utilizar la palabra clave <code>await</code>, que es donde reside lo interesante de utilizar este enfoque.</p>
+<h3 id="la-palabra-clave-await">La palabra clave await<a class="headerlink" href="#la-palabra-clave-await" title="Permanent link">&para;</a></h3>
+<p>Cualquier función definida con <code>async</code>, o lo que es lo mismo, cualquier puede utilizarse junto a la palabra clave <code>await</code> para manejarla. Lo que hace <code>await</code> es esperar a que se resuelva la promesa, mientras permite continuar ejecutando otras tareas que puedan realizarse:</p>
+<pre><code>const funcion_asincrona = async () =&gt; 42;
+
+const value = funcion_asincrona();             // Promise { &lt;fulfilled&gt;: 42 }
+const asyncValue = await funcion_asincrona();  // 42
+</code></pre>
+<p>Observa que en el caso de <code>value</code>, que se ejecuta sin <code>await</code>, lo que obtenemos es el valor devuelto por la función, pero «envuelto» en una promesa que deberá utilizarse con <code>.then()</code> para manejarse. Sin embargo, en <code>asyncValue</code> estamos obteniendo un tipo de dato , guardando el valor directamente ya procesado, ya que <code>await</code> espera a que se resuelva la promesa de forma asíncrona y guarda el valor.</p>
+<blockquote>
+<p>Esto hace que la forma de trabajar con <code>async</code>/<code>await</code>, aunque se sigue trabajando exactamente igual con promesas, sea mucho más fácil y trivial para usuarios que no estén acostumbrados a las promesas y a la asincronía en general, ya que el código «parece» síncrono.</p>
+</blockquote>
+<h3 id="asincronia-con-asyncawait">Asincronía con async/await<a class="headerlink" href="#asincronia-con-asyncawait" title="Permanent link">&para;</a></h3>
+<p>Volvamos al ejemplo que hemos visto en los anteriores capítulos. Recordemos que la función <code>doTask()</code> realiza 10 lanzamientos de un dado y nos devuelve los resultados obtenidos o detiene la tarea si se obtiene un 6.</p>
+<p>La implementación de la función sufre algunos cambios, simplificándose considerablemente. En primer lugar, añadimos la palabra clave <code>async</code> antes de los parámetros de la <strong>arrow function</strong>. En segundo lugar, desaparece cualquier mención a promesas, se devuelven directamente los objetos, ya que al ser una función <code>async</code> se devolverá todo envuelto en una :</p>
+<pre><code>const doTask = async (iterations) =&gt; {
+  const numbers = [];
+  for (let i = 0; i &lt; iterations; i++) {
+    const number = 1 + Math.floor(Math.random() * 6);
+    numbers.push(number);
+    if (number === 6) {
+      return {
+        error: true,
+        message: "Se ha sacado un 6"
+      };
+    }
+  }
+  return {
+    error: false,
+    value: numbers
+  };
+}
+</code></pre>
+<p>Pero donde se introducen cambios considerables es a la hora de consumir las promesas con <code>async</code>/<code>await</code>. No tendríamos que utilizar <code>.then()</code>, sino que podemos simplemente utilizar <code>await</code> para esperar la resolución de la promesa, obteniendo el valor directamente:</p>
+<pre><code>const resultado = await doTask(10);   // Devuelve un objeto, no una promesa
+</code></pre>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Recuerda que en el caso de querer controlar errores o promesas rechazadas, siempre podrás utilizar bloques <code>try</code>/<code>catch</code>.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="top-level-await">Top-level await<a class="headerlink" href="#top-level-await" title="Permanent link">&para;</a></h3>
+<p>En principio, el comportamiento de <code>await</code> solo permite que se utilice en el interior de funciones declaradas como <code>async</code>. Por lo que, si el ejemplo anterior lo ejecutamos en una consola de Javascript, funcionará correctamente (<em>estamos escribiendo comandos de forma asíncrona</em>), pero si lo escribimos en un fichero, probablemente nos aparecerá el siguiente error:</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Uncaught SyntaxError: <code>await</code> is only valid in <code>async</code> function</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Esto ocurre porque, como bien dice el mensaje de error, estamos ejecutando <code>await</code> en el contexto global de la aplicación, y debemos ejecutarlo en un contexto de función asíncrona. Para corregirlo, podemos añadir un <code>&lt;button&gt;</code> en el HTML y modificar la linea anterior del <code>await</code>:</p>
+<pre><code>document.querySelector("button").addEventListener("click", async () =&gt; {
+  const resultado = await doTask(10);
+  console.log(resultado);
+});
+</code></pre>
+<p>Una nueva propuesta denominada <a href="https://github.com/tc39/proposal-top-level-await">top-level await</a> permite utilizar <code>await</code> fuera de funciones <code>async</code>, por lo que es muy probable que en poco tiempo comencemos a utilizarla sin tener que incluir el <code>async</code> en las funciones. Sin embargo, sólo funcionará en determinados contextos.</p>
+<hr />
+<p><strong>Fuente:</strong> <a href="https://lenguajejs.com/">Lenguaje Javascript</a> por <a href="https://manzdev.github.io/">Manz</a></p>
+<h2 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../04-DOM/" title="DOM" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                DOM
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../06-peticiones_HTTP/" title="Peticiones HTTP" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Peticiones HTTP
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/saucedoinfo" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/saucedoinfo" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.instagram.com/saucedo.info/" target="_blank" rel="noopener" title="www.instagram.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.instant', 'navigation.expand', 'tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
