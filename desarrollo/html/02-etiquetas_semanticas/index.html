@@ -528,6 +528,19 @@
     Etiquetas HTML de sección
   </a>
   
+    <nav class="md-nav" aria-label="Etiquetas HTML de sección">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etiquetas-semanticas_1" class="md-nav__link">
+    Etiquetas semánticas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1213,6 +1226,19 @@
   <a href="#etiquetas-html-de-seccion" class="md-nav__link">
     Etiquetas HTML de sección
   </a>
+  
+    <nav class="md-nav" aria-label="Etiquetas HTML de sección">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etiquetas-semanticas_1" class="md-nav__link">
+    Etiquetas semánticas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2322,34 +2348,75 @@
         <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Escrito por Manz.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
       <span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
-~~~~
+</code></pre></div>
 
-De esta forma, preparamos nuestro documento HTML para que cualquier navegador, robot de buscador o aplicación o sistema informático sea capaz de leer el documento HTML y conocer perfectamente la naturaleza del contenido de dicha sección.
-
-### Etiquetas semánticas
-
-Veamos un listado de las **etiquetas semánticas** que se introducen en HTML5 (_los encabezados ya existían en versiones anteriores_):
-
-Etiqueta | Descripción
-:---|:---
-`<span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>` |Artículo. Parte principal de un escrito (_posts, mensaje en foros, comentario..._)
-`<span class="p">&lt;</span><span class="nt">nav</span><span class="p">&gt;</span>`|Apartado de navegación (_enlaces de secciones, categorías, etc..._)
-`<span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>`|Cabecera visual de la página (_logotipo, título, etc..._). No confundir con `<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>`.
-`<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>`|Encabezado de nivel 1. Equivalente al título del documento.
-`<span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>`|Encabezado de nivel 2. Equivalente al tema del documento.
-`<span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>`|Encabezado de nivel 3. Equivalente a la sección de un tema.
-`<span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>`|Encabezado de nivel 4. Equivalente a un apartado de la sección.
-`<span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>`|Encabezado de nivel 5. Equivalente a un ejemplo del apartado.
-`<span class="p">&lt;</span><span class="nt">h6</span><span class="p">&gt;</span>`|Encabezado de nivel 6. Equivalente a un subapartado del ejemplo.
-`<span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>`|Pie de página de una sección (_o del documento completo_).
-`<span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>`|Sección o grupo temático de contenido. No usar sólo para dar estilo.
-`<span class="p">&lt;</span><span class="nt">aside</span><span class="p">&gt;</span>`|Agrupación de contenido no relacionado con el tema principal del documento.
-`<span class="p">&lt;</span><span class="nt">address</span><span class="p">&gt;</span>`|Agrupación con la información de contacto del autor del artículo o documento.
-
-Nótese que las etiquetas `<span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>` pueden contener otras etiquetas `<span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>`, como por ejemplo comentarios dentro de artículos:
-
-~~~html
-    <span class="p">&lt;</span><span class="nt">article</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
+<p>De esta forma, preparamos nuestro documento HTML para que cualquier navegador, robot de buscador o aplicación o sistema informático sea capaz de leer el documento HTML y conocer perfectamente la naturaleza del contenido de dicha sección.</p>
+<h3 id="etiquetas-semanticas_1">Etiquetas semánticas<a class="headerlink" href="#etiquetas-semanticas_1" title="Permanent link">&para;</a></h3>
+<p>Veamos un listado de las <strong>etiquetas semánticas</strong> que se introducen en HTML5 (<em>los encabezados ya existían en versiones anteriores</em>):</p>
+<table>
+<thead>
+<tr>
+<th align="left">Etiqueta</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>&lt;article&gt;</code></td>
+<td align="left">Artículo. Parte principal de un escrito (<em>posts, mensaje en foros, comentario...</em>)</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;nav&gt;</code></td>
+<td align="left">Apartado de navegación (<em>enlaces de secciones, categorías, etc...</em>)</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;header&gt;</code></td>
+<td align="left">Cabecera visual de la página (<em>logotipo, título, etc...</em>). No confundir con <code>&lt;head&gt;</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;h1&gt;</code></td>
+<td align="left">Encabezado de nivel 1. Equivalente al título del documento.</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;h2&gt;</code></td>
+<td align="left">Encabezado de nivel 2. Equivalente al tema del documento.</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;h3&gt;</code></td>
+<td align="left">Encabezado de nivel 3. Equivalente a la sección de un tema.</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;h4&gt;</code></td>
+<td align="left">Encabezado de nivel 4. Equivalente a un apartado de la sección.</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;h5&gt;</code></td>
+<td align="left">Encabezado de nivel 5. Equivalente a un ejemplo del apartado.</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;h6&gt;</code></td>
+<td align="left">Encabezado de nivel 6. Equivalente a un subapartado del ejemplo.</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;footer&gt;</code></td>
+<td align="left">Pie de página de una sección (<em>o del documento completo</em>).</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;section&gt;</code></td>
+<td align="left">Sección o grupo temático de contenido. No usar sólo para dar estilo.</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;aside&gt;</code></td>
+<td align="left">Agrupación de contenido no relacionado con el tema principal del documento.</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;address&gt;</code></td>
+<td align="left">Agrupación con la información de contacto del autor del artículo o documento.</td>
+</tr>
+</tbody>
+</table>
+<p>Nótese que las etiquetas <code>&lt;article&gt;</code> pueden contener otras etiquetas <code>&lt;article&gt;</code>, como por ejemplo comentarios dentro de artículos:</p>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">article</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Este sería el texto del artículo.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">article</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;comentario&quot;</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aquí iría el texto del comentario.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
