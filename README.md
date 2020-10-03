@@ -1,7 +1,7 @@
 ![](img/undraw_annotation_7das.svg)
 # Coleccion de Guias de Desarrollo y diseño.
 
-:pencil2: Estas guias son una ==recopilación de notas, comentarios y/o post== que recopilo de diferentes plataformas:
+:pencil2: Estas guias son una recopilación de notas, comentarios y/o post que recopilo de diferentes plataformas:
 
 * [Manz](https://manzdev.github.io/)
 * [Platzi](https://platzi.com/c/saucedo_info/)
