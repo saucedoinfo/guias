@@ -76,7 +76,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Cabecera">
-    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-header-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+    <a href="https://saucedoinfo.github.io/guias/" title="Guias de Desarrollo y diseño" class="md-header-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
       
   <img src="../../../img/favicon-32x32.png" alt="logo">
 
@@ -224,7 +224,7 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://saucedoinfo.github.io/guias" title="Guias de Desarrollo y diseño" class="md-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+    <a href="https://saucedoinfo.github.io/guias/" title="Guias de Desarrollo y diseño" class="md-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
       
   <img src="../../../img/favicon-32x32.png" alt="logo">
 
@@ -527,19 +527,6 @@
   <a href="#etiquetas-html-de-seccion" class="md-nav__link">
     Etiquetas HTML de sección
   </a>
-  
-    <nav class="md-nav" aria-label="Etiquetas HTML de sección">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#etiquetas-semanticas_1" class="md-nav__link">
-    Etiquetas semánticas
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -994,7 +981,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../herramientas-it/markdown/" title="Markdown" class="md-nav__link">
+    <a href="../../../herramientas-it/markdown/markdown/" title="Markdown" class="md-nav__link">
       Markdown
     </a>
   </li>
@@ -1006,7 +993,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../herramientas-it/pip/" title="Pip" class="md-nav__link">
+    <a href="../../../herramientas-it/pip/pip/" title="Pip" class="md-nav__link">
       Pip
     </a>
   </li>
@@ -1018,7 +1005,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../herramientas-it/mkdocs/" title="Mkdocs" class="md-nav__link">
+    <a href="../../../herramientas-it/mkdocs/mkdocs/" title="Mkdocs" class="md-nav__link">
       Mkdocs
     </a>
   </li>
@@ -1238,19 +1225,6 @@
   <a href="#etiquetas-html-de-seccion" class="md-nav__link">
     Etiquetas HTML de sección
   </a>
-  
-    <nav class="md-nav" aria-label="Etiquetas HTML de sección">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#etiquetas-semanticas_1" class="md-nav__link">
-    Etiquetas semánticas
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1561,8 +1535,9 @@
 <h2 id="etiquetas-html-de-texto">Etiquetas HTML de texto<a class="headerlink" href="#etiquetas-html-de-texto" title="Permanent link">&para;</a></h2>
 <p>A grandes rasgos, en un documento HTML existen dos tipos de <strong>etiquetas HTML</strong>: las etiquetas que contienen fragmentos de texto (<em>se utilizan para dar significado a esas palabras o fragmentos</em>) y las etiquetas que agrupan conjunto de información (<em>fragmentos de texto y/u otras etiquetas</em>).</p>
 <p>En el siguiente ejemplo, tenemos la etiqueta <code>&lt;p&gt;</code>, que pertenece al segundo grupo (<em>agrupación</em>), mientras que la etiqueta <code>&lt;strong&gt;</code> forma parte del primer grupo, que es del que vamos a hablar en esta sección:</p>
-<pre><code>&lt;p&gt;Hola, esto es un pequeño &lt;strong&gt;ejemplo&lt;/strong&gt;.&lt;/p&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Hola, esto es un pequeño <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>ejemplo<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <h3 id="fragmentos-de-texto">Fragmentos de texto<a class="headerlink" href="#fragmentos-de-texto" title="Permanent link">&para;</a></h3>
 <p>En primer lugar, existe una serie de etiquetas HTML simples para seleccionar un fragmento de texto y dotarlo de un significado especial. Por ejemplo:</p>
 <table>
@@ -1627,12 +1602,12 @@
 <tr>
 <td align="left"><code>&lt;sup&gt;</code></td>
 <td align="left"></td>
-<td align="left">Superíndice (242).</td>
+<td align="left">Superíndice (242)<sup>2</sup>.</td>
 </tr>
 <tr>
 <td align="left"><code>&lt;sub&gt;</code></td>
 <td align="left"></td>
-<td align="left">Subíndice (242).</td>
+<td align="left">Subíndice (242)<sub>2</sub>.</td>
 </tr>
 <tr>
 <td align="left"><code>&lt;small&gt;</code></td>
@@ -1656,22 +1631,24 @@
 </tr>
 </tbody>
 </table>
-<p>Las etiquetas HTML <code>&lt;sup&gt;</code> y <code>&lt;sub&gt;</code> se utilizan para indicar superíndices y subíndices. De esta forma tenemos un mecanismo que nos permite diferenciar el número <strong>242</strong> del número <strong>242</strong>:</p>
+<p>Las etiquetas HTML <code>&lt;sup&gt;</code> y <code>&lt;sub&gt;</code> se utilizan para indicar superíndices y subíndices. De esta forma tenemos un mecanismo que nos permite diferenciar el número <strong>242</strong> del número <strong>242</strong><sup>2</sup>:</p>
 <pre><code>&lt;p&gt;El resultado de 24&lt;sup&gt;2&lt;/sup&gt; es el valor de X&lt;sub&gt;a&lt;/sub&gt;.&lt;/p&gt;
 </code></pre>
 <p>Por otra parte, la etiqueta HTML <code>&lt;q&gt;</code> nos permite hacer referencia a una cita o frase extraída de otro contexto. Obsérvese que en esta etiqueta disponemos de un atributo opcional <strong>cite</strong>, mediante el cuál podemos hacer referencia a una URL (<em>en este caso a la ficha de la película de Batman</em>) que en este caso es de donde procede la frase:</p>
-<pre><code>&lt;p&gt;
-  &lt;q cite="http://www.imdb.com/title/tt0468569/"&gt;
-    Hay hombres que solo quieren ver arder el mundo.
-  &lt;/q&gt;
-&lt;/p&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">q</span> <span class="na">cite</span><span class="o">=</span><span class="s">&quot;http://www.imdb.com/title/tt0468569/&quot;</span><span class="p">&gt;</span>
+        Hay hombres que solo quieren ver arder el mundo.
+      <span class="p">&lt;/</span><span class="nt">q</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Es importante tener en cuenta que no se trata de la creación de un enlace para que el usuario haga clic, ya que estos se crean mediante la etiqueta <code>&lt;a&gt;</code> que veremos más adelante.</p>
 <p>También tenemos las etiquetas <code>&lt;dfn&gt;</code> y <code>&lt;abbr&gt;</code> que nos permiten indicar <strong>definiciones</strong> y <strong>abreviaturas</strong>, y que ambas permiten el uso del atributo opcional <strong>title</strong> para indicar el significado de dicho término o abreviatura. Un ejemplo de ambas etiquetas combinadas:</p>
-<pre><code>&lt;p&gt;
-  El término &lt;dfn&gt;&lt;abbr title="Kilómetro"&gt;Km&lt;/abrr&gt;&lt;/dfn&gt; es una unidad de longitud.
-&lt;/p&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+      El término <span class="p">&lt;</span><span class="nt">dfn</span><span class="p">&gt;&lt;</span><span class="nt">abbr</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;Kilómetro&quot;</span><span class="p">&gt;</span>Km<span class="p">&lt;/</span><span class="nt">abrr</span><span class="p">&gt;&lt;/</span><span class="nt">dfn</span><span class="p">&gt;</span> es una unidad de longitud.
+    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Los <strong>saltos de línea</strong> son etiquetas especiales de HTML para comenzar en una línea nueva (<em>emular el efecto al pulsar ENTER</em>). Al contrario que todas las que hemos visto, las etiquetas <code>&lt;br&gt;</code> son etiquetas que no necesitan etiqueta de cierre, por lo que sólo se escribe la etiqueta de apertura.</p>
 <table>
 <thead>
@@ -1736,26 +1713,28 @@
 </tbody>
 </table>
 <p>Un ejemplo práctico de la etiqueta <code>&lt;kbd&gt;</code> sería modificar sus estilos CSS para obtener algo similar a CTRL+T, simplemente combinando el siguiente código HTML y CSS:</p>
-<pre><code>&lt;p&gt;Pulsa las teclas &lt;kbd&gt;CTRL&lt;/kbd&gt;+&lt;kbd&gt;T&lt;/kbd&gt;...&lt;/p&gt;
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Pulsa las teclas <span class="p">&lt;</span><span class="nt">kbd</span><span class="p">&gt;</span>CTRL<span class="p">&lt;/</span><span class="nt">kbd</span><span class="p">&gt;</span>+<span class="p">&lt;</span><span class="nt">kbd</span><span class="p">&gt;</span>T<span class="p">&lt;/</span><span class="nt">kbd</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 
-&lt;style&gt;
-kbd {
-  font-family: "Victor Mono", monospace;
-  padding: 2px 6px;
-  background: #eee;
-  border: 3px solid #bbb;
-  border-top-width: 1px;
-  border-bottom: 3px solid #777;
-}
-&lt;/style&gt;
-</code></pre>
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+    <span class="nt">kbd</span> <span class="p">{</span>
+      <span class="k">font-family</span><span class="p">:</span> <span class="s2">&quot;Victor Mono&quot;</span><span class="p">,</span> <span class="kc">monospace</span><span class="p">;</span>
+      <span class="k">padding</span><span class="p">:</span> <span class="mi">2</span><span class="kt">px</span> <span class="mi">6</span><span class="kt">px</span><span class="p">;</span>
+      <span class="k">background</span><span class="p">:</span> <span class="mh">#eee</span><span class="p">;</span>
+      <span class="k">border</span><span class="p">:</span> <span class="mi">3</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#bbb</span><span class="p">;</span>
+      <span class="k">border-top-width</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span><span class="p">;</span>
+      <span class="k">border-bottom</span><span class="p">:</span> <span class="mi">3</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#777</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Si <code>&lt;kbd&gt;</code> muestra una entrada, por otro lado tenemos la etiqueta inversa, <code>&lt;samp&gt;</code>, que muestra la salida de un programa (<em>mensaje, error o información</em>) o <code>&lt;var&gt;</code> que nos permite indicar variables utilizadas en ejemplos matemáticos o informáticos.</p>
 <p>Con la etiqueta <code>&lt;time&gt;</code> podemos indicar una fecha y/o hora en formato legible para humanos, indicando de forma opcional el atributo <strong>datetime</strong> con la fecha en un formato orientado a máquinas. De la misma forma se utiliza la etiqueta <code>&lt;data&gt;</code> para información genérica, en la que se puede usar su atributo <strong>value</strong> para indicar el texto equivalente orientado a máquinas:</p>
-<pre><code>&lt;p&gt;
-  &lt;time datetime="2001-01-04"&gt;4 de Enero&lt;/time&gt;
-  &lt;data value="ESDLA3"&gt;El retorno del Rey&lt;/data&gt;
-&lt;/p&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">time</span> <span class="na">datetime</span><span class="o">=</span><span class="s">&quot;2001-01-04&quot;</span><span class="p">&gt;</span>4 de Enero<span class="p">&lt;/</span><span class="nt">time</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">data</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;ESDLA3&quot;</span><span class="p">&gt;</span>El retorno del Rey<span class="p">&lt;/</span><span class="nt">data</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Nótese también que la etiqueta <code>&lt;code&gt;</code> se utiliza para fragmentos de código fuente cortos, en línea, o lo que es lo mismo, de una sola línea. Para bloques de código más extensos se usa combinándola con otra etiqueta que veremos más adelante.</p>
 <h3 id="etiquetas-de-edicion">Etiquetas de edición<a class="headerlink" href="#etiquetas-de-edicion" title="Permanent link">&para;</a></h3>
 <p>Por último, tenemos unas etiquetas orientadas a la edición posterior a la publicación de un texto o página web:</p>
@@ -1787,11 +1766,12 @@ kbd {
 <h2 id="etiquetas-html-de-agrupacion">Etiquetas HTML de agrupación<a class="headerlink" href="#etiquetas-html-de-agrupacion" title="Permanent link">&para;</a></h2>
 <p>Habíamos comentado que existían dos tipos de <strong>etiquetas HTML</strong>: las etiquetas que contienen fragmentos de texto (<em>se utilizan para dar significado a esas palabras o fragmentos</em>) y las etiquetas que agrupan conjunto de información (<em>fragmentos de texto y/u otras etiquetas</em>).</p>
 <p>En esta ocasión, vamos a ver el <strong>segundo grupo</strong>, que son las etiquetas que se utilizan para agrupar y organizar información (<em>y otras etiquetas</em>). Veamos un ejemplo:</p>
-<pre><code>&lt;div&gt;
-  &lt;p&gt;Hola, esto es un primer párrafo de ejemplo.&lt;/p&gt;
-  &lt;p&gt;Y esto, es un segundo párrafo de ejemplo.&lt;/p&gt;
-&lt;/div&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Hola, esto es un primer párrafo de ejemplo.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Y esto, es un segundo párrafo de ejemplo.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <h3 id="agrupaciones">Agrupaciones<a class="headerlink" href="#agrupaciones" title="Permanent link">&para;</a></h3>
 <p>Las siguientes etiquetas se utilizan para agrupar información, como es el caso de las etiquetas <code>&lt;div&gt;</code> o <code>&lt;p&gt;</code> que vimos en el ejemplo mostrado anteriormente:</p>
 <table>
@@ -1836,24 +1816,26 @@ kbd {
 </tbody>
 </table>
 <p>La etiqueta <code>&lt;pre&gt;</code> se utiliza para mostrar texto respetando el formato con el que está escrito (<em>espacios en blanco, saltos de línea, etc...</em>). También es muy habitual utilizarlo junto a la etiqueta <code>&lt;code&gt;</code> anidada en su interior, de forma que tenemos un bloque de código preformateado:</p>
-<pre><code>&lt;pre&gt;
-  &lt;code class="language-javascript"&gt;
-    function mensaje(s) {
-      console.log(s);
-    }
-  &lt;/code&gt;
-&lt;/pre&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">pre</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">code</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;language-javascript&quot;</span><span class="p">&gt;</span>
+        function mensaje(s) {
+          console.log(s);
+        }
+      <span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Como se puede ver, en el caso de crear bloques de código, suele ser una buena práctica incluir un atributo <strong>class</strong> con el lenguaje que estamos utilizando. Esto no es una funcionalidad nativa de HTML5, pero muchas librerías de Javascript nos permiten resaltar la sintaxis dependiendo del lenguaje de programación indicado (<em>ya que varía de uno a otro</em>).</p>
 <p>Por otro lado, la etiqueta <code>&lt;blockquote&gt;</code> suele utilizarse para agrupar información referida a una cita o frase:</p>
-<pre><code>&lt;blockquote cite="http://es.wikiquote.org/wiki/Fight_Club"&gt;
-  &lt;p&gt;La primera regla del Club de la Lucha es: Nadie habla sobre el Club de la Lucha.&lt;/p&gt;
-  &lt;footer&gt;
-    &lt;cite class="author"&gt;Tyler Durden&lt;/cite&gt; en
-    &lt;cite class="title"&gt;El Club de la Lucha&lt;/cite&gt;
-  &lt;/footer&gt;
-&lt;/blockquote&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">blockquote</span> <span class="na">cite</span><span class="o">=</span><span class="s">&quot;http://es.wikiquote.org/wiki/Fight_Club&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>La primera regla del Club de la Lucha es: Nadie habla sobre el Club de la Lucha.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">cite</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;author&quot;</span><span class="p">&gt;</span>Tyler Durden<span class="p">&lt;/</span><span class="nt">cite</span><span class="p">&gt;</span> en
+        <span class="p">&lt;</span><span class="nt">cite</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;title&quot;</span><span class="p">&gt;</span>El Club de la Lucha<span class="p">&lt;/</span><span class="nt">cite</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">blockquote</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Obsérvese que utilizamos el atributo opcional <strong>cite</strong> para indicar una referencia externa de la fuente de la cita. Luego, en su interior, tenemos un párrafo que contiene la frase en cuestión, seguida de una sección semántica (<em>pie de cita</em>) que a su vez contiene referencias al autor de la cita y el título de la película.</p>
 <h3 id="listas">Listas<a class="headerlink" href="#listas" title="Permanent link">&para;</a></h3>
 <p>En HTML podemos crear listas de información de una forma muy sencilla. Empecemos por las etiquetas disponibles:</p>
@@ -1884,12 +1866,13 @@ kbd {
 </tbody>
 </table>
 <p>En primer lugar debemos elegir la etiqueta <code>&lt;ul&gt;</code> o la etiqueta <code>&lt;ol&gt;</code> dependiendo de si queremos una lista donde no importa el orden (<em>lista de objetos que tengo en el bolsillo</em>) o una lista en la que si importa el orden (<em>lista de canciones preferidas de mayor a menor</em>). Una vez elegido, comenzamos a añadir ítems, uno por etiqueta <code>&lt;li&gt;</code>. La forma más básica de crear una lista sería la siguiente:</p>
-<pre><code>&lt;ul&gt;
-  &lt;li&gt;Primer ítem.&lt;/li&gt;
-  &lt;li&gt;Segundo ítem.&lt;/li&gt;
-  &lt;li&gt;Tercer ítem.&lt;/li&gt;
-&lt;/ul&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Primer ítem.<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Segundo ítem.<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Tercer ítem.<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Esto crearía una lista, donde cada uno de los ítems aparecería con un circulo <strong>negro</strong> cada uno. Una particularidad poco conocida es que HTML nos permite omitir las etiquetas de cierre <code>&lt;/li&gt;</code> si van seguidas de otra etiqueta de apertura <code>&lt;li&gt;</code>.</p>
 <p>Si reemplazamos la etiqueta <code>&lt;ul&gt;</code> por <code>&lt;ol&gt;</code> los ítems pasan a ser ítems numerados (<em>por defecto, números enteros a partir de 1</em>). Las etiquetas <code>&lt;ol&gt;</code> permiten indicar varios atributos opcionales para modificar la forma en que se numera cada ítem:</p>
 <table>
@@ -1919,12 +1902,13 @@ kbd {
 </tbody>
 </table>
 <p>El siguiente ejemplo muestra una lista numerada con letras minúsculas, que empiezan en <strong>c</strong>, pero irán en orden inverso, por lo que terminarán en <strong>c</strong>:</p>
-<pre><code>&lt;ol start="c" type="a" reversed&gt;
-  &lt;li value="1"&gt;Primer ítem.&lt;/li&gt;
-  &lt;li value="2"&gt;Segundo ítem.&lt;/li&gt;
-  &lt;li value="3"&gt;Tercer ítem.&lt;/li&gt;
-&lt;/ol&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">ol</span> <span class="na">start</span><span class="o">=</span><span class="s">&quot;c&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;a&quot;</span> <span class="na">reversed</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">&gt;</span>Primer ítem.<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;2&quot;</span><span class="p">&gt;</span>Segundo ítem.<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;3&quot;</span><span class="p">&gt;</span>Tercer ítem.<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Obsérvese que también se puede establecer el atributo <strong>value</strong> a cada ítem de la lista para asignarle, por ejemplo, un valor numérico o ponderarlos.</p>
 <h3 id="listas-de-descripciones">Listas de descripciones<a class="headerlink" href="#listas-de-descripciones" title="Permanent link">&para;</a></h3>
 <p>De la misma forma que podemos crear listas genéricas, podemos crear listas de descripciones. La diferencia es que este tipo de listas se suele utilizar cuando queremos asociar pares de nombre-valor. Primero veamos las etiquetas:</p>
@@ -1951,12 +1935,13 @@ kbd {
 </tbody>
 </table>
 <p>Veamos un ejemplo práctico de este tipo de listas:</p>
-<pre><code>&lt;dl&gt;
-  &lt;dt&gt;Gallina&lt;/dt&gt;
-  &lt;dd&gt;Ave doméstica del orden de las galliformes.&lt;/dd&gt;
-  &lt;dd&gt;Cobarde, pusilánime.&lt;/dd&gt;
-&lt;/dl&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">dl</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>Gallina<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">dd</span><span class="p">&gt;</span>Ave doméstica del orden de las galliformes.<span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">dd</span><span class="p">&gt;</span>Cobarde, pusilánime.<span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">dl</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <h3 id="ilustraciones-figuras">Ilustraciones (figuras)<a class="headerlink" href="#ilustraciones-figuras" title="Permanent link">&para;</a></h3>
 <p>Por último, dentro del apartado de etiquetas de agrupación tenemos las nuevas etiquetas <code>&lt;figure&gt;</code> y <code>&lt;figcaption&gt;</code>. Estas etiquetas se utilizan para agrupar conceptos formados por una ilustración (<em>figura</em>) y una leyenda. Con estos elementos de agrupación se puede agrupar una imagen y su correspondiente pie de foto, pudiendo ampliar a otro tipo de contenidos multimedia como video o audio.</p>
 <table>
@@ -1978,11 +1963,12 @@ kbd {
 </tbody>
 </table>
 <p>Veamos un ejemplo:</p>
-<pre><code>&lt;figure&gt;
-  &lt;img src="http://lenguajehtml.com/img/html5-logo.png" alt="Logotipo de HTML5" /&gt;
-  &lt;figcaption&gt;Logotipo oficial del lenguaje de marcas HTML5.&lt;/figcaption&gt;
-&lt;/figure&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">figure</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://lenguajehtml.com/img/html5-logo.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Logotipo de HTML5&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">figcaption</span><span class="p">&gt;</span>Logotipo oficial del lenguaje de marcas HTML5.<span class="p">&lt;/</span><span class="nt">figcaption</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">figure</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Nótese que en la ilustración o figura, se puede contener todo tipo de elementos, no solo imágenes. Ejemplos válidos podrían ser videos, párrafos de texto o incluso contenido multimedia.</p>
 <hr />
 <h2 id="enlaces-o-hipervinculos">Enlaces o hipervínculos<a class="headerlink" href="#enlaces-o-hipervinculos" title="Permanent link">&para;</a></h2>
@@ -2120,13 +2106,14 @@ kbd {
 </table>
 <p>El soporte del atributo <strong>download</strong> podría no funcionar en navegadores no actuales, como versiones antiguas de Chrome o Firefox, o desde Internet Explorer:</p>
 <p>Veamos a continuación algunos ejemplos de enlaces utilizando algunos atributos indicados en la tabla superior para comprender así su funcionamiento:</p>
-<pre><code>&lt;ul&gt;
-  &lt;li&gt;&lt;a rel="author" href="http://www.emezeta.com/"&gt;Emezeta&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://lenguajecss.com/" target="_blank"&gt;LenguajeCSS&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://pagina.com/documento.pdf" download="A-38.pdf"&gt;PDF&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://pagina.com/documento-en.pdf" hreflang="en"&gt;PDF&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;author&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://www.emezeta.com/&quot;</span><span class="p">&gt;</span>Emezeta<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://lenguajecss.com/&quot;</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span><span class="p">&gt;</span>LenguajeCSS<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://pagina.com/documento.pdf&quot;</span> <span class="na">download</span><span class="o">=</span><span class="s">&quot;A-38.pdf&quot;</span><span class="p">&gt;</span>PDF<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://pagina.com/documento-en.pdf&quot;</span> <span class="na">hreflang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>PDF<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <h3 id="esquema-de-una-url">Esquema de una URL<a class="headerlink" href="#esquema-de-una-url" title="Permanent link">&para;</a></h3>
 <p>Al indicarse una URL, tenemos varias formas de escribirla. Conviene conocer bien la estructura de una URL, para diferenciar cada una de sus partes. Este sería el esquema completo de un enlace completo:</p>
 <p><img alt="Estructura de una URL" src="../img/estructura-url.png" /></p>
@@ -2326,100 +2313,62 @@ kbd {
 <hr />
 <h2 id="etiquetas-html-de-seccion">Etiquetas HTML de sección<a class="headerlink" href="#etiquetas-html-de-seccion" title="Permanent link">&para;</a></h2>
 <p>En versiones anteriores a HTML5, al crear la estructura de una página, normalmente utilizabamos etiquetas <code>&lt;div&gt;</code> para ir agrupando secciones de la página. Unido a esto, ibamos añadiendo <strong>id</strong> o <strong>clases</strong> (<em>atributos</em>) dependiendo de nuestro interés, para que quedase más claro. Una estructura como la que menciono podría ser la siguiente:</p>
-<pre><code>&lt;div class="articulo"&gt;
-  &lt;h1&gt;Título del artículo&lt;/h1&gt;
-  &lt;p class="intro"&gt;Pequeña introducción.&lt;/p&gt;
-  &lt;p class="contenido"&gt;Aquí va el texto del artículo en cuestión con sus detalles.&lt;/p&gt;
-  &lt;p class="pie"&gt;Escrito por Manz&lt;/p&gt;
-&lt;/div&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;articulo&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Título del artículo<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;intro&quot;</span><span class="p">&gt;</span>Pequeña introducción.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;contenido&quot;</span><span class="p">&gt;</span>Aquí va el texto del artículo en cuestión con sus detalles.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;pie&quot;</span><span class="p">&gt;</span>Escrito por Manz<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Vemos que en esta estructura tenemos una agrupación que contiene todos los elementos de un artículo, donde el primer elemento es un encabezado <code>&lt;h1&gt;</code> (<em>titular</em>), luego un párrafo de introducción, seguido de un párrafo de contenido y un último párrafo a pie de artículo. La estructura podría ser más sencilla o más complicada, pero nos viene bien como ejemplo de introducción a este tema.</p>
 <p>Nótese que los elementos utilizados <code>&lt;div&gt;</code> y <code>&lt;p&gt;</code> no tienen una semántica específica, salvo que son etiquetas de agrupación y que la segunda contiene un párrafo. En HTML5 se introducen una serie de etiquetas de agrupación que funcionan exactamente como un<code>&lt;div&gt;</code>, pero que además tienen un significado semántico porque indican la naturaleza del contenido que agruparán.</p>
 <p>Veamos el ejemplo anterior, utilizando etiquetas semánticas:</p>
-<pre><code>&lt;article&gt;
-  &lt;header&gt;
-    &lt;h1&gt;Título del artículo&lt;/h1&gt;
-    &lt;p class="intro"&gt;Pequeña introducción.&lt;/p&gt;
-  &lt;/header&gt;
-  &lt;p class="contenido"&gt;Aquí va el texto del artículo en cuestión con sus detalles.&lt;/p&gt;
-  &lt;footer&gt;
-    &lt;p&gt;Escrito por Manz.&lt;/p&gt;
-  &lt;/footer&gt;
-&lt;/article&gt;
-</code></pre>
-<p>De esta forma, preparamos nuestro documento HTML para que cualquier navegador, robot de buscador o aplicación o sistema informático sea capaz de leer el documento HTML y conocer perfectamente la naturaleza del contenido de dicha sección.</p>
-<h3 id="etiquetas-semanticas_1">Etiquetas semánticas<a class="headerlink" href="#etiquetas-semanticas_1" title="Permanent link">&para;</a></h3>
-<p>Veamos un listado de las <strong>etiquetas semánticas</strong> que se introducen en HTML5 (<em>los encabezados ya existían en versiones anteriores</em>):</p>
-<table>
-<thead>
-<tr>
-<th align="left">Etiqueta</th>
-<th align="left">Descripción</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><code>&lt;article&gt;</code></td>
-<td align="left">Artículo. Parte principal de un escrito (<em>posts, mensaje en foros, comentario...</em>)</td>
-</tr>
-<tr>
-<td align="left"><code>&lt;nav&gt;</code></td>
-<td align="left">Apartado de navegación (<em>enlaces de secciones, categorías, etc...</em>)</td>
-</tr>
-<tr>
-<td align="left"><code>&lt;header&gt;</code></td>
-<td align="left">Cabecera visual de la página (<em>logotipo, título, etc...</em>). No confundir con <code>&lt;head&gt;</code>.</td>
-</tr>
-<tr>
-<td align="left"><code>&lt;h1&gt;</code></td>
-<td align="left">Encabezado de nivel 1. Equivalente al título del documento.</td>
-</tr>
-<tr>
-<td align="left"><code>&lt;h2&gt;</code></td>
-<td align="left">Encabezado de nivel 2. Equivalente al tema del documento.</td>
-</tr>
-<tr>
-<td align="left"><code>&lt;h3&gt;</code></td>
-<td align="left">Encabezado de nivel 3. Equivalente a la sección de un tema.</td>
-</tr>
-<tr>
-<td align="left"><code>&lt;h4&gt;</code></td>
-<td align="left">Encabezado de nivel 4. Equivalente a un apartado de la sección.</td>
-</tr>
-<tr>
-<td align="left"><code>&lt;h5&gt;</code></td>
-<td align="left">Encabezado de nivel 5. Equivalente a un ejemplo del apartado.</td>
-</tr>
-<tr>
-<td align="left"><code>&lt;h6&gt;</code></td>
-<td align="left">Encabezado de nivel 6. Equivalente a un subapartado del ejemplo.</td>
-</tr>
-<tr>
-<td align="left"><code>&lt;footer&gt;</code></td>
-<td align="left">Pie de página de una sección (<em>o del documento completo</em>).</td>
-</tr>
-<tr>
-<td align="left"><code>&lt;section&gt;</code></td>
-<td align="left">Sección o grupo temático de contenido. No usar sólo para dar estilo.</td>
-</tr>
-<tr>
-<td align="left"><code>&lt;aside&gt;</code></td>
-<td align="left">Agrupación de contenido no relacionado con el tema principal del documento.</td>
-</tr>
-<tr>
-<td align="left"><code>&lt;address&gt;</code></td>
-<td align="left">Agrupación con la información de contacto del autor del artículo o documento.</td>
-</tr>
-</tbody>
-</table>
-<p>Nótese que las etiquetas <code>&lt;article&gt;</code> pueden contener otras etiquetas <code>&lt;article&gt;</code>, como por ejemplo comentarios dentro de artículos:</p>
-<pre><code>&lt;article class="post"&gt;
-  &lt;p&gt;Este sería el texto del artículo.&lt;/p&gt;
-  &lt;article class="comentario"&gt;
-    &lt;p&gt;Aquí iría el texto del comentario.&lt;/p&gt;
-  &lt;/article&gt;
-&lt;/article&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Título del artículo<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;intro&quot;</span><span class="p">&gt;</span>Pequeña introducción.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;contenido&quot;</span><span class="p">&gt;</span>Aquí va el texto del artículo en cuestión con sus detalles.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Escrito por Manz.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+~~~~
+
+De esta forma, preparamos nuestro documento HTML para que cualquier navegador, robot de buscador o aplicación o sistema informático sea capaz de leer el documento HTML y conocer perfectamente la naturaleza del contenido de dicha sección.
+
+### Etiquetas semánticas
+
+Veamos un listado de las **etiquetas semánticas** que se introducen en HTML5 (_los encabezados ya existían en versiones anteriores_):
+
+Etiqueta | Descripción
+:---|:---
+`<span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>` |Artículo. Parte principal de un escrito (_posts, mensaje en foros, comentario..._)
+`<span class="p">&lt;</span><span class="nt">nav</span><span class="p">&gt;</span>`|Apartado de navegación (_enlaces de secciones, categorías, etc..._)
+`<span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>`|Cabecera visual de la página (_logotipo, título, etc..._). No confundir con `<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>`.
+`<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>`|Encabezado de nivel 1. Equivalente al título del documento.
+`<span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>`|Encabezado de nivel 2. Equivalente al tema del documento.
+`<span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>`|Encabezado de nivel 3. Equivalente a la sección de un tema.
+`<span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>`|Encabezado de nivel 4. Equivalente a un apartado de la sección.
+`<span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>`|Encabezado de nivel 5. Equivalente a un ejemplo del apartado.
+`<span class="p">&lt;</span><span class="nt">h6</span><span class="p">&gt;</span>`|Encabezado de nivel 6. Equivalente a un subapartado del ejemplo.
+`<span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>`|Pie de página de una sección (_o del documento completo_).
+`<span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>`|Sección o grupo temático de contenido. No usar sólo para dar estilo.
+`<span class="p">&lt;</span><span class="nt">aside</span><span class="p">&gt;</span>`|Agrupación de contenido no relacionado con el tema principal del documento.
+`<span class="p">&lt;</span><span class="nt">address</span><span class="p">&gt;</span>`|Agrupación con la información de contacto del autor del artículo o documento.
+
+Nótese que las etiquetas `<span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>` pueden contener otras etiquetas `<span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>`, como por ejemplo comentarios dentro de artículos:
+
+~~~html
+    <span class="p">&lt;</span><span class="nt">article</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Este sería el texto del artículo.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">article</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;comentario&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aquí iría el texto del comentario.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <hr />
 <h2 id="etiquetas-html-de-tablas">Etiquetas HTML de tablas<a class="headerlink" href="#etiquetas-html-de-tablas" title="Permanent link">&para;</a></h2>
 <p>Las <strong>tablas</strong> están incluidas en HTML desde sus primeras versiones y son una forma fantástica de mostrar datos claramente. Además, si las construimos de forma semántica y correctamente, es muy sencillo darle estilos desde CSS y cambiar su diseño con unas cuantas propiedades CSS, puesto que mediante las etiquetas que la componen se puede hacer referencia a cada parte de la misma.</p>
@@ -2453,95 +2402,97 @@ kbd {
 </table>
 <p>La etiqueta <code>&lt;table&gt;</code> sería el elemento que contendría todos los elementos de la tabla, mientras que <code>&lt;th&gt;</code> y <code>&lt;td&gt;</code> se utilizarían para cada uno de los campos de la tabla (<em>cabecera y celda respectivamente</em>). Cada vez que se quisiera añadir una nueva fila, habría que incluirlo todo dentro de una etiqueta <code>&lt;tr&gt;</code>.</p>
 <p>Estas cuatro etiquetas serían las etiquetas necesarias para crear una tabla. Un ejemplo muy sencillo de una tabla de <strong>3x2 celdas</strong> (<em>exceptuando las cabeceras</em>), sería la siguiente:</p>
-<pre><code>&lt;table&gt;
-  &lt;!-- Cabecera --&gt;
-  &lt;tr&gt;
-    &lt;th&gt;Título columna 1&lt;/th&gt;
-    &lt;!-- Celda de cabecera de la columna 1 --&gt;
-    &lt;th&gt;Título columna 2&lt;/th&gt;
-    &lt;!-- Celda de cabecera de la columna 2 --&gt;
-    &lt;th&gt;Título columna 3&lt;/th&gt;
-    &lt;!-- Celda de cabecera de la columna 3 --&gt;
-  &lt;/tr&gt;
-  &lt;!-- Primera fila --&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Celda 1x1&lt;/td&gt;
-    &lt;!-- Primera celda de la primera fila --&gt;
-    &lt;td&gt;Celda 2x1&lt;/td&gt;
-    &lt;!-- Segunda celda de la primera fila --&gt;
-    &lt;td&gt;Celda 3x1&lt;/td&gt;
-    &lt;!-- Tercera celda de la primera fila --&gt;
-  &lt;/tr&gt;
-  &lt;!-- Segunda fila --&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Celda 1x2&lt;/td&gt;
-    &lt;!-- Primera celda de la segunda fila --&gt;
-    &lt;td&gt;Celda 2x2&lt;/td&gt;
-    &lt;!-- Segunda celda de la segunda fila --&gt;
-    &lt;td&gt;Celda 3x2&lt;/td&gt;
-    &lt;!-- Tercera celda de la segunda fila --&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- Cabecera --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Título columna 1<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- Celda de cabecera de la columna 1 --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Título columna 2<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- Celda de cabecera de la columna 2 --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Título columna 3<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- Celda de cabecera de la columna 3 --&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- Primera fila --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Celda 1x1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- Primera celda de la primera fila --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Celda 2x1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- Segunda celda de la primera fila --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Celda 3x1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- Tercera celda de la primera fila --&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- Segunda fila --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Celda 1x2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- Primera celda de la segunda fila --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Celda 2x2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- Segunda celda de la segunda fila --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Celda 3x2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- Tercera celda de la segunda fila --&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>En este caso de ejemplo tendríamos una sencilla tabla de <strong>3x2</strong> celdas. Por defecto, en la tabla se crea de forma que se adapta al número de celdas que tiene la primera fila. Es decir, si en el primer elemento <code>&lt;tr&gt;</code> se indican 3 elementos <code>&lt;th&gt;</code>, la tabla esperará siempre 3 elementos en cada fila. Si indicaramos menos, las celdas correspondientes donde deberían estar aparecerían vacías (<em>sin celda</em>). Si añadieramos una de más, se saldría de la tabla.</p>
 <p>Además, si al código HTML anterior le aplicamos unos apropiados <a href="http://lenguajecss.com/css/propiedades/tablas-css">estilos CSS de tablas</a>, junto a cambios de colores, fuentes, márgenes, rellenos y otros aspectos visuales, podremos cambiar el diseño de la tabla en poco más que un par de líneas.</p>
 <p>El siguiente código CSS puede ser utilizado para mostrar esos cambios sobre la tabla anterior:</p>
-<pre><code>&lt;style&gt;
-  /* Cambios sobre la propia tabla */
-  table {
-    border-collapse: collapse;
-    border: 1px solid #ccc;
-  }
-  /* Espacio de relleno en celdas y cabeceras */
-  td,
-  th {
-    padding: 10px;
-  }
-  /* Modificación de estilos en cabeceras */
-  th {
-    background: #000;
-    color: #fff;
-    text-transform: uppercase;
-  }
-  /* Modificación de estilos en celdas */
-  td {
-    text-align: center;
-    border-bottom: 2px solid #111;
-    color: #333;
-    font-size: 18px;
-  }
-&lt;/style&gt;
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+      <span class="c">/* Cambios sobre la propia tabla */</span>
+      <span class="nt">table</span> <span class="p">{</span>
+        <span class="k">border-collapse</span><span class="p">:</span> <span class="kc">collapse</span><span class="p">;</span>
+        <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#ccc</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="c">/* Espacio de relleno en celdas y cabeceras */</span>
+      <span class="nt">td</span><span class="o">,</span>
+      <span class="nt">th</span> <span class="p">{</span>
+        <span class="k">padding</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="c">/* Modificación de estilos en cabeceras */</span>
+      <span class="nt">th</span> <span class="p">{</span>
+        <span class="k">background</span><span class="p">:</span> <span class="mh">#000</span><span class="p">;</span>
+        <span class="k">color</span><span class="p">:</span> <span class="mh">#fff</span><span class="p">;</span>
+        <span class="k">text-transform</span><span class="p">:</span> <span class="kc">uppercase</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="c">/* Modificación de estilos en celdas */</span>
+      <span class="nt">td</span> <span class="p">{</span>
+        <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+        <span class="k">border-bottom</span><span class="p">:</span> <span class="mi">2</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#111</span><span class="p">;</span>
+        <span class="k">color</span><span class="p">:</span> <span class="mh">#333</span><span class="p">;</span>
+        <span class="k">font-size</span><span class="p">:</span> <span class="mi">18</span><span class="kt">px</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
 
-&lt;table&gt;
-  &lt;!-- Cabecera --&gt;
-  &lt;tr&gt;
-    &lt;th&gt;Título columna 1&lt;/th&gt;
-    &lt;!-- Celda de cabecera de la columna 1 --&gt;
-    &lt;th&gt;Título columna 2&lt;/th&gt;
-    &lt;!-- Celda de cabecera de la columna 2 --&gt;
-    &lt;th&gt;Título columna 3&lt;/th&gt;
-    &lt;!-- Celda de cabecera de la columna 3 --&gt;
-  &lt;/tr&gt;
-  &lt;!-- Primera fila --&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Celda 1x1&lt;/td&gt;
-    &lt;!-- Primera celda de la primera fila --&gt;
-    &lt;td&gt;Celda 2x1&lt;/td&gt;
-    &lt;!-- Segunda celda de la primera fila --&gt;
-    &lt;td&gt;Celda 3x1&lt;/td&gt;
-    &lt;!-- Tercera celda de la primera fila --&gt;
-  &lt;/tr&gt;
-  &lt;!-- Segunda fila --&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Celda 1x2&lt;/td&gt;
-    &lt;!-- Primera celda de la segunda fila --&gt;
-    &lt;td&gt;Celda 2x2&lt;/td&gt;
-    &lt;!-- Segunda celda de la segunda fila --&gt;
-    &lt;td&gt;Celda 3x2&lt;/td&gt;
-    &lt;!-- Tercera celda de la segunda fila --&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;
-</code></pre>
+    <span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- Cabecera --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Título columna 1<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- Celda de cabecera de la columna 1 --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Título columna 2<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- Celda de cabecera de la columna 2 --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Título columna 3<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- Celda de cabecera de la columna 3 --&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- Primera fila --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Celda 1x1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- Primera celda de la primera fila --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Celda 2x1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- Segunda celda de la primera fila --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Celda 3x1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- Tercera celda de la primera fila --&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- Segunda fila --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Celda 1x2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- Primera celda de la segunda fila --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Celda 2x2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- Segunda celda de la segunda fila --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Celda 3x2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- Tercera celda de la segunda fila --&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <h3 id="combinar-celdas">Combinar celdas<a class="headerlink" href="#combinar-celdas" title="Permanent link">&para;</a></h3>
 <p>Cada etiqueta <code>&lt;td&gt;</code> y <code>&lt;th&gt;</code> puede incluir una serie de atributos para modificar su comportamiento o para establecer relaciones semánticas entre celdas. Probablemente, las más interesantes sean <strong>colspan</strong> y <strong>rowspan</strong>:</p>
 <table>
@@ -2602,30 +2553,31 @@ kbd {
 </table>
 <p>Con estos atributos podemos indicar que ciertas celdas abarquen más espacio y se combinen con el espacio que ocuparía otra celda adyacente y así crear estructuras de tabla más flexibles.</p>
 <p>Imaginemos que al código HTML de la tabla anterior, le añadimos antes de la primera fila de <code>&lt;td&gt;</code>, una nueva fila con una sola celda <code>&lt;td&gt;</code> con un atributo <strong>colspan</strong> a <strong>3</strong>. Con esto estaríamos indicando que esa nueva fila (<em>originalmente, de 3 celdas</em>) va a abarcar las 3 celdas de espacio con una sola celda:</p>
-<pre><code>&lt;style&gt;
-td {
-  border: 1px solid black;
-}
-&lt;/style&gt;
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+    <span class="nt">td</span> <span class="p">{</span>
+      <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="kc">black</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
 
-&lt;table&gt;
-  &lt;!-- ... --&gt;
-  &lt;tr&gt;
-    &lt;td colspan="3"&gt;Datos adicionales&lt;/td&gt;
-    &lt;!-- Abarca 3 celdas --&gt;
-  &lt;/tr&gt;
-  &lt;!-- Primera fila --&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Celda 1x1&lt;/td&gt;
-    &lt;!-- Primera celda de la primera fila --&gt;
-    &lt;td&gt;Celda 2x1&lt;/td&gt;
-    &lt;!-- Segunda celda de la primera fila --&gt;
-    &lt;td&gt;Celda 3x1&lt;/td&gt;
-    &lt;!-- Tercera celda de la primera fila --&gt;
-  &lt;/tr&gt;
-  &lt;!-- ... --&gt;
-&lt;/table&gt;
-</code></pre>
+    <span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- ... --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span> <span class="na">colspan</span><span class="o">=</span><span class="s">&quot;3&quot;</span><span class="p">&gt;</span>Datos adicionales<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- Abarca 3 celdas --&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- Primera fila --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Celda 1x1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- Primera celda de la primera fila --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Celda 2x1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- Segunda celda de la primera fila --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Celda 3x1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- Tercera celda de la primera fila --&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- ... --&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>El atributo <strong>rowspan</strong> actuaría exactamente igual, pero abarcando filas en vertical, en lugar de columnas en horizontal. También se podrían combinar. Los atributos <strong>colspan</strong> y <strong>rowspan</strong> podrán tener como máximo el número de columnas o filas de la tabla, si tuviera un número mayor, simplemente se utilizará el máximo de la tabla.</p>
 <h3 id="organizacion-de-tablas">Organización de tablas<a class="headerlink" href="#organizacion-de-tablas" title="Permanent link">&para;</a></h3>
 <p>Por defecto, al crear una tabla, el navegador se encarga de crearla a medida que va leyendo las etiquetas, por lo que la tabla se crea en el orden que se han especificado sus elementos, de arriba a abajo. Sin embargo, podemos utilizar una serie de etiquetas contenedoras que establecerán la <strong>zona de la tabla</strong> donde deben aparecer su contenido:</p>
@@ -2656,34 +2608,35 @@ td {
 </tbody>
 </table>
 <p>A las etiquetas de tabla ya vistas, podemos añadir estas etiquetas, pudiendo definir la zona donde aparecerán sin que, necesariamente tengan el orden correcto. Veamos un ejemplo:</p>
-<pre><code>&lt;table&gt;
-  &lt;!-- Table footer: pie de la tabla (tfoot) --&gt;
-  &lt;tfoot&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Pie de tabla 1&lt;/td&gt;
-      &lt;td&gt;Pie de tabla 2&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tfoot&gt;
-  &lt;!-- Table header: cabecera de la tabla (thead) --&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Columna 1&lt;/th&gt;
-      &lt;th&gt;Columna 2&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;!-- Table body: cuerpo de la tabla (tbody) --&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Celda 1&lt;/td&gt;
-      &lt;td&gt;Celda 2&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-  &lt;!-- Leyenda o título de la tabla --&gt;
-  &lt;caption&gt;
-    Título de la tabla
-  &lt;/caption&gt;
-&lt;/table&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- Table footer: pie de la tabla (tfoot) --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">tfoot</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Pie de tabla 1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Pie de tabla 2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">tfoot</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- Table header: cabecera de la tabla (thead) --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Columna 1<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Columna 2<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- Table body: cuerpo de la tabla (tbody) --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Celda 1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Celda 2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- Leyenda o título de la tabla --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">caption</span><span class="p">&gt;</span>
+        Título de la tabla
+      <span class="p">&lt;/</span><span class="nt">caption</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>En este ejemplo, a pesar de seguir el orden <code>tfoot, thead, tbody, caption</code> definido en el HTML, el navegador lee la tabla y la redistribuye según su significado semántico, de modo que lo organiza dejándolo con el orden <code>caption, thead, tbody, tfoot</code>. De esta forma, estas etiquetas nos pueden servir para indicar secciones concretas de la tabla, independientemente del lugar donde estemos escribiendo, algo que puede ser muy útil si estamos creando la tabla de forma dinámica mediante algún lenguaje de programación.</p>
 <h3 id="agrupacion-de-columnas">Agrupación de columnas<a class="headerlink" href="#agrupacion-de-columnas" title="Permanent link">&para;</a></h3>
 <p>Las tablas, al definirse en el código siguiendo una estructura horizontal, hacen complejo el aplicar o realizar una serie de cambios a una columna. Existe una serie de etiquetas para agrupar o seleccionar columnas y así poder realizar tareas sobre ellas, como por ejemplo, asociarle una clase específica o darle estilos CSS a una columna concreta de la tabla, sin necesidad de ir celda por celda.</p>
@@ -2707,28 +2660,29 @@ td {
 </tbody>
 </table>
 <p>Estas etiquetas pueden tener especificado un atributo llamado <strong>span</strong> para así aplicar los atributos de la etiqueta <code>&lt;col&gt;</code> al número de columnas adyacentes que se indiquen en dicho atributo. Veamos un ejemplo:</p>
-<pre><code>&lt;table&gt;
-  &lt;tr&gt;
-    &lt;th&gt;Columna 1&lt;/th&gt;
-    &lt;th&gt;Columna 2&lt;/th&gt;
-    &lt;th&gt;Columna 3&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Data 1&lt;/td&gt;
-    &lt;td&gt;Data 2&lt;/td&gt;
-    &lt;td&gt;Data 3&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Data 4&lt;/td&gt;
-    &lt;td&gt;Data 5&lt;/td&gt;
-    &lt;td&gt;Data 6&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;colgroup&gt;
-    &lt;col style="background:red"&gt;
-    &lt;col span="2" style="background:yellow"&gt;
-  &lt;/colgroup&gt;
-&lt;/table&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Columna 1<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Columna 2<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Columna 3<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Data 1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Data 2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Data 3<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Data 4<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Data 5<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Data 6<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">colgroup</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">col</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;background:red&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">col</span> <span class="na">span</span><span class="o">=</span><span class="s">&quot;2&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;background:yellow&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">colgroup</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Vemos que en el ejemplo se está aplicando un <strong>color de fondo rojo</strong> a la primera columna, mientras que a las dos siguientes un <strong>color de fondo amarillo</strong>, ya que tiene indicado el atributo <strong>span</strong> a <strong>2</strong> y se aplica a las dos siguientes columnas: la segunda y la tercera.</p>
 <p>!!!
     Existen una serie de atributos de etiquetas relacionadas con las tablas que están obsoletos y ya no se deben utilizar, como por ejemplo <code>align</code>, <code>bgcolor</code> o <code>valign</code>. Tienes más información en <a href="/html/semantica/etiquetas-html-obsoletas">etiquetas HTML obsoletas</a>.</p>
