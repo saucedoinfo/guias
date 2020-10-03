@@ -1,5 +1,6 @@
-![](img/undraw_annotation_7das.svg)
 # Coleccion de Guias de Desarrollo y diseño.
+
+![](img/undraw_annotation_7das.svg)
 
 :pencil2: Estas guias son una recopilación de notas, comentarios y/o post que recopilo de diferentes plataformas:
 
