@@ -1437,28 +1437,30 @@
 </table>
 <h4 id="imagenes-alternativas">Imágenes alternativas<a class="headerlink" href="#imagenes-alternativas" title="Permanent link">&para;</a></h4>
 <p>Una de las primeras ventajas que nos ofrecen estas etiquetas es la de utilizar formatos diferentes, dependiendo del soporte del navegador. Así pues, podríamos hacer algo como esto:</p>
-<pre><code>&lt;picture&gt;
-  &lt;source srcset="imagen.webp" /&gt;
-  &lt;!-- Formato WebP --&gt;
-  &lt;source srcset="imagen.jxr" /&gt;
-  &lt;!-- Formato JPEG XR --&gt;
-  &lt;img src="imagen.jpg" alt="Descripción de la imagen" /&gt;
-  &lt;!-- Fallback --&gt;
-&lt;/picture&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">picture</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">source</span> <span class="na">srcset</span><span class="o">=</span><span class="s">&quot;imagen.webp&quot;</span> <span class="p">/&gt;</span>
+      <span class="c">&lt;!-- Formato WebP --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">source</span> <span class="na">srcset</span><span class="o">=</span><span class="s">&quot;imagen.jxr&quot;</span> <span class="p">/&gt;</span>
+      <span class="c">&lt;!-- Formato JPEG XR --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;imagen.jpg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Descripción de la imagen&quot;</span> <span class="p">/&gt;</span>
+      <span class="c">&lt;!-- Fallback --&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">picture</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>En este caso, indicamos que el navegador utilice la imagen con el formato <strong>WebP</strong>. En caso de no soportarlo, lo intentará con el formato <strong>JPEG XR</strong>. Si tampoco lo soporta, mostrará la imagen en formato <strong>JPEG</strong>, que es la que está soportada por todos los navegadores, y si utilizamos algún navegador de texto como Lynx u otro que no pueda mostrar imágenes, mostrará el texto alternativo.</p>
 <h4 id="imagenes-responsive">Imágenes responsive<a class="headerlink" href="#imagenes-responsive" title="Permanent link">&para;</a></h4>
 <p>Otra ventaja interesante es que con <code>&lt;picture&gt;</code> podemos crear imágenes responsive que cambien dependiendo de características de las <strong>media queries</strong> (<em>CSS</em>). Por ejemplo, utilicemos <code>min-width</code> (<em>tamaño mínimo de ancho de la pantalla</em>) en el siguiente ejemplo:</p>
-<pre><code>&lt;picture&gt;
-  &lt;source media="(min-width: 600px)"
-          srcset="html5-logo-xl.png" /&gt;
-  &lt;source media="(min-width: 300px) and (max-width: 600px)"
-          srcset="html5-logo-large.png" /&gt;
-  &lt;source media="(max-width: 50px)"
-          srcset="html5-logo-small.png" /&gt;
-  &lt;img src="html5-logo-medium.png" alt="HTML5 logo" /&gt;
-&lt;/picture&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">picture</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">source</span> <span class="na">media</span><span class="o">=</span><span class="s">&quot;(min-width: 600px)&quot;</span>
+              <span class="na">srcset</span><span class="o">=</span><span class="s">&quot;html5-logo-xl.png&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">source</span> <span class="na">media</span><span class="o">=</span><span class="s">&quot;(min-width: 300px) and (max-width: 600px)&quot;</span>
+              <span class="na">srcset</span><span class="o">=</span><span class="s">&quot;html5-logo-large.png&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">source</span> <span class="na">media</span><span class="o">=</span><span class="s">&quot;(max-width: 50px)&quot;</span>
+              <span class="na">srcset</span><span class="o">=</span><span class="s">&quot;html5-logo-small.png&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;html5-logo-medium.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;HTML5 logo&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">picture</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>De esta forma, estamos indicando que se muestren diferentes imágenes dependiendo de la resolución de pantalla (<em>ancho</em>) del dispositivo:</p>
 <ul>
 <li><strong>Dispositivos muy grandes</strong> (más de 600px): Muestra la imagen <code>html5-logo-xl.png</code></li>
@@ -1469,17 +1471,18 @@
 <p>Nótese que esto sólo hará cambio de imagen efectivo justo en los límites indicados (50, 300, 600). Si se desea que la imagen se adapte proporcionalmente, lo mejor es recurrir a <a href="http://lenguajecss.com/css/propiedades/responsive-design#tamaos-mximos-y-mnimos">tamaños máximos y mínimos de CSS</a>.</p>
 <h4 id="diferentes-densidades">Diferentes densidades<a class="headerlink" href="#diferentes-densidades" title="Permanent link">&para;</a></h4>
 <p>Además, este sistema también permite especificar diferentes imágenes dependiendo de la densidad de pantalla del dispositivo (<em>alto que varía actualmente en las diferentes gamas de smartphones</em>). Para ello, tenemos que usar un descriptor después del nombre de la imagen utilizado en el atributo <strong>srcset</strong> (<em>si no se incluye, por omisión es igual a 1x</em>):</p>
-<pre><code>&lt;picture&gt;
-  &lt;source media="(min-width: 600px)"
-    srcset="html5-logo-xl.png, html5-logo-xl-hd.png 2x, html5-logo-xl-fhd.png 3x" /&gt;
-  &lt;source media="(min-width: 300px) and (max-width: 600px)"
-    srcset="html5-logo-large.png, html5-logo-large-hd.png 2x, html5-logo-large-fhd.png 3x" /&gt;
-  &lt;source media="(max-width: 50px)"
-    srcset="html5-logo-small.png, html5-logo-small-hd.png 2x, html5-logo-small-fhd.png 3x" /&gt;
-  &lt;img srcset="html5-logo-medium.png, html5-logo-medium-hd.png 2x, html5-logo-medium-fhd.png 3x"
-    alt="HTML5 logo" /&gt;
-&lt;/picture&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">picture</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">source</span> <span class="na">media</span><span class="o">=</span><span class="s">&quot;(min-width: 600px)&quot;</span>
+        <span class="na">srcset</span><span class="o">=</span><span class="s">&quot;html5-logo-xl.png, html5-logo-xl-hd.png 2x, html5-logo-xl-fhd.png 3x&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">source</span> <span class="na">media</span><span class="o">=</span><span class="s">&quot;(min-width: 300px) and (max-width: 600px)&quot;</span>
+        <span class="na">srcset</span><span class="o">=</span><span class="s">&quot;html5-logo-large.png, html5-logo-large-hd.png 2x, html5-logo-large-fhd.png 3x&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">source</span> <span class="na">media</span><span class="o">=</span><span class="s">&quot;(max-width: 50px)&quot;</span>
+        <span class="na">srcset</span><span class="o">=</span><span class="s">&quot;html5-logo-small.png, html5-logo-small-hd.png 2x, html5-logo-small-fhd.png 3x&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">img</span> <span class="na">srcset</span><span class="o">=</span><span class="s">&quot;html5-logo-medium.png, html5-logo-medium-hd.png 2x, html5-logo-medium-fhd.png 3x&quot;</span>
+        <span class="na">alt</span><span class="o">=</span><span class="s">&quot;HTML5 logo&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">picture</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Nótese que en cada etiqueta <code>&lt;source&gt;</code>, e incluso en la etiqueta <code>&lt;img&gt;</code>, se puede especificar el atributo <strong>srcset</strong> e indicar varias imágenes preparadas para pantallas de alta densidad.</p>
 <p>Por último, recuerda que la etiqueta <code>&lt;picture&gt;</code> y la etiqueta <code>&lt;source&gt;</code> dentro de la anterior son características de HTML5.1 y aún no están soportadas en todos los navegadores. Se recomienda ser cuidadoso con este detalle.</p>
 <hr />
@@ -1523,40 +1526,45 @@
 <h3 id="marcos-en-linea-iframes">Marcos en línea (iframes)<a class="headerlink" href="#marcos-en-linea-iframes" title="Permanent link">&para;</a></h3>
 <p>Antiguamente, en versiones anteriores de HTML, existieron unas etiquetas llamadas marcos, mediante las cuales se permitía dividir la pantalla en varias secciones. Actualmente, ese modo de desarrollo ya no se utiliza ya que acarreaba múltiples problemas de accesibilidad, posicionamiento, etc.</p>
 <p>Sin embargo, de toda la familia de etiquetas de marcos, han sobrevivido los <code>&lt;iframe&gt;</code>, que siguen siendo útiles para incrustar contenido externo. Veamos un ejemplo extraído de servicios como <strong>YouTube</strong> o <strong>SoundCloud</strong>:</p>
-<pre><code>&lt;iframe src="https://www.youtube.com/embed/Imeq3GeRttw" width="560" height="315"&gt;
-&lt;/iframe&gt;
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/Imeq3GeRttw&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 
 
-&lt;a href="http://www.bing.com/" target="marco"&gt;Abrir buscador Bing&lt;/a&gt;
-&lt;iframe name="marco" width="100%" height="450"
-  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/38289724&amp;visual=true"&gt;
-&lt;/iframe&gt;
-</code></pre>
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://www.bing.com/&quot;</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;marco&quot;</span><span class="p">&gt;</span>Abrir buscador Bing<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;marco&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;450&quot;</span>
+      <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/38289724&amp;visual=true&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Esta etiqueta permite incrustar contenido externo anidado en nuestro propio documento. Es decir, podemos crear un recuadro que en su interior va a tener otra dirección URL de otra página web, documento o recurso que queramos cargar en él. Generalmente, es la etiqueta más utilizada para todo tipo de contenido externo.</p>
 <p>También podemos utilizar el atributo <code>name</code> para darle un nombre al marco y cargar direcciones URL diferentes a través de una etiqueta <code>&lt;a&gt;</code>, haciendo referencia al marco a través del atributo <code>target</code>. Por su parte, el atributo <code>srcdoc</code> nos permite indicar directamente el código fuente del iframe en su valor:</p>
-<pre><code>&lt;iframe src="http://pagina.com/apartado/" srcdoc="&lt;p&gt;¡Hola! ¡Soy el &lt;strong&gt;texto del iframe&lt;/strong&gt;!&lt;/p&gt;"&gt;&lt;/iframe&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://pagina.com/apartado/&quot;</span> <span class="na">srcdoc</span><span class="o">=</span><span class="s">&quot;&lt;p&gt;¡Hola! ¡Soy el &lt;strong&gt;texto del iframe&lt;/strong&gt;!&lt;/p&gt;&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Como se puede ver, se puede indicar el atributo <code>srcdoc</code> y el atributo <code>src</code> a la misma vez, dando prioridad al atributo <code>srcdoc</code> y manteniendo el atributo <code>src</code> como fallback, para navegadores que no soporten <code>srcdoc</code>.</p>
 <h3 id="contenido-incrustado">Contenido incrustado<a class="headerlink" href="#contenido-incrustado" title="Permanent link">&para;</a></h3>
 <p>La etiqueta <code>&lt;embed&gt;</code> se ideó antiguamente como una etiqueta no estándar para incluir contenido que requería el uso de un <strong>plugin externo</strong> para funcionar, ya que se trataba de tecnologías propietarias y los navegadores no las soportan. La etiqueta fue retirada en HTML4, pero en HTML5 fue incluída de nuevo. Se puede utilizar, por ejemplo, para incrustar contenido flash en una página web:</p>
-<pre><code>&lt;embed src="catgame.swf" width="400" height="250" /&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">embed</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;catgame.swf&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;400&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;250&quot;</span> <span class="p">/&gt;</span>
+</code></pre></div>
+
 <p>Tradicionalmente, también se empezó a utilizar la etiqueta <code>&lt;object&gt;</code> para incrustar contenido flash, pudiendo especificar parámetros en su interior. El siguiente fragmento de código es equivalente al anterior:</p>
-<pre><code>&lt;object data="catgame.swf"&gt;
-  &lt;param name="quality" value="high" /&gt;
-&lt;/object&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">object</span> <span class="na">data</span><span class="o">=</span><span class="s">&quot;catgame.swf&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">param</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;quality&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;high&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">object</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Así pues, la etiqueta <code>&lt;object&gt;</code> se ofrecía como una alternativa más apropiada para cargar todo tipo de contenidos. Y no sólo eso, sino que ofrece la posibilidad de especificar el <strong>tipo de formato</strong> del que se trata, así como añadir <strong>múltiples parámetros</strong> o la opción de añadir en su interior etiquetas HTML o texto que funcionen a modo de <strong>fallback</strong> (<em>plan B</em>), o lo que es lo mismo, en el caso de que el navegador no pueda cargar ese formato, cargará la imagen, video, texto o la etiqueta que se incluya en su interior. Algunos ejemplos:</p>
-<pre><code>&lt;object data="clock.html"&gt;&lt;/object&gt;
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">object</span> <span class="na">data</span><span class="o">=</span><span class="s">&quot;clock.html&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">object</span><span class="p">&gt;</span>
 
 
-&lt;object type="application/x-shockwave-flash"&gt;
-  &lt;param name="movie" value="http://video.example.com/library/watch.swf" /&gt;
-  &lt;param name="allowfullscreen" value="true" /&gt;
-  &lt;param name="flashvars" value="http://video.example.com/vids/315981" /&gt;
-  Contenido multimedia no soportado.
-&lt;/object&gt;
-</code></pre>
+    <span class="p">&lt;</span><span class="nt">object</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;application/x-shockwave-flash&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">param</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;movie&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;http://video.example.com/library/watch.swf&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">param</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;allowfullscreen&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;true&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">param</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;flashvars&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;http://video.example.com/vids/315981&quot;</span> <span class="p">/&gt;</span>
+      Contenido multimedia no soportado.
+    <span class="p">&lt;/</span><span class="nt">object</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <hr />
 <h2 id="etiquetas-html-de-video">Etiquetas HTML de video<a class="headerlink" href="#etiquetas-html-de-video" title="Permanent link">&para;</a></h2>
 <p>En HTML5 se introduce la interesante posibilidad de <strong>mostrar videos directamente</strong> desde nuestro navegador. De hecho, si arrastramos un video a la ventana del navegador, veremos que comienza a reproducirse en él. Para poder insertar videos en nuestras páginas HTML tenemos que utilizar la etiqueta <code>&lt;video&gt;</code>, que junto a la etiqueta <code>&lt;source&gt;</code> podremos utilizar estas capacidades multimedia de HTML5.</p>
@@ -1628,15 +1636,17 @@
 </tbody>
 </table>
 <p>Un primer ejemplo muy básico para colocar un video en nuestra página web:</p>
-<pre><code>&lt;video src="video.mp4" width="640" height="480"&gt;&lt;/video&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">video</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;video.mp4&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;640&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;480&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Sin embargo, esto mostrará el primer fotograma del video, con un tamaño de 640x480, pero se verá como una imagen, ya que no muestra los controles del video y tampoco tiene la autoreproducción activada. Podríamos solucionarlo indicando los atributos <strong>controls</strong> o <strong>autoplay</strong>.</p>
 <p>Otro ejemplos básicos para colocar videos en nuestra página:</p>
-<pre><code>&lt;!-- Ejemplo 1 --&gt;
-&lt;video src="video.webm" poster="presentacion.jpg" controls&gt;&lt;/video&gt;
-&lt;!-- Ejemplo 2 --&gt;
-&lt;video src="video.mp4" autoplay muted loop&gt;&lt;/video&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="c">&lt;!-- Ejemplo 1 --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">video</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;video.webm&quot;</span> <span class="na">poster</span><span class="o">=</span><span class="s">&quot;presentacion.jpg&quot;</span> <span class="na">controls</span><span class="p">&gt;&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- Ejemplo 2 --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">video</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;video.mp4&quot;</span> <span class="na">autoplay</span> <span class="na">muted</span> <span class="na">loop</span><span class="p">&gt;&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>En este caso cargamos un video, pero que no se mostrará porque se ha indicado que se utilice una imagen de presentación que se mostrará hasta que el usuario pulse en el botón de reproducir de los controles. En el segundo ejemplo, tenemos un video que se reproduce automáticamente al cargar la página, en silencio y en bucle, iniciándose una y otra vez.</p>
 <h3 id="formatos-de-video">Formatos de video<a class="headerlink" href="#formatos-de-video" title="Permanent link">&para;</a></h3>
 <p>Antes de continuar con el modo avanzado de etiquetas de video, debemos conocer una serie de conceptos básicos y los diferentes formatos de video que existen actualmente. En primer lugar, debemos saber que un archivo de video tiene dos partes principales: el <strong>formato contenedor</strong>, que es el formato del video en sí, mientras que en su interior puede tener múltiples componentes codificados con diferentes <strong>codecs</strong>.</p>
@@ -1723,14 +1733,15 @@
 </table>
 <h4 id="videos-alternativos">Videos alternativos<a class="headerlink" href="#videos-alternativos" title="Permanent link">&para;</a></h4>
 <p>Si utilizamos la etiqueta <code>&lt;video&gt;</code> como etiqueta contenedora, podemos incluir etiquetas <code>&lt;source&gt;</code> en su interior para proporcionar formatos alternativos y tener mayor compatibilidad con otros navegadores y navegadores antiguos que no soporten HTML5:</p>
-<pre><code>&lt;video width="640" height="480"&gt;
-  &lt;source src="video.mp4" type="video/mp4" /&gt;
-  &lt;source src="video.webm" type="video/webm" /&gt;
-  &lt;source src="video.ogv" type="video/ogg" /&gt;
-  &lt;img src="imagen.png" alt="Video no soportado" /&gt;
-  Su navegador no soporta contenido multimedia.
-&lt;/video&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">video</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;640&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;480&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;video.mp4&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;video/mp4&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;video.webm&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;video/webm&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;video.ogv&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;video/ogg&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;imagen.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Video no soportado&quot;</span> <span class="p">/&gt;</span>
+      Su navegador no soporta contenido multimedia.
+    <span class="p">&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>En este ejemplo, los navegadores no mostrarán todos los contenidos a la vez, sino que seguirán el siguiente procedimiento:</p>
 <ul>
 <li>Intenta mostrar el primer formato (MP4). Si el navegador no soporta este formato, salta al siguiente.</li>
@@ -1742,12 +1753,13 @@
 <p>De esta forma tenemos soporte completo para todo tipo de dispositivos.</p>
 <h4 id="acceso-a-segundos-concretos">Acceso a segundos concretos<a class="headerlink" href="#acceso-a-segundos-concretos" title="Permanent link">&para;</a></h4>
 <p>Utilizando los <a href="https://www.w3.org/TR/media-frags/">fragmentos multimedia</a> se pueden conseguir algunas acciones interesantes, como por ejemplo especificar el momento concreto del video (<em>o audio</em>) en el que se quiere empezar a reproducir o terminar de reproducir. Veamos unos ejemplos:</p>
-<pre><code>&lt;!-- Ejemplo 1 --&gt;
-&lt;video autoplay controls src="video.mp4#t=15"&gt;&lt;/video&gt;
+<div class="highlight"><pre><span></span><code>    <span class="c">&lt;!-- Ejemplo 1 --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">video</span> <span class="na">autoplay</span> <span class="na">controls</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;video.mp4#t=15&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
 
-&lt;!-- Ejemplo 2 --&gt;
-&lt;video autoplay controls src="video.mp4#t=25,45"&gt;&lt;/video&gt;
-</code></pre>
+    <span class="c">&lt;!-- Ejemplo 2 --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">video</span> <span class="na">autoplay</span> <span class="na">controls</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;video.mp4#t=25,45&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>En el primer caso, reproducimos el video a partir del segundo <strong>15</strong> del mismo, mientras que en el segundo caso, reproducimos el video a partir del segundo <strong>25</strong> y terminará de reproducirse en el segundo <strong>45</strong>.</p>
 <hr />
 <h2 id="etiquetas-html-de-audio">Etiquetas HTML de audio<a class="headerlink" href="#etiquetas-html-de-audio" title="Permanent link">&para;</a></h2>
@@ -1802,13 +1814,15 @@
 </tbody>
 </table>
 <p>Un primer ejemplo muy básico para colocar un audio en nuestra página web:</p>
-<pre><code>&lt;audio src="audio.mp3"&gt;&lt;/audio&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">audio</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;audio.mp3&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">audio</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Sin embargo esto no mostrará nada visualmente, ni reproducirá ningún sonido. Realmente, el audio está ahí, pero no le hemos indicado el atributo <code>controls</code> para que muestre los controles y que el usuario pueda pulsar el botón «<strong>play</strong>». Tampoco le hemos colocado el atributo <code>autoplay</code>, en cuyo caso tampoco mostraría nada visualmente, pero si que se empezaría a escuchar el sonido o pista de música.</p>
 <p>Otro ejemplos básicos para colocar audios en nuestra página:</p>
-<pre><code>&lt;audio src="audio.mp3" preload="none" controls&gt;&lt;/audio&gt;
-&lt;audio src="audio.ogg" autoplay loop&gt;&lt;/audio&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">audio</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;audio.mp3&quot;</span> <span class="na">preload</span><span class="o">=</span><span class="s">&quot;none&quot;</span> <span class="na">controls</span><span class="p">&gt;&lt;/</span><span class="nt">audio</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">audio</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;audio.ogg&quot;</span> <span class="na">autoplay</span> <span class="na">loop</span><span class="p">&gt;&lt;/</span><span class="nt">audio</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>En el primer ejemplo, cargamos un audio en formato MP3, pero indicamos que no precargue nada. Empezará a descargarse sólo cuando el usuario pulse en los controles de reproducción. Este escenario puede ser interesante para evitar consumo de ancho de banda de archivos que es probable que el usuario no escuche o en dispositivos móviles donde las tarifas de datos son costosas.</p>
 <p>Por otro lado, el segundo ejemplo, carga un archivo de audio en formato OGG y lo reproduce automáticamente y en bucle, de modo que vuelve a empezar cuando termina.</p>
 <p>!!!OJO: 
@@ -1889,35 +1903,38 @@
 </tbody>
 </table>
 <p>De esta forma, pasamos de un esquema donde solo usabamos una etiqueta <code>&lt;audio&gt;</code> a otro un poco más avanzado, donde <code>&lt;audio&gt;</code> contiene múltiples etiquetas que actúan sobre ese audio en cuestión. Dichas etiquetas pueden ser <code>&lt;source&gt;</code> o <code>&lt;track&gt;</code>:</p>
-<pre><code>&lt;audio&gt;
-  &lt;!-- Aquí etiquetas para añadir funcionalidad extra --&gt;
-&lt;/audio&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">audio</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- Aquí etiquetas para añadir funcionalidad extra --&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">audio</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>La etiqueta de subtítulos <code>&lt;track&gt;</code> la veremos un poco más adelante, en el capítulo de <a href="/html/multimedia/etiquetas-html-de-subtitulos/">etiquetas HTML de subtítulos</a>.</p>
 <h4 id="audio-alternativo-fallback"><a href="https://lenguajehtml.com/html/multimedia/etiquetas-html-de-audio/#audio-alternativo-fallback">Audio alternativo (fallback)</a><a class="headerlink" href="#audio-alternativo-fallback" title="Permanent link">&para;</a></h4>
 <p>Si utilizamos la etiqueta <code>&lt;audio&gt;</code> como etiqueta contenedora, podemos incluir etiquetas <code>&lt;source&gt;</code> en su interior para proporcionar formatos alternativos y tener mayor compatibilidad con otros navegadores y navegadores antiguos que no soporten HTML5:</p>
-<pre><code>&lt;audio&gt;
-  &lt;source src="audio.opus" /&gt;
-  &lt;source src="audio.ogg" /&gt;
-  &lt;source src="audio.mp3" /&gt;
-&lt;/audio&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">audio</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;audio.opus&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;audio.ogg&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;audio.mp3&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">audio</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>En este ejemplo, el navegador intentará reproducir el archivo de audio en formato Opus, en caso de no estar soportado por el navegador, intentará reproducir el formato Ogg Vorbis, y en caso de tampoco soportarlo, reproducirá el formato MP3.</p>
 <hr />
 <h2 id="etiquetas-html-de-subtitulos">Etiquetas HTML de subtitulos<a class="headerlink" href="#etiquetas-html-de-subtitulos" title="Permanent link">&para;</a></h2>
 <p>Con la llegada de HTML5 se introduce <a href="https://w3c.github.io/webvtt/">WebVTT</a>, un formato abierto orientado a utilizarse en web para la creación de subtítulos, que proviene del extendido formato SRT.</p>
 <h3 id="formato-webvtt">Formato WebVTT<a class="headerlink" href="#formato-webvtt" title="Permanent link">&para;</a></h3>
 <p>La sintaxis del formato de texto <strong>WebVTT</strong> es bastante legible:</p>
-<pre><code>WEBVTT
-00:04.000 --&gt; 00:07.000
-&lt;v Capitán América&gt;Hola &lt;i&gt;Tony&lt;/i&gt;.
+<div class="highlight"><pre><span></span><code>    WEBVTT
+    00:04.000 --&gt; 00:07.000
+    <span class="p">&lt;</span><span class="nt">v</span> <span class="na">Capitán</span> <span class="na">América</span><span class="p">&gt;</span>Hola <span class="p">&lt;</span><span class="nt">i</span><span class="p">&gt;</span>Tony<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>.
 
-00:09.000 --&gt; 00:11.000
-&lt;v Ironman&gt;¿Me echabas de menos?
+    00:09.000 --&gt; 00:11.000
+    <span class="p">&lt;</span><span class="nt">v</span> <span class="na">Ironman</span><span class="p">&gt;</span>¿Me echabas de menos?
 
-00:12.000 --&gt; 00:14.000 align:end size:50%
-*ruido*
-</code></pre>
+    00:12.000 --&gt; 00:14.000 align:end size:50%
+    *ruido*
+</code></pre></div>
+
 <p>Como se puede ver, el archivo empieza con el texto <code>WEBVTT</code> y continua con una línea que indica el inicio y final que permanecerá visible la frase de la siguiente línea. En la frase, se puede indicar el personaje que está hablando (<em>para posteriormente aplicar estilos</em>) e incluso incluir etiquetas simples para dar formato al texto. También se pueden alinear textos, modificar su tamaño o cambiar la posición, entre otras cosas.</p>
 <h3 id="etiquetas-para-subtitulos">Etiquetas para subtítulos<a class="headerlink" href="#etiquetas-para-subtitulos" title="Permanent link">&para;</a></h3>
 <p>Este formato se puede utilizar mediante la etiqueta <code>&lt;track&gt;</code> dentro de una etiqueta contenedora <code>&lt;video&gt;</code> y después de las etiquetas <code>&lt;source&gt;</code>. La etiqueta <code>&lt;track&gt;</code> soporta varios atributos:</p>
@@ -1958,14 +1975,15 @@
 </tbody>
 </table>
 <p>En el siguiente fragmento de código vemos un ejemplo de uso, en el cuál, en la barra de los controles de reproducción, se nos mostrará un icono <code>CC</code> donde el usuario puede elegir uno de los canales de subtítulos indicados, que por defecto utiliza el primero que encuentra o el que tenga el atributo <strong>default</strong>:</p>
-<pre><code>&lt;video controls&gt;
-  &lt;source src="video.mp4" /&gt;
-  &lt;source src="video.webm" /&gt;
-  &lt;track src="subs-es.vtt" srclang="es" label="Español" default /&gt;
-  &lt;track src="subs-en.vtt" srclang="en" label="English" /&gt;
-  &lt;track src="subs-fr.vtt" srclang="fr" label="Français" /&gt;
-&lt;/video&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">video</span> <span class="na">controls</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;video.mp4&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;video.webm&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">track</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;subs-es.vtt&quot;</span> <span class="na">srclang</span><span class="o">=</span><span class="s">&quot;es&quot;</span> <span class="na">label</span><span class="o">=</span><span class="s">&quot;Español&quot;</span> <span class="na">default</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">track</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;subs-en.vtt&quot;</span> <span class="na">srclang</span><span class="o">=</span><span class="s">&quot;en&quot;</span> <span class="na">label</span><span class="o">=</span><span class="s">&quot;English&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">track</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;subs-fr.vtt&quot;</span> <span class="na">srclang</span><span class="o">=</span><span class="s">&quot;fr&quot;</span> <span class="na">label</span><span class="o">=</span><span class="s">&quot;Français&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>De la misma forma también es posible utilizar subtítulos en etiquetas <code>&lt;audio&gt;</code> contenedoras, algo que puede ser muy útil por ejemplo para podcasts o reproducciones de audio donde se cuentan detalles y se quiere subtitular o describir de forma textual.</p>
 <hr />
 <p><strong>Fuente:</strong> <a href="https://lenguajehtml.com/">Lenguaje de Html</a> por <a href="https://manzdev.github.io/">Manz</a></p>
