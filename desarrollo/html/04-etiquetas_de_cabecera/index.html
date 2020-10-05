@@ -1166,11 +1166,12 @@
 </ul>
 <h3 id="titulo-y-codificacion">Título y codificación<a class="headerlink" href="#titulo-y-codificacion" title="Permanent link">&para;</a></h3>
 <p>En el interior de la etiqueta <code>&lt;head&gt;</code> es aconsejable, como mínimo, indicar siempre las siguientes dos etiquetas:</p>
-<pre><code>&lt;head&gt;
-  &lt;title&gt;Título del documento&lt;/title&gt;
-  &lt;meta charset="utf-8" /&gt;
-&lt;/head&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Título del documento<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>En este ejemplo, la etiqueta <code>&lt;meta&gt;</code> indica que el navegador utilice la <strong>codificación UTF-8</strong> para mostrar el texto. Es muy importante utilizar siempre de forma coherente una misma codificación en todos nuestros documentos, de esta forma evitaremos problemas con vocales acentuadas, o carácteres como <code>ñ</code> , <code>¿</code> , <code>¡</code> u otros.</p>
 <p>Para evitar este tipo de problemas, se recomienda siempre realizar los siguientes pasos:</p>
 <ol>
@@ -1184,31 +1185,34 @@
 <p>Veamos algunos ejemplos de relaciones que podemos establecer.</p>
 <h4 id="versiones-alternativas">Versiones alternativas<a class="headerlink" href="#versiones-alternativas" title="Permanent link">&para;</a></h4>
 <p>Con el valor <code>alternate</code> en el atributo <code>rel</code> de la etiqueta <code>&lt;link&gt;</code> podemos indicar que el documento actual tiene versiones alternativas en otros formatos o idiomas. El siguiente ejemplo indica que el documento HTML que estamos leyendo tiene una versión en PDF, y además, una versión HTML en inglés:</p>
-<pre><code>&lt;head&gt;
-  &lt;link rel="alternate" href="document.pdf" type="application/pdf" /&gt;
-  &lt;link rel="alternate" href="document-en.html" hreflang="en" /&gt;
-&lt;/head&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;alternate&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;document.pdf&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;application/pdf&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;alternate&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;document-en.html&quot;</span> <span class="na">hreflang</span><span class="o">=</span><span class="s">&quot;en&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <h4 id="referencias-a-datos">Referencias a datos<a class="headerlink" href="#referencias-a-datos" title="Permanent link">&para;</a></h4>
 <p>El atributo <code>rel</code> también nos permite indicar el tipo de relación que tiene el documento referenciado. Por ejemplo, a continuación indicamos una referencia al autor del documento, a la zona de ayuda, la zona de búsqueda y la licencia que cubre el contenido de la página:</p>
-<pre><code>&lt;head&gt;
-  &lt;link rel="author" href="http://twitter.com/Manz" /&gt;
-  &lt;link rel="help" href="http://lenguajehtml.com/ayuda/" /&gt;
-  &lt;link rel="search" href="http://lenguajehtml.com/busqueda/" /&gt;
-  &lt;link rel="license" href="http://lenguajehtml.com/licencia/" /&gt;
-&lt;/head&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;author&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://twitter.com/Manz&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;help&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://lenguajehtml.com/ayuda/&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;search&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://lenguajehtml.com/busqueda/&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;license&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://lenguajehtml.com/licencia/&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <h4 id="favicon-icono-de-pestanas">Favicon (icono de pestañas)<a class="headerlink" href="#favicon-icono-de-pestanas" title="Permanent link">&para;</a></h4>
 <p>Cuando tenemos varias pestañas en nuestro navegador, para una búsqueda más fácil e intuitiva entre pestañas, el navegador suele colocarnos unos iconos a la izquierda del título de las pestañas. Estos iconos son conocidos como <code>favicons</code> (<em>iconos de favoritos</em>) ya que fue un invento de <strong>Internet Explorer</strong> para colocar el icono cuando el usuario añadía una página a favoritos:</p>
-<pre><code>&lt;head&gt;
-  &lt;link rel="shortcut icon" href="/favicon.ico" /&gt; &lt;!-- HTML4 --&gt;
-  &lt;link rel="icon" sizes="64x64" href="/favicon.png" /&gt; &lt;!-- HTML5 --&gt;
-  &lt;link rel="apple-touch-icon" sizes="180x180"
-        href="/apple-touch-icon-180x180.png" /&gt; &lt;!-- iPhone/iPad --&gt;
-  &lt;meta name="msapplication-TileImage"
-        content="/mstile-144x144.png" /&gt; &lt;!-- Windows Phone --&gt;
-&lt;/head&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;shortcut icon&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/favicon.ico&quot;</span> <span class="p">/&gt;</span> <span class="c">&lt;!-- HTML4 --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;icon&quot;</span> <span class="na">sizes</span><span class="o">=</span><span class="s">&quot;64x64&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/favicon.png&quot;</span> <span class="p">/&gt;</span> <span class="c">&lt;!-- HTML5 --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;apple-touch-icon&quot;</span> <span class="na">sizes</span><span class="o">=</span><span class="s">&quot;180x180&quot;</span>
+            <span class="na">href</span><span class="o">=</span><span class="s">&quot;/apple-touch-icon-180x180.png&quot;</span> <span class="p">/&gt;</span> <span class="c">&lt;!-- iPhone/iPad --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;msapplication-TileImage&quot;</span>
+            <span class="na">content</span><span class="o">=</span><span class="s">&quot;/mstile-144x144.png&quot;</span> <span class="p">/&gt;</span> <span class="c">&lt;!-- Windows Phone --&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Desgraciadamente, esta característica no está definida en la especificación, por lo que cada navegador (<em>¡y cada sistema operativo!</em>) la implementa como quiere. Hay navegadores que sólo soportan favicon en formato PNG, otros que solo soportan resoluciones específicas, etc.</p>
 <p>!!!
         Para generar los favicons de una forma más cómoda, aconsejo utilizar la herramienta <a href="https://realfavicongenerator.net/">Real Favicon Generator</a>, a la cuál le pasamos un logo a alta resolución y nos generará un <code>.zip</code> con el código y diferentes versiones y resoluciones de los iconos.</p>
@@ -1243,10 +1247,11 @@
 <h4 id="estilos-css-de-documento">Estilos CSS de documento<a class="headerlink" href="#estilos-css-de-documento" title="Permanent link">&para;</a></h4>
 <p>Por último, otra de las funciones más conocidas y utilizadas de la etiqueta <code>&lt;link&gt;</code> es la de establecer una relación con un <a href="http://lenguajecss.com/">documento CSS</a> para aplicar estilos a la página HTML actual (<em>y a todas las que establezcan una relación a ella</em>).</p>
 <p>Para ello, no hay más que utilizar el valor <code>stylesheet</code> en el atributo <code>rel</code> de la siguiente forma:</p>
-<pre><code>&lt;head&gt;
-  &lt;link rel="stylesheet" href="index.css" type="text/css" /&gt;
-&lt;/head&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;index.css&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Con esto, el documento HTML estará relacionado con el documento CSS <code>index.css</code> , y aplicará todos los estilos CSS que se encuentren en él. El atributo <code>type</code> es opcional y no se suele indicar, puesto que el tipo por defecto de las hojas de estilos ya es <code>text/css</code>.</p>
 <hr />
 <h2 id="etiquetas-html-de-metadatos">Etiquetas HTML de metadatos<a class="headerlink" href="#etiquetas-html-de-metadatos" title="Permanent link">&para;</a></h2>
@@ -1261,10 +1266,11 @@
 <code>viewport</code>|<em>parámetros</em>|Comportamiento de la región visible del navegador. Ver <a href="https://lenguajecss.com/css/responsive-web-design/que-es/">Responsive</a>.</p>
 <h4 id="tema-de-color-del-navegador">Tema de color del navegador<a class="headerlink" href="#tema-de-color-del-navegador" title="Permanent link">&para;</a></h4>
 <p>Un cambio muy reciente, incluído por parte de Google en <strong>Google Chrome</strong> y dispositivos Android, es el atributo <strong>theme-color</strong> que colorea la barra de direcciones del navegador:</p>
-<pre><code>&lt;head&gt;
-  &lt;meta name="theme-color" content="#1e7bbf" /&gt;
-&lt;/head&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;theme-color&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;#1e7bbf&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Con esto conseguiremos que, un dispositivo móvil con Android y Google Chrome, muestre la barra de navegación de la siguiente forma:</p>
 <p><img alt="Meta theme" src="../img/meta-theme.png" /></p>
 <h4 id="metadatos-para-google">Metadatos para Google<a class="headerlink" href="#metadatos-para-google" title="Permanent link">&para;</a></h4>
@@ -1296,12 +1302,13 @@
 </tbody>
 </table>
 <p>Un pequeño ejemplo de esta etiqueta con los citados atributos:</p>
-<pre><code>&lt;head&gt;
-  &lt;meta name="google" content="nositelinkssearchbox" /&gt;
-  &lt;meta name="google" content="notranslate" /&gt;
-  &lt;meta name="robots" content="index, nofollow" /&gt;
-&lt;/head&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;google&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;nositelinkssearchbox&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;google&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;notranslate&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;robots&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;index, nofollow&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Por su parte, la etiqueta <code>&lt;meta name="robots"&gt;</code> puede tener varios parámetros (<em>separados por comas</em>) para indicarle a Google diferentes detalles:</p>
 <table>
 <thead>
@@ -1389,13 +1396,14 @@
 </table>
 <p>Indica a Internet Explorer si guardar o no en caché la página.</p>
 <p>Y finalmente, un ejemplo aplicando cada una de estas etiquetas:</p>
-<pre><code>&lt;head&gt;
-  &lt;meta http-equiv="refresh" content="300;url=http://www.emezeta.com/" /&gt;
-  &lt;meta http-equiv="expires" content="Fri, 29 Apr 2016 12:56:00 GMT" /&gt;
-  &lt;meta http-equiv="pragma" content="no-cache" /&gt;
-  &lt;meta http-equiv="cache-control" content="no-cache" /&gt;
-&lt;/head&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;refresh&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;300;url=http://www.emezeta.com/&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;expires&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;Fri, 29 Apr 2016 12:56:00 GMT&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;pragma&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;no-cache&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;cache-control&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;no-cache&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <hr />
 <h2 id="etiquetas-html-de-redes-sociales">Etiquetas HTML de redes sociales<a class="headerlink" href="#etiquetas-html-de-redes-sociales" title="Permanent link">&para;</a></h2>
 <p>Al igual que vimos como establecer un título y descripción para un documento HTML, es posible definir una serie de <strong>etiquetas de metadatos</strong> orientadas a <strong>redes sociales</strong> como Facebook o Twitter. De esta forma, al margen de los datos del documento HTML, podemos indicar títulos o descripciones diferentes, orientadas al público de cada red social.</p>
@@ -1404,13 +1412,14 @@
 <p>Si no los encuentra, se crea sus propios metadatos en base a criterios internos (<em>que podrían ser incorrectos</em>). Por ejemplo, Facebook podría analizar la página y, como no existen metadatos, poner como imagen de presentación del enlace, una imagen de un usuario que comenta, y no la imagen correspondiente al propio artículo. Sin embargo, si tenemos los metadatos sociales de <strong>Open Graph</strong> especificados, podría aparecer algo parecido a esto:</p>
 <p><img alt="Metadatos sociales: Open Graph (Facebook)" src="../img/metadatos-sociales-open-graph-facebook.jpg" /></p>
 <p>Con <strong>Open Graph</strong> podemos personalizar los datos que queremos que se ofrezcan cuando un usuario comparta el enlace en Facebook o lo envíe por un mensaje privado. Un ejemplo básico para páginas genéricas (<em>con título, imagen, descripción y tipo de página</em>) podría ser el siguiente:</p>
-<pre><code>&lt;head&gt;
-  &lt;meta property="og:type" content="article" /&gt;
-  &lt;meta property="og:title" content="Título del post" /&gt;
-  &lt;meta property="og:image" content="http://pagina.com/img/imagen32.jpg" /&gt;
-  &lt;meta property="og:description" content="Descripción de la página" /&gt;
-&lt;/head&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:type&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;article&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:title&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;Título del post&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:image&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;http://pagina.com/img/imagen32.jpg&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:description&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;Descripción de la página&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Algunos enlaces interesantes sobre <strong>Open Graph</strong>:</p>
 <ul>
 <li><a href="https://developers.facebook.com/tools/debug/og/object/">Open Graph Debugger</a>: Herramienta de validación de Open Graph que permite comprobar si el código es correcto y no hay ningún error en la utilización del protocolo en nuestro documento HTML.</li>
@@ -1420,14 +1429,15 @@
 <p>Datos como el formato y tipo de la información mostrada, el nombre del autor de la página del enlace, el título, descripción e imagen de presentación son perfectamente personalizables desde <strong>Twitter Cards</strong>, que mostraría una apariencia similar a la siguiente:</p>
 <p><img alt="Metadatos sociales: Twitter Cards (Twitter)" src="../img/metadatos-sociales-twittercards.jpg" /></p>
 <p>Para utilizar <strong>Twitter Cards</strong> se requiere dar de alta previamente en <a href="https://dev.twitter.com/">Twitter Developers</a> así como pasar un pequeño proceso de moderación para saber si tu página cumple los requisitos para utilizar este tipo de metadatos en la red de Twitter. Respecto al código a utilizar, es muy sencillo:</p>
-<pre><code>&lt;head&gt;
-  &lt;meta property="twitter:card" content="summary_large_image" /&gt;
-  &lt;meta property="twitter:creator" content="@Manz" /&gt;
-  &lt;meta property="twitter:title" content="Título" /&gt;
-  &lt;meta property="twitter:description" content="Descripción" /&gt;
-  &lt;meta property="twitter:image:src" content="URL_img.jpg" /&gt;
-&lt;/head&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;twitter:card&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;summary_large_image&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;twitter:creator&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;@Manz&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;twitter:title&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;Título&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;twitter:description&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;Descripción&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;twitter:image:src&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;URL_img.jpg&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Algunos enlaces interesantes sobre <strong>Twitter Cards</strong>:</p>
 <ul>
 <li><a href="https://cards-dev.twitter.com/validator">Twitter Cards Validator</a>: Herramienta de validación de Twitter Cards que permite realizar una comprobación del código de los metadatos de tu página para saber si existen errores.</li>

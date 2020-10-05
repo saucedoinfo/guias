@@ -1680,8 +1680,9 @@
 </ul>
 <h3 id="contenedor-de-formulario">Contenedor de formulario<a class="headerlink" href="#contenedor-de-formulario" title="Permanent link">&para;</a></h3>
 <p>Para comenzar con la creación de un formulario, el primer paso es indicar una etiqueta contenedora <code>&lt;form&gt;</code>, que incluirá toda la información que se quiere recoger en ese formulario:</p>
-<pre><code>&lt;form&gt;&lt;/form&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>De esta forma, se puede incluso crear varias etiquetas <code>&lt;form&gt;</code> por página, pudiendo así crear varios formularios diferentes, como por ejemplo, uno para realizar una búsqueda en la página, otro para dejar un comentario y otro para enviar un email al autor.</p>
 <p>!!!
         También es posible colocar campos de formulario <strong>fuera</strong> de una etiqueta <code>&lt;form&gt;</code>, sin embargo, no tendrán un funcionamiento específico y necesitaría manejarse desde Javascript.</p>
@@ -1738,8 +1739,9 @@
 </tbody>
 </table>
 <p>Así pues, un primer formulario base de ejemplo (<em>aún vacío, sin campos de entrada de datos, sólo con la etiqueta contenedora</em>) podría ser el que vemos en el siguiente ejemplo:</p>
-<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;&lt;/form&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulario&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/send.php&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Nótese que se definen 3 atributos base en <code>&lt;form&gt;</code>:</p>
 <ul>
 <li>En <code>action</code> se indica la dirección donde se enviarán los datos cuando el usuario pulse el botón de enviar. En caso de omitirse esta información, se enviarían los datos a la propia página actual, volviéndola a cargar.</li>
@@ -1807,14 +1809,15 @@
 <p>En HTML5, de forma nativa, el navegador proporciona estos <strong>campos de entrada</strong> en los que el usuario puede introducir información específica. Cada uno de ellos tiene sus propias particularidades y características, además de que hay que tener cuidado con algunos, ya que pueden no estar soportados por completo en todos los navegadores.</p>
 <h3 id="campos-de-entrada">Campos de entrada<a class="headerlink" href="#campos-de-entrada" title="Permanent link">&para;</a></h3>
 <p>Una de las etiquetas que más utilizaremos para obtener información a modo de campo de entrada de datos en un formulario es la etiqueta <code>&lt;input&gt;</code>. Su funcionalidad más utilizada es la de servir como campo de texto:</p>
-<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
-  &lt;!-- Primer campo de entrada de datos --&gt;
-  Nombre de usuario:
-  &lt;input type="text" name="nombre" value="" /&gt;
-  &lt;!-- Botón de envío del formulario --&gt;
-  &lt;input type="submit" value="Enviar" /&gt;
-&lt;/form&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulario&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/send.php&quot;</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- Primer campo de entrada de datos --&gt;</span>
+      Nombre de usuario:
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;nombre&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="p">/&gt;</span>
+      <span class="c">&lt;!-- Botón de envío del formulario --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Enviar&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>En este ejemplo tenemos un pequeño formulario donde se le pide al usuario su nombre con la etiqueta <code>&lt;input type="text"&gt;</code> y, posteriormente, se coloca un botón para enviar el formulario con la etiqueta <code>&lt;input type="submit"&gt;</code>. Aunque vemos que se trata de la misma etiqueta <code>&lt;input&gt;</code>, dependiendo del valor indicado en el atributo <strong>type</strong> realizará una tarea u otra.</p>
 <h3 id="la-etiqueta-input">La etiqueta "input"<a class="headerlink" href="#la-etiqueta-input" title="Permanent link">&para;</a></h3>
 <p>La etiqueta <code>&lt;input&gt;</code> tiene una gran cantidad de atributos (<em>algunos dependiendo del valor de type, que mostraremos más adelante</em>). Estos son los atributos que podemos utilizar de forma general para prácticamente cualquier campo de entrada de datos con la etiqueta <code>&lt;input&gt;</code>:</p>
@@ -1925,12 +1928,13 @@
 <h3 id="texto-alfanumerico-corto">Texto alfanumérico corto<a class="headerlink" href="#texto-alfanumerico-corto" title="Permanent link">&para;</a></h3>
 <p>En primer lugar, si lo que queremos es guardar información de texto libremente, la opción más habitual es optar por utilizar el campo de entrada de datos <code>&lt;input type="text"&gt;</code>. Este atributo es el que se utiliza en las etiquetas <code>&lt;input&gt;</code> por defecto si no indicamos ningún atributo <strong>type</strong>. Es un campo de texto ideal para fragmentos cortos de información: nombres, apellidos, direcciones físicas, etc...</p>
 <p>En resumen, pequeños fragmentos de texto menores a un par de palabras. Un sencillo ejemplo:</p>
-<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
-  &lt;!-- Campo de entrada de datos --&gt;
-  &lt;input type="text" name="nombre" autocomplete="off"
-         placeholder="Introduce tu nombre de usuario" /&gt;
-&lt;/form&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulario&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/send.php&quot;</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- Campo de entrada de datos --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;nombre&quot;</span> <span class="na">autocomplete</span><span class="o">=</span><span class="s">&quot;off&quot;</span>
+             <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Introduce tu nombre de usuario&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Obsérvese que además hemos indicado dos atributos adicionales:</p>
 <ul>
 <li><strong>Autocompletado desactivado</strong>: No aparecerá información escrita anteriormente en ese campo.</li>
@@ -1941,33 +1945,35 @@
 <h3 id="textos-cortos-especificos">Textos cortos específicos<a class="headerlink" href="#textos-cortos-especificos" title="Permanent link">&para;</a></h3>
 <p>Por otro lado, en HTML5 se añaden nuevos tipos para etiquetas <code>&lt;input&gt;</code> como <strong>search</strong>, <strong>tel</strong>, <strong>url</strong> o <strong>email</strong>. Aunque la idea es la misma que un campo de texto y en principio no notaremos ningún cambio, estos campos específicos tienen como objetivo hacer más sencillo el proceso de introducción de datos por parte del usuario.</p>
 <p>Si utilizamos <strong>tel</strong> en vez de <strong>text</strong>, al hacer clic en el campo del formulario desde un smartphone/tablet, se nos desplegará el teclado numérico en lugar del teclado habitual, lo que nos facilitará en gran medida escribir el dispositivo móvil, ya que la intención es utilizar sólo caracteres para números. Lo mismo ocurre con los campos de tipo <strong>email</strong> o <strong>url</strong>, ya que nos mostrará un teclado con botones especiales con <code>@</code>, <code>.com</code> u otros atajos rápidos:</p>
-<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
-  &lt;!-- Campo de entrada de teléfono --&gt;
-  Teléfono:
-  &lt;input type="tel" name="telefono" placeholder="+XX XXX XXXXXX" /&gt;
-  &lt;!-- Campo de entrada de email --&gt;
-  Email:
-  &lt;input type="email" name="correo" placeholder="nombre@dominio.com" /&gt;
-  &lt;!-- Campo de entrada de url --&gt;
-  Página web:
-  &lt;input type="url" name="web" placeholder="https://pagina.com/" /&gt;
-&lt;/form&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulario&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/send.php&quot;</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- Campo de entrada de teléfono --&gt;</span>
+      Teléfono:
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;tel&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;telefono&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;+XX XXX XXXXXX&quot;</span> <span class="p">/&gt;</span>
+      <span class="c">&lt;!-- Campo de entrada de email --&gt;</span>
+      Email:
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;correo&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;nombre@dominio.com&quot;</span> <span class="p">/&gt;</span>
+      <span class="c">&lt;!-- Campo de entrada de url --&gt;</span>
+      Página web:
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;url&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;web&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;https://pagina.com/&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>El atributo <code>type</code> también permite el valor <strong>search</strong>, que es muy similar a los anteriores. Se utiliza para campos orientados a la búsqueda de palabras o textos en un sitio web, mostrando desde dispositivos móviles una <strong>x</strong> para borrar la palabra escrita con un sólo clic.</p>
 <h3 id="campos-para-contrasenas">Campos para contraseñas<a class="headerlink" href="#campos-para-contrasenas" title="Permanent link">&para;</a></h3>
 <p>La etiqueta <code>&lt;input&gt;</code> tiene el valor <strong>password</strong> en su atributo <code>type</code> para crear campos de texto orientados a almacenar información sensible como podrían ser contraseñas, claves o pins numéricos. Esto no lo convertiría en un campo más seguro técnicamente, sino que simplemente muestra puntos o asteriscos en lugar del texto visualmente, protegiéndolo visualmente de ojos ajenos.</p>
 <p>Por otro lado también tenemos el tipo <strong>hidden</strong>, que se puede utilizar cuando queremos enviar información en el formulario, pero que no queremos que el navegador lo muestre visualmente en el formulario, como por ejemplo un código numérico o una id informativa:</p>
-<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
-  &lt;!-- Campo de entrada de usuario --&gt;
-  Usuario:`
-  &lt;input type="text" name="nombre" placeholder="Por ejemplo, Juan" /&gt;
-  &lt;!-- Campo de entrada de password --&gt;
-  Password:
-  &lt;input type="password" name="pass" placeholder="Contraseña" /&gt;
-  &lt;!-- Campo oculto: Este campo no se verá en el navegador --&gt;
-  &lt;input type="hidden" name="informacion" value="72625" /&gt;
-&lt;/form&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulario&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/send.php&quot;</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- Campo de entrada de usuario --&gt;</span>
+      Usuario:`
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;nombre&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Por ejemplo, Juan&quot;</span> <span class="p">/&gt;</span>
+      <span class="c">&lt;!-- Campo de entrada de password --&gt;</span>
+      Password:
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;pass&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Contraseña&quot;</span> <span class="p">/&gt;</span>
+      <span class="c">&lt;!-- Campo oculto: Este campo no se verá en el navegador --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;informacion&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;72625&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <h3 id="campos-extensos-de-texto">Campos extensos de texto<a class="headerlink" href="#campos-extensos-de-texto" title="Permanent link">&para;</a></h3>
 <p>Por último, si queremos indicar un campo para escribir textos más extensos, lo más apropiado es utilizar la etiqueta <code>&lt;textarea&gt;</code>, que tiene también algunos atributos adicionales:</p>
 <table>
@@ -1998,22 +2004,24 @@
 </table>
 <p>Esta etiqueta nos permite añadir gran cantidad de texto, ya que las etiquetas <code>&lt;input type="text"&gt;</code> sólo nos permiten escribir una línea de texto y es muy incómodo si nuestra intención es escribir grandes cantidades de texto. Sus atributos <strong>cols</strong> y <strong>rows</strong> nos permiten aumentar el tamaño de ancho y alto, así como indicar si queremos que se modifique la apariencia visual del párrafo al enviar al formulario con el atributo <strong>wrap</strong>.</p>
 <p>Un ejemplo básico de esta etiqueta <code>&lt;textarea&gt;</code>:</p>
-<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
-  &lt;!-- Area de texto extensa --&gt;
-  &lt;textarea name="texto" cols="80" rows="10" placeholder="Escribe aquí el texto..."&gt;
-    Este es el valor por defecto
-  &lt;/textarea&gt;
-&lt;/form&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulario&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/send.php&quot;</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- Area de texto extensa --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;texto&quot;</span> <span class="na">cols</span><span class="o">=</span><span class="s">&quot;80&quot;</span> <span class="na">rows</span><span class="o">=</span><span class="s">&quot;10&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Escribe aquí el texto...&quot;</span><span class="p">&gt;</span>
+        Este es el valor por defecto
+      <span class="p">&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Existen unas librerías de <a href="https://lenguajejs.com/">javascript</a> para «enriquecer» y ampliar la funcionalidad de estas áreas de texto, permitiendo realizar ciertas tareas visuales como fragmentos en negrita, cursiva, imágenes, tablas, etc... Este tipo de librerías se llaman <a href="https://github.com/cheeaun/mooeditable/wiki/Javascript-WYSIWYG-editors">editores WYSIWYG</a> (<em>lo que ves es lo que obtienes</em>).</p>
 <h3 id="comprobacion-de-ortografia">Comprobación de ortografía<a class="headerlink" href="#comprobacion-de-ortografia" title="Permanent link">&para;</a></h3>
 <p>En todos estos campos, tanto etiquetas <code>&lt;input&gt;</code> como <code>&lt;textarea&gt;</code>, podemos utilizar un atributo denominado <code>spellcheck</code> mediante el cuál indicamos al navegador si debe revisar la ortografía del texto escrito en dicho elemento (<em>en el cuál aparece una línea roja inferior cuando la palabra no se encuentra en el diccionario</em>).</p>
-<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
-  &lt;input type="text" name="objeto1" value="camion azul " spellcheck="true" /&gt;
-  &lt;input type="text" name="objeto2" value="camion azul " spellcheck="false" /&gt;
-  &lt;textarea cols="40" name="objeto3" spellcheck="true"&gt;camion azul&lt;/textarea&gt;
-&lt;/form&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulario&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/send.php&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;objeto1&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;camion azul &quot;</span> <span class="na">spellcheck</span><span class="o">=</span><span class="s">&quot;true&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;objeto2&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;camion azul &quot;</span> <span class="na">spellcheck</span><span class="o">=</span><span class="s">&quot;false&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">cols</span><span class="o">=</span><span class="s">&quot;40&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;objeto3&quot;</span> <span class="na">spellcheck</span><span class="o">=</span><span class="s">&quot;true&quot;</span><span class="p">&gt;</span>camion azul<span class="p">&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Si el atributo <strong>spellcheck</strong> está a <strong>true</strong>, el navegador comprobará la ortografía, si se encuentra a <strong>false</strong>, no la comprobará. Si no se especifica el atributo, el navegador busca el atributo <strong>spellcheck</strong> en los elementos contenedores padres, y si no lo encuentra, toma el valor por defecto, que es <strong>true</strong>.</p>
 <p><img alt="Atributo spellcheck" src="../img/spellcheck.png" /></p>
 <p>En el ejemplo anterior, hemos desactivado la <strong>comprobación de ortografía</strong> en el segundo campo (<em>objeto2</em>), por lo que al pulsar sobre él no aparece ninguna línea roja, a pesar de estar mal escrita. En los demás campos si ocurre.</p>
@@ -2074,13 +2082,14 @@
 </table>
 <p>Esto no significa que el usuario no pueda introducir un número menor que el indicado en el atributo <code>min</code>, por ejemplo, sino que si el usuario introduce ese número, los datos del campo no serán válidos, y no se podrá enviar el formulario hasta que se cumpla esa restricción.</p>
 <p>Un ejemplo de código:</p>
-<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
-  &lt;!-- Número entre 10 y 50, de 5 en 5. Valor por defecto: 25 --&gt;
-  &lt;input type="number" name="numero" value="25" min="10" max="50" step="5" /&gt;
-  &lt;!-- Su misma versión, utilizando el slider en un rango numérico --&gt;
-  &lt;input type="range" name="numrango" value="25" min="10" max="50" step="5" /&gt;
-&lt;/form&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulario&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/send.php&quot;</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- Número entre 10 y 50, de 5 en 5. Valor por defecto: 25 --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;numero&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;25&quot;</span> <span class="na">min</span><span class="o">=</span><span class="s">&quot;10&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;50&quot;</span> <span class="na">step</span><span class="o">=</span><span class="s">&quot;5&quot;</span> <span class="p">/&gt;</span>
+      <span class="c">&lt;!-- Su misma versión, utilizando el slider en un rango numérico --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;range&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;numrango&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;25&quot;</span> <span class="na">min</span><span class="o">=</span><span class="s">&quot;10&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;50&quot;</span> <span class="na">step</span><span class="o">=</span><span class="s">&quot;5&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Las diferencias son las siguientes:</p>
 <ul>
 <li>En el campo con <code>type</code> a <code>number</code> es posible introducir manualmente números no permitidos.</li>
@@ -2132,31 +2141,33 @@
 </tbody>
 </table>
 <p>Veamos algún ejemplo básico con las dos primeras, <code>&lt;input type="date"&gt;</code> e <code>&lt;input type="time"&gt;</code>:</p>
-<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
-  &lt;!-- Campo de entrada de fecha --&gt;
-  Selecciona la fecha deseada:
-  &lt;input type="date" name="fecha" min="2018-03-25" max="2018-05-25" step="2" /&gt;
-  &lt;!-- Campo de entrada de hora --&gt;
-  Selecciona la hora deseada:
-  &lt;input type="time" name="hora" min="18:00" max="21:00" step="3600" /&gt;
-&lt;/form&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulario&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/send.php&quot;</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- Campo de entrada de fecha --&gt;</span>
+      Selecciona la fecha deseada:
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;date&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;fecha&quot;</span> <span class="na">min</span><span class="o">=</span><span class="s">&quot;2018-03-25&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;2018-05-25&quot;</span> <span class="na">step</span><span class="o">=</span><span class="s">&quot;2&quot;</span> <span class="p">/&gt;</span>
+      <span class="c">&lt;!-- Campo de entrada de hora --&gt;</span>
+      Selecciona la hora deseada:
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;time&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;hora&quot;</span> <span class="na">min</span><span class="o">=</span><span class="s">&quot;18:00&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;21:00&quot;</span> <span class="na">step</span><span class="o">=</span><span class="s">&quot;3600&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Como se puede ver, se pueden indicar los atributos <strong>min</strong> y <strong>max</strong> en campos <code>&lt;input&gt;</code> de fecha, donde actuarán estableciendo un límite de fecha mínima o máxima permitida, así como el campo <strong>step</strong> se podrá utilizar para restricciones al variar unidades.</p>
 <p>!!!
         Mención especial al apartado <strong>step</strong> donde hemos indicado el número de días (<em>en el caso de la fecha</em>), por lo que sólo aceptará días de dos en dos desde el 25 de marzo de 2018 hasta el 25 de mayo de 2018. Por su parte, el campo de la hora sólo permitirá variar las horas, ya que se ha indicado <strong>3600 segundos</strong> (<em>salto cada 60x60seg, o sea cada hora</em>) en el atributo <strong>step</strong>.</p>
 <h3 id="fecha-y-hora-local">Fecha y hora local<a class="headerlink" href="#fecha-y-hora-local" title="Permanent link">&para;</a></h3>
 <p>Como comentabamos, los tres últimos campos pertenecen a la especificación de HTML 5.1, aunque en algunos navegadores ya están implementados. Con ellos podremos seleccionar fecha y hora local, así como meses especificos o semanas concretas del año:</p>
-<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
-  &lt;!-- Campo de entrada de mes --&gt;
-  Selecciona el mes deseado:
-  &lt;input type="month" name="mes"
-         value="2018-05" min="2018-02" max="2018-06" step="2" /&gt;
-  &lt;!-- Campo de entrada de semana --&gt;
-  Selecciona la semana deseada:
-  &lt;input type="week" name="semana"
-         value="2018-W18" min="2018-W10" max="2018-W20" step="2" /&gt;
-&lt;/form&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulario&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/send.php&quot;</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- Campo de entrada de mes --&gt;</span>
+      Selecciona el mes deseado:
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;month&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;mes&quot;</span>
+             <span class="na">value</span><span class="o">=</span><span class="s">&quot;2018-05&quot;</span> <span class="na">min</span><span class="o">=</span><span class="s">&quot;2018-02&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;2018-06&quot;</span> <span class="na">step</span><span class="o">=</span><span class="s">&quot;2&quot;</span> <span class="p">/&gt;</span>
+      <span class="c">&lt;!-- Campo de entrada de semana --&gt;</span>
+      Selecciona la semana deseada:
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;week&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;semana&quot;</span>
+             <span class="na">value</span><span class="o">=</span><span class="s">&quot;2018-W18&quot;</span> <span class="na">min</span><span class="o">=</span><span class="s">&quot;2018-W10&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;2018-W20&quot;</span> <span class="na">step</span><span class="o">=</span><span class="s">&quot;2&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>En el primer campo <code>&lt;input&gt;</code> seleccionamos el mes con el formato <code>yyyy-mm</code>, donde <code>yyyy</code> es la cifra de 4 dígitos del año y <code>mm</code> el mes con 2 dígitos. En el segundo campo <code>&lt;input&gt;</code> seleccionamos la semana con el formato <code>yyyy-Wss</code>, donde nuevamente <code>yyyy</code> es el año en formato de 4 dígitos, <code>W</code> es siempre esa letra y <code>ss</code> es el número de la semana en formato de 2 dígitos.</p>
 <p>Obsérvese que también se aplica el atributo <code>step="2"</code> lo que hace que sólo se puedan seleccionar <strong>semanas o meses impares</strong>. Vigilar bien la compatibilidad con navegadores de estos campos.</p>
 <hr />
@@ -2195,19 +2206,20 @@
 <p>Los botones de radio se suelen utilizar cuando el usuario debe elegir <strong>sólo una opción específica</strong> de varias disponibles. Si las opciones son demasiadas, se suele optar por una <a href="/html/formularios/controles-listas-de-seleccion">lista de selección</a>.</p>
 <p>Para tener varios botones radio en un mismo grupo, y que sólo se active uno de ellos, el truco está en colocarle el mismo nombre en el atributo <strong>name</strong> a cada opción. Luego, en el atributo <strong>value</strong> le colocamos el valor que habrá seleccionado el usuario de haber marcado esa opción.</p>
 <p>Un ejemplo de ambos tipos de botones:</p>
-<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
-  &lt;!-- Botones de opción --&gt;
-  &lt;p&gt;
-    Sexo:
-    &lt;input type="radio" name="sexo" value="H" /&gt; Hombre
-    &lt;input type="radio" name="sexo" value="M" /&gt; Mujer
-  &lt;/p&gt;
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulario&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/send.php&quot;</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- Botones de opción --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+        Sexo:
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;sexo&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;H&quot;</span> <span class="p">/&gt;</span> Hombre
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;sexo&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;M&quot;</span> <span class="p">/&gt;</span> Mujer
+      <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 
-  &lt;!-- Casillas de verificación (marcada por defecto) --&gt;
-  &lt;input type="checkbox" name="empresa" checked /&gt;
-  ¿Eres autónomo/empresa?
-&lt;/form&gt;
-</code></pre>
+      <span class="c">&lt;!-- Casillas de verificación (marcada por defecto) --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;empresa&quot;</span> <span class="na">checked</span> <span class="p">/&gt;</span>
+      ¿Eres autónomo/empresa?
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>De la misma forma que en las casillas de verificación, si queremos que un botón de radio se encuentre marcado por defecto, le añadimos el atributo <code>checked</code>.</p>
 <p>!!!
          Si el usuario no marca una casilla de verificación o alguna de las opciones de un botón radio, esos datos del formulario no se envían.</p>
@@ -2238,50 +2250,53 @@
 </table>
 <h3 id="listas-seleccionables">Listas seleccionables<a class="headerlink" href="#listas-seleccionables" title="Permanent link">&para;</a></h3>
 <p>Su forma más básica se compone de una etiqueta contenedora <code>&lt;select&gt;</code> que en su interior incluirá varias etiquetas <code>&lt;option&gt;</code>, una por opción posible a elegir. Si queremos que una opción de la lista esté marcada por defecto, incluiremos el atributo <code>selected</code>:</p>
-<pre><code>&lt;form name="formulario" method="post" action="http://pagina.com/send.php"&gt;
-  &lt;!-- Lista de selección --&gt;
-  Selecciona la opción deseada:
-  &lt;select name="combo"&gt;
-    &lt;!-- Opciones de la lista --&gt;
-    &lt;option value="1"&gt;Opción 1&lt;/option&gt;
-    &lt;option value="2" selected&gt;Opción 2&lt;/option&gt; &lt;!-- Opción por defecto --&gt;
-    &lt;option value="3"&gt;Opción 3&lt;/option&gt;
-  &lt;/select&gt;
-&lt;/form&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulario&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;http://pagina.com/send.php&quot;</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- Lista de selección --&gt;</span>
+      Selecciona la opción deseada:
+      <span class="p">&lt;</span><span class="nt">select</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;combo&quot;</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- Opciones de la lista --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">&gt;</span>Opción 1<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;2&quot;</span> <span class="na">selected</span><span class="p">&gt;</span>Opción 2<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span> <span class="c">&lt;!-- Opción por defecto --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;3&quot;</span><span class="p">&gt;</span>Opción 3<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <h3 id="listas-seleccionables-multiples">Listas seleccionables múltiples<a class="headerlink" href="#listas-seleccionables-multiples" title="Permanent link">&para;</a></h3>
 <p>A la etiqueta <code>&lt;select&gt;</code> le podemos aplicar el atributo <strong>multiple</strong>, de modo que desaparecerá la posibilidad de desplegar la lista, mostrando directamente las opciones en otro formato que hará posible pulsar la tecla CTRL y marcar varias de las opciones de la lista.</p>
 <p>También podemos utilizar la etiqueta <code>&lt;optgroup&gt;</code>, que es una etiqueta contenedora para agrupar varias etiquetas <code>&lt;option&gt;</code>. De esta forma, podemos crear pequeñas agrupaciones para tener más organizada la lista de opciones. La propia etiqueta <code>&lt;optgroup&gt;</code> no es seleccionable por el usuario, aparecerá en negrita y sólo estará disponible para organizar las opciones:</p>
-<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
-  &lt;!-- Lista de selección múltiple --&gt;
-  &lt;select name="combo" multiple&gt;
-    &lt;!-- Formato alternativo con atributo label --&gt;
-    &lt;optgroup label="Opciones básicas"&gt;
-      &lt;option value="1" label="Opcion 1"&gt; &lt;/option&gt;
-    &lt;/optgroup&gt;
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulario&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/send.php&quot;</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- Lista de selección múltiple --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">select</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;combo&quot;</span> <span class="na">multiple</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- Formato alternativo con atributo label --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">optgroup</span> <span class="na">label</span><span class="o">=</span><span class="s">&quot;Opciones básicas&quot;</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;1&quot;</span> <span class="na">label</span><span class="o">=</span><span class="s">&quot;Opcion 1&quot;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">optgroup</span><span class="p">&gt;</span>
 
-    &lt;optgroup label="Opciones avanzadas"&gt;
-      &lt;option value="2" label="Opcion 2"&gt; &lt;/option&gt;
-      &lt;option value="3" label="Opcion 3"&gt; &lt;/option&gt;
-    &lt;/optgroup&gt;
-  &lt;/select&gt;
-&lt;/form&gt;
-</code></pre>
+        <span class="p">&lt;</span><span class="nt">optgroup</span> <span class="na">label</span><span class="o">=</span><span class="s">&quot;Opciones avanzadas&quot;</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;2&quot;</span> <span class="na">label</span><span class="o">=</span><span class="s">&quot;Opcion 2&quot;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;3&quot;</span> <span class="na">label</span><span class="o">=</span><span class="s">&quot;Opcion 3&quot;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">optgroup</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Obsérvese que en esta segunda lista hemos utilizado el atributo <strong>label</strong> que es un formato alternativo al ejemplo anterior.</p>
 <h3 id="listas-seleccionables-abiertas">Listas seleccionables abiertas<a class="headerlink" href="#listas-seleccionables-abiertas" title="Permanent link">&para;</a></h3>
 <p>Por último, también podemos crear una <strong>lista abierta</strong>, donde el usuario puede seleccionar opciones sugeridas mediante un <code>&lt;datalist&gt;</code> o indicar la suya propia escribiéndola manualmente. Para ello, utilizaremos una etiqueta <code>&lt;datalist&gt;</code> que funcionará exactamente igual que un <code>&lt;select&gt;</code>, conteniendo las opciones posibles en etiquetas <code>&lt;option&gt;</code>.</p>
 <p>Al hacer esto, y al contrario que las etiquetas <code>&lt;select&gt;</code>, el elemento <code>&lt;datalist&gt;</code> no mostrará visualmente nada. Sin embargo, la diferencia radica en que le daremos un atributo <strong>id</strong> al <code>&lt;datalist&gt;</code> y lo combinaremos con un campo de texto <code>&lt;input&gt;</code> a través del atributo <strong>list</strong>:</p>
-<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
-  &lt;!-- Campo de texto combinado con lista de opciones --&gt;
-  &lt;input type="text" list="items" /&gt;
-  &lt;!-- Lista de opciones --&gt;
-  &lt;datalist id="items"&gt;
-    &lt;option value="1"&gt;Opción 1&lt;/option&gt;
-    &lt;option value="2"&gt;Opción 2&lt;/option&gt;
-    &lt;option value="3"&gt;Opción 3&lt;/option&gt;
-  &lt;/datalist&gt;
-&lt;/form&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulario&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/send.php&quot;</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- Campo de texto combinado con lista de opciones --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">list</span><span class="o">=</span><span class="s">&quot;items&quot;</span> <span class="p">/&gt;</span>
+      <span class="c">&lt;!-- Lista de opciones --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">datalist</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;items&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">&gt;</span>Opción 1<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;2&quot;</span><span class="p">&gt;</span>Opción 2<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;3&quot;</span><span class="p">&gt;</span>Opción 3<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">datalist</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>De esta forma, tenemos una <strong>lista de selección</strong> donde podemos marcar las opciones del <code>&lt;datalist&gt;</code> pero además se nos ofrece la opción de escribir manualmente nuestra propia opción.</p>
 <div class="admonition nota">
 <p class="admonition-title">Nota</p>
@@ -2310,13 +2325,14 @@
 </tbody>
 </table>
 <p>El usuario puede elegir un color en su interfaz de selección de colores y este color es guardado en el campo en <a href="http://lenguajecss.com/css/propiedades/colores-css#formato-hexadecimal">formato hexadecimal</a>. También se puede indicar en el atributo <code>value</code> para establecer un color por defecto:</p>
-<pre><code>&lt;form name="formulario" method="post" action="http://pagina.com/send.php"&gt;
-  &lt;!-- Selección de color --&gt;
-  Selecciona el color deseado:
-  &lt;!-- Color verde por defecto HEX(1B, F4, 4A) --&gt;
-  &lt;input type="color" name="color" value="#1BF44A" /&gt;
-&lt;/form&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulario&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;http://pagina.com/send.php&quot;</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- Selección de color --&gt;</span>
+      Selecciona el color deseado:
+      <span class="c">&lt;!-- Color verde por defecto HEX(1B, F4, 4A) --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;color&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;color&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;#1BF44A&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>El soporte de este campo de selección de colores en los diferentes navegadores es el siguiente: <a href="https://caniuse.com/#feat=input-color">https://caniuse.com/#feat=input-color</a></p>
 <hr />
 <h2 id="controles-seleccion-de-archivos">Controles: Selección de archivos<a class="headerlink" href="#controles-seleccion-de-archivos" title="Permanent link">&para;</a></h2>
@@ -2342,12 +2358,13 @@
 <p>En primer lugar, debemos saber que si queremos adjuntar archivos a nuestro formulario, es necesario indicar en la etiqueta <code>&lt;form&gt;</code> el atributo <code>enctype="multipart/form-data"</code>. Con esto nos aseguramos que las cabeceras del formulario indican que estamos enviando archivos adjuntos.</p>
 <p>También se nos permite añadir el atributo <strong>accept</strong> a la etiqueta <code>&lt;input type="file"&gt;</code> a modo de sugerencia, para indicar los formatos de archivos permitidos al usuario en el campo de selección de archivos.</p>
 <p>Un ejemplo de este campo de selección de archivo:</p>
-<pre><code>&lt;form name="formulario" method="post" action="/send.php" enctype="multipart/form-data"&gt;
-  &lt;!-- ¡No olvides el enctype! --&gt;
-  &lt;!-- Campo de selección de archivo --&gt;
-  &lt;input type="file" name="adjunto" accept=".pdf,.jpg,.png" multiple /&gt;
-&lt;/form&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulario&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/send.php&quot;</span> <span class="na">enctype</span><span class="o">=</span><span class="s">&quot;multipart/form-data&quot;</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- ¡No olvides el enctype! --&gt;</span>
+      <span class="c">&lt;!-- Campo de selección de archivo --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;file&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;adjunto&quot;</span> <span class="na">accept</span><span class="o">=</span><span class="s">&quot;.pdf,.jpg,.png&quot;</span> <span class="na">multiple</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <div class="admonition nota">
 <p class="admonition-title">Nota<p>Si indicamos el atributo <strong>multiple</strong> en la etiqueta <code>&lt;input&gt;</code>, se le da la opción al usuario de pulsar la tecla CTRL para adjuntar varios archivos a la vez, y no uno solo.</p>
 </p>
@@ -2384,67 +2401,70 @@
 </table>
 <h3 id="agrupacion-visual">Agrupación visual<a class="headerlink" href="#agrupacion-visual" title="Permanent link">&para;</a></h3>
 <p>La primera etiqueta es <code>&lt;fieldset&gt;</code>, un elemento utilizado como etiqueta contenedora para agrupar visualmente, mediante un trazo simple, todos los campos de un formulario que estén relacionados (<em>misma temática o apartado, por ejemplo</em>). La etiqueta <code>&lt;legend&gt;</code>, suele incluirse en el interior de <code>&lt;fieldset&gt;</code> para mostrar un título en el trazo de esa agrupación.</p>
-<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
-  &lt;!-- Agrupación de campos --&gt;
-  &lt;fieldset&gt;
-    &lt;legend&gt;Datos personales&lt;/legend&gt;
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulario&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/send.php&quot;</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- Agrupación de campos --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">legend</span><span class="p">&gt;</span>Datos personales<span class="p">&lt;/</span><span class="nt">legend</span><span class="p">&gt;</span>
 
-    &lt;!-- Campo de texto --&gt;
-    Nombre de usuario:
-    &lt;input type="text" name="nombre" placeholder="Por ej: John Smith" /&gt;
+        <span class="c">&lt;!-- Campo de texto --&gt;</span>
+        Nombre de usuario:
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;nombre&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Por ej: John Smith&quot;</span> <span class="p">/&gt;</span>
 
-    &lt;!-- Campo numérico --&gt;
-    Edad:
-    &lt;input type="number" name="edad" min="18" max="100" placeholder="18" /&gt;
+        <span class="c">&lt;!-- Campo numérico --&gt;</span>
+        Edad:
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;edad&quot;</span> <span class="na">min</span><span class="o">=</span><span class="s">&quot;18&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;100&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;18&quot;</span> <span class="p">/&gt;</span>
 
-    &lt;!-- Botón radio de opción --&gt;
-    Sexo:
-    &lt;!-- Primera opción --&gt;
-    &lt;input type="radio" name="sexo" value="H" /&gt; Hombre
-    &lt;!-- Segunda opción --&gt;
-    &lt;input type="radio" name="sexo" value="M" /&gt; Mujer
-  &lt;/fieldset&gt;
-&lt;/form&gt;
-</code></pre>
+        <span class="c">&lt;!-- Botón radio de opción --&gt;</span>
+        Sexo:
+        <span class="c">&lt;!-- Primera opción --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;sexo&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;H&quot;</span> <span class="p">/&gt;</span> Hombre
+        <span class="c">&lt;!-- Segunda opción --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;sexo&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;M&quot;</span> <span class="p">/&gt;</span> Mujer
+      <span class="p">&lt;/</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <h3 id="orden-de-campos">Orden de campos<a class="headerlink" href="#orden-de-campos" title="Permanent link">&para;</a></h3>
 <p>Cuando nos encontramos en un campo de un formulario, al pulsar la tecla TAB podemos avanzar al siguiente campo sin necesidad de recurrir al ratón. También podemos conseguir la operación inversa pulsando SHIFT+TAB, es decir, retroceder al campo anterior del formulario.</p>
 <p>Por defecto, el navegador sigue el orden de los campos según el HTML. Sin embargo, si queremos personalizar dicho orden, podemos utilizar el atributo <strong>tabindex</strong>, indicando un número con el orden en cuestión:</p>
-<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
-  Nombre de usuario:
-  &lt;input type="text" name="nombre" placeholder="Por ej: John Smith" tabindex="1" /&gt;
-  Edad:
-  &lt;input type="number" name="edad" min="18" max="100" placeholder="18" tabindex="3" /&gt;
-  Apellidos:
-  &lt;input type="text" name="apellidos" placeholder="Apellidos" tabindex="2" /&gt;
-&lt;/form&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulario&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/send.php&quot;</span><span class="p">&gt;</span>
+      Nombre de usuario:
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;nombre&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Por ej: John Smith&quot;</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">&quot;1&quot;</span> <span class="p">/&gt;</span>
+      Edad:
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;edad&quot;</span> <span class="na">min</span><span class="o">=</span><span class="s">&quot;18&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;100&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;18&quot;</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">&quot;3&quot;</span> <span class="p">/&gt;</span>
+      Apellidos:
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;apellidos&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Apellidos&quot;</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">&quot;2&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>En este caso, si nos colocamos en el primer campo del formulario y pulsamos TAB, saltaremos directamente al tercer campo, ya que tiene indicado <strong>tabindex</strong> a <strong>2</strong>, y con un nuevo TAB saltaremos al segundo campo, ya que es el que tiene <strong>tabindex</strong> a <strong>3</strong>.</p>
 <p>Se recomienda utilizar este atributo sólo cuando esté justificado y las circunstancias lo requieran, ya que cambiar el orden de los campos puede confundir al usuario o facilitar equivocaciones al rellenar el formulario.</p>
 <h3 id="relacion-texto-campo">Relación texto-campo<a class="headerlink" href="#relacion-texto-campo" title="Permanent link">&para;</a></h3>
 <p>Sin embargo, el ejemplo superior podría modificar un aspecto minúsculo que podría mejorar su usabilidad. Por ejemplo, si un usuario quiere pulsar sobre uno de los botones de radio para elegir el sexo y pulsa sobre el texto (<em>Hombre o Mujer</em>), no ocurrirá nada. El usuario debe pulsar exactamente sobre el botón de radio a elegir.</p>
 <p>Sin embargo, si utilizamos la etiqueta contenedora <code>&lt;label&gt;</code>, podemos establecer una relación semántica de un texto con un campo de entrada de datos. Al incluir texto y campo de texto dentro de la etiqueta <code>&lt;label&gt;</code>, tiene el mismo efecto pulsar en el campo de texto que en el propio texto (<em>muy útil también en casillas de verificación</em>).</p>
 <p>Veamos el ejemplo anterior, mejorado con las etiquetas <code>&lt;label&gt;</code>:</p>
-<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
-  &lt;fieldset&gt;
-    &lt;legend&gt;Datos personales&lt;/legend&gt;
-    &lt;!-- Relación del texto con el campo --&gt;
-    &lt;label&gt;
-      Nombre de usuario:
-      &lt;input type="text" name="nombre" placeholder="Por ej: John Smith" /&gt;
-    &lt;/label&gt;
-    &lt;!-- Relación del texto con el campo --&gt;
-    &lt;label&gt;
-      Edad:
-      &lt;input type="number" name="edad" min="18" max="100" placeholder="18" /&gt;
-    &lt;/label&gt;
-    Sexo:
-    &lt;!-- Relación del texto con el primer botón --&gt;
-    &lt;label&gt; &lt;input type="radio" name="sexo" value="H" /&gt; Hombre &lt;/label&gt;
-    &lt;!-- Relación del texto con el segundo botón --&gt;
-    &lt;label&gt; &lt;input type="radio" name="sexo" value="M" /&gt; Mujer &lt;/label&gt;
-  &lt;/fieldset&gt;
-&lt;/form&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulario&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/send.php&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">legend</span><span class="p">&gt;</span>Datos personales<span class="p">&lt;/</span><span class="nt">legend</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- Relación del texto con el campo --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>
+          Nombre de usuario:
+          <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;nombre&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Por ej: John Smith&quot;</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- Relación del texto con el campo --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>
+          Edad:
+          <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;edad&quot;</span> <span class="na">min</span><span class="o">=</span><span class="s">&quot;18&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;100&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;18&quot;</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+        Sexo:
+        <span class="c">&lt;!-- Relación del texto con el primer botón --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;sexo&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;H&quot;</span> <span class="p">/&gt;</span> Hombre <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- Relación del texto con el segundo botón --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;sexo&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;M&quot;</span> <span class="p">/&gt;</span> Mujer <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <div class="admonition nota">
 <p class="admonition-title">Nota<p>A las etiquetas <code>&lt;label&gt;</code> se le puede indicar opcionalmente un atributo <strong>for</strong> con un nombre específico, y así poder establecer la relación con una etiqueta HTML con <strong>id</strong> con el mismo nombre, sin necesidad de que estén contiguos o adyacentes.</p>
 </p>
@@ -2486,33 +2506,36 @@
 </table>
 <h3 id="boton-normal">Botón normal<a class="headerlink" href="#boton-normal" title="Permanent link">&para;</a></h3>
 <p>El botón <code>&lt;input type="submit"&gt;</code> sirve para enviar el formulario una vez el usuario ha rellenado todos sus campos y pulsa en este botón. El texto por defecto del botón será <strong>Enviar</strong> (<em>o equivalente según el idioma</em>). Podemos modificar el texto del botón mediante el atributo <strong>value</strong>.</p>
-<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
-  &lt;!-- Datos del formulario --&gt;
-  Usuario: &lt;input type="text" name="usuario" /&gt;
-  &lt;!-- Botón de envío de formulario --&gt;
-  &lt;input type="submit" value="Enviar formulario" /&gt;
-&lt;/form&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulario&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/send.php&quot;</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- Datos del formulario --&gt;</span>
+      Usuario: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;usuario&quot;</span> <span class="p">/&gt;</span>
+      <span class="c">&lt;!-- Botón de envío de formulario --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Enviar formulario&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <h3 id="boton-con-imagen">Botón con imagen<a class="headerlink" href="#boton-con-imagen" title="Permanent link">&para;</a></h3>
 <p>El botón <code>&lt;input type="image"&gt;</code> es un botón que tiene la misma funcionalidad que el botón anterior, pero es un híbrido entre el botón <code>&lt;input type="submit"&gt;</code> y una etiqueta de imagen <code>&lt;img&gt;</code>, puesto que también posee los atributos <strong>src</strong>, <strong>alt</strong>, <strong>width</strong> y <strong>height</strong> para indicar una imagen que actuará de botón:</p>
-<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
-  &lt;!-- Datos del formulario --&gt;
-  Usuario: &lt;input type="text" name="usuario" /&gt;
-  &lt;!-- Botón de envío de formulario con imagen --&gt;
-  &lt;input type="image" src="enviar.png" alt="Enviar" width="80" height="28" /&gt;
-&lt;/form&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulario&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/send.php&quot;</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- Datos del formulario --&gt;</span>
+      Usuario: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;usuario&quot;</span> <span class="p">/&gt;</span>
+      <span class="c">&lt;!-- Botón de envío de formulario con imagen --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;image&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;enviar.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Enviar&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;80&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;28&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <h3 id="boton-de-borrar-reset">Botón de borrar (reset)<a class="headerlink" href="#boton-de-borrar-reset" title="Permanent link">&para;</a></h3>
 <p>El botón <code>&lt;input type="reset"&gt;</code> nos ofrece la posibilidad de disponer de un botón que al pulsarse borre completamente el formulario y reestablece todos sus campos de entrada de datos a sus <strong>valores por defecto</strong> iniciales. Es muy útil si queremos que el usuario disponga de la posibilidad de borrar todos los campos del formulario fácilmente y no tener que hacerlo uno por uno.</p>
-<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
-  &lt;!-- Datos del formulario --&gt;
-  Usuario: &lt;input type="text" name="usuario" /&gt;
-  &lt;!-- Botón de envío de formulario --&gt;
-  &lt;input type="submit" value="Enviar formulario" /&gt;
-  &lt;!-- Botón de reseteo de formulario --&gt;
-  &lt;input type="reset" value="Borrar formulario" /&gt;
-&lt;/form&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulario&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/send.php&quot;</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- Datos del formulario --&gt;</span>
+      Usuario: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;usuario&quot;</span> <span class="p">/&gt;</span>
+      <span class="c">&lt;!-- Botón de envío de formulario --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Enviar formulario&quot;</span> <span class="p">/&gt;</span>
+      <span class="c">&lt;!-- Botón de reseteo de formulario --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;reset&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Borrar formulario&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <div class="admonition nota">
 <p class="admonition-title">Nota<p>Cuidado al incluir el botón de reseteo al lado del botón de envío de formulario. Quizás sería una buena opción separarlos notablemente para evitar que el usuario lo pulse sin querer.</p>
 </p>
@@ -2520,22 +2543,24 @@
 <h3 id="boton-alternativo">Botón alternativo<a class="headerlink" href="#boton-alternativo" title="Permanent link">&para;</a></h3>
 <p>Los botones de envío de formulario habituales funcionan en base a los atributos <strong>action</strong>, <strong>enctype</strong>, <strong>method</strong>, <strong>target</strong> y <strong>novalidate</strong> de la etiqueta <code>&lt;form&gt;</code> que los contiene.</p>
 <p>Sin embargo, es posible crear <strong>botones de envío alternativos</strong> que tengan un comportamiento de envío diferente a los botones por defecto. Para ello, tenemos que crear un botón de envío <code>&lt;input type="submit"&gt;</code> o <code>&lt;input type="image"&gt;</code> e incluir los atributos <strong>formaction</strong>, <strong>formenctype</strong>, <strong>formmethod</strong>, <strong>formtarget</strong> y <strong>formnovalidate</strong> respectivamente, según nos interese, ya que sobreescribirán el comportamiento por defecto del formulario:</p>
-<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
-  &lt;!-- Datos del formulario --&gt;
-  Usuario: &lt;input type="text" name="usuario" /&gt;
-  &lt;!-- Botón por defecto, hace caso a atributos de &lt;form&gt; --&gt;
-  &lt;input type="submit" value="Enviar" /&gt;
-  &lt;!-- Botones con datos de envío alterados --&gt;
-  &lt;input type="submit" value="Enviar al dpto. marketing" formaction="/send-mkt.php" /&gt;
-  &lt;input type="submit" value="Enviar al dpto. informática" formaction="/send-sat.php" /&gt;
-&lt;/form&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulario&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/send.php&quot;</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- Datos del formulario --&gt;</span>
+      Usuario: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;usuario&quot;</span> <span class="p">/&gt;</span>
+      <span class="c">&lt;!-- Botón por defecto, hace caso a atributos de &lt;form&gt; --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Enviar&quot;</span> <span class="p">/&gt;</span>
+      <span class="c">&lt;!-- Botones con datos de envío alterados --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Enviar al dpto. marketing&quot;</span> <span class="na">formaction</span><span class="o">=</span><span class="s">&quot;/send-mkt.php&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Enviar al dpto. informática&quot;</span> <span class="na">formaction</span><span class="o">=</span><span class="s">&quot;/send-sat.php&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <h3 id="boton-personalizado">Botón personalizado<a class="headerlink" href="#boton-personalizado" title="Permanent link">&para;</a></h3>
 <p>Por último, tenemos el botón <code>&lt;input type="button"&gt;</code> o la etiqueta <code>&lt;button&gt;</code>, que en ambos casos añade un botón sin ninguna funcionalidad por defecto. Podemos redefinir la funcionalidad de este botón, pero necesitaríamos Javascript para dotarle de una funcionalidad concreta, por lo que no podríamos hacer mucho sin este lenguaje.</p>
 <p>A continuación un pequeño ejemplo muy básico:</p>
 <p>.sandbox pre { margin: 0; overflow: auto; max-height: var(--height, auto); }</p>
-<pre><code>&lt;button onClick="alert('¡Hola, señor!')"&gt;Saludar&lt;/button&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="s">&quot;alert(&#39;¡Hola, señor!&#39;)&quot;</span><span class="p">&gt;</span>Saludar<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <hr />
 <h2 id="medidores-y-barras-de-progreso">Medidores y barras de progreso<a class="headerlink" href="#medidores-y-barras-de-progreso" title="Permanent link">&para;</a></h2>
 <p>Existen algunos otros controles que, aunque no nos permiten introducir información, pueden ser muy útiles en formularios para presentar información de una forma más visual u ofrecer datos adicionales al usuario. Eso sí, se trata de etiquetas que sin el uso de Javascript sólo podremos realizar funcionalidades muy básicas:</p>
@@ -2563,11 +2588,12 @@
 <h3 id="barra-de-progreso">Barra de progreso<a class="headerlink" href="#barra-de-progreso" title="Permanent link">&para;</a></h3>
 <p>En primer lugar, tenemos una <strong>barra de progreso</strong> que puede ser útil para colocarla cuando necesitamos que el usuario sepa que debe esperar mientras se realizan otras tareas, o incluso para indicar el progreso de algún proceso o incluso del usuario a través de la página.</p>
 <p>La etiqueta <code>&lt;progress&gt;</code> muestra por defecto una barra de progreso «infinita», que se mueve de izquierda a derecha sin parar. Es la funcionalidad que tiene la barra de progreso sin interactividad desde Javascript.</p>
-<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
-  &lt;!-- Barra de progreso --&gt;
-  &lt;progress max="100" value="25"&gt;
-&lt;/form&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulario&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/send.php&quot;</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- Barra de progreso --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">progress</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;100&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;25&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <div class="admonition nota">
 <p class="admonition-title">Nota<p>Mediante el atributo <code>max</code> podemos definir el valor que debe tener la barra de progreso para estar completa y mediante el atributo <code>value</code> el valor actual de la barra de progreso.</p>
 </p>
@@ -2793,16 +2819,17 @@
 &lt;/form&gt;
 </code></pre>
 <p>Además, utilizando las <a href="https://lenguajecss.com/css/selectores/pseudoclases/#pseudoclases-de-validaci%C3%B3n">pseudoclases CSS de validación</a> <code>:valid</code> e <code>:invalid</code> podemos aplicar estilos a los campos <code>&lt;input&gt;</code> y <code>&lt;textarea&gt;</code> teniendo en cuenta su validación. Aplicando el siguiente código CSS se mostrará un fondo verde o rojo, dependiendo de si cumple o no la validación, respectivamente:</p>
-<pre><code>input:valid,
-textarea:valid {
-    background: green;
-}
+<div class="highlight"><pre><span></span><code>    input:valid,
+    textarea:valid {
+        background: green;
+    }
 
-input:invalid,
-textarea:invalid {
-    background: red;
-}
-</code></pre>
+    input:invalid,
+    textarea:invalid {
+        background: red;
+    }
+</code></pre></div>
+
 <p>En el caso particular de un campo <code>&lt;input type="email"&gt;</code> se puede indicar el atributo <strong>multiple</strong> para permitir varios emails y que valide correctamente en el caso de estar realizando una validación HTML5.</p>
 <h3 id="patrones-de-validacion-html5">Patrones de validación HTML5<a class="headerlink" href="#patrones-de-validacion-html5" title="Permanent link">&para;</a></h3>
 <p>No obstante, aunque los atributos de validación básicos son muy interesantes y pueden facilitarnos la tarea de validación, en muchos casos son insuficientes. Para ello tenemos los <strong>patrones de validación HTML5</strong>, mucho más potentes y flexibles, que nos permitirán ser mucho más específicos utilizando expresiones regulares para validar datos.</p>
