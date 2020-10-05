@@ -14,7 +14,7 @@
 
 
 
-:blue_book: **Las fuentes originales del contenido se encuentra al final de cada apunte**
+:blue_book: **Las fuentes originales del contenido se encuentra al final de cada guia**
 
 
  :v: Disfruta y cosecha el dia!
