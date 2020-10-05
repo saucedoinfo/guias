@@ -1263,68 +1263,75 @@
 </table>
 <h3 id="elementos-desplegables">Elementos desplegables<a class="headerlink" href="#elementos-desplegables" title="Permanent link">&para;</a></h3>
 <p>Con la etiqueta <code>&lt;details&gt;</code> se puede crear un elemento desplegable que el usuario puede expandir o contraer para ver más información. Se trata de una etiqueta contenedora que actúa como un <code>&lt;div&gt;</code>, salvo que todo el contenido de esta etiqueta no se muestra inicialmente. En su lugar, aparece una flecha y el texto proporcionado en la etiqueta <code>&lt;summary&gt;</code> (<em>o el texto «Detalles» si se omite</em>).</p>
-<pre><code>&lt;details&gt;
-  &lt;summary&gt;Más información&lt;/summary&gt;
-  &lt;h2&gt;Nombre del sujeto&lt;/h2&gt;
-  &lt;img src="foto.jpg" alt="Foto del sujeto" /&gt;
-&lt;/details&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">details</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">summary</span><span class="p">&gt;</span>Más información<span class="p">&lt;/</span><span class="nt">summary</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Nombre del sujeto<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;foto.jpg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Foto del sujeto&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">details</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Si pulsamos sobre el texto o la mencionada flecha, el contenido de la etiqueta <code>&lt;details&gt;</code> se muestra o se oculta, dependiendo de si se encontraba oculto o visible respectivamente. La etiqueta <code>&lt;details&gt;</code> tiene un atributo <strong>open</strong>, que si se especifica el contenido es visible por defecto.</p>
 <p>Esta etiqueta pertenece a HTML5.1 y aún no está soportado por la mayoría de navegadores.</p>
 <h3 id="dialogos-emergentes">Diálogos emergentes<a class="headerlink" href="#dialogos-emergentes" title="Permanent link">&para;</a></h3>
 <p>HTML5.1 incorporará los denominados <strong>diálogos emergentes</strong>, o lo que es lo mismo, ventanas emergentes compatibles con código HTML que podemos utilizar y personalizar para realizar avisos o alertas al usuario. Hasta ahora, la forma más simple de crear avisos o alertas emergentes era recurrir al <code>alert</code> de Javascript o crear ventanas personalizadas desde Javascript. Sin embargo, con HTML5.1 podremos crear desde HTML sencillos o complejos diálogos con texto, botones, imágenes, video o cualquier elemento HTML que se nos ocurra.</p>
 <p>La forma de crear diálogos es muy sencilla. Utilizaremos la etiqueta <code>&lt;dialog&gt;</code> y en su interior colocaremos toda la información que queramos mostrar en la ventana:</p>
 <p>.sandbox pre { margin: 0; overflow: auto; max-height: var(--height, auto); }</p>
-<pre><code>&lt;dialog id="ms"&gt;
-  &lt;p&gt;¡Hola, soy un mensaje!&lt;/p&gt;
-  &lt;button id="close" onclick="document.getElementById('ms').close()"&gt;Ok!&lt;/button&gt;
-&lt;/dialog&gt;
-&lt;button id="show" onclick="document.getElementById('ms').show()"&gt;Mostrar&lt;/button&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">dialog</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;ms&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>¡Hola, soy un mensaje!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;close&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;document.getElementById(&#39;ms&#39;).close()&quot;</span><span class="p">&gt;</span>Ok!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">dialog</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;show&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;document.getElementById(&#39;ms&#39;).show()&quot;</span><span class="p">&gt;</span>Mostrar<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>En este caso, estamos creando una ventana de diálogo con un párrafo de texto y un botón para cerrar la ventana. Fuera de ella, un botón para mostrar el diálogo. La etiqueta <code>&lt;dialog&gt;</code> puede tener el atributo <strong>open</strong> para indicar que la ventana debe estar abierta por defecto. En caso contrario, no se muestra inicialmente.</p>
 <h4 id="dialogos-modales">Diálogos modales<a class="headerlink" href="#dialogos-modales" title="Permanent link">&para;</a></h4>
 <p>En programación, una <a href="https://en.wikipedia.org/wiki/Modal_window">ventana modal</a> es un tipo de ventana que se muestra al usuario, generalmente para avisarle de algo o pedirle una información necesaria para continuar. Se caracteriza en que una vez se muestra, no se le permite realizar otra tarea hasta que atienda el mensaje de esa ventana modal (<em>pulsar ok, responder una pregunta, etc...</em>).</p>
 <p>Para crear una ventana modal sólo tendremos que usar la función <code>showModal()</code> desde Javascript, en lugar de utilizar la función <code>show()</code> que utilizamos en el ejemplo anterior:</p>
-<pre><code>&lt;dialog id="ms"&gt;
-  &lt;h2&gt;¡Vuelve a la sombra!&lt;/h2&gt;
-  &lt;img src="gandalf.jpg" alt="Gandalf" /&gt;
-  &lt;p&gt;¡NO.. PUEDES... PASAR!&lt;/p&gt;
-  &lt;button id="close" onclick="document.getElementById('ms').close()"&gt;Ok!&lt;/button&gt;
-&lt;/dialog&gt;
-&lt;button id="show" onclick="document.getElementById('ms').showModal()"&gt;Mostrar&lt;/button&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">dialog</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;ms&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>¡Vuelve a la sombra!<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;gandalf.jpg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Gandalf&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>¡NO.. PUEDES... PASAR!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;close&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;document.getElementById(&#39;ms&#39;).close()&quot;</span><span class="p">&gt;</span>Ok!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">dialog</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;show&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;document.getElementById(&#39;ms&#39;).showModal()&quot;</span><span class="p">&gt;</span>Mostrar<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Esto mostrará la siguiente ventana de diálogo modal:</p>
 <p><img alt="Diálogo modal con HTML5" src="../img/dialog-html5-modal.png" /></p>
 <p>Obsérvese que hemos utilizado la pseudoclase CSS <code>::backdrop</code> sobre la ventana de diálogo para darle estilos a la parte de detrás de la ventana modal, pudiendo, por ejemplo, aplicarle un color de fondo negro con transparencia al 25% con la propiedad <code>background-color:RGBA(0,0,0, .75)</code>:</p>
-<pre><code>#ms::backdrop {
-  background-color: RGBA(0, 0, 0, 0.75);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">#</span><span class="nn">ms</span><span class="p">::</span><span class="nd">backdrop</span> <span class="p">{</span>
+      <span class="k">background-color</span><span class="p">:</span> <span class="nf">RGBA</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">);</span>
+    <span class="p">}</span>
+</code></pre></div>
+
 <p>Las ventanas de diálogo de HTML5.1 aún son muy recientes y el soporte no está muy extendido entre los diferentes navegadores del panorama web:</p>
 <h3 id="atributo-contenteditable">Atributo contentEditable<a class="headerlink" href="#atributo-contenteditable" title="Permanent link">&para;</a></h3>
 <p>En HTML5 podemos utilizar el atributo <code>contentEditable</code> sobre cualquier elemento para darle al usuario capacidades de edición sobre el mismo. De esta forma, podemos incluir el atributo <code>contentEditable</code> a una etiqueta <code>&lt;p&gt;</code> de párrafo, o a una etiqueta <code>&lt;h3&gt;</code>, por ejemplo, lo que permitirá al usuario que, al pulsar sobre dichos elementos, pueda modificar el texto que aparece:</p>
-<pre><code>&lt;h3 contenteditable&gt;Título del artículo&lt;/h3&gt;
-&lt;div contenteditable&gt;
-  &lt;p&gt;Este es un párrafo de ejemplo del ejemplo en cuestión.&lt;/p&gt;
-  &lt;p&gt;Con él se pretende mostrar el funcionamiento del atributo contentEditable.&lt;/p&gt;
-&lt;/div&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">h3</span> <span class="na">contenteditable</span><span class="p">&gt;</span>Título del artículo<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">contenteditable</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Este es un párrafo de ejemplo del ejemplo en cuestión.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Con él se pretende mostrar el funcionamiento del atributo contentEditable.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>De esta forma, podemos dotar de capacidades de edición al usuario. Obsérvese siempre que el HTML, CSS y Javascript son tecnologías que trabajan en el <strong>front-end</strong>, o lo que es lo mismo, son descargadas desde el alojamiento web y transferidas a una carpeta temporal de nuestro sistema. En ella, el navegador la lee y ahí es donde estamos realizando dichas modificaciones.</p>
 <p>Si el usuario volviese a recargar la página tras modificar ciertos elementos, los cambios no se verán reflejados. Para ello, hay que hacer ciertas operaciones (<em>por ejemplo, mediante Javascript o con un botón de Guardar cambios</em>), y realizar una petición al backend del alojamiento web para que guarde los cambios.</p>
 <h3 id="atributo-hidden">Atributo hidden<a class="headerlink" href="#atributo-hidden" title="Permanent link">&para;</a></h3>
 <p>HTML5 incorpora también un atributo <code>hidden</code> mediante el cuál podemos hacer desaparecer visualmente un elemento HTML (<em>y todo su contenido, si es una etiqueta contenedora</em>). Hasta ahora, para realizar esta tarea teníamos que recurrir a CSS, ya que se trata de una cuestión de presentación visual. Sin embargo, la diferencia entre el atributo <code>hidden</code> o utilizar estilos es que mediante CSS podemos mostrar elementos dependiendo de acciones del usuario o del medio en el que estén (<em>media queries, por ejemplo</em>).</p>
 <p>Por otro lado, el attributo <code>hidden</code> se propone utilizarse cuando el usuario ha realizado una acción y hay una serie de elementos que queremos ocultar porque ya no son relevantes, independientemente de los estilos que se estén aplicando en la página:</p>
-<pre><code>&lt;div id="info" hidden&gt;Información&lt;/div&gt;
-&lt;button onClick="toggleHidden('#info')"&gt;
-  Mostrar/ocultar información
-&lt;/button&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;info&quot;</span> <span class="na">hidden</span><span class="p">&gt;</span>Información<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="s">&quot;toggleHidden(&#39;#info&#39;)&quot;</span><span class="p">&gt;</span>
+      Mostrar/ocultar información
+    <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>En el caso anterior, tenemos un <code>&lt;div&gt;</code> con texto que vamos a ocultar cada vez que el usuario pulse el botón. Dicho botón ejecuta la función Javascript <code>toggleHidden()</code> para ocultar o mostrar el elemento, dependiendo si ya estaba visibile o si estaba oculto:</p>
-<pre><code>function toggleHidden(selector) {
-  element = document.querySelector(selector);
-  element.hidden = element.hidden ? false : true;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="kd">function</span> <span class="nx">toggleHidden</span><span class="p">(</span><span class="nx">selector</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">element</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="nx">selector</span><span class="p">);</span>
+      <span class="nx">element</span><span class="p">.</span><span class="nx">hidden</span> <span class="o">=</span> <span class="nx">element</span><span class="p">.</span><span class="nx">hidden</span> <span class="o">?</span> <span class="kc">false</span> <span class="o">:</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
 <p>El soporte de este atributo es completo en la mayoría de los navegadores: <a href="https://caniuse.com/hidden">https://caniuse.com/hidden</a></p>
 <hr />
 <h2 id="etiquetas-html-de-scripts">Etiquetas HTML de scripts<a class="headerlink" href="#etiquetas-html-de-scripts" title="Permanent link">&para;</a></h2>
@@ -1378,13 +1385,15 @@
 <li>Como <strong>script externo</strong>: El código JS se incluye en el fichero Javascript enlazado en <code>src</code>.</li>
 </ul>
 <p>Un ejemplo de <strong>script en línea</strong> sería el siguiente. Observa que el código se incluye en el interior de la etiqueta, por lo que permanece en el documento HTML:</p>
-<pre><code>&lt;script&gt;
-  alert('¡Hola!');
-&lt;/script&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+      <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;¡Hola!&#39;</span><span class="p">);</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>El siguiente código, por otro lado, es un <strong>script externo</strong>, donde el código Javascript se encuentra en un archivo separado del HTML, concretamente en la ruta <code>/js/script.js</code>:</p>
-<pre><code>&lt;script src="/js/script.js"&gt;&lt;/script&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/js/script.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>En ambos casos, el navegador interrumpirá la carga de la página para procesar y ejecutar el Javascript, detalle que quizás no sea el más adecuado para nuestro desarrollo. Veremos como se puede modificar en el siguiente apartado.</p>
 <h3 id="modo-de-carga-del-script">Modo de carga del script<a class="headerlink" href="#modo-de-carga-del-script" title="Permanent link">&para;</a></h3>
 <p>Cuando indicamos un <strong>script externo</strong> mediante el atributo <code>src</code>, por defecto <strong>el proceso de carga del script</strong> por parte del navegador es el siguiente:</p>
@@ -1434,23 +1443,25 @@
 <h3 id="carga-de-modulos-javascript">Carga de módulos Javascript<a class="headerlink" href="#carga-de-modulos-javascript" title="Permanent link">&para;</a></h3>
 <p>En los últimos años, Javascript ha incluido una funcionalidad llamada <a href="https://lenguajejs.com/javascript/caracteristicas/modulos-es6/">módulos de Javascript</a>. Dichos módulos son una modalidad específica de archivos Javascript, los cuales pueden compartir funcionalidades a través de las palabras clave <code>import</code> y <code>export</code>.</p>
 <p>Estas funcionalidades están prohibidas por defecto, y sólo se podrán realizar si a la hora de cargar el script con la etiqueta <code>&lt;script&gt;</code> definimos el atributo <code>type</code> a <code>module</code>. Esto nos permitirá cargar el archivo Javascript como módulo y utilizarlo:</p>
-<pre><code>&lt;script type="module"&gt;
-  import { Howler, Howl } from "https://unpkg.com/howler";
-&lt;/script&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span><span class="p">&gt;</span>
+      <span class="kr">import</span> <span class="p">{</span> <span class="nx">Howler</span><span class="p">,</span> <span class="nx">Howl</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;https://unpkg.com/howler&quot;</span><span class="p">;</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <div class="admonition nota">
 <p class="admonition-title">Nota<p>Es posible usar el atributo <code>type="module"</code> tanto en etiquetas <code>&lt;script&gt;</code> en línea (<em>ejemplo anterior</em>) como con etiquetas <code>&lt;script&gt;</code> que utilicen el atributo <code>src</code>. Además, todos los scripts cargados como módulos, se ejecutarán en <strong>modo diferido</strong>.</p>
 </p>
 </div>
 <p>En algunos casos, podemos crear etiquetas <code>&lt;script&gt;</code> que utilicen un atributo <code>nomodule</code>. Dicho atributo indicará a navegadores modernos que soportan el atributo <code>type=module</code>, que no deben descargar ni ejecutar ese script. Sin embargo, navegadores antiguos que no lo soportan cargarán el script como un fichero Javascript normal y corriente:</p>
-<pre><code>&lt;script type="module"&gt;
-  /* Código para navegadores modernos */
-  import { Howler, Howl } from "https://unpkg.com/howler";
-&lt;/script&gt;
-&lt;script nomodule&gt;
-  /* Código para navegadores antiguos */
-&lt;/script&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span><span class="p">&gt;</span>
+      <span class="cm">/* Código para navegadores modernos */</span>
+      <span class="kr">import</span> <span class="p">{</span> <span class="nx">Howler</span><span class="p">,</span> <span class="nx">Howl</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;https://unpkg.com/howler&quot;</span><span class="p">;</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">nomodule</span><span class="p">&gt;</span>
+      <span class="cm">/* Código para navegadores antiguos */</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>La finalidad de este atributo es poder crear <strong>scripts</strong> a modo de <strong>fallback</strong> para realizar tareas equivalentes en navegadores antiguos y dar soporte a otros sistemas menos modernos. Es lo que se conoce como el <strong>patrón module/nomodule</strong>.</p>
 <h3 id="lenguajes-de-scripting">Lenguajes de scripting<a class="headerlink" href="#lenguajes-de-scripting" title="Permanent link">&para;</a></h3>
 <p>Por defecto, el lenguaje de scripting soportado por los navegadores es <strong>Javascript</strong>, por lo que cuando hablamos de scripting en el navegador (<em>front-end, o en el lado del cliente</em>) hablamos de este lenguaje. <strong>Javascript</strong> está basado en <a href="https://lenguajejs.com/javascript/introduccion/ecmascript/"><strong>ECMAScript</strong></a>, el estándar que indica como debe actuar el lenguaje. Luego, es misión de cada navegador implementarlo de acuerdo a esas normas, aunque siempre hay algunas diferencias entre navegadores.</p>
@@ -1458,40 +1469,43 @@
 <h3 id="la-etiqueta-noscript">La etiqueta noscript<a class="headerlink" href="#la-etiqueta-noscript" title="Permanent link">&para;</a></h3>
 <p>Debemos ser conscientes de que, aunque actualmente la mayoría de los navegadores poseen Javascript, un usuario puede acceder desde un dispositivo que no tenga Javascript (<em>muy poco habitual</em>) o que tenga Javascript deshabilitado (<em>poco habitual</em>). Una buena costumbre, es proporcionar una alternativa (<em>aunque sea mínima</em>) para aquellos usuarios que no tengan Javascript habilitado.</p>
 <p>Para ello, utilizaremos la etiqueta <code>&lt;noscript&gt;</code>:</p>
-<pre><code>&lt;script&gt;
-  var usuario = prompt("¿Cuál es tu nombre?");
-  alert("¡Hola, " + usuario + "!");
-&lt;/script&gt;
-&lt;noscript&gt;
-  ¡Hola, usuario!
-&lt;/noscript&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+      <span class="kd">var</span> <span class="nx">usuario</span> <span class="o">=</span> <span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;¿Cuál es tu nombre?&quot;</span><span class="p">);</span>
+      <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;¡Hola, &quot;</span> <span class="o">+</span> <span class="nx">usuario</span> <span class="o">+</span> <span class="s2">&quot;!&quot;</span><span class="p">);</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">noscript</span><span class="p">&gt;</span>
+      ¡Hola, usuario!
+    <span class="p">&lt;/</span><span class="nt">noscript</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>En caso de que el usuario tenga capacidades de Javascript en su navegador, se ejecutará el código de la etiqueta <code>&lt;script&gt;</code>, sin embargo, si el navegador no tiene Javascript, se mostrará el texto proporcionado en la etiqueta <code>&lt;noscript&gt;</code>, que aunque no puede recoger el nombre de usuario, mostrará una alternativa.</p>
 <p>De esta forma evitamos que si el usuario no tiene Javascript, vea una página en blanco.</p>
 <h3 id="la-etiqueta-template">La etiqueta template<a class="headerlink" href="#la-etiqueta-template" title="Permanent link">&para;</a></h3>
 <p>La etiqueta <code>&lt;template&gt;</code> es un método ideal para reutilizar información HTML y tratarla mediante Javascript. En el siguiente ejemplo tenemos una tabla HTML que sólo tiene definida la cabecera de la misma. Sin embargo, un poco más abajo hay una etiqueta <code>&lt;template&gt;</code> que contiene una fila con 3 celdas:</p>
-<pre><code>&lt;table id="tabla"&gt;
-  &lt;tr&gt;
-    &lt;th&gt;Nombre&lt;/th&gt;
-    &lt;th&gt;Apellidos&lt;/th&gt;
-    &lt;th&gt;Calificación&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;template id="usuario"&gt;
-    &lt;tr&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/template&gt;
-&lt;/table&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">table</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;tabla&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Nombre<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Apellidos<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Calificación<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">template</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;usuario&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>3<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>El contenido de una etiqueta <code>&lt;template&gt;</code> es inerte, de modo que el navegador no interpreta su interior (<em>no descarga imágenes, no ejecuta scripts, etc...</em>) hasta que el usuario clona su contenido para insertarlo en el HTML.</p>
 <p>En este ejemplo anterior, nosotros podríamos desde Javascript obtener el contenido de la plantilla <code>&lt;template&gt;</code>, clonarlo y añadirlo al final de la tabla de forma dinámica, para posteriormente modificar los datos de cada fila:</p>
-<pre><code>var template = document.getElementById("usuario");
-var tabla = document.getElementById("tabla");
+<div class="highlight"><pre><span></span><code>    <span class="kd">var</span> <span class="nx">template</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;usuario&quot;</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">tabla</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;tabla&quot;</span><span class="p">);</span>
 
-tabla.appendChild(template.content.cloneNode(true));
-</code></pre>
+    <span class="nx">tabla</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">template</span><span class="p">.</span><span class="nx">content</span><span class="p">.</span><span class="nx">cloneNode</span><span class="p">(</span><span class="kc">true</span><span class="p">));</span>
+</code></pre></div>
+
 <div class="admonition nota">
 <p class="admonition-title">Nota<p>Si te interesa este tema, tienes más información sobre la etiqueta <code>&lt;template&gt;</code> (<em>y plantillas en general</em>) en este artículo sobre <a href="https://lenguajejs.com/webcomponents/nativos/plantillas-dom-componente/">Plantillas, DOM y WebComponents</a>.</p>
 </p>
@@ -1503,25 +1517,28 @@ tabla.appendChild(template.content.cloneNode(true));
 <h3 id="eventos">Eventos<a class="headerlink" href="#eventos" title="Permanent link">&para;</a></h3>
 <p>Existen muchísimos tipos de eventos en Javascript. Para activarlos, lo primero es elegir la etiqueta en la que ocurrirá el evento. Una vez elegida, colocaremos un atributo en dicha etiqueta para detectar si se produce el evento. Además, hay que indicar el prefijo <strong>on</strong> en el atributo del evento. Por ejemplo, si queremos detectar el evento <strong>click</strong>, el atributo HTML deberá llamarse <strong>onClick</strong>.</p>
 <p>Así pues, veamos un ejemplo:</p>
-<pre><code>&lt;div&gt;
-  &lt;img src="gandalf.jpg" alt="Gandalf" onClick="alert('¡Has hecho clic!')" /&gt;
-&lt;/div&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;gandalf.jpg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Gandalf&quot;</span> <span class="na">onClick</span><span class="o">=</span><span class="s">&quot;alert(&#39;¡Has hecho clic!&#39;)&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>En este sencillo ejemplo, hemos especificado una imagen que es la que estará «escuchando» el evento <strong>click</strong>. Si el usuario hace clic sobre ese elemento, o sea, sobre la imagen, el navegador dispará el evento y ejecutará la función Javascript <code>alert()</code>, mostrando un mensaje por pantalla: <strong>¡Has hecho clic!</strong>.</p>
 <h3 id="detalles-del-evento">Detalles del evento<a class="headerlink" href="#detalles-del-evento" title="Permanent link">&para;</a></h3>
 <p>En los eventos, puede que queramos obtener información más específica, como por ejemplo, el número de veces que hizo clic el usuario sobre la imagen (<em>si fue un solo clic, si fue doble clic, etc...</em>). Este dato específico lo devuelve el evento <strong>onClick</strong> a través del objeto especial <strong>event</strong>, así que continuemos con el ejemplo anterior, modificando algunas cosas:</p>
-<pre><code>&lt;div&gt;
-  &lt;img src="gandalf.jpg" alt="Gandalf" onClick="updateCounter(event)" /&gt;
-  &lt;p&gt;Has hecho clic a Gandalf &lt;span id="num"&gt;0&lt;/span&gt; veces.&lt;/p&gt;
-&lt;/div&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;gandalf.jpg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Gandalf&quot;</span> <span class="na">onClick</span><span class="o">=</span><span class="s">&quot;updateCounter(event)&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Has hecho clic a Gandalf <span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;num&quot;</span><span class="p">&gt;</span>0<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> veces.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Obsérvese que en este caso, en lugar del <code>alert()</code> usado antes, ejecutamos una función javascript que crearemos nosotros, llamada <strong>updateCounter()</strong>. Después de la imagen, hay un párrafo de texto que contiene una frase y un fragmento <code>&lt;span id="num"&gt;</code> que contendrá el número de veces que se ha pulsado sobre la imagen. Inicialmente se encuentra establecido a <strong>0</strong>.</p>
 <p>Por su parte, la función <code>updateCounter()</code> pasa por parámetro una variable especial <strong>event</strong>, que es la que tiene la información sobre el evento ocurrido, y que posteriormente utilizaremos para extraer dicha información.</p>
 <p>Definimos la función <code>updateCounter()</code> en Javascript:</p>
-<pre><code>function updateCounter(e) {
-  document.querySelector("#num").textContent = e.detail;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="kd">function</span> <span class="nx">updateCounter</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#num&quot;</span><span class="p">).</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">detail</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
 <p>Esta función busca la etiqueta HTML que tiene un <code>id="num"</code>, y mediante <code>.textContent</code> modificamos su contenido. El nuevo contenido es <code>e.detail</code> que no es más que un dato que se encuentra en el evento que se ha disparado. Ese dato devuelve el número de veces seguidas (<em>contador</em>) que el usuario pulsó sobre la imagen.</p>
 <p>Veamos finalmente lo que ocurriría con este ejemplo. Lo que aparece a la izquierda es cuando el usuario pulsa el botón del ratón (<em>LButtonDown</em>) y cuando lo suelta (<em>LButtonUp</em>):</p>
 <h3 id="otros-eventos">Otros Eventos<a class="headerlink" href="#otros-eventos" title="Permanent link">&para;</a></h3>

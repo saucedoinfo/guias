@@ -2645,13 +2645,14 @@
 </tbody>
 </table>
 <p>Un ejemplo de este medidor con la etiqueta <code>&lt;meter&gt;</code>:</p>
-<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
-  &lt;!-- Medidor --&gt;
-  &lt;meter min="0" max="100"
-         low="25" high="75"
-         optimum="100" value="75"&gt;
-&lt;/form&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulario&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/send.php&quot;</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- Medidor --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meter</span> <span class="na">min</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;100&quot;</span>
+             <span class="na">low</span><span class="o">=</span><span class="s">&quot;25&quot;</span> <span class="na">high</span><span class="o">=</span><span class="s">&quot;75&quot;</span>
+             <span class="na">optimum</span><span class="o">=</span><span class="s">&quot;100&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;75&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Además, dependiendo del valor de <strong>value</strong> y la posición del atributo <strong>optimum</strong> respecto al resto, los colores de la barra de medida cambiarán. A continuación tenemos un esquema de colores que nos muestra las combinaciones posibles:</p>
 <table>
 <thead>
@@ -2807,17 +2808,18 @@
 </tbody>
 </table>
 <p>Con estos atributos, podemos crear validaciones básicas en nuestros campos de entrada de datos, obligando al usuario a rellenar un campo obligatorio, forzando a indicar valores entre un rango numérico o permitiendo sólo textos con un tamaño específico, entre otros.</p>
-<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
-    &lt;!-- Nombre de usuario. Obligatorio, entre 5-40 carácteres --&gt;
-    Usuario:
-    &lt;input type="text" name="nombre" placeholder="Por ejemplo, Juan"
-           minlength="5" maxlength="40" required /&gt;
-    &lt;!-- Contraseña. Obligatorio, mínimo 11 carácteres --&gt;
-    Password:
-    &lt;input type="password" name="pass" placeholder="Contraseña"
-           minlength="11" required /&gt;
-&lt;/form&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulario&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/send.php&quot;</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- Nombre de usuario. Obligatorio, entre 5-40 carácteres --&gt;</span>
+        Usuario:
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;nombre&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Por ejemplo, Juan&quot;</span>
+               <span class="na">minlength</span><span class="o">=</span><span class="s">&quot;5&quot;</span> <span class="na">maxlength</span><span class="o">=</span><span class="s">&quot;40&quot;</span> <span class="na">required</span> <span class="p">/&gt;</span>
+        <span class="c">&lt;!-- Contraseña. Obligatorio, mínimo 11 carácteres --&gt;</span>
+        Password:
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;pass&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Contraseña&quot;</span>
+               <span class="na">minlength</span><span class="o">=</span><span class="s">&quot;11&quot;</span> <span class="na">required</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Además, utilizando las <a href="https://lenguajecss.com/css/selectores/pseudoclases/#pseudoclases-de-validaci%C3%B3n">pseudoclases CSS de validación</a> <code>:valid</code> e <code>:invalid</code> podemos aplicar estilos a los campos <code>&lt;input&gt;</code> y <code>&lt;textarea&gt;</code> teniendo en cuenta su validación. Aplicando el siguiente código CSS se mostrará un fondo verde o rojo, dependiendo de si cumple o no la validación, respectivamente:</p>
 <div class="highlight"><pre><span></span><code>    input:valid,
     textarea:valid {
@@ -2936,14 +2938,15 @@
 </li>
 </ul>
 <p>Nótese que de no incluir los atributos <strong>minlength</strong> y <strong>maxlength</strong> el usuario no tendría limitación en cuanto al tamaño. Esto también puede incorporarse en la propia expresión regular, y prescindir de dichos atributos:</p>
-<pre><code>&lt;form name="formulario" method="post" action="/send.php"&gt;
-    &lt;!-- Nombre de usuario. Obligatorio, entre 5-40 carácteres
-       Sólo se permiten letras y números --&gt;
-    &lt;input type="text" name="nombre" placeholder="Su nombre de usuario"
-           required pattern="[A-Za-z0-9]{5,40}"
-           title="Letras y números. Tamaño mínimo: 5. Tamaño máximo: 40" /&gt;
-&lt;/form&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulario&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/send.php&quot;</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- Nombre de usuario. Obligatorio, entre 5-40 carácteres</span>
+<span class="c">           Sólo se permiten letras y números --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;nombre&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Su nombre de usuario&quot;</span>
+               <span class="na">required</span> <span class="na">pattern</span><span class="o">=</span><span class="s">&quot;[A-Za-z0-9]{5,40}&quot;</span>
+               <span class="na">title</span><span class="o">=</span><span class="s">&quot;Letras y números. Tamaño mínimo: 5. Tamaño máximo: 40&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <p>Sin embargo, en este caso, no se limitará al usuario a la hora de escribir, como hace <strong>maxlength</strong>, sino que permitirá al usuario escribir la información que desee y en caso de no pasar la validación, mostrará un mensaje de advertencia y no lo dejará continuar hasta que termine. Podemos ampliar el mensaje de advertencia incluyendo el texto en el atributo <strong>title</strong>.</p>
 <p><img alt="Validaciones HTML5" src="../img/validaciones-html5.png" /></p>
 <p>En el siguiente caso, se pide al usuario que indique el modelo de coche que posee, en un posible formulario de servicio técnico. Los modelos posibles son A1, A3, A4 y A15. En lugar de mostrar una <strong>lista de selección</strong>, podemos mostrar un campo de texto y colocar una validación como la siguiente:</p>
