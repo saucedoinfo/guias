@@ -1,0 +1,1386 @@
+
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Coleccion de Guias de Desarrollo y diseño.">
+      
+      
+        <link rel="canonical" href="https://saucedoinfo.github.io/guias/herramientas-it/vim/03-copiar_y_pegar/">
+      
+      
+        <meta name="author" content="Fernando S. Saucedo">
+      
+      <link rel="shortcut icon" href="../../../img/favicon-16x16.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.14">
+    
+    
+      
+        <title>Copiar y pegar - Guias de Desarrollo y diseño</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d3202873.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ff0a5ce4.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#000000">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#copiar-y-pegar" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://saucedoinfo.github.io/guias/" title="Guias de Desarrollo y diseño" class="md-header-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Guias de Desarrollo y diseño
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Copiar y pegar
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../desarrollo/html/01-introduccion_a_HTML5/" class="md-tabs__link">
+          Desarrollo
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../terminal/01-introducci%C3%B3n_a_la_terminal/" class="md-tabs__link">
+          Herramientas IT
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://saucedoinfo.github.io/guias/" title="Guias de Desarrollo y diseño" class="md-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    Guias de Desarrollo y diseño
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Desarrollo
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Desarrollo" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Desarrollo
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Html
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Html" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        <span class="md-nav__icon md-icon"></span>
+        Html
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/html/01-introduccion_a_HTML5/" title="Introduccion a HTML" class="md-nav__link">
+      Introduccion a HTML
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/html/02-etiquetas_semanticas/" title="Etiquetas semánticas" class="md-nav__link">
+      Etiquetas semánticas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/html/03-etiquetas_multimedia/" title="Etiquetas multimedias" class="md-nav__link">
+      Etiquetas multimedias
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/html/04-etiquetas_de_cabecera/" title="Etiquetas de cabecera" class="md-nav__link">
+      Etiquetas de cabecera
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/html/05-etiquetas_de_formularios/" title="Etiquetas de formularios" class="md-nav__link">
+      Etiquetas de formularios
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/html/06-etiquetas_de_scripting/" title="Etiquetas de scripting" class="md-nav__link">
+      Etiquetas de scripting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Css
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Css" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        <span class="md-nav__icon md-icon"></span>
+        Css
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/01-introduccion_a_CSS/" title="Introducción a CSS" class="md-nav__link">
+      Introducción a CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/02-modelo_de_cajas/" title="Modelo de cajas" class="md-nav__link">
+      Modelo de cajas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/03-colores_y_fondos/" title="Colores y fondos" class="md-nav__link">
+      Colores y fondos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/04-selectores_CSS/" title="Selectores CSS" class="md-nav__link">
+      Selectores CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/05-Fuentes_y_tipografias/" title="Fuentes y tipografías" class="md-nav__link">
+      Fuentes y tipografías
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/06-representacion_de_datos/" title="Representación de datos" class="md-nav__link">
+      Representación de datos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/07_maquetacion_y_colocacion/" title="Maquetación y colocación" class="md-nav__link">
+      Maquetación y colocación
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/08-interacciones/" title="Interacciones" class="md-nav__link">
+      Interacciones
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/09-efectos/" title="Efectos" class="md-nav__link">
+      Efectos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/10-responsive_Web_Design/" title="Responsive Web Design" class="md-nav__link">
+      Responsive Web Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/11-animaciones_CSS/" title="Animaciones CSS" class="md-nav__link">
+      Animaciones CSS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      JavaScript
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="JavaScript" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon"></span>
+        JavaScript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/javascript/01-introducci%C3%B3n_a_javascript/" title="Introducción a Javascript" class="md-nav__link">
+      Introducción a Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/javascript/02-fundamentos_de_javascript/" title="Fundamentos de Javascript" class="md-nav__link">
+      Fundamentos de Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/javascript/03-caracteristicas/" title="Características" class="md-nav__link">
+      Características
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/javascript/04-DOM/" title="DOM" class="md-nav__link">
+      DOM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/javascript/05-asincronia/" title="Asincronía" class="md-nav__link">
+      Asincronía
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/javascript/06-peticiones_HTTP/" title="Peticiones HTTP" class="md-nav__link">
+      Peticiones HTTP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Herramientas IT
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Herramientas IT" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Herramientas IT
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Terminal
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Terminal" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon"></span>
+        Terminal
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../terminal/01-introducci%C3%B3n_a_la_terminal/" title="Introducción a la terminal" class="md-nav__link">
+      Introducción a la terminal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../terminal/02-operaciones_con_ficheros/" title="Operaciones con ficheros" class="md-nav__link">
+      Operaciones con ficheros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../terminal/03-administraci%C3%B3n_del_sistema/" title="Administración del sistema" class="md-nav__link">
+      Administración del sistema
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" checked>
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Vim
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Vim" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        <span class="md-nav__icon md-icon"></span>
+        Vim
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01-funcionamiento_basico_de_Vim/" title="Funcionamiento básico de Vim" class="md-nav__link">
+      Funcionamiento básico de Vim
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02-movimientos_y_cambios/" title="Más sobre movimiento y cambios" class="md-nav__link">
+      Más sobre movimiento y cambios
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Copiar y pegar
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Copiar y pegar" class="md-nav__link md-nav__link--active">
+      Copiar y pegar
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#seleccionar-el-modo-visual" class="md-nav__link">
+    Seleccionar: el modo visual
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copiar-cortar-y-pegar" class="md-nav__link">
+    Copiar, cortar y pegar
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pegar-texto-con-autoindent-activado" class="md-nav__link">
+    Pegar texto con autoindent activado
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tuberias-pipes-para-filtrar-texto" class="md-nav__link">
+    Tuberías (pipes) para filtrar texto
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#insertar-ficheros-y-salida-de-comandos" class="md-nav__link">
+    Insertar ficheros y salida de comandos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiples-portapapeles-los-registros-de-borrado" class="md-nav__link">
+    Múltiples "portapapeles": los registros de borrado
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#el-portapapeles-del-sistema" class="md-nav__link">
+    El portapapeles del sistema
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-busquedas_y_reemplazos/" title="Búsquedas y reemplazos" class="md-nav__link">
+      Búsquedas y reemplazos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-el_fichero_vimrc/" title="El fichero .vimrc" class="md-nav__link">
+      El fichero .vimrc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-pestanas_ventanas_buffers/" title="Pestañas, Ventanas y Buffers" class="md-nav__link">
+      Pestañas, Ventanas y Buffers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../07-marcas_en_el_texto/" title="Marcas en el texto" class="md-nav__link">
+      Marcas en el texto
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../08-funcionalidadees_para_programadores/" title="Funcionalidades para programadores" class="md-nav__link">
+      Funcionalidades para programadores
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../09-extendiendo_vim_con_plugins/" title="Extendiendo Vim con plugins" class="md-nav__link">
+      Extendiendo Vim con plugins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../10-modo_vi_en_bash/" title="Modo vi en bash" class="md-nav__link">
+      Modo vi en bash
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../markdown/markdown/" title="Markdown" class="md-nav__link">
+      Markdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../pip/pip/" title="Pip" class="md-nav__link">
+      Pip
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../about/" title="Acerca de" class="md-nav__link">
+      Acerca de
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#seleccionar-el-modo-visual" class="md-nav__link">
+    Seleccionar: el modo visual
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copiar-cortar-y-pegar" class="md-nav__link">
+    Copiar, cortar y pegar
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pegar-texto-con-autoindent-activado" class="md-nav__link">
+    Pegar texto con autoindent activado
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tuberias-pipes-para-filtrar-texto" class="md-nav__link">
+    Tuberías (pipes) para filtrar texto
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#insertar-ficheros-y-salida-de-comandos" class="md-nav__link">
+    Insertar ficheros y salida de comandos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiples-portapapeles-los-registros-de-borrado" class="md-nav__link">
+    Múltiples "portapapeles": los registros de borrado
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#el-portapapeles-del-sistema" class="md-nav__link">
+    El portapapeles del sistema
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/saucedoinfo/guias/edit/master/docs/herramientas-it/vim/03-copiar_y_pegar.md" title="Editar esta página" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="copiar-y-pegar">Copiar y pegar<a class="headerlink" href="#copiar-y-pegar" title="Permanent link">&para;</a></h1>
+<p>Cuando borramos texto (con <strong>dd</strong>, <strong>dw</strong>, <strong>x</strong> o similares), dicho texto (líneas, palabras o incluso un simple carácter) se almacena en un buffer interno. Digamos que no se borra sino que se <strong>corta</strong>. Podemos pegar el último texto borrado utilizando el comando <strong>p</strong>. Esta es la primera lección de este capítulo: p = paste = pegar. Cabe destacar que una línea cortada con <strong>dd</strong>, al ser pegada con <strong>p</strong> será insertada debajo de la línea actual del cursor. Si lo que pegamos no es una línea completa sino una porción de texto, entonces será insertado a la derecha de la posición actual del cursor.</p>
+<p>Existe una variante de <strong>p</strong> que es <strong>P</strong>, cuya diferencia es que pega el texto a la izquierda de la posición actual del cursor para porciones de texto, o en la línea sobre el cursor para líneas completas.</p>
+<p>Como siempre, podemos aprovechar los multiplicadores para ahorrarnos trabajo: Con <strong>dd</strong> podemos cortar una línea y con, por ejemplo, <strong>10p</strong> podemos pegar 10 copias de la linea cortada.</p>
+<p>En general, <strong>dd</strong> y <strong>p</strong> (para una sóla línea) o <strong><NUMERO>dd</strong> y <strong>p</strong> (para múltiples líneas) pueden ser utilizados para mover bloques de texto de un lugar a otro (copiándolos y pegándolos).</p>
+<p>Finalmente, comentar que existe un comando especial llamado <strong>]p</strong> que a la hora de pegar tiene en cuenta la indentación del código por lo que permite pegar código en diferentes niveles de indentación del que lo hemos cortado, sin tener que reajustar todas las líneas.</p>
+<h2 id="seleccionar-el-modo-visual">Seleccionar: el modo visual<a class="headerlink" href="#seleccionar-el-modo-visual" title="Permanent link">&para;</a></h2>
+<p>Aparte de poder pegar texto cortado con comandos, en Vim podemos seleccionar texto al estilo de lo que se puede hacer en otros editores. Si pulsamos la tecla <strong>v</strong> pasaremos a modo visual, donde con los cursores (o las teclas de movimiento de vim) extendemos el área de selección para después operar con ella. Nos posicionamos en la primera letra de lo que queremos seleccionar (o la última), y usamos arriba, abajo, izquierda y derecha para hacerlo, y podemos cancelar la selección en cualquier momento pulsando ESCAPE.</p>
+<p>Existen 2 variantes más del modo visual para seleccionar texto: la primera es <strong>V</strong> (v mayúscula), que trabaja sólo con selección de líneas completas (usando las teclas de arriba y abajo). Es decir, si pulsamos <strong>v</strong> (minúscula) en medio de una frase, podremos mover la selección a derecha o izquierda para coger palabras sueltas (y también frases con arriba y abajo), mientras que <strong>V</strong> (mayúscula) sólo trabaja con frases completas.</p>
+<p><img alt="Modo Visual" src="../img/vm_visual.png" /></p>
+<p>La segunda variante son las selecciones de bloques o selecciones verticales. Supongamos que tenemos una tabla como la siguiente:</p>
+<div class="highlight"><pre><span></span><code>Nombre  Telefono    Direccion
+Juan    12345112    C/. Brasa
+Pepe    78678112    C/. Nada
+Andres  87894563    C/. Casa
+</code></pre></div>
+
+<p>Pues bien, si quisieramos borrar la columna teléfono completa, en muchos editores que no disponen de selecciones verticales tendríamos que ir línea a línea borrando <strong>Telefono</strong>, <strong>12345112</strong>, <strong>7867811</strong> y <strong>87894563</strong>. En Vim podemos hacer una selección vertical de un bloque que comprenda justo esa columna y trabajar sobre ella: nos posicionamos sobre la T de <strong>Teléfono</strong> y pulsamos <strong>CTRL+V</strong>, con lo que pasamos a modo de edición de bloques. Usando los cursores o las teclas de movimiento seleccionamos la columna, y ya podemos trabajar sobre ella (cortarla, copiarla, etc).</p>
+<p><img alt="Modo visual (bloque)" src="../img/vm_block.png" /></p>
+<p>Nótese que Ctrl+V es, en Vim para Windows, el atajo para pegar texto desde el portapapeles, por lo que en Windows puede ser necesario remapear esta tecla a otro atajo de teclado (con <strong>map</strong>, como veremos más adelante).</p>
+<p>Algo muy interesante de cuando estamos en modo visual es que podemos usar las teclas de movimiento especiales. Si por ejemplo pulsamos <strong>w</strong>, la selección avanza una palabra completa. Si pulsamos <strong>as</strong> (a sentence), la selección avanza una frase entera (hasta el próximo punto o separador), y podemos repetir los comandos que deseemos y combinarlos hasta seleccionar el texto deseado.</p>
+<p>Es decir, que lo bueno del modo visual es que podemos usar los mismos "verbos" de movimiento que usa Vim en modo comando: 0, $, G, gg, fCHAR, /string, etc. Además, podemos usar verbos espaciales para seleccionar bloques delimitados por comillas, paréntesis, corchetes, etc:</p>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Resultado de la sección</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>iX</strong></td>
+<td>Seleccionar un bloque entero de texto basado en X, donde X puede ser: <strong>w</strong> o <strong>W</strong> palabra completa <strong>s</strong> ⇒ sentence (frase) <strong>p</strong> ⇒ párrafo <strong>b</strong> or <strong>(</strong> ⇒ bloque de paréntesis (contenido entre ( y ) ). <strong>B</strong> o <strong>{</strong> ⇒ bloque de { llaves } <strong>t</strong> ⇒ contenido de un <tag> y </tag> <strong>&lt;</strong> ⇒ un bloque &lt; y &gt; block <strong>[</strong> ⇒ un bloque [ y ] <strong>"</strong> o <strong>'</strong> ⇒ una cadena (bloque entre delimitador de cadenas) NOTA: Los caracteres de cierre también funcionan, como ), ], etc.</td>
+</tr>
+</tbody>
+</table>
+<p>Un pequeño apunte (no muy utilizado) sobre la selección de texto: si estamos seleccionando texto y vemos que queremos modificar el INICIO de la selección, podemos pulsar <strong>o</strong> para cambiar entre los 2 límites de la selección y cambiar uno u otro. La versión mayúscula, <strong>O</strong> se utiliza para alternar entre las 4 esquinas de las selecciones verticales de CTRL+V.</p>
+<h2 id="copiar-cortar-y-pegar">Copiar, cortar y pegar<a class="headerlink" href="#copiar-cortar-y-pegar" title="Permanent link">&para;</a></h2>
+<p>Una vez tenemos el texto seleccionado (de cualquiera de las 3 formas descritas), podemos borrarlo, cortarlo y copiarlo. Estando en modo visual, con el texto sobre el que queremos actuar marcado, podemos copiarlo pulsando <strong>y</strong> (de yank) y cortarlo, ya sea con <strong>d</strong>, <strong>x</strong> y <strong>c</strong>. La diferencia entre estos 3 modos de copiar está en que <strong>d</strong> y <strong>x</strong> se mantienen en modo comando tras cortar el texto, mientras que <strong>c</strong> (que recordemos que es modificar), se pasa a modo inserción tras hacerlo. Por supuesto, si nos arrepentimos del cortado podemos pulsar <strong>u</strong> (undo) para deshacerlo.</p>
+<p>Recordemos que en cualquier momento podemos volver a pegar un texto copiado o borrado usando <strong>p</strong>.</p>
+<p>Así pues, mediante <strong>v</strong>, <strong>y</strong>, <strong>d</strong> y <strong>p</strong> se realizan todas las operaciones de selección, copiado, borrado/cortado y pegado, respectivamente.</p>
+<p>En el caso concreto de <strong>y</strong>, dado que es un operador podemos anteponerlo a otros comandos de Vim. Por ejemplo, <strong>yw</strong> copia una palabra completa, y <strong>y5w</strong> copia las siguientes 5 palabras completas en el buffer de memoria. Y, para finalizar, igual que ocurre con <strong>d</strong> y <strong>dd</strong>, duplicando la <strong>y</strong> como <strong>yy</strong> copiamos a memoria la línea actual completa (sin necesidad de seleccionarla). Utilizando multiplicadores, podemos por ejemplo copiar la línea actual y 3 más mediante <strong>4yy</strong>.</p>
+<h2 id="pegar-texto-con-autoindent-activado">Pegar texto con autoindent activado<a class="headerlink" href="#pegar-texto-con-autoindent-activado" title="Permanent link">&para;</a></h2>
+<p>Si tenemos activado el modo de autoindentación (<strong>set ai</strong> o <strong>set autoindent</strong>), cada vez que pulsamos ENTER, el cursor se indenta de forma automática al nivel (columna) de la línea en que lo hemos pulsado. Esto, que resulta muy útil programando, puede ser problemático para pegar texto con múltiples líneas, ya que cada retorno de carro del texto pegado provocará que la línea empiece al nivel de la anterior, y que además se sumen los espacios y tabuladores de lo que estamos pegando. El resultado es el siguiente:</p>
+<p>Copiamos el siguiente texto (con el ratón):</p>
+<div class="highlight"><pre><span></span><code>result = dlg.ShowModal()
+    dlg.Destroy()
+    if result == wx.ID_YES:
+        del frame_1.macros[index]
+        frame_1.Save_Data_To_File()
+    elif result == wx.ID_NO:
+        pass
+    dlg.Destroy()
+</code></pre></div>
+
+<p>Y lo pegamos en otra parte del documento en modo inserción con el botón central del ratón y lo que obtenemos es lo siguiente:</p>
+<div class="highlight"><pre><span></span><code>result = dlg.ShowModal()
+              dlg.Destroy()
+                  if result == wx.ID_YES:
+                          del frame_1.macros[index]
+                                  frame_1.Save_Data_To_File()
+                                      elif result == wx.ID_NO:
+                                              pass
+                                                  dlg.Destroy()
+</code></pre></div>
+
+<p>Como puede verse, cada enter recibido ha indentado la línea al nivel de la línea actual, sumando además los espacios que ya tenía el texto que se está pegando, resultando en ese horror.</p>
+<p>Esto sólo sucede si pegamos texto "con el ratón", sin usar los comandos de copiado y pegado de Vim. Para pegar texto "con el ratón" y que esto no suceda, es recomendable desactivar el modo autoindent bien con " <strong>set paste</strong>" o " <strong>set noai</strong>".</p>
+<h2 id="tuberias-pipes-para-filtrar-texto">Tuberías (pipes) para filtrar texto<a class="headerlink" href="#tuberias-pipes-para-filtrar-texto" title="Permanent link">&para;</a></h2>
+<p>Cuando tenemos texto seleccionado tanto en modo normal como en modo visual, podemos pasar ese texto a través de cualquier programa externo para filtrarlo. Por ejemplo, supongamos que tenemos un programa que acepta cualquier texto por entrada estándar y nos saca el texto modificado (ordenado alfabéticamente, cifrado, o cualquier otra operación) por la salida estándar. En ese caso, si queremos manipular un párrafo de nuestro fichero podemos seleccionarlo (con 'v' en modo visual, por ejemplo), y mientras está el párrafo seleccionado, pulsamos:</p>
+<div class="highlight"><pre><span></span><code>:!programa
+</code></pre></div>
+
+<p>Por ejemplo, supongamos que queremos utilizar el comando <strong>sort</strong> de UNIX para ordenar alfabéticamente las diferentes líneas de un párrafo. Seleccionamos el párrafo en cuestión con 'v' y los cursores y pulsamos:</p>
+<div class="highlight"><pre><span></span><code>:!sort
+</code></pre></div>
+
+<p>El texto seleccionado será enviado al comando <strong>sort</strong> por entrada estándar y será reemplazado por la salida de la ejecución de sort. De la misma forma podemos ordenar alfabéticamente el fichero entero, seleccionándolo todo:</p>
+<div class="highlight"><pre><span></span><code>1G
+v
+gg
+:!sort
+</code></pre></div>
+
+<p>O, lo que es lo mismo:</p>
+<ul>
+<li>1G = ir a la primera línea del fichero</li>
+<li>v = ir a modo visual</li>
+<li>gg = llevar al cursor al final del fichero (seleccionando todo el fichero)
+*:!sort = pasar el texto seleccionado (todo el fichero) al comando sort, y reemplazarlo por la salida de la ejecución del mismo.</li>
+</ul>
+<p>O, más sencillo aún:</p>
+<div class="highlight"><pre><span></span><code>:%!sort
+</code></pre></div>
+
+<p>(% representa a una selección del fichero completo)</p>
+<p>El filtrado (pipe a programa externo) nos permite muchas cosas: cifrar texto (llamando a pgp/gpg), pasárselo a programas externos que lo manipulen, etc.</p>
+<p>Otro ejemplo de uso de los filtros es el formateo y justificación de texto. Si tenemos instalado el comando <strong>par</strong> (un programa de Linux para formatear párrafos), podemos seleccionar texto en modo visual y filtrarlo a través de par mediante, por ejemplo:</p>
+<div class="highlight"><pre><span></span><code>:!par 72
+</code></pre></div>
+
+<p>La salida de <strong>par 72</strong> (si tenemos instalado par en el sistema, claro) consiste en justificar el texto a 72 columnas, cosa que nos puede ser útil en determinadas circunstancias de edición de textos.</p>
+<p>Nótese que también podemos aplicar filtros a rangos de líneas y al texto delimitado por 2 marcas (posteriormente veremos cómo establecerlas):</p>
+<pre>:&apos;&lt;,&apos;&gt; !sort   -&gt; Sobre la selecci&#xF3;n
+:&apos;t,&apos;b !sort   -&gt; Sobre el texto entre 2 marcas
+:N,M !sort     -&gt; Entre 2 rangos de l&#xED;neas (N a M)</pre>
+
+<h2 id="insertar-ficheros-y-salida-de-comandos">Insertar ficheros y salida de comandos<a class="headerlink" href="#insertar-ficheros-y-salida-de-comandos" title="Permanent link">&para;</a></h2>
+<p>Podemos insertar el contenido de un fichero de texto en la posición actual del cursor mediante el comando <strong>:r</strong>. Tan sólo deberemos especificar el fichero a insertar (con su ruta si es necesario):</p>
+<div class="highlight"><pre><span></span><code>:r fichero
+</code></pre></div>
+
+<p>El comando <strong>:r</strong> nos permite también insertar la salida (el resultado de la ejecución) de comandos del sistema en nuestro documento. Por ejemplo, si queremos insertar la salida del comando uptime en la posición actual del cursor, pasamos a modo comando (ESC) y ejecutamos:</p>
+<div class="highlight"><pre><span></span><code>:r !uptime
+</code></pre></div>
+
+<p>La diferencia entre este comando y el anterior es el símbolo de admiración cerrada '!', que indica <strong>ejecución</strong>.</p>
+<h2 id="multiples-portapapeles-los-registros-de-borrado">Múltiples "portapapeles": los registros de borrado<a class="headerlink" href="#multiples-portapapeles-los-registros-de-borrado" title="Permanent link">&para;</a></h2>
+<p>Como ya hemos visto, en Vim podemos seleccionar texto con el modo visual usando <strong>v</strong> para movimiento carácter a carácter o bien <strong>V</strong> para líneas completas. Una vez seleccionado, lo podemos copiar con <strong>y</strong>, cortar con <strong>c</strong> y borrar con <strong>d</strong>.</p>
+<p>De la misma forma, fuera del modo visual (en modo comando) con <strong>dd</strong> borramos una línea entera, con <strong>3dd</strong> 3 líneas enteras, con <strong>dw</strong> una palabra entera, con <strong>x</strong> un cáracter, con <strong>d0</strong> desde el cursor al principio de línea, con <strong>d$</strong> desde el cursor al final de línea, con <strong>d/cadena</strong> desde el cursor hasta la aparición de "cadena", etc. Todo ellos son combinaciones de repetidores, el comando de borrado <strong>d</strong> y destinos (w=word, $=end of line, /cadena=primer resultado de la búsqueda, etc).</p>
+<p>Por otra parte, los comandos básicos para pegar en Vim son <strong>p</strong> para pegar en justo detras de la posición del cursor, y <strong>P</strong> para pegar antes de la posición del cursor.</p>
+<p>Vim autodetecta si el texto que tenemos en su buffer interno, el que estamos pegando, lo habíamos copiado carácter a carácter o bien mediante líneas completas y utiliza esto para pegar dicho texto bien a la derecha/izquierda del cursor, o bien arriba/abajo de la línea actual. Si copiamos una porción de código, la pegará "dentro" de la línea actual mientras que si copiamos líneas completas la pegará arriba/abajo de la línea actual.</p>
+<p>Además de pegar antes o después del cursor, también podemos usar <strong>p</strong> cuando tenemos realizada una selección visual, de forma que nuestro texto pegado reemplazará al texto seleccionado.</p>
+<p>Ahora bien: estos copiados y pegados tienen como destino y origen un buffer interno de Vim, y no el portapapeles del sistema que usan típicamente otras aplicaciones.</p>
+<p>Existen <strong>26 registros</strong> (26 portapapeles diferentes) donde podemos copiar texto y pegar desde ellos. Sí, en lugar de tener un único "portapapeles", tenemos 26 diferentes (de la <strong>a</strong> a la <strong>z</strong>) donde podemos copiar texto para usarlo después. Esto es extremadamente útil cuando queremos cortar varias porciones de texto de un fichero para agruparlos en una posición final, ya que podríamos usar los registros a, b, c y d (por ejemplo) para almacenar 4 bloques de texto y después pegarlos juntos, evitando subir y bajar continuamente en el fichero para ir llevando cada bloque a su lugar destino.</p>
+<p>Esto es extremadamente útil porque tenemos 26 buffers donde copiar y pegar texto y de esta forma podemos copiar varios bloques de texto sin perder copias anteriores. Cuando no indicamos un buffer específico (cuando usamos <strong>yy</strong> o <strong>dd</strong>, por ejemplo), estamos usando el Unnamed Buffer (el buffer sin nombre), pero podemos hacer referencia a cualquiera de los 26 registros disponibles.</p>
+<p>Los registros se referencian con las comillas dobles, de forma que tenemos desde <strong>"a</strong> hasta <strong>"z</strong>. Usando el nombre del registro como prefijo, hacemos que <strong>y</strong>, <strong>yy</strong>, <strong>d</strong>, <strong>dd</strong>, <strong>p</strong>, etc utilicen dicho registro:</p>
+<ul>
+<li><strong>"ayy</strong>–&gt; Copiar línea de texto actual en el registro a.</li>
+<li><strong>"add</strong>–&gt; Borrar línea de texto actual y poner su contenido en el registro a.</li>
+<li><strong>"ap</strong>–&gt; Pegar el contenido del registro a.</li>
+</ul>
+<p>Resumiendo:</p>
+<ul>
+<li><strong>"x<operacion></strong>–&gt; Realizar <operación> con registro x.</li>
+</ul>
+<p>Esto también funciona con selecciones visuales. Si seleccionamos texto en modo visual y pulsamos <strong>"ac</strong>, cortaremos el texto seleccionado al registro a.</p>
+<p>Así pues, tenemos 26 posibles registros los cuales, además, <strong>no se pierden al cerrar la sesión de Vim</strong> siempre y cuando tengamos Vim en modo "nocompatible" en el vimrc.</p>
+<p>Existen también una serie de registros "especiales":</p>
+<ul>
+<li>Registro <strong>"_</strong>–&gt; El registro _ (subrayado) es el registro "black hole" (agujero negro). Lo que escribamos en él no se guarda, permite borrar de verdad texto. Es muy útil porque nos permite borrar texto sin eliminar lo que tengamos en el buffer de copiado y pegado. Si tenemos algo en el portapapeles (seleccionado y copiado con <strong>y</strong>) y queremos borrar una línea con <strong>dd</strong> sin perder el contenido actual del buffer, podemos hacer <strong>"_dd</strong>.</li>
+<li>Registro <strong>"0</strong>–&gt; Contiene el texto del comando <strong>y</strong> (yank) más reciente, de modo que <strong>"0p</strong> pegará el último texto copiado incluso si hemos utilizado un comando de borrado después del "y".</li>
+<li>Registros <strong>"1</strong> a <strong>"9</strong>–&gt; Guardan de forma rotatoria los últimos 9 borrados (siendo el 1 el más reciente).</li>
+<li>Registros <strong>"</strong> * y <strong>"+</strong>–&gt; Se refieren al portapapeles del sistema Windows (*) y X11 (+) (sí, es posible copiar y pegar en el portapapeles del S.O. desde comandos de Vim).</li>
+<li>Registro <strong>""</strong>–&gt; El "Unnamed Register" (registro sin nombre). Es el registro en el que acaba el texto que acabamos de copiar o cortar.</li>
+</ul>
+<p>Un apunte sobre el registro <strong>"0</strong> (y su hermano el registro <strong>"-</strong>): cuando copiamos, cortamos, o incluso cuando borramos (ya sean caracteres o líneas completas), Vim guarda el texto en estos 2 buffers de forma que incluso si hemos borrado después algo con <strong>d</strong>, seguimos teniendo acceso al "yank" anterior. Si el texto es menor de una línea, se guarda en un registro llamado <strong>"-</strong>. Para más de una línea, se almacena en <strong>"0</strong>. En otras palabras, un "delete" borrará el texto pero no afectará a <strong>"0</strong>.</p>
+<p>Podemos ver el contenido de los diferentes "registros" temporales con el comando <strong>:registers</strong> y recuperar el contenido de cualquiera de ellos en el documento con <strong>"<REGISTRO>p</strong>, como: <strong>"6p</strong>.</p>
+<p><img alt=":registers" src="../img/vm_registers.png" /></p>
+<p>De esta forma, podemos acceder a contenidos anteriormente borrados sin tener que deshacer múltiples pasos (que puede implicar deshacer también cambios correctos que hicimos entre esos pasos).</p>
+<p>Finalmente, como si los registros de Vim no fueran ya de por si suficientemente potentes, podemos <strong>añadir</strong> texto al contenido de un registro usándolo en mayúsculas:</p>
+<ul>
+<li><strong>"Bdd</strong>–&gt; Delete current line and append it to the content of the register <strong>"b</strong>.</li>
+</ul>
+<p>Es muy importante entender cómo funcionan los registros de copiado y pegado no sólo por la potencia que dan, sino porque nos podamos encontrar con situaciones extrañas (con explicación lógica, como veremos):</p>
+<p>Supongamos que queremos copiar una línea, ir a otra parte del documento, borrar una línea y pegar el texto copiado. Supongamos que hacemos lo siguiente:</p>
+<ul>
+<li>Vamos a la línea que queremos copiar y ejecutamos <strong>yy</strong> para copiarla (en el Unnamed Buffer).</li>
+<li>Vamos a la parte del documento donde está la línea a borrar y pulsamos <strong>dd</strong> para borrarla.</li>
+<li>Pulsamos <strong>p</strong> para pegar la línea que copiamos.</li>
+<li>De repente, en vez de aparecer la línea que habíamos copiado, se pega la que acabamos de borrar.</li>
+</ul>
+<p>Esto ocurre porque el comando <strong>dd</strong> borra la línea actual y la copia en el Unnamed Buffer, con lo que perdemos el contenido que había antes en dicho buffer (la línea que copiamos inicialmente).</p>
+<p>Para empezar, si nos acaba de ocurrir, simplemente basta con pegar nuestra línea copiada original con <strong>"0p</strong>, porque como ya dijimos, el registro 0 contiene el último copiado realizado con Comandos Yank "y" (y dicho buffer 0 no es sobreescrito por el <strong>dd</strong>).</p>
+<p>Una vez esto nos ha ocurrido y ya sabemos por qué es, basta para la próxima vez con borrar la línea a eliminar usando el black-hole register como destino, con <strong>"_dd</strong>. Así borramos la línea pero no la guardamos en el Unnamed Register (no perdemos lo que habíamos copiado).</p>
+<p>Finalmente, destacar que podemos especificar valores para alguno de los registros tanto en el fichero <code>.vimrc</code> como en comando de Vim con:</p>
+<div class="highlight"><pre><span></span><code>let @a = &quot;My custom buffer content&quot;
+</code></pre></div>
+
+<p>E incluso podemos utilizar el contenido de los registros en operaciones de sustitución u otros comandos mediante <code>=@a</code>:</p>
+<div class="highlight"><pre><span></span><code>:%s/PATTERN/\=@a/g
+</code></pre></div>
+
+<p>(Cambiaría todas las apariciones de <code>PATTERN</code> por el contenido del registro <code>a</code>).</p>
+<p>Aunque todo esto pueda parecer complicado, todo se resume en:</p>
+<ul>
+<li>Existen 26 registros que se referencian con comida doble seguido de a-z:  Ej: <strong>"a</strong>.</li>
+<li>Podemos aplicar las operaciones de yank, cut, delete y paste a un registro escribiendolo delante de la operación: Ej: <strong>"ap</strong> o <strong>"bdd</strong>.</li>
+<li>Existen registros especiales como un agujero negro (_), la última copia realizada (0), el portapapeles del sistema (*)...</li>
+<li>Usar un registro en mayúsculas permite AGREGAR texto al registro, sin sobreescribirlo.</li>
+</ul>
+<h2 id="el-portapapeles-del-sistema">El portapapeles del sistema<a class="headerlink" href="#el-portapapeles-del-sistema" title="Permanent link">&para;</a></h2>
+<p>En determinados sistemas existe un portapapeles del sistema que es independiente del que usa Vim internamente. Si Vim está compilado para soportar el acceso al portapapeles del sistema podemos, como ya hemos visto, copiar cosas en él y pegar cosas desde él. Los comandos son los mismos, <strong>y</strong> y <strong>p</strong>, pero anteponiendo unas comillas dobles y un símbolo asterisco: <strong>"*</strong>. Así, quedaría <strong>"*y</strong> para copiar una selección de texto (o yy para la línea actual) y <strong>"*p</strong> para pegarlo.</p>
+<p>En otras palabras, el portapapeles del sistema es uno de los registros internos que acabamos de ver, concretamente, <strong>"*</strong>.</p>
+<hr />
+<p><strong>Fuente</strong>: <a href="http://www.sromero.org/wiki/linux/aplicaciones/manual_vim#mas_sobre_movimiento_y_cambios">Guia de vim</a> por : <a href="http://www.sromero.org/">Santiago Romero</a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../02-movimientos_y_cambios/" title="Más sobre movimiento y cambios" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Más sobre movimiento y cambios
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../04-busquedas_y_reemplazos/" title="Búsquedas y reemplazos" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Búsquedas y reemplazos
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/saucedoinfo" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/saucedoinfo" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.instagram.com/saucedo.info/" target="_blank" rel="noopener" title="www.instagram.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.instant', 'navigation.expand', 'tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

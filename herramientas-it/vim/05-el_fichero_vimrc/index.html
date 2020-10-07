@@ -1,0 +1,1425 @@
+
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Coleccion de Guias de Desarrollo y diseño.">
+      
+      
+        <link rel="canonical" href="https://saucedoinfo.github.io/guias/herramientas-it/vim/05-el_fichero_vimrc/">
+      
+      
+        <meta name="author" content="Fernando S. Saucedo">
+      
+      <link rel="shortcut icon" href="../../../img/favicon-16x16.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.14">
+    
+    
+      
+        <title>El fichero .vimrc - Guias de Desarrollo y diseño</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d3202873.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ff0a5ce4.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#000000">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#el-fichero-vimrc" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://saucedoinfo.github.io/guias/" title="Guias de Desarrollo y diseño" class="md-header-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Guias de Desarrollo y diseño
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              El fichero .vimrc
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../desarrollo/html/01-introduccion_a_HTML5/" class="md-tabs__link">
+          Desarrollo
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../terminal/01-introducci%C3%B3n_a_la_terminal/" class="md-tabs__link">
+          Herramientas IT
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://saucedoinfo.github.io/guias/" title="Guias de Desarrollo y diseño" class="md-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    Guias de Desarrollo y diseño
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Desarrollo
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Desarrollo" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Desarrollo
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Html
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Html" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        <span class="md-nav__icon md-icon"></span>
+        Html
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/html/01-introduccion_a_HTML5/" title="Introduccion a HTML" class="md-nav__link">
+      Introduccion a HTML
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/html/02-etiquetas_semanticas/" title="Etiquetas semánticas" class="md-nav__link">
+      Etiquetas semánticas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/html/03-etiquetas_multimedia/" title="Etiquetas multimedias" class="md-nav__link">
+      Etiquetas multimedias
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/html/04-etiquetas_de_cabecera/" title="Etiquetas de cabecera" class="md-nav__link">
+      Etiquetas de cabecera
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/html/05-etiquetas_de_formularios/" title="Etiquetas de formularios" class="md-nav__link">
+      Etiquetas de formularios
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/html/06-etiquetas_de_scripting/" title="Etiquetas de scripting" class="md-nav__link">
+      Etiquetas de scripting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Css
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Css" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        <span class="md-nav__icon md-icon"></span>
+        Css
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/01-introduccion_a_CSS/" title="Introducción a CSS" class="md-nav__link">
+      Introducción a CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/02-modelo_de_cajas/" title="Modelo de cajas" class="md-nav__link">
+      Modelo de cajas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/03-colores_y_fondos/" title="Colores y fondos" class="md-nav__link">
+      Colores y fondos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/04-selectores_CSS/" title="Selectores CSS" class="md-nav__link">
+      Selectores CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/05-Fuentes_y_tipografias/" title="Fuentes y tipografías" class="md-nav__link">
+      Fuentes y tipografías
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/06-representacion_de_datos/" title="Representación de datos" class="md-nav__link">
+      Representación de datos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/07_maquetacion_y_colocacion/" title="Maquetación y colocación" class="md-nav__link">
+      Maquetación y colocación
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/08-interacciones/" title="Interacciones" class="md-nav__link">
+      Interacciones
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/09-efectos/" title="Efectos" class="md-nav__link">
+      Efectos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/10-responsive_Web_Design/" title="Responsive Web Design" class="md-nav__link">
+      Responsive Web Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/11-animaciones_CSS/" title="Animaciones CSS" class="md-nav__link">
+      Animaciones CSS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      JavaScript
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="JavaScript" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon"></span>
+        JavaScript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/javascript/01-introducci%C3%B3n_a_javascript/" title="Introducción a Javascript" class="md-nav__link">
+      Introducción a Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/javascript/02-fundamentos_de_javascript/" title="Fundamentos de Javascript" class="md-nav__link">
+      Fundamentos de Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/javascript/03-caracteristicas/" title="Características" class="md-nav__link">
+      Características
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/javascript/04-DOM/" title="DOM" class="md-nav__link">
+      DOM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/javascript/05-asincronia/" title="Asincronía" class="md-nav__link">
+      Asincronía
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/javascript/06-peticiones_HTTP/" title="Peticiones HTTP" class="md-nav__link">
+      Peticiones HTTP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Herramientas IT
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Herramientas IT" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Herramientas IT
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Terminal
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Terminal" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon"></span>
+        Terminal
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../terminal/01-introducci%C3%B3n_a_la_terminal/" title="Introducción a la terminal" class="md-nav__link">
+      Introducción a la terminal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../terminal/02-operaciones_con_ficheros/" title="Operaciones con ficheros" class="md-nav__link">
+      Operaciones con ficheros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../terminal/03-administraci%C3%B3n_del_sistema/" title="Administración del sistema" class="md-nav__link">
+      Administración del sistema
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" checked>
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Vim
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Vim" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        <span class="md-nav__icon md-icon"></span>
+        Vim
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01-funcionamiento_basico_de_Vim/" title="Funcionamiento básico de Vim" class="md-nav__link">
+      Funcionamiento básico de Vim
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02-movimientos_y_cambios/" title="Más sobre movimiento y cambios" class="md-nav__link">
+      Más sobre movimiento y cambios
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-copiar_y_pegar/" title="Copiar y pegar" class="md-nav__link">
+      Copiar y pegar
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-busquedas_y_reemplazos/" title="Búsquedas y reemplazos" class="md-nav__link">
+      Búsquedas y reemplazos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        El fichero .vimrc
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="El fichero .vimrc" class="md-nav__link md-nav__link--active">
+      El fichero .vimrc
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#opciones" class="md-nav__link">
+    Opciones
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opciones-aplicables-a-un-fichero-especifico" class="md-nav__link">
+    Opciones aplicables a un fichero específico
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sustituciones-o-abreviaciones" class="md-nav__link">
+    Sustituciones o Abreviaciones
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapeados-macros" class="md-nav__link">
+    Mapeados (Macros)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vimrc-vs-gvimrc-vs-common" class="md-nav__link">
+    .vimrc vs .gvimrc vs common
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-pestanas_ventanas_buffers/" title="Pestañas, Ventanas y Buffers" class="md-nav__link">
+      Pestañas, Ventanas y Buffers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../07-marcas_en_el_texto/" title="Marcas en el texto" class="md-nav__link">
+      Marcas en el texto
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../08-funcionalidadees_para_programadores/" title="Funcionalidades para programadores" class="md-nav__link">
+      Funcionalidades para programadores
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../09-extendiendo_vim_con_plugins/" title="Extendiendo Vim con plugins" class="md-nav__link">
+      Extendiendo Vim con plugins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../10-modo_vi_en_bash/" title="Modo vi en bash" class="md-nav__link">
+      Modo vi en bash
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../markdown/markdown/" title="Markdown" class="md-nav__link">
+      Markdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../pip/pip/" title="Pip" class="md-nav__link">
+      Pip
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../about/" title="Acerca de" class="md-nav__link">
+      Acerca de
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#opciones" class="md-nav__link">
+    Opciones
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opciones-aplicables-a-un-fichero-especifico" class="md-nav__link">
+    Opciones aplicables a un fichero específico
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sustituciones-o-abreviaciones" class="md-nav__link">
+    Sustituciones o Abreviaciones
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapeados-macros" class="md-nav__link">
+    Mapeados (Macros)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vimrc-vs-gvimrc-vs-common" class="md-nav__link">
+    .vimrc vs .gvimrc vs common
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/saucedoinfo/guias/edit/master/docs/herramientas-it/vim/05-el_fichero_vimrc.md" title="Editar esta página" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="el-fichero-vimrc">El fichero .vimrc<a class="headerlink" href="#el-fichero-vimrc" title="Permanent link">&para;</a></h1>
+<p>Antes de continuar con la parte avanzada del tutorial de vim, pasemos a examinar su principal fichero de configuración.</p>
+<p>Ya hemos hablado del fichero <strong>.vimrc</strong> (o <strong>_vimrc</strong> en Windows). En él podemos poner nuestras configuraciones específicas y concretas, sólo para nuestro usuario (o para todos en /etc/vimrc).</p>
+<p>En este tutorial de introducción a VIM sólo vamos a ver algunas opciones útiles e interesantes que podemos definir en el fichero .vimrc. En el manual de VIM (y en la gran cantidad de documentación que tenéis disponible en Internet) podéis encontrar muchas más opciones, variables e incluso ejemplos de código para programar (sí, programar) vuestras propias funciones para el editor.</p>
+<p>El fichero .vimrc no sólo permite especificar parámetros y opciones de arranque para Vim: es mucho más que eso. En él podéis programar en el lenguaje interno propio de Vim (lenguaje de comandos) para realizaros vuestras propias funciones, pudiendo hacer cualquier cosa que os podáis imaginar: macros, comandos, filtros para el texto, llamadas a programas externos, etc.</p>
+<p>Si queréis conocer la totalidad de opciones de Vim y una explicación de cada una de ellas, podéis hacerlo mediante la ayuda incluída al respecto en Vim, que se despliega tecleando <strong>:options</strong> (en modo comando).</p>
+<h2 id="opciones">Opciones<a class="headerlink" href="#opciones" title="Permanent link">&para;</a></h2>
+<p>Las opciones que veremos a continuación para el fichero .vimrc no sólo están pensadas para ser utilizadas en el arranque del editor: podrán ser utilizadas en cualquier momento en modo comando durante la ejecución de VIM.</p>
+<p>Veamos algunos ejemplos de opciones:</p>
+<ul>
+<li>
+<p><strong>set nocompatible</strong>: Añadiendo en nuestro fichero vimrc la opción <strong>set nocompatible</strong>, hacemos que VIM nos permita utiliza funciones extras que no están disponibles en el VI clásico y tradicional. Os recomiendo que tengáis esta opción definida en el .vimrc. Utilizar <strong>set compatible</strong> u omitir esta opción hará que algunas de las mejores funcionalidades de VIM no estén disponibles, para preservar la compatibilidad con VI.</p>
+</li>
+<li>
+<p><strong>set autoindent</strong>: Esta función (también puede utilizarse <strong>set ai</strong>), hace que cuando pulsemos enter en un fichero de texto, la nueva línea que insertamos sea indentada automáticamente (es decir, se inserten espacios al principio de la misma y el cursor se posicione en una determinada posición). Esto puede servir, por ejemplo, para programar: si estamos escribiendo un bloque de código indentado a 3 espacios (por ejemplo), al pulsar enter no empezaremos en el primer carácter sino que automáticamente se nos situará el cursor en la columna 3. Literalmente, lo que hace VIM es que cuando pulsamos Enter, indenta la nueva línea a la misma profundidad que la anterior.</p>
+</li>
+<li>
+<p><strong>set noai</strong>:  Esta función hace lo contrario de <strong>set autoindent</strong>, es decir, cuando pulsemos Enter iremos directamente al primer carácter de la siguiente línea. Esta función resulta muy útil cuando estamos editando código indentado y queremos, por ejemplo, pegar texto o código desde una selección de texto externa (copiar y pegar desde un navegador, otro editor, etc.). Como el texto que pegamos ya está indentado, no necesitamos que Vim lo indente añadiendo espacios. Si lo pegáramos tal cual, veríamos como la indentación original sumada a la identación automática de Vim haría que no se respetara el indentado real del texto. Para evitar esto, podemos pulsar ESC (pasar a modo comando), y teclear <strong>:set noai</strong>, y pegar el texto externo (que se pegará bien). Después podemos volver al modo de identación con ESC y <strong>:set ai</strong>.</p>
+</li>
+<li>
+<p><strong>set backup</strong>: Si está activada esta opción, cada vez que grabemos el fichero se almacenará una copia de la <strong>versión</strong> anterior como fichero~ (con el carácter '~' detrás).</p>
+</li>
+<li>
+<p><strong>set nobackup</strong>: Esto sirve para lo contrario que <strong>set backup</strong>, es decir, para deshabilitar la generación de ficheros de backup.</p>
+</li>
+<li>
+<p><strong>set ruler</strong>: Con <strong>set ruler</strong>, VIM muestra la posición X,Y actual del cursor en la barra de estado.</p>
+</li>
+<li>
+<p><strong>set wrap</strong>: Activa el <strong>cortado</strong> de líneas largas en pantalla: si tenemos activada esta opción y una línea es más larga (de ancho) que lo que podemos ver en nuestra ventana del editor, VIM la partirá (visualmente). Si no la tenemos activada, simplemente sólo podremos ver desde el inicio de la línea hasta lo que nos permita la ventana del editor o la terminal (pero no partirá la línea).</p>
+</li>
+<li>
+<p><strong>set nowrap</strong>: Las líneas que no caben en pantalla no serán visualmente partidas (lo contrario de set wrap).</p>
+</li>
+<li>
+<p><strong>set incsearch</strong>: Habilita la búsqueda incremental: esto implica que cuando hacemos búsquedas con el comando <strong>/</strong>, Vim no esperará a que pulsemos ENTER para comenzar la búsqueda. VIM irá buscando las palabras conforme vayamos tecleando sus diferentes letras.</p>
+</li>
+<li>
+<p><strong>set hlsearch</strong>: Habilita el coloreado de las palabras encontradas en las búsquedas, en un color diferente del color del texto.</p>
+</li>
+<li>
+<p><strong>set ignorecase</strong>: No diferenciar entre mayúsculas o minúsculas en las búsquedas.</p>
+</li>
+<li>
+<p><strong>set tabstop</strong>: Esta opción permite definir el tamaño (en espacios) de los tabuladores (por defecto suelen ser 8). Un ejemplo de uso sería <strong>set tabstop=4</strong>.</p>
+</li>
+<li>
+<p><strong>set sw</strong>: Esta opción permite especificar el ancho en caracteres que se desplazará una línea a la izquierda o a la derecha cuando usemos <strong>&lt;&lt;</strong> y <strong>&gt;&gt;</strong> para indentar la línea actual o un bloque de texto seleccionado.</p>
+</li>
+<li>
+<p><strong>set expandtab</strong>: Convertir todos los tabuladores en espacios: ideal para los que, como yo, odiéis los tabuladores y prefiráis los espacios para tabular. Junto a las 2 opciones anteriores, cuando pulséis <strong>TAB</strong> no se introducirá un carácter tabulador sino el número de espacios prefijados.</p>
+</li>
+<li>
+<p><strong>set list</strong> (y <strong>set nolist</strong>): Si está activada esta opción, veremos de forma visual los finales de línea y tabuladores.</p>
+</li>
+<li>
+<p><strong>set noerrobells</strong>: Evitar que Vim "pite" en caso de error.</p>
+</li>
+<li>
+<p><strong>set ff</strong>: Permite especificar el formato del fichero que vamos a editar, para utilizar los retornos de línea adecuados, entre "=dos", "=unix" y "=mac".</p>
+</li>
+<li>
+<p><strong>syntax on</strong>: Como ya hemos visto, activa el coloreado de sintaxis (si VIM entiende el formato del fichero que editamos). La orden que lo desactiva sería <strong>syntax off</strong>.</p>
+</li>
+<li>
+<p><strong>set mouse=a</strong>: Habilitar soporte para ratón en la consola (en Vim, puesto que gVim lo soporta por defecto).</p>
+</li>
+<li>
+<p><strong>source fichero</strong>: Carga el fichero especificado como fichero de opciones adicionales.</p>
+</li>
+<li>
+<p><strong>set guifont=</strong>: Establecer una fuente concreta para gVim, como por ejemplo:</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>&quot; You can also specify a different font, overriding the default font
+if has(&#39;gui_gtk2&#39;)
+  set guifont=Bitstream\ Vera\ Sans\ Mono\ 12
+else
+  set guifont=-misc-fixed-medium-r-normal--14-130-75-75-c-70-iso8859-1
+endif
+</code></pre></div>
+
+<ul>
+<li>
+<p><strong>set cursorline</strong>: Remarcar en pantalla la línea actual (se desactiva con <strong>:set nocursorline</strong>).</p>
+</li>
+<li>
+<p><strong>set cursorcolumn</strong>: Remarcar en pantalla la columna actual (se desactiva con <strong>:set nocursorcolumn</strong>).</p>
+</li>
+</ul>
+<p>El efecto con ambas activadas es el siguiente (quizá la columna pueda resultar molesta a algunos, pero la marca de línea puede ser muy útil):</p>
+<p><img alt="set cursorline/column" src="../img/vm_setcul.png" /></p>
+<p>No obstante, podemos especificar los colores del marcador de línea y columna actuales a voluntad:</p>
+<div class="highlight"><pre><span></span><code>highlight CursorLine ctermfg=Black ctermbg=Gray guifg=Black guibg=Gray
+highlight CursorColumn ctermfg=Black ctermbg=Gray guifg=Black guibg=Gray
+</code></pre></div>
+
+<h2 id="opciones-aplicables-a-un-fichero-especifico">Opciones aplicables a un fichero específico<a class="headerlink" href="#opciones-aplicables-a-un-fichero-especifico" title="Permanent link">&para;</a></h2>
+<p>Vim tiene una opción muy interesante que es la permitirnos establecer opciones específicas de tipo " <strong>set</strong>" que difieran de las generales para un fichero concreto. Para ello, basta con establecerlas en la última línea del documento (para ficheros en diferentes lenguajes de programación, con un comentario delante), en un formato como el siguiente:</p>
+<div class="highlight"><pre><span></span><code>// vim:tw=80:num:sw=4:ts=8
+</code></pre></div>
+
+<p>Al abrir dicho fichero, vim encontrará que la última línea es una selección de opciones personalizadas y las aplicará con mayor prioridad que las del fichero .vimrc.</p>
+<p>El anterior ejemplo, con un comentario de tipo doble barra, serviría para un fichero .C o .PHP, por ejemplo. Para un fichero Python sería con el comentario de python (#) en lugar de con doble barra.</p>
+<h2 id="sustituciones-o-abreviaciones">Sustituciones o Abreviaciones<a class="headerlink" href="#sustituciones-o-abreviaciones" title="Permanent link">&para;</a></h2>
+<p>Un comando muy útil para nuestro .vimrc es el comando de abreviación o sustitución. Este comando nos permite definir abreviaturas que después serán expandidas a sus versiones <strong>largas</strong>. Por ejemplo, supongamos que utilizamos VIM como editor para nuestro cliente de correo o de news y habitualmente tenemos que escribir la dirección de nuestra página Web:</p>
+<div class="highlight"><pre><span></span><code>http://www.sromero.org
+</code></pre></div>
+
+<p>Pues bien, podemos declarar lo siguiente en nuestro .vimrc:</p>
+<div class="highlight"><pre><span></span><code>iab _miweb http://www.sromero.org/
+</code></pre></div>
+
+<p>Con esto, cuando en cualquier momento tecleemos las letras que componen la palabra <strong>_miweb</strong> seguido de un espacio, automáticamente VIM expandirá la palabra <strong>_miweb</strong> y la reemplazará por la susodicha <abbr title="Uniform Resource Locator">URL</abbr>. El espacio que tecleamos provoca la sustitución: sin él, podríamos seguir tecleando más letras para poder teclear, por ejemplo, <strong>_miwebpersonal</strong> sin que se produzca dicho reemplazo.</p>
+<p>Así, podemos definirnos muchos y utilísimos aliases o abreviaturas en nuestro .vimrc:</p>
+<div class="highlight"><pre><span></span><code>iab _miweb http://www.sromero.org/
+iab _saludos Muchas gracias y saludos.
+iab _email miemail@dominio.com
+iab _comment #--------------------------------
+
+&quot;&quot;&quot; Correciones para errores tipicos
+iab Saludso Saludos
+</code></pre></div>
+
+<p>Con los reemplazos se pueden utilizar cadenas especiales como <strong><CR></strong>, <strong><ESC></strong>, etc:</p>
+<pre>iab _firma Santiago Romero&lt;CR&gt;GNU/Linux&lt;CR&gt;sromero arroba sromero punto org</pre>
+
+<p>Incluso podemos llamar a funciones internas de vim:</p>
+<pre>iab _hora &lt;C-R&gt;=strftime(&quot;%H:%M&quot;)&lt;CR&gt;
+iab _fecha &lt;C-R&gt;=strftime(&quot;%a %b %d %T %Z %Y&quot;)&lt;CR&gt;</pre>
+
+<p>Nótese cómo personalmente suelo anteponer un carácter <strong>_</strong> a todas mis <strong>abreviaturas</strong>. Hago esto para evitar que palabras comunes (hora, fecha) sean expandidas, cuando mi objetivo es simplemente tener definidas abreviaturas como <strong>_hora</strong> y <strong>_fecha</strong>.</p>
+<p>Podemos eliminar estando dentro de Vim una abreviatura definida mediante el comando <strong>:unabbreviate</strong> (por ejemplo, <strong>:unabbreviate _hora</strong>). Si queremos eliminar todas las abreviaturas definidas podemos usar <strong>:abclear</strong>.</p>
+<h2 id="mapeados-macros">Mapeados (Macros)<a class="headerlink" href="#mapeados-macros" title="Permanent link">&para;</a></h2>
+<p>Si os pareció útil la opción <strong>iab</strong>, el comando <strong>map</strong> y sus variantes (nmap, imap, vmap) no se quedan atrás: <strong>map</strong> permite <strong>mapear</strong> teclas a acciones, de forma que cuando pulsemos una determinada tecla o combinación de teclas se ejecuten las acciones correspondientes. Veamos algunos ejemplos para el .vimrc.</p>
+<p>Comencemos con un ejemplo sencillo: que cada vez que pulsemos la tecla F1 se inserte la cadena <strong>prueba</strong> en el texto, mediante la inclusión de lo siguiente en nuestro .vimrc:</p>
+<pre>map! &lt;F1&gt; &lt;ESC&gt;iprueba&lt;CR&gt; </pre>
+
+<p>Si en modo comando o inserción pulsamos F1, se insertará la cadena <strong>prueba</strong> dentro del texto. Lo que hace el comando <strong>map</strong> es sustituir la pulsación de <strong>F1</strong> por la serie de comandos definida.</p>
+<p>Veamos más ejemplos:</p>
+<pre>map! &lt;F2&gt; &lt;ESC&gt;:r !uptime&lt;CR&gt;       -&gt; Insertar uptime al pulsar F2
+map &lt;C-J&gt; &lt;ESC&gt;{!}sort&lt;CR&gt;}         -&gt; Odenar texto seleccionado con Ctrl+J</pre>
+
+<p>La diferencia entre map!, imap, cmap, y vmap es que imap realiza mapeados en modo inserción (el mapeado sólo será efectivo si estamos en modo inserción, y no surtirá efecto si pulsamos la tecla, por ejemplo, en modo comando o visual), vmap realiza mapeados para el modo visual (cuando hemos pulsado 'v'), cmap sólo actúal en modo comando, mientras que <strong>map!</strong> se aplica tanto a modo comando como a modo inserción. Cabe destacar que podemos eliminar cualquier mapeado realizado con el comando <strong>unmap</strong>.</p>
+<p>Como apunte, se recomienda utilizar para el mapeo las teclas de <F2> a <F12> y sus variantes (ej; <Shift>-<F2>) ya que no están utilizadas por Vim (salvo F1 que puede estar mapeada como :help).</p>
+<h2 id="vimrc-vs-gvimrc-vs-common">.vimrc vs .gvimrc vs common<a class="headerlink" href="#vimrc-vs-gvimrc-vs-common" title="Permanent link">&para;</a></h2>
+<p>El fichero .vimrc es el fichero de configuración por defecto de vim, pero no de gvim, el cual usa su propio fichero .gvimrc para opciones específicas de este editor. Si usamos tanto vim como gvim, es posible que acabemos utilizando y mantenido opciones duplicadas en ambos ficheros.</p>
+<p>Para evitar esto, podemos crear un fichero ~/.vimrc.common donde pongamos las opciones comunes a ambos de forma que en .vimrc y .gvimrc sólo especificaremos opciones específicas para cuando estemos usando uno u otro (por ejemplo, con gvim podemos querer usar ciertos colores o tamaño de pantalla pero con vim no).</p>
+<p>Dentro del fichero .vimrc y .gvimrc podemos "cargar" la configuración de .vimrc.common utilizando el comando <strong>source</strong>. Veamos un ejemplo:</p>
+<ul>
+<li><strong>.vimrc</strong>:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ cat .vimrc
+
+&quot;&quot;&quot; Source a global configuration file if available
+if filereadable(&quot;/etc/vim/vimrc.local&quot;)
+  source /etc/vim/vimrc.local
+endif
+
+&quot;&quot;&quot; Cargamos las opciones generales.
+if filereadable(&quot;/home/sromero/.vimrc.common&quot;)
+  source /home/sromero/.vimrc.common
+endif
+
+&quot;&quot;&quot; En el vim de terminal no quiero numeros
+set nonumber
+</code></pre></div>
+
+<ul>
+<li><strong>.gvimrc</strong>:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>sromero@compiler ~ $ cat .gvimrc
+&quot;&quot;&quot; Source a global configuration file if available
+if filereadable(&quot;/etc/vim/gvimrc.local&quot;)
+  source /etc/vim/gvimrc.local
+endif
+
+&quot;&quot;&quot; Cargar opciones comunes a .vimrc y .gvimrc
+if filereadable(&quot;/home/sromero/.vimrc.common&quot;)
+  source /home/sromero/.vimrc.common
+endif
+
+&quot;&quot;&quot; Activamos numeros, esquema de colores y dimensiones deseadas
+set number
+colorscheme torte-mod
+set lines=50
+set columns=120
+</code></pre></div>
+
+<ul>
+<li><strong>.vimrc.common</strong>:</li>
+</ul>
+<pre>$ cat .vimrc.common
+&quot;&quot;&quot; Common options for .vimrc and .gvimrc
+
+filetype plugin on
+set tabstop=4
+set nobackup
+set sw=4
+set ai
+set sm
+set ruler
+set nocompatible
+set vb
+set novisualbell
+set noerrorbells
+set ttyfast
+set expandtab
+set wrap
+syntax on
+
+iab _hora &lt;C-R&gt;=strftime(&quot;%H:%M&quot;)&lt;CR&gt;
+iab _fecha &lt;C-R&gt;=strftime(&quot;%a %b %d %T %Z %Y&quot;)&lt;CR&gt;
+
+&quot;&quot;&quot; Autoguardar los pliegues del fichero actual
+&quot;set viewoptions=folds
+&quot;autocmd BufWinLeave ?* mkview
+&quot;autocmd BufWinEnter ?* silent loadview
+
+&quot;&quot;&quot; Solo mostrar las marcas a-z y A-Z en un color concreto (plugin ShowMarks):
+&quot;let g:showmarks_include=&quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;
+&quot;highlight ShowMarksHLl guifg=#40FF40 guibg=Black
+&quot;highlight ShowMarksHLu guifg=#40FF40 guibg=Black
+&quot;&quot;&quot; Ocultar la columna de signos de Showmarks quitando todos los simbolos
+&quot;nmap &lt;F9&gt; &lt;ESC&gt;:sign unplace *&lt;CR&gt;
+
+&quot;&quot;&quot; Ctrl+N 2 veces seguidas alterna numeros de linea
+nmap &lt;C-N&gt;&lt;C-n&gt; :set invnumber&lt;CR&gt;
+imap &lt;C-N&gt;&lt;C-n&gt; :set invnumber&lt;CR&gt;
+
+&quot;&quot;&quot; Abrir ficheros en la ultima posicion utilizada
+if has(&quot;autocmd&quot;)
+        autocmd BufReadPost *
+        \ if line(&quot;&apos;\&quot;&quot;) &gt; 0 &amp;&amp; line(&quot;&apos;\&quot;&quot;) &lt;= line(&quot;$&quot;) |
+        \   exe &quot;normal g`\&quot;&quot; |
+        \ endif
+endif
+
+&quot;&quot;&quot; Usar espacio para pliegues en modo visual y normal
+vmap &lt;space&gt; zf
+nmap &lt;space&gt; za
+
+&quot;&quot;&quot; Establecer el color para los pliegues
+highlight Folded ctermfg=black ctermbg=gray guifg=black guibg=gray
+
+&quot;&quot;&quot; Eliminar informacion de los pliegues (numero de lineas)
+&quot;set foldtext=getline(v:foldstart)
+
+(etc...)</pre>
+
+<p>De esta forma, las opciones comunes a vim y gvim están en un fichero y no por duplicado en los 2 ficheros de configuración, evitandonos el tener que mantenerlas en ambos sitios.</p>
+<hr />
+<p><strong>Fuente</strong>: <a href="http://www.sromero.org/wiki/linux/aplicaciones/manual_vim#mas_sobre_movimiento_y_cambios">Guia de vim</a> por : <a href="http://www.sromero.org/">Santiago Romero</a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../04-busquedas_y_reemplazos/" title="Búsquedas y reemplazos" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Búsquedas y reemplazos
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../06-pestanas_ventanas_buffers/" title="Pestañas, Ventanas y Buffers" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Pestañas, Ventanas y Buffers
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/saucedoinfo" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/saucedoinfo" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.instagram.com/saucedo.info/" target="_blank" rel="noopener" title="www.instagram.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.instant', 'navigation.expand', 'tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

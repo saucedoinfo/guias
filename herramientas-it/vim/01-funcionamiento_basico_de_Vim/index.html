@@ -1,0 +1,1497 @@
+
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Coleccion de Guias de Desarrollo y diseño.">
+      
+      
+        <link rel="canonical" href="https://saucedoinfo.github.io/guias/herramientas-it/vim/01-funcionamiento_basico_de_Vim/">
+      
+      
+        <meta name="author" content="Fernando S. Saucedo">
+      
+      <link rel="shortcut icon" href="../../../img/favicon-16x16.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.14">
+    
+    
+      
+        <title>Funcionamiento básico de Vim - Guias de Desarrollo y diseño</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d3202873.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ff0a5ce4.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#000000">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vim" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://saucedoinfo.github.io/guias/" title="Guias de Desarrollo y diseño" class="md-header-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Guias de Desarrollo y diseño
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Funcionamiento básico de Vim
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../desarrollo/html/01-introduccion_a_HTML5/" class="md-tabs__link">
+          Desarrollo
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../terminal/01-introducci%C3%B3n_a_la_terminal/" class="md-tabs__link">
+          Herramientas IT
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://saucedoinfo.github.io/guias/" title="Guias de Desarrollo y diseño" class="md-nav__button md-logo" aria-label="Guias de Desarrollo y diseño">
+      
+  <img src="../../../img/favicon-32x32.png" alt="logo">
+
+    </a>
+    Guias de Desarrollo y diseño
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/saucedoinfo/guias/" title="Ir al repositorio" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saucedoinfo.github.io/guias
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Desarrollo
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Desarrollo" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Desarrollo
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Html
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Html" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        <span class="md-nav__icon md-icon"></span>
+        Html
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/html/01-introduccion_a_HTML5/" title="Introduccion a HTML" class="md-nav__link">
+      Introduccion a HTML
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/html/02-etiquetas_semanticas/" title="Etiquetas semánticas" class="md-nav__link">
+      Etiquetas semánticas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/html/03-etiquetas_multimedia/" title="Etiquetas multimedias" class="md-nav__link">
+      Etiquetas multimedias
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/html/04-etiquetas_de_cabecera/" title="Etiquetas de cabecera" class="md-nav__link">
+      Etiquetas de cabecera
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/html/05-etiquetas_de_formularios/" title="Etiquetas de formularios" class="md-nav__link">
+      Etiquetas de formularios
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/html/06-etiquetas_de_scripting/" title="Etiquetas de scripting" class="md-nav__link">
+      Etiquetas de scripting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Css
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Css" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        <span class="md-nav__icon md-icon"></span>
+        Css
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/01-introduccion_a_CSS/" title="Introducción a CSS" class="md-nav__link">
+      Introducción a CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/02-modelo_de_cajas/" title="Modelo de cajas" class="md-nav__link">
+      Modelo de cajas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/03-colores_y_fondos/" title="Colores y fondos" class="md-nav__link">
+      Colores y fondos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/04-selectores_CSS/" title="Selectores CSS" class="md-nav__link">
+      Selectores CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/05-Fuentes_y_tipografias/" title="Fuentes y tipografías" class="md-nav__link">
+      Fuentes y tipografías
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/06-representacion_de_datos/" title="Representación de datos" class="md-nav__link">
+      Representación de datos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/07_maquetacion_y_colocacion/" title="Maquetación y colocación" class="md-nav__link">
+      Maquetación y colocación
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/08-interacciones/" title="Interacciones" class="md-nav__link">
+      Interacciones
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/09-efectos/" title="Efectos" class="md-nav__link">
+      Efectos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/10-responsive_Web_Design/" title="Responsive Web Design" class="md-nav__link">
+      Responsive Web Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/css/11-animaciones_CSS/" title="Animaciones CSS" class="md-nav__link">
+      Animaciones CSS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      JavaScript
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="JavaScript" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon"></span>
+        JavaScript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/javascript/01-introducci%C3%B3n_a_javascript/" title="Introducción a Javascript" class="md-nav__link">
+      Introducción a Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/javascript/02-fundamentos_de_javascript/" title="Fundamentos de Javascript" class="md-nav__link">
+      Fundamentos de Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/javascript/03-caracteristicas/" title="Características" class="md-nav__link">
+      Características
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/javascript/04-DOM/" title="DOM" class="md-nav__link">
+      DOM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/javascript/05-asincronia/" title="Asincronía" class="md-nav__link">
+      Asincronía
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../desarrollo/javascript/06-peticiones_HTTP/" title="Peticiones HTTP" class="md-nav__link">
+      Peticiones HTTP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Herramientas IT
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Herramientas IT" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Herramientas IT
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Terminal
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Terminal" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon"></span>
+        Terminal
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../terminal/01-introducci%C3%B3n_a_la_terminal/" title="Introducción a la terminal" class="md-nav__link">
+      Introducción a la terminal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../terminal/02-operaciones_con_ficheros/" title="Operaciones con ficheros" class="md-nav__link">
+      Operaciones con ficheros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../terminal/03-administraci%C3%B3n_del_sistema/" title="Administración del sistema" class="md-nav__link">
+      Administración del sistema
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" checked>
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Vim
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Vim" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        <span class="md-nav__icon md-icon"></span>
+        Vim
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Funcionamiento básico de Vim
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Funcionamiento básico de Vim" class="md-nav__link md-nav__link--active">
+      Funcionamiento básico de Vim
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    Introducción
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcionamiento-basico-de-vim" class="md-nav__link">
+    Funcionamiento básico de Vim
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-y-ejecucion-de-vim" class="md-nav__link">
+    Instalación y ejecución de Vim
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modo-insercion-y-modo-comando" class="md-nav__link">
+    Modo inserción y modo comando
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#el-fichero-vimrc" class="md-nav__link">
+    El fichero .vimrc
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comandos-basicos-movimiento-insercion-y-borrado" class="md-nav__link">
+    Comandos básicos: movimiento, inserción y borrado
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#counts-o-repetidores" class="md-nav__link">
+    Counts o repetidores
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-manipulacion-del-fichero-abrir-guardar-salir" class="md-nav__link">
+    La manipulación del fichero (abrir, guardar, salir)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02-movimientos_y_cambios/" title="Más sobre movimiento y cambios" class="md-nav__link">
+      Más sobre movimiento y cambios
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-copiar_y_pegar/" title="Copiar y pegar" class="md-nav__link">
+      Copiar y pegar
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-busquedas_y_reemplazos/" title="Búsquedas y reemplazos" class="md-nav__link">
+      Búsquedas y reemplazos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-el_fichero_vimrc/" title="El fichero .vimrc" class="md-nav__link">
+      El fichero .vimrc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-pestanas_ventanas_buffers/" title="Pestañas, Ventanas y Buffers" class="md-nav__link">
+      Pestañas, Ventanas y Buffers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../07-marcas_en_el_texto/" title="Marcas en el texto" class="md-nav__link">
+      Marcas en el texto
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../08-funcionalidadees_para_programadores/" title="Funcionalidades para programadores" class="md-nav__link">
+      Funcionalidades para programadores
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../09-extendiendo_vim_con_plugins/" title="Extendiendo Vim con plugins" class="md-nav__link">
+      Extendiendo Vim con plugins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../10-modo_vi_en_bash/" title="Modo vi en bash" class="md-nav__link">
+      Modo vi en bash
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../markdown/markdown/" title="Markdown" class="md-nav__link">
+      Markdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../pip/pip/" title="Pip" class="md-nav__link">
+      Pip
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../about/" title="Acerca de" class="md-nav__link">
+      Acerca de
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    Introducción
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcionamiento-basico-de-vim" class="md-nav__link">
+    Funcionamiento básico de Vim
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-y-ejecucion-de-vim" class="md-nav__link">
+    Instalación y ejecución de Vim
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modo-insercion-y-modo-comando" class="md-nav__link">
+    Modo inserción y modo comando
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#el-fichero-vimrc" class="md-nav__link">
+    El fichero .vimrc
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comandos-basicos-movimiento-insercion-y-borrado" class="md-nav__link">
+    Comandos básicos: movimiento, inserción y borrado
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#counts-o-repetidores" class="md-nav__link">
+    Counts o repetidores
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-manipulacion-del-fichero-abrir-guardar-salir" class="md-nav__link">
+    La manipulación del fichero (abrir, guardar, salir)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/saucedoinfo/guias/edit/master/docs/herramientas-it/vim/01-funcionamiento_basico_de_Vim.md" title="Editar esta página" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="vim">VIM<a class="headerlink" href="#vim" title="Permanent link">&para;</a></h1>
+<p align="center">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Vimlogo.svg/105px-Vimlogo.svg.png" >
+</p>
+
+<h2 id="introduccion">Introducción<a class="headerlink" href="#introduccion" title="Permanent link">&para;</a></h2>
+<p>Este pequeño tutorial pretende ser una introducción y a la vez una referencia rápida al editor Vim (Vi IMproved) tanto para aquellos que quieren empezar a utilizarlo como para aquellos que ya lo utilizan de una forma básica (abrir fichero, modificar, guardar y salir) y desean ampliar sus conocimientos sobre este fantástico editor.</p>
+<p>El tutorial puede ser algo largo, pero está organizado de forma que puedas empezar a leerlo desde el principio y parar en el momento en que lo que se explica está por encima de tus necesidades. Es más, puedes dejarlo en un punto concreto que cubra tus necesidades y volver a leerlo pasado un tiempo, y volver a aprender cosas nuevas. La idea es que no sea necesario leerlo entero para que te sea útil.</p>
+<p>Si eres novato y te abruma ver tantas combinaciones de teclado o explicaciones, tómatelo con calma. Lee un capítulo, y prueba todos los comandos u opciones editando un fichero de texto. Aplíca esos comandos cada vez que puedas, utilizando vim para hacer tus tareas de edición de textos, y verás como pasado un tiempo, lo que leíste la anterior vez te parece <strong>básico</strong> y puedes avanzar algo más en el tutorial.</p>
+<p>La parte inicial del tutorial contiene bastante texto, porque se corresponde con el momento en que no estamos familiarizados con los comandos de Vim y las explicaciones necesitan ser más profundas, pero conforme avanzamos en el texto, las descripciones serán más someras, ya que si hemos llegado hasta allí, directamente estaremos asimilando los comandos y conceptos sin necesidad de explicaciones complejas.</p>
+<p>Para seguir el tutorial simplemente os recomiendo que tengáis instalada alguna versión nueva de Vim (que podéis descargar en <a href="http://www.vim.org/" title="http://www.vim.org">http://www.vim.org</a> o bien utilizando el sistema de paquetes de vuestra distribución Linux) y sobre todo que tengáis ganas de aprender a utilizarlo. Además del típico VIM de línea de comandos, existen compilaciones de Vim con un Interfaz Gráfico (<abbr title="Graphical User Interface">GUI</abbr>), como gvim o la propia de Windows. Y es que recordad que existen versiones de Vim no sólo para UNIX / Linux, sino también para Windows, por ejemplo, de forma que las ventajas de utilizar Vim las podéis aprovechar también en ordenadores Windows que os obliguen a utilizar en Universidades, o en el trabajo, por ejemplo. Así que armados con Vim instalado para nuestro sistema operativo favorito y algo de tiempo para leer, entremos en materia.</p>
+<h2 id="funcionamiento-basico-de-vim">Funcionamiento básico de Vim<a class="headerlink" href="#funcionamiento-basico-de-vim" title="Permanent link">&para;</a></h2>
+<p>Vim es un editor de textos, en contraposición a lo que se conoce como procesador de textos.</p>
+<p>En un procesador de textos es muy importante <strong>el formato del texto</strong>: cursivas, negritas, títulos, centrado o justificado, color y tamaño de la fuente, etc.</p>
+<p>Vim, en cambio, se utiliza para <strong>editar texto</strong>. Lo importante no es el formato del texto sino el texto en sí mismo. Así, Vim se utiliza para programar, para escribir emails, para editar textos, código <abbr title="HyperText Markup Language">HTML</abbr>, ficheros de configuración del sistema, etc.</p>
+<p>Los procesadores de texto están centrados en ofrecer muchas cosas para el formateado del documento, mientras que Vim está pensado para facilitar la labor de introducción y edición del texto. No es muy útil editar un fichero de configuración o programar con LibreOffice o Word al igual que no tiene mucho sentido utilizar Vim para editar un documento donde lo que prima es el formato (pese a que gracias al lenguaje de programación LATEX, esto se puede hacer en Vim).</p>
+<p>Por eso, cuando quieras programar, editar ficheros de configuración, o simplemente, hacer tu trabajo con texto de una forma más rápida, lo mejor es utilizar un editor de texto. Y como veremos, Vim es especial para hacer esta labor, por encima de muchos otros editores.</p>
+<p><strong>El editor Vim es una evolución del clásico editor VI</strong>. VI es un editor que encontraremos presente en casi el 100% de los sistemas UNIX (y si no está presente por defecto se puede instalar), por lo que conocer su uso es prácticamente una obligación para los Administradores de Sistemas. Por suerte, Vim se diseñó heredando casi todas las teclas y opciones de VI, de modo que siguiendo este tutorial nos aseguramos los conocimientos necesarios para manejar VI a nivel básico y medio. Podéis pensar en VIM como un VI mejorado, al cual podréis aplicar la mayoría de conocimientos de movimiento y edición que veremos aquí.</p>
+<h2 id="instalacion-y-ejecucion-de-vim">Instalación y ejecución de Vim<a class="headerlink" href="#instalacion-y-ejecucion-de-vim" title="Permanent link">&para;</a></h2>
+<p>Si usas una plataforma Linux, lo más probable es que Vim ya esté instalado en tu sistema. En cualquier caso, puedes instalarlo con:</p>
+<table>
+<thead>
+<tr>
+<th>Variante</th>
+<th>Sistema</th>
+<th>Comando</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vim (modo texto)</td>
+<td>CentOS / RedHat / Fedora</td>
+<td>yum install vim-enhanced vim-minimal</td>
+</tr>
+<tr>
+<td>gVim (modo gráfico)</td>
+<td>CentOS / RedHat / Fedora</td>
+<td>yum install vim-X11</td>
+</tr>
+<tr>
+<td>Vim (modo texto)</td>
+<td>Ubuntu / Debian / Mint</td>
+<td>apt-get install vim-nox</td>
+</tr>
+<tr>
+<td>gVim (modo gráfico)</td>
+<td>Ubuntu / Debian / Mint</td>
+<td>apt-get install vim-gtk</td>
+</tr>
+</tbody>
+</table>
+<p>He separado la instalación de paquetes modo texto y modo gráfico por si alguien desea instalar śolo una de las 2 variantes, pero lo normal es tener ambas instaladas. Por ejemplo, podemos usar vim en terminales de texto para editar ficheros de configuración (cuando cambiamos a root en una consola) y gvim en proyectos de programación.</p>
+<p>Para lanzar vim, basta con ejecutar <strong>vim</strong> en una terminal de texto (lo que creará un buffer vacío en vim), o bien <strong>vim fichero</strong> (que partirá con el contenido del fichero en el buffer).</p>
+<p><img alt="El aspecto del editor Vim" src="../img/vm_vim.png" /></p>
+<p>También podemos irnos con el cursor directamente a una línea N contra del fichero editado si hacemos <strong>vim +NUMERO fichero</strong> (especialmente util si estamos editando un fichero tras un error de compilación de un programa, por ejemplo, y conocemos el número de línea del error).</p>
+<p>Una vez dentro de Vim, podemos salir sin grabar el contenido ejecutando en modo comando <strong>:q!</strong> y grabando con <strong>:x!</strong>. En breve veremos qué quiere decir eso de "en modo comando".</p>
+<h2 id="modo-insercion-y-modo-comando">Modo inserción y modo comando<a class="headerlink" href="#modo-insercion-y-modo-comando" title="Permanent link">&para;</a></h2>
+<p>Como muchos ya sabéis, a la hora de editar textos, Vim trabaja en varios modos: modo comando, modo inserción, modo visual... Se dice pues que <strong>es un editor modal</strong> (con varios modos de trabajo). En todo momento sabremos en cuál de los modos estamos gracias a la información que aparece en la barra de estado del editor (la última línea de la pantalla).</p>
+<p>Los 2 principales modos de trabajo son <strong>modo comando</strong> y <strong>modo inserción</strong>. Para selección de texto con los cursores, también disponemos del <strong>modo visual</strong>.</p>
+<p>En <strong>modo comando</strong> (el modo en que está Vim tras ejecutarlo) las teclas que pulsamos, en lugar de aparecer escritas en el documento, son interpretadas por Vim como comandos y nos permiten realizar acciones como grabar, salir, copiar, pegar, etc. Por ejemplo, pulsando <strong>ZZ</strong> en modo comando, no vamos a escribir dos zetas mayúsculas en el documento, sino que vamos a salir de vim grabando el fichero que estamos editando.</p>
+<p>El <strong>modo inserción</strong> sí que nos permite introducir caracteres en el fichero, en la posición actual del cursor, al estilo de los editores básicos a los que estamos acostumbrados. Estando en modo inserción, si pulsamos <strong>ZZ</strong>, se insertarán dos zetas mayúsculas en la posición actual del cursor, tal y como cabría esperar en un editor normal. Cuando estamos en modo inserción aparece la cadena <strong>–INSERTAR–</strong> en la barra de estado del editor (la última línea de pantalla).</p>
+<p>Para pasar al modo inserción desde el modo comando se utiliza la tecla/comando <strong>i</strong>, y para volver al modo comando se utiliza la tecla ESC.</p>
+<p>La siguiente imagen ilustra los diferentes modos y las teclas que cambian entre ellos:</p>
+<p><img alt="Vim modes" src="../img/vm_modos.png" /></p>
+<p>El hecho de disponer de 3 modos y tener que pasar de uno a otro puede parecer algo confuso o incluso un engorro, pero es justo la mejor baza de vim; es lo que le proporciona su potencia, lo que los demás editores no pueden hacer: aplicar comandos al texto. Es mucho más cómodo borrar una línea completa con el comando <strong>dd</strong> en vim que seleccionar la línea con el teclado o ratón y borrarla con la tecla DEL o SUPR en otro editor.</p>
+<p>Alguien podría decir: <em>"""bueno, seguro que cualquier otro editor también tiene un atajo de teclado para borrar la línea actual completa."""</em></p>
+<p>Bien, imaginemos que la tiene (suele ser CTRL+Y), pero ... ¿y si quieres borrar las 30 líneas siguientes a la del cursor (incluída esta)? ¿Vas a pulsar 30 veces el atajo de teclado? ¿Vas a seleccionar con el ratón o el teclado las 30 líneas? ¿Y si te digo que en modo comando de Vim, lo puedes hacer simplemente tecleando <strong>30dd</strong>?</p>
+<p>Y es que <strong>30dd</strong> para vim significa <strong>30 x dd</strong>, o sea, <strong>ejecuta 30 veces el comando dd</strong>, es decir, <strong>borra 30 líneas</strong>.</p>
+<p>Esto sólo se puede hacer gracias a la potencia del modo comando.</p>
+<p>Cuando se es un novato en vim, y uno está acostumbrado a otros editores que cree más potentes, puede pensar que vim es un editor arcaico y obsoleto sólo por el hecho de que se utiliza integramente con el teclado y es modal.</p>
+<p>La realidad es toda la contraria: es precisamente eso lo que permite que Vim sea mucho más potente que el resto de editores.</p>
+<p>Vim es muy muy muy potente, no es un simple editor. La clave de Vim es estar el mayor tiempo que se pueda en modo comando, pasando a modo inserción sólo cuando se requiera introducir texto en el documento. Cuando estemos escribiendo emails o documentos de texto es muy probable que estemos casi todo el tiempo en modo inserción (a menos que queramos corregir algo que hayamos escrito), pero programando o editando ficheros de configuración ocurrirá justo lo contrario. Los atajos de teclado del modo comando se hacen algo complicados de entender al principio, pero tras el uso continuado de Vim se desarrolla en nuestra mente la forma de utilizar esos comandos de forma totalmente intuitiva, sin pararnos a pensar en ellos.</p>
+<p>Cuando empieza a utilizarse vim sólo se conoce el funcionamiento básico, pero con el tiempo uno comienza a descubrir toda la potencia de este genial editor y empieza a cambiar la concepción de tiene de él: Vim no es sólo un editor, es una forma de vida en UNIX.</p>
+<h2 id="el-fichero-vimrc">El fichero .vimrc<a class="headerlink" href="#el-fichero-vimrc" title="Permanent link">&para;</a></h2>
+<p>En vim podemos modificar muchos parámetros del editor mientras editamos los ficheros. Por ejemplo, tecleando en modo comando <strong>:set number</strong> (dos puntos, set number, intro), Vim activará la numeración de líneas (no dentro del fichero en sí, sino visualmente), algo que puede ser útil para programar.</p>
+<p>Otro ejemplo, tecleando <strong>:syntax on</strong>, activaremos para el fichero actual el coloreado de sintaxis, es decir, que las palabras especiales que el editor entienda como que tienen un significado concreto aparecerán en diferentes colores. Si estamos programando en C, por ejemplo, las palabras claves aparecerán de un color, las cadenas de otro, etc (algo realmente útil a la hora de programar).</p>
+<p>Pues bien, cualquier tipo de opción, macro, comando o función que vim entienda puede ser incluída en el fichero .vimrc en el directorio $HOME de nuestro usuario (o en un fichero _vimrc en el directorio de instalación de Vim o en el padre del Escritorio del usuario en Windows) de forma que se aplique como opción por defecto cuando lancemos Vim. Así, podemos crear un fichero .vimrc (por defecto normalmente no existirá), que contenga algo como lo siguiente:</p>
+<div class="highlight"><pre><span></span><code>set nocompatible
+set number
+set ruler
+syntax on
+</code></pre></div>
+
+<p>Esto hará que siempre que editemos un fichero, aparezca numeración de líneas (set number), un indicador de fila y columna en la barra de estado (set ruler) y resaltado de sintaxis (si está definida para el tipo de fichero que estamos editando) activado. Es algo así como <strong>el fichero de opciones de vim para nuestro usuario</strong> (y sólo para nuestro usuario). Existe un fichero de opciones general /etc/vimrc (normalmente) cuyos cambios afectan a todos los usuarios cuando arrancan vim, pero lo que incluyamos en nuestro .vimrc sólo afectará a vim cuando lo ejecutemos con nuestro usuario del sistema.</p>
+<p>Así, podemos utilizar dicho fichero para indicar aquellas configuraciones con las que estemos más cómodos, de forma que podamos adaptar vim a nuestras necesidades. Es normal que en estos momentos iniciales no conozcamos vim lo suficiente como para hacernos un .vimrc decente, pero para empezar os recomiendo algo como lo que sigue:</p>
+<div class="highlight"><pre><span></span><code>&quot; Fichero .vimrc de mi usuario
+&quot; Los comentarios se ponen con comillas dobles
+set nobackup
+set ruler
+
+&quot; nocompatible permite funciones que VI no soporta
+set nocompatible
+
+set tabstop=4
+set sw=4
+set expandtab
+
+set vb
+set noerrorbells
+syntax on
+</code></pre></div>
+
+<p>Las posibilidades del fichero .vimrc son muy grandes, ya que no sólo soporta comandos simples de configuración sino que tiene un lenguaje propio que nos permite hacer casi cualquier tipo de cosa.</p>
+<p>Poco a poco podréis ampliar este fichero con más opciones, macros, etc, que iremos viendo a lo largo del tutorial. De momento os recomiendo que creéis uno con, como mínimo, las opciones que acabamos de mostrar en el ejemplo anterior.</p>
+<h2 id="comandos-basicos-movimiento-insercion-y-borrado">Comandos básicos: movimiento, inserción y borrado<a class="headerlink" href="#comandos-basicos-movimiento-insercion-y-borrado" title="Permanent link">&para;</a></h2>
+<p>Un primer contacto con Vim puede ser tan simple como editar un fichero con <strong>vim fichero</strong>, pasar a modo inserción pulsando <strong>i</strong> (i minúscula), moverse por el documento, cambiar e introducir texto, volver a modo comando (pulsando <strong>ESC</strong>), y salir del editor grabando los cambios en el fichero pulsando <strong>ZZ</strong> (2 zetas mayúsculas) o con <strong>:x!</strong>. Como toma de contacto inicial es suficiente y puede servir para perder el miedo al hecho de que Vim tenga 2 modos principales de funcionamiento (comando e inserción).</p>
+<p>Lo siguiente que debemos hacer con nuestro editor es aprender a movernos por el texto. Supongamos que hemos creado/editado un documento con Vim, y tenemos que movernos por él (y añadir/cambiar cosas). Como siempre, en modo inserción (si tenemos bien configurada la variable $TERM del sistema) podremos movernos con las teclas clásicas de los demás editores: cursores, Inicio, Fin, RePág, AvPág, etc.</p>
+<p>No obstante, la potencia real de Vim la encontramos con las posibilidades de movimiento definidas en el modo comando. Aparte de que en modo inserción estamos muy limitados (movimiento en las 4 direcciones, principio y fin de línea, y anterior y siguiente página), algunas combinaciones de teclado no tienen por qué funcionar en ciertas máquinas, Sistemas Operativos o configuraciones de teclado (en Solaris, AIX, HPUX, o utilizando telnet/ssh contra otra máquina). El movimiento en modo comando es mucho más estándar (al utilizar teclas básicas del teclado y no teclas extendidas) y nos permite mucho más juego.</p>
+<p>La regla general de Vim es moverse y trabajar siempre en modo comando y sólo pasar a modo inserción para introducir, borrar o modificar texto de nuestro documento (volviendo a modo comando al acabar el cambio), ya que el modo comando es el lugar donde podremos usar todas las opciones que en otros editores no se pueden realizar.</p>
+<p>Veamos los diferentes comandos básicos de movimiento, inserción y borrado (siempre en modo comando):</p>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>h</td>
+<td>Mover el cursor a la izquierda.</td>
+</tr>
+<tr>
+<td>j</td>
+<td>Mover el cursor hacia abajo.</td>
+</tr>
+<tr>
+<td>k</td>
+<td>Mover el cursor hacia arriba.</td>
+</tr>
+<tr>
+<td>l</td>
+<td>Mover el cursor hacia la derecha.</td>
+</tr>
+<tr>
+<td>i</td>
+<td>Insertar texto en la posición actual del cursor (Insert), pasando a Modo Inserción. Se permanece en modo inserción hasta que se sale explícitamente de él.</td>
+</tr>
+<tr>
+<td>ESC</td>
+<td>Salir del modo inserción y volver a modo comando. En modo comando, permite cancelar muchos de los comandos que se están ejecutando.</td>
+</tr>
+<tr>
+<td>x</td>
+<td>Borrar el caracter bajo el cursor (equivale a la tecla Del/Supr).</td>
+</tr>
+<tr>
+<td>X</td>
+<td>Borrar el caracter a la izquierda del cursor (equivale a la tecla Borrar/Backspace).</td>
+</tr>
+<tr>
+<td>J</td>
+<td>Juntar la línea actual con la siguiente (Join), eliminando el retorno de carro entre ellas.</td>
+</tr>
+<tr>
+<td>u</td>
+<td>Deshacer la última acción (Undo). Si lo pulsamos más veces desharemos acciones anteriores.</td>
+</tr>
+<tr>
+<td>CTRL+R</td>
+<td>Rehacer la última acción (Redo). Si lo pulsamos más veces reharemos acciones posteriores deshechas.</td>
+</tr>
+<tr>
+<td>a</td>
+<td>Insertar texto en la siguiente posición tras el cursor (Append). Es similar a <strong>i</strong>, salvo que el texto no se inserta en la posición actual del cursor sino a su derecha.</td>
+</tr>
+<tr>
+<td>A</td>
+<td>Poner el cursor al final de la línea y pasar a modo inserción (añadir texto al final).</td>
+</tr>
+<tr>
+<td>o</td>
+<td>Crear una línea vacía, en blanco, bajo la línea actual, y pasar a modo inserción con el cursor posicionado en dicha línea. Es mucho más cómodo que (como en otros editores) tener que pulsar FIN y ENTER para crear una línea en blanco.</td>
+</tr>
+<tr>
+<td>O</td>
+<td>Crear una línea vacía, en blanco, sobre la línea actual. Sería el equivalente en otros editores a ARRIBA, ARRIBA, FIN, ENTER.</td>
+</tr>
+<tr>
+<td>dd</td>
+<td>Borrar la línea actual (sobre la que está el cursor).</td>
+</tr>
+<tr>
+<td>D</td>
+<td>Borrar desde la posición actual del cursor hasta el final de la línea.</td>
+</tr>
+</tbody>
+</table>
+<p>Como podéis ver, la existencia de ciertos comandos (como <strong>o</strong>, <strong>O</strong>, o <strong>dd</strong>) está pensada para evitar la mayor cantidad de pulsaciones de teclas/ratón posible. Borrar líneas con dd es mucho más rápido y sencillo que llevar la mano al ratón o a SHIFT+cursores en otros editores, e induce a muchos menos errores.</p>
+<p>También, pulsar <strong>J</strong> (jota mayúscula) para juntar (Join) una línea con la línea siguiente es mucho más rápido que bajar a la siguiente línea, irse al principio de la misma, y pulsar borrar para subirla a la línea anterior.</p>
+<h2 id="counts-o-repetidores">Counts o repetidores<a class="headerlink" href="#counts-o-repetidores" title="Permanent link">&para;</a></h2>
+<p>En la mayoría de comandos de Vim podemos añadir <strong>counts</strong>, que es como se conoce a los <strong>repetidores</strong> del comando. El count es un número que se teclea antes del comando para que se repita varias veces. Unido a la potencia del modo comando nos da mucho juego para la edición. Veamos unos cuantos ejemplos:</p>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10dd</td>
+<td>Repetir 10 veces el comando <strong>dd</strong>, es decir borrar 10 líneas empezando desde la línea actual. Es el equivalente a teclear manualmente 10 veces <strong>dd</strong>, y mucho más rápido que seleccionar 10 líneas a mano con ratón o cursores.</td>
+</tr>
+<tr>
+<td>5x</td>
+<td>Repetir 5 veces el comando <strong>x</strong>, es decir, borrar 5 caracteres empezando desde el carácter actual. Equivale a pulsar manualmente 5 veces el comando <strong>x</strong>.</td>
+</tr>
+<tr>
+<td>60i-<ESC><ENTER></td>
+<td>Insertar 60 guiones consecutivos. Este comando se teclea en modo comando pulsando 6, 0, i, guión, y pulsando la tecla ESCAPE y luego pulsar ENTER para validar el comando. Al hacerlo, estamos diciendo que se repita 60 veces la secuencia <strong>i guión ESCAPE</strong>, es decir, pasar a modo inserción, escribir un guión, y volver al modo comando pulsando ESCAPE. El 60 que hay delante lo repite 60 veces, con lo cual tenemos 60 guiones en pantalla. ¿No es mucho más cómodo al programar, para introducir separadores de comentarios, que pulsar el guión 60 veces o durante varios segundos mientras miramos la columna en la que estamos?</td>
+</tr>
+<tr>
+<td>10iHola<ENTER><ESC><ENTER></td>
+<td>(pulsar ESC y ENTER como las teclas ESC y ENTER, no tecleando la cadena) Aparece la palabra Hola 10 veces en pantalla, cada vez en una línea propia. Su significado, al igual que en el ejemplo anterior, sería <strong>repite 10 veces la secuencia i, Hola, ENTER, ESC</strong>, que pasa a modo inserción, escribe Hola, pasa a la siguiente línea con ENTER, y vuelve a modo comando.</td>
+</tr>
+</tbody>
+</table>
+<p>Los 2 últimos ejemplos son bastante ilustrativos de la potencia de Vim en modo comando. Lo que en otros editores requiere varios segundos de presión de la tecla <strong>-</strong> para poner una raya horizontal (por ejemplo, en comentarios en C o C++ para separar funciones o clarificar los comentarios), en Vim se puede hacer con un simple comando, y sin miedo a poner guiones de más ni de menos o estar fijándose en la columna mientras los añadimos. Le pedimos a Vim que añada 60 guiones y lo hará directamente y sin posibilidad de error.</p>
+<p>El último ejemplo nos muestra cómo repetir N veces una determinada frase en nuestro documento. No es necesario escribir, seleccionar, y pegar, pegar, pegar y pegar mientras contamos las frases que llevamos hasta tener nuestras 10 frases escritas como en otros editores. A Vim le decimos que repita la inserción 10 veces y lo hace sin necesidad de intervención extra por nuestra parte.</p>
+<p>Los multiplicadores de comandos son muy útiles y pueden aplicarse a muchos de los comandos que veremos en este tutorial, aunque no lo digamos explícitamente aquí.</p>
+<h2 id="la-manipulacion-del-fichero-abrir-guardar-salir">La manipulación del fichero (abrir, guardar, salir)<a class="headerlink" href="#la-manipulacion-del-fichero-abrir-guardar-salir" title="Permanent link">&para;</a></h2>
+<p>Los comandos básicos a la hora de editar ficheros son:</p>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:w</td>
+<td>Grabar los cambios del fichero actual.</td>
+</tr>
+<tr>
+<td>:w nombre</td>
+<td>Grabar el contenido actual del buffer en un fichero de nombre <strong>nombre</strong>.</td>
+</tr>
+<tr>
+<td>:q!</td>
+<td>Salir del editor sin grabar ningún cambio en el fichero actual (descartando cualquier cosa que hayamos hecho desde su apertura o última vez que grabamos).</td>
+</tr>
+<tr>
+<td>ZZ</td>
+<td>Salir del editor grabando los cambios en el fichero actual. También sirve <strong>:x</strong> o <strong>:wq!</strong>.</td>
+</tr>
+<tr>
+<td>CTRL+G</td>
+<td>Obtener información en la barra de estado del nombre del fichero que estamos editando, línea actual, número de líneas, en qué porcentaje del fichero estamos, y número de columna.</td>
+</tr>
+<tr>
+<td>:e fichero</td>
+<td>Abrir un fichero en el buffer actual (si está vacío) o en uno nuevo (si tenemos el buffer actual en uso)</td>
+</tr>
+</tbody>
+</table>
+<p>En el caso de que hayamos abierto con <strong>:e</strong> más de un fichero, podemos movernos entre ellos con:</p>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:bn</td>
+<td>Siguiente buffer (fichero).</td>
+</tr>
+<tr>
+<td>:bp</td>
+<td>Anterior buffer (fichero).</td>
+</tr>
+<tr>
+<td>:bd</td>
+<td>Cerrar buffer (fichero) actual.</td>
+</tr>
+</tbody>
+</table>
+<p>Hablaremos más sobre los buffers en un capítulo posterior, pero resulta interesante saber moverse entre múltiples ficheros abiertos.</p>
+<hr />
+<p><strong>Fuente</strong>: <a href="http://www.sromero.org/wiki/linux/aplicaciones/manual_vim#mas_sobre_movimiento_y_cambios">Guia de vim</a> por : <a href="http://www.sromero.org/">Santiago Romero</a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../../terminal/03-administraci%C3%B3n_del_sistema/" title="Administración del sistema" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Administración del sistema
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../02-movimientos_y_cambios/" title="Más sobre movimiento y cambios" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Más sobre movimiento y cambios
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/saucedoinfo" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/saucedoinfo" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.instagram.com/saucedo.info/" target="_blank" rel="noopener" title="www.instagram.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.instant', 'navigation.expand', 'tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
